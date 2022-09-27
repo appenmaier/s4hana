@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkabap=self.webpackChunkabap||[]).push([[3099],{8736:a=>{a.exports=JSON.parse('{"permalink":"/s4hana/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

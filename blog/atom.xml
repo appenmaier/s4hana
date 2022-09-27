@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://appenmaier.github.io/s4hana/blog</id>
+    <title>SAP S/4HANA Entwicklung Blog</title>
+    <updated>2022-09-27T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://appenmaier.github.io/s4hana/blog"/>
+    <subtitle>SAP S/4HANA Entwicklung Blog</subtitle>
+    <icon>https://appenmaier.github.io/s4hana/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[tmp]]></title>
+        <id>tmp</id>
+        <link href="https://appenmaier.github.io/s4hana/blog/tmp"/>
+        <updated>2022-09-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[tmp]]></summary>
+        <content type="html"><![CDATA[<p>tmp</p>]]></content>
+        <author>
+            <name>Daniel Appenmaier</name>
+            <uri>https://github.com/appenmaier</uri>
+        </author>
+        <category label="tmp" term="tmp"/>
+    </entry>
+</feed>
