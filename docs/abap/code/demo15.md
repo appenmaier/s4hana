@@ -1,6 +1,6 @@
 ---
-title: Demo 15
-description: "Schreibende Datenbankzugriffe"
+title: Demo ABAP-15
+description: 'Schreibende Datenbankzugriffe'
 sidebar_position: 150
 ---
 

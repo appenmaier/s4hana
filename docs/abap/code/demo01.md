@@ -1,5 +1,5 @@
 ---
-title: Demo 1
+title: Demo ABAP-01
 description: 'Allgemeine Syntax und Kommentare'
 sidebar_position: 10
 ---
@@ -8,8 +8,6 @@ sidebar_position: 10
 REPORT zabap_demo_abap_01.
 
 DATA text TYPE string. "Deklaration
-
 text = 'Hallo'. "Wertzuweisung
-
 WRITE: text, 'Welt'. "Ausgabe
 ```

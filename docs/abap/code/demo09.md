@@ -1,21 +1,22 @@
 ---
-title: Demo 9
-description: ""
+title: Demo ABAP-09
+description: 'Funktionsbausteine'
 sidebar_position: 90
 ---
 
+## Funktionsbaustein Z_ABAP_GET_CONNECTION
 ```abap
-FUNCTION Z_ABAP_SET_CONNECTION
+FUNCTION Z_ABAP_GET_CONNECTION
   IMPORTING
-    I_CARRIER_ID TYPE S_CARR_ID
+    I_CARRIER_ID    TYPE S_CARR_ID
     I_CONNECTION_ID TYPE S_CONN_ID
+  EXPORTING
+    E_CITY_FROM     TYPE S_FROM_CIT
+    E_CITY_TO       TYPE S_TO_CITY
   EXCEPTIONS
     INITIAL_CARRIER_ID
     INITIAL_CONNECTION_ID.
 
-
-
-* Eingabeprüfung
   IF i_carrier_id IS INITIAL.
     RAISE initial_carrier_id.
   ENDIF.
@@ -24,46 +25,47 @@ FUNCTION Z_ABAP_SET_CONNECTION
     RAISE initial_connection_id.
   ENDIF.
 
-  g_carrier_id = i_carrier_id.
-  g_connection_id = i_connection_id.
+  e_city_from = ''.
+  e_city_to = ''.
 
 ENDFUNCTION.
 ```
 
+## ABAP-Programm ZABAP_DEMO_ABAP_09
 ```abap
 REPORT zabap_demo_abap_09.
 
 PARAMETERS p_carrid TYPE s_carr_id DEFAULT 'LH'.
 PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400'.
 
-DATA carrier_id TYPE s_carr_id.
-DATA connection_id TYPE s_conn_id.
+DATA city_from TYPE s_from_cit.
+DATA city_to TYPE s_to_city.
 
-CALL FUNCTION 'Z_ABAP_SET_CONNECTION'
+CALL FUNCTION 'Z_ABAP_GET_CONNECTION'
   EXPORTING
     i_carrier_id          = p_carrid
     i_connection_id       = p_connid
+  IMPORTING
+    e_city_from           = city_from
+    e_city_to             = city_to
   EXCEPTIONS
     initial_carrier_id    = 1
     initial_connection_id = 2
     OTHERS                = 3.
-IF sy-subrc <> 0.
-  CASE sy-subrc.
-    WHEN 1.
-      WRITE: |Error: initial carrier id|.
-    WHEN 2.
-      WRITE: |Error: initial connection id|.
-    WHEN OTHERS.
-      WRITE: |Internal Error|.
-  ENDCASE.
-ENDIF.
+CASE sy-subrc.
+  WHEN 1.
+    MESSAGE e000(zabap) WITH 'Carrier ID'.
+  WHEN 2.
+    MESSAGE e000(zabap) WITH 'Connection ID'.
+  WHEN 3.
+    MESSAGE e001(zabap).
+ENDCASE.
 
-CLEAR: p_carrid, p_connid.
+WRITE: city_from, city_to.
+```
 
-CALL FUNCTION 'Z_ABAP_GET_CONNECTION'
-  IMPORTING
-    e_carrier_id    = carrier_id
-    e_connection_id = connection_id.
-
-WRITE: / carrier_id, connection_id.
+## Nachrichtenklasse ZABAP
+```
+000, Initial Parameter: &1
+001, Internal Error
 ```

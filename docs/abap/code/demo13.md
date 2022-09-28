@@ -1,6 +1,6 @@
 ---
-title: Demo 13
-description: ""
+title: Demo ABAP-13
+description: 'Einspaltige Tabellen'
 sidebar_position: 130
 ---
 
