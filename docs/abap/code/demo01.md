@@ -1,5 +1,7 @@
 ---
 title: Demo 1
+description: 'Allgemeine Syntax und Kommentare'
+sidebar_position: 10
 ---
 
 ```abap
