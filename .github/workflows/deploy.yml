@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 defaults:
   run:
     shell: bash
-    working-directory: ./s4hana
+    working-directory: ././s4hana
 
 on:
   push:
