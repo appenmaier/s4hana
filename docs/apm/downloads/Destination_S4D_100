@@ -1,0 +1,13 @@
+#Tue Nov 09 10:54:38 UTC 2021
+Description=SAP Gateway S4D
+Type=HTTP
+HTML5.Timeout=120000
+HTML5.DynamicDestination=true
+Authentication=BasicAuthentication
+WebIDEUsage=dev_abap,odata_abap
+Name=S4D_100
+WebIDEEnabled=true
+ProxyType=OnPremise
+URL=http\://s4d.virtual\:443
+sap-client=100
+User=SYSTEMSETUP
