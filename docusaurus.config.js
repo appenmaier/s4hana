@@ -71,6 +71,12 @@ const config = {
             position: 'left',
             label: 'ABAP CDS',
           },
+		  {
+            type: 'doc',
+            docId: 'apm/documentation/documentation',
+            position: 'left',
+            label: 'APM',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/appenmaier/s4hana',
