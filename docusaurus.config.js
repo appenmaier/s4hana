@@ -75,7 +75,7 @@ const config = {
             type: 'doc',
             docId: 'apm/documentation/documentation',
             position: 'left',
-            label: 'APM',
+            label: 'ABAP Programmiermodell',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
