@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>SAP S/4HANA Entwicklung Blog</title>
+        <title>SAP S/4HANA Blog</title>
         <link>https://appenmaier.github.io/s4hana/blog</link>
-        <description>SAP S/4HANA Entwicklung Blog</description>
+        <description>SAP S/4HANA Blog</description>
         <lastBuildDate>Tue, 27 Sep 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
