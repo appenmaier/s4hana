@@ -77,6 +77,12 @@ const config = {
             position: 'left',
             label: 'ABAP Programmiermodell für SAP Fiori',
           },
+		  {
+            type: 'doc',
+            docId: 'rap/documentation/documentation',
+            position: 'left',
+            label: 'RESTful ABAP Programmiermodell (RAP)',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/appenmaier/s4hana',
