@@ -4,29 +4,33 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Everything as Code',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Wir versuchen, alles in Textform (Code) bereitzustellen. Dadurch kann nach 
+        allem schnell gesucht werden und alles ist gut nachvollziehbar.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Community by Design',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Professionelle Softwareentwicklung bedeutet Collaboration. Ihr findet einen 
+        Rechtschreibfehler? Etwas ist unverständlich oder fehlerhaft beschrieben?
+        Teilt es uns auf moderne Art und Weise (per Issues, Pull Requests oder 
+        Discussions) mit.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Unsponsored',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Die verwendeten Tools und Methodiken wurden aufgrund persönlicher Präferenzen
+        und bestehender Erfahrungswerte der Referent:innen ausgesucht. Dies bedeutet 
+        natürlich nicht, dass es keine anderen Tools und Methodiken gibt. Letztlich 
+        muss jeder für sich sein ideales Entwicklungsumfeld herausfinden.
       </>
     ),
   },

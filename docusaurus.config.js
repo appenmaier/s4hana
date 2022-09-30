@@ -2,7 +2,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const config = {
-  title: 'SAP S/4HANA Entwicklung',
+  title: 'SAP S/4HANA',
   tagline: 'Anwendungsentwicklung in SAP S/4HANA',
   url: 'https://appenmaier.github.io',
   baseUrl: '/s4hana/',
@@ -73,9 +73,9 @@ const config = {
           },
 		  {
             type: 'doc',
-            docId: 'apm/documentation/documentation',
+            docId: 'apf/documentation/documentation',
             position: 'left',
-            label: 'ABAP Programmiermodell',
+            label: 'ABAP Programmiermodell für SAP Fiori',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
