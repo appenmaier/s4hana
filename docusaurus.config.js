@@ -73,7 +73,7 @@ const config = {
           },
 		  {
             type: 'doc',
-            docId: 'apf/documentation/documentation',
+            docId: 'apmf/documentation/documentation',
             position: 'left',
             label: 'ABAP Programmiermodell für SAP Fiori',
           },
