@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-07
+title: ABAP-Programm ZABAP_DEMO_ABAP_07
 description: 'Systemfelder'
 sidebar_position: 70
 ---

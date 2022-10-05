@@ -1,22 +1,9 @@
 ---
-title: Demo ABAP-10
+title: ABAP-Programm ZABAP_DEMO_ABAP_10
 description: 'Strukturen'
 sidebar_position: 100
 ---
 
-## Strukturtyp ZABAP_CONNECTION
-```sql
-@EndUserText.label : 'Connection'
-@AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
-define structure zabap_connection {
-  carrier_id    : s_carr_id;
-  connection_id : s_conn_id;
-  city_from     : s_from_cit;
-  city_to       : s_to_city;
-}
-```
-
-## ABAP-Programm ZABAP_DEMO_ABAP_10
 ```abap
 REPORT zabap_demo_abap_10.
 

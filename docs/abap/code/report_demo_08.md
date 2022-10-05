@@ -1,10 +1,9 @@
 ---
-title: Demo ABAP-08
+title: ABAP-Programm ZABAP_DEMO_ABAP_08
 description: 'Klassische ABAP-Programme'
 sidebar_position: 80
 ---
 
-## ABAP-Programm ZABAP_DEMO_ABAP_08
 ```abap
 REPORT zabap_demo_abap_08.
 
@@ -40,9 +39,4 @@ AT SELECTION-SCREEN ON p_connid.
 *-------------------------------------------------------------------*
 START-OF-SELECTION.
   WRITE: p_carrid, p_connid.
-```
-
-## Nachrichtenklasse ZABAP
-```
-000, Initial Parameter: &1
 ```

@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-03
+title: ABAP-Programm ZABAP_DEMO_ABAP_03
 description: 'Mathematische Operatoren und Funktionen'
 sidebar_position: 30
 ---

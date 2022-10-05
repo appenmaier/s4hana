@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-05
+title: ABAP-Programm ZABAP_DEMO_ABAP_05
 description: 'Fallunterscheidungen'
 sidebar_position: 50
 ---

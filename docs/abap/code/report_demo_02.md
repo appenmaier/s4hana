@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-02
+title: ABAP-Programm ZABAP_DEMO_ABAP_02
 description: 'Datentypen und Datenobjekte'
 sidebar_position: 20
 ---

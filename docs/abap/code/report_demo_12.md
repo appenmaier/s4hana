@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-12
+title: ABAP-Programm ZABAP_DEMO_ABAP_12
 description: 'Interne Tabellen'
 sidebar_position: 120
 ---

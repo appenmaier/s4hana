@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-09
+title: ABAP-Programm ZABAP_DEMO_ABAP_09
 description: 'Funktionsbausteine'
 sidebar_position: 90
 ---

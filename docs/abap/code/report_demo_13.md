@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-13
+title: ABAP-Programm ZABAP_DEMO_ABAP_13
 description: 'Einspaltige Tabellen'
 sidebar_position: 130
 ---

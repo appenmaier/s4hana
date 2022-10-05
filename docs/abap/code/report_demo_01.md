@@ -1,5 +1,5 @@
 ---
-title: Demo ABAP-01
+title: ABAP-Programm ZABAP_DEMO_ABAP_01
 description: 'Allgemeine Syntax und Kommentare'
 sidebar_position: 10
 ---
