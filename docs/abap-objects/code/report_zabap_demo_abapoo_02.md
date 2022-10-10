@@ -1,6 +1,6 @@
 ---
-title: 'ABAP-Program ZABAP_DEMO_ABAPOO_02'
-description: 'Konstruktoren'
+title: ABAP-Program ZABAP_DEMO_ABAPOO_02
+description: "Konstruktoren"
 ---
 
 ```abap
