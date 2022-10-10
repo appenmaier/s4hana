@@ -49,4 +49,4 @@ previous = previous.
 ENDCLASS.
 ```
 
-[Nachrichtenklasse ZABAP](../../../../abap/code/message_class_zabap.md)
+[Nachrichtenklasse ZABAP](../../abap/code/message_class_zabap.md)
