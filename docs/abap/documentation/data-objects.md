@@ -55,4 +55,4 @@ CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
 ## Systemfelder
 Systemfelder sind eingebaute Datenobjekte, die von der Laufzeitumgebung geändert werden.
 
-![image](https://user-images.githubusercontent.com/47243617/194812891-2486e81c-2118-463e-8b71-92f568a41ff5.png)
+![image](https://user-images.githubusercontent.com/47243617/194847682-19684f6d-1b8a-410a-a2c7-01a05f05e7d1.png)
