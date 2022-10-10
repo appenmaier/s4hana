@@ -39,7 +39,7 @@ CLASS zcl_abap_vehicle IMPLEMENTATION.
     ENDIF.
     
     IF i_model IS INITIAL.
-      RAISE EXCPETION TYPE zcx_abap_initial_parameter EXPORTING i_parameter = I_MODEL.
+      RAISE EXCPETION TYPE zcx_abap_initial_parameter EXPORTING i_parameter = 'I_MODEL'.
     ENDIF.
     
     make = i_make.
