@@ -1,3 +1,7 @@
+---
+title: Klasse ZCL_ABAP_RENTAL
+description: ""
+---
 
 ```abap
 CLASS zcl_abap_rental DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -48,4 +52,6 @@ CLASS zcl_abap_rental IMPLEMENTATION.
 ENDCLASS.
 ```
 
-[Klasse ZCL_ABAP_VEHICLE (v5)](vehicle/v5/class_zcl_abap_vehicle.md)
+[Klasse ZCL_ABAP_VEHICLE (v5)](class_zcl_abap_vehicle_v5.md)
+
+[Schnittstelle ZIF_ABAP_PARTNER](interface_zif_abap_partner.md)
