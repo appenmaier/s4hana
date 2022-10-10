@@ -10,8 +10,11 @@ Das Ziel des technischen Curriculums ist, den neuen Duale Studierenden und Auszu
 vorzubereiten. Die Schulungen sollen daher den Fokus auf die wichtigsten Grundlagen der jeweiligen Technologie legen. Letztlich sollen die Duale Studierenden und Auszubildenden in der Lage sein, im Rahmen des Programmier-Projekts ein vorgegebenes, einfaches 
 End-to-End-Szenario umzusetzen. Dabei soll der Fokus auf dem ABAP Programmiermodell für SAP Fiori liegen.
 
+## Evolution des ABAP-Programmiermodells
+![image](https://user-images.githubusercontent.com/47243617/194809428-10d09482-c8ab-44a5-b294-ec0231efd616.png)
+
 ## Das ABAP-Programmiermodell für SAP Fiori
-ABBILDUNG
+![image](https://user-images.githubusercontent.com/47243617/194809306-41f573f3-d0a0-4e6a-a4ae-7ecefe2bbf63.png)
 
 ## Schulungsübersicht
 - SAP01 und SAPTEC: SAP-Grundlagen und Technologische Grundlagen
