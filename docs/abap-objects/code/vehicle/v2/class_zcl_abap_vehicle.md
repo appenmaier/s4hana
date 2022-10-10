@@ -28,6 +28,7 @@ CLASS zcl_abap_vehicle DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 
 CLASS zcl_abap_vehicle IMPLEMENTATION.
+
   METHOD constructor.
     make = i_make.
     model = i_model.
@@ -40,5 +41,6 @@ CLASS zcl_abap_vehicle IMPLEMENTATION.
   METHOD get_model.
     r_model = model.
   ENDMETHOD.
+
 ENDCLASS.
 ```
