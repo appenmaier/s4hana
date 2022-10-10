@@ -1,3 +1,7 @@
+---
+title: Schnittstelle ZIF_ABAP_PARTNER
+description: ""
+---
 
 ```abap
 INTERFACE zif_abap_partner PUBLIC.
