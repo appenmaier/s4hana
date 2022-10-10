@@ -1,3 +1,7 @@
+---
+title: 'Klasse ZCL_ABAP_VEHICLE (v5)'
+description: ''
+---
 
 ```abap
 CLASS zcl_abap_vehicle DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
@@ -56,3 +60,5 @@ CLASS zcl_abap_vehicle IMPLEMENTATION.
 
 ENDCLASS.
 ```
+
+[Ausnahmeklasse ZCX_ABAP_INITIAL_PARAMETER](class_zcx_abap_initial_parameter.md)
