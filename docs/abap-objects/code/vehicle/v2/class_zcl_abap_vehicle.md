@@ -39,4 +39,6 @@ CLASS zcl_abap_vehicle IMPLEMENTATION.
 
   METHOD get_model.
     r_model = model.
+  ENDMETHOD.
+ENDCLASS.
 ```
