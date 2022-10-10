@@ -44,7 +44,7 @@ LOOP AT vehicles INTO vehicle. "Polymorphie
 ENDLOOP.
 ```
 
-[Klasse ZCL_ABAP_VEHICLE (v4)](vehicle/v4/class_zcl_abap_vehicle.md)
+[Klasse ZCL_ABAP_VEHICLE (v4)](class_zcl_abap_vehicle_v4.md)
 
 [Klasse ZCL_ABAP_CAR](class_zcl_abap_car.md)
 
