@@ -18,9 +18,7 @@ In der objektorientierten Programmierung werden Beobachtungen aus der realen Wel
 - Konkrete Ausprägungen bzw. Instanzen einer Klasse werden wiederum als _Objekte_ bezeichnet
 - Die Eigenschaften von Objekten werden als _Attribute_, das Verhalten als _Methoden_ bezeichnet
 
-:::danger TODO
-ABBILDUNG
-:::
+![image](https://user-images.githubusercontent.com/47243617/194848677-5fb8fa1c-f028-4393-a18d-4912de274166.png)
 
 :::note Hinweis
 Jedes Objekt ist eindeutig identifizierbar.
@@ -30,13 +28,8 @@ Jedes Objekt ist eindeutig identifizierbar.
 Ein wesentlicher Grundsatz der Objektorientierung ist, dass Attribute durch Methoden gekapselt werden. Datenkapselung bedeutet, dass Attribute nicht direkt geändert werden können, sondern nur durch den indirekten Zugriff über Methoden. Typische Methoden zum 
 Lesen und Schreiben von Attributen sind die sogenannten Getter- bzw. Setter-Methoden.
 
-:::danger TODO
-ABBILDUNG
-:::
-
+![image](https://user-images.githubusercontent.com/47243617/194848698-f6ab830d-4ecc-4692-b87e-90f143a452c1.png)
 
 Um die Sichtbarkeit von Attributen und Methoden zu definieren, existieren unterschiedliche Zugriffsrechte. Die Sichtbarkeit bestimmt, von welchem Ort aus Attribute und Methoden verwendet bzw. aufgerufen werden dürfen.
 
-:::danger TODO
-ABBILDUNG
-:::
+![image](https://user-images.githubusercontent.com/47243617/194848725-2d80a553-d5bf-487b-9f03-46f270fce5fb.png)

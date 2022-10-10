@@ -8,10 +8,7 @@ tags: []
 Variablen, die mit einer Klasse typisiert werden, bezeichnet man als Referenzvariablen. Im Gegensatz zu "normalen" Variablen werden bei Referenzvariablen keine elementaren Werte in den Variablen gespeichert, sondern die Speicheradressen der erzeugten Objekte,
 also die Referenzen auf die erzeugten Objekte. Referenzvariablen werden mit dem Schlüsselwort `DATA` und dem Zusatz `TYPE REF TO` definiert.
 
-:::danger TODO
-ABBILDUNG
-:::
-
+![image](https://user-images.githubusercontent.com/47243617/194848783-fa4c98a6-05db-41da-9b7d-1d682ca5b1f8.png)
 
 ```abap
 CLASS cl_main IMPLEMENTATION.
