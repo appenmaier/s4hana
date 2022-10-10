@@ -24,3 +24,5 @@ LOOP AT vehicles INTO vehicle.
   WRITE: / vehicle->to_string( ).
 ENDLOOP.
 ```
+
+[Klasse ZCL_ABAP_VEHICLE (v2)](vehicle/v2/class_zcl_abap_vehicle.md)
