@@ -14,10 +14,9 @@ werden
 - Primärschlüssel: Standardschlüssel
 	
 ## Klassendiagramm
-
+![image](https://user-images.githubusercontent.com/47243617/194851495-efc199bd-43a7-41b6-b032-25e053f174a0.png)
 
 ## Hinweise zur Klasse `ZCL_???_CARRIER`
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `GET_BIGGEST_CARGO_PLANE()` soll das Frachtflugzeug mit der größten Frachtkapazität zurückgeben
 - Die Methode `TO_STRING()` soll alle Instanzattribute zu einer Zeichenkette zusammenfassen und diese zurückgeben
-
