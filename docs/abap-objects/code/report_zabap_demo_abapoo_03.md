@@ -1,6 +1,6 @@
 ---
-title: 'ABAP-Program ZABAP_DEMO_ABAPOO_03'
-description: 'Statische Attribute und Methoden'
+title: ABAP-Program ZABAP_DEMO_ABAPOO_03
+description: "Statische Attribute und Methoden"
 ---
 
 ```abap
