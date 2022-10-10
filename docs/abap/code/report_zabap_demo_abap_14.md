@@ -54,3 +54,5 @@ SELECT SINGLE FROM spfli
  FIELDS *
  INTO @DATA(connection3).
 ```
+
+[Nachrichtenklasse ZABAP](message_class_zabap.md)
