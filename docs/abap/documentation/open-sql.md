@@ -7,9 +7,7 @@ tags: []
 
 Die Structured Query Language (SQL) stellt die erste Wahl dar, wenn es um den Zugriff auf Datenbanken-Verwaltungssysteme (DBMS) geht. SQL umfasst die 3 Untersprachen DDL, DML und DCL.
 
-:::danger TODO
-ABBILDUNG
-:::
+![image](https://user-images.githubusercontent.com/47243617/194826459-30837d5a-4d5b-47c2-86bb-3e0c6b482b6b.png)
 
 Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt mit datenbankspezifischen Eigenheiten. ABAP verwendet das datenbankunabhängige Open SQL, welches vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
 
@@ -20,9 +18,7 @@ Open SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 ## Transparente Tabellen
 Eine transparente Tabelle stellt eine plattformunabhängige Beschreibung einer Datenbanktabelle dar. Bei der Aktivierung einer transparenten Tabelle in der System Library wird automatisch eine entsprechende Datenbanktabelle erzeugt.
 
-:::danger TODO
-ABBILDUNG
-:::
+![image](https://user-images.githubusercontent.com/47243617/194826504-e7454303-693f-45e5-b81b-52b4cfd078f8.png)
 
 :::note Hinweis
 Transparente Tabellen können bei der Programmierung wie Strukturtypen verwendet werden.
@@ -35,9 +31,7 @@ Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
 - Die WHERE-Klausel legt die zu selektierenden Zeilen fest
 - Die INTO-Klausel definiert, wohin die selektierten Daten geschrieben werden sollen
 
-:::danger TODO
-ABBILDUNG
-:::
+![image](https://user-images.githubusercontent.com/47243617/194826392-7d4441ec-99ca-46b0-9f3a-55b30c0c54cc.png)
 
 Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff 
 zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
