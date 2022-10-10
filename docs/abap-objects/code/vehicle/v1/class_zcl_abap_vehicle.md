@@ -1,5 +1,5 @@
 ---
-title: 'Klasse ZCL_ABAP_VEHICLE'
+title: 'Klasse ZCL_ABAP_VEHICLE (v1)'
 description: ''
 ---
 
