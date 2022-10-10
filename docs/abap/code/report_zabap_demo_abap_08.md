@@ -41,4 +41,4 @@ START-OF-SELECTION.
   WRITE: p_carrid, p_connid.
 ```
 
-[Nachrichtenklasse ZABAP](message_class_abap.md)
+[Nachrichtenklasse ZABAP](message_class_zabap.md)
