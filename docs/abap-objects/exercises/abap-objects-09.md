@@ -16,10 +16,8 @@ werden
 - Primärschlüssel: Standardschlüssel
 
 ## Klassendiagramm
-
+![image](https://user-images.githubusercontent.com/47243617/194851629-0b630a4f-8cee-4b18-a31e-0a446396ab20.png)
 
 ## Hinweise zum Klasse `ZCL_???_TRAVEL_AGENCY`
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `TO_STRING()` soll alle Instanzattribute zu einer Zeichenkette zusammenfassen und diese zurückgeben
-
-
