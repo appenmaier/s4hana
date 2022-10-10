@@ -1,6 +1,6 @@
 ---
-title: 'Klasse ZCL_ABAP_VEHICLE (v5)'
-description: ''
+title: Klasse ZCL_ABAP_VEHICLE (v5)
+description: ""
 ---
 
 ```abap
@@ -38,9 +38,14 @@ ENDCLASS.
 CLASS zcl_abap_vehicle IMPLEMENTATION.
 
   METHOD constructor.
-    IF i_make IS INITIAL OR i_model IS INITIAL.
-      RAISE EXCEPTION TYPE zcx_abap_initial_parameter.
+    IF i_make IS INITIAL.
+      RAISE EXCPETION TYPE zcx_abap_initial_parameter EXPORTING i_parameter = 'I_MAKE'.
     ENDIF.
+    
+    IF i_model IS INITIAL.
+      RAISE EXCPETION TYPE zcx_abap_initial_parameter EXPORTING i_parameter = 'I_MODEL'.
+    ENDIF.
+
     make = i_make.
     model = i_model.
     g_number_of_vehicles += 1.
