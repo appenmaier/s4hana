@@ -1,3 +1,7 @@
+---
+title: Funktionsbaustein Z_ABAP_SUM
+description: ''
+---
 
 ```abap
 FUNCTION Z_ABAP_SUM
