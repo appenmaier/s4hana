@@ -1,3 +1,7 @@
+---
+title: 'ABAP-Program ZABAP_DEMO_ABAPOO_04'
+description: 'Klassenbasierte Ausnahmen'
+---
 
 ```abap
 REPORT zabap_demo_abapoo_04.
