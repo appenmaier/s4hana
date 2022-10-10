@@ -62,4 +62,4 @@ CLASS zcl_abap_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-[Ausnahmeklasse ZCX_INITIAL_PARAMETER](class_zcx_initial_parameter.md)
+[Ausnahmeklasse ZCX_ABAP_INITIAL_PARAMETER](../../class_zcx_abap_initial_parameter.md)
