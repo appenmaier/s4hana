@@ -1,3 +1,7 @@
+---
+title: Ausnahmeklasse ZCX_ABAP_INITIAL_PARAMETER
+description: ""
+---
 
 ```abap
 CLASS zcx_abap_initial_parameter DEFINITION PUBLIC INHERITING FROM cx_static_check FINAL
