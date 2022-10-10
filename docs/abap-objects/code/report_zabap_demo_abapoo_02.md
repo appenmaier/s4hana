@@ -1,4 +1,7 @@
-
+---
+title: 'ABAP-Program ZABAP_DEMO_ABAPOO_02'
+description: 'Konstruktoren'
+---
 
 ```abap
 REPORT zabap_demo_abapoo_02.
