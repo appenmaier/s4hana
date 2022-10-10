@@ -1,3 +1,7 @@
+---
+title: Klasse ZCL_ABAP_CAR
+description: ""
+---
 
 ```abap
 CLASS zcl_abap_car DEFINITION PUBLIC FINAL CREATE PUBLIC INHERITING FROM zcl_abap_vehicle.
@@ -41,6 +45,6 @@ CLASS zcl_abap_car IMPLEMENTATION.
 ENDCLASS.
 ```
 
-[Klasse ZCL_ABAP_VEHICLE (v4)](vehicle/v4/class_zcl_abap_vehicle.md)
+[Klasse ZCL_ABAP_VEHICLE (v4)](class_zcl_abap_vehicle_v4.md)
 
 [Ausnahmeklasse ZCX_ABAP_INITIAL_PARAMETER](class_zcx_abap_initial_parameter.md)
