@@ -9,4 +9,4 @@ ABAP (heute: Advanced Business Application Programming Language, früher: allgem
 viele SAP-Anwendungen dar. Das ursprüngliche ABAP wurde maßgeblich von COBOL und Pascal, die objektorientierte Erweiterung ABAP Objects von Java und C++ beeinflusst. ABAP wurde speziell für die Massendatenverarbeitung entwickelt und besitzt mit OpenSQL einen 
 in die Sprache integrierten Datenbankbankzugriff.
 
-![image](https://user-images.githubusercontent.com/47243617/194812352-d2f16ae3-0ecd-4fda-bd6d-929936d29716.png)
+![image](https://user-images.githubusercontent.com/47243617/194847816-24107a41-576b-4512-bc07-fa3f3c516182.png)
