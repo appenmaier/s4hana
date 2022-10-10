@@ -1,6 +1,6 @@
 ---
-title: 'ABAP-Program ZABAP_DEMO_ABAPOO_01'
-description: 'Objekte und Referenzvariablen'
+title: ABAP-Program ZABAP_DEMO_ABAPOO_01
+description: "Objekte und Referenzvariablen"
 ---
 
 ```abap
