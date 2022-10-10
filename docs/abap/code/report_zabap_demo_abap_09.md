@@ -34,6 +34,6 @@ ENDCASE.
 WRITE: result.
 ```
 
-[Funktionsbaustein Z_ABAP_SUM](module_z_abap_sum.md)
+[Funktionsbaustein Z_ABAP_SUM](function_module_z_abap_sum.md)
 
 [Nachrichtenklasse ZABAP](message_class_zabap.md)
