@@ -40,3 +40,5 @@ AT SELECTION-SCREEN ON p_connid.
 START-OF-SELECTION.
   WRITE: p_carrid, p_connid.
 ```
+
+[Nachrichtenklasse ZABAP](message_class_abap.md)
