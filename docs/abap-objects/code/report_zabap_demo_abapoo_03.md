@@ -30,4 +30,4 @@ LOOP AT vehicles INTO vehicle.
 ENDLOOP.
 ```
 
-[Klasse ZCL_ABAP_VEHICLE (v3)](vehicle/v3/class_zcl_abap_vehicle.md)
+[Klasse ZCL_ABAP_VEHICLE (v3)](class_zcl_abap_vehicle_v3.md)
