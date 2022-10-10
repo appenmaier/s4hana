@@ -78,3 +78,5 @@ DELETE flights WHERE flight_date < sy-datlo.
 DATA(number_of_flights) = lines(flights ).
 WRITE: / number_of_flights.
 ```
+
+[Strukturtyp ZABAP_FLIGHT](structure_type_zabap_flight.md)

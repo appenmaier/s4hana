@@ -34,3 +34,9 @@ connection2 = connection.
 flight_with_connection = CORRESPONDING #( flight ).
 flight_with_connection = CORRESPONDING #( BASE ( flight_with_connection ) connection ).
 ```
+
+[Strukturtyp ZABAP_CONNECTION](structure_type_zabap_connection.md)
+
+[Strukturtyp ZABAP_FLIGHT](structure_type_zabap_flight.md)
+
+[Strukturtyp ZABAP_FLIGHT_WITH_CONNECTION](structure_type_zabap_flight_with_connection.md)
