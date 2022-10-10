@@ -1,6 +1,6 @@
 ---
 title: 'ABAP-Program ZABAP_DEMO_ABAPOO_01'
-description: ''
+description: 'Objekte und Referenzvariablen'
 ---
 
 ```abap
@@ -32,4 +32,4 @@ LOOP AT vehicles INTO vehicle.
 ENDLOOP.
 ```
 
-[Klasse ZCL_ABAP_VEHICLE](class_zcl_abap_vehicle.md)
+[Klasse ZCL_ABAP_VEHICLE (v1)](vehicle/v1/class_zcl_abap_vehicle.md)
