@@ -1,3 +1,7 @@
+---
+title: 'Klasse ZCL_ABAP_VEHICLE (v4)'
+description: ''
+---
 
 ```abap
 CLASS zcl_abap_vehicle DEFINITION PUBLIC CREATE PUBLIC.
