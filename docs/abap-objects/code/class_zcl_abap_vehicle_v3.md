@@ -1,6 +1,6 @@
 ---
 title: 'Klasse ZCL_ABAP_VEHICLE (v3)'
-description: ''
+description: ""
 ---
 
 ```abap
