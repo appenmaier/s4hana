@@ -1,7 +1,6 @@
 ---
 title: 'Klasse ZCL_ABAP_VEHICLE'
 description: ''
-sidebar_position: 10
 ---
 
 ```abap
