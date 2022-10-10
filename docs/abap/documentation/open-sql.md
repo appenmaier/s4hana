@@ -7,9 +7,7 @@ tags: []
 
 Die Structured Query Language (SQL) stellt die erste Wahl dar, wenn es um den Zugriff auf Datenbanken-Verwaltungssysteme (DBMS) geht. SQL umfasst die 3 Untersprachen DDL, DML und DCL.
 
-:::danger TODO
-ABBILDUNG
-:::
+![image](https://user-images.githubusercontent.com/47243617/194826074-6e5c78e6-0d16-4ada-b40c-5224757b7f79.png)
 
 Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt mit datenbankspezifischen Eigenheiten. ABAP verwendet das datenbankunabhängige Open SQL, welches vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
 
