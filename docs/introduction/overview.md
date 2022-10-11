@@ -11,10 +11,10 @@ vorzubereiten. Die Schulungen sollen daher den Fokus auf die wichtigsten Grundla
 End-to-End-Szenario umzusetzen. Dabei soll der Fokus auf dem ABAP Programmiermodell für SAP Fiori liegen.
 
 ## Evolution des ABAP-Programmiermodells
-![image](https://user-images.githubusercontent.com/47243617/194809428-10d09482-c8ab-44a5-b294-ec0231efd616.png)
+![image](https://user-images.githubusercontent.com/47243617/194999134-34ba9ea9-48fd-4e69-a10d-a7b70a167e44.png)
 
 ## Das ABAP-Programmiermodell für SAP Fiori
-![image](https://user-images.githubusercontent.com/47243617/194809306-41f573f3-d0a0-4e6a-a4ae-7ecefe2bbf63.png)
+![image](https://user-images.githubusercontent.com/47243617/194999078-ce53dbf6-e033-4f5a-ab5f-1e8da6558d30.png)
 
 ## Schulungsübersicht
 - SAP01 und SAPTEC: SAP-Grundlagen und Technologische Grundlagen
