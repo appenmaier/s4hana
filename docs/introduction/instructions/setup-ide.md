@@ -1,7 +1,7 @@
 ---
 title: Schulungssystem einrichten
 description: ""
-sidebar_position: 30
+sidebar_position: 10
 tags: []
 ---
 

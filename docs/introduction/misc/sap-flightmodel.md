@@ -1,6 +1,8 @@
 ---
 title: Das SAP-Flugdatenmodell
 description: ""
+sidebar_position: 20
+tags: []
 ---
 
 ## ER-Modell (Ausschnitt)
