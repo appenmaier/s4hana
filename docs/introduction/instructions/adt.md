@@ -28,7 +28,7 @@ tags: []
 !!!ABBILDUNG!!!
 
 :::note Hinweis
-Perspektiven können über _Window – Perspective – Reset Perspective..._ auf den Ursprungszustand zurückgesetzt werden.
+Perspektiven können über _Window - Perspective - Reset Perspective..._ auf den Ursprungszustand zurückgesetzt werden.
 :::
 
 ## Hilfreiche Funktionen der ABAP-Perspektive
@@ -40,7 +40,7 @@ Perspektiven können über _Window – Perspective – Reset Perspective..._ auf
 !!!ABBILDUNG!!!
 
 ## Quellcode-Formatierung einrichten
-- Option **Window – Preferences – ABAP Development – Editors – Source Code Editors – ABAP Formatter** auswählen
+- Option **Window – Preferences - ABAP Development - Editors - Source Code Editors - ABAP Formatter** auswählen
 - Systemverbindung auswählen und Drucktaste **OK** betätigen
 - Folgende Informationen eingeben und Drucktaste **OK** betätigen:
     - Indent Lines: **Ja**
@@ -62,5 +62,5 @@ Perspektiven können über _Window – Perspective – Reset Perspective..._ auf
 | /IWFND/GW_CLIENT     | SAP Gateway Client             |
 
 :::note Hinweis
-Das Ausführen einer Transaktion erfolgt in der SAP GUI (_Open SAP GUI (Ctrl + 6)_). Um eine Transaktion im aktuellen Modus auszuführen, muss der Transaktion das Kürzel `/n`, für einen Modus das Kürzel `/o` vorangestellt werden.
+Das Ausführen einer Transaktion erfolgt in der SAP GUI (**Open SAP GUI (Ctrl + 6)**). Um eine Transaktion im aktuellen Modus auszuführen, muss der Transaktion das Kürzel `/n`, für einen Modus das Kürzel `/o` vorangestellt werden.
 :::

@@ -1,12 +1,12 @@
 ---
-title: VT-Sandbox-System ST6 einrichten
+title: Sandbox-System ST6 einrichten
 description: ""
 sidebar_position: 30
 tags: []
 ---
 
 ## User für ST6 beantragen
-- [GRC Service Map](https://vmw4958.wdf.sap.corp:44344/sap/bc/webdynpro/sap/grfn_service_map?WDCONFIGURATIONID=ZDLM_GRAC_FPM_AC_LPD_HOME&sap-config-mode=&sap-client=100&sap-language=EN) öffnen
+- **[GRC Service Map](https://vmw4958.wdf.sap.corp:44344/sap/bc/webdynpro/sap/grfn_service_map?WDCONFIGURATIONID=ZDLM_GRAC_FPM_AC_LPD_HOME&sap-config-mode=&sap-client=100&sap-language=EN)** öffnen
 - Funktion **Create User Access Request** ausführen
 - Funktion **User Access – Add – System** ausführen
 - Folgende Informationen eingeben und Drucktaste **GO** betätigen
@@ -18,7 +18,7 @@ tags: []
 ## ABAP Development Tools installieren
 - JDK herunterladen und installieren
 - Eclipse herunterladen, installieren und starten
-- Funktion **Help – Install new Software…  – Install new Software...** ausführen 
+- Funktion **Help - Install new Software... - Install new Software...** ausführen 
 - Folgende Informationen eingeben und **Enter** betätigen
     - Work with: **https://tools.hana.ondemand.com/latest**
 - Option **ABAP Development Tools** auswählen und Drucktaste **Next >** betätigen
@@ -47,7 +47,7 @@ tags: []
     - Password: _Passwort_
     - Language: **EN**
 
-:::note Hinweis
+:::danger Hinweis
 Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder Global Protect) erreichbar.
 :::
  
@@ -61,11 +61,11 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
     - Software Component: **LOCAL**
 
 ## BAS einrichten
-- So noch nicht geschehen, einen Trial Account für die SAP BTP erstellen (S4DEV - Col21 - Participant Handbook – Exercise 8)
-- So noch nicht geschehen, einen Dev Space für das Business Application Studio anlegen (S4DEV - Col21 - Participant Handbook – Exercise 9)
+- So noch nicht geschehen, einen Trial Account für die SAP BTP erstellen (_S4DEV - Col21 - Participant Handbook - Exercise 8_)
+- So noch nicht geschehen, einen Dev Space für das Business Application Studio anlegen (_S4DEV - Col21 - Participant Handbook - Exercise 9_)
  
 ## SAP Cloud Connector einrichten
-- SAP Cloud Connector herunterladen und installieren/entpacken 
+- SAP Cloud Connector [herunterladen](https://tools.hana.ondemand.com/#cloud) und installieren/entpacken 
 - SAP Cloud Connector starten (**go.bat**)
 - Browser starten
 - Zu **https://localhost:8443** navigieren
@@ -74,8 +74,8 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
     - Description: **manage**
 - Passwort ändern
 - Folgende Informationen eingeben und Drucktaste **Save** betätigen
-    - Region: _SAP BTP Trial Account  – Subaccount – Region_
-    - Subaccount: _SAP BTP Trial Account  – Subaccount – Subaccount ID_
+    - Region: _SAP BTP Trial Account - Subaccount - Region_
+    - Subaccount: _SAP BTP Trial Account - Subaccount - Subaccount ID_
     - Display Name: _Name_
     - Subaccount User: _SAP BTP E-Mail-Adresse_
     - Password: _SAP BTP Passwort_
@@ -97,12 +97,12 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
 - Optional: Drucktaste **Check availablity of internal host** betätigen
 
 :::note Hinweis
-Weitere Informationen zur Installation und Konfiguration können hier gefunden werden.
+Weitere Informationen zur Installation und Konfiguration können [hier](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) gefunden werden.
 :::
 
 ## SAP BTP Trial Subaccount einrichten
 - An der SAP BTP anmelden
-- Option **SAP BTP Trial Account – Subaccount – Connectivity – Destinations** auswählen und Drucktaste **New Destination** betätigen
+- Option **SAP BTP Trial Account - Subaccount - Connectivity - Destinations** auswählen und Drucktaste **New Destination** betätigen
 - Folgende Informationen eingeben und Drucktaste **New Property** betätigen
     - Name: **ST6_001**
     - Type: **HTTP**
