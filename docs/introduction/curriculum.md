@@ -5,6 +5,8 @@ sidebar_position: 20
 tags: []
 ---
 
+Das Technische Curriculum umfasst alle Programmierschulungen sowie das Programmier-Projekt im Rahmen des VT Onboardings.
+
 ## Zielsetzung
 Das Ziel des technischen Curriculums ist, den neuen Duale Studierenden und Auszubildenden, die oft über wenig bis keine Programmier-Kenntnisse verfügen, grundlegende SAP-Technologien näher zu bringen und sie damit bestmöglich auf die erste Praxisphase 
 vorzubereiten. Die Schulungen sollen daher den Fokus auf die wichtigsten Grundlagen der jeweiligen Technologie legen. Letztlich sollen die Duale Studierenden und Auszubildenden in der Lage sein, im Rahmen des Programmier-Projekts ein vorgegebenes, einfaches 
