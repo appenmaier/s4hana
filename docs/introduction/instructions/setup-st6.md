@@ -96,6 +96,8 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
     - URL path: **sap/opu**
 - Optional: Drucktaste **Check availablity of internal host** betätigen
 
+![image](https://user-images.githubusercontent.com/47243617/195268810-704c4d7d-b9bc-4a89-a27f-df0ef704c59e.png)
+
 :::note Hinweis
 Weitere Informationen zur Installation und Konfiguration können [hier](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) gefunden werden.
 :::
@@ -115,3 +117,5 @@ Weitere Informationen zur Installation und Konfiguration können [hier](https://
 - Option **WebIDEEnabled** auswählen, als Wert **true** eingeben und Drucktaste **New Property** betätigen
 - Option **WebIDEUsage** auswählen, als Wert **dev_abap,odata_abap** eingeben und Drucktaste **Save** betätigen
 - Optional: Drucktaste **Check availability of destination connection** betätigen
+
+![image](https://user-images.githubusercontent.com/47243617/195268820-b5bf1984-0f3d-4c38-bac0-16d2541c10b4.png)
