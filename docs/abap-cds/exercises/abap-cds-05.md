@@ -6,6 +6,7 @@ description: ""
 Passe mit Hilfe der abgebildeten grafischen Ansicht die ABAP CDS View `Z???_BookingWithCustomer` an.
 
 ## Grafische Ansicht
+![image](https://user-images.githubusercontent.com/47243617/195269549-bbe79fd2-462c-4310-8c95-d984988139b2.png)
 
 ## Hinweise
 - Das Feld `FlightClass` soll statt der Werte _Y_, _C_ und _F_ die Texte _Economy Class_, _Business Class_ und _First Class_ zurückzugeben
