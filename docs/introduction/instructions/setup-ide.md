@@ -34,7 +34,7 @@ tags: []
 - Rechtsklick auf das erstellte ABAP Projekt
 - Option **New - ABAP Package** auswählen
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Name: **Z**`Deine Gruppennummer` (z.B. Z00)
+    - Name: **Z** + `Deine Gruppennummer` (z.B. Z00)
     - Description: `Deine Name` (z.B. Max Müller)
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
     - Software Component: **HOME**

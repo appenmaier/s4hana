@@ -55,7 +55,7 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
 - Rechtsklick auf das erstellte ABAP-Projekt
 - Option **New - ABAP Package** auswählen
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Name: **TEST_**`Dein I-User`
+    - Name: **TEST_** + `Dein I-User`
     - Description: `Dein Name`
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
     - Software Component: **LOCAL**
