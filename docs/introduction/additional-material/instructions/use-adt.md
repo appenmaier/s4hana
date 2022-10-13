@@ -1,5 +1,5 @@
 ---
-title: ABAP Development Tools (ADT)
+title: ABAP Development Tools verwenden
 description: ""
 sidebar_position: 20
 tags: []
@@ -37,7 +37,7 @@ Perspektiven können über _Window - Perspective - Reset Perspective..._ auf den
 ![image](https://user-images.githubusercontent.com/47243617/195268654-e63986c3-5c7a-410a-99b9-bc8673f3348b.png)
 
 ## Quellcode-Formatierung einrichten
-- Option **Window – Preferences - ABAP Development - Editors - Source Code Editors - ABAP Formatter** auswählen
+- Option **Window - Preferences - ABAP Development - Editors - Source Code Editors - ABAP Formatter** auswählen
 - Systemverbindung auswählen und Drucktaste **OK** betätigen
 - Folgende Informationen eingeben und Drucktaste **OK** betätigen:
     - Indent Lines: **Ja**

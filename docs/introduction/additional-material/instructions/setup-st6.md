@@ -43,8 +43,8 @@ tags: []
 - Drucktaste **Next >** betätigen
 - Folgende Informationen eingeben und Drucktaste **Finish** betätigen
     - Client: **001**
-    - User: _**Benutzername**_
-    - Password: _**Passwort**_
+    - User: `Dein ST6 Benutzername`
+    - Password: `Dein ST6 Passwort`
     - Language: **EN**
 
 :::danger Hinweis
@@ -52,13 +52,14 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
 :::
  
 ## ABAP-Entwicklungspaket anlegen
-- Rechtsklick auf _ABAP-Projekt_
-- Option **New – ABAP Package** auswählen
+- Rechtsklick auf das erstellte ABAP-Projekt
+- Option **New - ABAP Package** auswählen
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Name: **TEST_**_**I-User**_
-    - Description: _**Name**_
+    - Name: **TEST_**`Dein I-User`
+    - Description: `Dein Name`
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
     - Software Component: **LOCAL**
+- Drucktaste **Finish** betätigen
 
 ## BAS einrichten
 - So noch nicht geschehen, einen Trial Account für die SAP BTP erstellen (_S4DEV - Col21 - Participant Handbook - Exercise 8_)
@@ -74,11 +75,11 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
     - Description: **manage**
 - Passwort ändern
 - Folgende Informationen eingeben und Drucktaste **Save** betätigen
-    - Region: _**SAP BTP Trial Account - Subaccount - Region**_
-    - Subaccount: _**SAP BTP Trial Account - Subaccount - Subaccount ID**_
-    - Display Name: _**Name**_
-    - Subaccount User: _**SAP BTP E-Mail-Adresse**_
-    - Password: _SAP BTP Passwort_
+    - Region: `SAP BTP Trial Account - Subaccount - Region`
+    - Subaccount: `SAP BTP Trial Account - Subaccount - Subaccount ID`
+    - Display Name: `Dein Name`
+    - Subaccount User: `Deine SAP BTP E-Mail-Adresse`
+    - Password: `Dein SAP BTP Passwort`
 - Option **Cloud To On Premise** auswählen und Drucktaste **Add (Mapping Virtual To Internal System)** betätigen
 - Option **ABAP-System** auswählen und Drucktaste **Next** betätigen
 - Option **HTTPS** auswählen und Drucktaste **Next** betätigen

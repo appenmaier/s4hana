@@ -13,10 +13,10 @@ sidebar_position: 30
 - Drucktaste **Add Service** betätigen
 - Nachfolgende Informationen eingeben und Drucktaste **Get Services** betätigen
     - System Alias: **LOCAL**
-    - Technical Service Name _Name der CDS-View_**_CDS** (z.B. ZC_00_ConnectionTP_CDS)
-- Service _Name der CDS-View_**_CDS** (z.B. ZC_00_ConnectionTP_CDS) markieren und Drucktaste **Add Selected Services** betätigen
+    - Technical Service Name: `Der Name der CDS-View`**_CDS** (z.B. ZC_00_ConnectionTP_CDS)
+- Den erstellten Service markieren und Drucktaste **Add Selected Services** betätigen
 - Nachfolgende Informationen eingeben und Drucktaste **Continue** betätigen
-    - Package Assignment: _Entwicklungspaket_ (z.B. Z00)
+    - Package Assignment: `Dein Entwicklungspaket` (z.B. Z00)
 - Drucktaste **Own Requests** betätigen
 - Transportauftrag markieren und Drucktaste **Choose** betätigen
 - Drucktaste **Continue** betätigen
@@ -25,7 +25,7 @@ sidebar_position: 30
 
 ## SAP Fiori Elements App erstellen
 - SAP BAS starten
-- Development Space _**Development Space**_ (z.B. dev) öffnen
+- Den erstellten Development Space öffnen
 - Drucktaste **Start from template** betätigen
 - Option **SAP Fiori application** auswählen und Drucktaste **Start >** betätigen
 - Nachfolgende Informationen eingeben und Drucktaste **Next >** betätigen
@@ -33,17 +33,17 @@ sidebar_position: 30
     - Option: **List Report Object Page**
 - Nachfolgende Informationen eingeben und Drucktaste **Login** betätigen
     - Data Scource: **Connect to a System**
-    - System: _**System**_ (z.B. S4D)
-    - Service username: _**Username**_ (z.B. TRAIN-00)
-    - Service password: _**Password**_ (z.B. Welcome)
+    - System: `Das erstellte System` (z.B. S4D)
+    - Service username: `Dein S4D Benutzername` (z.B. TRAIN-00)
+    - Service password:`Dein S4D Passwort` (z.B. Welcome2022)
 - Nachfolgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Service: _**Name der CDS-View**_**_CDS** (z.B. ZC_00_ConnectionTP_CDS)
+    - Service: `Der Name der CDS-View`**_CDS** (z.B. ZC_00_ConnectionTP_CDS)
 - Nachfolgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Main entity: _**Main Entity**_ (z.B. ZC_00_ConnectionTP)
-    - Navigation entity: _**Navigation Entity**_ (z.B. ZC_00_FlightTP)
+    - Main entity: `Die Main Entity` (z.B. ZC_00_ConnectionTP)
+    - Navigation entity: `Die Navigation Entity` (z.B. ZC_00_FlightTP)
 - Nachfolgende Informationen eingeben und Drucktaste **Finish** betätigen
-    - Module name: _**Modul Name**_ (z.B. connection)
-    - Application Titel: _**Application Title**_ (z.B. Connection)
+    - Module name: `Der Modul Name` (z.B. connection)
+    - Application Titel: `Der Application Title` (z.B. Connection)
  
 ## Mapping View erstellen
 - ABAP Development Tools starten
