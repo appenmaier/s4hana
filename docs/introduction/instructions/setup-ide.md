@@ -8,9 +8,9 @@ tags: []
 ## Schulungslandschaft einrichten
 - Zu **https://class.learning.sap.com/** navigieren
 - Folgende Informationen eingeben und Drucktaste **Logon** betätigen
-    - System: _wird vom Trainer bereitgestellt_
-    - Username: _wird vom Trainer bereitgestellt_
-    - Password: _wird vom Trainer bereitgestellt_
+    - System: _**wird vom Trainer bereitgestellt**_
+    - Username: _**wird vom Trainer bereitgestellt**_
+    - Password: _**wird vom Trainer bereitgestellt**_
 - WTS-Initialisierung starten (**Start - Initialize Environment - Initialize ADM-WTS**)
 - Drucktaste **OK** betätigen
 - Drucktaste **OK** betätigen
@@ -26,8 +26,8 @@ tags: []
 - Drucktaste **Next \>** betätigen
 - Folgende Informationen eingeben und Drucktaste **Finish** betätigen
     - Client: **100**
-    - User: _wird vom Trainer bereitgestellt_
-    - Password: _wird vom Trainer bereitgestellt_
+    - User: _**wird vom Trainer bereitgestellt**_
+    - Password: _**wird vom Trainer bereitgestellt**_
     - Language: **EN**
 
 ## BAS einrichten (nur für UX400 und S4DEV)
@@ -36,6 +36,6 @@ tags: []
 - Das Business Application Studio mit dem S4D verbinden (_S4DEV - Col21 - Participant Handbook - Exercise 10_)
 
 :::danger Hinweis
-Bei der Anmeldung am Cloud Connector (User: **Administrator**, Password: _wird vom Trainer bereitgestellt_) darauf achten, dass sich immer nur 2-3 Teilnehmer:innen gleichzeitig anmelden. Erscheint die Fehlermeldung **User authentication failed**, kurz warten und 
+Bei der Anmeldung am Cloud Connector (User: **Administrator**, Password: _**wird vom Trainer bereitgestellt**_) darauf achten, dass sich immer nur 2-3 Teilnehmer:innen gleichzeitig anmelden. Erscheint die Fehlermeldung **User authentication failed**, kurz warten und 
 dann nochmals versuchen.
 :::

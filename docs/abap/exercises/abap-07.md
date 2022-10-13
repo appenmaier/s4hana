@@ -10,14 +10,14 @@ eingehenden Buchung liest und zurückgibt. Verwende zum Lesen der Buchungsinform
 Informationen den Funktionsbaustein aus Aufgabenteil 2
 
 ## Schnittstellendefinition des Funktionsbausteins `Z_???_GET_BOOKING_WITH_CUSTOMER`
-| Parameter               | Datentyp                   | Bezeichnung                     |
-| ----------------------- | -------------------------- | ------------------------------- |
-| I_CARRIER_ID            | S_CARR_ID                  | ID der Fluggesellschaft         |
-| I_CONNECTION_ID         | S_CONN_ID                  | Verbindungsnummer               |
-| I_FLIGHT_DATE           | S_DATE                     | Flugdatum                       |
-| I_BOOKING_ID            | S_BOOK_ID                  | Buchungsnummer                  |
-| E_BOOKING_WITH_CUSTOMER | Z???_BOOKING_WITH_CUSTOMER | Buchung mit Kundeninformationen |
-| NO_DATA                 | -                          | Ausnahme: keine Daten           |
+| Parameter               | Datentyp                    | Bezeichnung                     |
+| ----------------------- | --------------------------- | ------------------------------- |
+| I_CARRIER_ID            | S_CARR_ID                   | ID der Fluggesellschaft         |
+| I_CONNECTION_ID         | S_CONN_ID                   | Verbindungsnummer               |
+| I_FLIGHT_DATE           | S_DATE                      | Flugdatum                       |
+| I_BOOKING_ID            | S_BOOK_ID                   | Buchungsnummer                  |
+| E_BOOKING_WITH_CUSTOMER | ZABAP_BOOKING_WITH_CUSTOMER | Buchung mit Kundeninformationen |
+| NO_DATA                 | -                           | Ausnahme: keine Daten           |
 
 ## Eingabe
 ```

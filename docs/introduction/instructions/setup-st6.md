@@ -43,8 +43,8 @@ tags: []
 - Drucktaste **Next >** betätigen
 - Folgende Informationen eingeben und Drucktaste **Finish** betätigen
     - Client: **001**
-    - User: _Benutzername_
-    - Password: _Passwort_
+    - User: _**Benutzername**_
+    - Password: _**Passwort**_
     - Language: **EN**
 
 :::danger Hinweis
@@ -55,8 +55,8 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
 - Rechtsklick auf _ABAP-Projekt_
 - Option **New – ABAP Package** auswählen
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Name: **TEST_**_I-User_
-    - Description: _Name_
+    - Name: **TEST_**_**I-User**_
+    - Description: _**Name**_
 - Folgende Informationen eingeben und Drucktaste **Next >** betätigen
     - Software Component: **LOCAL**
 
@@ -74,10 +74,10 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
     - Description: **manage**
 - Passwort ändern
 - Folgende Informationen eingeben und Drucktaste **Save** betätigen
-    - Region: _SAP BTP Trial Account - Subaccount - Region_
-    - Subaccount: _SAP BTP Trial Account - Subaccount - Subaccount ID_
-    - Display Name: _Name_
-    - Subaccount User: _SAP BTP E-Mail-Adresse_
+    - Region: _**SAP BTP Trial Account - Subaccount - Region**_
+    - Subaccount: _**SAP BTP Trial Account - Subaccount - Subaccount ID**_
+    - Display Name: _**Name**_
+    - Subaccount User: _**SAP BTP E-Mail-Adresse**_
     - Password: _SAP BTP Passwort_
 - Option **Cloud To On Premise** auswählen und Drucktaste **Add (Mapping Virtual To Internal System)** betätigen
 - Option **ABAP-System** auswählen und Drucktaste **Next** betätigen
