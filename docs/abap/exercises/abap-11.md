@@ -3,7 +3,7 @@ title: Übungsaufgabe ABAP-11
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen den globalen Tabellentypen `Z???_CUSTOMERS`
+1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_CUSTOMERS`
 2. Erstelle mit Hilfe der abgebildeten Schnittstellendefinition den Funktionsbaustein `Z_???_GET_CUSTOMERS`, welcher zu einer eingehenden Stadt alle Kunden liest und zurückgibt
 3. Erstelle das ABAP-Programm `Z???_ABAP_11`, welches zu einer eingegebenen Stadt alle Kunden liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Buchungen den Funktionsbaustein aus Aufgabenteil 2
 

@@ -29,7 +29,7 @@ Kundenummer: 1
 
 ## Ausgabe
 ```
-ID der Fluggesellschaft, Verbidnungsnummer, Flugdatum, Buchungsnummer
+ID der Fluggesellschaft, Verbindungsnummer, Flugdatum, Buchungsnummer
 LH, 0400, 31.03.2022, 84
 UA, 3517, 24.04.2021, 9
 AA, 0017, 09.07.2018, 77
