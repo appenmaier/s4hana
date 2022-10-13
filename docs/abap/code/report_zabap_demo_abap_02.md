@@ -42,7 +42,6 @@ CLEAR carrier_id.
 * Deklaration fixer Datenobjekte
 CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
 
-
 *-------------------------------------------------------------------*
 * Deklaration von Eingabeparametern
 *-------------------------------------------------------------------*

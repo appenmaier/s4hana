@@ -11,7 +11,8 @@ PARAMETERS p_carrid TYPE s_carr_id.
 PARAMETERS p_connid TYPE s_conn_id.
 
 DATA connection TYPE spfli.
-DATA connections TYPE TABLE OF spfli.
+DATA connection2 TYPE zabap_connection.
+DATA flights TYPE TABLE OF sflight.
 
 *-------------------------------------------------------------------*
 * Lesen eines Einzelsatzes
@@ -25,34 +26,36 @@ IF sy-subrc <> 0.
 ENDIF.
 
 *-------------------------------------------------------------------*
-+ Lesen mehrerer Datensätze
+* Lesen mehrerer Datensätze
 *-------------------------------------------------------------------*
-SELECT FROM spfli
+SELECT FROM sflight
  FIELDS *
- WHERE carrid = @p_carrid
+ WHERE carrid = @p_carrid AND connid = @p_connid
  ORDER BY carrid, connid
- INTO TABLE @connections.
+ INTO TABLE @flights.
 IF sy-subrc <> 0.
-  MESSAGE e002(zabap) WITH p_carrid.
+  MESSAGE e002(zabap) WITH p_carrid p_connid.
 ENDIF.
 
 *-------------------------------------------------------------------*
 * Definition der Zielvariablen
 *-------------------------------------------------------------------*
-* Angabe passender Felder
+* Angabe einer passenden Zielvariablen
 SELECT SINGLE FROM spfli
- FIELDS carrid, connid, airpfr, airpto
- INTO @connection.
+ FIELDS carrid, connid, cityfr, cityto
+ INTO @connection2.
 
 * Kopieren namensgleicher Felder
 SELECT SINGLE FROM spfli
- FIELDS *
- INTO CORRESPONDING FIELDS OF @connection2.
+ FIELDS carrid, connid, cityfr, cityto
+ INTO CORRESPONDING FIELDS OF @connection.
 
 * Inlinedeklaration
 SELECT SINGLE FROM spfli
- FIELDS *
+ FIELDS carrid, connid, cityfr, cityto
  INTO @DATA(connection3).
 ```
+
+[Strukturtyp ZABAP_CONNECTION](structure_type_zabap_connection.md)
 
 [Nachrichtenklasse ZABAP](message_class_zabap.md)

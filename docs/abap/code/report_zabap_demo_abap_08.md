@@ -12,6 +12,7 @@ REPORT zabap_demo_abap_08.
 *-------------------------------------------------------------------*
 PARAMETERS p_carrid TYPE s_carr_id DEFAULT 'LH'.
 PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400'.
+PARAMETERS p_show AS CHECKBOX.
 
 *-------------------------------------------------------------------*
 * Dynamische Wertvorbelegungen
@@ -38,7 +39,9 @@ AT SELECTION-SCREEN ON p_connid.
 * Hauptverarbeitung
 *-------------------------------------------------------------------*
 START-OF-SELECTION.
-  WRITE: p_carrid, p_connid.
+  IF p_show = 'X'.
+    WRITE: p_carrid, p_connid.
+  ENDIF.
 ```
 
 [Nachrichtenklasse ZABAP](message_class_zabap.md)
