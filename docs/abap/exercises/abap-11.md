@@ -3,33 +3,43 @@ title: Übungsaufgabe ABAP-11
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_CUSTOMERS`
-2. Erstelle mit Hilfe der abgebildeten Schnittstellendefinition den Funktionsbaustein `Z_???_GET_CUSTOMERS`, welcher zu einer eingehenden Stadt alle Kunden liest und zurückgibt
-3. Erstelle das ABAP-Programm `Z???_ABAP_11`, welches zu einer eingegebenen Stadt alle Kunden liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Buchungen den Funktionsbaustein aus Aufgabenteil 2
+Erstelle das ABAP-Programm `Z???_ABAP_11`, welches eine einfach Kundenverwaltung ermöglicht. Erstelle dazu entsprechende Domänen, Datenelemente, Tabellentypen, transparente Tabellen und Funktionsbausteine.
 
-## Informationen zum Tabellentypen `Z???_CUSTOMERS`
-- Zeilentyp: `Z???_CUSTOMER`
-- Tabellenart: Standardtabelle
-- Primärschlüssel: Standardschlüssel
+## Mögliche Entwicklungsobjekte
+| Entwicklungsobjekt    | Typ                  |
+| --------------------- | -------------------- |
+| Z???_INT4             | Domäne               |
+| Z???_CHAR25           | Domäne               |
+| Z???_ID               | Datenelement         |
+| Z???_NAME             | Datenelement         |
+| Z???_CITY             | Datenelement         |
+| Z???_DISCOUNT         | Datenelement         |
+| Z???CUSTOMER          | Transparente Tabelle |
+| Z???_CUSTOMER         | Strukturtyp          | 
+| Z???_CUSTOMERS        | Tabellentyp          |
+| Z_???_INSERT_CUSTOMER | Funktionsbaustein    |
+| Z_???_UPDATE_CUSTOMER | Funktionsbaustein    |
+| Z_???_DELETE_CUSTOMER | Funktionsbaustein    |
+| Z_???_GET_CUSTOMER    | Funktionsbaustein    |
+| Z_???_GET_CUSTOMERS   | Funktionsbaustein    |
 
-## Schnittstellendefinition des Funktionsbausteins `Z_???_GET_CUSTOMERS`
-| Parameter   | Datentyp       | Bezeichnung           |
-| ----------- | -------------- | --------------------- |
-| I_CITY      | CITY           | Stadt                 |
-| E_CUSTOMERS | Z???_CUSTOMERS | Kunden                |
-| NO_DATA     | -              | Ausnahme: keine Daten |
-
-## Eingabe
+## Mögliche Eingabe
 ```
 Ausführen (F8)
 
+Kundenummer: 873
+Name: Maier AG
 Stadt: Frankfurt
+Rabatt: 20
+
+[ ] Kunde anlegen
+[X] Kunde aktualisieren
+[ ] Kunde löschen
+[ ] Kunde ausgeben
+[ ] Alle Kunden ausgeben
 ```
 
-## Ausgabe
+## Mögliche Ausgabe
 ```
-Kundennummer, Name, Rabatt (%)
-2, Bruce Wayne, 20
-37, Peter Parker, 10
-85, Clark Kent, 40
+Die Kundendaten zum Kunden 873 wurden erfolgreich aktualisiert.
 ```
