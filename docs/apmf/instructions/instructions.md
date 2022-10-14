@@ -1,5 +1,5 @@
 ---
-title: Zusatzmaterial
+title: Anleitungen
 description: ''
 sidebar_position: 40
 ---
