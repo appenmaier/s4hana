@@ -1,8 +1,7 @@
 ---
 title: Dokumentation
-description: ""
+description: ''
 sidebar_position: 10
-tags: []
 ---
 
 import DocCardList from '@theme/DocCardList';

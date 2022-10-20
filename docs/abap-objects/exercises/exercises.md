@@ -1,8 +1,7 @@
 ---
 title: Übungsaufgaben
-description: ""
+description: ''
 sidebar_position: 20
-tags: []
 ---
 
 import DocCardList from '@theme/DocCardList';

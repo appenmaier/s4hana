@@ -1,6 +1,6 @@
 ---
 title: Datentypen
-description: ""
+description: ''
 sidebar_position: 20
 tags: []
 ---

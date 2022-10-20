@@ -1,6 +1,6 @@
 ---
 title: ABAP CDS
-description: ""
+description: ''
 sidebar_position: 10
 tags: []
 ---

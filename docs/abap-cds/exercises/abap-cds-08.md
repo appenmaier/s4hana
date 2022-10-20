@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-CDS-08
-description: ""
+description: ''
 ---
 
 Erstelle mit Hilfe der abgebildeten grafischen Ansicht die ABAP CDS View `Z???_PartnerWithRevenue`.

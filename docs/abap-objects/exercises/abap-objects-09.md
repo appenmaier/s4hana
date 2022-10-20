@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-Objects-09
-description: ""
+description: ''
 ---
 
 1. Erstelle die Schnittstelle `ZIF_???_PARTNER` anhand des abgebildeten Klassendiagramms

@@ -1,6 +1,6 @@
 ---
 title: Datenbankzugriffe mit Open SQL
-description: ""
+description: ''
 sidebar_position: 120
 tags: []
 ---

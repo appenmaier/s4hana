@@ -1,6 +1,6 @@
 ---
 title: Zeichenketten und Zeichenketten-Templates
-description: ""
+description: ''
 sidebar_position: 50
 tags: []
 ---

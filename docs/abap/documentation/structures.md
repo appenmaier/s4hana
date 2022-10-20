@@ -1,6 +1,6 @@
 ---
 title: Strukturen
-description: ""
+description: ''
 sidebar_position: 100
 tags: []
 ---

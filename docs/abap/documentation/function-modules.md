@@ -1,6 +1,6 @@
 ---
 title: Modularisierung mit Funktionsbausteinen
-description: ""
+description: ''
 sidebar_position: 90
 tags: []
 ---

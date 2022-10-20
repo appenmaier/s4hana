@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-09
-description: ""
+description: ''
 ---
 
 Passe das ABAP-Programm `Z???_ABAP_09` aus Übungsaufgabe [ABAP-08](abap-08.md) wie folgt an: Lösche vor der 

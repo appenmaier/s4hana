@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-06
-description: ""
+description: ''
 ---
 
 1. Erstelle mit Hilfe der abgebildeten Komponentenübersicht den Strukturtypen `Z???_CUSTOMER`

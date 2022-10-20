@@ -1,6 +1,6 @@
 ---
 title: Klassische ABAP-Programme
-description: ""
+description: ''
 sidebar_position: 80
 tags: []
 ---

@@ -1,6 +1,6 @@
 ---
 title: Interne Tabellen
-description: ""
+description: ''
 sidebar_position: 110
 tags: []
 ---

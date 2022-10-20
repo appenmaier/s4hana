@@ -1,6 +1,6 @@
 ---
 title: Zusatzmaterial
-description: ""
+description: ''
 sidebar_position: 40
 ---
 

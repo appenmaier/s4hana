@@ -1,6 +1,6 @@
 ---
 title: ABAP
-description: ""
+description: ''
 sidebar_position: 10
 tags: []
 ---

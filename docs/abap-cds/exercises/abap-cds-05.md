@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-CDS-05
-description: ""
+description: ''
 ---
 
 Passe mit Hilfe der abgebildeten grafischen Ansicht die ABAP CDS View `Z???_BookingWithCustomer` an.

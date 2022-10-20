@@ -1,5 +1,5 @@
 ---
 title: Quellcode
-description: ""
+description: ''
 sidebar_position: 30
 ---

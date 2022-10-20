@@ -1,6 +1,6 @@
 ---
 title: Klassenbasierte Ausnahmen
-description: ""
+description: ''
 sidebar_position: 40
 tags: []
 ---

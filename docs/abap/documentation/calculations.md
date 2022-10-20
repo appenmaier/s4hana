@@ -1,6 +1,6 @@
 ---
 title: Mathematische Operatoren und Funktionen
-description: ""
+description: ''
 sidebar_position: 40
 tags: []
 ---

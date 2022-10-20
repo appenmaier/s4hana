@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-03
-description: ""
+description: ''
 ---
 
 Erstelle das ABAP-Programm `Z???_ABAP_03`, welches die vier Grundrechenarten beherrscht.

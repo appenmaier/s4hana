@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-11
-description: ""
+description: ''
 ---
 
 Erstelle das ABAP-Programm `Z???_ABAP_11`, welches eine einfach Kundenverwaltung ermöglicht. Erstelle dazu entsprechende Domänen, Datenelemente, Tabellentypen, transparente Tabellen und Funktionsbausteine.

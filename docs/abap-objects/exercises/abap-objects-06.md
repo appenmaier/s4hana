@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-Objects-06
-description: ""
+description: ''
 ---
 
 1. Erstelle die Klassen `ZCL_???_PASSENGER_PLANE` und `ZCL_???_CARGO_PLANE` anhand des abgebildeten Klassendiagramms

@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-Objects-01
-description: ""
+description: ''
 ---
 
 Erstelle die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms.

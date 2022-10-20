@@ -1,6 +1,6 @@
 ---
 title: Schleifen
-description: ""
+description: ''
 sidebar_position: 70
 tags: []
 ---

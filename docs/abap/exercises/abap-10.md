@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-10
-description: ""
+description: ''
 ---
 
 1. Passe den Funktionsbaustein `Z_???_GET_BOOKING_WITH_CUSTOMER` so an, dass zum Lesen der Buchungsinformationen nicht mehr der Funktionsbaustein `Z_ABAP_GET_BOOKING` und zum Lesen der Kundeninformationen nicht mehr der Funktionsbaustein `Z_ABAP_GET_CUSTOMER` verwendet wird,

@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-CDS-12
-description: ""
+description: ''
 ---
 
 Erstelle mit Hilfe der abgebildeten grafischen Ansicht die Zugriffskontrolle `Z???_BOOKING`.

@@ -1,6 +1,6 @@
 ---
 title: Klassen, Attribute und Methoden
-description: ""
+description: ''
 sidebar_position: 20
 tags: []
 ---

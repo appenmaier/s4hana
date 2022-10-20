@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-CDS-09
-description: ""
+description: ''
 ---
 
 1. Erstelle mit Hilfe der abgebildeten grafischen Ansicht die ABAP CDS View `Z???_BookingAfterDeadline`

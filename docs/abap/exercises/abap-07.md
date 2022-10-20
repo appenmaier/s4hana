@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-07
-description: ""
+description: ''
 ---
 
 1. Erstelle die Funktionsgruppe `Z???_CUSTOMER`

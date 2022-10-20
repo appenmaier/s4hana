@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-CDS-01
-description: ""
+description: ''
 ---
 
 1. Analysiere die SQL-View `ZIABAPAGREV` und beantworte folgende Fragen:

@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-05
-description: ""
+description: ''
 ---
 
 1. Erstelle die Funktionsgruppe `Z???_CALCULATOR`

@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-02
-description: ""
+description: ''
 ---
 
 Erstelle das ABAP-Programm `Z???_ABAP_02`, welches eingegebene und passend typisierte Informationen zu einem Kunden (Kundenummer, Name, Stadt, Rabatt) auf dem Bildschirm ausgibt.

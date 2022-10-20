@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-01
-description: ""
+description: ''
 ---
 
 Erstelle das ABAP-Programm `Z???_ABAP_01`, welches einen eingegebenen Namen samt einer kurzen Begrüßungsformel auf dem Bildschirm ausgibt.

@@ -1,6 +1,6 @@
 ---
 title: Objekte und Referenzvariablen
-description: ""
+description: ''
 sidebar_position: 30
 tags: []
 ---

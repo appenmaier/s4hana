@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-08
-description: ""
+description: ''
 ---
 
 1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_BOOKINGS`

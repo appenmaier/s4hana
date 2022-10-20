@@ -1,6 +1,6 @@
 ---
 title: Übungsaufgabe ABAP-Objects-07
-description: ""
+description: ''
 ---
 
 1. Lege den globalen Tabellentypen `Z???_AIRPLANES` anhand der abgebildeten Informationen an

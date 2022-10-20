@@ -1,6 +1,6 @@
 ---
 title: Vererbung und Schnittstellen
-description: ""
+description: ''
 sidebar_position: 50
 tags: []
 ---
