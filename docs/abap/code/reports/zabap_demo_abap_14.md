@@ -4,6 +4,7 @@ description: 'Lesende Datenbankzugriffe'
 ---
 
 ```abap
+* Open SQL (Read)
 REPORT zabap_demo_abap_14.
 
 PARAMETERS p_carrid TYPE s_carr_id.

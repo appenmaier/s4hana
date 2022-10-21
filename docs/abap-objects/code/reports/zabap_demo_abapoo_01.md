@@ -4,29 +4,36 @@ description: 'Objekte und Referenzvariablen'
 ---
 
 ```abap
+* Objekte und Referenzvariablen
 REPORT zabap_demo_abapoo_01.
 
-"Deklarationen
+*-------------------------------------------------------------------*
+* Deklarationen
+*-------------------------------------------------------------------*
 DATA vehicle TYPE REF TO zcl_abap_vehicle.
 DATA vehicles TYPE TABLE OF REF TO zcl_abap_vehicle.
 
-"Objekterzeugungen
+*-------------------------------------------------------------------*
+* Objekterzeugungen
+*-------------------------------------------------------------------*
 vehicle = new #( ).
 vehicles = VALUE #( BASE vehicles (vehicle ) ).
-vehicle->set_make( |Porsche| ).
-vehicle->set_model( |911| ).
+vehicle->set_make( 'Porsche' ).
+vehicle->set_model( '911' ).
 
 vehicle = new #( ).
 vehicles = VALUE #( BASE vehicles (vehicle ) ).
-vehicle->set_make( |MAN| ).
-vehicle->set_model( |TGX| ).
+vehicle->set_make( 'MAN' ).
+vehicle->set_model( 'TGX' ).
 
 vehicle = new #( ).
 vehicles = VALUE #( BASE vehicles (vehicle ) ).
-vehicle->set_make( |Opel| ).
-vehicle->set_model( |Zafira Life| ).
+vehicle->set_make( 'Opel' ).
+vehicle->set_model( 'Zafira Life' ).
 
-"Ausgabe
+*-------------------------------------------------------------------*
+* Ausgabe
+*-------------------------------------------------------------------*
 LOOP AT vehicles INTO vehicle.
   WRITE: / vehicle->to_string( ).
 ENDLOOP.

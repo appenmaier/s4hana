@@ -1,9 +1,10 @@
 ---
 title: ZABAP_DEMO_ABAP_03
-description: 'Mathematische Operatoren und Funktionen'
+description: 'Arithmetische Operatoren und Funktionen'
 ---
 
 ```abap
+* Arithmetic Operators and Functions
 REPORT zabap_demo_abap_03.
 
 DATA result_i TYPE i.

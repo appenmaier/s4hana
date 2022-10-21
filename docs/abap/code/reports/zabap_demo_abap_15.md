@@ -4,4 +4,5 @@ description: 'Schreibende Datenbankzugriffe'
 ---
 
 ```abap
+* Open SQL (Write)
 ```

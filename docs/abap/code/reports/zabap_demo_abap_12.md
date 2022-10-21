@@ -4,6 +4,7 @@ description: 'Interne Tabellen'
 ---
 
 ```abap
+* Internal Tables
 REPORT zabap_demo_abap_12.
 
 *-------------------------------------------------------------------*

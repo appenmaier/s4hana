@@ -1,9 +1,10 @@
 ---
 title: ZABAP_DEMO_ABAP_04
-description: 'Zeichenketten und Zeichenketten-Templates'
+description: 'Zeichenketten, Zeichenketten-Templates und Zeichenkettenfunktionen'
 ---
 
 ```abap
+* String, String Templates and String Functions
 REPORT zabap_demo_abap_04.
 
 *-------------------------------------------------------------------*

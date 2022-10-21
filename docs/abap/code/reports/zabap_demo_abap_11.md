@@ -4,6 +4,7 @@ description: 'Kopieren von Strukturen'
 ---
 
 ```abap
+* Copying of Structures
 REPORT zabap_demo_abap_11.
 
 DATA connection TYPE zabap_connection.

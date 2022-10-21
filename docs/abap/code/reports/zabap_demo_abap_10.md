@@ -4,6 +4,7 @@ description: 'Strukturen'
 ---
 
 ```abap
+* Structures
 REPORT zabap_demo_abap_10.
 
 *-------------------------------------------------------------------*
