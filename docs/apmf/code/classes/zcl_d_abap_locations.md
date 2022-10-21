@@ -4,7 +4,17 @@ description: 'Determinierung: Ziel- und Startlokation'
 ---
 
 ```abap
-…    
+CLASS zcl_d_abap_locations DEFINITION PUBLIC INHERITING FROM /bobf/cl_lib_d_supercl_simple FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    METHODS /bobf/if_frw_determination~execute REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_d_abap_locations IMPLEMENTATION.
+
+  METHOD /bobf/if_frw_determination~execute.
+   
     DATA connections TYPE ztiabap_connectiontp.
 
     "Daten lesen
@@ -49,5 +59,8 @@ description: 'Determinierung: Ziel- und Startlokation'
           iv_key  = connection->key
           is_data = connection ).
     ENDLOOP.
-…
+
+  ENDMETHOD.
+  
+ENDCLASS.
 ```

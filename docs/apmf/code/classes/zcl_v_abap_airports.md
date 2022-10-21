@@ -4,7 +4,17 @@ description: 'Validierung: Ziel- und Startflughafen'
 ---
 
 ```abap
-…    
+CLASS zcl_v_abap_airports DEFINITION PUBLIC INHERITING FROM /bobf/cl_lib_v_supercl_simple FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    METHODS /bobf/if_frw_validation~execute REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_v_abap_airports IMPLEMENTATION.
+
+  METHOD /bobf/if_frw_validation~execute.
+   
     DATA connections TYPE ztiabap_connectiontp.
 
     "Daten lesen
@@ -38,5 +48,8 @@ description: 'Validierung: Ziel- und Startflughafen'
         CONTINUE.
       ENDIF.
     ENDLOOP.
-…
+
+  ENDMETHOD.
+  
+ENDCLASS.
 ```

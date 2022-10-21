@@ -27,7 +27,7 @@ sidebar_position: 30
     - `@VDM.viewType: #TRANSACTIONAL`
     - `@ObjectModel.writeActivePersistence: 'ZVABAPFLIGHT'`
     - `@ObjectModel.representativKey: ['CarrierID', 'ConnectionID', 'FlightDate']`
-    - `@ObjectModel.semanticKey: ['CarrierID', 'ConnectionID', 'FlightDate']`
+    - `@ObjectModel.semanticKey: 'Name'`
     - `@ObjectModel.createEnabled: true`
     - `@ObjectModel.updateEnabled: true`
     - `@ObjectModel.deleteEnabled: true`
@@ -46,7 +46,7 @@ sidebar_position: 30
     - `@ObjectModel.writeActivePersistence: 'ZVABAPCONNECTION'`
     - `@ObjectModel.modelCategory: #BUSINESS_OBJECT`
     - `@ObjectModel.representativKey: ['CarrierID', 'ConnectionID']`
-    - `@ObjectModel.semanticKey: ['CarrierID', 'ConnectionID']`
+    - `@ObjectModel.semanticKey: 'Name'`
     - `@ObjectModel.createEnabled: true`
     - `@ObjectModel.updateEnabled: true`
     - `@ObjectModel.deleteEnabled: true`
@@ -97,7 +97,7 @@ sidebar_position: 30
     - `@UI.facet: [{ position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Connection Information'}]`
     - `@UI.facet: [{ position: 20, type: #LINEITEM_REFERENCE, targetElement: '_Flights', label: 'Flights' }]`
     - `@UI.lineItem: [{ position: 10 }]`
-    - `@UI.lineItem: [{ position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_PLANETYPE', label: 'Switch Planetype' }]`
+    - `@UI.lineItem: [{ position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_FLIGHT_TYPE', label: 'Switch FlightType' }]`
     - `@UI.selectionField: [{ position: 10 }]`
     - `@UI.identification: [{ position: 10 }]`
     - `@UI.hidden: true`
