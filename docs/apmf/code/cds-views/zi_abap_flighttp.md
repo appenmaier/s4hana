@@ -1,6 +1,6 @@
 ---
 title: ZI_ABAP_FlightTP
-description: 'Transactional Interface-View: Flight'
+description: 'Transactional Interface-View: Flug'
 ---
 
 ```sql
@@ -23,8 +23,8 @@ description: 'Transactional Interface-View: Flight'
 }
 define view ZI_ABAP_FlightTP
   as select from ZI_ABAP_Flight
-  association [1] to ZI_ABAP_ConnectionTP as _Connection on $projection.CarrierID = _Connection.CarrierID 
-                                                        and $projection.ConnectionID =_Connection.ConnectionID
+  association [1..1] to ZI_ABAP_ConnectionTP as _Connection on $projection.CarrierID = _Connection.CarrierID 
+                                                           and $projection.ConnectionID =_Connection.ConnectionID
 {
   key CarrierID,
   key ConnectionID,

@@ -1,6 +1,6 @@
 ---
 title: ZI_ABAP_Connection
-description: 'Basic Interface-View: Connection'
+description: 'Basic Interface-View: Flugverbindung'
 ---
 
 ```sql

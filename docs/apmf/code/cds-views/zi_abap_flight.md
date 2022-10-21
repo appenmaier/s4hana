@@ -1,6 +1,6 @@
 ---
 title: ZI_ABAP_Flight
-description: 'Basic Interface-View: Flight'
+description: 'Basic Interface-View: Flug'
 ---
 
 ```sql

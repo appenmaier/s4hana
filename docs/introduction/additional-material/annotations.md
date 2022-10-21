@@ -97,7 +97,7 @@ sidebar_position: 10
     - `@UI.facet: [{ position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Connection Information'}]`
     - `@UI.facet: [{ position: 20, type: #LINEITEM_REFERENCE, targetElement: '_Flights', label: 'Flights' }]`
     - `@UI.lineItem: [{ position: 10 }]`
-    - `@UI.lineItem: [{ position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_DISTANCE_UNIT', label: 'Switch Distance Unit' }]`
+    - `@UI.lineItem: [{ position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_PLANETYPE', label: 'Switch Planetype' }]`
     - `@UI.selectionField: [{ position: 10 }]`
     - `@UI.identification: [{ position: 10 }]`
     - `@UI.hidden: true`

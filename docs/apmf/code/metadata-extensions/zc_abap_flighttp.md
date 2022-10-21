@@ -1,6 +1,6 @@
 ---
 title: ZC_ABAP_FLIGHTTP
-description: 'Flight'
+description: 'Flug'
 ---
 
 ```sql

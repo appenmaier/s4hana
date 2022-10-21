@@ -1,6 +1,6 @@
 ---
 title: ZC_ABAP_CONNECTIONTP
-description: 'Connection'
+description: 'Flugverbindung'
 ---
 
 ```sql

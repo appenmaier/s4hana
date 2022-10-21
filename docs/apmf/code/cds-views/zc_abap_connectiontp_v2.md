@@ -1,6 +1,6 @@
 ---
 title: ZC_ABAP_ConnectionTP (v2)
-description: 'Transactional Consumption-View: Connection'
+description: 'Transactional Consumption-View: Flugverbindung'
 ---
 
 ```sql

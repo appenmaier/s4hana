@@ -1,5 +1,5 @@
 ---
-title: ZI_ABAP_ConnectionTP (v3)
+title: ZI_ABAP_ConnectionTP (v4)
 description: 'Transactional Interface-View: Flugverbindung'
 ---
 
@@ -31,8 +31,18 @@ define view ZI_ABAP_ConnectionTP
 {
   key CarrierID,
   key ConnectionID,
+      @ObjectModel.readOnly: true
+      DepartureCountryCode,
+      @ObjectModel.readOnly: true
+      DepartureCity,
+      @ObjectModel.mandatory: true
+      DepartureAirportID,
+      @ObjectModel.readOnly: true
+      ArrivalCountryCode,
+      @ObjectModel.readOnly: true
+      ArrivalCity,
+      @ObjectModel.mandatory: true
+      ArrivalAirportID,
       …
-      @ObjectModel.association.type: [#TO_COMPOSITION_CHILD]
-      _Flights
 }
 ```

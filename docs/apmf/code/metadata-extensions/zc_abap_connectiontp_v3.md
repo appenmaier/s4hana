@@ -1,5 +1,5 @@
 ---
-title: ZC_ABAP_CONNECTIONTP (v2)
+title: ZC_ABAP_CONNECTIONTP (v3)
 description: 'Flugverbindung'
 ---
 
@@ -19,7 +19,10 @@ annotate view ZC_ABAP_ConnectionTP with
   ]
 
   @UI: {
-    lineItem: [{ position: 10, importance: #HIGH }],
+    lineItem: [
+      { position: 10, importance: #HIGH },
+      { position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_PLANETYPE', label: 'Switch Planetype' }
+    ],
     selectionField: [{ position: 10 }],
     identification: [{ position: 10, importance: #HIGH }]
   }

@@ -1,6 +1,6 @@
 ---
 title: ZI_ABAP_ConnectionTP (v1)
-description: 'Transactional Interface-View: Connection'
+description: 'Transactional Interface-View: Flugverbindung'
 ---
 
 ```sql
