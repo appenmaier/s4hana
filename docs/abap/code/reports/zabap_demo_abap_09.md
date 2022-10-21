@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_09
+title: ZABAP_DEMO_ABAP_09
 description: 'Funktionsbausteine'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAPCDS_10
+title: ZABAP_DEMO_ABAPCDS_10
 description: 'Systemfelder und Sitzungsvariablen'
 ---
 

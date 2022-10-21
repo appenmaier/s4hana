@@ -1,5 +1,5 @@
 ---
-title: Zugriffskontrolle ZABAP_DEMO14
+title: ZABAP_DEMO14
 description: 'Berechtigungsprüfungen'
 ---
 

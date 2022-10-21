@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_03
+title: ZABAP_DEMO_ABAPOO_03
 description: 'Statische Attribute und Methoden'
 ---
 

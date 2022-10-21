@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_04
+title: ZABAP_DEMO_ABAPOO_04
 description: 'Klassenbasierte Ausnahmen'
 ---
 

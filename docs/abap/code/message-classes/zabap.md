@@ -1,5 +1,5 @@
 ---
-title: Nachrichtenklasse ZABAP
+title: ZABAP
 description: 'Nachrichten'
 ---
 

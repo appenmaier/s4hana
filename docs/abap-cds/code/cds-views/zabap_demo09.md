@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo09
+title: ZABAP_Demo09
 description: 'Parameter'
 ---
 

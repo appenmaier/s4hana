@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_01
+title: ZABAP_DEMO_ABAP_01
 description: 'Allgemeine Syntax und Kommentare'
 ---
 

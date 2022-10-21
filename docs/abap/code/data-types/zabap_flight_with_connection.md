@@ -1,5 +1,5 @@
 ---
-title: Strukturtyp ZABAP_FLIGHT_WITH_CONNECTION
+title: ZABAP_FLIGHT_WITH_CONNECTION
 description: 'Flug mit Flugverbindung'
 ---
 

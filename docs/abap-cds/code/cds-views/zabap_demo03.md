@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo03
+title: ZABAP_Demo03
 description: 'Annotationen'
 ---
 

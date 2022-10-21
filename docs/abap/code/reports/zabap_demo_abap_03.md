@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_03
+title: ZABAP_DEMO_ABAP_03
 description: 'Mathematische Operatoren und Funktionen'
 ---
 

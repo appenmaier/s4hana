@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo13
+title: ZABAP_Demo13
 description: 'View Erweiterungen'
 ---
 

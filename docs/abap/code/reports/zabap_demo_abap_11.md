@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_11
+title: ZABAP_DEMO_ABAP_11
 description: 'Kopieren von Strukturen'
 ---
 

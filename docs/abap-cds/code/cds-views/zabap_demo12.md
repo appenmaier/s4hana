@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo12
+title: ZABAP_Demo12
 description: 'Pfadausdrücke'
 ---
 

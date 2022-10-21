@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_02
+title: ZABAP_DEMO_ABAPOO_02
 description: 'Konstruktoren'
 ---
 

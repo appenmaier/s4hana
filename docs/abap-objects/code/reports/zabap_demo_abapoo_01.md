@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_01
+title: ZABAP_DEMO_ABAPOO_01
 description: 'Objekte und Referenzvariablen'
 ---
 

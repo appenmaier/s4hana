@@ -1,6 +1,6 @@
 ---
-title: Klasse ZCL_ABAP_VEHICLE (v4)
-description: 'Fahrzeug v4'
+title: ZCL_ABAP_VEHICLE (v4)
+description: 'Fahrzeug'
 ---
 
 ```abap

@@ -1,5 +1,5 @@
 ---
-title: Strukturtyp ZABAP_FLIGHT
+title: ZABAP_FLIGHT
 description: 'Flug'
 ---
 

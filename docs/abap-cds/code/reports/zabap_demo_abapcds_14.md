@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAPCDS_14
+title: ZABAP_DEMO_ABAPCDS_14
 description: 'Berechtigungsprüfungen'
 ---
 

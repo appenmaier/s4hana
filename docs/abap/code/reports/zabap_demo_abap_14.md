@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_14
+title: ZABAP_DEMO_ABAP_14
 description: 'Lesende Datenbankzugriffe'
 ---
 

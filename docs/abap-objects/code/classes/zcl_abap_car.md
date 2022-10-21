@@ -1,5 +1,5 @@
 ---
-title: Klasse ZCL_ABAP_CAR
+title: ZCL_ABAP_CAR
 description: 'Auto'
 ---
 

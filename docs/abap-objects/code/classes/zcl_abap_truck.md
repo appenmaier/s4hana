@@ -1,5 +1,5 @@
 ---
-title: Klasse ZCL_ABAP_TRUCK
+title: ZCL_ABAP_TRUCK
 description: 'Lastwagen'
 ---
 

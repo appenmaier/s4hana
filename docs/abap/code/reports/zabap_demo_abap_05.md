@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_05
+title: ZABAP_DEMO_ABAP_05
 description: 'Fallunterscheidungen'
 ---
 

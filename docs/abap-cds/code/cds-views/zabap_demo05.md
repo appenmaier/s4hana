@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo05
+title: ZABAP_Demo05
 description: 'Arithmetische Ausdrücke und Funktionen'
 ---
 

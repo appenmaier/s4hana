@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo11
+title: ZABAP_Demo11
 description: 'Assoziationen'
 ---
 

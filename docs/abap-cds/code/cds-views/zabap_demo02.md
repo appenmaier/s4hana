@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo02
+title: ZABAP_Demo02
 description: 'Selektionen und Inner Joins'
 ---
 

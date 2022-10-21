@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo01
+title: ZABAP_Demo01
 description: 'Projektionen'
 ---
 

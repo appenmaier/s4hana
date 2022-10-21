@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo06
+title: ZABAP_Demo06
 description: 'Eingebaute Funktionen'
 ---
 

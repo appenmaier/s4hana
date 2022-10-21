@@ -1,5 +1,5 @@
 ---
-title: Schnittstelle ZIF_ABAP_PARTNER
+title: ZIF_ABAP_PARTNER
 description: 'Partner'
 ---
 

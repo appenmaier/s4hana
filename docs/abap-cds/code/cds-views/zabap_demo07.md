@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo07
+title: ZABAP_Demo07
 description: 'Aggregationen'
 ---
 

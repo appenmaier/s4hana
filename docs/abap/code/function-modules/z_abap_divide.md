@@ -1,5 +1,5 @@
 ---
-title: Funktionsbaustein Z_ABAP_DIVIDE
+title: Z_ABAP_DIVIDE
 description: 'Dividieren'
 ---
 

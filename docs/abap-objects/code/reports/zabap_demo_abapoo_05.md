@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_05
+title: ZABAP_DEMO_ABAPOO_05
 description: 'Upcast und Polymorphie'
 ---
 

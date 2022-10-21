@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_07
+title: ZABAP_DEMO_ABAPOO_07
 description: 'Schnittstellen'
 ---
 

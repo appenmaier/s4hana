@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo08
+title: ZABAP_Demo08
 description: 'Outer Joins und Unions'
 ---
 

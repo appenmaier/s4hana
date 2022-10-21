@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_08
+title: ZABAP_DEMO_ABAP_08
 description: 'Klassische ABAP-Programme'
 ---
 

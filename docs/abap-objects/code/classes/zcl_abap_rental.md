@@ -1,5 +1,5 @@
 ---
-title: Klasse ZCL_ABAP_RENTAL
+title: ZCL_ABAP_RENTAL
 description: 'Fahrzeugvermietung'
 ---
 

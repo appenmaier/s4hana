@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_06
+title: ZABAP_DEMO_ABAP_06
 description: 'Schleifen'
 ---
 

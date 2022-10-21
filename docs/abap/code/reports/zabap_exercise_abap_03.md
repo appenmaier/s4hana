@@ -1,10 +1,10 @@
 ---
-title: ABAP-Programm ZABAP_ABAP_01
-description: 'Übungsaufgabe ABAP-03 - ABAP-05'
+title: ZABAP_EXERCISE_ABAP_03
+description: 'Übungsaufgabe ABAP-03'
 ---
 
 ```abap
-REPORT zabap_abap_03.
+REPORT zabap_exercise_abap_03.
 
 * Deklarationen
 PARAMETERS p_op1 TYPE zabap_decimal.

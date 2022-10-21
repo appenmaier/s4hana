@@ -1,5 +1,5 @@
 ---
-title: ABAP-Program ZABAP_DEMO_ABAPOO_06
+title: ZABAP_DEMO_ABAPOO_06
 description: 'Downcast'
 ---
 

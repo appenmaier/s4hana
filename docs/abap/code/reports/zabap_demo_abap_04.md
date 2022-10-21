@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_04
+title: ZABAP_DEMO_ABAP_04
 description: 'Zeichenketten und Zeichenketten-Templates'
 ---
 

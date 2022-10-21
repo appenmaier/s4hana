@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_02
+title: ZABAP_DEMO_ABAP_02
 description: 'Datentypen und Datenobjekte'
 ---
 

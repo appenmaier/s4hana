@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo04
+title: ZABAP_Demo04
 description: 'Literale und Verzweigungen'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_13
+title: ZABAP_DEMO_ABAP_13
 description: 'Einspaltige Tabellen'
 ---
 

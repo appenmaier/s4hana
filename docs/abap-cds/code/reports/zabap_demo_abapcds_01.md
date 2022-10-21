@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAPCDS_01
+title: ZABAP_DEMO_ABAPCDS_01
 description: 'Projektionen'
 ---
 

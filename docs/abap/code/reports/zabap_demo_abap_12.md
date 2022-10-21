@@ -1,5 +1,5 @@
 ---
-title: ABAP-Programm ZABAP_DEMO_ABAP_12
+title: ZABAP_DEMO_ABAP_12
 description: 'Interne Tabellen'
 ---
 

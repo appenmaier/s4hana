@@ -1,5 +1,5 @@
 ---
-title: ABAP CDS-View ZABAP_Demo10
+title: ZABAP_Demo10
 description: 'Systemfelder'
 ---
 

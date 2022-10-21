@@ -1,5 +1,5 @@
 ---
-title: Ausnahmeklasse ZCX_ABAP_INITIAL_PARAMETER
+title: ZCX_ABAP_INITIAL_PARAMETER
 description: 'Ausnahme: Initialer Parameter'
 ---
 
