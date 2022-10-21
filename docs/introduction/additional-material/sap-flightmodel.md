@@ -1,7 +1,7 @@
 ---
 title: Das SAP-Flugdatenmodell
-description: ""
-sidebar_position: 20
+description: ''
+sidebar_position: 10
 tags: []
 ---
 

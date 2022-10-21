@@ -1,7 +1,7 @@
 ---
 title: SAP Namensrichtlinien
-description: ""
-sidebar_position: 10
+description: ''
+sidebar_position: 20
 tags: []
 ---
 

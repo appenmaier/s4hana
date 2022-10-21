@@ -1,7 +1,7 @@
 ---
 title: Zusatzmaterial
 description: ''
-sidebar_position: 40
+sidebar_position: 30
 ---
 
 import DocCardList from '@theme/DocCardList';

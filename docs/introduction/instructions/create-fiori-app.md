@@ -1,7 +1,7 @@
 ---
 title: SAP Fiori Elements App erstellen
 description: ''
-sidebar_position: 20
+sidebar_position: 40
 ---
 
 - SAP BAS starten
