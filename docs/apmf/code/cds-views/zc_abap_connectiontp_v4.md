@@ -35,3 +35,5 @@ define view ZC_ABAP_ConnectionTP
       …
 }
 ```
+
+[ABAP CDS-View ZI_ABAP_ConnectionTP (v2)](../cds-views/zi_abap_connectiontp_v2.md)

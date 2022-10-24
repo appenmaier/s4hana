@@ -16,4 +16,4 @@ extend view ZABAP_Demo01 with ZABAP_Demo13
 }
 ```
 
-[ABAP CDS View ZABAP_Demo01](../cds-views/zabap_demo01.md)
+[ABAP CDS-View ZABAP_Demo01](../cds-views/zabap_demo01.md)

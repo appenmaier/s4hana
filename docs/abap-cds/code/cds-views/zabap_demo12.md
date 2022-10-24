@@ -21,4 +21,4 @@ define view ZABAP_Demo12
 }
 ```
 
-[ABAP CDS View ZABAP_Demo11](../cds-views/zabap_demo11.md)
+[ABAP CDS-View ZABAP_Demo11](../cds-views/zabap_demo11.md)

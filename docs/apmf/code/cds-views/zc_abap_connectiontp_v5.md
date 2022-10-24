@@ -33,3 +33,7 @@ define view ZC_ABAP_ConnectionTP
       _Flights
 }
 ```
+
+[ABAP CDS-View ZI_ABAP_ConnectionTP (v3)](../cds-views/zi_abap_connectiontp_v3.md)
+
+[ABAP CDS-View ZC_ABAP_FlightTP](../cds-views/zc_abap_flighttp.md)

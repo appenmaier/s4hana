@@ -23,3 +23,5 @@ annotate view ZC_ABAP_FlightTP with
   …
 }
 ```
+
+[ABAP CDS-View ZC_ABAP_FlightTP](../cds-views/zc_abap_flighttp.md)

@@ -8,8 +8,8 @@ description: 'Flugverbindung'
 @UI.headerInfo: {
     typeName: 'Connection',
     typeNamePlural: 'Connections',
-    title.value: 'CarrierId',
-    description.value: 'ConnectionId'
+    title.value: 'CarrierID',
+    description.value: 'ConnectionID'
 }
 annotate view ZC_ABAP_ConnectionTP with
 {
@@ -21,7 +21,7 @@ annotate view ZC_ABAP_ConnectionTP with
   @UI: {
     lineItem: [
       { position: 10, importance: #HIGH },
-      { position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_PLANETYPE', label: 'Switch Planetype' }
+      { position: 10, type: #FOR_ACTION, dataAction: 'BOPF:SWITCH_FLIGHT_TYPE', label: 'Switch FlightType' }
     ],
     selectionField: [{ position: 10 }],
     identification: [{ position: 10, importance: #HIGH }]
@@ -30,3 +30,7 @@ annotate view ZC_ABAP_ConnectionTP with
   …
 }
 ```
+
+[ABAP CDS-View ZC_ABAP_ConnectionTP (v5)](../cds-views/zc_abap_connectiontp_v5.md)
+
+[ABAP CDS-View ZC_ABAP_ConnectionTP (v6)](../cds-views/zc_abap_connectiontp_v6.md)

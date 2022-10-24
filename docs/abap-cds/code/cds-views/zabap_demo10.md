@@ -37,4 +37,4 @@ where
   Fldate > $parameters.P_Deadline
 ```
 
-[ABAP CDS View ZABAP_Demo10](../cds-views/zabap_demo10.md)
+[ABAP CDS-View ZABAP_Demo10](../cds-views/zabap_demo10.md)

@@ -18,4 +18,4 @@ SELECT FROM zabap_demo10( p_carrierid = @p_carrid, p_connectionid = @p_connid )
 cl_demo_output=>display( flights ).
 ```
 
-[ABAP CDS View ZABAP_Demo10](../cds-views/zabap_demo10.md)
+[ABAP CDS-View ZABAP_Demo10](../cds-views/zabap_demo10.md)

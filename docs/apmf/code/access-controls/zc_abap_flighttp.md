@@ -11,3 +11,5 @@ define role ZC_ABAP_FLIGHTTP {
     where (CarrierID) = aspect pfcg_auth(S_CARRID, CARRID, ACTVT = '03');                    
 }
 ```
+
+[ABAP CDS-View ZC_ABAP_FlightTP](../cds-views/zc_abap_flighttp.md)

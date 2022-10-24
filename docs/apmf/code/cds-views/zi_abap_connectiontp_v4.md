@@ -46,3 +46,7 @@ define view ZI_ABAP_ConnectionTP
       …
 }
 ```
+
+[ABAP CDS-View ZI_ABAP_Connection](../cds-views/zi_abap_connection.md)
+
+[ABAP CDS-View ZI_ABAP_FlightTP](../cds-views/zi_abap_flighttp.md)

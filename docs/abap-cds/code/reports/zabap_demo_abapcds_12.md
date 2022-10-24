@@ -13,4 +13,4 @@ SELECT FROM zabap_demo12
 cl_demo_output=>display( connections ).
 ```
 
-[ABAP CDS View ZABAP_Demo12](../cds-views/zabap_demo12.md)
+[ABAP CDS-View ZABAP_Demo12](../cds-views/zabap_demo12.md)

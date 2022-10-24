@@ -8,8 +8,8 @@ description: 'Flugverbindung'
 @UI.headerInfo: {
     typeName: 'Connection',
     typeNamePlural: 'Connections',
-    title.value: 'CarrierId',
-    description.value: 'ConnectionId'
+    title.value: 'CarrierID',
+    description.value: 'ConnectionID'
 }
 annotate view ZC_ABAP_ConnectionTP with
 {
@@ -27,3 +27,5 @@ annotate view ZC_ABAP_ConnectionTP with
   …
 }
 ```
+
+[ABAP CDS-View ZC_ABAP_ConnectionTP (v5)](../cds-views/zc_abap_connectiontp_v5.md)
