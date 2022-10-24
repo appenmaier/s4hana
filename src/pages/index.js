@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1>{siteConfig.title}</h1>
+        <h1> className="title"{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
       </div>
     </header>
@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="SAP S/4HANA Entwicklung">
+      description="Anwendungsentwicklung in SAP S/4HANA">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
