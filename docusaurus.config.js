@@ -22,7 +22,7 @@ const config = {
       'classic',
       ({
         docs: {
-          routeBasePath: '/introduction/',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/appenmaier/s4hana/tree/main/',
