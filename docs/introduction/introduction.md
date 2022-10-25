@@ -1,5 +1,6 @@
 ---
 title: Einführung
+slug: /
 description: ''
 sidebar_position: 10
 tags: []
