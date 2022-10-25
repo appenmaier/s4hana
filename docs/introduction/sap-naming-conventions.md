@@ -1,11 +1,15 @@
 ---
 title: SAP Namensrichtlinien
 description: ''
-sidebar_position: 20
+sidebar_position: 40
 tags: []
 ---
 
-Quelle: https://help.sap.com/doc/abapdocu_754_index_htm/7.54/en-US/index.htm
+Bei der Entwicklung im SAP-Umfeld gilt es, bestimmte Qualitätsstandards einzuhalten. Darunter zählen unter anderem auch die Namensrichtlinien für Entwicklungsobjekte und Datenobjekte.   
+
+:::note Hinweis
+Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap.com/doc/abapdocu_754_index_htm/7.54/en-US/index.htm) entnommen werden.
+:::
 
 ## Namensrichtlinien für Entwicklungsobjekte
 | Typ                                      | Bezeichner                                      | Beispiel                      |
@@ -40,7 +44,6 @@ Quelle: https://help.sap.com/doc/abapdocu_754_index_htm/7.54/en-US/index.htm
 | Kunden-Namensraum | Z          |
 | SAP-Namensraum    |FLIGHTMODEL |
 
-
 ## Namensrichtlinien für Datenobjekte
 | Prefix                  | Beispiel                |
 | ----------------------- | ----------------------- |
@@ -51,4 +54,3 @@ Quelle: https://help.sap.com/doc/abapdocu_754_index_htm/7.54/en-US/index.htm
 | R: Rückgabewert         | `r_carrier`             |
 | P: Eingabe-Parameter    | `p_carrid`              |
 | TY: Datentyp            | `ty_carrier`            |
-

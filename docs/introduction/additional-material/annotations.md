@@ -1,7 +1,8 @@
 ---
 title: Annotationen
 description: ''
-sidebar_position: 30
+sidebar_position: 20
+tags: []
 ---
 
 ## Basic Interface-Views (Wurzelknoten/Unterknoten)

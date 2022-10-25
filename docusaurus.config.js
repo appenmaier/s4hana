@@ -44,27 +44,21 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-		  {
-            type: 'doc',
-            docId: 'introduction/introduction',
-            position: 'left',
-            label: 'Einführung',
-          },
           {
             type: 'doc',
-            docId: 'abap/documentation/abap',
+            docId: 'abap/documentation',
             position: 'left',
             label: 'ABAP',
           },
 		  {
             type: 'doc',
-            docId: 'abap-objects/documentation/abap-objects',
+            docId: 'abap-objects/documentation',
             position: 'left',
             label: 'ABAP Objects',
           },
 		  {
             type: 'doc',
-            docId: 'abap-cds/documentation/abap-cds',
+            docId: 'abap-cds/documentation',
             position: 'left',
             label: 'ABAP CDS',
           },
@@ -83,7 +77,7 @@ const config = {
           {
             href: 'https://github.com/appenmaier/s4hana',
             label: 'GitHub',
-            position: 'left',
+            position: 'right',
           },
         ],
       },
