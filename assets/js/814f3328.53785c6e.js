@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkabap=self.webpackChunkabap||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"tmp","permalink":"/s4hana/blog/tmp"}]}')}}]);
