@@ -1,7 +1,7 @@
 ---
 title: Aufgabenbeschreibung Programmier-Projekt
 description: ''
-sidebar_position: 60
+sidebar_position: 80
 tags: []
 ---
 

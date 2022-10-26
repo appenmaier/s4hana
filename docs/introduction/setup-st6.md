@@ -1,7 +1,7 @@
 ---
 title: Sandbox-System ST6 einrichten
 description: ''
-sidebar_position: 60
+sidebar_position: 100
 tags: []
 ---
 
