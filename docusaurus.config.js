@@ -46,31 +46,31 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'abap/documentation',
+            docId: 'abap/documentation/abap',
             position: 'left',
             label: 'ABAP',
           },
 		  {
             type: 'doc',
-            docId: 'abap-objects/documentation',
+            docId: 'abap-objects/documentation/abap-objects',
             position: 'left',
             label: 'ABAP Objects',
           },
 		  {
             type: 'doc',
-            docId: 'abap-cds/documentation',
+            docId: 'abap-cds/documentation/abap-cds',
             position: 'left',
             label: 'ABAP CDS',
           },
 		  {
             type: 'doc',
-            docId: 'apmf/documentation/documentation',
+            docId: 'apmf/documentation/documentation/apmf',
             position: 'left',
             label: 'ABAP Programmiermodell für SAP Fiori',
           },
 		  {
             type: 'doc',
-            docId: 'rap/documentation/documentation',
+            docId: 'rap/documentation/documentation/rap',
             position: 'left',
             label: 'RESTful ABAP Programmiermodell (RAP)',
           },
