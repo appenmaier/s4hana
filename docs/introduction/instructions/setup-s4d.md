@@ -1,5 +1,5 @@
 ---
-title: Schulungssystem einrichten
+title: Schulungs-System S4D einrichten
 description: ''
 sidebar_position: 90
 tags: []
@@ -47,6 +47,6 @@ tags: []
 - Das Business Application Studio mit dem S4D verbinden (_S4DEV - Col21 - Participant Handbook - Exercise 10_)
 
 :::danger Hinweis
-Bei der Anmeldung am Cloud Connector (User: **Administrator**, Password: `Das Cloud Connector Passwort`) darauf achten, dass sich immer nur 2-3 Teilnehmer:innen gleichzeitig anmelden. Erscheint die Fehlermeldung **User authentication failed**, kurz warten und 
-dann nochmals versuchen.
+Bei der Anmeldung am Cloud Connector muss darauf geachtet werden, dass sich maximal 10 Teilnehmer:innen gleichzeitig anmelden können. Nach der
+Einrichtung des Cloud Connectors also bitte wieder abmelden.
 :::

@@ -14,5 +14,5 @@ Das SAP Flugdatenmodell wird häufig in Schulungen und ABAP-Büchern als Demo-Da
 to be done
 
 :::note Hinweis
-Alle Datenbanktabellen und Datentypen des Flugdatenmodells liegen im Paket 'SAPBC_DATAMODEL`.
+Alle Datenbanktabellen und Datentypen des Flugdatenmodells liegen im Paket `SAPBC_DATAMODEL`.
 :::
