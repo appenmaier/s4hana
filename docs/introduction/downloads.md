@@ -11,4 +11,3 @@ tags: []
 
 ## Präsentationen
 to be done
-<iframe src="https://docs.google.com/presentation/d/1Wui-d8jlAHsjBy4wq6Ti3fh4fZ8oeWG2bYyc0kd_Opw/edit?usp=sharing"></iframe>
