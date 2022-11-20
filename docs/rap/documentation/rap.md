@@ -61,16 +61,16 @@ Work in Progress
 | `MAPPED`   | `RESPONSE FOR MAPPED <Wurzelentität>`   | Alle temporären Schlüssel                              |
 
 ## Aufbau der abgeleiteten Datentypen
-| Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen                                     |
-| --------------------------------------- | ---------------------------------------------------------------------- |
-| `FOR READ IMPORT <Entität>`             | Schlüsselfelder, Feldgruppe `%control`                                 |
-| `FOR READ RESULT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202895214-5fc940e5-c274-49d6-bc11-a7323322e76d.png) |
-| `FOR CREATE <Entität>`                  | Feldgruppe `%cid`, Schlüsselfelder, Datenfelder, Feldgruppe `%control` |
-| `FOR UPDATE <Entität>`                  | Schlüsselfelder, Datenfelder, Feldgruppe `%control`                    |
-| `FOR DELETE <Entität>`                  | Feldgruppe `%cid_ref`, Schlüsselfelder                                 |
-| `RESPONSE FOR FAILED <Wurzelentität>`   | Entitäten                                                              |
-| `RESPONSE FOR REPORTED <Wurzelentität>` | Entitäten, Feldgruppe `%others`                                        |
-| `RESPONSE FOR MAPPED <Wurzelentität>`   | Entitäten                                                              |
+| Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen                                                                              |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `FOR READ IMPORT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202895529-bf23e68a-bb61-4d16-86b1-4c74f9d16b8b.png) |
+| `FOR READ RESULT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202895511-53ac46fc-22d8-4aee-abd7-94f82b123ced.png) |
+| `FOR CREATE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202895597-1f99b0f9-5fd1-456a-9830-e4ca1bb5eaa7.png) |
+| `FOR UPDATE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202895557-28dcc769-9f80-4591-8b41-a5d24cd27829.png) |
+| `FOR DELETE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202895583-9e72eba2-12ab-4a4e-bad8-a6769e1861d7.png) |
+| `RESPONSE FOR FAILED <Wurzelentität>`   | ![image](https://user-images.githubusercontent.com/47243617/202895733-74b1f558-aeb1-4f90-a08c-fc8e6662c1e5.png) |
+| `RESPONSE FOR REPORTED <Wurzelentität>` | ![image](https://user-images.githubusercontent.com/47243617/202895751-cefc244e-a011-4938-a65e-0cda66b85dc4.png) |
+| `RESPONSE FOR MAPPED <Wurzelentität>`   | ![image](https://user-images.githubusercontent.com/47243617/202895736-b7a0c7b8-cbae-49f9-a299-f0fc0bd95a2a.png) |
 
 
 ## Inhalte der Feldgruppen
