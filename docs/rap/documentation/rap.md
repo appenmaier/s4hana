@@ -55,6 +55,7 @@ Work in Progress
 
 ## Rückgabeoperanden
 | Operand    | Abgeleiteter Datentyp                   | Beschreibung                                           |
+| ---------- | --------------------------------------- | ------------------------------------------------------ |
 | `FAILED`   | `RESPONSE FOR FAILED <Wurzelentität>`   | Alle Entitäten, bei denen die EML-Anweisung fehlschlug |
 | `REPORTED` | `RESPONSE FOR REPORTED <Wurzelentität>` | Alle Nachrichten                                       |
 | `MAPPED`   | `RESPONSE FOR MAPPED <Wurzelentität>`   | Alle temporären Schlüssel                              |
@@ -63,7 +64,7 @@ Work in Progress
 | Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen                                     |
 | --------------------------------------- | ---------------------------------------------------------------------- |
 | `FOR READ IMPORT <Entität>`             | Schlüsselfelder, Feldgruppe `%control`                                 |
-| `FOR READ RESULT <Entität>`             | Schlüsselfelder, Datenfelder                                           |
+| `FOR READ RESULT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202895214-5fc940e5-c274-49d6-bc11-a7323322e76d.png) |
 | `FOR CREATE <Entität>`                  | Feldgruppe `%cid`, Schlüsselfelder, Datenfelder, Feldgruppe `%control` |
 | `FOR UPDATE <Entität>`                  | Schlüsselfelder, Datenfelder, Feldgruppe `%control`                    |
 | `FOR DELETE <Entität>`                  | Feldgruppe `%cid_ref`, Schlüsselfelder                                 |
