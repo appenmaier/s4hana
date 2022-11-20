@@ -41,18 +41,41 @@ Work in Progress
 ## UI-Annotationen: Object Page
 
 ## EML-Anweisungen
-| Operation      | Anweisung                         | Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen           |
-| -------------- | --------------------------------- | --------------------------------------- | -------------------------------------------- |
-| Read           | `READ ENTITY <Entität>`           | `FOR READ IMPORT <Entität>`             | Schlüsselfelder, %control                    |
-| Read           | `READ ENTITY <Entität>`           | `FOR READ RESULT <Entität>`             | Schlüsselfelder, Datenfelder                 |
-| Read           | `READ ENTITY <Entität>`           | `FOR READ LINK <Entität>`               |                                              |
-| Create         | `MODIFY ENTITY <Entität> CREATE`  | `FOR CREATE <Entität>`                  | %cid, Schlüsselfelder, Datenfelder, %control |
-| Update         | `MODIFY ENTITY <Entität> UPDATE`  | `FOR UPDATE <Entität>`                  | Schlüsselfelder, Datenfelder, %control       |
-| Delete         | `MODIFY ENTITY <Entität> DELETE`  | `FOR DELETE <Entität>`                  | %cid_ref, Schlüsselfelder                    |
-| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION IMPORT <Entität>~<Action>`  |                                              |
-| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION RESULT <Entität>~<Action>`  |                                              |
-| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION REQUEST <Entität>~<Action>` |                                              |
+| Operation      | Anweisung                         | Abgeleiteter Datentyp                   |
+| -------------- | --------------------------------- | --------------------------------------- |
+| Read           | `READ ENTITY <Entität>`           | `FOR READ IMPORT <Entität>`             |
+| Read           | `READ ENTITY <Entität>`           | `FOR READ RESULT <Entität>`             |
+| Read           | `READ ENTITY <Entität>`           | `FOR READ LINK <Entität>`               |
+| Create         | `MODIFY ENTITY <Entität> CREATE`  | `FOR CREATE <Entität>`                  |
+| Update         | `MODIFY ENTITY <Entität> UPDATE`  | `FOR UPDATE <Entität>`                  |
+| Delete         | `MODIFY ENTITY <Entität> DELETE`  | `FOR DELETE <Entität>`                  |
+| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION IMPORT <Entität>~<Action>`  |
+| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION RESULT <Entität>~<Action>`  |
+| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION REQUEST <Entität>~<Action>` |
 
+## Rückgabeoperanden
+| Operand    | Abgeleiteter Datentyp                   | Beschreibung                                           |
+| `FAILED`   | `RESPONSE FOR FAILED <Wurzelentität>`   | Alle Entitäten, bei denen die EML-Anweisung fehlschlug |
+| `REPORTED` | `RESPONSE FOR REPORTED <Wurzelentität>` | Alle Nachrichten                                       |
+| `MAPPED`   | `RESPONSE FOR MAPPED <Wurzelentität>`   | Alle temporären Schlüssel                              |
+
+## Aufbau der abgeleiteten Datentypen
+| Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen                                     |
+| --------------------------------------- | ---------------------------------------------------------------------- |
+| `FOR READ IMPORT <Entität>`             | Schlüsselfelder, Feldgruppe `%control`                                 |
+| `FOR READ RESULT <Entität>`             | Schlüsselfelder, Datenfelder                                           |
+| `FOR CREATE <Entität>`                  | Feldgruppe `%cid`, Schlüsselfelder, Datenfelder, Feldgruppe `%control` |
+| `FOR UPDATE <Entität>`                  | Schlüsselfelder, Datenfelder, Feldgruppe `%control`                    |
+| `FOR DELETE <Entität>`                  | Feldgruppe `%cid_ref`, Schlüsselfelder                                 |
+| `RESPONSE FOR FAILED <Wurzelentität>`   | Entitäten                                                              |
+| `RESPONSE FOR REPORTED <Wurzelentität>` | Entitäten, Feldgruppe `%others`                                        |
+| `RESPONSE FOR MAPPED <Wurzelentität>`   | Entitäten                                                              |
+
+
+## Inhalte der Feldgruppen
+| Feldgruppe | Aufbau |
+| %control   |        |
+| %cid
 
 
 
