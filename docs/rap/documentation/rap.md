@@ -3,3 +3,35 @@ title: RESTful ABAP Programmiermodell (RAP)
 description: ''
 sidebar_position: 10
 ---
+
+:::danger Hinweis
+Work in Progress
+:::
+
+## Informationsquellen
+- SAP Standardschulungen
+    - [CLD400: Developing with SAP BTP, ABAP Environment](https://training.sap.com/course/cld400-developing-with-sap-business-technology-platform-btp---abap-environment-classroom-015-g-en/?)
+    - [S4D437: Transactional Apps with the ABAP RESTful Application Programming Model](https://training.sap.com/course/s4d437-transactional-apps-with-the-abap-restful-application-programming-model-classroom-022-g-en/?)
+-	openSAP Kurse
+    - [Introduction to ABAP in the Cloud](https://open.sap.com/courses/abap1)
+    - [Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13)
+-	SAP Developers Tutorials
+    - [Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](https://developers.sap.com/group.abap-env-restful-managed.html)
+    - [Create a Travel App with SAP Fiori Elements Based on OData V4 RAP Service](https://developers.sap.com/group.fiori-tools-odata-v4-travel.html)
+    - [Use abapGit to Transfer Your On-Premise ABAP Source Code to the Cloud](https://developers.sap.com/tutorials/abap-environment-abapgit.html)
+-	SAP Hilfeseiten
+    - [ABAP RESTful Application Programming Model](https://help.sap.com/docs/ABAP_PLATFORM_2021/fc4c71aa50014fd1b43721701471913d/289477a81eec4d4e84c0302fb6835035.html?locale=en-US)
+    - [ABAP Reference Flight Scenario](https://help.sap.com/docs/ABAP_PLATFORM_2021/fc4c71aa50014fd1b43721701471913d/a9d7c7c140a0408dbc5966c52d156b49.html?locale=en-US)
+- Nachschlagewerk: [ABAP RESTful Application Programming Model](https://help.sap.com/doc/3750bcdf7b8045e18f1b759e6d2b000b/Cloud/en-US/ABAP_RESTful_Programming_Model_EN.pdf)
+- Fiori Elements Travel-Demo Generator: `/DMO/CL_FE_TRAVEL_GENERATOR`
+- Rheinwerk-Buch: [ABAP RESTful Programming Model – ABAP Development for SAP S/4HANA](https://www.rheinwerk-verlag.de/abap-restful-application-programming-model-das-umfassende-handbuch/)
+
+## Architektur
+![image](https://user-images.githubusercontent.com/47243617/202891827-c294a4bd-efe5-464c-bc30-43de79816a62.png)
+
+## Laufzeitartefakte
+![image](https://user-images.githubusercontent.com/47243617/202891847-cb631b0d-6827-4de9-b0f0-62f23258760f.png)
+
+
+
+
