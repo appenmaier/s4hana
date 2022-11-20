@@ -35,6 +35,24 @@ Work in Progress
 ## Anwendungsszenario
 ![image](https://user-images.githubusercontent.com/47243617/202892529-9e9f0ca1-6830-4cd9-9568-f735de72b9f3.png)
 
+## UI-Annotationen: List Report
+![image](https://user-images.githubusercontent.com/47243617/202893358-7a914f1c-78b6-47c9-b8aa-7c9f574a6ad0.png)
+
+## UI-Annotationen: Object Page
+
+## EML-Anweisungen
+| Operation      | Anweisung                         | Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen           |
+| -------------- | --------------------------------- | --------------------------------------- | -------------------------------------------- |
+| Read           | `READ ENTITY <Entität>`           | `FOR READ IMPORT <Entität>`             | Schlüsselfelder, %control                    |
+| Read           | `READ ENTITY <Entität>`           | `FOR READ RESULT <Entität>`             | Schlüsselfelder, Datenfelder                 |
+| Read           | `READ ENTITY <Entität>`           | `FOR READ LINK <Entität>`               |                                              |
+| Create         | `MODIFY ENTITY <Entität> CREATE`  | `FOR CREATE <Entität>`                  | %cid, Schlüsselfelder, Datenfelder, %control |
+| Update         | `MODIFY ENTITY <Entität> UPDATE`  | `FOR UPDATE <Entität>`                  | Schlüsselfelder, Datenfelder, %control       |
+| Delete         | `MODIFY ENTITY <Entität> DELETE`  | `FOR DELETE <Entität>`                  | %cid_ref, Schlüsselfelder                    |
+| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION IMPORT <Entität>~<Action>`  |                                              |
+| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION RESULT <Entität>~<Action>`  |                                              |
+| Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION REQUEST <Entität>~<Action>` |                                              |
+
 
 
 
