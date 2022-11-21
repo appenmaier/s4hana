@@ -39,6 +39,7 @@ Work in Progress
 ![image](https://user-images.githubusercontent.com/47243617/202893358-7a914f1c-78b6-47c9-b8aa-7c9f574a6ad0.png)
 
 ## UI-Annotationen: Object Page
+![image](https://user-images.githubusercontent.com/47243617/202980258-4e2c817d-b86d-44d8-a3e2-f443461755fd.png)
 
 ## EML-Anweisungen
 | Operation      | Anweisung                         | Abgeleiteter Datentyp                   |
@@ -63,21 +64,11 @@ Work in Progress
 ## Aufbau der abgeleiteten Datentypen
 | Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen                                                                              |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `FOR READ IMPORT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202895529-bf23e68a-bb61-4d16-86b1-4c74f9d16b8b.png) |
-| `FOR READ RESULT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202895511-53ac46fc-22d8-4aee-abd7-94f82b123ced.png) |
-| `FOR CREATE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202895597-1f99b0f9-5fd1-456a-9830-e4ca1bb5eaa7.png) |
-| `FOR UPDATE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202895557-28dcc769-9f80-4591-8b41-a5d24cd27829.png) |
-| `FOR DELETE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202895583-9e72eba2-12ab-4a4e-bad8-a6769e1861d7.png) |
-| `RESPONSE FOR FAILED <Wurzelentität>`   | ![image](https://user-images.githubusercontent.com/47243617/202895733-74b1f558-aeb1-4f90-a08c-fc8e6662c1e5.png) |
-| `RESPONSE FOR REPORTED <Wurzelentität>` | ![image](https://user-images.githubusercontent.com/47243617/202895751-cefc244e-a011-4938-a65e-0cda66b85dc4.png) |
-| `RESPONSE FOR MAPPED <Wurzelentität>`   | ![image](https://user-images.githubusercontent.com/47243617/202895736-b7a0c7b8-cbae-49f9-a299-f0fc0bd95a2a.png) |
-
-
-## Inhalte der Feldgruppen
-| Feldgruppe | Aufbau |
-| %control   |        |
-| %cid
-
-
-
-
+| `FOR READ IMPORT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202980604-18edce03-d570-46f2-8685-f07c4e7f4848.png) |
+| `FOR READ RESULT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202980589-4365ce22-3f87-490a-959c-f4354695ecbd.png) |
+| `FOR CREATE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202980642-77a95760-4750-4928-a706-f88b63aae06c.png) |
+| `FOR UPDATE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202980678-32034d53-119a-4652-a680-0b2491621017.png) |
+| `FOR DELETE <Entität>`                  | ![image](https://user-images.githubusercontent.com/47243617/202980707-30e9a89b-1f19-4b54-a451-4e952b4dce7f.png) |
+| `RESPONSE FOR FAILED <Wurzelentität>`   | ![image](https://user-images.githubusercontent.com/47243617/202980427-cee0fcae-3575-4978-bc59-427dc7c9843f.png) |
+| `RESPONSE FOR REPORTED <Wurzelentität>` | ![image](https://user-images.githubusercontent.com/47243617/202980405-b85e2dcb-040e-4eec-a89a-c05ad50a1c40.png) |
+| `RESPONSE FOR MAPPED <Wurzelentität>`   | ![image](https://user-images.githubusercontent.com/47243617/202980435-6594bfde-bb28-4e28-9721-8a7cf593e36d.png) |
