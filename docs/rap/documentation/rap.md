@@ -8,9 +8,6 @@ sidebar_position: 10
 Work in Progress
 :::
 
-## Anmeldedaten
-[Anmeldedaten.pdf](https://github.com/appenmaier/s4hana/files/10054075/Anmeldedaten.pdf)
-
 ## Informationsquellen
 - SAP Standardschulungen
     - [CLD400: Developing with SAP BTP, ABAP Environment](https://training.sap.com/course/cld400-developing-with-sap-business-technology-platform-btp---abap-environment-classroom-015-g-en/?)
