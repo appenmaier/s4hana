@@ -7,7 +7,7 @@ description: ''
 2. Erstelle das ABAP-Programm `Z???_ABAPCDS_09`, welche alle Buchungen der ABAP CDS View `Z???_BookingAfterDeadline` liest und anzeigt
 
 ## Grafische Ansicht
-![image](https://user-images.githubusercontent.com/47243617/195269749-88e3f729-a587-46dc-a9fe-80092a2ecfeb.png)
+![image](https://user-images.githubusercontent.com/47243617/204781612-a7355b19-8648-4436-b939-f800dd140bd4.png)
 
 ## Hinweis
 Der Eingabeparameter `Deadline` soll als Vorschlagswert das Systemdatum zurückgeben.
