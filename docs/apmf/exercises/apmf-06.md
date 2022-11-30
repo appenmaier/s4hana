@@ -6,10 +6,10 @@ description: ''
 Erweitere bzw. erstelle mit Hilfe der abgebildeten grafischen Ansicht sowie des abgebildeten Oberflächenentwurfs die ABAP CDS Views `ZI_???_CustomerTP`, `ZC_???_CustomerTP` und `ZC_???_CityVH`
 
 ## Grafische Ansicht
-![image](https://user-images.githubusercontent.com/47243617/192956860-c7901240-baac-4527-a5ab-dee034415d85.png)
+![image](https://user-images.githubusercontent.com/47243617/204797816-7b404009-ef88-490d-b3f5-2159b044172b.png)
 
 ## Oberflächenentwurf
-![image](https://user-images.githubusercontent.com/47243617/192956882-8949e714-c35c-4387-a05c-3cafc015f6c7.png)
+![image](https://user-images.githubusercontent.com/47243617/204798146-e2a21821-124a-4d36-a4d1-890b27531bec.png)
 
 ## Hinweise
 - Für den Fall, dass beim Speichern nicht alle Pflichtfelder ausgefüllt sind, soll eine entsprechende Fehlermeldung erzeugt und weitergegeben werden
