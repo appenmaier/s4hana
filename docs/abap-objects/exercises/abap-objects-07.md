@@ -14,7 +14,7 @@ werden
 - Primärschlüssel: Standardschlüssel
 	
 ## Klassendiagramm
-![image](https://user-images.githubusercontent.com/47243617/194851495-efc199bd-43a7-41b6-b032-25e053f174a0.png)
+![image](https://user-images.githubusercontent.com/47243617/204772144-c8685d30-ea0b-4e8d-a171-0527a415571e.png)
 
 ## Hinweise zur Klasse `ZCL_???_CARRIER`
 - Der Konstruktor soll alle Attribute initialisieren
