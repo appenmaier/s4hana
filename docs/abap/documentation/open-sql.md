@@ -18,7 +18,7 @@ Open SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 ## Transparente Tabellen
 Eine transparente Tabelle stellt eine plattformunabhängige Beschreibung einer Datenbanktabelle dar. Bei der Aktivierung einer transparenten Tabelle in der System Library wird automatisch eine entsprechende Datenbanktabelle erzeugt.
 
-![image](https://user-images.githubusercontent.com/47243617/194826504-e7454303-693f-45e5-b81b-52b4cfd078f8.png)
+![image](https://user-images.githubusercontent.com/47243617/204769408-9c03a431-fabc-4a2e-b2ec-ab96a502a05b.png)
 
 :::note Hinweis
 Transparente Tabellen können bei der Programmierung wie Strukturtypen verwendet werden.
@@ -31,7 +31,7 @@ Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
 - Die WHERE-Klausel legt die zu selektierenden Zeilen fest
 - Die INTO-Klausel definiert, wohin die selektierten Daten geschrieben werden sollen
 
-![image](https://user-images.githubusercontent.com/47243617/194826392-7d4441ec-99ca-46b0-9f3a-55b30c0c54cc.png)
+![image](https://user-images.githubusercontent.com/47243617/204769460-44e60588-6345-493b-9d48-78cb2e964f56.png)
 
 Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff 
 zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
