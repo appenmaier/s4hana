@@ -18,7 +18,7 @@ In der objektorientierten Programmierung werden Beobachtungen aus der realen Wel
 - Konkrete Ausprägungen bzw. Instanzen einer Klasse werden wiederum als _Objekte_ bezeichnet
 - Die Eigenschaften von Objekten werden als _Attribute_, das Verhalten als _Methoden_ bezeichnet
 
-![image](https://user-images.githubusercontent.com/47243617/194848677-5fb8fa1c-f028-4393-a18d-4912de274166.png)
+![image](https://user-images.githubusercontent.com/47243617/204769608-c5c337aa-41c8-4948-8e54-ce401f146be0.png)
 
 :::note Hinweis
 Jedes Objekt ist eindeutig identifizierbar.

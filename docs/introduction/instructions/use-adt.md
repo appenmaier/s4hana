@@ -24,17 +24,17 @@ tags: []
 | Ctrl + -         | Quellcode-Schriftgröße verringern           |
 
 ## Perspektiven
-![image](https://user-images.githubusercontent.com/47243617/195268605-8ec3307d-f29e-4d65-8e7b-6c7a791a033f.png)
+![image](https://user-images.githubusercontent.com/47243617/204770072-36d92b8e-4925-475e-be41-ceca57b04181.png)
 
 :::note Hinweis
 Perspektiven können über _Window - Perspective - Reset Perspective..._ auf den Ursprungszustand zurückgesetzt werden.
 :::
 
 ## Hilfreiche Funktionen der ABAP-Perspektive
-![image](https://user-images.githubusercontent.com/47243617/195268635-22fce3ab-458e-4bfe-9356-8e7f1f98175e.png)
+![image](https://user-images.githubusercontent.com/47243617/204770153-5de5dbc1-df44-43d0-b902-e61f3b20e331.png)
 
 ## Hilfreiche Funktionen der Debugging-Perspektive
-![image](https://user-images.githubusercontent.com/47243617/195268654-e63986c3-5c7a-410a-99b9-bc8673f3348b.png)
+![image](https://user-images.githubusercontent.com/47243617/204770233-1ca1a443-76c9-447b-8844-736ca9604252.png)
 
 ## Quellcode-Formatierung einrichten
 - Option **Window - Preferences - ABAP Development - Editors - Source Code Editors - ABAP Formatter** auswählen
