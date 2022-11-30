@@ -7,4 +7,4 @@ description: ''
 2. Erstelle das ABAP-Programm `Z???_ABAPCDS_10`, welche alle Kunden von der ABAP CDS View `Z???_CustomerWithBookings` liest und anzeigt
 
 ## Grafische Ansicht
-![image](https://user-images.githubusercontent.com/47243617/195269792-388072c1-f4e6-48ac-ad6c-af32b9e2308b.png)
+![image](https://user-images.githubusercontent.com/47243617/204781795-69133c1f-ffd5-4984-9c04-e25803f7b705.png)
