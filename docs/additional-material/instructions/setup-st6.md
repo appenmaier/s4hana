@@ -6,7 +6,7 @@ tags: []
 ---
 
 ## User für ST6 beantragen
-- _[GRC Service Map](https://vmw4958.wdf.sap.corp:44344/sap/bc/webdynpro/sap/grfn_service_map?WDCONFIGURATIONID=ZDLM_GRAC_FPM_AC_LPD_HOME&sap-config-mode=&sap-client=100&sap-language=EN)_ öffnen
+- [GRC Service Map](https://vmw4958.wdf.sap.corp:44344/sap/bc/webdynpro/sap/grfn_service_map?WDCONFIGURATIONID=ZDLM_GRAC_FPM_AC_LPD_HOME&sap-config-mode=&sap-client=100&sap-language=EN) öffnen
 - Funktion `Create User Access Request` ausführen
 - Funktion `User Access – Add – System` ausführen
 - Folgende Informationen eingeben und Drucktaste `GO` betätigen
@@ -53,13 +53,13 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
  
 ## ABAP-Entwicklungspaket anlegen
 - Rechtsklick auf das erstellte ABAP-Projekt
-- Option **New - ABAP Package** auswählen
-- Folgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Name: **TEST_** + `Dein I-User`
+- Option `New - ABAP Package` auswählen
+- Folgende Informationen eingeben und Drucktaste `Next ` betätigen
+    - Name: `TEST_` + `Dein I-User`
     - Description: `Dein Name`
-- Folgende Informationen eingeben und Drucktaste **Next >** betätigen
-    - Software Component: **LOCAL**
-- Drucktaste **Finish** betätigen
+- Folgende Informationen eingeben und Drucktaste `Next >*`* betätigen
+    - Software Component: `LOCAL`
+- Drucktaste `Finish` betätigen
 
 ## BAS einrichten
 - So noch nicht geschehen, einen Trial Account für die SAP BTP erstellen (_S4DEV - Col21 - Participant Handbook - Exercise 8_)
@@ -69,7 +69,7 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
 - SAP Cloud Connector [herunterladen](https://tools.hana.ondemand.com/#cloud) und installieren/entpacken 
 - SAP Cloud Connector starten (_go.bat_)
 - Browser starten
-- _[localhost](https://localhost:8443)_ öffnen
+- [localhost](https://localhost:8443) öffnen
 - Folgende Informationen eingeben und Drucktaste `Login` betätigen
     - Name: `Administrator`
     - Description: `manage`
