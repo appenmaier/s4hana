@@ -6,17 +6,6 @@ sidebar_position: 10
 tags: []
 ---
 
-Im Rahmen des VT Onboardings bekommen die neuen Duale Studierenden und Auszubildenden von SAP (DuSA), die oft über wenig bis keine 
-Programmier-Kenntnisse verfügen, eine Reihe von Schulungen. Die (programmier)technischen Schulungen des Onboardings werden dabei unter dem Begriff 
-_Technisches Curriculum_ zusammengefasst. Das Ziel des technischen Curriculums ist es, den DuSA grundlegende SAP-Technologien näher zu bringen und sie damit bestmöglich auf die erste Praxisphase vorzubereiten. Die Schulungen sollen daher den Fokus auf die wichtigsten Grundlagen der 
-jeweiligen Technologie legen. Letztlich sollen die DuSA in der Lage sein, im Rahmen des Programmier-Projekts ein vorgegebenes, einfaches End-to-End-Szenario umzusetzen. Aktuell liegt der Fokus des technischen Curriculums dabei auf dem ABAP Programmiermodell für SAP Fiori.
+Das mittlerweile als _klassische ABAP Programmiermodell_ bekannte ABAP Programmiermodell wurde urspünglich für die Anwendungsentwicklung für SAP R/3 entworfen. Es setzt überwiegend auf klassische SAP-Technologien wie klassisches ABAP, klassische Datenbankviews sowie klassische ABAP-Programme, Dynpros und WebDynpros. Für die Anwendungsentwicklung in SAP S/4HANA wurde ein neues Programmiermodell, das sogenannte _ABAP Programmiermodell für SAP Fiori_ entwickelt. Dieses unterstützt die Entwicklung verschiedener Fiori-Anwendungen wie Transaktions-, Such-, Analyse- und Planungs-Apps und basiert auf erprobten Technologien wie ABAP CDS zur Definition semantisch reichhaltiger Datenmodelle, dem OData-Protokoll, dem Business Object Processing Framework (BOPF) sowie SAPUI5-basierten Benutzeroberflächen. Das _RESTful ABAP Application Programming Model_ (RAP) wiederum stellt eine konsequente Weiterentwicklung des ABAP Programmiermodells für SAP Fiori dar und wird vor allem für die Anwendungsentwicklung in SAP S/4HANA Cloud verwendet.
 
-| Schulung | Inhalte |
-| -------- | ------- |
-| SAP01    | Überblick SAP Produkte und Lösungen |
-| SAPTEC   | Architektur und technologischer Aufbau von SAP-Systemen (Systemarchitektur, Navigation, Dialog-Verarbeitung, Hintergrund-Verarbeitung, Kommunikations- und Integrations-Technologien) |
-| S4D400   | Prozedurales Programmieren in ABAP (Variablen, Debugging, Wiederverwendbaren Prozeduren, Strukturen, Interne Tabellen, Open SQL) und Objektorientiertes Programmieren in ABAP (Klassen, Attribute, Methode, Objekte, Vererbung, Interfaces) |
-| S4D430   | Grundlegende SQL-Funktionen in CDS-Views (Projektionen, Selektionen, Inner Joins, Annotationen), weiterführende SQL-Funktionen in CDS-Views (SQL-Ausdrücke, eingebaute SQL-Funktionen, Geschachtelte Views, Aggregationen, Outer Joins, Unions) und weiterführende Konzepte in CDS-Views (Eingabeparameter, Assoziationen, Erweiterungen, Berechtigungskontrollen) |
-| S4DEV    | Das ABAP Programmiermodell für SAP Fiori (Datenmodellierung, Service-Erstellung, Entwicklung grafischer Benutzeroberflächen, Transaktionale Verarbeitung) |
-| UX399    | Grundlagen HTML, CSS, JavaScript |
-| UX400    | Grundlagen SAPUI5 (Dependency Management, Views und Controllers, Layout Controls, Fragmente, Datenmodelle und Data Binding, OData) |
+![image](https://user-images.githubusercontent.com/47243617/194999134-34ba9ea9-48fd-4e69-a10d-a7b70a167e44.png)

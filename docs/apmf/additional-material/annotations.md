@@ -1,7 +1,7 @@
 ---
 title: Annotationen
 description: ''
-sidebar_position: 50
+sidebar_position: 30
 tags: []
 ---
 
