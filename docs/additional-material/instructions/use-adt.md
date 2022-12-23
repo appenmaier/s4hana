@@ -60,5 +60,5 @@ Perspektiven können über _Window - Perspective - Reset Perspective..._ auf den
 | /IWFND/GW_CLIENT     | SAP Gateway Client             |
 
 :::note Hinweis
-Das Ausführen einer Transaktion erfolgt in der SAP GUI (_Open SAP GUI (Ctrl + 6)_). Um eine Transaktion im aktuellen Modus auszuführen, muss der Transaktion das Kürzel `/n`, für einen Modus das Kürzel `/o` vorangestellt werden.
+Das Ausführen einer Transaktion erfolgt in der SAP GUI. Um eine Transaktion im aktuellen Modus auszuführen, muss der Transaktion das Kürzel `/n`, für einen Modus das Kürzel `/o` vorangestellt werden.
 :::
