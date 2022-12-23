@@ -76,7 +76,7 @@ const config = {
           },
 	  {
             type: 'doc',
-            docId: 'additional-material/links',
+            docId: 'additional-material/sap-flightmodel',
             position: 'left',
             label: 'Zusatzmaterial',
           },
