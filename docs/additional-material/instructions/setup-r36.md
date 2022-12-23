@@ -48,3 +48,7 @@ tags: []
 :::note Hinweis
 Gegebenenfalls muss ein [Visual C 2013 Update](https://support.microsoft.com/de-de/topic/update-for-visual-c-2013-redistributable-package-d8ccd6a5-4e26-c290-517b-8da6cfdf4f10) installiert werden.
 :::
+
+:::note Hinweis
+Das SAP GUi kann [hier](https://jlubox.uni-giessen.de/dl/fi5KGHFPo61eE6jv21cMYKcc/SAP-GUI.7.60C4-JLU) heruntergeladen werden.
+:::
