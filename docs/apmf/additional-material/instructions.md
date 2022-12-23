@@ -1,7 +1,7 @@
 ---
 title: Anleitungen
 description: ''
-sidebar_position: 40
+sidebar_position: 20
 ---
 
 import DocCardList from '@theme/DocCardList';
