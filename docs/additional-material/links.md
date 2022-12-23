@@ -1,7 +1,7 @@
 ---
 title: Links
 description: ''
-sidebar_position: 70
+sidebar_position: 10
 tags: []
 ---
 
