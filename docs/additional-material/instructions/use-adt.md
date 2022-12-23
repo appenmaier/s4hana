@@ -1,7 +1,7 @@
 ---
 title: ABAP Development Tools verwenden
 description: ''
-sidebar_position: 30
+sidebar_position: 40
 tags: []
 ---
 

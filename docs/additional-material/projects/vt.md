@@ -1,5 +1,5 @@
 ---
-title: VT
+title: VT Programmier-Projekt
 description: ''
 sidebar_position: 10
 ---

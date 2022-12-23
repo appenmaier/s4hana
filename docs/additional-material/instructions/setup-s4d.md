@@ -22,7 +22,7 @@ tags: []
 - Drucktaste `Open Perspective` betätigen
 - Perspektive `ABAP` auswählen und Drucktaste `OK` betätigen
 - Drucktaste `New` betätigen und Option `ABAP Project` auswählen
-- Verbindung `S4D` auswählen und Drucktaste `Next ` betätigen
+- Verbindung `S4D` auswählen und Drucktaste `Next >` betätigen
 - Drucktaste `Next ` betätigen
 - Folgende Informationen eingeben und Drucktaste **Finish** betätigen
     - Client: `100`
@@ -33,10 +33,10 @@ tags: []
 ## ABAP-Entwicklungspaket anlegen
 - Rechtsklick auf das erstellte ABAP Projekt
 - Option `New - ABAP Package` auswählen
-- Folgende Informationen eingeben und Drucktaste `Next ` betätigen
+- Folgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Name: `Z` + `Deine Gruppennummer` (z.B. Z00)
     - Description: `Deine Name` (z.B. Max Müller)
-- Folgende Informationen eingeben und Drucktaste `Next ` betätigen
+- Folgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Software Component: `HOME`
     - Transport Layer: `ZS4D`
 - Drucktaste `Finish` betätigen
