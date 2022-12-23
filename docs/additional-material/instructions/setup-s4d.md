@@ -6,7 +6,7 @@ tags: []
 ---
 
 ## Schulungslandschaft einrichten
-- Zu https://class.learning.sap.com navigieren
+- [SAP Learning Class](https://class.learning.sap.com) öffnen
 - Folgende Informationen eingeben und Drucktaste `Logon` betätigen
     - System: `Das Schulungssystem` (z.B. ST-UT44S-016)
     - Username: `Dein Schulungssystem Benutzername` (z.B. A71674013-000)
