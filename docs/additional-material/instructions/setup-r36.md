@@ -11,7 +11,7 @@ tags: []
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
 - Folgende Informationen eingeben und `Enter` betätigen
     - Work with: `https://tools.hana.ondemand.com/latest`
-- Option `ABAP Development Tools` auswählen und Drucktaste `Next ` betätigen
+- Option `ABAP Development Tools` auswählen und Drucktaste `Next >` betätigen
 - Drucktaste `Next ` betätigen
 - Option `I accept the terms of the license agreements` auswählen und Drucktaste `Finish` betätigen
 - Drucktaste `Restart Now` betätigen
