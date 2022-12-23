@@ -21,8 +21,8 @@ tags: []
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
 - Folgende Informationen eingeben und `Enter` betätigen
     - Work with: `https://tools.hana.ondemand.com/latest`
-- Option `ABAP Development Tools` auswählen und Drucktaste `Next ` betätigen
-- Drucktaste `Next ` betätigen
+- Option `ABAP Development Tools` auswählen und Drucktaste `Next >` betätigen
+- Drucktaste `Next >` betätigen
 - Option `I accept the terms of the license agreements` auswählen und Drucktaste `Finish` betätigen
 - Drucktaste `Restart Now` betätigen
 
@@ -32,15 +32,15 @@ tags: []
 - Funktion `Neu` ausführen
 - Folgende Informationen eingeben und `ENTER` betätigen
     - Suche nach: `ST6`
-- Option `ST6` markieren und Drucktaste `Weiter ` betätigen
+- Option `ST6` markieren und Drucktaste `Weiter >` betätigen
 - Option `PUBLIC` markieren und Drucktaste `Fertig stellen` betätigen
 - Eclipse starten
 - Willkommensbildschirm schließen
 - Drucktaste `Open Perspective` betätigen
 - Perspektive `ABAP` auswählen und Drucktaste `OK` betätigen
 - Drucktaste `New` betätigen und Option `ABAP Project` auswählen
-- Verbindung `ST6` auswählen und Drucktaste `Next ` betätigen
-- Drucktaste `Next ` betätigen
+- Verbindung `ST6` auswählen und Drucktaste `Next >` betätigen
+- Drucktaste `Next >` betätigen
 - Folgende Informationen eingeben und Drucktaste `Finish` betätigen
     - Client: `001`
     - User: `Dein ST6 Benutzername`
@@ -54,10 +54,10 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN (Big IP Client oder G
 ## ABAP-Entwicklungspaket anlegen
 - Rechtsklick auf das erstellte ABAP-Projekt
 - Option `New - ABAP Package` auswählen
-- Folgende Informationen eingeben und Drucktaste `Next ` betätigen
+- Folgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Name: `TEST_` + `Dein I-User`
     - Description: `Dein Name`
-- Folgende Informationen eingeben und Drucktaste `Next >*`* betätigen
+- Folgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Software Component: `LOCAL`
 - Drucktaste `Finish` betätigen
 
