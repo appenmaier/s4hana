@@ -50,29 +50,35 @@ const config = {
             position: 'left',
             label: 'ABAP',
           },
-		  {
+	  {
             type: 'doc',
             docId: 'abap-objects/documentation/abap-objects',
             position: 'left',
             label: 'ABAP Objects',
           },
-		  {
+          {
             type: 'doc',
             docId: 'abap-cds/documentation/abap-cds',
             position: 'left',
             label: 'ABAP CDS',
           },
-		  {
+	  {
             type: 'doc',
             docId: 'apmf/documentation/apmf',
             position: 'left',
             label: 'ABAP Programmiermodell für SAP Fiori',
           },
-		  {
+	  {
             type: 'doc',
             docId: 'rap/documentation/rap',
             position: 'left',
             label: 'RESTful ABAP Programmiermodell (RAP)',
+          },
+	  {
+            type: 'doc',
+            docId: 'additional-material/links',
+            position: 'left',
+            label: 'Zusatzmaterial',
           },
           {
             href: 'https://github.com/appenmaier/s4hana',
