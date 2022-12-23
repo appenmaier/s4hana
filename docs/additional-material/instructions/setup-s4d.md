@@ -1,7 +1,7 @@
 ---
 title: Schulungs-System S4D einrichten
 description: ''
-sidebar_position: 90
+sidebar_position: 10
 tags: []
 ---
 
