@@ -27,7 +27,7 @@ tags: []
     - Message Server: `R36z` 
 - Folgende Informationen eingeben und Drucktaste `Finish` betätigen
     - Client: `233`
-    - User: `Dein R36 Benutzername`
+    - User: `DEVTG-` + `Deine Benutzernummer`
     - Password: `tlestart`
     - Language: `EN`
  
