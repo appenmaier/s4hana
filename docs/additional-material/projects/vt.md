@@ -1,8 +1,7 @@
 ---
-title: Aufgabenbeschreibung Programmier-Projekt
+title: VT
 description: ''
-sidebar_position: 80
-tags: []
+sidebar_position: 10
 ---
 
 ## Szenario

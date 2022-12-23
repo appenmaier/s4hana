@@ -1,7 +1,7 @@
 ---
-title: ERP-Entwicklung und Anpassung
+title: Projektbeschreibungen
 description: ''
-sidebar_position: 60
+sidebar_position: 50
 ---
 
 import DocCardList from '@theme/DocCardList';

@@ -1,7 +1,7 @@
 ---
 title: ABAP Development Tools verwenden
 description: ''
-sidebar_position: 110
+sidebar_position: 30
 tags: []
 ---
 
@@ -37,14 +37,14 @@ Perspektiven können über _Window - Perspective - Reset Perspective..._ auf den
 ![image](https://user-images.githubusercontent.com/47243617/204770233-1ca1a443-76c9-447b-8844-736ca9604252.png)
 
 ## Quellcode-Formatierung einrichten
-- Option **Window - Preferences - ABAP Development - Editors - Source Code Editors - ABAP Formatter** auswählen
-- Systemverbindung auswählen und Drucktaste **OK** betätigen
-- Folgende Informationen eingeben und Drucktaste **OK** betätigen:
-    - Indent Lines: **Ja**
-    - Upper/Lower Case Conversion: **Custom**
-    - Keywords: **Upper Case**
-    - Identifiers: **Lower Case**
-- Drucktaste **Apply and Close** betätigen
+- Option `Window - Preferences - ABAP Development - Editors - Source Code Editors - ABAP Formatter` auswählen
+- Systemverbindung auswählen und Drucktaste `OK` betätigen
+- Folgende Informationen eingeben und Drucktaste `OK` betätigen:
+    - Indent Lines: `Ja`
+    - Upper/Lower Case Conversion: `Custom`
+    - Keywords: `Upper Case`
+    - Identifiers: `Lower Case`
+- Drucktaste `Apply and Close` betätigen
 
 ## Hilfreiche Transaktionen
 
@@ -60,5 +60,5 @@ Perspektiven können über _Window - Perspective - Reset Perspective..._ auf den
 | /IWFND/GW_CLIENT     | SAP Gateway Client             |
 
 :::note Hinweis
-Das Ausführen einer Transaktion erfolgt in der SAP GUI (**Open SAP GUI (Ctrl + 6)**). Um eine Transaktion im aktuellen Modus auszuführen, muss der Transaktion das Kürzel `/n`, für einen Modus das Kürzel `/o` vorangestellt werden.
+Das Ausführen einer Transaktion erfolgt in der SAP GUI. Um eine Transaktion im aktuellen Modus auszuführen, muss der Transaktion das Kürzel `/n`, für einen Modus das Kürzel `/o` vorangestellt werden.
 :::
