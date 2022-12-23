@@ -1,6 +1,7 @@
 ---
 title: Technisches Curriculum (SAP VT)
 description: ''
+sidebar_position: 50
 ---
 
 Im Rahmen des VT Onboardings bekommen die neuen Duale Studierenden und Auszubildenden von SAP (DuSA), die oft über wenig bis keine 
@@ -17,3 +18,7 @@ jeweiligen Technologie legen. Letztlich sollen die DuSA in der Lage sein, im Rah
 | S4DEV    | Das ABAP Programmiermodell für SAP Fiori (Datenmodellierung, Service-Erstellung, Entwicklung grafischer Benutzeroberflächen, Transaktionale Verarbeitung) |
 | UX399    | Grundlagen HTML, CSS, JavaScript |
 | UX400    | Grundlagen SAPUI5 (Dependency Management, Views und Controllers, Layout Controls, Fragmente, Datenmodelle und Data Binding, OData) |
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
