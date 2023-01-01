@@ -31,7 +31,7 @@ In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschied
 ## Lokale und globale Datentypen
 In ABAP können Datentypen lokal und global definiert werden: Lokale Datentypen existieren nur im betreffenden Programm und können auch nur dort verwendet werden, globale Datentypen werden im Dictionary definiert und können systemweit verwendet werden.
 
-![image](https://user-images.githubusercontent.com/47243617/210172468-8ee59f27-6154-4dd6-995b-4086939f4664.png)
+![image](https://user-images.githubusercontent.com/47243617/210173575-a4cf8d7a-fa53-481f-a22b-9c5bc0f7b295.png)
 
 :::note Hinweis
 Globale Datentypen besitzen neben technischen auch semantische Eigenschaften (z.B. Wertehilfen und Bezeichner).
