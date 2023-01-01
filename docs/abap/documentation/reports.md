@@ -17,7 +17,7 @@ Auswahlschaltern.
 ```abap
 * Eingabefeld
 PARAMETERS p_carrid TYPE s_carr_id DEFAULT 'LH'.
-PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400’.
+PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400'.
 
 * Kontrollkästchen
 PARAMETERS p_chckbx TYPE c AS CHECKBOX.
