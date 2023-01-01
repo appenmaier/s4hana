@@ -55,4 +55,14 @@ CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
 ## Systemfelder
 Systemfelder sind eingebaute Datenobjekte, die von der Laufzeitumgebung geändert werden.
 
-![image](https://user-images.githubusercontent.com/47243617/194847682-19684f6d-1b8a-410a-a2c7-01a05f05e7d1.png)
+| Systemfeld | Inhalt                          |
+| ---------- | ------------------------------- |
+| SY-MANDT   | Anmeldemandant des Benutzers    |
+| SY-UNAME   | Anmeldename des Benutzers       |
+| SY-LANGU   | Anmeldesprache des Benutzers    |
+| SY-DATLO   | Systemdatum des Benutzers       |
+| SY-TIMLO   | Systemzeit des Benutzers        |
+| SY-INDEX   | Schleifenzähler                 |
+| SY-TABIX   | Tabellenindex                   |
+| SY-DBCNT   | Datensatzzähler                 |
+| SY-SUBRC   | Returncode einer ABAP-Anweisung |

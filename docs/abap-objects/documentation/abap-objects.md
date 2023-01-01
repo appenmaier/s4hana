@@ -18,7 +18,7 @@ In der objektorientierten Programmierung werden Beobachtungen aus der realen Wel
 - Konkrete Ausprägungen bzw. Instanzen einer Klasse werden wiederum als _Objekte_ bezeichnet
 - Die Eigenschaften von Objekten werden als _Attribute_, das Verhalten als _Methoden_ bezeichnet
 
-![image](https://user-images.githubusercontent.com/47243617/204769608-c5c337aa-41c8-4948-8e54-ce401f146be0.png)
+![image](https://user-images.githubusercontent.com/47243617/210174702-2773120f-49f9-4b50-b82c-2d5b4fc6081a.png)
 
 :::note Hinweis
 Jedes Objekt ist eindeutig identifizierbar.
@@ -28,8 +28,12 @@ Jedes Objekt ist eindeutig identifizierbar.
 Ein wesentlicher Grundsatz der Objektorientierung ist, dass Attribute durch Methoden gekapselt werden. Datenkapselung bedeutet, dass Attribute nicht direkt geändert werden können, sondern nur durch den indirekten Zugriff über Methoden. Typische Methoden zum 
 Lesen und Schreiben von Attributen sind die sogenannten Getter- bzw. Setter-Methoden.
 
-![image](https://user-images.githubusercontent.com/47243617/194848698-f6ab830d-4ecc-4692-b87e-90f143a452c1.png)
+![image](https://user-images.githubusercontent.com/47243617/210174723-9e871217-2e0f-4055-bf7a-878ea8cb21ce.png)
 
 Um die Sichtbarkeit von Attributen und Methoden zu definieren, existieren unterschiedliche Zugriffsrechte. Die Sichtbarkeit bestimmt, von welchem Ort aus Attribute und Methoden verwendet bzw. aufgerufen werden dürfen.
 
-![image](https://user-images.githubusercontent.com/47243617/194848725-2d80a553-d5bf-487b-9f03-46f270fce5fb.png)
+| Zugriffsrecht | Zugriff aus gleicher Klasse | Zugriff von einer Unterklasse | Zugriff von einer beliebigen Klasse |
+| ------------- | --------------------------- | ----------------------------- | ----------------------------------- |
+| `public`      | Ja                          | Ja                            | Ja                                  |
+| `protected`   | Ja                          | Ja                            | Nein                                |
+| `private`     | Ja                          | Nein                          | Nein                                |

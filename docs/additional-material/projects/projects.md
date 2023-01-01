@@ -1,7 +1,7 @@
 ---
-title: Projektbeschreibungen
+title: Projekte
 description: ''
-sidebar_position: 50
+sidebar_position: 70
 ---
 
 import DocCardList from '@theme/DocCardList';

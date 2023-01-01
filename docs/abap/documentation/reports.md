@@ -8,7 +8,7 @@ tags: []
 Klassische ABAP-Programme sind in ABAP geschriebene, ausführbare Entwicklungsobjekte. In klassischen ABAP-Programmen können Komponenten wie Selektionsbilder zur Eingabe von Daten sowie ABAP-Listen zur Ausgabe von Daten definiert werden. Klassische ABAP-Programme
 können als Hintergrundjobs eingerichtet werden, um z.B. Routineaufgaben zu automatisieren oder um den Einsatz der Rechenressourcen zu optimieren.
 
-![image](https://user-images.githubusercontent.com/47243617/204769070-e67da676-febc-4659-b312-3b9c4e0c2585.png)
+![image](https://user-images.githubusercontent.com/47243617/210173695-f3321616-b64f-48ea-b4b9-b5c165b8806b.png)
 
 ## Eingabeparameter
 Das Schlüsselwort `PARAMETERS` legt ein Datenobjekt an und erzeugt implizit ein Selektionsbild mit einem entsprechenden Eingabefeld. Der Zusatz `AS CHECKBOX` ermöglicht das Erzeugen von Kontrollkästchen, der Zusatz `RADIOBUTTON GROUP` das Erzeugen von 
@@ -17,7 +17,7 @@ Auswahlschaltern.
 ```abap
 * Eingabefeld
 PARAMETERS p_carrid TYPE s_carr_id DEFAULT 'LH'.
-PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400’.
+PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400'.
 
 * Kontrollkästchen
 PARAMETERS p_chckbx TYPE c AS CHECKBOX.

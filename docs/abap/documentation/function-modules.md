@@ -14,7 +14,7 @@ Parameter dienen dem Datenaustausch zwischen der aufrufenden FUnktion und der Mo
 Funktionsgruppen sind Sammlungen von Funktionsbausteinen, die verwandte Funktionalitäten besitzen bzw. auf den selben Daten operieren. Sie besitzen neben Funktionsbausteinen auch Datenobjekte (die alle Funktionsbausteine der Funktionsgruppe verwenden können). 
 Wird ein Funktionsbaustein aufgerufen, wird die gesamte Funktionsgruppe geladen und die Funktionsgruppe sowie die dazugehörigen globalen Daten bleiben bis zur Beendigung des aufrufenden Programms erhalten.
 
-![image](https://user-images.githubusercontent.com/47243617/194846983-139e9aec-609d-4caf-a90c-6da91240ca9d.png)
+![image](https://user-images.githubusercontent.com/47243617/210174065-db8aa422-15b0-4d57-afa0-838a5ec31c6f.png)
 
 ## Definition von Funktionsbausteinen
 Funktionsbausteine verfügen über Eigenschaften (z.B. Kurzbeschreibung), lokale Datenobjekte bzw. lokale Typdefinitionen sowie über eine Schnittstelle. Die Schnittstelle eines Funktionsbausteins besteht aus Import-, Export- und Changing-Parametern sowie den 
