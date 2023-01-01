@@ -1,7 +1,7 @@
 ---
 title: Mapping View erstellen
 description: ''
-sidebar_position: 30
+sidebar_position: 40
 ---
 
 - ABAP Development Tools starten
