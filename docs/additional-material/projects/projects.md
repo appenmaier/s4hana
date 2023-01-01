@@ -1,5 +1,5 @@
 ---
-title: Projektbeschreibungen
+title: Projekte
 description: ''
 sidebar_position: 70
 ---
