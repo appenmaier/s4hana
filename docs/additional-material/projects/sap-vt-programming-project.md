@@ -1,5 +1,5 @@
 ---
-title: VT Programmier-Projekt
+title: SAP VT - Programmier-Projekt
 description: ''
 sidebar_position: 10
 ---
