@@ -5,10 +5,6 @@ sidebar_position: 50
 tags: []
 ---
 
-:::danger Hinweis
-tbd
-:::
-
 - ABAP Development Tools starten
 - Consumption-View um Annotation `OData.publish: true` ergänzen und aktivieren
 - Drucktaste `Open SAP GUI` betätigen
