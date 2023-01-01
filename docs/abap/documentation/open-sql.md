@@ -5,11 +5,7 @@ sidebar_position: 120
 tags: []
 ---
 
-Die Structured Query Language (SQL) stellt die erste Wahl dar, wenn es um den Zugriff auf Datenbanken-Verwaltungssysteme (DBMS) geht. SQL umfasst die 3 Untersprachen DDL, DML und DCL.
-
-![image](https://user-images.githubusercontent.com/47243617/194826459-30837d5a-4d5b-47c2-86bb-3e0c6b482b6b.png)
-
-Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt mit datenbankspezifischen Eigenheiten. ABAP verwendet das datenbankunabhängige Open SQL, welches vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
+Die Structured Query Language (SQL) stellt die erste Wahl dar, wenn es um den Zugriff auf Datenbanken-Verwaltungssysteme (DBMS) geht. SQL umfasst die 3 Untersprachen DDL (Data Definition Language), DML (Data Manipulation Language) und DCL (Data Control Language). DDL wird zum Erzeugen und Verwalten von Datenbanktabellen und Views, DML zum Lesen und Ändern von Datenbanktabellen-Inhalten und DCL zum Festlegen von Zugriffsberechtigungen verwendet. Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt mit datenbankspezifischen Eigenheiten. ABAP verwendet das datenbankunabhängige Open SQL, welches vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
 
 :::note Hinweis
 Open SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
@@ -18,7 +14,7 @@ Open SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 ## Transparente Tabellen
 Eine transparente Tabelle stellt eine plattformunabhängige Beschreibung einer Datenbanktabelle dar. Bei der Aktivierung einer transparenten Tabelle in der System Library wird automatisch eine entsprechende Datenbanktabelle erzeugt.
 
-![image](https://user-images.githubusercontent.com/47243617/204769408-9c03a431-fabc-4a2e-b2ec-ab96a502a05b.png)
+![image](https://user-images.githubusercontent.com/47243617/210174452-64c2e0e9-3d52-4d1c-ab0d-2e88e55a8a53.png)
 
 :::note Hinweis
 Transparente Tabellen können bei der Programmierung wie Strukturtypen verwendet werden.
@@ -31,7 +27,7 @@ Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
 - Die WHERE-Klausel legt die zu selektierenden Zeilen fest
 - Die INTO-Klausel definiert, wohin die selektierten Daten geschrieben werden sollen
 
-![image](https://user-images.githubusercontent.com/47243617/204769460-44e60588-6345-493b-9d48-78cb2e964f56.png)
+![image](https://user-images.githubusercontent.com/47243617/210174652-87cc7d3f-e9e4-4d69-8a95-6a4e68e3e0b9.png)
 
 Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff 
 zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
