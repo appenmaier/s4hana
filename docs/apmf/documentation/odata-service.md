@@ -1,9 +1,15 @@
 ---
-title: OData-Service veröffentlichen
+title: OData Services
 description: ''
 sidebar_position: 20
+tags: []
 ---
 
+:::danger Hinweis
+tbd
+:::
+
+## OData Service veröffentlichen 
 - ABAP Development Tools starten
 - Consumption-View um Annotation `OData.publish: true` ergänzen und aktivieren
 - Drucktaste `Open SAP GUI` betätigen
