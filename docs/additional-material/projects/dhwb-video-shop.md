@@ -1,5 +1,5 @@
 ---
-title: ERP Videothek
+title: DHBW - Videothek
 description: ''
 sidebar_position: 20
 ---
