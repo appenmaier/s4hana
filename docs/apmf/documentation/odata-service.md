@@ -26,14 +26,15 @@ tbd
     - System Alias: `LOCAL`
     - Technical Service Name: `Der Name der CDS-View` + `_CDS` (z.B. ZC_00_ConnectionTP_CDS)
 
-![image](https://user-images.githubusercontent.com/47243617/210176099-1de17b1d-10ba-463a-a9aa-44a0aeee61c1.png)
+![image](https://user-images.githubusercontent.com/47243617/210176293-6f2f48ca-883b-4f4f-ab2e-921cfe214a41.png)
 - Den erstellten Service markieren und Drucktaste `Add Selected Services` betätigen
 
-![image](https://user-images.githubusercontent.com/47243617/210176116-f0efddb0-978b-45c1-ab91-859f207f8c1d.png)
+![image](https://user-images.githubusercontent.com/47243617/210176099-1de17b1d-10ba-463a-a9aa-44a0aeee61c1.png)
 - Nachfolgende Informationen eingeben und Drucktaste `Continue` betätigen
     - Package Assignment: `Dein Entwicklungspaket` (z.B. Z00)
 
-![image](https://user-images.githubusercontent.com/47243617/210176132-f87d2afb-9c27-4613-9e55-93185bcf355e.png)
+![image](https://user-images.githubusercontent.com/47243617/210176116-f0efddb0-978b-45c1-ab91-859f207f8c1d.png)
+![image](https://user-images.githubusercontent.com/47243617/210176234-2e889460-11fa-42db-8dcc-cfdc1adbfd12.png)
 - Drucktaste `Own Requests` betätigen
 - Transportauftrag markieren und Drucktaste `Choose` betätigen
 - Drucktaste `Continue` betätigen
