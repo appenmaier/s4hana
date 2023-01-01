@@ -1,7 +1,7 @@
 ---
 title: OData Service veröffentlichen 
 description: ''
-sidebar_position: 20
+sidebar_position: 50
 tags: []
 ---
 
