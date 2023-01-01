@@ -35,7 +35,7 @@ tags: []
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Name: `Z` + `Deine Gruppennummer` (z.B. Z00)
-    - Description: `Deine Name` (z.B. Max Müller)
+    - Description: `Dein Name` (z.B. Max Müller)
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Software Component: `HOME`
     - Transport Layer: `ZS4D`

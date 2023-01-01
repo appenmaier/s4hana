@@ -6,4 +6,4 @@ description: ''
 Passe die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms an.
 
 ## Klassendiagramm
-![image](https://user-images.githubusercontent.com/47243617/204772272-75984c0a-6357-41e5-92d1-c73791164286.png)
+![image](https://user-images.githubusercontent.com/47243617/210181599-29683743-6046-49ac-ab01-28344e97a758.png)

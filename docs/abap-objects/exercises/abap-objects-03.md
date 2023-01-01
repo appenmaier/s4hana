@@ -7,7 +7,7 @@ description: ''
 2. Passe das ABAP-Programm `Z???_ABAP_OBJECTS_AIRPLANES` so an, dass es keine Syntaxfehler mehr enthält
 
 ## Klassendiagramm
-![image](https://user-images.githubusercontent.com/47243617/204771418-a3bf8138-0ee1-4f4a-b019-7d12c6910fd1.png)
+![image](https://user-images.githubusercontent.com/47243617/210181562-cafa13fd-fcaf-4a93-9452-f99f1b57ffb2.png)
 
 ## Hinweise zur Klasse `ZCL_???_AIRPLANE`
 Der Konstruktor soll alle Attribute initialisieren
