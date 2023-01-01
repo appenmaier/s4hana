@@ -16,7 +16,7 @@ werden
 - Primärschlüssel: Standardschlüssel
 
 ## Klassendiagramm
-![image](https://user-images.githubusercontent.com/47243617/204772418-1739f829-7047-405e-8757-79c4ba60d326.png)
+![image](https://user-images.githubusercontent.com/47243617/210181605-4394957d-8cc0-4a0e-a453-871fb6262f80.png)
 
 ## Hinweise zum Klasse `ZCL_???_TRAVEL_AGENCY`
 - Der Konstruktor soll alle Attribute initialisieren
