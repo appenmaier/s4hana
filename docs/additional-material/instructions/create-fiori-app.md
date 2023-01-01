@@ -1,7 +1,7 @@
 ---
 title: SAP Fiori Elements App erstellen
 description: ''
-sidebar_position: 30
+sidebar_position: 60
 tags: []
 ---
 
@@ -15,8 +15,8 @@ tags: []
 - Nachfolgende Informationen eingeben und Drucktaste `Login` betätigen
     - Data Scource: `Connect to a System`
     - System: `Die erstellte Systemverbindung` (z.B. S4D_100)
-    - Service username: `Dein S4D Benutzername` (z.B. TRAIN-00)
-    - Service password:`Dein S4D Passwort` (z.B. Welcome2022)
+    - Service username: `Dein SAP ERP Benutzername` (z.B. TRAIN-00)
+    - Service password:`Dein SAP ERP Passwort` (z.B. Welcome2022)
 - Nachfolgende Informationen eingeben und Drucktaste `Next >` betätigen
     - Service: `Der Name der CDS-View` + `_CDS` (z.B. ZC_00_ConnectionTP_CDS)
 - Nachfolgende Informationen eingeben und Drucktaste `Next >` betätigen
