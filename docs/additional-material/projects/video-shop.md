@@ -28,4 +28,4 @@ Ihr seid ein 2-3-köpfiges Entwicklerteam, welches für die Videothek _SuperVide
 - Die Entwicklungssprache soll Englisch sein
 
 ## Datenmodell
-![image](https://user-images.githubusercontent.com/47243617/210212648-76251386-34e2-42ef-8458-421144e8b4d1.png)
+![image](https://user-images.githubusercontent.com/47243617/210214824-ed3bbd81-8125-47be-898e-1b7227e724e8.png)
