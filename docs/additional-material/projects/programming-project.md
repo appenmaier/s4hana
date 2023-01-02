@@ -49,5 +49,5 @@ Entwickelt für die FRAPORT AG mehrere klassische ABAP-Programme für deren Call
 ### Rahmenbedinungen
 - Alle relevanten Informationen sollen in Datenbanktabellen gespeichert werden
 - Alle relevanten Informationen sollen mandantenabhängig gelesen und gespeichert werden
-- Alle Entwicklungsobjekte sollen das Prefix `Z_` + `Euer Gruppenkürzel` verwenden
+- Alle Entwicklungsobjekte sollen das Prefix `Z` + `Euer Gruppenkürzel` verwenden
 - Die Entwicklungssprache soll Englisch sein
