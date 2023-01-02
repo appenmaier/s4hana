@@ -23,7 +23,7 @@ Ihr seid ein 2-3-köpfiges Entwicklerteam, welches für die Videothek _SuperVide
 
 ## Rahmenbedingungen
 - Alle relevanten Informationen sollen in Datenbanktabellen gespeichert werden
-- Alle relevanten Informationen sollen mandantenabhängig gespeichert werden
+- Alle relevanten Informationen sollen mandantenabhängig gelesen und gespeichert werden
 - Alle Entwicklungsobjekte sollen das Prefix `ZTG_` + `Dein Gruppenkürzel` verwenden
 - Die Entwicklungssprache soll Englisch sein
 
