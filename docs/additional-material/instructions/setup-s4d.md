@@ -1,5 +1,5 @@
 ---
-title: Schulungs-System S4D einrichten
+title: System S4D einrichten (SAP VT)
 description: ''
 sidebar_position: 10
 tags: []
