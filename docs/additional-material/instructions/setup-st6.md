@@ -1,5 +1,5 @@
 ---
-title: Sandbox-System ST6 einrichten
+title: System ST6 einrichten (SAP VT)
 description: ''
 sidebar_position: 20
 tags: []
