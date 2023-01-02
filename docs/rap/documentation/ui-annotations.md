@@ -2,6 +2,7 @@
 title: UI-Annotationen
 description: ''
 sidebar_position: 40
+tags: []
 ---
 
 ## UI-Annotationen für List Report
