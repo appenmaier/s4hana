@@ -1,7 +1,7 @@
 ---
-title: S4D-Refresher
+title: S4D-Refresher (SAP VT)
 description: ''
-sidebar_position: 30
+sidebar_position: 20
 tags: []
 ---
 
