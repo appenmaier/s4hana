@@ -104,6 +104,9 @@ const config = {
         darkTheme: darkCodeTheme,
 		additionalLanguages: ['abap'],
       },
+      mermaid: {
+        theme: {light: 'neutral', dark: 'forest'},
+      },
     }),
 };
 
