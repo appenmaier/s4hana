@@ -41,9 +41,6 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
 
   themeConfig:
-    mermaid: {
-      theme: {light: 'neutral', dark: 'forest'},
-    },
     ({
       navbar: {
         title: 'Startseite',
@@ -103,6 +100,9 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
 		additionalLanguages: ['abap'],
+      },
+      mermaid: {
+        theme: {light: 'neutral', dark: 'forest'},
       },
     }),
 };
