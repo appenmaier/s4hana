@@ -16,11 +16,6 @@ const config = {
     defaultLocale: 'de',
     locales: ['de'],
   },
-
-  themes: ['@docusaurus/theme-mermaid'],
-  markdown: {
-    mermaid: true,
-  },
 	
   presets: [
     [
@@ -100,9 +95,6 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
 		additionalLanguages: ['abap'],
-      },
-      mermaid: {
-        theme: {light: 'neutral', dark: 'forest'},
       },
     }),
 };
