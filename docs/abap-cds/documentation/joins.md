@@ -5,7 +5,7 @@ sidebar_position: 100
 tags: []
 ---
 
-## Inner Join
+## Inner Joins
 ![image](https://user-images.githubusercontent.com/47243617/210435464-49298860-04b5-458f-be63-8a886a12eae2.png)
 
 ## Outer Joins
