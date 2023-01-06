@@ -1,5 +1,5 @@
 ---
-title: Portfolio (DHBW)
+title: Portfolio (DHBW RV)
 description: ''
 sidebar_position: 30
 ---

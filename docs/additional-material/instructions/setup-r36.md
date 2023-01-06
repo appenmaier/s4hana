@@ -1,5 +1,5 @@
 ---
-title: System R36 einrichten (DHBW)
+title: System R36 einrichten (DHBW RV)
 description: ''
 sidebar_position: 30
 tags: []
