@@ -41,4 +41,4 @@ Der Name der ABAP CDS View kann maximal 30 Zeichen umfassen.
 :::note Hinweis
 Die Angabe der Annotation `@AbapCatalog.sqlViewName` ist verpflichtend. Der Name der anzugebenden SQL View kann maximal 16 Zeichen umfassen und muss sich vom Namen
 der ABAP CDS View unterscheiden.
-```
+:::
