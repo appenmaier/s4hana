@@ -5,7 +5,7 @@ sidebar_position: 30
 tags: []
 ---
 
-ABAP CDS unterstützen eine Reihe von SQL-Funktionen wie Fallunterscheidungen, Arithmetische Ausdrücke und eingebaute Funktionen.
+ABAP CDS Views unterstützen SQL-Funktionen wie Fallunterscheidungen, Arithmetische Ausdrücke und Aggregatfunktionen. Zudem stellen die ABAP CDS einige eingebaute Funktionen zur Verfügung.
 
 ## Fallunterscheidungen
 
