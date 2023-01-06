@@ -5,7 +5,10 @@ sidebar_position: 20
 tags: []
 ---
 
-Unter einer Datenbankview versteht man eine Sicht auf verschiedene Daten einer Datenbank. ???
+Unter einer Datenbankview versteht man eine Sicht auf verschiedene Daten einer Datenbank.
+:::danger TODO
+ABAP CDS, Key, Alias
+:::
 Die Grundlegende Syntax einer ABAP CDS Views umfasst die Angabe der Datenquelle(n) (_Joins_), die Angabe der zu selektierenden Felder (_Projektion_) sowie die Angabe einiger Annotationen (_Metadaten_). Zusätzlich können durch die Angabe einer where-Bedinungen die zu selektierenden Einträge festgelegt werden (_Selektion_).
 
 ```sql
