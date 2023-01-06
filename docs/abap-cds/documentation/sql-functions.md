@@ -8,7 +8,7 @@ tags: []
 ABAP CDS Views unterstützen SQL-Funktionen wie Fallunterscheidungen, Arithmetische Ausdrücke und Aggregatfunktionen. Zudem stellen die ABAP CDS einige eingebaute Funktionen zur Verfügung.
 
 ## Fallunterscheidungen
-ABAP CDS kennt einfache Fallunterscheidungen mit `CASE...WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `CASE...WHEN...ENDCASE`) sowie komplexe Fallunterscheidungen mit `CASE WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `IF...ELSE...ENDIF`).
+Die ABAP CDS kennen einfache Fallunterscheidungen mit `CASE...WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `CASE...WHEN...ENDCASE`) sowie komplexe Fallunterscheidungen mit `CASE WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `IF...ELSE...ENDIF`).
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
@@ -37,7 +37,7 @@ define view AbapCdsView
 ```
 
 ## Arithmetische Ausdrücke
-Für arithmetische Ausdrücke können in ABAP CDS die Operatoren `+`, `-`, `*` und `/` verwendet werden.
+Für arithmetische Ausdrücke können in den ABAP CDS die Operatoren `+`, `-`, `*` und `/` verwendet werden.
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
@@ -66,7 +66,7 @@ define view AbapCdsView
 :::
 
 ## Aggregatfunktionen
-ABAP CDS unterstützt die klassischen Aggregatfunktionen `count`, `sum`, `avg`, `min` und `max`.
+Die ABAP CDS unterstützen die klassischen Aggregatfunktionen `count`, `sum`, `avg`, `min` und `max`.
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
@@ -96,4 +96,59 @@ group by
   connid
 having
   sum( paymentsum ) > 4500000
+ ```
+ 
+ ## Eingebaute Funktionen
+ Die ABAP CDS stellen verschiedene numerische Funktionen, Zeichenkettenfunktionen, Funktionen zur Währungs- und Einheitenumrechnung sowie Datums- und Zeitfunktionen zur Verfügung.
+ 
+ ```sql
+ @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'ABAP CDS View'
+define view AbapCdsView
+  as select from sflight
+    inner join   spfli on  sflight.carrid = spfli.carrid
+                       and sflight.connid = spfli.connid
+{
+  /*
+   * Numerische Funktionen
+   */
+  5.0 / 3.0                                                as Fltp1,
+  div(5, 3)                                                as Div1,
+  mod(5, 3)                                                as Mod1,
+  division(5, 3, 2)                                        as Division1,
+  price                                                    as Price,
+  round(price, -2)                                         as RoundedPrice,
+  floor(1.9)                                               as Floor1,
+  ceil(1.1)                                                as Ceil1,
+  1.43565                                                  as Fltp2,
+  fltp_to_dec(1.43565 as abap.dec(16,2))                   as FltpToDec1,
+  /*
+   * Zeichenkettenfunktionen
+   */
+  concat_with_space('Hallo', 'Welt', 1)                    as ConcatWithSpace1,
+  planetype                                                as Planetype,
+  replace(replace(planetype, 'A', 'B'), '600', '400')      as ReplacedPlanetype,
+  substring('Hallo Welt', 7, 4)                            as Substring1,
+  length('X  ')                                            as LengthXSS,
+  length('  X')                                            as LengthSSX,
+  length(' ')                                              as LengthS,
+  /*
+   * Währungs- und Einheitenumrechnung
+   */
+  distance                                                 as OldDistance,
+  distid                                                   as OldDistanceUnit,
+  @Semantics.quantity.unitOfMeasure: 'ConvertedDistanceUnit'
+  unit_conversion(
+    quantity => distance,
+    source_unit => distid,
+    target_unit => cast('KM' as abap.unit) )               as ConvertedDistance,
+  cast('KM' as abap.unit)                                  as ConvertedDistanceUnit,
+  /*
+   * Datums- und Zeitfunktionen
+   */
+  dats_add_days(cast('20211005' as abap.dats), 14, 'FAIL') as DatsAddDays
+}
  ```
