@@ -1,7 +1,7 @@
 ---
 title: ABAP Environment einrichten (SAP VT und DHBW RV)
 description: ''
-sidebar_position: 100
+sidebar_position: 40
 tags: []
 ---
 
