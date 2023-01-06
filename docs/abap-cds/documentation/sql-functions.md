@@ -8,7 +8,7 @@ tags: []
 ABAP CDS Views unterstützen SQL-Funktionen wie Fallunterscheidungen, Arithmetische Ausdrücke und Aggregatfunktionen. Zudem stellen die ABAP CDS einige eingebaute Funktionen zur Verfügung.
 
 ## Fallunterscheidungen
-???
+ABAP CDS kennt einfache Fallunterscheidungen mit `CASE...WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `CASE...WHEN...ENDCASE`) sowie komplexe Fallunterscheidungen mit `CASE WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `IF...ELSE...ENDIF`).
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
@@ -37,7 +37,7 @@ define view AbapCdsView
 ```
 
 ## Arithmetische Ausdrücke
-??? 
+Für arithemtische AUsdrücke können in ABAP CDS die Operatoren `+`, `-`, `*` und `/` verwendet werden.
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
@@ -58,8 +58,9 @@ define view AbapCdsView
   price * 2                                                             as DoublePrice,
   cast(price as abap.fltp) * 1.1                                        as NewPrice,
   ( cast(seatsocc as abap.fltp) / cast(seatsmax as abap.fltp) ) * 100.0 as OccupancyRate,
-  cast(2 as abap.dec(16,2))                                             as Decimal1,
-  'LH'                                                                  as Char1,
-  cast('LH' as s_carr_id)                                               as CarrierId
 }
 ```
+
+:::danger Hinweis
+
+:::
