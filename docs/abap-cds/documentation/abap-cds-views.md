@@ -5,11 +5,9 @@ sidebar_position: 20
 tags: []
 ---
 
-Unter einer Datenbankview versteht man eine Sicht auf verschiedene Daten einer Datenbank.
-:::danger TODO
-ABAP CDS, Key, Alias
-:::
-Die Grundlegende Syntax einer ABAP CDS Views umfasst die Angabe der Datenquelle(n) (_Joins_), die Angabe der zu selektierenden Felder (_Projektion_) sowie die Angabe einiger Annotationen (_Metadaten_). Zusätzlich können durch die Angabe einer where-Bedinungen die zu selektierenden Einträge festgelegt werden (_Selektion_).
+Unter einer Datenbankview versteht man eine Sicht auf verschiedene Daten einer Datenbank. ABAP CDS Views verwenden die ABAP CDS um semantisch reiche Datenmodell zu definieren.
+
+Die Grundlegende Syntax einer ABAP CDS Views umfasst die Angabe der Datenquelle(n), die Angabe der zu selektierenden Felder (_Projektion_) sowie die Angabe einiger Annotationen (_Metadaten_). Zusätzlich können durch die Angabe einer where-Bedinungen die zu selektierenden Einträge festgelegt werden (_Selektion_).
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
@@ -36,6 +34,10 @@ define view AbapCdsView
 where
   fltype <> 'X' // Charterflüge ausblenden
 ```
+
+:::note Hinweis
+Die ABAP CDS unterstützen sowohl Inner Joins als auch Left Outer Joins und Right Outer Joins; Full Outer Joins nur indirekt durch die Anweisung `union`.
+:::
 
 :::note Hinweis
 Der Name der ABAP CDS View kann maximal 30 Zeichen umfassen.

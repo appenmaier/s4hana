@@ -28,7 +28,3 @@ tags: []
 - [Nachschlagewerk: ABAP RESTful Application Programming Model](https://help.sap.com/doc/3750bcdf7b8045e18f1b759e6d2b000b/Cloud/en-US/ABAP_RESTful_Programming_Model_EN.pdf)
 - [SAP Hilfeseiten: ABAP RESTful Application Programming Model](https://help.sap.com/docs/ABAP_PLATFORM_NEW/fc4c71aa50014fd1b43721701471913d/289477a81eec4d4e84c0302fb6835035.html?locale=en-US)
 - [Rheinwerk-Buch: ABAP RESTful Programming Model – ABAP Development for SAP S/4HANA](https://www.rheinwerk-verlag.de/abap-restful-application-programming-model-das-umfassende-handbuch/)
-
-## Das neue SAP Flugdatenmodell
--	[SAP Hilfeseiten: ABAP Reference Flight Scenario](https://help.sap.com/docs/ABAP_PLATFORM_2021/fc4c71aa50014fd1b43721701471913d/a9d7c7c140a0408dbc5966c52d156b49.html?locale=en-US)
-- Fiori Elements Travel-Demo Generator: `/DMO/CL_FE_TRAVEL_GENERATOR`
