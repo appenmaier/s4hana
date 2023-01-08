@@ -7,8 +7,8 @@ tags: []
 
 Die ABAP CDS stellen verschiedene numerische Funktionen, Zeichenkettenfunktionen, Funktionen zur Währungs- und Einheitenumrechnung sowie Datums- und Zeitfunktionen zur Verfügung.
  
- ```sql
- @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
+```sql
+@AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK
@@ -50,4 +50,4 @@ define view AbapCdsView
    */
   dats_add_days(cast('20211005' as abap.dats), 14, 'FAIL') as DatsAddDays
 }
- ```
+```
