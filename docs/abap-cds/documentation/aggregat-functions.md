@@ -38,7 +38,7 @@ having
 ```
 
 :::note Hinweis
-Alle nichtaggregierten Felder der Feldliste müssen im Group-By-Zweig aufgeführt werden.
+Alle nichtaggregierten Felder der Feldliste müssen nach dem Schlüsselwort `group by` aufgeführt werden.
 :::
 
 :::note Hinweis
