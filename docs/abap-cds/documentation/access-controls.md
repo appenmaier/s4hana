@@ -5,7 +5,7 @@ sidebar_position: 90
 tags: []
 ---
 
-Zugriffskontrollen ermöglichen die Vergabe von Lesezugriffen für Datenbankviews.
+Zugriffskontrollen ermöglichen die Vergabe von Lesezugriffen für Datenbankviews. Die Berechtigungsprüfung erfolgt dabei in der Regel anhand der im System festgelegeten PFCG-Rollen.
 
 ```sql
 @EndUserText.label: 'Role for AbapCdsView' 
