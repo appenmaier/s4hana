@@ -3,6 +3,7 @@ title: Assoziationen
 description: ''
 sidebar_position: 80
 tags: []
+---
 
 ```sql
 @AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
