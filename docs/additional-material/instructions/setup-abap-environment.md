@@ -16,7 +16,7 @@ tags: []
 - Drucktaste `Restart Now` betätigen
 
 :::danger Hinweis
-Die [Voraussetzungen für die Installation der ABAP Development Tools]([https://tools.hana.ondemand.com/#abap]) müssen beachtet werden. So muss gegebenenfalls ein [Visual C 2013 Update](https://support.microsoft.com/de-de/topic/update-for-visual-c-2013-redistributable-package-d8ccd6a5-4e26-c290-517b-8da6cfdf4f10) installiert werden.
+Die [Voraussetzungen für die Installation der ABAP Development Tools](https://tools.hana.ondemand.com/#abap) müssen beachtet werden. So muss gegebenenfalls ein [Visual C 2013 Update](https://support.microsoft.com/de-de/topic/update-for-visual-c-2013-redistributable-package-d8ccd6a5-4e26-c290-517b-8da6cfdf4f10) installiert werden.
 :::
 
 ## ABAP-Cloud-Projekt anlegen
