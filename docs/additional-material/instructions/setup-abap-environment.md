@@ -6,8 +6,7 @@ tags: []
 ---
 
 ## ABAP Development Tools installieren
-- JDK herunterladen und installieren
-- Eclipse herunterladen, installieren und starten
+- Eclipse starten
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
 - Folgende Informationen eingeben und `Enter` betätigen
     - Work with: `https://tools.hana.ondemand.com/latest`
@@ -15,6 +14,10 @@ tags: []
 - Drucktaste `Next >` betätigen
 - Option `I accept the terms of the license agreements` auswählen und Drucktaste `Finish` betätigen
 - Drucktaste `Restart Now` betätigen
+
+:::danger Hinweis
+Die [Voraussetzungen für die Installation der ABAP Development Tools]([https://tools.hana.ondemand.com/#abap]) müssen beachtet werden. So muss gegebenenfalls ein [Visual C 2013 Update](https://support.microsoft.com/de-de/topic/update-for-visual-c-2013-redistributable-package-d8ccd6a5-4e26-c290-517b-8da6cfdf4f10) installiert werden.
+:::
 
 ## ABAP-Cloud-Projekt anlegen
 - [SAP BTP Trial Account anlegen](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
