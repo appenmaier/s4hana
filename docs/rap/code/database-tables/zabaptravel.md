@@ -9,7 +9,7 @@ description: ''
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zabap_travel {
+define table zabaptravel {
 
   key client      : abap.clnt not null;
   key travel_uuid : sysuuid_x16 not null;
