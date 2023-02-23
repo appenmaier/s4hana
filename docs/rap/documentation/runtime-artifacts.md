@@ -1,5 +1,5 @@
 ---
-title: Laufzeitartekfate
+title: Laufzeitartefakte
 description: ''
 sidebar_position: 20
 tags: []
