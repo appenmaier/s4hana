@@ -5,7 +5,7 @@ sidebar_position: 20
 tags: []
 ---
 
-Bei der Entwicklung einer SAP Fiori Elements App nach dem ABAP Programmiermodell für SAP Fiori wird mit Hilfe von ABAP CDS Views ein virtuelle Datenmodell (VDM) 
+Bei der Entwicklung einer SAP Fiori Elements App nach dem ABAP Programmiermodell für SAP Fiori wird mit Hilfe von ABAP CDS-Views ein virtuelles Datenmodell (VDM) 
 erstellt:
 - Basic Interface-Views definieren das Datenmodell
 - Transactional Interface-Views definieren das BO-Modell
