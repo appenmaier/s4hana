@@ -72,7 +72,7 @@ const config = {
             type: 'doc',
             docId: 'rap/documentation/rap',
             position: 'left',
-            label: 'RESTful ABAP Programmiermodell (RAP)',
+            label: 'RESTful ABAP Application Programming Model (RAP)',
           },
 	  {
             type: 'doc',
