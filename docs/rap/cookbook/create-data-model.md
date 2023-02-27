@@ -14,14 +14,14 @@ sidebar_position: 10
 define table z_travel {
   key client : abap.clnt not null;
   key travel_uuid : sysuuid_x16 not null;
-      travel_id : /dmo/travel_id;
-      customer_id : /dmo/customer_id;
-      begin_date : /dmo/begin_date;
-      end_date : /dmo/end_date;
-      description : /dmo/description;
-      @Semantics.amount.currencyCode : 'z_travel.currency_code'
-      total_price : /dmo/total_price;
-      currency_code : /dmo/currency_code;
+  travel_id : /dmo/travel_id;
+  customer_id : /dmo/customer_id;
+  begin_date : /dmo/begin_date;
+  end_date : /dmo/end_date;
+  description : /dmo/description;
+  @Semantics.amount.currencyCode : 'z_travel.currency_code'
+  total_price : /dmo/total_price;
+  currency_code : /dmo/currency_code;
 }
 ```
 
