@@ -1,5 +1,5 @@
 ---
-title: Datenmodell festlegen
+title: Datenmodell erstellen
 description: ''
 sidebar_position: 10
 ---
