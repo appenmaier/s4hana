@@ -4,7 +4,7 @@ description: ''
 sidebar_position: 20
 ---
 
-Für den Geschäftsservice muss zunächst eine Projection View mit der Interface View für Reisedaten als Quelle erstellt werden. Anschließend wird darauf aufbauend eine Servicedefinition erstellt, die den Umfang des Geschäftsservices festlegt. Zuletzt wird mit Hilfe dieser Servicedefinition eine Servicebindung erstellt, die das Kommunikationsprotokoll (OData v2) sowie die Art des Services (UI) festlegt.
+Für den Geschäftsservice muss zunächst eine Projection View auf Grundlage des Geschäftsobjektes erstellt werden. Anschließend wird darauf aufbauend eine Servicedefinition erstellt, die den Umfang des Geschäftsservices festlegt. Zuletzt wird mit Hilfe dieser Servicedefinition eine Servicebindung erstellt, die das Kommunikationsprotokoll (OData v2) sowie die Art des Services (UI) festlegt.
 
 ## Projection View ZC_Travel
 ```sql
