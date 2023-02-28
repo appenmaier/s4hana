@@ -1,11 +1,11 @@
 ---
-title: Oberfläche definieren
+title: Oberfläche festlegen
 description: ''
 sidebar_position: 30
 tags: []
 ---
 
-Um die Oberfläche für Reisedaten festzulegen, wird eine Metadata Extension erstellt. Diese beinhaltet sämtliche UI-Annotationen. Zudem wird die Projection View für Reisedaten um Such-Annotationen erweitert.
+Um die Oberfläche für Reisen festzulegen, wird zunächst eine Metadata Extension erstellt, die sämtliche UI-Annotationen beinhaltet. Anschließend wird die Projection View für Reisen um Such-Annotationen erweitert.
 
 ## Metadata Extension ZC_TRAVEL
 ```sql
@@ -59,7 +59,7 @@ annotate view ZC_Travel with
 }
 ```
 
-## Projection View ZC_Travel (v2)
+## Projection View ZC_Travel
 ```sql
 @EndUserText.label: 'Projection View: Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
