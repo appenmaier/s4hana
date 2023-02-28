@@ -6,7 +6,7 @@ sidebar_position: 80
 
 Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt werden. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
 
-### Wertehilfe für die Kundennummer und die Währung
+## Wertehilfe für die Kundennummer und die Währung
 ### Interface View ZI_CustomerVH
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
