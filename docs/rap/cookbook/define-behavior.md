@@ -11,7 +11,7 @@ Um das (transaktionale) Verhalten des Geschäftsobjektes festzulegen, wird einen
 managed implementation in class zbp_i_travel unique;
 strict ( 1 );
 
-define behavior for ZI_Travel //alias <alias_name>
+define behavior for ZI_Travel alias Travel
 persistent table z_travel
 lock master
 authorization master ( instance )
@@ -37,7 +37,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_Booking //alias <alias_name>
+define behavior for ZI_Booking alias Booking
 persistent table z_booking
 lock dependent by _Travel
 authorization dependent by _Travel
