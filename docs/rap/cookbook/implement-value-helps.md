@@ -1,10 +1,10 @@
 ---
-title: User Experience verbessern
+title: Wertehilfen implementieren
 description: ''
 sidebar_position: 80
 ---
 
-Um die User Experience der App zu verbessern werden Wertehilfen, Textelemente, Standardsortierungen sowie Element-Hervorhebungen implementiert.
+Um eine Wertehilfe zu implementieren wird zunächst eine Interface View benötigt. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
 
 ## Interface View ZI_CustomerVH
 ```sql
