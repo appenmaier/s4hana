@@ -1,5 +1,5 @@
 ---
-title: Geschäftsservice definieren
+title: Geschäftsservice festlegen
 description: ''
 sidebar_position: 20
 ---
