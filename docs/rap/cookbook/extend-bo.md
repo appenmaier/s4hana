@@ -1,10 +1,10 @@
 ---
-title: Datenmodell erweitern
+title: Geschäftsobjekt erweitern
 description: ''
 sidebar_position: 40
 ---
 
-Um das Datenmodell um Buchungsdaten zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungsdaten erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Interface View inklusive einer Assoziation zu den Reisedaten erstellt. Zuletzt wird die Interface View für Reisen um eine Assoziation zu den Buchungsdaten ergänzt.
+Um das Geschäftsobjekt um Buchungsdaten zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungsdaten erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Interface View inklusive einer Assoziation zu den Reisen erstellt. Zuletzt wird die Interface View für Reisen um eine Assoziation zu den Buchungsdaten erweitert.
 
 ## Datenbanktabelle Z_BOOKING
 ```sql
