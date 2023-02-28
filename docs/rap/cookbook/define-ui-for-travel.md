@@ -1,13 +1,13 @@
 ---
-title: Oberfläche definieren
+title: Oberfläche für Reisedaten definieren
 description: ''
 sidebar_position: 30
 tags: []
 ---
 
-Um die Oberfläche für Reisedaten festzulegen, wird eine Metadatenwerweiterung erstellt. Diese beinhaltet sämtliche UI-Annotationen. Zudem wird die Projection View für Reisedaten um Such-Annotationen erweitert.
+Um die Oberfläche für Reisedaten festzulegen, wird eine Metadata Extension erstellt. Diese beinhaltet sämtliche UI-Annotationen. Zudem wird die Projection View für Reisedaten um Such-Annotationen erweitert.
 
-## Metadatenerweiterung ZC_TRAVEL erstellen
+## Metadata Extension ZC_TRAVEL
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -59,14 +59,13 @@ annotate view ZC_Travel with
 }
 ```
 
-## Projection View ZC_Travel erweitern
+## Projection View ZC_Travel (v2)
 ```sql
 @EndUserText.label: 'Projection View: Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
-  provider contract transactional_query
   as projection on ZI_Travel
 {
   key TravelUuid,
