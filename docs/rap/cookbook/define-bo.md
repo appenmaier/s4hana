@@ -1,10 +1,10 @@
 ---
-title: Datenmodell definieren
+title: Geschäftsobjekt festlegen
 description: ''
 sidebar_position: 10
 ---
 
-Zum Speichern der Reisedaten muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Interface View erstellt, die später als Wurzelknoten des Geschäftsobjektes dienen wird.
+Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Interface View erstellt, die den Wurzelknoten des Geschäftsobjektes darstellt.
 
 ## Datenbanktabelle Z_TRAVEL
 ```sql
