@@ -4,7 +4,7 @@ description: ''
 sidebar_position: 80
 ---
 
-Um eine Wertehilfe zu implementieren wird zunächst eine Interface View benötigt. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
+Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt werden. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
 
 ## Interface View ZI_CustomerVH
 ```sql
