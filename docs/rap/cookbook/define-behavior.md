@@ -4,7 +4,7 @@ description: ''
 sidebar_position: 70
 ---
 
-Um das (transaktionale) Verhalten des Geschäftsobjektes festzulegen, wird einen Behavior Definition für die Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Definition für die Projection View der Reisedaten erstellt. In dieser wird festgelegt, welches Verhalten der Geschäftsservice bereitstellen soll.
+Um das (transaktionale) Verhalten des Geschäftsobjektes festzulegen, wird einen Behavior Definition für die Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Definition für die Projection View der Reisen erstellt. In dieser wird festgelegt, welches Verhalten der Geschäftsservice bereitstellen soll.
 
 ## Behavior Definition ZI_TRAVEL
 ```sql
