@@ -1,5 +1,5 @@
 ---
-title: Oberfläche für Reisedaten definieren
+title: Oberfläche definieren
 description: ''
 sidebar_position: 30
 tags: []
