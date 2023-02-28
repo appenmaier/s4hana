@@ -1,10 +1,10 @@
 ---
-title: Datenmodell für Buchungen definieren
+title: Datenmodell erweitern
 description: ''
 sidebar_position: 40
 ---
 
-Zum Speichern der Buchungsdaten muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Interface View inklusive einer Eltern-Assoziation zu den Reisedaten erstellt.
+Um das Datenmodell um Buchungsdaten zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungsdaten erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Interface View inklusive einer Eltern-Assoziation zu den Reisedaten erstellt. Zuletzt wird die Interface View für Reisen um eine Kind-Komposition zu den Buchungsdaten ergänzt.
 
 ## Datenbanktabelle Z_BOOKING
 ```sql
@@ -35,6 +35,7 @@ define table z_booking {
 @EndUserText.label: 'Interface View: Booking'
 define view entity ZI_Booking
   as select from z_booking
+  association to parent ZI_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid  as BookingUuid,
       travel_uuid   as TravelUuid,
@@ -46,6 +47,32 @@ define view entity ZI_Booking
       @Semantics.amount.currencyCode: 'CurrencyCode'
       flight_price  as FlightPrice,
       currency_code as CurrencyCode,
-      status        as Status
+      status        as Status,
+
+      /* Associations */
+      _Travel
+}
+```
+
+## Interface View ZI_Travel
+```sql
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Interface View: Travel'
+define root view entity ZI_Travel
+  as select from z_travel
+  composition [0..*] of ZI_Booking as _Bookings
+{
+  key travel_uuid        as TravelUuid,
+      travel_id          as TravelId,
+      customer_id        as CustomerId,
+      begin_date         as BeginDate,
+      end_date           as EndDate,
+      description        as Description,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      total_price        as TotalPrice,
+      currency_code      as CurrencyCode,
+
+      /* Associations */
+      _Bookings
 }
 ```
