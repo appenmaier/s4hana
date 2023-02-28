@@ -6,7 +6,7 @@ sidebar_position: 10
 
 Zum Speichern der Reisedaten muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Interface View erstellt, die später als Wurzelknoten des Geschäftsobjektes dienen wird.
 
-## Datenbanktabelle Z_TRAVEL erstellen
+## Datenbanktabelle Z_TRAVEL
 ```sql
 @EndUserText.label : 'Travel'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
@@ -27,7 +27,7 @@ define table z_travel {
 }
 ```
 
-## Interface View ZI_Travel erstellen
+## Interface View ZI_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Interface View: Travel'
