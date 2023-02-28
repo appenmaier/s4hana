@@ -1,5 +1,5 @@
 ---
-title: Datenmodell für Reisedaten definieren
+title: Datenmodell definieren
 description: ''
 sidebar_position: 10
 ---
