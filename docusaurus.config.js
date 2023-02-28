@@ -64,12 +64,6 @@ const config = {
           },
 	  {
             type: 'doc',
-            docId: 'apmf/documentation/apmf',
-            position: 'left',
-            label: 'ABAP Programmiermodell für SAP Fiori',
-          },
-	  {
-            type: 'doc',
             docId: 'rap/documentation/rap',
             position: 'left',
             label: 'RESTful ABAP Application Programming Model (RAP)',
