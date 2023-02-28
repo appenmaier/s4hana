@@ -6,7 +6,8 @@ sidebar_position: 80
 
 Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt werden. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
 
-## Interface View ZI_CustomerVH
+### Wertehilfe für die Kundennummer und die Währung
+### Interface View ZI_CustomerVH
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Value Help: Customer'
@@ -27,27 +28,6 @@ define view entity ZI_CustomerVH
 
       /* Transient Data */
       concat_with_space(first_name, last_name, 1) as Name
-}
-```
-
-## Interface View ZI_StatusVH
-```sql
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Value Help: Status'
-define view entity ZI_StatusVH
-  as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: '/DMO/BOOK_STATUS' )
-{
-      @UI.hidden: true
-  key domain_name,
-      @UI.hidden: true
-  key value_position,
-      @UI.hidden: true
-  key language,
-      @EndUserText: { label: 'Status', quickInfo: 'Status' }
-      @ObjectModel.text.element: ['StatusText']
-      value_low as Status,
-      @EndUserText: { label: 'Status Text', quickInfo: 'Status Text' }
-      text      as StatusText
 }
 ```
 
@@ -79,7 +59,29 @@ define root view entity ZC_Travel
 }
 ```
 
-## Projection View ZC_Booking
+## Wertehilfe für den Status und die Währung
+### Interface View ZI_StatusVH
+```sql
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Value Help: Status'
+define view entity ZI_StatusVH
+  as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: '/DMO/BOOK_STATUS' )
+{
+      @UI.hidden: true
+  key domain_name,
+      @UI.hidden: true
+  key value_position,
+      @UI.hidden: true
+  key language,
+      @EndUserText: { label: 'Status', quickInfo: 'Status' }
+      @ObjectModel.text.element: ['StatusText']
+      value_low as Status,
+      @EndUserText: { label: 'Status Text', quickInfo: 'Status Text' }
+      text      as StatusText
+}
+```
+
+### Projection View ZC_Booking
 ```sql
 @EndUserText.label: 'Projection View: Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
