@@ -4,7 +4,7 @@ description: ''
 sidebar_position: 40
 ---
 
-Um das Datenmodell um Buchungsdaten zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungsdaten erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Interface View inklusive einer Eltern-Assoziation zu den Reisedaten erstellt. Zuletzt wird die Interface View für Reisen um eine Kind-Komposition zu den Buchungsdaten ergänzt.
+Um das Datenmodell um Buchungsdaten zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungsdaten erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Interface View inklusive einer Assoziation zu den Reisedaten erstellt. Zuletzt wird die Interface View für Reisen um eine Assoziation zu den Buchungsdaten ergänzt.
 
 ## Datenbanktabelle Z_BOOKING
 ```sql
