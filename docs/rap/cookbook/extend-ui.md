@@ -5,8 +5,7 @@ sidebar_position: 60
 tags: []
 ---
 
-Um die Oberfläche für Buchungsdaten festzulegen, muss eine weitere Metadata Extension erstellt werden.
-Zumde muss die Metadata Extension für Reisedaten um eine weitere Facet erweitert werden.
+Um die Oberfläche für Buchungsdaten festzulegen, muss zunächst eine Metadata Extension für die Buchungsdaten erstellt werden. Anschließend wird die Metadata Extension für Reisen um eine weitere Facet erweitert.
 
 ## Metadata Extension ZC_BOOKING
 ```sql
