@@ -24,7 +24,7 @@ authorization master ( instance )
 
   field ( readonly, numbering : managed ) TravelUuid;
 
-  mapping for ztravel corresponding
+  mapping for z_travel corresponding
   {
     BeginDate = begin_date;
     CurrencyCode = currency_code;
@@ -71,7 +71,7 @@ authorization dependent by _Travel
 projection;
 strict ( 1 );
 
-define behavior for ZC_Travel //alias <alias_name>
+define behavior for ZC_Travel alias Travel
 {
   use create;
   use update;
@@ -80,7 +80,7 @@ define behavior for ZC_Travel //alias <alias_name>
   use association _Bookings { create; }
 }
 
-define behavior for ZC_Booking //alias <alias_name>
+define behavior for ZC_Booking alias Booking
 {
   use update;
   use delete;
