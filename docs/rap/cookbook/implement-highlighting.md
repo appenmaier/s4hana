@@ -253,5 +253,6 @@ annotate view ZC_Travel with
   @UI.selectionField: [{ position: 60 }]
   @UI.identification: [{ position: 60 }]
   TotalPrice;
+  
 }
 ```
