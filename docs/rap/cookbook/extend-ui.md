@@ -60,6 +60,7 @@ annotate view ZC_Booking with
   @UI.selectionField: [{ position: 40 }]
   @UI.identification: [{ position: 70 }]
   Status;
+  
 }
 ```
 
@@ -139,5 +140,6 @@ annotate view ZC_Travel with
   @UI.selectionField: [{ position: 60 }]
   @UI.identification: [{ position: 60 }]
   TotalPrice;
+  
 }
 ```
