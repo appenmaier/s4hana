@@ -26,7 +26,8 @@ Die [Voraussetzungen für die Installation der ABAP Development Tools](https://t
     - Work with: `https://eclipse.abapgit.org/updatesite/`
 - Option `abapGit for ABAP Devleopment Tools (ADT)` auswählen und Drucktaste `Next >` betätigen
 - Drucktaste `Next >` betätigen
-- TODO: Select All - Trust selected
+- Drucktaste `Select All` betätigen
+- Drucktaste `Trust Selected` betätigen
 - Drucktaste `Restart Now` betätigen
 
 ## ABAP-Cloud-Projekt anlegen
