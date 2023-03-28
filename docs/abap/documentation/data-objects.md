@@ -5,8 +5,6 @@ sidebar_position: 30
 tags: []
 ---
 
-Datenobjekte 
-
 ## Deklaration von variablen Datenobjekten
 Bei der Deklaration eines Datenobjekts werden der Laufzeitumgebung Bezeichner und Datentyp des Datenobjekts bekanntgegeben. Die Deklaration erfolgt über das Schlüsselwort `DATA`.
 
