@@ -42,7 +42,7 @@ CLASS cl_car IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Polymoprhie
+## Polymorphie
 Unter Polymorphie (griechisch für Vielgestaltigkeit) versteht man in der Programmierung die Tatsache, dass eine Referenzvariable zur Laufzeit durch Typumwandlung auf Objekte unterschiedlicher Klassen zeigen kann und dass dadurch ein Methodenaufruf 
 unterschiedliche Ergebnisse erzielen kann. Man spricht in diesem Zusammenhang auch vom statischen Datentyp einer Variablen (der zur Designzeit festgelegt wird) und vom dynamischen Datentyp (der zur Laufzeit zugewiesen wird). Die Typumwandlung von der 
 abgeleiteten Unterklasse zur Oberklasse bezeichnet man als _Upcast_, die Rückumwandlung als _Downcast_. Der Downcast erfolgt dabei über den Operator `CAST`.
