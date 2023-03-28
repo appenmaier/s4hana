@@ -22,7 +22,7 @@ text3 = |{ text } { text2 } Coming|.
 ```
 
 :::danger Hinweis
-Nachgestellte Leerzeichen werden vom Compiler "geschluckt".
+Schließende Leerzeichen werden von Anweisungen zur Zeichenkettenverarbeitung in der Regel abgeschnitten.
 :::
 
 Die Anweisung `SPLIT` ermöglicht das Aufteilen einer Zeichenkette. Für weitere Operationen stehen eine Reihe eingebauter Funktionen zur Verfügung:
