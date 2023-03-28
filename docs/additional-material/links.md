@@ -17,14 +17,12 @@ tags: []
 - [openSAP Kurs: Introduction to ABAP in the Cloud](https://open.sap.com/courses/abap1)
 - [SAP Developers Tutorial: Use abapGit to Transfer Your On-Premise ABAP Source Code to the Cloud](https://developers.sap.com/tutorials/abap-environment-abapgit.html)
 
-## ABAP Programmiermodell für SAP fiori
-[SAP Hilfeseiten: ABAP Programming Model for SAP Fiori](https://help.sap.com/viewer/cc0c305d2fab47bd808adcad3ca7ee9d/201809.000/en-US/3b77569ca8ee4226bdab4fcebd6f6ea6.html)
-
 ## ABAP RESTful Application Programming Model
 - [SAP Standardschulung: S4D437 - Transactional Apps with the ABAP RESTful Application Programming Model](https://training.sap.com/course/s4d437-transactional-apps-with-the-abap-restful-application-programming-model-classroom-022-g-en/?)
 - [openSAP: Kurs Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13)
 - [SAP Developers Tutorial: Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](https://developers.sap.com/group.abap-env-restful-managed.html)
 - [SAP Developers Tutorial: Create a Travel App with SAP Fiori Elements Based on OData V4 RAP Service](https://developers.sap.com/group.fiori-tools-odata-v4-travel.html)
+- [SAP Learning Journey: Acquire Core ABAP Skills](https://learning.sap.com/learning-journey/acquire-core-abap-skills)
 - [Nachschlagewerk: ABAP RESTful Application Programming Model](https://help.sap.com/doc/3750bcdf7b8045e18f1b759e6d2b000b/Cloud/en-US/ABAP_RESTful_Programming_Model_EN.pdf)
 - [SAP Hilfeseiten: ABAP RESTful Application Programming Model](https://help.sap.com/docs/ABAP_PLATFORM_NEW/fc4c71aa50014fd1b43721701471913d/289477a81eec4d4e84c0302fb6835035.html?locale=en-US)
 - [Rheinwerk-Buch: ABAP RESTful Programming Model – ABAP Development for SAP S/4HANA](https://www.rheinwerk-verlag.de/abap-restful-application-programming-model-das-umfassende-handbuch/)
