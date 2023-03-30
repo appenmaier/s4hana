@@ -1,5 +1,5 @@
 ---
-title: RESTful ABAP Application Programming Model (RAP)
+title: ABAP RESTful Application Programming Model (RAP)
 description: ''
 sidebar_position: 10
 tags: []
