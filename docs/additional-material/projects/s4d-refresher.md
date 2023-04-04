@@ -6,19 +6,19 @@ tags: []
 ---
 
 ## Szenario
-Anhand der Abbildungen sollen unterschiedliche Anwendungen zur Verwaltung von Videos, Kunden und Verleihvorgängen entwickelt werden:
+Anhand der Abbildungen sollen unterschiedliche Anwendungen zur Verwaltung und Bewertung von Filmen entwickelt werden:
 - ein klassisches, imperatives ABAP-Programm 
 - eine ausführbare, objektorientierte Klasse
 - eine SAP Fiori Elements App
 
 ## Datenmodell
-![image](https://user-images.githubusercontent.com/47243617/214777494-02f1ec96-f7ae-4f8a-b140-4d104f60b99a.png)
+![image](https://user-images.githubusercontent.com/47243617/229692018-c550cf85-88b7-4006-b522-ccbe9cc4261f.png)
 
 ## Oberflächenentwürfe
-![image](https://user-images.githubusercontent.com/47243617/210216768-66960815-d956-4791-8067-76dfdf3cebf1.png)
+![image](https://user-images.githubusercontent.com/47243617/229692620-ab1ad92f-ed8a-4d37-9075-8a999988d29c.png)
 
 ## Klassendiagramm
-![image](https://user-images.githubusercontent.com/47243617/210222698-2398f2ca-2c6c-4a99-a40a-b3ad9e99765e.png)
+tbd
 
 ## Virtuelles Datenmodell
-![image](https://user-images.githubusercontent.com/47243617/214778071-c8a3444a-92bd-48fa-9b41-25076bdeb74f.png)
+tbd
