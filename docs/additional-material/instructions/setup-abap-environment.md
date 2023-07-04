@@ -11,7 +11,7 @@ tags: []
 - Programm `ABAPDevelopmentTools.exe` ausführen
 
 ## abapGit installieren
-- Eclipse starten
+- ABAP Development Tools starten
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
 - Folgende Informationen eingeben und `Enter` betätigen
     - Work with: `https://eclipse.abapgit.org/updatesite/`
@@ -30,7 +30,7 @@ tags: []
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben, Option `Add to favorite packages` auswählen und Drucktaste `Next >` betätigen
     - Name: `Z` + `Deine Kennung (z.B. Matrikelnummer)`
-    - Description: `Dein Name`
+    - Description: `Eine beliebige Beschreibung (z.B. Dein Name)`
     - Superpackage: `ZLOCAL`
 - Option `Create a new request` auswählen, folgende Informationen eingeben und Drucktaste `Finish` betätigen
-    - Request Description: `Dein Name`
+    - Request Description: `Eine beliebige Beschreibung (z.B. Dein Name)`
