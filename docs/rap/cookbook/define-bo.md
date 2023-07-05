@@ -48,10 +48,10 @@ define root view entity ZR_Travel
       @Semantics.amount.currencyCode: 'CurrencyCode'
       total_price           as TotalPrice,
       currency_code         as CurrencyCode,
-      created_by            as CreatedBy;
-      created_at            as CreatedAt ;
-      local_last_changed_by as LocalLastChangedBy;
-      local_last_changed_at as LocalLastChangedAt;
-      last_changed_at       as LastChangedAt;
+      created_by            as CreatedBy,
+      created_at            as CreatedAt,
+      local_last_changed_by as LocalLastChangedBy,
+      local_last_changed_at as LocalLastChangedAt,
+      last_changed_at       as LastChangedAt
 }
 ```
