@@ -19,6 +19,7 @@ tags: []
 
 ## ABAP RESTful Application Programming Model
 - [SAP Standardschulung: S4D437 - Transactional Apps with the ABAP RESTful Application Programming Model](https://training.sap.com/course/s4d437-transactional-apps-with-the-abap-restful-application-programming-model-classroom-022-g-en/?)
+- [Workshops: RAP100, RAP110,...](https://github.com/SAP-samples/abap-platform-rap-workshops)
 - [openSAP: Kurs Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13)
 - [SAP Developers Tutorial: Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](https://developers.sap.com/group.abap-env-restful-managed.html)
 - [SAP Developers Tutorial: Create a Travel App with SAP Fiori Elements Based on OData V4 RAP Service](https://developers.sap.com/group.fiori-tools-odata-v4-travel.html)
