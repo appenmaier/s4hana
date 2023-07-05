@@ -7,12 +7,12 @@ sidebar_position: 130
 :::danger TODO
 :::
 
-## Behavior Definition ZI_TRAVEL
+## Behavior Definition ZR_TRAVEL
 ```sql
-managed implementation in class zbp_i_travel unique;
+managed implementation in class zbp_r_travel unique;
 strict ( 1 );
 
-define behavior for ZI_Travel alias Travel
+define behavior for ZR_Travel alias Travel
 persistent table z_travel
 lock master
 authorization master ( instance )
@@ -39,7 +39,7 @@ authorization master ( instance )
 }
 
 
-define behavior for ZI_Booking Booking
+define behavior for ZR_Booking alias Booking
 persistent table z_booking
 lock dependent by _Travel
 authorization dependent by _Travel
