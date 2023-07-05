@@ -11,7 +11,7 @@ Für den Geschäftsservice muss zunächst eine Projection View auf Grundlage des
 @EndUserText.label: 'Projection View: Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZC_Travel
-  as projection on ZI_Travel
+  as projection on ZR_Travel
 {
   key TravelUuid,
       TravelId,
@@ -20,7 +20,12 @@ define root view entity ZC_Travel
       EndDate,
       Description,
       TotalPrice,
-      CurrencyCode
+      CurrencyCode,
+      CreatedBy,
+      CreatedAt,
+      LocalLastChangedBy,
+      LocalLastChangedAt,
+      LastChangedAt
 }
 ```
 
