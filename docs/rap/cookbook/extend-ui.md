@@ -140,6 +140,21 @@ annotate view ZC_Travel with
   @UI.selectionField: [{ position: 60 }]
   @UI.identification: [{ position: 60 }]
   TotalPrice;
+
+  @UI.identification: [{ position: 70 }]
+  CreatedBy;
+
+  @UI.identification: [{ position: 80 }]
+  CreatedAt;
+
+  @UI.identification: [{ position: 90 }]
+  LocalLastChangedBy;
+
+  @UI.identification: [{ position: 100 }]
+  LocalLastChangedAt;
+
+  @UI.identification: [{ position: 110 }]
+  LastChangedAt;
   
 }
 ```

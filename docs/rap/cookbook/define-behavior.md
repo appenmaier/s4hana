@@ -6,12 +6,12 @@ sidebar_position: 70
 
 Um das (transaktionale) Verhalten des Geschäftsobjektes festzulegen, wird einen Behavior Definition für die Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Definition für die Projection View der Reisen erstellt. In dieser wird festgelegt, welches Verhalten der Geschäftsservice bereitstellen soll.
 
-## Behavior Definition ZI_TRAVEL
+## Behavior Definition ZR_TRAVEL
 ```sql
-managed implementation in class zbp_i_travel unique;
+managed implementation in class zbp_r_travel unique;
 strict ( 1 );
 
-define behavior for ZI_Travel alias Travel
+define behavior for ZIR_Travel alias Travel
 persistent table z_travel
 lock master
 authorization master ( instance )
@@ -37,7 +37,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_Booking alias Booking
+define behavior for ZR_Booking alias Booking
 persistent table z_booking
 lock dependent by _Travel
 authorization dependent by _Travel

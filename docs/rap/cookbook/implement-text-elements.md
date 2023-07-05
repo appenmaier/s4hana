@@ -23,13 +23,13 @@ as select from /dmo/customer
 }
 ```
 
-## Interface View ZI_Travel
+## Interface View ZR_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Interface View: Travel'
-define root view entity ZI_Travel
+@EndUserText.label: 'Basic View: Travel'
+define root view entity ZR_Travel
   as select from z_travel
-  composition [0..*] of ZI_Booking      as _Bookings
+  composition [0..*] of ZR_Booking      as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
   key travel_uuid        as TravelUuid,
@@ -59,7 +59,7 @@ define root view entity ZI_Travel
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
   provider contract transactional_query
-  as projection on ZI_Travel
+  as projection on ZR_Travel
 {
   key TravelUuid,
       TravelId,

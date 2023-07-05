@@ -12,7 +12,7 @@ Um den Geschäftsservice um Buchungsdaten zu erweitern, muss zunächst eine Proj
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_Booking
-  as projection on ZI_Booking
+  as projection on ZR_Booking
 {
   key BookingUuid,
       TravelUuid,
@@ -37,7 +37,7 @@ define view entity ZC_Booking
 @Search.searchable: true
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
-  as projection on ZI_Travel
+  as projection on ZR_Travel
 {
   key TravelUuid,
       TravelId,
@@ -49,6 +49,11 @@ define root view entity ZC_Travel
       Description,
       TotalPrice,
       CurrencyCode,
+      CreatedBy,
+      CreatedAt,
+      LocalLastChangedBy,
+      LocalLastChangedAt,
+      lLastChangedAt,
 
       /* Associations */
       _Bookings : redirected to composition child ZC_Booking
