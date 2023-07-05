@@ -8,13 +8,13 @@ sidebar_position: 100
 :::
 
 ## Hervorhebung für den Status
-### Interface View ZI_Booking
+### Interface View ZR_Booking
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Interface View: Booking'
-define view entity ZI_Booking
+@EndUserText.label: 'Basic View: Booking'
+define view entity ZR_Booking
   as select from z_booking
-  association to parent ZI_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
+  association to parent ZR_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid  as BookingUuid,
       travel_uuid   as TravelUuid,
@@ -46,7 +46,7 @@ define view entity ZI_Booking
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_Booking
-  as projection on ZI_Booking
+  as projection on ZR_Booking
 {
   key BookingUuid,
       TravelUuid,
@@ -133,13 +133,13 @@ annotate view ZC_Booking with
 ```
 
 ## Hervorhebung für das Startdatum
-### Interface View ZI_Travel
+### Interface View ZR_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Interface View: Travel'
-define root view entity ZI_Travel
+@EndUserText.label: 'Basic View: Travel'
+define root view entity ZR_Travel
   as select from z_travel
-  composition [0..*] of ZI_Booking      as _Bookings
+  composition [0..*] of ZR_Booking      as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
   key travel_uuid        as TravelUuid,
@@ -174,7 +174,7 @@ define root view entity ZI_Travel
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
   provider contract transactional_query
-  as projection on ZI_Travel
+  as projection on ZR_Travel
 {
   key TravelUuid,
       TravelId,
