@@ -56,6 +56,21 @@ annotate view ZC_Travel with
   @UI.identification: [{ position: 60 }]
   TotalPrice;
 
+  @UI.identification: [{ position: 70 }]
+  CreatedBy;
+
+  @UI.identification: [{ position: 80 }]
+  CreatedAt;
+
+  @UI.identification: [{ position: 90 }]
+  LocalLastChangedBy;
+
+  @UI.identification: [{ position: 100 }]
+  LocalLastChangedAt;
+
+  @UI.identification: [{ position: 110 }]
+  LastChangedAt;
+
 }
 ```
 
@@ -66,7 +81,7 @@ annotate view ZC_Travel with
 @Search.searchable: true
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
-  as projection on ZI_Travel
+  as projection on ZR_Travel
 {
   key TravelUuid,
       TravelId,
@@ -77,6 +92,11 @@ define root view entity ZC_Travel
       @Search.fuzzinessThreshold: 0.7
       Description,
       TotalPrice,
-      CurrencyCode
+      CurrencyCode,
+      CreatedBy,
+      CreatedAt,
+      LocalLastChangedBy,
+      LocalLastChangedAt,
+      LastChangedAt
 }
 ```
