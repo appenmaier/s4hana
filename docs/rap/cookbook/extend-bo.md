@@ -29,13 +29,13 @@ define table z_booking {
 }
 ```
 
-## Interface View ZI_Booking
+## Interface View ZR_Booking
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Interface View: Booking'
-define view entity ZI_Booking
+@EndUserText.label: 'Basic View: Booking'
+define view entity ZR_Booking
   as select from z_booking
-  association to parent ZI_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
+  association to parent ZR_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid  as BookingUuid,
       travel_uuid   as TravelUuid,
@@ -54,23 +54,28 @@ define view entity ZI_Booking
 }
 ```
 
-## Interface View ZI_Travel
+## Interface View ZR_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Interface View: Travel'
-define root view entity ZI_Travel
+@EndUserText.label: 'Basic View: Travel'
+define root view entity ZR_Travel
   as select from z_travel
-  composition [0..*] of ZI_Booking as _Bookings
+  composition [0..*] of ZR_Booking as _Bookings
 {
-  key travel_uuid        as TravelUuid,
-      travel_id          as TravelId,
-      customer_id        as CustomerId,
-      begin_date         as BeginDate,
-      end_date           as EndDate,
-      description        as Description,
+  key travel_uuid           as TravelUuid,
+      travel_id             as TravelId,
+      customer_id           as CustomerId,
+      begin_date            as BeginDate,
+      end_date              as EndDate,
+      description           as Description,
       @Semantics.amount.currencyCode: 'CurrencyCode'
-      total_price        as TotalPrice,
-      currency_code      as CurrencyCode,
+      total_price           as TotalPrice,
+      currency_code         as CurrencyCode,
+      created_by            as CreatedBy;
+      created_at            as CreatedAt ;
+      local_last_changed_by as LocalLastChangedBy;
+      local_last_changed_at as LocalLastChangedAt;
+      last_changed_at       as LastChangedAt;
 
       /* Associations */
       _Bookings
