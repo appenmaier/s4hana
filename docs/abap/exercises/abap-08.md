@@ -9,7 +9,7 @@ description: ''
 3. Erstelle das ABAP-Programm `Z???_ABAP_08`, welches zu einer eingegebenen Kundennummer alle Buchungen liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Buchungen den Funktionsbaustein aus Aufgabenteil 2
 
 ## Informationen zum Tabellentypen `Z???_BOOKINGS`
-- Zeilentyp: `Z_ABAP_BOOKING`
+- Zeilentyp: `ZABAP_BOOKING`
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
 
