@@ -12,10 +12,12 @@ bezeichnet.
 ## Implementieren von Vererbung
 Vererbungen werden über den Zusatz `INHERITING FROM` realisiert. Das Überschreiben von Methoden erfolgt mit dem Zusatz `REDEFINITION`, der Zugriff auf Elemente der Oberklasse erfolgt über den reservierten Namen `SUPER`.
 
-```abap
+```abap title="cl_car" showLineNumbers
 CLASS cl_car DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM cl_vehicle.
 
   PUBLIC SECTION.
+    DATA seats TYPE i READ-ONLY.
+
     METHODS constructor
       IMPORTING
         make  TYPE string
@@ -23,12 +25,12 @@ CLASS cl_car DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM cl_vehicle.
         seats TYPE i
       RAISING
         cx_initial_parameter.
+
     METHODS to_string REDEFINITION.
-    ...
+
   PROTECTED SECTION.
 
-  PRIVATE SECTION.
-    DATA seats TYPE i.
+  PRIVATE SECTION.  
 
 ENDCLASS.
 
@@ -38,7 +40,10 @@ CLASS cl_car IMPLEMENTATION.
     super->constructor( make = make model = model ).
     me->seats = seats.
   ENDMETHOD.
-  ...
+
+  METHOD to_string.
+    string = super->to_string( ) && | { seats }|.
+  ENDMETHOD.
 ENDCLASS.
 ```
 
@@ -48,14 +53,15 @@ unterschiedliche Ergebnisse erzielen kann. Man spricht in diesem Zusammenhang au
 abgeleiteten Unterklasse zur Oberklasse bezeichnet man als _Upcast_, die Rückumwandlung als _Downcast_. Der Downcast erfolgt dabei über den Operator `CAST`.
 
 
-```abap
+```abap title="cl_main" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
+
     DATA vehicle TYPE REF TO cl_vehicle.
     DATA car TYPE REF TO cl_car.
 
-    car = NEW cl_car( make = |Porsche| model = |911| seats = 2 ).
+    car = NEW cl_car( make = 'Porsche' model = '911' seats = 2 ).
 
     "Upcast
     vehicle = car.
@@ -63,14 +69,15 @@ CLASS cl_main IMPLEMENTATION.
     "Downcast ohne Typprüfung
     TRY.
       car = CAST #( vehicle ).
-    CATCH cx_sy_move_cast_error INTO DATA(x).
-      ...
+    CATCH cx_sy_move_cast_error INTO DATA(e).
+      out->write( e->get_text( ) ).
     ENDTRY.
 
     "Downcast mit Typprüfung
     IF vehicle IS INSTANCE OF cl_car.
       car = CAST #( vehicle ) .
     ENDIF.
+
   ENDMETHOD.
 
 ENDCLASS.
@@ -91,7 +98,7 @@ Das Schlüsselwort `ABSTRACT` ermöglicht die Definition von abstrakten Klassen 
 Schnittstellen (Interfaces) sind im Prinzip abstrakte Klassen, die ausschließlich abstrakte Methoden besitzen. Durch Schnittstellen wird sichergestellt, dass Klassen bestimmte Methoden bereitstellen und dass verschiedene Klassen miteinander kommunizieren können.
 Sie werden mit dem Schlüsselwort `INTERFACE` definiert, in der implementierenden Klasse mit dem Schlüsselwort `INTERFACES` bekanntgegeben und können analog zu Klassen abgeleitet werden.
 
-```abap
+```abap title="if_partner" showLineNumbers
 INTERFACE if_partner.
 
   METHODS to_string.  
@@ -99,20 +106,35 @@ INTERFACE if_partner.
 ENDINTERFACE.
 ```
 
-```abap
+```abap title="cl_rental" showLineNumbers
 CLASS cl_rental DEFINITION PUBLIC CREATE PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES if_partner.
-  ...
+
+    DATA vehicles TYPE TABLE OF cl_vehicle READ-ONLY.
+
+    METHODS add_vehicle
+      IMPORTING
+        vehicle TYPE REF TO cl_vehicle.
+
+  PROTECTED SECTION.
+
+  PRIVATE SECTION.
+
 ENDCLASS.
 
 CLASS cl_rental IMPLEMENTATION.
 
+  METHOD add_partner.
+    APPEND vehicle TO vehicles.
+  ENDMETHOD.
+
   METHOD if_partner~to_string.
-    ...
+    LOOP AT vehicles INTO DATA(vehicle).
+      string &&= vehicle->to_string( ).
+    ENDLOOP.
   ENDMETHOD.
 
 ENDCLASS.
-
 ```
