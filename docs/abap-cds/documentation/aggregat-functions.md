@@ -7,34 +7,31 @@ tags: []
 
 Die ABAP CDS unterstützen die klassischen Aggregatfunktionen `count`, `sum`, `avg`, `min` und `max`.
 
-```sql
-@AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
+```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: 'ABAP CDS View'
-define view AbapCdsView
-  as select from sflight
+@EndUserText.label: 'Connection KPIs'
+define view entity ConnectionKPIs
+  as select from /dmo/flight
 {
-  carrid                                               as CarrierId,
-  connid                                               as ConnectionId,
-  count(*)                                             as NumberOfFlights,
-  count(distinct planetype)                            as NumberOfDifferentPlanetypes,
-  sum(seatsocc)                                        as TotalOccupiedSeats,
-  sum(paymentsum)                                      as TotalPaymentsum,
-  avg(price as abap.dec(16,2))                         as AveragePrice,
-  min(seatsocc)                                        as MinimumOccupiedSeats,
-  max(seatsocc)                                        as MaximumOccupiedSeats,
-  sum(case when seatsocc = seatsmax then 1 else 0 end) as NumberOfBookedUpFlights,
-  sum(case when seatsocc = 0 then 1 else 0 end)        as NumberOfEmptyFlights
+  key carrier_id                                                  as CarrierId,
+  key connection_id                                               as ConnectionId,
+      count(*)                                                    as NumberOfFlights,
+      count(distinct plane_type_id)                               as NumberOfDifferentPlaneTypeIds,
+      sum(seats_occupied)                                         as TotalOccupiedSeats,
+      sum(price)                                                  as TotalPrice,
+      avg(price as abap.dec(16,2))                                as AveragePrice,
+      min(seats_occupied)                                         as MinimumOccupiedSeats,
+      max(seats_occupied)                                         as MaximumOccupiedSeats,
+      sum(case when seats_occupied = seats_max then 1 else 0 end) as NumberOfBookedUpFlights,
+      sum(case when seats_occupied = 0 then 1 else 0 end)         as NumberOfEmptyFlights
 }
 where
   price < 1000
 group by
-  carrid,
-  connid
+  carrier_id,
+  connection_id
 having
-  sum( paymentsum ) > 4500000
+  sum( price ) > 100000
 ```
 
 :::note Hinweis
