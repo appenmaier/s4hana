@@ -12,22 +12,19 @@ Zeilen, die mit einem Stern beginnen, werden von Laufzeitsystem als Kommentarzei
 ```abap title="cl_main.java" showLineNumbers
 CLASS cl_main DEFINITION PUBLIC CREATE PUBLIC.
   PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
 CLASS cl_main IMPLEMENTATION.
-
   METHOD if_oo_adt_classrun~main.
-
     DATA text TYPE c LENGTH 25. "Deklaration
 
     text = 'Ein Ring sie zu knechten'. "Wertzuweisung
 
     out->write( text ). "Ausgabe
-
   ENDMETHOD.
-
 ENDCLASS.
 ```
 
