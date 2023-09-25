@@ -7,7 +7,7 @@ tags: []
 
 ABAP kennt mathematische Operatoren für die Addition, die Subtraktion, die Multiplikation, die Division, die Potenz, die ganzzahlige Division sowie den Divisionsrest (Modulo). Zudem besitzt ABAP für jede Grundrechenart einen dazugehörigen Zuweisungsoperatoren.
 
-```abap
+```abap showLineNumbers
 DATA result TYPE p LENGTH 16 DECIMALS 2.
 
 result = 5 + 3. "Addition
@@ -17,10 +17,10 @@ result = 5 / 3. "Division
 result = 5 ** 3. "Potenz
 result = 5 DIV 3. "Ganzzahlige Division
 result = 5 MOD 3. "Divisionsrest
-result += 3.
-result -= 3.
-result *= 3.
-result /= 3.
+result += 3. "Zuweisungsoperator Addition
+result -= 3. "Zuweisungsoperator Subtraktion
+result *= 3. "zuweisungsoperator Multiplikation
+result /= 3. "Zuweisungsoperator Division
 ```
 
 Für weitere mathematische Berechnungen stellt ABAP eine Reihe eingebauter Funktionen zur Verfügung:
@@ -30,7 +30,7 @@ Für weitere mathematische Berechnungen stellt ABAP eine Reihe eingebauter Funkt
 - Gleitpunktfunktionen
 - Rundungsfunktionen
 
-```abap
+```abap showLineNumbers
 DATA result TYPE p LENGTH 16 DECIMALS 2.
 
 result = abs( -1 ). "Betrag

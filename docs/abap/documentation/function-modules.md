@@ -20,7 +20,7 @@ Wird ein Funktionsbaustein aufgerufen, wird die gesamte Funktionsgruppe geladen 
 Funktionsbausteine verfügen über Eigenschaften (z.B. Kurzbeschreibung), lokale Datenobjekte bzw. lokale Typdefinitionen sowie über eine Schnittstelle. Die Schnittstelle eines Funktionsbausteins besteht aus Import-, Export- und Changing-Parametern sowie den 
 Ausnahmen.
 
-```abap
+```abap showLineNumbers
 FUNCTION calculate_power
   IMPORTING
     i_base     TYPE i
@@ -40,7 +40,7 @@ Der Zusatz `OPTIONAL` bewirkt, dass ein Import Parameter beim Aufruf des Funktio
 ## Aufruf von Funktionsbausteinen
 Funktionsbausteine werden mit der Anweisung `CALL FUNCTION` aufgerufen. Der EXPORTING-Block enthält dabei die Import-Parameter des Funktionsbausteins, der IMPORTING-Block die Export-Parameter.
 
-```abap
+```abap showLineNumbers
 DATA result TYPE i.
 
 CALL FUNCTION 'CALCULATE_POWER'
@@ -54,7 +54,7 @@ CALL FUNCTION 'CALCULATE_POWER'
 ## Klassische Ausnahmen
 Innerhalb eines Funktionsbausteins kann mit der Anweisung `RAISE` eine Ausnahme ausgelöst werden. Die Verarbeitung des Funktionsbausteins wird dabei nach Auslösen der Ausnahme abgebrochen.
 
-```abap
+```abap showLineNumbers
 FUNCTION calculate_power
   IMPORTING
     i_base     TYPE i
@@ -76,7 +76,7 @@ ENDFUNCTION.
 Durch die Angabe eines EXCEPTIONS-Blockes können beim Aufruf eines Funktionsbausteins mögliche Ausnahmen abgefangen werden. Der im EXCEPTIONS-Block angegebene Returncode wird im Ausnahmefall in das Systemfeld `SY-SUBRC` geschrieben und ermöglicht so eine
 spezifische Fehlerbehandlung.
 
-```abap
+```abap showLineNumbers
 DATA result TYPE i.
 
 CALL FUNCTION 'CALCULATE_POWER'
@@ -90,8 +90,8 @@ CALL FUNCTION 'CALCULATE_POWER'
     OTHERS            = 2.
 CASE sy-subrc.
   WHEN 1.
-	WRITE 'negative_exponent'.
+    out->write( 'negative_exponent' ).
   WHEN 2.
-	WRITE 'others'.
+    out->write( 'others' ).
 ENDCASE.
 ```

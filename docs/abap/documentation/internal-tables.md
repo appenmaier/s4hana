@@ -13,30 +13,33 @@ Die Deklaration einer internen Tabellen kann entweder direkt im Programm erfolge
 - Die Tabellenart definiert die Zugriffsart (per Schlüssel oder per Index)
 - Der Primärschlüssel definiert die Schlüsselfelder inklusive ihrer Reihenfolge
 
-```abap
-DATA flights TYPE TABLE OF flight.
-DATA flights2 TYPE flights.
+```abap showLineNumbers
+DATA flights TYPE TABLE OF /dmo/flight.
+DATA flights2 TYPE /dmo/flights.
 ```
 
 ## Einfügen von Datensätzen
 Der Operator `VALUE` ermöglicht das Einfügen von Datensätzen in interne Tabellen.
 
-```abap
-DATA flight TYPE flight.
-DATA flights TYPE flights.
+```abap showLineNumbers
+DATA flight TYPE /dmo/flight.
+DATA flights TYPE /dmo/flights.
 DATA(today) = sy-datlo.
 
-* Einfügen von Datensätzen
+"Einfügen von Datensätzen
 flights = VALUE #(
   ( carrier_id = 'LH' connection_id = '0400' flight_date = today )
   ( carrier_id = 'LH' connection_id = '0401' flight_date = today ) ).
 
-* Erweitern interner Tabellen
+"Erweitern interner Tabellen
 flight-carrier_id = 'LH'.
 flight-connection_id = '0402'.
 flight-flight_date = today.
 
 flights = VALUE #( BASE flights ( flight ) ).
+
+flight-flight_date = today + 3.
+APPEND flight TO flights.
 ```
 
 :::note Hinweis
@@ -46,18 +49,14 @@ Der Operator `BASE` ermöglicht das Erweitern einer internen Tabelle.
 ## Lesen von Datensätzen
 Tabellenausdrücke ermöglichen das Lesen eines Einzelsatzes per Index bzw. per Schlüssel, die LOOP-Schleife ermöglicht das zeilenweise Auslesen von internen Tabellen.
 
-```abap
-DATA flight TYPE flight.
-DATA flights TYPE flights.
-DATA(today) = sy-datlo.
-
-* Lesen eines Einzelsatzes
+```abap showLineNumbers
+"Lesen eines Einzelsatzes
 flight = flights[ 1 ].
 flight = flights[ carrier_id = 'LH' connection_id = '0400' flight_date = today ].
 
-* Lesen mehrerer Datensätze
+"Lesen mehrerer Datensätze
 LOOP AT flights INTO flight WHERE flight_date >= today.
-  WRITE flight-carrier_id.
+  out->write( flight-carrier_id ).
 ENDLOOP.
 ```
 
@@ -67,16 +66,16 @@ Durch den Zusatz `WHERE` können bei einer LOOP-Schleife die auszulesenden Zeile
 
 Die eingebaute ABAP-Funktion `LINES` gibt die Größe einer internen Tabelle zurück.
 
-```abap
+```abap showLineNumbers
 DATA(number_of_flights) = lines( flights ).
 ```
 
 ## Fehlerbehandlung bei Tabellenausdrücken
 Die Fehlerbehandlung bei Tabellenausdrücken kann mit Hilfe der eingebauten Prädikatsfunktion `LINE_EXISTS` erfolgen.
 
-```abap
-DATA flight TYPE flight.
-DATA flights TYPE flights.
+```abap showLineNumbers
+DATA flight TYPE /dmo/flight.
+DATA flights TYPE /dmo/flights.
 
 IF line_exists( flights[ 1 ] ).
   flight = flights[ 1 ].
@@ -86,17 +85,17 @@ ENDIF.
 ## Ändern von Datensätzen
 Tabellenausdrücke ermöglichen das Ändern eines Einzelsatzes per Index bzw. per Schlüssel und über Datenreferenzen können mehrere Datensätze sequentiell geändert werden.
 
-```abap
-DATA flight TYPE flight.
-DATA flight2 TYPE REF TO flight.
-DATA flights TYPE flights.
+```abap showLineNumbers
+DATA flight TYPE /dmo/flight.
+DATA flight2 TYPE REF TO /dmo/flight.
+DATA flights TYPE /dmo/flights.
 DATA(today) = sy-datlo.
 
-* Ändern eines Einzelsatzes
+"Ändern eines Einzelsatzes
 flights[ 1 ]-price = 1000.
 flights[ carrier_id = 'LH' connection_id = '0400' flight_date = today ]-price = 1000.
 
-* Ändern mehrerer Datensätze
+"Ändern mehrerer Datensätze
 LOOP AT flights REFERENCE INTO flight2.
   flight2->price = 1000.
 ENDLOOP.
@@ -105,23 +104,23 @@ ENDLOOP.
 ## Löschen von Datensätzen
 Die Anweisung `DELETE` ermöglicht das Löschen eines oder mehrerer Datensätze
 
-```abap
-DATA flight TYPE flight.
-DATA flights TYPE flights.
+```abap showLineNumbers
+DATA flight TYPE /dmo/flight.
+DATA flights TYPE /dmo/flights.
 DATA(today) = sy-datlo.
 
-* Löschen eines Einzelsatzes
+"Löschen eines Einzelsatzes
 DELETE flights INDEX 1.
 
-* Löschen mehrerer Datensätze
+"Löschen mehrerer Datensätze
 DELETE flights WHERE flight_date < today.
 ```
 
 ## Sortieren interner Tabellen
 Die Anweisung `SORT` ermöglicht das Sortieren von internen Tabellen.
 
-```abap
-DATA flights TYPE flights.
+```abap showLineNumbers
+DATA flights TYPE /dmo/flights.
 
 SORT flights BY carrier_id ASCENDING connection_id DESCENDING flight_date ASCENDING.
 ```
@@ -135,8 +134,8 @@ Interne Tabellen, die als Zeilentyp keine Struktur, sondern ein Datenelement, ei
 Zugriff auf die Spalte.
 
 ```abap
-DATA carrier_ids TYPE TABLE OF s_carr_id.
-DATA carrier_id TYPE s_carr_id.
+DATA carrier_ids TYPE TABLE OF /dmo/carrier_id.
+DATA carrier_id TYPE /dmo/carrier_id.
 
 carrier_ids = VALUE #( ( 'BA' ) ( 'LH') ( 'UA' ) ).
 carrier_id = carrier_ids[ table_line = 'LH' ].

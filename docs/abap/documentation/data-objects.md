@@ -8,9 +8,9 @@ tags: []
 ## Deklaration von variablen Datenobjekten
 Bei der Deklaration eines Datenobjekts werden der Laufzeitumgebung Bezeichner und Datentyp des Datenobjekts bekanntgegeben. Die Deklaration erfolgt über das Schlüsselwort `DATA`.
 
-```abap
+```abap showLineNumbers
 DATA carrier_id TYPE c LENGTH 3.
-DATA connection_id TYPE s_conn_id.
+DATA connection_id TYPE /dmo/connection_id.
 ```
 
 :::note Hinweis
@@ -20,13 +20,13 @@ Mit dem Zusatz `LENGTH` kann bei unvollständigen Datentypen die Länge des Date
 ## Wertzuweisung
 Mit dem Zuweisungsoperator `=` wird dem Operanden der linken Seite der Wert des Ausdrucks der rechten Seite zugewiesen. Bei unterschiedlichen Typen wird automatisch eine Typkonvertierung durchgeführt, falls eine entsprechende Konvertierungsregel existiert.
 
-```abap
-DATA carrier_id TYPE s_carr_id.
+```abap showLineNumbers
+DATA carrier_id TYPE /dmo/carrier_id.
 carrier_id = 'LH'.
 
-DATA(flight_date) = '20210104'.
+DATA(connection_id) = '0400'.
 
-DATA connection_id TYPE s_conn_id VALUE '0400'.
+DATA flight_date TYPE /dmo/flight_date VALUE '20230101'.
 ```
 
 :::note Hinweis
@@ -36,8 +36,8 @@ Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts schon bei de
 ## Initialisierung
 Mit der Anweisung `CLEAR` kann der Inhalt eines Datenobjekts auf den Initialwert zurückgesetzt werden.
 
-```abap
-DATA carrier_id TYPE s_carr_id.
+```abap showLineNumbers
+DATA carrier_id TYPE /dmo/carrier_id.
 carrier_id = 'LH'.
 CLEAR carrier_id.
 ```
@@ -46,7 +46,7 @@ CLEAR carrier_id.
 Datenwerte von fixen Datenobjekten können zur Laufzeit nicht mehr verändert werden. Man unterscheidet dabei zwischen Literalen (fixe Datenobjekten ohne Bezeichner) und Konstanten (fixe Datenobjekte mit Bezeichner). Konstanten werden mit dem Schlüsselwort 
 `CONSTANTS` definiert.
 
-```abap
+```abap showLineNumbers
 CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
 ```
 

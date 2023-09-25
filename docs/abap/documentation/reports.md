@@ -14,15 +14,15 @@ können als Hintergrundjobs eingerichtet werden, um z.B. Routineaufgaben zu auto
 Das Schlüsselwort `PARAMETERS` legt ein Datenobjekt an und erzeugt implizit ein Selektionsbild mit einem entsprechenden Eingabefeld. Der Zusatz `AS CHECKBOX` ermöglicht das Erzeugen von Kontrollkästchen, der Zusatz `RADIOBUTTON GROUP` das Erzeugen von 
 Auswahlschaltern.
 
-```abap
-* Eingabefeld
-PARAMETERS p_carrid TYPE s_carr_id DEFAULT 'LH'.
-PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400'.
+```abap showLineNumbers
+"Defintion von Eingabefeldern
+PARAMETERS p_carrid TYPE /dmo/carrier_id DEFAULT 'LH'.
+PARAMETERS p_connid TYPE /dmo/connection_id DEFAULT '0400'.
 
-* Kontrollkästchen
+"Definition von Kontrollkästchen
 PARAMETERS p_chckbx TYPE c AS CHECKBOX.
 
-* Auswahlschalter (mit Auswahlschaltergruppe)
+"Definition von Auswahlschaltern (mit Auswahlschaltergruppe)
 PARAMETERS p_rdbtn1 TYPE c RADIOBUTTON GROUP grp.
 PARAMETERS p_rdbtn2 TYPE c RADIOBUTTON GROUP grp.
 
@@ -38,9 +38,9 @@ Eine Wertvorbelegung wird bei Eingabeparametern nicht über den Zusatz `VALUE`, 
 ## Ausgabe
 Das Schlüsselwort `WRITE` bereitet den Inhalt des Datenobjektes auf und gibt diesen auf der aktuellen ABAP-Liste aus.
 
-```abap
-PARAMETERS p_carrid TYPE s_carr_id.
-PARAMETERS p_connid TYPE s_conn_id.
+```abap showLineNumbers
+PARAMETERS p_carrid TYPE /dmo/carrier_id.
+PARAMETERS p_connid TYPE /dmo/connection_id.
 
 WRITE 'Flight Connection'.
 ULINE.
@@ -57,11 +57,11 @@ Weitere Schlüsselwörter zur Definition der Ausgabe sind z.B. `NEW-LINE`, `SKIP
 Mit der Anweisung `MESSAGE` können Dialognachrichten an den Benutzer geschickt werden. ABAP kennt die Nachrichtentypen _Information_ (I), _Setznachricht_ (S), _Warnung_ (W), _Fehler_ (E), _Abbruch_ (A) sowie _Kurzdump_ (X). Platzhalter in der angegebenen 
 Nachricht können durch den Zusatz `WITH` versorgt werden.
 
-```abap
-PARAMETERS p_carrid TYPE s_carr_id.
+```abap showLineNumbers
+PARAMETERS p_carrid TYPE /dmo/carrier_id.
 
 IF p_carrid IS INITIAL.
-  MESSAGE e000(zabap) WITH p_carrid.
+  MESSAGE e000(flight) WITH p_carrid.
 ENDIF.
 ```
 
@@ -70,11 +70,11 @@ ABAP kennt verschiedene Arten von Textelementen:
 - Textsymbole ermöglichen die Übersetzung von statischen Texten
 - Selektionstexte dienen als Beschriftungen für Eingabeparameter
 
-```abap
-* Textliteral (nicht übersetzbar)
+```abap showLineNumbers
+"Textliteral (nicht übersetzbar)
 WRITE 'Hello World'.
 
-* Textsymbol (übersetzbar)
+"Textsymbol (übersetzbar)
 WRITE: / 'Hello World'(000).
 WRITE: / TEXT-000.
 ```
@@ -89,26 +89,26 @@ Beim Starten eines ABAP Programms werden nacheinander verschiedene Ereignisse au
 - Das Ereignis `AT SELECTION-SCREEN` kann für Eingabeprüfungen verwendet werden
 - Die Hauptverarbeitung findet im Ereignis `START-OF-SELECTION` statt
 
-```abap
-* Definitionen und Deklarationen
-PARAMETERS p_from TYPE s_from_cit.
-PARAMETERS p_to TYPE s_to_city.
-PARAMETERS p_date TYPE s_date.
+```abap showLineNumbers
+"Definitionen und Deklarationen
+PARAMETERS p_from TYPE /dmo/airport_from_id.
+PARAMETERS p_to TYPE /dmo/airport_to_id.
+PARAMETERS p_date TYPE /dmo/flight_date.
 
-* Dynamische Wertevorbelegungen
+"Dynamische Wertevorbelegungen
 INITIALIZATION.
   IF sy-langu = 'D'.
-    p_from = 'FRANKFURT'.
-    p_to = 'NEW YORK'.
+    p_from = 'FRA'.
+    p_to = 'JFK'.
   ENDIF.
 
-* Eingabeprüfungen
+"Eingabeprüfungen
 AT SELECTION-SCREEN ON p_date.
   IF p_date = sy-datlo .
-    MESSAGE e001(zabap) WITH p_date.
+    MESSAGE e001(flight) WITH p_date.
   ENDIF.
 
-* Hauptverarbeitung
+"Hauptverarbeitung
 START-OF-SELECTION.
   WRITE: p_from, p_to, p_date.
 ```
