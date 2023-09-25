@@ -1,5 +1,5 @@
 ---
-title: Übungsaufgabe ABAP-11
+title: ABAP-11
 description: ''
 ---
 

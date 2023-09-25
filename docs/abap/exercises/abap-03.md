@@ -1,5 +1,5 @@
 ---
-title: Übungsaufgabe ABAP-03
+title: ABAP-03
 description: ''
 ---
 
