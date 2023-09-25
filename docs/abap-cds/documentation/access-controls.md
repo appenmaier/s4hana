@@ -7,7 +7,7 @@ tags: []
 
 Zugriffskontrollen ermöglichen die Vergabe von Lesezugriffen für Datenbankviews. Die Berechtigungsprüfung erfolgt dabei in der Regel anhand der im System festgelegeten PFCG-Rollen.
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Role for Flight' 
 @MappingRole: true 
 define role FLIGHT { 
