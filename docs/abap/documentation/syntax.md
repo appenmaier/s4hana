@@ -10,6 +10,12 @@ ABAP-Quellcode besteht aus einzelnen Anweisungen. Diese dürfen beliebig einger�
 Zeilen, die mit einem Stern beginnen, werden von Laufzeitsystem als Kommentarzeile erkannt und ignoriert. Doppelte Anführungszeichen kennzeichnen den Rest einer Zeile als Kommentar.
 
 ```abap title="cl_main.java" showLineNumbers
+CLASS cl_main DEFINITION PUBLIC CREATE PUBLIC.
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
