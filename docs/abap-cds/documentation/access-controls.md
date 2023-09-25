@@ -8,10 +8,10 @@ tags: []
 Zugriffskontrollen ermöglichen die Vergabe von Lesezugriffen für Datenbankviews. Die Berechtigungsprüfung erfolgt dabei in der Regel anhand der im System festgelegeten PFCG-Rollen.
 
 ```sql
-@EndUserText.label: 'Role for AbapCdsView' 
+@EndUserText.label: 'Role for Flight' 
 @MappingRole: true 
-define role ABAPCDSVIEW { 
- grant select on AbapCdsView where (Carrid) = aspect pfcg_auth(S_CARRID, CARRID, ACTVT = '03'); 
+define role FLIGHT { 
+ grant select on Flight where (CarrierId) = aspect pfcg_auth(S_CARRID, CARRID, ACTVT = '03'); 
 }
 ```
 
