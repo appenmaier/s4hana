@@ -8,16 +8,16 @@ tags: []
 Zeichenketten werden in ABAP durch den ABAP-Standardtyp `STRING` sowie den einfachen Hochkommata realisiert. Zeichenketten-Templates ermöglichen in ABAP die Verwendung von Ausdrücken und Steuerzeichen in Zeichenketten und werden mit den Trennstrichen realisiert.
 Sowohl Zeichenketten als auch Zeichenketten-Templates können mit dem Verkettungsoperator `&&` oder dem Zuweisungsoperator `&&=` verknüpft werden.
 
-```abap
+```abap showLineNumbers
 DATA text TYPE string VALUE 'Winter'.
 DATA text2 TYPE string VALUE 'is'.
 DATA text3 TYPE string.
 
-* Verknüpfung mehrerer Zeichenketten
+"Verknüpfung mehrerer Zeichenketten
 text3 = text && | | && text2.
 text3 &&= | Coming|.
 
-* Verwenden eines Zeichenketten-Templates
+"Verwenden eines Zeichenketten-Templates
 text3 = |{ text } { text2 } Coming|.
 ```
 
@@ -34,7 +34,7 @@ Die Anweisung `SPLIT` ermöglicht das Aufteilen einer Zeichenkette. Für weitere
 - Verschiebefunktionen
 - Groß- und Kleinschreibungsfunktionen
 
-```abap
+```abap showLineNumbers
 DATA text TYPE string VALUE 'Schnupper Gas Bösewicht'.
 DATA result TYPE i.
 
