@@ -11,16 +11,17 @@ umfasst ausschließlich die Implementierungen der Methoden. Der Definitionsberei
 ## Definition von Attributen
 "Normale" Attribute werden, wie Variablen, mit dem Schlüsselwort `DATA` deklariert, Klassenattribute mit dem Schlüsselwort `CLASS-DATA`. Zur Typisierung können ABAP-Standardtypen sowie lokale und globale Datentypen verwendet werden.
 
-```abap
+```abap title="cl_vehicle" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
   
   PUBLIC SECTION.
-  
+    DATA make  TYPE string READ-ONLY.
+    DATA model TYPE string READ-ONLY.
+    CLASS-DATA number_of_vehicles TYPE i READ-ONLY.
+
   PROTECTED SECTION.
   
   PRIVATE SECTION.
-    DATA make  TYPE string.
-    DATA model TYPE string.
 
 ENDCLASS.
 ```
@@ -34,35 +35,25 @@ Mit dem Zusatz `READ-ONLY` können öffentliche Attribute so eingeschränkt werd
 besitzt in ABAP den reservierten Namen `CONSTRUCTOR`, der Klassenkonstruktor, der automatisch beim ersten Zugriff auf die Klasse aufgerufen wird, das Schlüsselwort `CLASS_CONSTRUCTOR`. Der Konstruktor kann nur IMPORTING-Parameter und Ausnahmen beinhalten,
 der Klassenkonstruktor weder das eine noch das andere.
 
-```abap
+```abap title="cl_vehicle" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
 
   PUBLIC SECTION.
+    DATA make  TYPE string READ-ONLY.
+    DATA model TYPE string READ-ONLY.
+    CLASS-DATA number_of_vehicles TYPE i READ-ONLY.
+
     METHODS constructor
       IMPORTING
         make  TYPE string
         model TYPE string.
-		
-    METHODS get_make
-      RETURNING VALUE(make) TYPE string.
-	  
-    METHODS get_model
-      RETURNING VALUE(model) TYPE string.
 	  
     METHODS to_string
       RETURNING VALUE(string) TYPE string.
-	  
-	CLASS-METHODS get_number_of_vehicles
-      RETURNING VALUE(number_of_vehicles) TYPE string.
-	  
-    CLASS-METHODS class_constructor.
 
   PROTECTED SECTION.
   
-  PRIVATE SECTION.
-    DATA make  TYPE string.
-    DATA model TYPE string.
-    CLASS-DATA number_of_vehicles TYPE i.
+  PRIVATE SECTION.   
 
 ENDCLASS.
 ```
@@ -74,33 +65,18 @@ ABAP kennt keine überladene Methoden, stattdessen können mit dem Zusatz `OPTIO
 ## Implementieren von Methoden
 Die Implementierung von Methoden erfolgt im Implementierungsbereich der Klasse.
 
-```abap
+```abap title="cl_vehicle" showLineNumbers
 CLASS cl_vehicle IMPLEMENTATION.
 
   METHOD constructor.
     me->make = make.
     me->model = model.
+
     number_of_vehicles += 1.
-  ENDMETHOD.
-
-  METHOD get_make.
-    make = me->make.
-  ENDMETHOD.
-
-  METHOD get_model.
-    model = me->model.
   ENDMETHOD.
 
   METHOD to_string.
     string = |{ make } { model }|.
-  ENDMETHOD.
-
-  METHOD get_number_of_vehicles.
-    number_of_vehicles =
-     cl_vehicle=>number_of_vehicles.
-  ENDMETHOD.
-
-  METHOD class_constructor.
   ENDMETHOD.
 
 ENDCLASS.
