@@ -5,7 +5,7 @@ sidebar_position: 40
 tags: []
 ---
 
-ABAP kennt mathematische Operatoren für die Addition, die Subtraktion, die Multiplikation, die Division, die Potenz, die ganzzahlige Division sowie den Divisionsrest (Modulo). Zudem besitzt ABAP für jede Grundrechenart einen dazugehörigen Zuweisungsoperatoren.
+ABAP kennt mathematische Operatoren für die Addition, die Subtraktion, die Multiplikation, die Division, die Potenz, die ganzzahlige Division sowie den Divisionsrest (Modulo). Zudem besitzt ABAP für jede Grundrechenart einen dazugehörigen Zuweisungsoperator.
 
 ```abap showLineNumbers
 DATA result TYPE p LENGTH 16 DECIMALS 2.
