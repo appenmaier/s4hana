@@ -10,14 +10,14 @@ In ABAP kommen sowohl einfache als auch komplexe Fallunterscheidungen zum Einsat
 ## Einfache Fallunterscheidungen
 Einfache Fallunterscheidungen können mit `IF...ELSE...ENDIF` realisiert werden. Mit dem IF-Konstrukt können beliebig logische Ausdrücke als Prüfbedingung angegeben werden. 
 
-```abap
-DATA carrier_id TYPE s_carr_id VALUE 'LH'.
-DATA flight_date TYPE s_date VALUE '20210104'.
+```abap showLineNumbers
+DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
+DATA flight_date TYPE /dmo/flight_date VALUE '20230104'.
 
-IF NOT ( flight_date >= '20210101' AND flight_date <= '20211231' ) OR carrier_id = 'LH'.
-  WRITE 'Bedingung erfüllt'.
+IF NOT ( flight_date >= '20230101' AND flight_date <= '20231231' ) OR carrier_id = 'LH'.
+  out->write( 'Bedingung erfüllt' ).
 ELSE.
-  WRITE 'Bedingung nicht erfüllt'.
+  out->write( 'Bedingung nicht erfüllt' ).
 ENDIF.
 ```
 
@@ -29,15 +29,15 @@ Der ELSE-Zweig ist optional.
 Komplexe Fallunterscheidungen können mit `CASE...WHEN...ENDCASE` realisiert werden. Hiermit sind übersichtliche Fallunterscheidung möglich.
 
 ```abap
-DATA carrier_id TYPE s_carr_id VALUE 'LH'.
+DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
 
 CASE carrier_id.
   WHEN 'LH' OR 'lh' OR 'Lh' OR 'lH'.
-    WRITE 'Lufthansa'.
+    out->write( 'Lufthansa' ).
   WHEN 'AA' OR 'aa' OR 'Aa' OR 'aA'.
-    WRITE 'American Airlines'.
+    out->write( 'American Airlines' ).
   WHEN OTHERS.
-    WRITE carrier_id.
+    out->write( carrier_id ).
 ENDCASE.
 ```
 
