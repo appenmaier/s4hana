@@ -7,7 +7,7 @@ tags: []
 
 Schleifen können in ABAP entweder mit dem Schlüsselwort `WHILE` oder dem Schlüsselwort `DO` umgesetzt werden.
 
-```abap
+```abap showLineNumbers
 "Kopfgesteuerte Schleife
 WHILE sy-index <= 10.
   WRITE: / sy-index.
