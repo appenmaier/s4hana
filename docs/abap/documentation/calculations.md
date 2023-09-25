@@ -7,34 +7,20 @@ tags: []
 
 ABAP kennt mathematische Operatoren für die Addition, die Subtraktion, die Multiplikation, die Division, die Potenz, die ganzzahlige Division sowie den Divisionsrest (Modulo). Zudem besitzt ABAP für jede Grundrechenart einen dazugehörigen Zuweisungsoperatoren.
 
-```abap title="cl_main.java" showLineNumbers
-CLASS cl_main DEFINITION PUBLIC CREATE PUBLIC.
-  PUBLIC SECTION.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-ENDCLASS.
+```abap showLineNumbers
+DATA result TYPE p LENGTH 16 DECIMALS 2.
 
-CLASS cl_main IMPLEMENTATION.
-
-  METHOD if_oo_adt_classrun~main.
-
-    DATA result TYPE p LENGTH 16 DECIMALS 2.
-
-    result = 5 + 3. "Addition
-    result = 5 - 3. "Subtraktion
-    result = 5 * 3. "Multiplikation
-    result = 5 / 3. "Division
-    result = 5 ** 3. "Potenz
-    result = 5 DIV 3. "Ganzzahlige Division
-    result = 5 MOD 3. "Divisionsrest
-    result += 3. "Zuweisungsoperator Addition
-    result -= 3. "Zuweisungsoperator Subtraktion
-    result *= 3. "zuweisungsoperator Multiplikation
-    result /= 3. "Zuweisungsoperator Division
-
-  ENDMETHOD.
-
-ENDCLASS.
+result = 5 + 3. "Addition
+result = 5 - 3. "Subtraktion
+result = 5 * 3. "Multiplikation
+result = 5 / 3. "Division
+result = 5 ** 3. "Potenz
+result = 5 DIV 3. "Ganzzahlige Division
+result = 5 MOD 3. "Divisionsrest
+result += 3. "Zuweisungsoperator Addition
+result -= 3. "Zuweisungsoperator Subtraktion
+result *= 3. "zuweisungsoperator Multiplikation
+result /= 3. "Zuweisungsoperator Division
 ```
 
 Für weitere mathematische Berechnungen stellt ABAP eine Reihe eingebauter Funktionen zur Verfügung:
@@ -44,26 +30,12 @@ Für weitere mathematische Berechnungen stellt ABAP eine Reihe eingebauter Funkt
 - Gleitpunktfunktionen
 - Rundungsfunktionen
 
-```abap title="cl_main.java" showLineNumbers
-CLASS cl_main DEFINITION PUBLIC CREATE PUBLIC.
-  PUBLIC SECTION.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
-ENDCLASS.
+```abap showLineNumbers
+DATA result TYPE p LENGTH 16 DECIMALS 2.
 
-CLASS cl_main IMPLEMENTATION.
-
-  METHOD if_oo_adt_classrun~main.
-
-    DATA result TYPE p LENGTH 16 DECIMALS 2.
-
-    result = abs( -1 ). "Betrag
-    result = ipow( base = 4 exp = 2 ). "Potenz
-    result = nmax( val1 = 3 val2 = 5 ). "Maximalwert
-    result = cos( '6.2' ). "Kosinus
-    result = round( val = '3.426' dec = 1 ). "Rundungsfunktion
-
-  ENDMETHOD.
-
-ENDCLASS.
+result = abs( -1 ). "Betrag
+result = ipow( base = 4 exp = 2 ). "Potenz
+result = nmax( val1 = 3 val2 = 5 ). "Maximalwert
+result = cos( '6.2' ). "Kosinus
+result = round( val = '3.426' dec = 1 ). "Rundungsfunktion
 ```
