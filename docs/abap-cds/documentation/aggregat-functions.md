@@ -9,21 +9,21 @@ Die ABAP CDS unterstützen die klassischen Aggregatfunktionen `count`, `sum`, `a
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: 'Flight'
-define view Flight
+@EndUserText.label: 'Connection KPIs'
+define view entity ConnectionKPIs
   as select from /dmo/flight
 {
-  carrier_id                                                  as CarrierId,
-  connection_id                                               as ConnectionId,
-  count(*)                                                    as NumberOfFlights,
-  count(distinct plane_type_id)                               as NumberOfDifferentPlaneTypeIds,
-  sum(seats_occupied)                                         as TotalOccupiedSeats,
-  sum(price)                                                  as TotalPrice,
-  avg(price as abap.dec(16,2))                                as AveragePrice,
-  min(seats_occupied)                                         as MinimumOccupiedSeats,
-  max(seats_occupied)                                         as MaximumOccupiedSeats,
-  sum(case when seats_occupied = seats_max then 1 else 0 end) as NumberOfBookedUpFlights,
-  sum(case when seats_occupied = 0 then 1 else 0 end)         as NumberOfEmptyFlights
+  key carrier_id                                                  as CarrierId,
+  key connection_id                                               as ConnectionId,
+      count(*)                                                    as NumberOfFlights,
+      count(distinct plane_type_id)                               as NumberOfDifferentPlaneTypeIds,
+      sum(seats_occupied)                                         as TotalOccupiedSeats,
+      sum(price)                                                  as TotalPrice,
+      avg(price as abap.dec(16,2))                                as AveragePrice,
+      min(seats_occupied)                                         as MinimumOccupiedSeats,
+      max(seats_occupied)                                         as MaximumOccupiedSeats,
+      sum(case when seats_occupied = seats_max then 1 else 0 end) as NumberOfBookedUpFlights,
+      sum(case when seats_occupied = 0 then 1 else 0 end)         as NumberOfEmptyFlights
 }
 where
   price < 1000
