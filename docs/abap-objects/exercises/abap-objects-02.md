@@ -1,5 +1,5 @@
 ---
-title: Übungsaufgabe ABAP-Objects-02
+title: ABAP-Objects-02
 description: ''
 ---
 
