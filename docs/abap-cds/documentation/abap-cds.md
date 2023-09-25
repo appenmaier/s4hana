@@ -14,4 +14,4 @@ Die Core Data Services sind eine Sammlung domänenspezifischer Sprachen und Serv
 - Mit Hilfe der _Query Language_ (QL) können die Daten von Datenbanktabellen und Datenbankviews gelesen werden
 - Mit Hilfe der _Data Control Language_ (DCL) können Zugriffsrechte definiert werden
 
-Im Gegensatz zu den HANA CDS, welche spezzfisch für SAP HANA entwickelt wurden, sind die ABAP CDS datenbankunabhängig.
+Im Gegensatz zu den HANA CDS, welche spezifisch für SAP HANA entwickelt wurden, sind die ABAP CDS datenbankunabhängig.
