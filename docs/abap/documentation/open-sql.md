@@ -32,23 +32,29 @@ Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
 Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff 
 zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
 
-```abap
-DATA carrier_id TYPE s_carr_id VALUE 'LH' .
-DATA connection_id TYPE s_conn_id VALUE '0400'.
-DATA connection TYPE spfli.
-DATA connections TYPE TABLE OF spfli.
+```abap showLineNumbers
+DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH' .
+DATA connection_id TYPE /dmo/connection_id VALUE '0400'.
+DATA connection TYPE /dmo/connection.
+DATA connections TYPE TABLE OF /dmo/connection.
 
-* Lesen eines Einzelsatzes
-SELECT SINGLE FROM spfli FIELDS * WHERE carrid = @carrier_id
- AND connid = @connection_id INTO @connection.
+"Lesen eines Einzelsatzes
+SELECT SINGLE FROM /dmo/connection
+ FIELDS *
+ WHERE carrier_id = @carrier_id
+ AND connection_id = @connection_id
+ INTO @connection.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 
-* Lesen mehrerer Datensätze
-SELECT FROM spfli FIELDS * WHERE carrid = @carrier_id INTO TABLE @connections.
+"Lesen mehrerer Datensätze
+SELECT FROM /dmo/connection
+ FIELDS *
+ WHERE carrier_id = @carrier_id
+ INTO TABLE @connections.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 ```
 
@@ -60,25 +66,31 @@ Mit dem optionalen Zusatz `ORDER BY` können die gelesenen Datensätze sortiert 
 Bei Selektion von bestimmten Feldern muss in der INTO-Klausel eine Variable gewählt werden, die den gleichen Aufbau wie die Feldliste besitzt. Der Zusatz `CORRESPONDING FIELDS OF` der INTO-Klausel bewirkt, dass nur gleichnamige Felder der Zielvariable befüllt 
 werden.
 
-```abap
-DATA connection TYPE connection.
+```abap showLineNumbers
+DATA connection TYPE /dmo/connection.
 
-* Angabe passender Felder
-SELECT SINGLE FROM spfli FIELDS carrid, connid INTO @connection.
+"Angabe passender Felder
+SELECT SINGLE FROM /dmo/connection
+ FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
+ INTO @connection.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 
-* Kopieren namensgleicher Felder
-SELECT SINGLE FROM spfli FIELDS * INTO CORRESPONDING FIELDS OF @connection.
+"Kopieren namensgleicher Felder
+SELECT SINGLE FROM /dmo/connection
+ FIELDS *
+ INTO CORRESPONDING FIELDS OF @connection.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 
-* Inlinedeklaration
-SELECT SINGLE FROM spfli FIELDS * INTO @DATA(connection2).
+"Inlinedeklaration
+SELECT SINGLE FROM /dmo/connection
+ FIELDS *
+ INTO @DATA(connection2).
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 ```
 
@@ -89,30 +101,30 @@ Bei nicht übereinstimmenden Feldtypen wird eine (aufwändige) Typkonvertierung 
 ## Schreibende Datenbankzugriffe
 Für schreibende Datenbankzugriffe stellt ABAP die Anweisungen `INSERT` (Hinzufügen), `UPDATE` (Ändern) sowie `DELETE` (Löschen) zur Verfügung.
 
-```abap
-DATA connection TYPE spfli.
+```abap showLineNumbers
+DATA connection TYPE /dmo/connection.
 
-connection-mandt = sy-mandt.
-connection-carrid = 'LH'.
-connection-connid = '0400'.
-connection-cityfrom = 'FRANKFURT'.
-connection-cityto = 'NEW YORK'.
+connection-client = sy-mandt.
+connection-carrier_id = 'LH'.
+connection-connection_id = '0400'.
+connection-airport_from_id = 'FRA'.
+connection-airport_to_id = 'JFK'.
 
-* Hinzufügen eines Datensatzes
-INSERT spfli FROM @connection.
+"Hinzufügen eines Datensatzes
+INSERT /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 
-* Ändern eines Datensatzes
-UPDATE spfli FROM @connection.
+"Ändern eines Datensatzes
+UPDATE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 
-* Lösches eines Datensatzes
-DELETE spfli FROM @connection.
+"Lösches eines Datensatzes
+DELETE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  ...
+  out->write( 'no data' ).
 ENDIF.
 ```
