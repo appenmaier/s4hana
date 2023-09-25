@@ -7,25 +7,19 @@ tags: []
 
 Für arithmetische Ausdrücke können in den ABAP CDS die Operatoren `+`, `-`, `*` und `/` verwendet werden.
 
-```sql
-@AbapCatalog.sqlViewName: 'ABAPCDSVIEW'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
+```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: 'ABAP CDS View'
-define view AbapCdsView
-  as select from sflight
+@EndUserText.label: 'Flight'
+define view Flight
+  as select from /dmo/flight
 {
-  seatsmax                                                              as MaxSeatsEconomy,
-  seatsocc                                                              as OccupiedSeatsEconomy,
-  seatsmax - seatsocc                                                   as FreeSeatsEconomy,
-  seatsmax_b                                                            as MaxSeatsBusiness,
-  seatsmax_f                                                            as MaxSeatsFirst,
-  seatsmax + seatsmax_b + seatsmax_f                                    as MaxSeatsTotal,
-  price                                                                 as OldPrice,
-  price * 2                                                             as DoublePrice,
-  cast(price as abap.fltp) * 1.1                                        as NewPrice,
-  ( cast(seatsocc as abap.fltp) / cast(seatsmax as abap.fltp) ) * 100.0 as OccupancyRate,
+  seats_max                                                                  as SeatsMax,
+  seats_occupied                                                             as SeatsOccupied,
+  seats_max - seats_occupied                                                 as SeatsFree,
+  price                                                                      as OldPrice,
+  price * 2                                                                  as DoublePrice,
+  cast(price as abap.fltp) * 1.1                                             as NewPrice,
+  100 * ( cast(seats_occupied as abap.fltp) / cast(seats_max as abap.fltp) ) as OccupancyRate,
 }
 ```
 
