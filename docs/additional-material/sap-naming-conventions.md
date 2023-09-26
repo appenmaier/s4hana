@@ -28,13 +28,14 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | Tabellentyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>       | `ZABAP_FLIGHTS`                |
 | Datenbanktabelle (Anwendungstabelle)     | <Namensraum\><Komponente\>\_A<Beschreibung\>      | `ZABAP_AFLIGHT`                |
 | Datenbanktabelle (Entwurfstabelle)       | <Namensraum\><Komponente\>\_D<Beschreibung\>      | `ZABAP_DFLIGHT`                |
-| Datenbankview                            | <Namensraum\><Komponente\>\_V<Beschreibung\>      | `ZABAP_VFLIGHT`                |
-| ABAP CDS: Basic View                     | <Namensraum\>\_<Komponente\>R_\_<Beschreibung\>   | `ZABAP_R_Flight`               |
+| ABAP CDS: Basic View                     | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>   | `ZABAP_I_Flight`               |
+| ABAP CDS: Basic BO View (Restricted)     | <Namensraum\>\_<Komponente\>R_\_<Beschreibung\>   | `ZABAP_R_Flight`               |
 | ABAP CDS: Interface View                 | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>   | `ZABAP_I_FlightWithConnection` |
 | ABAP CDS: Transactional Interface View   | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>TP | `ZABAP_I_FlightTP`             |
 | ABAP CDS: Consumption View               | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>    | `ZABAP_C_Flight`               |
+| ABAP CDS: Projection View                | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>    | `ZABAP_C_Flight`               |
 | ABAP CDS: Transactional Consumption View | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>TP  | `ZABAP_C_FlightTP`             | 
-| ABAP CDS: WErtehilfe                     | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>VH  | `ZABAP_C_AirportVH`            |
+| ABAP CDS: Wertehilfe                     | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>VH  | `ZABAP_C_AirportVH`            |
 | ABAP CDS: Extension View                 | <Namensraum\>E_<Komponente\>\_<Beschreibung\>     | `ZABAP_E_Flight`               |
 | ABAP CDS: Access Control                 | <Name der CDS-View\>                              | `ZABAP_I_FLIGHT`               |
 | ABAP CDS: Metadaten-Extension            | <Name der CDS-View\>                              | `ZABAP_C_FLIGHT`               |
