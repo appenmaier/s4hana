@@ -1,7 +1,7 @@
 ---
 title: Eingebaute Funktionen
 description: ''
-sidebar_position: 60
+sidebar_position: 50
 tags: []
 ---
 
