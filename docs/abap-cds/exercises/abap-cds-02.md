@@ -1,5 +1,5 @@
 ---
-title: Übungsaufgabe ABAP-CDS-02
+title: ABAP-CDS-02
 description: ''
 ---
 
