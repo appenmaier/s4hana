@@ -8,7 +8,7 @@ Um den Geschäftsservice um Buchungsdaten zu erweitern, muss zunächst eine Proj
 
 ## Projection View ZC_Booking
 ```sql
-@EndUserText.label: 'Projection View: Booking'
+@EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_Booking
@@ -32,7 +32,7 @@ define view entity ZC_Booking
 
 ## Projection View ZC_Travel
 ```sql
-@EndUserText.label: 'Projection View: Travel'
+@EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
@@ -64,7 +64,7 @@ define root view entity ZC_Travel
 ```sql
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL {
-  expose ZC_Travel;
-  expose ZC_Booking;
+  expose ZC_Travel as Travel;
+  expose ZC_Booking as Booking;
 }
 ```

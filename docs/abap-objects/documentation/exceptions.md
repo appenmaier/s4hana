@@ -9,18 +9,30 @@ Im klassenbasierten Ausnahmenkonzept werden Ausnahmen als Ausnahmeobjekte reprä
 
 ```abap title="cl_vehicle" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
-...
+
+  PUBLIC SECTION.
+    DATA make  TYPE string READ-ONLY.
+    DATA model TYPE string READ-ONLY.
+    CLASS-DATA number_of_vehicles TYPE i READ-ONLY.
+
     METHODS constructor
       IMPORTING
         make  TYPE string
         model TYPE string
       RAISING
         cx_initial_parameter.
-...
+      
+    METHODS to_string
+      RETURNING VALUE(string) TYPE string.
+
+  PROTECTED SECTION.
+  
+  PRIVATE SECTION.   
+
 ENDCLASS.
  
 CLASS cl_vehicle IMPLEMENTATION.
-...
+
   METHOD constructor.
     IF make IS INITIAL.
       RAISE EXCEPTION TYPE cx_initial_parameter EXPORTING parameter = 'MAKE'.
@@ -35,7 +47,11 @@ CLASS cl_vehicle IMPLEMENTATION.
 
     number_of_vehicles += 1.
   ENDMETHOD.
-...
+  
+  METHOD to_string.
+    string = |{ make } { model }|.
+  ENDMETHOD.
+
 ENDCLASS.
 ```
 
@@ -45,7 +61,7 @@ Mit dem Zusatz `EXPORTING` können dem Ausnahmenobjekt Zusatzinformationen mitge
 
 Mit der Anweisung `TRY...CATCH...ENDTRY` können klassenbasierte Ausnahmen abgefangen und behandelt werden.
 
-```abap title="cl_vehicle" showLineNumbers
+```abap title="cl_main" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
  
   METHOD if_oo_adt_classrun~main.

@@ -8,12 +8,12 @@ sidebar_position: 100
 :::
 
 ## Hervorhebung für den Status
-### Interface View ZR_Booking
+### Restricted Interface View ZR_Booking
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Basic View: Booking'
+@EndUserText.label: 'Booking'
 define view entity ZR_Booking
-  as select from z_booking
+  as select from zabooking
   association to parent ZR_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid  as BookingUuid,
@@ -85,9 +85,6 @@ annotate view ZC_Booking with
   /* Facets */
   @UI.facet: [{ position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Booking Details' }]
 
-  /* Actions */
-  @UI.lineItem: [{ position: 10, type: #FOR_ACTION, dataAction: 'CANCEL_BOOKING', label: 'Cancel Booking' }]
-
   /* Fields */
   @UI.hidden: true
   BookingUuid;
@@ -133,12 +130,12 @@ annotate view ZC_Booking with
 ```
 
 ## Hervorhebung für das Startdatum
-### Interface View ZR_Travel
+### Restricted Interface View ZR_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Basic View: Travel'
+@EndUserText.label: 'Travel'
 define root view entity ZR_Travel
-  as select from z_travel
+  as select from zatravel
   composition [0..*] of ZR_Booking      as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
@@ -168,7 +165,7 @@ define root view entity ZR_Travel
 
 ### Projection View ZC_Travel
 ```sql
-@EndUserText.label: 'Projection View: Travel'
+@EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
@@ -232,7 +229,7 @@ annotate view ZC_Travel with
   @UI.identification: [{ position: 20 }]
   CustomerId;
 
-  @UI.lineItem: [{ position: 30, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.lineItem: [{ position: 30 }]
   @UI.selectionField: [{ position: 30 }]
   @UI.identification: [{ position: 30 }]
   BeginDate;
@@ -245,7 +242,7 @@ annotate view ZC_Travel with
   @UI.identification: [{ position: 40 }]
   EndDate;
 
-  @UI.lineItem: [{ position: 50 }]
+  @UI.lineItem: [{ position: 50, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
   @UI.identification: [{ position: 50 }]
   Description;
 

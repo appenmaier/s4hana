@@ -4,16 +4,16 @@ description: ''
 sidebar_position: 10
 ---
 
-Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Interface View erstellt, die den Wurzelknoten des Geschäftsobjektes darstellt.
+Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des Geschäftsobjektes darstellt.
 
-## Datenbanktabelle Z_TRAVEL
+## Datenbanktabelle ZATRAVEL
 ```sql
 @EndUserText.label : 'Travel'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table z_travel {
+define table zatravel {
   key client            : abap.clnt not null;
   key travel_uuid       : sysuuid_x16 not null;
   travel_id             : /dmo/travel_id;
@@ -21,7 +21,7 @@ define table z_travel {
   begin_date            : /dmo/begin_date;
   end_date              : /dmo/end_date;
   description           : /dmo/description;
-  @Semantics.amount.currencyCode : 'z_travel.currency_code'
+  @Semantics.amount.currencyCode : 'zatravel.currency_code'
   total_price           : /dmo/total_price;
   currency_code         : /dmo/currency_code;
   created_by            : abp_creation_user;
@@ -32,12 +32,12 @@ define table z_travel {
 }
 ```
 
-## Interface View ZI_Travel
+## Restricted Interface View ZR_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Basic View: Travel'
+@EndUserText.label: 'Travel'
 define root view entity ZR_Travel
-  as select from z_travel
+  as select from zatravel
 {
   key travel_uuid           as TravelUuid,
       travel_id             as TravelId,

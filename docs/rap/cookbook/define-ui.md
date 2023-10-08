@@ -76,7 +76,7 @@ annotate view ZC_Travel with
 
 ## Projection View ZC_Travel
 ```sql
-@EndUserText.label: 'Projection View: Travel'
+@EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true

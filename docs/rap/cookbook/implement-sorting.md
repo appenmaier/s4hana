@@ -42,7 +42,7 @@ annotate view ZC_Travel with
   @UI.identification: [{ position: 20 }]
   CustomerId;
 
-  @UI.lineItem: [{ position: 30, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.lineItem: [{ position: 30 }]
   @UI.selectionField: [{ position: 30 }]
   @UI.identification: [{ position: 30 }]
   BeginDate;
@@ -55,7 +55,7 @@ annotate view ZC_Travel with
   @UI.identification: [{ position: 40 }]
   EndDate;
 
-  @UI.lineItem: [{ position: 50 }]
+  @UI.lineItem: [{ position: 50, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
   @UI.identification: [{ position: 50 }]
   Description;
 

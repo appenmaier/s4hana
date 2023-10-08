@@ -11,7 +11,7 @@ Zugriffskontrollen ermöglichen die Vergabe von Lesezugriffen für Datenbankview
 @EndUserText.label: 'Role for Flight' 
 @MappingRole: true 
 define role FLIGHT { 
- grant select on Flight where (CarrierId) = aspect pfcg_auth(S_CARRID, CARRID, ACTVT = '03'); 
+ grant select on Flight where (CarrierId) = aspect pfcg_auth(/DMO/CARRIER_ID, CARRIER_ID, ACTVT = '03'); 
 }
 ```
 

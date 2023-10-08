@@ -9,10 +9,10 @@ Um das (transaktionale) Verhalten des Geschäftsobjektes festzulegen, wird einen
 ## Behavior Definition ZR_TRAVEL
 ```sql
 managed implementation in class zbp_r_travel unique;
-strict ( 1 );
+strict ( 2 );
 
-define behavior for ZIR_Travel alias Travel
-persistent table z_travel
+define behavior for ZR_Travel alias Travel
+persistent table zatravel
 lock master
 authorization master ( instance )
 //etag master <field_name>
@@ -24,7 +24,7 @@ authorization master ( instance )
 
   field ( readonly, numbering : managed ) TravelUuid;
 
-  mapping for z_travel corresponding
+  mapping for zatravel corresponding
   {
     BeginDate = begin_date;
     CurrencyCode = currency_code;
@@ -38,7 +38,7 @@ authorization master ( instance )
 }
 
 define behavior for ZR_Booking alias Booking
-persistent table z_booking
+persistent table zabooking
 lock dependent by _Travel
 authorization dependent by _Travel
 //etag master <field_name>
@@ -50,7 +50,7 @@ authorization dependent by _Travel
 
   field ( readonly, numbering : managed ) BookingUuid;
 
-  mapping for z_booking corresponding
+  mapping for zabooking corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;
@@ -69,7 +69,7 @@ authorization dependent by _Travel
 ## Behavior Definition ZC_TRAVEL
 ```sql
 projection;
-strict ( 1 );
+strict ( 2 );
 
 define behavior for ZC_Travel alias Travel
 {

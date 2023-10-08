@@ -24,21 +24,19 @@ Der Operator `VALUE` ermöglicht das Einfügen von Datensätzen in interne Tabel
 ```abap showLineNumbers
 DATA flight TYPE /dmo/flight.
 DATA flights TYPE /dmo/flights.
-DATA(today) = sy-datlo.
 
 "Einfügen von Datensätzen
 flights = VALUE #(
-  ( carrier_id = 'LH' connection_id = '0400' flight_date = today )
-  ( carrier_id = 'LH' connection_id = '0401' flight_date = today ) ).
+  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 "Erweitern interner Tabellen
 flight-carrier_id = 'LH'.
 flight-connection_id = '0402'.
-flight-flight_date = today.
-
+flight-flight_date = '20230607'.
 flights = VALUE #( BASE flights ( flight ) ).
 
-flight-flight_date = today + 3.
+flight-flight_date = '20231231'.
 APPEND flight TO flights.
 ```
 
@@ -52,10 +50,10 @@ Tabellenausdrücke ermöglichen das Lesen eines Einzelsatzes per Index bzw. per 
 ```abap showLineNumbers
 "Lesen eines Einzelsatzes
 flight = flights[ 1 ].
-flight = flights[ carrier_id = 'LH' connection_id = '0400' flight_date = today ].
+flight = flights[ carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' ].
 
 "Lesen mehrerer Datensätze
-LOOP AT flights INTO flight WHERE flight_date >= today.
+LOOP AT flights INTO flight WHERE flight_date >= '20230101'.
   out->write( flight-carrier_id ).
 ENDLOOP.
 ```
@@ -89,11 +87,10 @@ Tabellenausdrücke ermöglichen das Ändern eines Einzelsatzes per Index bzw. pe
 DATA flight TYPE /dmo/flight.
 DATA flight2 TYPE REF TO /dmo/flight.
 DATA flights TYPE /dmo/flights.
-DATA(today) = sy-datlo.
 
 "Ändern eines Einzelsatzes
 flights[ 1 ]-price = 1000.
-flights[ carrier_id = 'LH' connection_id = '0400' flight_date = today ]-price = 1000.
+flights[ carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' ]-price = 1000.
 
 "Ändern mehrerer Datensätze
 LOOP AT flights REFERENCE INTO flight2.
@@ -107,13 +104,12 @@ Die Anweisung `DELETE` ermöglicht das Löschen eines oder mehrerer Datensätze
 ```abap showLineNumbers
 DATA flight TYPE /dmo/flight.
 DATA flights TYPE /dmo/flights.
-DATA(today) = sy-datlo.
 
 "Löschen eines Einzelsatzes
 DELETE flights INDEX 1.
 
 "Löschen mehrerer Datensätze
-DELETE flights WHERE flight_date < today.
+DELETE flights WHERE flight_date < '20230101'.
 ```
 
 ## Sortieren interner Tabellen

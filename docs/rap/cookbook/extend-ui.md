@@ -66,7 +66,7 @@ annotate view ZC_Booking with
 
 ## Projection View ZC_Booking
 ```sql
-@EndUserText.label: 'Projection View: Booking'
+@EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_Booking

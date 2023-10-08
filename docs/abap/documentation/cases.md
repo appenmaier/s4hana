@@ -15,9 +15,9 @@ DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
 DATA flight_date TYPE /dmo/flight_date VALUE '20230104'.
 
 IF NOT ( flight_date >= '20230101' AND flight_date <= '20231231' ) OR carrier_id = 'LH'.
-  out->write( 'Bedingung erfüllt' ).
+  out->write( 'X' ).
 ELSE.
-  out->write( 'Bedingung nicht erfüllt' ).
+  out->write( ' ' ).
 ENDIF.
 ```
 

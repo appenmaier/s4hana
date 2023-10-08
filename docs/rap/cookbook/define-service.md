@@ -8,7 +8,7 @@ Für den Geschäftsservice muss zunächst eine Projection View auf Grundlage des
 
 ## Projection View ZC_Travel
 ```sql
-@EndUserText.label: 'Projection View: Travel'
+@EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZC_Travel
   as projection on ZR_Travel
@@ -33,7 +33,7 @@ define root view entity ZC_Travel
 ```sql
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL {
-  expose ZC_Travel;
+  expose ZC_Travel as Travel;
 }
 ```
 

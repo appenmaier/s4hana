@@ -10,11 +10,36 @@ ABAP-Quellcode besteht aus einzelnen Anweisungen. Diese dürfen beliebig einger�
 Zeilen, die mit einem Stern beginnen, werden von Laufzeitsystem als Kommentarzeile erkannt und ignoriert. Doppelte Anführungszeichen kennzeichnen den Rest einer Zeile als Kommentar.
 
 ```abap showLineNumbers
-DATA text TYPE c LENGTH 25. "Deklaration
-text = 'Ein Ring sie zu knechten'. "Wertzuweisung
-out->write( text ). "Ausgabe
+CLASS cl_main DEFINITION PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  
+  PROTECTED SECTION.
+  
+  PRIVATE SECTION.
+  
+ENDCLASS.
+
+CLASS cl_main IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+    DATA text TYPE c LENGTH 25. "Deklaration
+    text = 'Ein Ring sie zu knechten'. "Wertzuweisung
+    out->write( text ). "Ausgabe
+  ENDMETHOD.
+
+ENDCLASS.
 ```
 
 :::note Hinweis
+
 ABAP unterscheidet nicht zwischen Groß- und Kleinschreibung.
+
+:::
+
+:::note Hinweis
+
+Um eine ausführbare Klasse zu erstellen, muss die auszuführende Klasse die Schnittstelle `IF_OO_ADT_CLASSRUN` implementieren.
+
 :::

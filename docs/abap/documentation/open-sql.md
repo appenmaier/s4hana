@@ -40,21 +40,20 @@ DATA connections TYPE TABLE OF /dmo/connection.
 
 "Lesen eines Einzelsatzes
 SELECT SINGLE FROM /dmo/connection
- FIELDS *
- WHERE carrier_id = @carrier_id
- AND connection_id = @connection_id
- INTO @connection.
+  FIELDS *
+  WHERE carrier_id = @carrier_id AND connection_id = @connection_id
+  INTO @connection.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no connection found' ).
 ENDIF.
 
 "Lesen mehrerer Datensätze
 SELECT FROM /dmo/connection
- FIELDS *
- WHERE carrier_id = @carrier_id
- INTO TABLE @connections.
+  FIELDS *
+  WHERE carrier_id = @carrier_id
+  INTO TABLE @connections.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no flights found' ).
 ENDIF.
 ```
 
@@ -71,26 +70,26 @@ DATA connection TYPE /dmo/connection.
 
 "Angabe passender Felder
 SELECT SINGLE FROM /dmo/connection
- FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
- INTO @connection.
+  FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
+  INTO @connection.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no connection found' ).
 ENDIF.
 
 "Kopieren namensgleicher Felder
 SELECT SINGLE FROM /dmo/connection
- FIELDS *
- INTO CORRESPONDING FIELDS OF @connection.
+  FIELDS *
+  INTO CORRESPONDING FIELDS OF @connection.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no connection found' ).
 ENDIF.
 
 "Inlinedeklaration
 SELECT SINGLE FROM /dmo/connection
- FIELDS *
- INTO @DATA(connection2).
+  FIELDS *
+  INTO @DATA(connection2).
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no connection found' ).
 ENDIF.
 ```
 
@@ -113,18 +112,18 @@ connection-airport_to_id = 'JFK'.
 "Hinzufügen eines Datensatzes
 INSERT /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'duplicate key error' ).
 ENDIF.
 
 "Ändern eines Datensatzes
 UPDATE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no entry found' ).
 ENDIF.
 
 "Lösches eines Datensatzes
 DELETE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  out->write( 'no data' ).
+  out->write( 'no entry found' ).
 ENDIF.
 ```

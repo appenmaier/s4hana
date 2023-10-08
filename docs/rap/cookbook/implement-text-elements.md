@@ -10,7 +10,7 @@ sidebar_position: 90
 ## Interface View ZI_CustomerText
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Text: Customer'
+@EndUserText.label: 'Customer Text'
 define view entity ZI_CustomerText
 as select from /dmo/customer
 {
@@ -23,12 +23,12 @@ as select from /dmo/customer
 }
 ```
 
-## Interface View ZR_Travel
+## Restricted Interface View ZR_Travel
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Basic View: Travel'
+@EndUserText.label: 'Travel'
 define root view entity ZR_Travel
-  as select from z_travel
+  as select from zatravel
   composition [0..*] of ZR_Booking      as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
@@ -53,7 +53,7 @@ define root view entity ZR_Travel
 
 ## Projection View ZC_Travel
 ```sql
-@EndUserText.label: 'Projection View: Travel'
+@EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true

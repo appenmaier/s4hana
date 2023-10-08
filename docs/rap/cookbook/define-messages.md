@@ -15,11 +15,8 @@ sidebar_position: 120
 
 ## ABAP Class ZCM_TRAVEL
 ```abap
-CLASS zcm_travel DEFINITION
-  PUBLIC
-  INHERITING FROM cx_static_check
-  FINAL
-  CREATE PUBLIC .
+CLASS zcm_travel DEFINITION PUBLIC
+  INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
 
   PUBLIC SECTION.
 
