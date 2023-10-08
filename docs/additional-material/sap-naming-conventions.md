@@ -26,10 +26,10 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | Datenelement                             | <Namensraum\><Komponente\>\_<Beschreibung\>       | `ZABAP_CARRIER_ID`             |
 | Strukturtyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>       | `ZABAP_FLIGHT`                 |
 | Tabellentyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>       | `ZABAP_FLIGHTS`                |
-| Datenbanktabelle (Anwendungstabelle)     | <Namensraum\><Komponente\>\_A<Beschreibung\>      | `ZABAP_AFLIGHT`                |
-| Datenbanktabelle (Entwurfstabelle)       | <Namensraum\><Komponente\>\_D<Beschreibung\>      | `ZABAP_DFLIGHT`                |
-| ABAP CDS: Basic View                     | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>   | `ZABAP_I_Flight`               |
-| ABAP CDS: Basic BO View (Restricted)     | <Namensraum\>\_<Komponente\>R_\_<Beschreibung\>   | `ZABAP_R_Flight`               |
+| Datenbanktabelle (Anwendungstabelle)     | <Namensraum\><Komponente\>\_A<Beschreibung\>      | `ZABAPAFLIGHT`                 |
+| Datenbanktabelle (Entwurfstabelle)       | <Namensraum\><Komponente\>\_D<Beschreibung\>      | `ZABAPDFLIGHT`                 |
+| ABAP CDS: Basic Interface View           | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>   | `ZABAP_I_Flight`               |
+| ABAP CDS: Restricted Interface View      | <Namensraum\>\_<Komponente\>R_\_<Beschreibung\>   | `ZABAP_R_Flight`               |
 | ABAP CDS: Interface View                 | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>   | `ZABAP_I_FlightWithConnection` |
 | ABAP CDS: Transactional Interface View   | <Namensraum\>\_<Komponente\>I_\_<Beschreibung\>TP | `ZABAP_I_FlightTP`             |
 | ABAP CDS: Consumption View               | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>    | `ZABAP_C_Flight`               |
