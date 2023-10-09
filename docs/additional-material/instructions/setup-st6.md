@@ -1,5 +1,5 @@
 ---
-title: System ST6 einrichten (SAP VT)
+title: System ST6 einrichten
 description: ''
 sidebar_position: 20
 tags: []
