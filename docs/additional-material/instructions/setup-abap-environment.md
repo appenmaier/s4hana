@@ -1,24 +1,26 @@
 ---
-title: ABAP Environment einrichten (SAP VT und DHBW RV)
+title: ABAP Environment einrichten
 description: ''
 sidebar_position: 40
 tags: []
 ---
 
 ## ABAP Development Tools installieren
+
+### Möglichkeit 1
 - ABAP Development Tools herunterladen (https://adt.only.sap/)
 - ZIP-Datei entpacken
 - Programm `ABAPDevelopmentTools.exe` ausführen
 
-## abapGit installieren
-- ABAP Development Tools starten
+### Möglichkeit 2
+- JDK herunterladen und installieren
+- Eclipse herunterladen, installieren und starten
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
 - Folgende Informationen eingeben und `Enter` betätigen
-    - Work with: `https://eclipse.abapgit.org/updatesite/`
-- Option `abapGit for ABAP Devleopment Tools (ADT)` auswählen und Drucktaste `Next >` betätigen
-- Drucktaste `Next >` betätigen
-- Drucktaste `Select All` betätigen
-- Drucktaste `Trust Selected` betätigen
+    - Work with: `https://tools.hana.ondemand.com/latest`
+- Option `ABAP Development Tools` auswählen und Drucktaste `Next >` betätigen
+- Drucktaste `Next ` betätigen
+- Option `I accept the terms of the license agreements` auswählen und Drucktaste `Finish` betätigen
 - Drucktaste `Restart Now` betätigen
 
 ## ABAP-Cloud-Projekt anlegen
@@ -34,3 +36,14 @@ tags: []
     - Superpackage: `ZLOCAL`
 - Option `Create a new request` auswählen, folgende Informationen eingeben und Drucktaste `Finish` betätigen
     - Request Description: `Eine beliebige Beschreibung (z.B. Dein Name)`
+
+## [OPTIONAL] abapGit installieren
+- ABAP Development Tools starten
+- Funktion `Help - Install new Software... - Install new Software` ausführen 
+- Folgende Informationen eingeben und `Enter` betätigen
+    - Work with: `https://eclipse.abapgit.org/updatesite/`
+- Option `abapGit for ABAP Devleopment Tools (ADT)` auswählen und Drucktaste `Next >` betätigen
+- Drucktaste `Next >` betätigen
+- Drucktaste `Select All` betätigen
+- Drucktaste `Trust Selected` betätigen
+- Drucktaste `Restart Now` betätigen
