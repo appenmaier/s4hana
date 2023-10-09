@@ -1,11 +1,18 @@
 ---
-title: System R36 einrichten (DHBW RV)
+title: System R36 einrichten
 description: ''
 sidebar_position: 30
 tags: []
 ---
 
 ## ABAP Development Tools installieren
+
+### Möglichkeit 1
+- ABAP Development Tools herunterladen (https://adt.only.sap/)
+- ZIP-Datei entpacken
+- Programm `ABAPDevelopmentTools.exe` ausführen
+
+### Möglichkeit 2
 - JDK herunterladen und installieren
 - Eclipse herunterladen, installieren und starten
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
