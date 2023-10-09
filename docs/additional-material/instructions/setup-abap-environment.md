@@ -5,23 +5,13 @@ sidebar_position: 40
 tags: []
 ---
 
-## ABAP Development Tools installieren
-
-### Möglichkeit 1
+## [SAP VT] ABAP Development Tools installieren
 - ABAP Development Tools herunterladen (https://adt.only.sap/)
 - ZIP-Datei entpacken
 - Programm `ABAPDevelopmentTools.exe` ausführen
 
-### Möglichkeit 2
-- JDK herunterladen und installieren
-- Eclipse herunterladen, installieren und starten
-- Funktion `Help - Install new Software... - Install new Software` ausführen 
-- Folgende Informationen eingeben und `Enter` betätigen
-    - Work with: `https://tools.hana.ondemand.com/latest`
-- Option `ABAP Development Tools` auswählen und Drucktaste `Next >` betätigen
-- Drucktaste `Next ` betätigen
-- Option `I accept the terms of the license agreements` auswählen und Drucktaste `Finish` betätigen
-- Drucktaste `Restart Now` betätigen
+## [DHBW RV] ABAP Development Tools installieren
+[SAP Development Tools - ABAP](https://tools.hana.ondemand.com/#abap)
 
 ## ABAP-Cloud-Projekt anlegen
 - [SAP BTP Trial Account anlegen](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
