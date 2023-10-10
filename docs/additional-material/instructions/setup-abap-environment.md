@@ -5,19 +5,18 @@ sidebar_position: 40
 tags: []
 ---
 
-## [SAP VT] ABAP Development Tools installieren
-- ABAP Development Tools herunterladen (https://adt.only.sap/)
-- ZIP-Datei entpacken
-- Programm `ABAPDevelopmentTools.exe` ausführen
+## ABAP Development Tools installieren
 
-## [DHBW RV] ABAP Development Tools installieren
-[SAP Development Tools - ABAP](https://tools.hana.ondemand.com/#abap)
+- [SAP INTERN]: [ABAP Development Tools](https://adt.only.sap/)
+- [SAP EXTERN]: [SAP Development Tools - ABAP](https://tools.hana.ondemand.com/#abap)
 
 ## ABAP-Cloud-Projekt anlegen
+
 - [SAP BTP Trial Account anlegen](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 - [SAP BTP ABAP Environment Trial User erstellen](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
 ## ABAP-Entwicklungspaket anlegen
+
 - Rechtsklick auf das erstellte ABAP-Cloud-Projekt
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben, Option `Add to favorite packages` auswählen und Drucktaste `Next >` betätigen
@@ -28,6 +27,7 @@ tags: []
     - Request Description: `Eine beliebige Beschreibung (z.B. Dein Name)`
 
 ## [OPTIONAL] abapGit installieren
+
 - ABAP Development Tools starten
 - Funktion `Help - Install new Software... - Install new Software` ausführen 
 - Folgende Informationen eingeben und `Enter` betätigen
