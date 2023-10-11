@@ -1,12 +1,12 @@
 ---
 title: Eingebaute Funktionen
-description: ''
+description: ""
 sidebar_position: 50
 tags: []
 ---
 
 Die ABAP CDS stellen verschiedene numerische Funktionen, Zeichenkettenfunktionen, Funktionen zur Währungs- und Einheitenumrechnung sowie Datums- und Zeitfunktionen zur Verfügung.
- 
+
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Connection'

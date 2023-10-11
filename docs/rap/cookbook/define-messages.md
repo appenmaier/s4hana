@@ -1,6 +1,6 @@
 ---
 title: Nachrichten festlegen
-description: ''
+description: ""
 sidebar_position: 120
 ---
 
@@ -8,12 +8,14 @@ sidebar_position: 120
 :::
 
 ## Message Class Z_TRAVEL
+
 | Nachrichtennummer | Nachricht                                 |
 | ----------------- | ----------------------------------------- |
 | 000               | Booking with ID &1 is already cancelled   |
 | 001               | Booking with ID &1 successfully cancelled |
 
 ## ABAP Class ZCM_TRAVEL
+
 ```abap
 CLASS zcm_travel DEFINITION PUBLIC
   INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
@@ -45,7 +47,7 @@ CLASS zcm_travel DEFINITION PUBLIC
         attr3 TYPE scx_attrname VALUE '',
         attr4 TYPE scx_attrname VALUE '',
       END OF booking_cancelled.
-    
+
     "Attributs
     DATA booking_id TYPE /dmo/booking_id.
 

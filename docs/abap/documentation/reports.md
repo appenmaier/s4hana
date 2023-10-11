@@ -1,6 +1,6 @@
 ---
 title: Klassische ABAP-Programme
-description: ''
+description: ""
 sidebar_position: 80
 tags: []
 ---
@@ -11,7 +11,8 @@ können als Hintergrundjobs eingerichtet werden, um z.B. Routineaufgaben zu auto
 ![image](https://user-images.githubusercontent.com/47243617/210173695-f3321616-b64f-48ea-b4b9-b5c165b8806b.png)
 
 ## Eingabeparameter
-Das Schlüsselwort `PARAMETERS` legt ein Datenobjekt an und erzeugt implizit ein Selektionsbild mit einem entsprechenden Eingabefeld. Der Zusatz `AS CHECKBOX` ermöglicht das Erzeugen von Kontrollkästchen, der Zusatz `RADIOBUTTON GROUP` das Erzeugen von 
+
+Das Schlüsselwort `PARAMETERS` legt ein Datenobjekt an und erzeugt implizit ein Selektionsbild mit einem entsprechenden Eingabefeld. Der Zusatz `AS CHECKBOX` ermöglicht das Erzeugen von Kontrollkästchen, der Zusatz `RADIOBUTTON GROUP` das Erzeugen von
 Auswahlschaltern.
 
 ```abap showLineNumbers
@@ -36,6 +37,7 @@ Eine Wertvorbelegung wird bei Eingabeparametern nicht über den Zusatz `VALUE`, 
 :::
 
 ## Ausgabe
+
 Das Schlüsselwort `WRITE` bereitet den Inhalt des Datenobjektes auf und gibt diesen auf der aktuellen ABAP-Liste aus.
 
 ```abap showLineNumbers
@@ -45,7 +47,7 @@ PARAMETERS p_connid TYPE /dmo/connection_id.
 WRITE 'Flight Connection'.
 ULINE.
 WRITE: 'Carrier ID', 'Connection ID'.
-WRITE: / p_carrid UNDER 'Carrier ID', 
+WRITE: / p_carrid UNDER 'Carrier ID',
          p_connid UNDER 'Connection ID'.
 ```
 
@@ -54,7 +56,8 @@ Weitere Schlüsselwörter zur Definition der Ausgabe sind z.B. `NEW-LINE`, `SKIP
 :::
 
 ## Dialognachrichten
-Mit der Anweisung `MESSAGE` können Dialognachrichten an den Benutzer geschickt werden. ABAP kennt die Nachrichtentypen _Information_ (I), _Setznachricht_ (S), _Warnung_ (W), _Fehler_ (E), _Abbruch_ (A) sowie _Kurzdump_ (X). Platzhalter in der angegebenen 
+
+Mit der Anweisung `MESSAGE` können Dialognachrichten an den Benutzer geschickt werden. ABAP kennt die Nachrichtentypen _Information_ (I), _Setznachricht_ (S), _Warnung_ (W), _Fehler_ (E), _Abbruch_ (A) sowie _Kurzdump_ (X). Platzhalter in der angegebenen
 Nachricht können durch den Zusatz `WITH` versorgt werden.
 
 ```abap showLineNumbers
@@ -66,7 +69,9 @@ ENDIF.
 ```
 
 ## Textelemente
-ABAP kennt verschiedene Arten von Textelementen: 
+
+ABAP kennt verschiedene Arten von Textelementen:
+
 - Textsymbole ermöglichen die Übersetzung von statischen Texten
 - Selektionstexte dienen als Beschriftungen für Eingabeparameter
 
@@ -84,7 +89,9 @@ Ist ein Eingabeparameter mit einem Datenelement typisiert, kann der Feldbezeichn
 :::
 
 ## ABAP-Ereignisse
+
 Beim Starten eines ABAP Programms werden nacheinander verschiedene Ereignisse ausgelöst. Existiert zu einem Ereignis ein Verarbeitungsblock, wird dieser sequenziell ausgeführt:
+
 - Das Ereignis `INIZIALIZATION` kann für dynamische Wertevorbelegungen genutzt werden
 - Das Ereignis `AT SELECTION-SCREEN` kann für Eingabeprüfungen verwendet werden
 - Die Hauptverarbeitung findet im Ereignis `START-OF-SELECTION` statt

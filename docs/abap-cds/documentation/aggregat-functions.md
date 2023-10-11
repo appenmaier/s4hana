@@ -1,6 +1,6 @@
 ---
 title: Aggregatfunktionen
-description: ''
+description: ""
 sidebar_position: 60
 tags: []
 ---

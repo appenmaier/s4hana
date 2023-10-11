@@ -1,11 +1,12 @@
 ---
 title: Datenobjekte
-description: ''
+description: ""
 sidebar_position: 30
 tags: []
 ---
 
 ## Deklaration von variablen Datenobjekten
+
 Bei der Deklaration eines Datenobjekts werden der Laufzeitumgebung Bezeichner und Datentyp des Datenobjekts bekanntgegeben. Die Deklaration erfolgt über das Schlüsselwort `DATA`.
 
 ```abap showLineNumbers
@@ -18,6 +19,7 @@ Mit dem Zusatz `LENGTH` kann bei unvollständigen Datentypen die Länge des Date
 :::
 
 ## Wertzuweisung
+
 Mit dem Zuweisungsoperator `=` wird dem Operanden der linken Seite der Wert des Ausdrucks der rechten Seite zugewiesen. Bei unterschiedlichen Typen wird automatisch eine Typkonvertierung durchgeführt, falls eine entsprechende Konvertierungsregel existiert.
 
 ```abap showLineNumbers
@@ -34,6 +36,7 @@ Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts schon bei de
 :::
 
 ## Initialisierung
+
 Mit der Anweisung `CLEAR` kann der Inhalt eines Datenobjekts auf den Initialwert zurückgesetzt werden.
 
 ```abap showLineNumbers
@@ -43,7 +46,8 @@ CLEAR carrier_id.
 ```
 
 ## Deklaration fixer Datenobjekte
-Datenwerte von fixen Datenobjekten können zur Laufzeit nicht mehr verändert werden. Man unterscheidet dabei zwischen Literalen (fixe Datenobjekten ohne Bezeichner) und Konstanten (fixe Datenobjekte mit Bezeichner). Konstanten werden mit dem Schlüsselwort 
+
+Datenwerte von fixen Datenobjekten können zur Laufzeit nicht mehr verändert werden. Man unterscheidet dabei zwischen Literalen (fixe Datenobjekten ohne Bezeichner) und Konstanten (fixe Datenobjekte mit Bezeichner). Konstanten werden mit dem Schlüsselwort
 `CONSTANTS` definiert.
 
 ```abap showLineNumbers
@@ -51,6 +55,7 @@ CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
 ```
 
 ## Systemfelder
+
 Systemfelder sind eingebaute Datenobjekte, die von der Laufzeitumgebung geändert werden.
 
 | Systemfeld | Inhalt                          |

@@ -1,6 +1,6 @@
 ---
 title: Mathematische Operatoren und Funktionen
-description: ''
+description: ""
 sidebar_position: 40
 tags: []
 ---
@@ -24,6 +24,7 @@ result /= 3. "Zuweisungsoperator Division
 ```
 
 Für weitere mathematische Berechnungen stellt ABAP eine Reihe eingebauter Funktionen zur Verfügung:
+
 - Allgemeine numerische Funktionen
 - Ganzzahlige Potenzfunktion
 - Numerische Extremwertfunktionen

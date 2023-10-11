@@ -1,6 +1,6 @@
 ---
 title: Zeichenketten und Zeichenketten-Templates
-description: ''
+description: ""
 sidebar_position: 50
 tags: []
 ---
@@ -26,6 +26,7 @@ Schließende Leerzeichen werden von Anweisungen zur Zeichenkettenverarbeitung in
 :::
 
 Die Anweisung `SPLIT` ermöglicht das Aufteilen einer Zeichenkette. Für weitere Operationen stehen eine Reihe eingebauter Funktionen zur Verfügung:
+
 - Längenfunktionen
 - Zählfunktionen
 - Suchfunktionen
@@ -42,4 +43,3 @@ result = strlen( text ). "Zeichenkettenlänge
 result = find( val = text sub = 'a' ). "Suchen
 text = to_upper( text ). "Umsetzen
 ```
-

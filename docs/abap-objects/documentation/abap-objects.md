@@ -1,6 +1,6 @@
 ---
 title: ABAP Objects
-description: ''
+description: ""
 sidebar_position: 10
 tags: []
 ---
@@ -13,7 +13,9 @@ Im objektorientierten Kontext gelten strengere Typprüfungen als in prozeduralen
 :::
 
 ## Die Grundidee der Objektorientierung
+
 In der objektorientierten Programmierung werden Beobachtungen aus der realen Welt zum Konzept der Objektorientierung zusammengefasst
+
 - Eine Kategorie von ähnlichen Objekten bezeichnet man als _Klasse_
 - Konkrete Ausprägungen bzw. Instanzen einer Klasse werden wiederum als _Objekte_ bezeichnet
 - Die Eigenschaften von Objekten werden als _Attribute_, das Verhalten als _Methoden_ bezeichnet
@@ -25,7 +27,8 @@ Jedes Objekt ist eindeutig identifizierbar.
 :::
 
 ## Datenkapselung
-Ein wesentlicher Grundsatz der Objektorientierung ist, dass Attribute durch Methoden gekapselt werden. Datenkapselung bedeutet, dass Attribute nicht direkt geändert werden können, sondern nur durch den indirekten Zugriff über Methoden. Typische Methoden zum 
+
+Ein wesentlicher Grundsatz der Objektorientierung ist, dass Attribute durch Methoden gekapselt werden. Datenkapselung bedeutet, dass Attribute nicht direkt geändert werden können, sondern nur durch den indirekten Zugriff über Methoden. Typische Methoden zum
 Lesen und Schreiben von Attributen sind die sogenannten Getter- bzw. Setter-Methoden.
 
 ![image](https://user-images.githubusercontent.com/47243617/210174723-9e871217-2e0f-4055-bf7a-878ea8cb21ce.png)

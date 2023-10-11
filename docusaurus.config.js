@@ -1,96 +1,94 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const config = {
-  title: 'Anwendungsentwicklung in SAP S/4HANA',
-  tagline: '',
-  url: 'https://appenmaier.github.io',
-  baseUrl: '/s4hana/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.ico',
-  organizationName: 'appenmaier',
-  projectName: 's4hana',
+  title: "Anwendungsentwicklung in SAP S/4HANA",
+  tagline: "",
+  url: "https://appenmaier.github.io",
+  baseUrl: "/s4hana/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
+  favicon: "img/favicon.ico",
+  organizationName: "appenmaier",
+  projectName: "s4hana",
 
   i18n: {
-    defaultLocale: 'de',
-    locales: ['de'],
+    defaultLocale: "de",
+    locales: ["de"],
   },
-	
+
   presets: [
     [
-      'classic',
-      ({
+      "classic",
+      {
         docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/appenmaier/s4hana/tree/main/',
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl: "https://github.com/appenmaier/s4hana/tree/main/",
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
-      }),
+      },
     ],
   ],
 
-  themeConfig:
-    ({
-      navbar: {
-        title: 'Startseite',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.png',
+  themeConfig: {
+    navbar: {
+      title: "Startseite",
+      logo: {
+        alt: "My Site Logo",
+        src: "img/logo.png",
+      },
+      items: [
+        {
+          type: "doc",
+          docId: "abap/documentation/abap",
+          position: "left",
+          label: "ABAP",
         },
-        items: [
-          {
-            type: 'doc',
-            docId: 'abap/documentation/abap',
-            position: 'left',
-            label: 'ABAP',
-          },
-	  {
-            type: 'doc',
-            docId: 'abap-objects/documentation/abap-objects',
-            position: 'left',
-            label: 'ABAP Objects',
-          },
-          {
-            type: 'doc',
-            docId: 'abap-cds/documentation/abap-cds',
-            position: 'left',
-            label: 'ABAP CDS',
-          },
-	  {
-            type: 'doc',
-            docId: 'rap/documentation/rap',
-            position: 'left',
-            label: 'ABAP RESTful Application Programming Model (RAP)',
-          },
-	  {
-            type: 'doc',
-            docId: 'additional-material/sap-flightmodel',
-            position: 'left',
-            label: 'Zusatzmaterial',
-          },
-          {
-            href: 'https://github.com/appenmaier/s4hana',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Daniel Appenmaier Built with Docusaurus.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-		additionalLanguages: ['abap'],
-      },
-    }),
+        {
+          type: "doc",
+          docId: "abap-objects/documentation/abap-objects",
+          position: "left",
+          label: "ABAP Objects",
+        },
+        {
+          type: "doc",
+          docId: "abap-cds/documentation/abap-cds",
+          position: "left",
+          label: "ABAP CDS",
+        },
+        {
+          type: "doc",
+          docId: "rap/documentation/rap",
+          position: "left",
+          label: "ABAP RESTful Application Programming Model (RAP)",
+        },
+        {
+          type: "doc",
+          docId: "additional-material/sap-flightmodel",
+          position: "left",
+          label: "Zusatzmaterial",
+        },
+        {
+          href: "https://github.com/appenmaier/s4hana",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
+    },
+    footer: {
+      style: "dark",
+      copyright: `Copyright © ${new Date().getFullYear()} Daniel Appenmaier Built with Docusaurus.`,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+      additionalLanguages: ["abap"],
+    },
+  },
 };
 
 module.exports = config;

@@ -1,23 +1,26 @@
 ---
 title: Weitere Informationsquellen
-description: ''
+description: ""
 sidebar_position: 30
 tags: []
 ---
 
 ## Allgemein
+
 - [ABAP Dokumentation](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm)
 - [CleanABAP Styleguides](https://github.com/SAP/styleguides)
 - [SAP Blogs](https://blogs.sap.com/)
 - [SAP Tutorial Navigator](https://developers.sap.com/tutorial-navigator.html)
 
 ## ABAP in the Cloud
+
 - [Homepage: ababGIT](https://docs.abapgit.org/)
 - [SAP Standardschulung: CLD400 - Developing with SAP BTP, ABAP Environment](https://training.sap.com/course/cld400-developing-with-sap-business-technology-platform-btp---abap-environment-classroom-015-g-en/?)
 - [openSAP Kurs: Introduction to ABAP in the Cloud](https://open.sap.com/courses/abap1)
 - [SAP Developers Tutorial: Use abapGit to Transfer Your On-Premise ABAP Source Code to the Cloud](https://developers.sap.com/tutorials/abap-environment-abapgit.html)
 
 ## ABAP RESTful Application Programming Model
+
 - [SAP Standardschulung: S4D437 - Transactional Apps with the ABAP RESTful Application Programming Model](https://training.sap.com/course/s4d437-transactional-apps-with-the-abap-restful-application-programming-model-classroom-022-g-en/?)
 - [Workshops: RAP100, RAP110,...](https://github.com/SAP-samples/abap-platform-rap-workshops)
 - [openSAP: Kurs Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13)

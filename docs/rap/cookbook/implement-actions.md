@@ -1,6 +1,6 @@
 ---
 title: Aktionen implementieren
-description: ''
+description: ""
 sidebar_position: 140
 ---
 
@@ -8,6 +8,7 @@ sidebar_position: 140
 :::
 
 ## ABAP Class BP_R_TRAVEL - Local Type LHC_R_BOOKING - Method CANCEL_BOOKING
+
 ```abap
 METHOD cancel_booking.
 
@@ -42,7 +43,7 @@ METHOD cancel_booking.
                               textid = zcm_booking=>booking_cancelled_successfully
                               booking_id = booking-BookingId ).
     APPEND message TO reported-%other.
-      
+
   ENDLOOP.
 
 ENDMETHOD.

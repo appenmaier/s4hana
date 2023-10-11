@@ -1,6 +1,6 @@
 ---
 title: Assoziationen
-description: ''
+description: ""
 sidebar_position: 80
 tags: []
 ---

@@ -1,6 +1,6 @@
 ---
 title: Aktionen festlegen
-description: ''
+description: ""
 sidebar_position: 130
 ---
 
@@ -8,6 +8,7 @@ sidebar_position: 130
 :::
 
 ## Behavior Definition ZR_TRAVEL
+
 ```sql
 managed implementation in class zbp_r_travel unique;
 strict ( 2 );
@@ -70,6 +71,7 @@ authorization dependent by _Travel
 ```
 
 ## Behavior Definition ZC_TRAVEL
+
 ```sql
 projection;
 strict ( 2 );
@@ -95,6 +97,7 @@ define behavior for ZC_Booking alias Booking
 ```
 
 ## Metadata Extension ZC_BOOKING
+
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:

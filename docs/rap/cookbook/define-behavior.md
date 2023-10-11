@@ -1,12 +1,13 @@
 ---
 title: Verhalten festlegen
-description: ''
+description: ""
 sidebar_position: 70
 ---
 
 Um das (transaktionale) Verhalten des Geschäftsobjektes festzulegen, wird einen Behavior Definition für die Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Definition für die Projection View der Reisen erstellt. In dieser wird festgelegt, welches Verhalten der Geschäftsservice bereitstellen soll.
 
 ## Behavior Definition ZR_TRAVEL
+
 ```sql
 managed implementation in class zbp_r_travel unique;
 strict ( 2 );
@@ -67,6 +68,7 @@ authorization dependent by _Travel
 ```
 
 ## Behavior Definition ZC_TRAVEL
+
 ```sql
 projection;
 strict ( 2 );

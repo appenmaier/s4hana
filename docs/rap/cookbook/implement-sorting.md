@@ -1,6 +1,6 @@
 ---
 title: Sortierung implementieren
-description: ''
+description: ""
 sidebar_position: 110
 ---
 
@@ -8,6 +8,7 @@ sidebar_position: 110
 :::
 
 ## Metadata Extension ZC_TRAVEL
+
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -63,6 +64,6 @@ annotate view ZC_Travel with
   @UI.selectionField: [{ position: 60 }]
   @UI.identification: [{ position: 60 }]
   TotalPrice;
-  
+
 }
 ```

@@ -1,6 +1,6 @@
 ---
 title: Anleitungen
-description: ''
+description: ""
 sidebar_position: 60
 ---
 

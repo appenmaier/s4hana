@@ -1,6 +1,6 @@
 ---
 title: Entity Manipulation Language (EML)
-description: ''
+description: ""
 sidebar_position: 50
 tags: []
 ---
@@ -9,6 +9,7 @@ tags: []
 :::
 
 ## EML-Anweisungen
+
 | Operation      | Anweisung                         | Abgeleiteter Datentyp                   |
 | -------------- | --------------------------------- | --------------------------------------- |
 | Read           | `READ ENTITY <Entität>`           | `FOR READ IMPORT <Entität>`             |
@@ -22,6 +23,7 @@ tags: []
 | Execute Action | `MODIFY ENTITY <Entität> EXECUTE` | `FOR ACTION REQUEST <Entität>~<Action>` |
 
 ## Rückgabeoperanden
+
 | Operand    | Abgeleiteter Datentyp                   | Beschreibung                                           |
 | ---------- | --------------------------------------- | ------------------------------------------------------ |
 | `FAILED`   | `RESPONSE FOR FAILED <Wurzelentität>`   | Alle Entitäten, bei denen die EML-Anweisung fehlschlug |
@@ -29,6 +31,7 @@ tags: []
 | `MAPPED`   | `RESPONSE FOR MAPPED <Wurzelentität>`   | Alle temporären Schlüssel                              |
 
 ## Aufbau der abgeleiteten Datentypen
+
 | Abgeleitete Datentypen                  | Aufbau der abgeleiteten Datentypen                                                                              |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `FOR READ IMPORT <Entität>`             | ![image](https://user-images.githubusercontent.com/47243617/202980604-18edce03-d570-46f2-8685-f07c4e7f4848.png) |

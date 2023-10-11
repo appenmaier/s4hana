@@ -1,12 +1,13 @@
 ---
 title: Geschäftsobjekt festlegen
-description: ''
+description: ""
 sidebar_position: 10
 ---
 
 Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des Geschäftsobjektes darstellt.
 
 ## Datenbanktabelle ZATRAVEL
+
 ```sql
 @EndUserText.label : 'Travel'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
@@ -33,6 +34,7 @@ define table zatravel {
 ```
 
 ## Restricted Interface View ZR_Travel
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'

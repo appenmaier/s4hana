@@ -1,6 +1,6 @@
 ---
 title: Textelemente implementieren
-description: ''
+description: ""
 sidebar_position: 90
 ---
 
@@ -8,6 +8,7 @@ sidebar_position: 90
 :::
 
 ## Interface View ZI_CustomerText
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Customer Text'
@@ -17,13 +18,14 @@ as select from /dmo/customer
   key customer_id                                 as CustomerId,
       first_name                                  as FirstName,
       last_name                                   as LastName,
-      
+
       /* Transient Data */
       concat_with_space(first_name, last_name, 1) as Name
 }
 ```
 
 ## Restricted Interface View ZR_Travel
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
@@ -52,6 +54,7 @@ define root view entity ZR_Travel
 ```
 
 ## Projection View ZC_Travel
+
 ```sql
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED

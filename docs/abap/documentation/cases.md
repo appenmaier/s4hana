@@ -1,6 +1,6 @@
 ---
 title: Fallunterscheidungen
-description: ''
+description: ""
 sidebar_position: 60
 tags: []
 ---
@@ -8,7 +8,8 @@ tags: []
 In ABAP kommen sowohl einfache als auch komplexe Fallunterscheidungen zum Einsatz.
 
 ## Einfache Fallunterscheidungen
-Einfache Fallunterscheidungen können mit `IF...ELSE...ENDIF` realisiert werden. Mit dem IF-Konstrukt können beliebig logische Ausdrücke als Prüfbedingung angegeben werden. 
+
+Einfache Fallunterscheidungen können mit `IF...ELSE...ENDIF` realisiert werden. Mit dem IF-Konstrukt können beliebig logische Ausdrücke als Prüfbedingung angegeben werden.
 
 ```abap showLineNumbers
 DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
@@ -26,6 +27,7 @@ Der ELSE-Zweig ist optional.
 :::
 
 ## Komplexe Fallunterscheidungen
+
 Komplexe Fallunterscheidungen können mit `CASE...WHEN...ENDCASE` realisiert werden. Hiermit sind übersichtliche Fallunterscheidung möglich.
 
 ```abap
@@ -42,7 +44,8 @@ ENDCASE.
 ```
 
 ## Logische Operatoren und Vergleichsoperatoren
-In ABAP sind beliebig tief geschachtelte Ausdrücke möglich. Die Verarbeitungsreihenfolge folgt dabei den herkömmlichen algebraischen und aussagenlogischen Regeln. 
 
-Die logische Und-Verknüpfung wird durch den Operator `AND`, die logische Oder-Verknüpfung durch den Operator `OR` und die logische Verneinung durch den Operator `NOT` realisiert. Als Vergleichsoperatoren stehen `=`, `<>`, `<`, `<=`, `>`, `>=` und `BETWEEN` zur 
+In ABAP sind beliebig tief geschachtelte Ausdrücke möglich. Die Verarbeitungsreihenfolge folgt dabei den herkömmlichen algebraischen und aussagenlogischen Regeln.
+
+Die logische Und-Verknüpfung wird durch den Operator `AND`, die logische Oder-Verknüpfung durch den Operator `OR` und die logische Verneinung durch den Operator `NOT` realisiert. Als Vergleichsoperatoren stehen `=`, `<>`, `<`, `<=`, `>`, `>=` und `BETWEEN` zur
 Verfügung. Zusätzlich können die Abfragen `IS INITIAL` und `IS NOT INITAL` verwendet werden.

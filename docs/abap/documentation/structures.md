@@ -1,6 +1,6 @@
 ---
 title: Strukturen
-description: ''
+description: ""
 sidebar_position: 100
 tags: []
 ---
@@ -8,6 +8,7 @@ tags: []
 Strukturen fassen logisch zusammenhängende Werte in einem Datenobjekt zusammen.
 
 ## Definition von globalen Strukturtypen
+
 Globale Strukturtypen werden mit Hilfe der Data Definition Language (DDL) der ABAP Core Data Services (ABAP CDS) definiert.
 
 ```sql showLineNumbers
@@ -22,6 +23,7 @@ define structure connection {
 ```
 
 ## Deklaration von Strukturen
+
 Strukturen werden, wie elementare Datenobjekte, mit der DATA-Anweisung deklariert.
 
 ```abap showLineNumbers
@@ -29,6 +31,7 @@ DATA connection TYPE connection.
 ```
 
 ## Zugriff auf Strukturkomponenten
+
 Mit dem Komponentenselektor `-` kann auf die einzelnen Komponenten einer Struktur zugegriffen werden (lesend als auch schreibend).
 
 ```abap showLineNumbers
@@ -42,6 +45,7 @@ out->write( connection-connection_id ).
 ```
 
 ## Kopieren von Strukturen
+
 Strukturen mit dem gleichen Strukturtypen können über den Zuweisungsoperator `=` kopiert werden. Der Operator `CORRESPONDING` ermöglicht das komponentenweise Kopieren von Inhalten einer Quellstruktur in eine Zielstruktur.
 
 ```abap showLineNumbers

@@ -1,6 +1,6 @@
 ---
 title: ABAP RESTful Application Programming Model (RAP)
-description: ''
+description: ""
 sidebar_position: 10
 tags: []
 ---

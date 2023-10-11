@@ -1,6 +1,6 @@
 ---
 title: ABAP CDS Views
-description: ''
+description: ""
 sidebar_position: 20
 tags: []
 ---

@@ -1,23 +1,25 @@
 ---
 title: Modularisierung mit Funktionsbausteinen
-description: ''
+description: ""
 sidebar_position: 90
 tags: []
 ---
 
-Mit Hilfe von Modularisierungseinheiten kann Quellcode gekapselt werden. Vorteile von Modularisierung sind neben der Wiederverwendbarkeit die erhöhte Übersichtlichkeit, sowie die verbesserte Wartbarkeit des Codes. ABAP kennt zwei globale 
+Mit Hilfe von Modularisierungseinheiten kann Quellcode gekapselt werden. Vorteile von Modularisierung sind neben der Wiederverwendbarkeit die erhöhte Übersichtlichkeit, sowie die verbesserte Wartbarkeit des Codes. ABAP kennt zwei globale
 Modularisierungseinheiten: Funktionsbausteine in Funktionsgruppen und Methoden in globale Klassen.
 
 Parameter dienen dem Datenaustausch zwischen der aufrufenden FUnktion und der Modularisierungseinheit. Die Menge aller Parameter wird als Schnittstelle (bei Funktionsbausteinen) bzw. als Signatur (bei Methoden) bezeichnet.
 
 ## Funktionsgruppen
-Funktionsgruppen sind Sammlungen von Funktionsbausteinen, die verwandte Funktionalitäten besitzen bzw. auf den selben Daten operieren. Sie besitzen neben Funktionsbausteinen auch Datenobjekte (die alle Funktionsbausteine der Funktionsgruppe verwenden können). 
+
+Funktionsgruppen sind Sammlungen von Funktionsbausteinen, die verwandte Funktionalitäten besitzen bzw. auf den selben Daten operieren. Sie besitzen neben Funktionsbausteinen auch Datenobjekte (die alle Funktionsbausteine der Funktionsgruppe verwenden können).
 Wird ein Funktionsbaustein aufgerufen, wird die gesamte Funktionsgruppe geladen und die Funktionsgruppe sowie die dazugehörigen globalen Daten bleiben bis zur Beendigung des aufrufenden Programms erhalten.
 
 ![image](https://user-images.githubusercontent.com/47243617/210174065-db8aa422-15b0-4d57-afa0-838a5ec31c6f.png)
 
 ## Definition von Funktionsbausteinen
-Funktionsbausteine verfügen über Eigenschaften (z.B. Kurzbeschreibung), lokale Datenobjekte bzw. lokale Typdefinitionen sowie über eine Schnittstelle. Die Schnittstelle eines Funktionsbausteins besteht aus Import-, Export- und Changing-Parametern sowie den 
+
+Funktionsbausteine verfügen über Eigenschaften (z.B. Kurzbeschreibung), lokale Datenobjekte bzw. lokale Typdefinitionen sowie über eine Schnittstelle. Die Schnittstelle eines Funktionsbausteins besteht aus Import-, Export- und Changing-Parametern sowie den
 Ausnahmen.
 
 ```abap showLineNumbers
@@ -38,6 +40,7 @@ Der Zusatz `OPTIONAL` bewirkt, dass ein Import Parameter beim Aufruf des Funktio
 :::
 
 ## Aufruf von Funktionsbausteinen
+
 Funktionsbausteine werden mit der Anweisung `CALL FUNCTION` aufgerufen. Der EXPORTING-Block enthält dabei die Import-Parameter des Funktionsbausteins, der IMPORTING-Block die Export-Parameter.
 
 ```abap showLineNumbers
@@ -52,6 +55,7 @@ CALL FUNCTION 'CALCULATE_POWER'
 ```
 
 ## Klassische Ausnahmen
+
 Innerhalb eines Funktionsbausteins kann mit der Anweisung `RAISE` eine Ausnahme ausgelöst werden. Die Verarbeitung des Funktionsbausteins wird dabei nach Auslösen der Ausnahme abgebrochen.
 
 ```abap showLineNumbers
@@ -67,7 +71,7 @@ FUNCTION calculate_power
   IF i_exponent < 0.
     RAISE negative_exponent.
   ENDIF.
-  
+
   e_result = i_base ** i_exponent.
 
 ENDFUNCTION.

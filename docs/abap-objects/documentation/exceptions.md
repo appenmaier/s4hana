@@ -1,6 +1,6 @@
 ---
 title: Klassenbasierte Ausnahmen
-description: ''
+description: ""
 sidebar_position: 40
 tags: []
 ---
@@ -21,13 +21,13 @@ CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
         model TYPE string
       RAISING
         cx_initial_parameter.
-      
+
     METHODS to_string
       RETURNING VALUE(string) TYPE string.
 
   PROTECTED SECTION.
-  
-  PRIVATE SECTION.   
+
+  PRIVATE SECTION.
 
 ENDCLASS.
  
@@ -41,13 +41,13 @@ CLASS cl_vehicle IMPLEMENTATION.
     IF model IS INITIAL.
       RAISE EXCEPTION TYPE cx_initial_parameter EXPORTING parameter = 'MODEL'.
     ENDIF
-	
+
     me->make = make.
     me->model = model.
 
     number_of_vehicles += 1.
   ENDMETHOD.
-  
+
   METHOD to_string.
     string = |{ make } { model }|.
   ENDMETHOD.

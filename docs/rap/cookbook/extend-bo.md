@@ -1,12 +1,13 @@
 ---
 title: Geschäftsobjekt erweitern
-description: ''
+description: ""
 sidebar_position: 40
 ---
 
 Um das Geschäftsobjekt um Buchungsdaten zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungsdaten erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Restricted Interface View inklusive einer Assoziation zu den Reisen erstellt. Zuletzt wird die Interface View für Reisen um eine Assoziation zu den Buchungsdaten erweitert.
 
 ## Datenbanktabelle ZABOOKING
+
 ```sql
 @EndUserText.label : 'Booking'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
@@ -30,6 +31,7 @@ define table zabooking {
 ```
 
 ## Restricted Interface View ZR_Booking
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
@@ -55,6 +57,7 @@ define view entity ZR_Booking
 ```
 
 ## Restricted Interface View ZR_Travel
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'

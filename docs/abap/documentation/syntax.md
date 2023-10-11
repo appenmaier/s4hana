@@ -1,6 +1,6 @@
 ---
 title: Allgemeine Syntax
-description: ''
+description: ""
 sidebar_position: 10
 tags: []
 ---
@@ -14,11 +14,11 @@ CLASS cl_main DEFINITION PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
-  
+
   PROTECTED SECTION.
-  
+
   PRIVATE SECTION.
-  
+
 ENDCLASS.
 
 CLASS cl_main IMPLEMENTATION.

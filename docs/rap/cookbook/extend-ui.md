@@ -1,6 +1,6 @@
 ---
 title: Oberfläche erweitern
-description: ''
+description: ""
 sidebar_position: 60
 tags: []
 ---
@@ -8,6 +8,7 @@ tags: []
 Um die Oberfläche für Buchungsdaten festzulegen, muss zunächst eine Metadata Extension für die Buchungsdaten erstellt werden. Anschließend wird die Metadata Extension für Reisen um eine weitere Facet erweitert.
 
 ## Metadata Extension ZC_BOOKING
+
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -60,11 +61,12 @@ annotate view ZC_Booking with
   @UI.selectionField: [{ position: 40 }]
   @UI.identification: [{ position: 70 }]
   Status;
-  
+
 }
 ```
 
 ## Projection View ZC_Booking
+
 ```sql
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -89,6 +91,7 @@ define view entity ZC_Booking
 ```
 
 ## Metadata Extension ZC_TRAVEL
+
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -155,6 +158,6 @@ annotate view ZC_Travel with
 
   @UI.identification: [{ position: 110 }]
   LastChangedAt;
-  
+
 }
 ```

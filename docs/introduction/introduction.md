@@ -1,7 +1,7 @@
 ---
 title: Einführung
 slug: /
-description: ''
+description: ""
 sidebar_position: 10
 tags: []
 ---

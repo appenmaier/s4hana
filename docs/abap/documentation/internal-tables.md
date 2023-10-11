@@ -1,6 +1,6 @@
 ---
 title: Interne Tabellen
-description: ''
+description: ""
 sidebar_position: 110
 tags: []
 ---
@@ -8,7 +8,9 @@ tags: []
 Eine interne Tabelle ist ein Datenobjekt, welches zur Laufzeit mehrere gleich strukturierte Datensätze halten kann. Die Größe der internen Tabelle wird dabei vom Laufzeitsystem automatisch verwaltet.
 
 ## Deklaration interner Tabellen
+
 Die Deklaration einer internen Tabellen kann entweder direkt im Programm erfolgen (selbstständige Definition) oder durch Angabe eines globalen Tabellentyps. Hierfür müssen folgende Angaben gemacht werden:
+
 - Der Zeilentyp beschreibt den Aufbau der internen Tabelle
 - Die Tabellenart definiert die Zugriffsart (per Schlüssel oder per Index)
 - Der Primärschlüssel definiert die Schlüsselfelder inklusive ihrer Reihenfolge
@@ -19,6 +21,7 @@ DATA flights2 TYPE /dmo/flights.
 ```
 
 ## Einfügen von Datensätzen
+
 Der Operator `VALUE` ermöglicht das Einfügen von Datensätzen in interne Tabellen.
 
 ```abap showLineNumbers
@@ -45,6 +48,7 @@ Der Operator `BASE` ermöglicht das Erweitern einer internen Tabelle.
 :::
 
 ## Lesen von Datensätzen
+
 Tabellenausdrücke ermöglichen das Lesen eines Einzelsatzes per Index bzw. per Schlüssel, die LOOP-Schleife ermöglicht das zeilenweise Auslesen von internen Tabellen.
 
 ```abap showLineNumbers
@@ -69,6 +73,7 @@ DATA(number_of_flights) = lines( flights ).
 ```
 
 ## Fehlerbehandlung bei Tabellenausdrücken
+
 Die Fehlerbehandlung bei Tabellenausdrücken kann mit Hilfe der eingebauten Prädikatsfunktion `LINE_EXISTS` erfolgen.
 
 ```abap showLineNumbers
@@ -81,6 +86,7 @@ ENDIF.
 ```
 
 ## Ändern von Datensätzen
+
 Tabellenausdrücke ermöglichen das Ändern eines Einzelsatzes per Index bzw. per Schlüssel und über Datenreferenzen können mehrere Datensätze sequentiell geändert werden.
 
 ```abap showLineNumbers
@@ -99,6 +105,7 @@ ENDLOOP.
 ```
 
 ## Löschen von Datensätzen
+
 Die Anweisung `DELETE` ermöglicht das Löschen eines oder mehrerer Datensätze
 
 ```abap showLineNumbers
@@ -113,6 +120,7 @@ DELETE flights WHERE flight_date < '20230101'.
 ```
 
 ## Sortieren interner Tabellen
+
 Die Anweisung `SORT` ermöglicht das Sortieren von internen Tabellen.
 
 ```abap showLineNumbers
@@ -126,7 +134,8 @@ Die Zusätze `ASCENDING` und `DESCENDING` legen die Sortierreihenfolge fest.
 :::
 
 ## Einspaltige Tabellen
-Interne Tabellen, die als Zeilentyp keine Struktur, sondern ein Datenelement, einen ABAP-Standardtyp oder einen Referenzdatentypen verwenden, bezeichnet man als _einspaltige Tabellen_. Das Schlüsselwort `TABLE_LINE` ermöglicht bei einspaltigen Tabellen den 
+
+Interne Tabellen, die als Zeilentyp keine Struktur, sondern ein Datenelement, einen ABAP-Standardtyp oder einen Referenzdatentypen verwenden, bezeichnet man als _einspaltige Tabellen_. Das Schlüsselwort `TABLE_LINE` ermöglicht bei einspaltigen Tabellen den
 Zugriff auf die Spalte.
 
 ```abap

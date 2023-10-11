@@ -1,6 +1,6 @@
 ---
 title: Hervorhebungen implementieren
-description: ''
+description: ""
 sidebar_position: 100
 ---
 
@@ -8,7 +8,9 @@ sidebar_position: 100
 :::
 
 ## Hervorhebung für den Status
+
 ### Restricted Interface View ZR_Booking
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
@@ -41,6 +43,7 @@ define view entity ZR_Booking
 ```
 
 ### Projection View ZC_Booking
+
 ```sql
 @EndUserText.label: 'Projection View: Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -70,6 +73,7 @@ define view entity ZC_Booking
 ```
 
 ### Metadata Extension ZC_BOOKING
+
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -130,7 +134,9 @@ annotate view ZC_Booking with
 ```
 
 ## Hervorhebung für das Startdatum
+
 ### Restricted Interface View ZR_Travel
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
@@ -164,6 +170,7 @@ define root view entity ZR_Travel
 ```
 
 ### Projection View ZC_Travel
+
 ```sql
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -196,6 +203,7 @@ define root view entity ZC_Travel
 ```
 
 ### Metadata Extension ZC_TRAVEL
+
 ```sql
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -250,6 +258,6 @@ annotate view ZC_Travel with
   @UI.selectionField: [{ position: 60 }]
   @UI.identification: [{ position: 60 }]
   TotalPrice;
-  
+
 }
 ```

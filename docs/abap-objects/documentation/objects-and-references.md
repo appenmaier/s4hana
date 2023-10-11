@@ -1,6 +1,6 @@
 ---
 title: Objekte und Referenzvariablen
-description: ''
+description: ""
 sidebar_position: 30
 tags: []
 ---
@@ -52,6 +52,7 @@ Der Initialwert einer Referenzvariablen ist die leere Referenz.
 :::
 
 ## Zugriff auf Attribute und Methoden
+
 Der Zugriff auf "normale" Attribute und Methoden erfolgt über die Angabe der Referenzvariablen sowie den Objekt-Komponentenselektor `->`, der Zugriff auf Klassenelemente über die Angabe der Klasse sowie den Klassen-Komponentenselektor `=>`.
 
 ```abap title="cl_main" showLineNumbers

@@ -1,13 +1,15 @@
 ---
 title: Wertehilfen implementieren
-description: ''
+description: ""
 sidebar_position: 80
 ---
 
 Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt werden. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
 
 ## Wertehilfe für die Kundennummer und die Währung
+
 ### Interface View ZI_CustomerVH
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Customer Value Help'
@@ -26,6 +28,7 @@ define view entity ZI_CustomerVH
 ```
 
 ## Projection View ZC_Travel
+
 ```sql
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -54,7 +57,9 @@ define root view entity ZC_Travel
 ```
 
 ## Wertehilfe für den Status und die Währung
+
 ### Interface View ZI_StatusVH
+
 ```sql
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Status Value Help'
@@ -75,6 +80,7 @@ define view entity ZI_StatusVH
 ```
 
 ### Projection View ZC_Booking
+
 ```sql
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED

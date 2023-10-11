@@ -1,6 +1,6 @@
 ---
 title: Datenbankzugriffe mit Open SQL
-description: ''
+description: ""
 sidebar_position: 120
 tags: []
 ---
@@ -12,6 +12,7 @@ Open SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 :::
 
 ## Transparente Tabellen
+
 Eine transparente Tabelle stellt eine plattformunabhängige Beschreibung einer Datenbanktabelle dar. Bei der Aktivierung einer transparenten Tabelle in der System Library wird automatisch eine entsprechende Datenbanktabelle erzeugt.
 
 ![image](https://user-images.githubusercontent.com/47243617/210174452-64c2e0e9-3d52-4d1c-ab0d-2e88e55a8a53.png)
@@ -21,7 +22,9 @@ Transparente Tabellen können bei der Programmierung wie Strukturtypen verwendet
 :::
 
 ## Lesende Datenbankzugriffe
+
 Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
+
 - Die FROM-Klausel benennt die Datenquelle (Datenbanktabelle oder View)
 - Die FIELDS-Klausel beschreibt, welche Felder gelesen werden sollen
 - Die WHERE-Klausel legt die zu selektierenden Zeilen fest
@@ -29,7 +32,7 @@ Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
 
 ![image](https://user-images.githubusercontent.com/47243617/210174652-87cc7d3f-e9e4-4d69-8a95-6a4e68e3e0b9.png)
 
-Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff 
+Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff
 zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
 
 ```abap showLineNumbers
@@ -62,7 +65,8 @@ Mit dem optionalen Zusatz `ORDER BY` können die gelesenen Datensätze sortiert 
 :::
 
 ## Definition der Zielvariablen
-Bei Selektion von bestimmten Feldern muss in der INTO-Klausel eine Variable gewählt werden, die den gleichen Aufbau wie die Feldliste besitzt. Der Zusatz `CORRESPONDING FIELDS OF` der INTO-Klausel bewirkt, dass nur gleichnamige Felder der Zielvariable befüllt 
+
+Bei Selektion von bestimmten Feldern muss in der INTO-Klausel eine Variable gewählt werden, die den gleichen Aufbau wie die Feldliste besitzt. Der Zusatz `CORRESPONDING FIELDS OF` der INTO-Klausel bewirkt, dass nur gleichnamige Felder der Zielvariable befüllt
 werden.
 
 ```abap showLineNumbers
@@ -98,6 +102,7 @@ Bei nicht übereinstimmenden Feldtypen wird eine (aufwändige) Typkonvertierung 
 :::
 
 ## Schreibende Datenbankzugriffe
+
 Für schreibende Datenbankzugriffe stellt ABAP die Anweisungen `INSERT` (Hinzufügen), `UPDATE` (Ändern) sowie `DELETE` (Löschen) zur Verfügung.
 
 ```abap showLineNumbers
