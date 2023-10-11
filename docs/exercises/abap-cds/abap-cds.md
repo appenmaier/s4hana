@@ -1,7 +1,7 @@
 ---
-title: Anleitungen
+title: ABAP CDS
 description: ""
-sidebar_position: 10
+sidebar_position: 30
 ---
 
 import DocCardList from '@theme/DocCardList';

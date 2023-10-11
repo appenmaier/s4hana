@@ -11,7 +11,10 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "appenmaier",
   projectName: "s4hana",
-
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
   i18n: {
     defaultLocale: "de",
     locales: ["de"],
@@ -35,6 +38,12 @@ const config = {
   ],
 
   themeConfig: {
+    mermaid: {
+      theme: {
+        light: "default",
+        dark: "dark",
+      },
+    },
     navbar: {
       title: "Startseite",
       logo: {
@@ -44,27 +53,15 @@ const config = {
       items: [
         {
           type: "doc",
-          docId: "abap/documentation/abap",
+          docId: "documentation/introduction",
           position: "left",
-          label: "ABAP",
+          label: "Dokumentation",
         },
         {
           type: "doc",
-          docId: "abap-objects/documentation/abap-objects",
+          docId: "exercises/abap/abap-01",
           position: "left",
-          label: "ABAP Objects",
-        },
-        {
-          type: "doc",
-          docId: "abap-cds/documentation/abap-cds",
-          position: "left",
-          label: "ABAP CDS",
-        },
-        {
-          type: "doc",
-          docId: "rap/documentation/rap",
-          position: "left",
-          label: "ABAP RESTful Application Programming Model (RAP)",
+          label: "Übungsaufgaben",
         },
         {
           type: "doc",

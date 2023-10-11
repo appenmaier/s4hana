@@ -1,0 +1,40 @@
+---
+title: ABAP-Objects-06
+description: ""
+---
+
+1. Erstelle die Klassen `ZCL_???_PASSENGER_PLANE` und `ZCL_???_CARGO_PLANE` anhand des abgebildeten Klassendiagramms
+2. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass statt gewöhnlichen Flugzeugen Passagier- und Frachtflugzeuge erzeugt werden
+
+## Klassendiagramm
+
+```mermaid
+classDiagram
+    cl_airplane <|-- cl_passenger_plane
+    cl_airplane <|-- cl_cargo_plane
+
+    class cl_airplane {
+      -name string
+      -plane_type string
+      -number_of_airplanes i$
+      +constructor(name string, plane_type string)
+      +to_string() string
+    }
+
+    class cl_passenger_plane {
+      -number_of_seats i
+      +constructor(name string, plane_type string, number_of_seats i)
+      +to_string() string
+    }
+
+    class cl_cargo_plane {
+      -cargo_in_tons i
+      +constructor(name string, plane_type string, cargo_in_tons i)
+      +to_string() string
+    }
+```
+
+## Hinweise zur Klasse `ZCL_???_CARGO_PLANE` und zur Klasse `ZCL_???_PASSENGER_PLANE`
+
+- Der Konstruktor soll alle Attribute initialisieren
+- Die Methode `VOID TO_STRING()` soll alle Instanzattribute zu einer Zeichenkette zusammenfassen und diese zurückgeben

@@ -1,7 +1,7 @@
 ---
-title: Anleitungen
+title: ABAP Objects
 description: ""
-sidebar_position: 10
+sidebar_position: 20
 ---
 
 import DocCardList from '@theme/DocCardList';
