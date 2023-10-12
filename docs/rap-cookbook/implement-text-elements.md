@@ -1,5 +1,5 @@
 ---
-title: Textelemente implementieren
+title: 9. Textelemente implementieren
 description: ""
 sidebar_position: 90
 ---

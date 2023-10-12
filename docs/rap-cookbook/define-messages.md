@@ -1,5 +1,5 @@
 ---
-title: Nachrichten festlegen
+title: 12. Nachrichten festlegen
 description: ""
 sidebar_position: 120
 ---

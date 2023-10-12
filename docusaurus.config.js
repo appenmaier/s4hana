@@ -65,7 +65,7 @@ const config = {
         },
         {
           type: "doc",
-          docId: "rap-cookbook/define-bo",
+          docId: "rap-cookbook/introduction",
           position: "left",
           label: "RAP Kochbuch",
         },

@@ -1,10 +1,10 @@
 ---
-title: Verhalten festlegen
+title: 7. Verhalten festlegen
 description: ""
 sidebar_position: 70
 ---
 
-Um das (transaktionale) Verhalten des RAP BOs festzulegen, wird einen Behavior Definition für die Restricted Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Definition für die Projection View der Reisen erstellt. In dieser wird festgelegt, welches Verhalten der Business Service bereitstellen soll.
+Um das (transaktionale) Verhalten des RAP BOs festzulegen, wird einen Behavior Definition für die Restricted Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Projection für die Projection View der Reisen erstellt. In dieser wird festgelegt, welches Verhalten der Business Service bereitstellen soll.
 
 ## Behavior Definition ZR_TRAVEL
 
@@ -67,7 +67,7 @@ authorization dependent by _Travel
 }
 ```
 
-## Behavior Definition ZC_TRAVEL
+## Behavior Projection ZC_TRAVEL
 
 ```sql
 projection;
