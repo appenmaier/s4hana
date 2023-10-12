@@ -81,7 +81,9 @@ annotate view ZC_Travel with
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
+//highlight-start
 @Metadata.allowExtensions: true
+//highlight-end
 define root view entity ZC_Travel
   as projection on ZR_Travel
 {

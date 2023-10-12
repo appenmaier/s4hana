@@ -57,8 +57,10 @@ define root view entity ZC_Travel
       LocalLastChangedAt,
       lLastChangedAt,
 
+//highlight-start
       /* Associations */
       _Bookings : redirected to composition child ZC_Booking
+//highlight-end
 }
 ```
 
@@ -68,6 +70,8 @@ define root view entity ZC_Travel
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL {
   expose ZC_Travel as Travel;
+//highlight-start
   expose ZC_Booking as Booking;
+//highlight-end
 }
 ```

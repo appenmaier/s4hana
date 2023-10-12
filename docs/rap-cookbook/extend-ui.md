@@ -70,7 +70,9 @@ annotate view ZC_Booking with
 ```sql
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
+//highlight-start
 @Metadata.allowExtensions: true
+//highlight-end
 define view entity ZC_Booking
   as projection on ZI_Booking
 {
@@ -108,7 +110,9 @@ annotate view ZC_Travel with
   @UI.facet:
   [
     { position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Travel Details' },
+//highlight-start
     { position: 20, type: #LINEITEM_REFERENCE, label: 'Bookings', targetElement: '_Bookings' }
+//highlight-end
   ]
 
   /* Fields */

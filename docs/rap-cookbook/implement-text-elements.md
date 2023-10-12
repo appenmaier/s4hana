@@ -19,8 +19,10 @@ as select from /dmo/customer
       first_name                                  as FirstName,
       last_name                                   as LastName,
 
+//highlight-start
       /* Transient Data */
       concat_with_space(first_name, last_name, 1) as Name
+//highlight-end
 }
 ```
 
@@ -32,11 +34,15 @@ as select from /dmo/customer
 define root view entity ZR_Travel
   as select from zatravel
   composition [0..*] of ZR_Booking      as _Bookings
+//highlight-start
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
+//highlight-end
 {
   key travel_uuid        as TravelUuid,
       travel_id          as TravelId,
+//highlight-start
       @ObjectModel.text.element: ['CustomerName']
+//highlight-end
       customer_id        as CustomerId,
       begin_date         as BeginDate,
       end_date           as EndDate,
@@ -45,8 +51,10 @@ define root view entity ZR_Travel
       total_price        as TotalPrice,
       currency_code      as CurrencyCode,
 
+//highlight-start
       /* Transient Data */
       _CustomerText.Name as CustomerName,
+//highlight-end
 
       /* Associations */
       _Bookings
@@ -77,8 +85,10 @@ define root view entity ZC_Travel
       @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
       CurrencyCode,
 
+//highlight-start
       /* Transient Data */
       CustomerName,
+//highlight-end
 
       /* Associations */
       _Bookings : redirected to composition child ZC_Booking

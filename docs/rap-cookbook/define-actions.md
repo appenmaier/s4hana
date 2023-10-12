@@ -50,7 +50,9 @@ authorization dependent by _Travel
   field ( readonly ) TravelUuid;
   association _Travel;
 
+//highlight-start
   action cancel_booking;
+//highlight-end
 
   field ( readonly, numbering : managed ) BookingUuid;
 
@@ -90,7 +92,9 @@ define behavior for ZC_Booking alias Booking
   use update;
   use delete;
 
+//highlight-start
   use action cancel_booking;
+//highlight-end
 
   use association _Travel;
 }
@@ -113,8 +117,10 @@ annotate view ZC_Booking with
   /* Facets */
   @UI.facet: [{ position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Booking Details' }]
 
+//highlight-start
   /* Actions */
   @UI.lineItem: [{ position: 10, type: #FOR_ACTION, dataAction: 'CANCEL_BOOKING', label: 'Cancel Booking' }]
+//highlight-end
 
   /* Fields */
   @UI.hidden: true

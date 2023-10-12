@@ -63,7 +63,9 @@ define view entity ZR_Booking
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
   as select from zatravel
+//highlight-start
   composition [0..*] of ZR_Booking as _Bookings
+//highlight-end
 {
   key travel_uuid           as TravelUuid,
       travel_id             as TravelId,
@@ -80,7 +82,9 @@ define root view entity ZR_Travel
       local_last_changed_at as LocalLastChangedAt,
       last_changed_at       as LastChangedAt,
 
+//highlight-start
       /* Associations */
       _Bookings
+//highlight-end
 }
 ```

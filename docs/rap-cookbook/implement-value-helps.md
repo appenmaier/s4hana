@@ -40,7 +40,9 @@ define root view entity ZC_Travel
 {
   key TravelUuid,
       TravelId,
+//highlight-start
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CustomerVH', element: 'CustomerId' } }]
+//highlight-end
       CustomerId,
       BeginDate,
       EndDate,
@@ -48,7 +50,9 @@ define root view entity ZC_Travel
       @Search.fuzzinessThreshold: 0.7
       Description,
       TotalPrice,
+//highlight-start
       @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
+//highlight-end
       CurrencyCode,
 
       /* Associations */
@@ -96,9 +100,13 @@ define view entity ZC_Booking
       ConnectionId,
       FlightDate,
       FlightPrice,
+//highlight-start
       @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
+//highlight-end
       CurrencyCode,
+//highlight-start
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_StatusVH', element: 'Status' } }]
+//highlight-end
       Status,
 
       /* Associations */

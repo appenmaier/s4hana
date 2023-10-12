@@ -18,7 +18,9 @@ sidebar_position: 110
   title.value: 'TravelId',
   description.value: 'Description'
 }
+//highlight-start
 @UI.presentationVariant: [{sortOrder: [{ by: 'BeginDate', direction: #DESC }]}]
+//highlight-end
 annotate view ZC_Travel with
 {
 

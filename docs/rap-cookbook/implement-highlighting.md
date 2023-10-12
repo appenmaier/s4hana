@@ -30,12 +30,14 @@ define view entity ZR_Booking
       currency_code as CurrencyCode,
       status        as Status,
 
+//highlight-start
       /* Transient Data */
       case status when 'B' then 3
                   when 'N' then 0
                   when 'X' then 1
                   else 0
       end           as StatusCriticality,
+//highlight-end
 
       /* Associations */
       _Travel
@@ -64,8 +66,10 @@ define view entity ZC_Booking
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_StatusVH', element: 'Status' } }]
       Status,
 
+//highlight-start
       /* Transient Data */
       StatusCriticality,
+//highlight-end
 
       /* Associations */
       _Travel : redirected to parent ZC_Travel
@@ -122,7 +126,9 @@ annotate view ZC_Booking with
   @UI.identification: [{ position: 60 }]
   FlightPrice;
 
+//highlight-start
   @UI.lineItem: [{ position: 60, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+//highlight-end
   @UI.selectionField: [{ position: 40 }]
   @UI.identification: [{ position: 70 }]
   Status;
@@ -157,11 +163,13 @@ define root view entity ZR_Travel
       currency_code      as CurrencyCode,
 
       /* Transient Data */
+//highlight-start
       case when dats_days_between($session.user_date, begin_date) >= 14 then 3
            when dats_days_between($session.user_date, begin_date) >= 7 then 2
            when dats_days_between($session.user_date, begin_date) >= 0 then 1
            else 0
       end                as BeginDateCriticality,
+//highlight-end
       _CustomerText.Name as CustomerName,
 
       /* Associations */
@@ -194,7 +202,9 @@ define root view entity ZC_Travel
       CurrencyCode,
 
       /* Transient Data */
+//highlight-start
       BeginDateCriticality,
+//highlight-end
       CustomerName,
 
       /* Associations */
@@ -250,7 +260,9 @@ annotate view ZC_Travel with
   @UI.identification: [{ position: 40 }]
   EndDate;
 
+//highlight-start
   @UI.lineItem: [{ position: 50, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+//highlight-end
   @UI.identification: [{ position: 50 }]
   Description;
 
