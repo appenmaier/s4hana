@@ -1,10 +1,10 @@
 ---
-title: Geschäftsobjekt festlegen
+title: RAP BO festlegen
 description: ""
 sidebar_position: 10
 ---
 
-Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des Geschäftsobjektes darstellt.
+Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des RAP BOs darstellt.
 
 ## Datenbanktabelle ZATRAVEL
 

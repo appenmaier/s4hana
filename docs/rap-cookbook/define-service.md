@@ -1,10 +1,10 @@
 ---
-title: Geschäftsservice festlegen
+title: Business Service festlegen
 description: ""
 sidebar_position: 20
 ---
 
-Für den Geschäftsservice muss zunächst eine Projection View auf Grundlage des Geschäftsobjektes erstellt werden. Anschließend wird darauf aufbauend eine Servicedefinition erstellt, die den Umfang des Geschäftsservices festlegt. Zuletzt wird mit Hilfe dieser Servicedefinition eine Servicebindung erstellt, die das Kommunikationsprotokoll (OData v2) sowie die Art des Services (UI) festlegt.
+Für den Business Service muss zunächst eine Projection View auf Grundlage des RAP BOs erstellt werden. Anschließend wird darauf aufbauend eine Service Definition erstellt, die den Umfang des Business Services festlegt. Zuletzt wird mit Hilfe dieser Service Definition ein Service Binding erstellt, die das Kommunikationsprotokoll (OData v2) sowie die Art des Services (UI) festlegt.
 
 ## Projection View ZC_Travel
 

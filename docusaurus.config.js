@@ -65,7 +65,13 @@ const config = {
         },
         {
           type: "doc",
-          docId: "additional-material/sap-flightmodel",
+          docId: "rap-cookbook/define-bo",
+          position: "left",
+          label: "RAP Kochbuch",
+        },
+        {
+          type: "doc",
+          docId: "additional-material/instructions/instructions",
           position: "left",
           label: "Zusatzmaterial",
         },

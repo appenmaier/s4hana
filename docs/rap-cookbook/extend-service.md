@@ -1,10 +1,10 @@
 ---
-title: Geschäftsservice erweitern
+title: Business Service erweitern
 description: ""
 sidebar_position: 50
 ---
 
-Um den Geschäftsservice um Buchungsdaten zu erweitern, muss zunächst eine Projection View für Buchungsdaten erstellt werden. Anschließend muss die Projection View für Reisen um einen Assoziation zu den Buchungsdaten erweitert werden. Zuletzt muss die Servicedefinition um die Projection View für Buchungsdaten erweitert werden.
+Um den Business Service um Buchungen zu erweitern, muss zunächst eine Projection View für Buchungen erstellt werden. Anschließend muss die Projection View für Reisen um einen Assoziation zu den Buchungen erweitert werden. Zuletzt muss die Service Definition um die Projection View für Buchungen erweitert werden.
 
 ## Projection View ZC_Booking
 
