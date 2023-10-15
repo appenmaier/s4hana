@@ -40,16 +40,26 @@ define root view entity ZR_Travel
 {
   key travel_uuid        as TravelUuid,
       travel_id          as TravelId,
+      agency_id          as AgencyId,
 //highlight-start
       @ObjectModel.text.element: ['CustomerName']
 //highlight-end
       customer_id        as CustomerId,
       begin_date         as BeginDate,
       end_date           as EndDate,
-      description        as Description,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      booking_fee        as BookingFee,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       total_price        as TotalPrice,
       currency_code      as CurrencyCode,
+      description        as Description,
+      status             as Status,
+
+      /* Administrative Data */
+      created_by         as CreatedBy,
+      created_at         as CreatedAt,
+      last_changed_by    as LastChangedBy,
+      last_changed_at    as LastChangedAt
 
 //highlight-start
       /* Transient Data */
@@ -74,16 +84,27 @@ define root view entity ZC_Travel
 {
   key TravelUuid,
       TravelId,
+      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Agency_StdVH', element: 'AgencyId' } }]
+      AgencyId,
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CustomerVH', element: 'CustomerId' } }]
       CustomerId,
       BeginDate,
       EndDate,
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.7
-      Description,
+      BookingFee,
       TotalPrice,
       @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
       CurrencyCode,
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
+      Description,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_StatusVH', element: 'Status' } }]
+      Status,
+
+      /* Administrative Data */
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt
 
 //highlight-start
       /* Transient Data */

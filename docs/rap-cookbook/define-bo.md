@@ -9,51 +9,63 @@ Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erst
 ## Datenbanktabelle ZATRAVEL
 
 ```sql
+//highlight-start
 @EndUserText.label : 'Travel'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zatravel {
-  key client            : abap.clnt not null;
-  key travel_uuid       : sysuuid_x16 not null;
-  travel_id             : /dmo/travel_id;
-  customer_id           : /dmo/customer_id;
-  begin_date            : /dmo/begin_date;
-  end_date              : /dmo/end_date;
-  description           : /dmo/description;
+  key client      : abap.clnt not null;
+  key travel_uuid : sysuuid_x16 not null;
+  travel_id       : /dmo/travel_id;
+  agency_id       : /dmo/agency_id;
+  customer_id     : /dmo/customer_id;
+  begin_date      : /dmo/begin_date;
+  end_date        : /dmo/end_date;
   @Semantics.amount.currencyCode : 'zatravel.currency_code'
-  total_price           : /dmo/total_price;
-  currency_code         : /dmo/currency_code;
-  created_by            : abp_creation_user;
-  created_at            : abp_creation_tstmpl;
-  local_last_changed_by : abp_locinst_lastchange_user;
-  local_last_changed_at : abp_locinst_lastchange_tstmpl;
-  last_changed_at       : abp_lastchange_tstmpl;
+  booking_fee     : /dmo/booking_fee;
+  @Semantics.amount.currencyCode : 'zatravel.currency_code'
+  total_price     : /dmo/total_price;
+  currency_code   : /dmo/currency_code;
+  description     : /dmo/description;
+  status          : /dmo/status;
+  created_by      : syuname;
+  created_at      : timestmpl;
+  last_changed_by : syuname;
+  last_changed_at : timestmpl;
 }
+//highlight-end
 ```
 
 ## Restricted Interface View ZR_Travel
 
 ```sql
+//highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
   as select from zatravel
 {
-  key travel_uuid           as TravelUuid,
-      travel_id             as TravelId,
-      customer_id           as CustomerId,
-      begin_date            as BeginDate,
-      end_date              as EndDate,
-      description           as Description,
+  key travel_uuid     as TravelUuid,
+      travel_id       as TravelId,
+      agency_id       as AgencyId,
+      customer_id     as CustomerId,
+      begin_date      as BeginDate,
+      end_date        as EndDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
-      total_price           as TotalPrice,
-      currency_code         as CurrencyCode,
-      created_by            as CreatedBy,
-      created_at            as CreatedAt,
-      local_last_changed_by as LocalLastChangedBy,
-      local_last_changed_at as LocalLastChangedAt,
-      last_changed_at       as LastChangedAt
+      booking_fee     as BookingFee,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      total_price     as TotalPrice,
+      currency_code   as CurrencyCode,
+      description     as Description,
+      status          as Status,
+
+      /* Administrative Data */
+      created_by      as CreatedBy,
+      created_at      as CreatedAt,
+      last_changed_by as LastChangedBy,
+      last_changed_at as LastChangedAt
 }
+//highlight-end
 ```

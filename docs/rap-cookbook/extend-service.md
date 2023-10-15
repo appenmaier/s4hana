@@ -9,6 +9,7 @@ Um den Business Service um Buchungen zu erweitern, muss zunächst eine Projectio
 ## Projection View ZC_Booking
 
 ```sql
+//highlight-start
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
@@ -24,11 +25,11 @@ define view entity ZC_Booking
       FlightDate,
       FlightPrice,
       CurrencyCode,
-      Status,
 
       /* Associations */
       _Travel : redirected to parent ZC_Travel
 }
+//highlight-end
 ```
 
 ## Projection View ZC_Travel
@@ -43,19 +44,23 @@ define root view entity ZC_Travel
 {
   key TravelUuid,
       TravelId,
+      AgencyId,
       CustomerId,
       BeginDate,
       EndDate,
+      BookingFee,
+      TotalPrice,
+      CurrencyCode,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.7
       Description,
-      TotalPrice,
-      CurrencyCode,
+      Status,
+
+      /* Administrative Data */
       CreatedBy,
       CreatedAt,
-      LocalLastChangedBy,
-      LocalLastChangedAt,
-      lLastChangedAt,
+      LastChangedBy,
+      LastChangedAt
 
 //highlight-start
       /* Associations */

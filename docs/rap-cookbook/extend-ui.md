@@ -10,6 +10,7 @@ Um die Oberfläche für Buchungsdaten festzulegen, muss zunächst eine Metadata 
 ## Metadata Extension ZC_BOOKING
 
 ```sql
+//highlight-start
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
 {
@@ -22,47 +23,52 @@ annotate view ZC_Booking with
 {
 
   /* Facets */
-  @UI.facet: [{ position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Booking Details' }]
+  @UI.facet:
+  [
+    { position: 10, targetQualifier: 'BookingDetails', label: 'Booking Details', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetQualifier: 'AdminData', label: 'Administrative Data', type: #FIELDGROUP_REFERENCE }
+  ]
 
   /* Fields */
-  @UI.hidden: true
+  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
   BookingUuid;
 
-  @UI.hidden: true
+  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
   TravelUuid;
 
   @UI.lineItem: [{ position: 10 }]
-  @UI.identification: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'BookingDetails' }]
   BookingId;
 
   @UI.lineItem: [{ position: 20 }]
-  @UI.selectionField: [{ position: 10 }]
-  @UI.identification: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'BookingDetails' }]
   BookingDate;
 
   @UI.lineItem: [{ position: 30 }]
-  @UI.selectionField: [{ position: 20 }]
-  @UI.identification: [{ position: 30 }]
-  CarrierId;
+  @UI.fieldGroup: [{ position: 30, qualifier: 'BookingDetails' }]
+  CustomerId;
 
   @UI.lineItem: [{ position: 40 }]
-  @UI.identification: [{ position: 40 }]
-  ConnectionId;
+  @UI.fieldGroup: [{ position: 40, qualifier: 'BookingDetails' }]
+  CarrierId;
 
   @UI.lineItem: [{ position: 50 }]
-  @UI.selectionField: [{ position: 30 }]
-  @UI.identification: [{ position: 50 }]
-  FlightDate;
-
-  @UI.identification: [{ position: 60 }]
-  FlightPrice;
+  @UI.fieldGroup: [{ position: 50, qualifier: 'BookingDetails' }]
+  ConnectionId;
 
   @UI.lineItem: [{ position: 60 }]
-  @UI.selectionField: [{ position: 40 }]
-  @UI.identification: [{ position: 70 }]
-  Status;
+  @UI.fieldGroup: [{ position: 60, qualifier: 'BookingDetails' }]
+  FlightDate;
+
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'BookingDetails' }]
+  FlightPrice;
+
+//  @UI.hidden: true
+//  CurrencyCode;
 
 }
+//highlight-end
 ```
 
 ## Projection View ZC_Booking
@@ -85,7 +91,6 @@ define view entity ZC_Booking
       FlightDate,
       FlightPrice,
       CurrencyCode,
-      Status,
 
       /* Associations */
       _Travel : redirected to parent ZC_Travel
@@ -109,59 +114,72 @@ annotate view ZC_Travel with
   /* Facets */
   @UI.facet:
   [
-    { position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Travel Details' },
+    { position: 10, targetQualifier: 'TravelDetails', label: 'Travel Details', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetQualifier: 'AdminData', label: 'Administrative Data', type: #FIELDGROUP_REFERENCE },
 //highlight-start
-    { position: 20, type: #LINEITEM_REFERENCE, label: 'Bookings', targetElement: '_Bookings' }
+    { position: 30, targetElement: '_Bookings', label: 'Bookings', type: #LINEITEM_REFERENCE }
 //highlight-end
   ]
 
   /* Fields */
-  @UI.hidden: true
+  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
   TravelUuid;
 
   @UI.lineItem: [{ position: 10 }]
-  @UI.selectionField: [{ position: 10 }]
-  @UI.identification: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'TravelDetails' }]
   TravelId;
 
   @UI.lineItem: [{ position: 20 }]
-  @UI.selectionField: [{ position: 20 }]
-  @UI.identification: [{ position: 20 }]
-  CustomerId;
+  @UI.selectionField: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'TravelDetails' }]
+  AgencyId;
 
   @UI.lineItem: [{ position: 30 }]
-  @UI.selectionField: [{ position: 30 }]
-  @UI.identification: [{ position: 30 }]
-  BeginDate;
+  @UI.selectionField: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'TravelDetails' }]
+  CustomerId;
 
   @UI.lineItem: [{ position: 40 }]
-  @UI.selectionField: [{ position: 40 }]
-  @UI.identification: [{ position: 40 }]
-  EndDate;
+  @UI.selectionField: [{ position: 30 }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'TravelDetails' }]
+  BeginDate;
 
   @UI.lineItem: [{ position: 50 }]
-  @UI.identification: [{ position: 50 }]
-  Description;
+  @UI.selectionField: [{ position: 40 }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'TravelDetails' }]
+  EndDate;
+
+  @UI.fieldGroup: [{ position: 60, qualifier: 'TravelDetails' }]
+  BookingFee;
 
   @UI.lineItem: [{ position: 60 }]
-  @UI.selectionField: [{ position: 60 }]
-  @UI.identification: [{ position: 60 }]
+  @UI.selectionField: [{ position: 50 }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
   TotalPrice;
 
-  @UI.identification: [{ position: 70 }]
-  CreatedBy;
+  //  @UI.hidden: true
+  //  CurrencyCode;
 
-  @UI.identification: [{ position: 80 }]
-  CreatedAt;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'TravelDetails' }]
+  Description;
 
-  @UI.identification: [{ position: 90 }]
-  LocalLastChangedBy;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{ position: 60 }]
+  @UI.fieldGroup: [{ position: 90, qualifier: 'TravelDetails' }]
+  Status;
 
-  @UI.identification: [{ position: 100 }]
-  LocalLastChangedAt;
+  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
+  Createdby;
 
-  @UI.identification: [{ position: 110 }]
-  LastChangedAt;
+  @UI.fieldGroup: [{ position: 30, qualifier: 'AdminData' }]
+  Createdat;
+
+  @UI.fieldGroup: [{ position: 40, qualifier: 'AdminData' }]
+  Lastchangedby;
+
+  @UI.fieldGroup: [{ position: 50, qualifier: 'AdminData' }]
+  Lastchangedat;
 
 }
 ```

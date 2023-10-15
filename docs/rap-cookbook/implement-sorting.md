@@ -27,45 +27,70 @@ annotate view ZC_Travel with
   /* Facets */
   @UI.facet:
   [
-    { position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Travel Details' },
-    { position: 20, type: #LINEITEM_REFERENCE, label: 'Bookings', targetElement: '_Bookings' }
+    { position: 10, targetQualifier: 'TravelDetails', label: 'Travel Details', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetQualifier: 'AdminData', label: 'Administrative Data', type: #FIELDGROUP_REFERENCE },
+    { position: 30, targetElement: '_Bookings', label: 'Bookings', type: #LINEITEM_REFERENCE }
   ]
 
   /* Fields */
-  @UI.hidden: true
+  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
   TravelUuid;
 
   @UI.lineItem: [{ position: 10 }]
-  @UI.selectionField: [{ position: 10 }]
-  @UI.identification: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'TravelDetails' }]
   TravelId;
 
   @UI.lineItem: [{ position: 20 }]
-  @UI.selectionField: [{ position: 20 }]
-  @UI.identification: [{ position: 20 }]
-  CustomerId;
+  @UI.selectionField: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'TravelDetails' }]
+  AgencyId;
 
   @UI.lineItem: [{ position: 30 }]
-  @UI.selectionField: [{ position: 30 }]
-  @UI.identification: [{ position: 30 }]
-  BeginDate;
-
-  @UI.hidden: true
-  BeginDateCriticality;
+  @UI.selectionField: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'TravelDetails' }]
+  CustomerId;
 
   @UI.lineItem: [{ position: 40 }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'TravelDetails' }]
+  BeginDate;
+
+  @UI.lineItem: [{ position: 50 }]
   @UI.selectionField: [{ position: 40 }]
-  @UI.identification: [{ position: 40 }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'TravelDetails' }]
   EndDate;
 
-  @UI.lineItem: [{ position: 50, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
-  @UI.identification: [{ position: 50 }]
-  Description;
+  @UI.fieldGroup: [{ position: 60, qualifier: 'TravelDetails' }]
+  BookingFee;
 
   @UI.lineItem: [{ position: 60 }]
-  @UI.selectionField: [{ position: 60 }]
-  @UI.identification: [{ position: 60 }]
+  @UI.selectionField: [{ position: 50 }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
   TotalPrice;
+
+  //  @UI.hidden: true
+  //  CurrencyCode;
+
+  @UI.lineItem: [{ position: 70, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'TravelDetails' }]
+  Description;
+
+  @UI.lineItem: [{ position: 80, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.selectionField: [{ position: 60 }]
+  @UI.fieldGroup: [{ position: 90, qualifier: 'TravelDetails', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  Status;
+
+  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
+  Createdby;
+
+  @UI.fieldGroup: [{ position: 30, qualifier: 'AdminData' }]
+  Createdat;
+
+  @UI.fieldGroup: [{ position: 40, qualifier: 'AdminData' }]
+  Lastchangedby;
+
+  @UI.fieldGroup: [{ position: 50, qualifier: 'AdminData' }]
+  Lastchangedat;
 
 }
 ```

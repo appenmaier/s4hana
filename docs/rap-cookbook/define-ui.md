@@ -10,6 +10,7 @@ Um die Oberfläche für Reisen festzulegen, wird zunächst eine Metadata Extensi
 ## Metadata Extension ZC_TRAVEL
 
 ```sql
+//highlight-start
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
 {
@@ -22,57 +23,74 @@ annotate view ZC_Travel with
 {
 
   /* Facets */
-  @UI.facet: [{ position: 10, type: #IDENTIFICATION_REFERENCE, label: 'Travel Details' }]
+  @UI.facet:
+  [
+    { position: 10, targetQualifier: 'TravelDetails', label: 'Travel Details', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetQualifier: 'AdminData', label: 'Administrative Data', type: #FIELDGROUP_REFERENCE }
+  ]
 
   /* Fields */
-  @UI.hidden: true
+  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
   TravelUuid;
 
   @UI.lineItem: [{ position: 10 }]
-  @UI.selectionField: [{ position: 10 }]
-  @UI.identification: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'TravelDetails' }]
   TravelId;
 
   @UI.lineItem: [{ position: 20 }]
-  @UI.selectionField: [{ position: 20 }]
-  @UI.identification: [{ position: 20 }]
-  CustomerId;
+  @UI.selectionField: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'TravelDetails' }]
+  AgencyId;
 
   @UI.lineItem: [{ position: 30 }]
-  @UI.selectionField: [{ position: 30 }]
-  @UI.identification: [{ position: 30 }]
-  BeginDate;
+  @UI.selectionField: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'TravelDetails' }]
+  CustomerId;
 
   @UI.lineItem: [{ position: 40 }]
-  @UI.selectionField: [{ position: 40 }]
-  @UI.identification: [{ position: 40 }]
-  EndDate;
+  @UI.selectionField: [{ position: 30 }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'TravelDetails' }]
+  BeginDate;
 
   @UI.lineItem: [{ position: 50 }]
-  @UI.identification: [{ position: 50 }]
-  Description;
+  @UI.selectionField: [{ position: 40 }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'TravelDetails' }]
+  EndDate;
+
+  @UI.fieldGroup: [{ position: 60, qualifier: 'TravelDetails' }]
+  BookingFee;
 
   @UI.lineItem: [{ position: 60 }]
-  @UI.selectionField: [{ position: 60 }]
-  @UI.identification: [{ position: 60 }]
+  @UI.selectionField: [{ position: 50 }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
   TotalPrice;
 
-  @UI.identification: [{ position: 70 }]
-  CreatedBy;
+  //  @UI.hidden: true
+  //  CurrencyCode;
 
-  @UI.identification: [{ position: 80 }]
-  CreatedAt;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'TravelDetails' }]
+  Description;
 
-  @UI.identification: [{ position: 90 }]
-  LocalLastChangedBy;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{ position: 60 }]
+  @UI.fieldGroup: [{ position: 90, qualifier: 'TravelDetails' }]
+  Status;
 
-  @UI.identification: [{ position: 100 }]
-  LocalLastChangedAt;
+  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
+  Createdby;
 
-  @UI.identification: [{ position: 110 }]
-  LastChangedAt;
+  @UI.fieldGroup: [{ position: 30, qualifier: 'AdminData' }]
+  Createdat;
+
+  @UI.fieldGroup: [{ position: 40, qualifier: 'AdminData' }]
+  Lastchangedby;
+
+  @UI.fieldGroup: [{ position: 50, qualifier: 'AdminData' }]
+  Lastchangedat;
 
 }
+//highlight-end
 ```
 
 ## Projection View ZC_Travel
@@ -80,8 +98,8 @@ annotate view ZC_Travel with
 ```sql
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@Search.searchable: true
 //highlight-start
+@Search.searchable: true
 @Metadata.allowExtensions: true
 //highlight-end
 define root view entity ZC_Travel
@@ -89,18 +107,24 @@ define root view entity ZC_Travel
 {
   key TravelUuid,
       TravelId,
+      AgencyId,
       CustomerId,
       BeginDate,
       EndDate,
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.7
-      Description,
+      BookingFee,
       TotalPrice,
       CurrencyCode,
+//highlight-start
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
+//highlight-end
+      Description,
+      Status,
+
+      /* Administrative Data */
       CreatedBy,
       CreatedAt,
-      LocalLastChangedBy,
-      LocalLastChangedAt,
+      LastChangedBy,
       LastChangedAt
 }
 ```

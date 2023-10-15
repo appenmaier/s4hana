@@ -13,7 +13,7 @@ bezeichnet.
 
 Vererbungen werden über den Zusatz `INHERITING FROM` realisiert. Das Überschreiben von Methoden erfolgt mit dem Zusatz `REDEFINITION`, der Zugriff auf Elemente der Oberklasse erfolgt über den reservierten Namen `SUPER`.
 
-```abap title="cl_car" showLineNumbers
+```abap title="CL_CAR" showLineNumbers
 CLASS cl_car DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM cl_vehicle.
 
   PUBLIC SECTION.
@@ -54,7 +54,7 @@ Unter Polymorphie (griechisch für Vielgestaltigkeit) versteht man in der Progra
 unterschiedliche Ergebnisse erzielen kann. Man spricht in diesem Zusammenhang auch vom statischen Datentyp einer Variablen (der zur Designzeit festgelegt wird) und vom dynamischen Datentyp (der zur Laufzeit zugewiesen wird). Die Typumwandlung von der
 abgeleiteten Unterklasse zur Oberklasse bezeichnet man als _Upcast_, die Rückumwandlung als _Downcast_. Der Downcast erfolgt dabei über den Operator `CAST`.
 
-```abap title="cl_main" showLineNumbers
+```abap title="CL_MAIN" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
@@ -104,7 +104,7 @@ Das Schlüsselwort `ABSTRACT` ermöglicht die Definition von abstrakten Klassen 
 Schnittstellen (Interfaces) sind im Prinzip abstrakte Klassen, die ausschließlich abstrakte Methoden besitzen. Durch Schnittstellen wird sichergestellt, dass Klassen bestimmte Methoden bereitstellen und dass verschiedene Klassen miteinander kommunizieren können.
 Sie werden mit dem Schlüsselwort `INTERFACE` definiert, in der implementierenden Klasse mit dem Schlüsselwort `INTERFACES` bekanntgegeben und können analog zu Klassen abgeleitet werden.
 
-```abap title="if_partner" showLineNumbers
+```abap title="IF_PARTNER" showLineNumbers
 INTERFACE if_partner.
 
   METHODS to_string.

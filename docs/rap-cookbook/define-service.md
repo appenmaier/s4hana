@@ -9,6 +9,7 @@ Für den Business Service muss zunächst eine Projection View auf Grundlage des 
 ## Projection View ZC_Travel
 
 ```sql
+//highlight-start
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZC_Travel
@@ -16,27 +17,34 @@ define root view entity ZC_Travel
 {
   key TravelUuid,
       TravelId,
+      AgencyId,
       CustomerId,
       BeginDate,
       EndDate,
-      Description,
+      BookingFee,
       TotalPrice,
       CurrencyCode,
+      Description,
+      Status,
+
+      /* Administrative Data */
       CreatedBy,
       CreatedAt,
-      LocalLastChangedBy,
-      LocalLastChangedAt,
+      LastChangedBy,
       LastChangedAt
 }
+//highlight-end
 ```
 
 ## Service Definition ZUI_TRAVEL
 
 ```sql
+//highlight-start
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL {
   expose ZC_Travel as Travel;
 }
+//highlight-end
 ```
 
 ## Service Binding ZUI_TRAVEL_V2

@@ -7,16 +7,18 @@ sidebar_position: 120
 :::danger TODO
 :::
 
-## Message Class Z_TRAVEL
+## Message Class ZTRAVEL
 
-| Nachrichtennummer | Nachricht                                 |
-| ----------------- | ----------------------------------------- |
-| 000               | Booking with ID &1 is already cancelled   |
-| 001               | Booking with ID &1 successfully cancelled |
+| Nachrichtennummer | Nachricht                            |
+| ----------------- | ------------------------------------ |
+| 000               | This is a Test Message from &1       |
+| 001               | Travel &1 is already cancelled       |
+| 002               | Travel &1 was successfully cancelled |
 
 ## ABAP Class ZCM_TRAVEL
 
-```abap
+```abap title="ZCM_TRAVEL" showLineNumbers
+//highlight-start
 CLASS zcm_travel DEFINITION PUBLIC
   INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
 
@@ -29,35 +31,47 @@ CLASS zcm_travel DEFINITION PUBLIC
 
     "Message Constants
     CONSTANTS:
-      BEGIN OF booking_already_cancelled,
-        msgid TYPE symsgid VALUE 'Z_TRAVEL',
+      BEGIN OF test_message,
+        msgid TYPE symsgid VALUE 'ZTRAVEL',
         msgno TYPE symsgno VALUE '000',
-        attr1 TYPE scx_attrname VALUE 'BOOKING_ID',
+        attr1 TYPE scx_attrname VALUE 'USER_NAME',
         attr2 TYPE scx_attrname VALUE '',
         attr3 TYPE scx_attrname VALUE '',
         attr4 TYPE scx_attrname VALUE '',
-      END OF booking_already_cancelled.
+      END OF test_message.
 
     CONSTANTS:
-      BEGIN OF booking_cancelled_successfully,
-        msgid TYPE symsgid VALUE 'Z_TRAVEL',
+      BEGIN OF travel_already_cancelled,
+        msgid TYPE symsgid VALUE 'ZTRAVEL',
         msgno TYPE symsgno VALUE '001',
-        attr1 TYPE scx_attrname VALUE 'BOOKING_ID',
+        attr1 TYPE scx_attrname VALUE 'TRAVEL',
         attr2 TYPE scx_attrname VALUE '',
         attr3 TYPE scx_attrname VALUE '',
         attr4 TYPE scx_attrname VALUE '',
-      END OF booking_cancelled.
+      END OF travel_already_cancelled.
+
+    CONSTANTS:
+      BEGIN OF travel_cancelled_successfully,
+        msgid TYPE symsgid VALUE 'ZTRAVEL',
+        msgno TYPE symsgno VALUE '002',
+        attr1 TYPE scx_attrname VALUE 'TRAVEL',
+        attr2 TYPE scx_attrname VALUE '',
+        attr3 TYPE scx_attrname VALUE '',
+        attr4 TYPE scx_attrname VALUE '',
+      END OF travel_cancelled_successfully.
 
     "Attributs
-    DATA booking_id TYPE /dmo/booking_id.
+    DATA user_name TYPE syuname.
+    DATA travel TYPE /dmo/description.
 
     "Constructor
     METHODS constructor
       IMPORTING
-        severity   TYPE if_abap_behv_message=>t_severity DEFAULT if_abap_behv_message=>severity-error
-        textid     LIKE if_t100_message=>t100key DEFAULT if_t100_message=>default_textid
-        previous   LIKE previous OPTIONAL
-        booking_id TYPE /dmo/booking_id OPTIONAL.
+        severity  TYPE if_abap_behv_message=>t_severity DEFAULT if_abap_behv_message=>severity-error
+        textid    LIKE if_t100_message=>t100key DEFAULT if_t100_message=>default_textid
+        previous  LIKE previous OPTIONAL
+        user_name TYPE syuname OPTIONAL
+        travel    TYPE /dmo/description OPTIONAL.
 
   PROTECTED SECTION.
 
@@ -72,8 +86,10 @@ CLASS zcm_travel IMPLEMENTATION.
 
     if_t100_message~t100key = textid.
     me->if_abap_behv_message~m_severity = severity.
-    me->booking_id = booking_id.
+    me->user_name = user_name.
+    me->travel = travel.
   ENDMETHOD.
 
 ENDCLASS.
+//highlight-end
 ```

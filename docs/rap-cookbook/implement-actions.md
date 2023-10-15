@@ -7,44 +7,92 @@ sidebar_position: 140
 :::danger TODO
 :::
 
-## ABAP Class BP_R_TRAVEL - Local Type LHC_R_BOOKING - Method CANCEL_BOOKING
+## Local Type LHC_TRAVEL (ABAP Class BP_TRAVEL)
 
-```abap
-METHOD cancel_booking.
+```abap title="LHC_TRAVEL" showLineNumbers
+//highlight-start
+CLASS lhc_travel IMPLEMENTATION.
 
-  " Deklarationen
-  DATA message TYPE REF TO zcm_travel.
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
 
-  " Buchungen lesen
-  READ ENTITY IN LOCAL MODE ZR_Booking
-    FIELDS ( BookingId Status )
-    WITH CORRESPONDING #( keys )
-    RESULT DATA(bookings).
+  METHOD show_test_message.
+    DATA message TYPE REF TO zcm_travel.
 
-  " Buchungen sequentiell verarbeiten
-  LOOP AT bookings INTO DATA(booking).
+    "Testnachricht erzeugen
+    message = NEW zcm_travel(
+      textid    = zcm_travel=>test_message
+      severity  = if_abap_behv_message=>severity-success
+      user_name = sy-uname ).
 
-    " Fehler abfangen und Fehlermeldung erzeugen
-    IF booking-Status = 'X'.
-      message = NEW zcm_travel( severity = if_abap_behv_message=>severity-error
-                                textid = zcm_booking=>booking_already_cancelled
-                                booking_id = booking-BookingId ).
-      APPEND message TO reported-%other.
-      APPEND CORRESPONDING #( booking ) TO failed-zi_booking.
-      CONTINUE.
-    ENDIF.
-
-   " Status ändern, Status zurückschreiben und Erfolgsmeldung erzeugen
-    MODIFY ENTITY IN LOCAL MODE ZR_Booking
-      UPDATE FIELDS ( status )
-      WITH VALUE #( ( %tky = booking-%tky Status = 'X' ) ).
-
-    message = NEW zcm_travel( severity = if_abap_behv_message=>severity-success
-                              textid = zcm_booking=>booking_cancelled_successfully
-                              booking_id = booking-BookingId ).
     APPEND message TO reported-%other.
+  ENDMETHOD.
 
-  ENDLOOP.
+  METHOD cancel_travel.
+    DATA message TYPE REF TO zcm_travel.
 
-ENDMETHOD.
+    "Reisedaten lesen
+    READ ENTITY IN LOCAL MODE ZR_Travel
+      FIELDS ( Description Status )
+      WITH CORRESPONDING #( keys )
+      RESULT DATA(travels).
+
+    "Reisedaten sequentiell verarbeiten
+    LOOP AT travels REFERENCE INTO DATA(travel).
+
+      "Status validieren
+      IF travel->Status = 'X'.
+        message = NEW zcm_travel(
+          i_textid   = zcm_travel=>travel_already_cancelled
+          i_severity = if_abap_behv_message=>severity-error
+          i_travel   = travel->Description ).
+        APPEND VALUE #( %tky = travel->%tky %msg = message ) TO reported-travel.
+        APPEND VALUE #( %tky = travel->%tky ) TO failed-travel.
+        CONTINUE.
+      ENDIF.
+
+      "Status ändern
+      travel->Status = 'X'.
+
+      "Erfolgsmeldung erzeugen
+      message = NEW zcm_travel(
+        i_textid   = zcm_travel=>travel_cancelled_successfuly
+        i_severity = if_abap_behv_message=>severity-success
+        i_travel   = travel->Description ).
+      APPEND VALUE #( %tky = travel->%tky %msg = message ) TO reported-travel.
+
+      "Status zurückschreiben
+      MODIFY ENTITY IN LOCAL MODE ZR_Travel
+        UPDATE FIELDS ( Status )
+        WITH VALUE #( ( %tky = travel->%tky Status = travel->Status ) ).
+
+    ENDLOOP.
+  ENDMETHOD.
+
+  METHOD maintain_booking_fees.
+    "Reisedaten lesen
+    READ ENTITY IN LOCAL MODE ZR_Travel
+      FIELDS ( TravelUuid )
+      WITH CORRESPONDING #( keys )
+      RESULT DATA(travels).
+
+    "Reisedaten sequentiell verarbeiten
+    LOOP AT travels REFERENCE INTO DATA(travel).
+
+      "Buchungsgebühren ändern
+      travel->BookingFee = keys[ sy-tabix ]-%param-BookingFee.
+      travel->CurrencyCode = keys[ sy-tabix ]-%param-CurrencyCode.
+
+      "Buchungsgebühren zurückschreiben
+      MODIFY ENTITY IN LOCAL MODE ZR_Travel
+        UPDATE FIELDS ( BookingFee CurrencyCode )
+        WITH VALUE #( ( %tky = travel->%tky
+                        BookingFee = travel->BookingFee
+                        CurrencyCode = travel->CurrencyCode ) ).
+
+    ENDLOOP.
+  ENDMETHOD.
+
+ENDCLASS.
+//highlight-end
 ```

@@ -7,7 +7,7 @@ tags: []
 
 Im klassenbasierten Ausnahmenkonzept werden Ausnahmen als Ausnahmeobjekte repräsentiert und mit der Anweisung `RAISE EXCEPTION TYPE` ausgelöst, das Propagieren einer Ausnahme erfolgt über den Zusatz `RAISING`.
 
-```abap title="cl_vehicle" showLineNumbers
+```abap title="CL_VEHICLE" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
 
   PUBLIC SECTION.
@@ -63,7 +63,7 @@ Mit dem Zusatz `EXPORTING` können dem Ausnahmenobjekt Zusatzinformationen mitge
 
 Mit der Anweisung `TRY...CATCH...ENDTRY` können klassenbasierte Ausnahmen abgefangen und behandelt werden.
 
-```abap title="cl_main" showLineNumbers
+```abap title="CL_MAIN" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
  
   METHOD if_oo_adt_classrun~main.

@@ -9,6 +9,7 @@ Um das RAP BO um Buchungen zu erweitern, muss zunächst eine entsprechende Daten
 ## Datenbanktabelle ZABOOKING
 
 ```sql
+//highlight-start
 @EndUserText.label : 'Booking'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
@@ -26,13 +27,14 @@ define table zabooking {
   @Semantics.amount.currencyCode : 'zabooking.currency_code'
   flight_price     : /dmo/flight_price;
   currency_code    : /dmo/currency_code;
-  status           : /dmo/booking_status;
+//highlight-end
 }
 ```
 
 ## Restricted Interface View ZR_Booking
 
 ```sql
+//highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
 define view entity ZR_Booking
@@ -49,11 +51,11 @@ define view entity ZR_Booking
       @Semantics.amount.currencyCode: 'CurrencyCode'
       flight_price  as FlightPrice,
       currency_code as CurrencyCode,
-      status        as Status,
 
       /* Associations */
       _Travel
 }
+//highlight-end
 ```
 
 ## Restricted Interface View ZR_Travel
@@ -67,20 +69,25 @@ define root view entity ZR_Travel
   composition [0..*] of ZR_Booking as _Bookings
 //highlight-end
 {
-  key travel_uuid           as TravelUuid,
-      travel_id             as TravelId,
-      customer_id           as CustomerId,
-      begin_date            as BeginDate,
-      end_date              as EndDate,
-      description           as Description,
+  key travel_uuid     as TravelUuid,
+      travel_id       as TravelId,
+      agency_id       as AgencyId,
+      customer_id     as CustomerId,
+      begin_date      as BeginDate,
+      end_date        as EndDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
-      total_price           as TotalPrice,
-      currency_code         as CurrencyCode,
-      created_by            as CreatedBy,
-      created_at            as CreatedAt,
-      local_last_changed_by as LocalLastChangedBy,
-      local_last_changed_at as LocalLastChangedAt,
-      last_changed_at       as LastChangedAt,
+      booking_fee     as BookingFee,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      total_price     as TotalPrice,
+      currency_code   as CurrencyCode,
+      description     as Description,
+      status          as Status,
+
+      /* Administrative Data */
+      created_by      as CreatedBy,
+      created_at      as CreatedAt,
+      last_changed_by as LastChangedBy,
+      last_changed_at as LastChangedAt,
 
 //highlight-start
       /* Associations */

@@ -9,7 +9,8 @@ Um das (transaktionale) Verhalten des RAP BOs festzulegen, wird einen Behavior D
 ## Behavior Definition ZR_TRAVEL
 
 ```sql
-managed implementation in class zbp_r_travel unique;
+//highlight-start
+managed implementation in class zbp_travel unique;
 strict ( 2 );
 
 define behavior for ZR_Travel alias Travel
@@ -27,11 +28,18 @@ authorization master ( instance )
 
   mapping for zatravel corresponding
   {
+    AgencyId = agency_id;
     BeginDate = begin_date;
+    BookingFee = booking_fee;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
     CurrencyCode = currency_code;
     CustomerId = customer_id;
     Description = description;
     EndDate = end_date;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    Status = status;
     TotalPrice = total_price;
     TravelId = travel_id;
     TravelUuid = travel_uuid;
@@ -61,15 +69,54 @@ authorization dependent by _Travel
     CurrencyCode = currency_code;
     FlightDate = flight_date;
     FlightPrice = flight_price;
-    Status = status;
     TravelUuid = Travel_uuid;
   }
+}
+//highlight-end
+```
+
+## Projection View ZC_Travel
+
+```sql
+@EndUserText.label: 'Travel'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Search.searchable: true
+@Metadata.allowExtensions: true
+define root view entity ZC_Travel
+//highlight-start
+  provider contract transactional_query
+//highlight-end
+  as projection on ZR_Travel
+{
+  key TravelUuid,
+      TravelId,
+      AgencyId,
+      CustomerId,
+      BeginDate,
+      EndDate,
+      BookingFee,
+      TotalPrice,
+      CurrencyCode,
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
+      Description,
+      Status,
+
+      /* Administrative Data */
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt
+
+      /* Associations */
+      _Bookings : redirected to composition child ZC_Booking
 }
 ```
 
 ## Behavior Projection ZC_TRAVEL
 
 ```sql
+//highlight-start
 projection;
 strict ( 2 );
 
@@ -89,4 +136,5 @@ define behavior for ZC_Booking alias Booking
 
   use association _Travel;
 }
+//highlight-end
 ```

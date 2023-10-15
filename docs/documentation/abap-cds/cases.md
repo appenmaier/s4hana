@@ -5,8 +5,8 @@ sidebar_position: 30
 tags: []
 ---
 
-Die ABAP CDS kennen einfache Fallunterscheidungen mit `CASE...WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `CASE...WHEN...ENDCASE`) sowie komplexe
-Fallunterscheidungen mit `CASE WHEN...THEN...END` (vergleichbar mit dem ABAP-Konstrukt `IF...ELSE...ENDIF`).
+Die ABAP CDS kennen einfache Fallunterscheidungen mit `case...when...then...end` (vergleichbar mit dem ABAP-Konstrukt `CASE...WHEN...ENDCASE`) sowie komplexe
+Fallunterscheidungen mit `case when...then...end` (vergleichbar mit dem ABAP-Konstrukt `IF...ELSE...ENDIF`).
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK

@@ -6,11 +6,10 @@ sidebar_position: 80
 
 Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt werden. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
 
-## Wertehilfe für die Kundennummer und die Währung
-
-### Interface View ZI_CustomerVH
+## Interface View ZI_CustomerVH
 
 ```sql
+//highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Customer Value Help'
 define view entity ZI_CustomerVH
@@ -25,6 +24,30 @@ define view entity ZI_CustomerVH
       city         as City,
       country_code as CountryCode
 }
+//highlight-end
+```
+
+## Interface View ZI_StatusVH
+
+```sql
+//highlight-start
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Status Value Help'
+define view entity ZI_StatusVH
+  as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: '/DMO/STATUS' )
+{
+      @UI.hidden: true
+  key domain_name,
+      @UI.hidden: true
+  key value_position,
+      @UI.hidden: true
+  key language,
+      @EndUserText: { label: 'Status', quickInfo: 'Status' }
+      value_low as Status,
+      @EndUserText: { label: 'Status Text', quickInfo: 'Status Text' }
+      text      as StatusText
+}
+//highlight-end
 ```
 
 ## Projection View ZC_Travel
@@ -41,49 +64,41 @@ define root view entity ZC_Travel
   key TravelUuid,
       TravelId,
 //highlight-start
+      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Agency_StdVH', element: 'AgencyId' } }]
+//highlight-end
+      AgencyId,
+//highlight-start
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CustomerVH', element: 'CustomerId' } }]
 //highlight-end
       CustomerId,
       BeginDate,
       EndDate,
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.7
-      Description,
+      BookingFee,
       TotalPrice,
 //highlight-start
       @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
 //highlight-end
       CurrencyCode,
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
+      Description,
+//highlight-start
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_StatusVH', element: 'Status' } }]
+//highlight-end
+      Status,
+
+      /* Administrative Data */
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt
 
       /* Associations */
       _Bookings : redirected to composition child ZC_Booking
 }
 ```
 
-## Wertehilfe für den Status und die Währung
-
-### Interface View ZI_StatusVH
-
-```sql
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Status Value Help'
-define view entity ZI_StatusVH
-  as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: '/DMO/BOOK_STATUS' )
-{
-      @UI.hidden: true
-  key domain_name,
-      @UI.hidden: true
-  key value_position,
-      @UI.hidden: true
-  key language,
-      @EndUserText: { label: 'Status', quickInfo: 'Status' }
-      value_low as Status,
-      @EndUserText: { label: 'Status Text', quickInfo: 'Status Text' }
-      text      as StatusText
-}
-```
-
-### Projection View ZC_Booking
+## Projection View ZC_Booking
 
 ```sql
 @EndUserText.label: 'Booking'
@@ -96,6 +111,9 @@ define view entity ZC_Booking
       TravelUuid,
       BookingId,
       BookingDate,
+//highlight-start
+      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Carrier_StdVH', element: 'AirlineId' } }]
+//highlight-end
       CarrierId,
       ConnectionId,
       FlightDate,
@@ -104,10 +122,6 @@ define view entity ZC_Booking
       @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
 //highlight-end
       CurrencyCode,
-//highlight-start
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_StatusVH', element: 'Status' } }]
-//highlight-end
-      Status,
 
       /* Associations */
       _Travel : redirected to parent ZC_Travel

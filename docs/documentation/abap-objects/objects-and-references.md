@@ -15,7 +15,7 @@ flowchart LR
     truck(Bezeichner: truck\nDatentyp: cl_truck\nWert: 3) --> o3[id: 3\nmake = MAN\nmodel = TGX\ncargo_in_tons = 40]
 ```
 
-```abap title="cl_main" showLineNumbers
+```abap title="CL_MAIN" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
@@ -30,7 +30,7 @@ ENDCLASS.
 
 Mit dem Operator `NEW` können Objekte erzeugt werden.
 
-```abap title="cl_main" showLineNumbers
+```abap title="CL_MAIN" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
@@ -62,7 +62,7 @@ Der Initialwert einer Referenzvariablen ist die leere Referenz.
 
 Der Zugriff auf "normale" Attribute und Methoden erfolgt über die Angabe der Referenzvariablen sowie den Objekt-Komponentenselektor `->`, der Zugriff auf Klassenelemente über die Angabe der Klasse sowie den Klassen-Komponentenselektor `=>`.
 
-```abap title="cl_main" showLineNumbers
+```abap title="CL_MAIN" showLineNumbers
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
@@ -81,6 +81,6 @@ ENDCLASS.
 
 :::note Hinweis
 
-Besitzt eine Methode ausschließlich IMPORTING-Parameter, kann beim Aufruf der Methode der Zusatz `EXPORTING` weggelassen werden, besitzt eine Methode nur genau einen IMPORTING-Parameter, kann beim Aufruf der Methode auch der Formalparameter weggelassen werden.
+ABAP arbeitet mit Schlüsselwortparametern, d.h. die Zuweisung eines Wertes erfolgt über die Angabe des Formalparameters. Besitzt eine Methode genau einen Import-Parameter, kann beim Aufruf der Methode der Formalparameter weggelassen werden.
 
 :::
