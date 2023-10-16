@@ -3,13 +3,13 @@ title: ABAP-08
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_TRAVELS`
-2. Erweitere die Klasse `ZCL_???_HELPER` umd die statische Methode `Z???_TRAVELS GET_TRAVELS(CUSTOMER_ID: /DMO/CUSTOMER_ID)`, welche zu einer eingehenden Kundennummer alle Reisen liest und zurückgibt. Verwende zum Lesen der Reisen die statische Methode `ZABAP_TRAVELS GET_TRAVELS(CUSTOMER_ID: /DMO/CUSTOMER_ID)` der Klasse `ZCL_ABAP_HELPER`
-3. Erstelle das ABAP-Programm `Z???_ABAP_08`, welches zu einer eingegebenen Kundennummer alle Reisen liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Reisen die statische Methode aus Aufgabenteil 2
+1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_BOOKINGS`
+2. Erweitere die Klasse `ZCL_???_HELPER` umd die statische Methode `Z???_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)`, welche zu einer eingehenden Kundennummer alle Buchungen liest und zurückgibt. Verwende zum Lesen der Buchungen die statische Methode `ZABAP_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)` der Klasse `ZCL_ABAP_HELPER`
+3. Erstelle das ABAP-Programm `Z???_ABAP_08`, welches zu einer eingegebenen Kundennummer alle Buchungen liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Buchungen die statische Methode aus Aufgabenteil 2
 
-## Informationen zum Tabellentyp `Z???_TRAVELS`
+## Informationen zum Tabellentyp `Z???_BOOKINGS`
 
-- Zeilentyp: `ZABAP_TRAVEL`
+- Zeilentyp: `ZABAP_BOOKING`
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
 
@@ -24,10 +24,10 @@ Kundenummer: 67
 ## Ausgabe
 
 ```
-Reisenummer, Beginn der Reise, Ende der Reise, Beschreibung, Buchungsgebühr
-988, 07.08.2024, 21.08.2024, Sommerurlaub Australien, 70 AUD
-987, 24.06.2024, 30.06.2024, Pfingsturlaub Griechenland, 40 EUR
-743, 30.09.2023, 03.10.2023, Kurztrip nach New York, 70 USD
-558, 30.12.2022, 04.01.2022, Silvester Hamburg, 20 EUR
-219, 07.08.2020, 23.08.2020, Italienurlaub, 60 EUR
+Buchungsummer, Fluggesellschaft, Verbindungsnummer, Flugdatum, Buchungspreis
+988, LH, 0400, 21.08.2024, 745 EUR
+987, UA, 3517, 30.06.2024, 623 EUR
+743, AZ, 0789, 03.10.2023, 893 EUR
+558, LH, 0401, 04.01.2022, 1.294 EUR
+219, DL, 1699, 23.08.2020, 398 EUR
 ```

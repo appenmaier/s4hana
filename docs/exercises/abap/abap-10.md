@@ -3,5 +3,5 @@ title: ABAP-10
 description: ""
 ---
 
-1. Passe die statische Methode `ZABAP_TRAVEL_WITH_CUSTOMER GET_TRAVEL_WITH_CUSTOMER(TRAVEL_ID: /DMO/TRAVEL_ID)` der Klasse `ZCL_???_HELPER` so an, dass zum Lesen der Reiseinformationen und Kundeninformationen eine entsprechende SQL-Anweisung verwendet wird
-2. Passe die statische Methode `Z???_TRAVELS GET_TRAVELS(CUSTOMER_ID: /DMO/CUSTOMER_ID)` der Klasse `ZCL_???_HELPER` so an, dass zum Lesen der Reisen eine entsprechende SQL-Anweisung verwendet wird
+1. Passe die statische Methode `ZABAP_BOOKING_WITH_CUSTOMER GET_BOOKING_WITH_CUSTOMER(CARRIER_ID: S_CARR_ID, CONNECTION_ID: S_CONN_ID, FLIGHT_DATE: S_DATE, BOOKING_ID: S_BOOK_ID)` der Klasse `ZCL_???_HELPER` so an, dass zum Lesen der Buchungsinformationen und Kundeninformationen eine entsprechende SQL-Anweisung verwendet wird
+2. Passe die statische Methode `Z???_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)` der Klasse `ZCL_???_HELPER` so an, dass zum Lesen der Buchungen eine entsprechende SQL-Anweisung verwendet wird

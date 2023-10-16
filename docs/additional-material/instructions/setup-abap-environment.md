@@ -37,3 +37,15 @@ tags: []
 - Drucktaste `Select All` betätigen
 - Drucktaste `Trust Selected` betätigen
 - Drucktaste `Restart Now` betätigen
+
+## [OPTIONAL] ABAP Cleaner installieren
+
+- ABAP Development Tools starten
+- Funktion `Help - Install new Software... - Install new Software` ausführen
+- Folgende Informationen eingeben und `Enter` betätigen
+  - Work with: `https://sap.github.io/abap-cleaner/updatesite/`
+- Option `ABAP Cleaner for ABAP Devleopment Tools (ADT)` auswählen und Drucktaste `Next >` betätigen
+- Drucktaste `Next >` betätigen
+- Drucktaste `Select All` betätigen
+- Drucktaste `Trust Selected` betätigen
+- Drucktaste `Restart Now` betätigen
