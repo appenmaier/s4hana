@@ -13,7 +13,7 @@ description: ""
 | CUSTOMER_ID | S_CUSTOMER     | Kundennummer |
 | NAME        | S_CUSTNAME     | Name         |
 | CITY        | CITY           | Stadt        |
-| DISCOUNT    | S_COUNTRY      | Land         |
+| COUNTRY     | S_COUNTRY      | Land         |
 
 ## Eingabe
 
