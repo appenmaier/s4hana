@@ -13,33 +13,33 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 ## Namensrichtlinien für Entwicklungsobjekte
 
-| Typ                                      | Bezeichner                                         | Beispiel                       |
-| ---------------------------------------- | -------------------------------------------------- | ------------------------------ |
-| Paket                                    | <Namensraum\><Beschreibung\>                       | `ZABAP`                        |
-| Klasse                                   | <Namensraum\>CL\_<Komponente\>\_<Beschreibung\>    | `ZCL_ABAP_FLIGHT`              |
-| Ausnahmenklasse                          | <Namensraum\>CX\_<Komponente\>\_<Beschreibung\>    | `ZCX_ABAP_INVALID_TYPE`        |
-| Nachrichtenklasse                        | <Namensraum\>CM\_<Komponente\>\_<Beschreibung\>    | `ZCM_ABAP_FLIGHT`              |
-| Schnittstelle                            | <Namensraum\>IF\_<Komponente\>\_<Beschreibung\>    | `ZIF_ABAP_PARTNER`             |
-| Programm                                 | <Namensraum\><Komponente\>\_<Beschreibung\>        | `ZABAP_DEMO`                   |
-| Domäne                                   | <Namensraum\><Komponente\>\_<Beschreibung\>        | `ZABAP_CHAR3`                  |
-| Datenelement                             | <Namensraum\><Komponente\>\_<Beschreibung\>        | `ZABAP_CARRIER_ID`             |
-| Strukturtyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>        | `ZABAP_FLIGHT`                 |
-| Tabellentyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>        | `ZABAP_FLIGHTS`                |
-| Datenbanktabelle (Anwendungstabelle)     | <Namensraum\><Komponente\>\A<Beschreibung\>        | `ZABAPAFLIGHT`                 |
-| Datenbanktabelle (Entwurfstabelle)       | <Namensraum\><Komponente\>\D<Beschreibung\>        | `ZABAPDFLIGHT`                 |
-| Message Class                            | <Namensraum\><Komponente\><Beschreibung\>          | `ZABAPFLIGHT`                  |
-| ABAP CDS: Basic Interface View           | <Namensraum\>\_<Komponente\>I\_\_<Beschreibung\>   | `ZABAP_I_Flight`               |
-| ABAP CDS: Restricted Interface View      | <Namensraum\>\_<Komponente\>R\_\_<Beschreibung\>   | `ZABAP_R_Flight`               |
-| ABAP CDS: Composite Interface View       | <Namensraum\>\_<Komponente\>I\_\_<Beschreibung\>   | `ZABAP_I_FlightWithConnection` |
-| ABAP CDS: Transactional Interface View   | <Namensraum\>\_<Komponente\>I\_\_<Beschreibung\>TP | `ZABAP_I_FlightTP`             |
-| ABAP CDS: Consumption View               | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>     | `ZABAP_C_Flight`               |
-| ABAP CDS: Projection View                | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>     | `ZABAP_C_Flight`               |
-| ABAP CDS: Transactional Consumption View | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>TP   | `ZABAP_C_FlightTP`             |
-| ABAP CDS: Wertehilfe                     | <Namensraum\>\_<Komponente\>C\_<Beschreibung\>VH   | `ZABAP_C_AirportVH`            |
-| ABAP CDS: Abstract View                  | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>     | `ZABAP_A_Flight`               |
-| ABAP CDS: Extension View                 | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>     | `ZABAP_E_Flight`               |
-| ABAP CDS: Access Control                 | <Name der CDS-View\>                               | `ZABAP_C_FLIGHT`               |
-| ABAP CDS: Metadata Extension             | <Name der CDS-View\>                               | `ZABAP_C_FLIGHT`               |
+| Typ                                      | Bezeichner                                       | Beispiel                       |
+| ---------------------------------------- | ------------------------------------------------ | ------------------------------ |
+| Paket                                    | <Namensraum\><Beschreibung\>                     | `ZABAP`                        |
+| Klasse                                   | <Namensraum\>CL\_<Komponente\>\_<Beschreibung\>  | `ZCL_ABAP_FLIGHT`              |
+| Ausnahmenklasse                          | <Namensraum\>CX\_<Komponente\>\_<Beschreibung\>  | `ZCX_ABAP_INVALID_TYPE`        |
+| Nachrichtenklasse                        | <Namensraum\>CM\_<Komponente\>\_<Beschreibung\>  | `ZCM_ABAP_FLIGHT`              |
+| Schnittstelle                            | <Namensraum\>IF\_<Komponente\>\_<Beschreibung\>  | `ZIF_ABAP_PARTNER`             |
+| Programm                                 | <Namensraum\><Komponente\>\_<Beschreibung\>      | `ZABAP_DEMO`                   |
+| Domäne                                   | <Namensraum\><Komponente\>\_<Beschreibung\>      | `ZABAP_CHAR3`                  |
+| Datenelement                             | <Namensraum\><Komponente\>\_<Beschreibung\>      | `ZABAP_CARRIER_ID`             |
+| Strukturtyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>      | `ZABAP_FLIGHT`                 |
+| Tabellentyp                              | <Namensraum\><Komponente\>\_<Beschreibung\>      | `ZABAP_FLIGHTS`                |
+| Datenbanktabelle (Anwendungstabelle)     | <Namensraum\><Komponente\>\_<Beschreibung\>\_A   | `ZABAP_FLIGHT_A`               |
+| Datenbanktabelle (Entwurfstabelle)       | <Namensraum\><Komponente\>\_<Beschreibung\>\_D   | `ZABAP_FLIGHT_D`               |
+| Message Class                            | <Namensraum\><Komponente\>\_<Beschreibung\>      | `ZABAP_FLIGHT`                 |
+| ABAP CDS: Basic Interface View           | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
+| ABAP CDS: Restricted Interface View      | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>   | `ZR_ABAP_Flight`               |
+| ABAP CDS: Composite Interface View       | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_FlightWithConnection` |
+| ABAP CDS: Transactional Interface View   | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>TP | `ZI_ABAP_FlightTP`             |
+| ABAP CDS: Consumption View               | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
+| ABAP CDS: Projection View                | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
+| ABAP CDS: Transactional Consumption View | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>TP | `ZC_ABAP_FlightTP`             |
+| ABAP CDS: Wertehilfe                     | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>VH | `ZC_ABAP_AirportVH`            |
+| ABAP CDS: Abstract View                  | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>   | `ZA_ABAP_Flight`               |
+| ABAP CDS: Extension View                 | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>   | `ZE_ABAP_Flight`               |
+| ABAP CDS: Access Control                 | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
+| ABAP CDS: Metadata Extension             | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
 
 | Namensraum        | Beispiel    |
 | ----------------- | ----------- |

@@ -71,7 +71,7 @@ const config = {
         },
         {
           type: "doc",
-          docId: "additional-material/instructions/instructions",
+          docId: "additional-material/adt",
           position: "left",
           label: "Zusatzmaterial",
         },

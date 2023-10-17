@@ -4,7 +4,7 @@ description: ""
 ---
 
 1. Erstelle die Klasse `ZCL_???_HELPER`
-2. Erstelle die statische Methode `ZABAP_BOOKING_WITH_CUSTOMER GET_BOOKING_WITH_CUSTOMER(CARRIER_ID: S_CARR_ID, CONNECTION_ID: S_CONN_ID, FLIGHT_DATE: S_DATE, BOOKING_ID: S_BOOK_ID)`, welche Buchungsinformationen sowie die dazugehörigen Kundeninformationen zu einer eingehenden Buchung liest und zurückgibt. Verwende zum Lesen der Buchungsinformationen die statische Methode `ZABAP_BOOKING GET_BOOKING(CARRIER_ID: S_CARR_ID, CONNECTION_ID: S_CONN_ID, FLIGHT_DATE: S_DATE, BOOKING_ID: S_BOOK_ID)` der Klasse `ZCL_ABAP_HELPER` und zum Lesen der Kundeninformationen die statische Methode `ZABAP_CUSTOMER GET_CUSTOMER(CUSTOMER_ID: /DMO/CUSTOMER_ID)` der Klasse `ZCL_ABAP_HELPER`
+2. Erstelle die statische Methode `ZABAP_BOOKING_WITH_CUSTOMER GET_BOOKING_WITH_CUSTOMER(CARRIER_ID: S_CARR_ID, CONNECTION_ID: S_CONN_ID, FLIGHT_DATE: S_DATE, BOOKING_ID: S_BOOK_ID)`, welche Buchungsinformationen sowie die dazugehörigen Kundeninformationen zu einer eingehenden Buchung liest und zurückgibt. Verwende zum Lesen der Buchungsinformationen die statische Methode `ZABAP_BOOKING GET_BOOKING(CARRIER_ID: S_CARR_ID, CONNECTION_ID: S_CONN_ID, FLIGHT_DATE: S_DATE, BOOKING_ID: S_BOOK_ID)` der Klasse `ZCL_ABAP_HELPER` und zum Lesen der Kundeninformationen die statische Methode `ZABAP_CUSTOMER GET_CUSTOMER(CUSTOMER_ID: S_CUSTOMER)` der Klasse `ZCL_ABAP_HELPER`
 3. Erstelle das ABAP-Programm `Z???_ABAP_07`, welches Buchungsinformationen sowie die dazugehörigen Kundeninformationen zu einer eingegebenen Buchung liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Informationen die statische Methode aus Aufgabenteil 2
 
 ## Eingabe
