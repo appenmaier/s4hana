@@ -14,7 +14,7 @@ managed implementation in class zbp_travel unique;
 strict ( 2 );
 
 define behavior for ZR_Travel alias Travel
-persistent table zatravel
+persistent table z_travel_a
 lock master
 authorization master ( instance )
 //etag master <field_name>
@@ -26,7 +26,7 @@ authorization master ( instance )
 
   field ( readonly, numbering : managed ) TravelUuid;
 
-  mapping for zatravel corresponding
+  mapping for z_travel_a corresponding
   {
     AgencyId = agency_id;
     BeginDate = begin_date;
@@ -47,7 +47,7 @@ authorization master ( instance )
 }
 
 define behavior for ZR_Booking alias Booking
-persistent table zabooking
+persistent table z_booking_a
 lock dependent by _Travel
 authorization dependent by _Travel
 //etag master <field_name>
@@ -59,7 +59,7 @@ authorization dependent by _Travel
 
   field ( readonly, numbering : managed ) BookingUuid;
 
-  mapping for zabooking corresponding
+  mapping for z_booking_a corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;

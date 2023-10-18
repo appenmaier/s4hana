@@ -53,10 +53,14 @@ flowchart LR
         interface(Interface)
     end
 
-    subgraph Datenmodellierung und Verhalten
+    subgraph Datenmodellierung&#160und&#160Verhalten
         bo(RAP Business Object)
         entity(CDS Entity)
     end
+
+    style Datenmodellierung&#160und&#160Verhalten fill:#9abcf2
+    style Service-Bereitstellung fill:#9abcf2
+    style Service-Verwendung fill:#9abcf2
 ```
 
 ## Laufzeitartefakte einer RAP-Anwendung
@@ -84,16 +88,16 @@ flowchart
     behaviorDefinition -.- behaviorImplementationClass
     metadataExtension -.- projectionView
 
-    subgraph Business Services
+    subgraph Business&#160Services
         serviceBinding(Service Binding)
         serviceDefinition(Service Definition)
     end
 
-    subgraph Source Code Library
+    subgraph Source&#160Code&#160Library
         behaviorImplementationClass(Behavior Implementation Class)
     end
 
-    subgraph Core Data Services
+    subgraph Core&#160Data&#160Services
         behaviorDefinition(Behavior Definition)
         behaviorProjection(Behavior Projection)
         accessControl1(Access Control)
@@ -106,4 +110,9 @@ flowchart
     subgraph Dictionary
         databaseTable[(Database Table)]
     end
+
+    style Business&#160Services fill:#9abcf2
+    style Source&#160Code&#160Library fill:#9abcf2
+    style Core&#160Data&#160Services fill:#9abcf2
+    style Dictionary fill:#9abcf2
 ```

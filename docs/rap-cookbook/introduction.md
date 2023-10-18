@@ -14,8 +14,8 @@ flowchart
     zctravel -.-> zrtravel
     zcbooking -.-> zrbooking
     zrtravel <-.-> zrbooking
-    zrtravel -.-> zatravel
-    zrbooking -.-> zabooking
+    zrtravel -.-> ztravela
+    zrbooking -.-> zbookinga
     zrtravelBD -.-> zrtravel
     zctravelBP -.-> zctravel
     zrtravelAC -.-> zrtravel
@@ -27,15 +27,15 @@ flowchart
     zcmtravel -.-> ztravel
 
     subgraph Dictionary
-        zatravel[(ZATRAVEL)]
-        zabooking[(ZABOOKING)]
+        ztravela[(Z_TRAVEL_A)]
+        zbookinga[(Z_BOOKING_A)]
     end
 
     subgraph Messages
-        ztravel(Message Class\nZTRAVEL)
+        ztravel(Message Class\nZ_TRAVEL)
     end
 
-    subgraph Core Data Services
+    subgraph Core&#160Data&#160Services
         zrtravel(Restricted Interface View\nZR_Travel)
         zrbooking(Restricted Interface View\nZR_Booking)
 
@@ -52,13 +52,19 @@ flowchart
         zcbookingME(Metadata Extension\nZC_BOOKING)
     end
 
-    subgraph Business Services
-        zuitravel(Service Definition\nZUI_TRAVEL)
-        zuitravelv2(SBervice Binding\nZUI_TRAVEL_V2)
+    subgraph Business&#160Services
+        zuitravel(Service Definition\nZUI_TRAVEL_V2)
+        zuitravelv2(Service Binding\nZUI_TRAVEL_V2)
     end
 
-    subgraph Source Code Library
+    subgraph Source&#160Code&#160Library
         zbptravel(Behavior Implementation Class\nZBP_TRAVEL)
         zcmtravel(ABAP Class\nZCM_TRAVEL)
     end
+
+    style Business&#160Services fill:#9abcf2
+    style Source&#160Code&#160Library fill:#9abcf2
+    style Core&#160Data&#160Services fill:#9abcf2
+    style Dictionary fill:#9abcf2
+    style Messages fill:#9abcf2
 ```

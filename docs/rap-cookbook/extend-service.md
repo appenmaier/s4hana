@@ -69,11 +69,11 @@ define root view entity ZC_Travel
 }
 ```
 
-## Service Definition ZUI_TRAVEL
+## Service Definition ZUI_TRAVEL_V2
 
 ```sql
 @EndUserText.label: 'Travel'
-define service ZUI_TRAVEL {
+define service ZUI_TRAVEL_V2 {
   expose ZC_Travel as Travel;
 //highlight-start
   expose ZC_Booking as Booking;

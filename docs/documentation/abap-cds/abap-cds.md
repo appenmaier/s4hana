@@ -5,24 +5,18 @@ sidebar_position: 40
 tags: []
 ---
 
-Das klassische Anwendungsdesign im SAP-Umfeld folgt dem Data-to-Code-Ansatz, was bedeutet, dass intensive Berechnungen in der Applikationsschicht durchgeführt werden. Bei modernen Datenbankplattformen wie SAP HANA bietet sich jedoch ein datensatzorientierter Ansatz an. Bei diesem erfolgen die intensiven Berechnungen in der Datenbankschicht, weswegen dieser Ansatz auch als Code-to-Data-Ansatz bezeichnet wird.
+Das klassische Anwendungsdesign im SAP-Umfeld folgt dem Data-to-Code-Ansatz, was bedeutet, dass intensive Berechnungen in der Applikationsschicht durchgeführt werden.
 
 ```mermaid
 flowchart LR
+    database[(Datenbankschicht)] --Data-to-Code---> application(Applikationsschicht)
+```
 
-    subgraph " "
+Bei modernen Datenbankplattformen wie SAP HANA bietet sich jedoch ein datensatzorientierter Ansatz an. Bei diesem erfolgen die intensiven Berechnungen in der Datenbankschicht, weswegen dieser Ansatz auch als Code-to-Data-Ansatz bezeichnet wird.
 
-        subgraph "Klassischer Ansatz: Data to Code"
-            direction BT
-            database[(Datenbankschicht)] --Intensive Berechnungen in der Applikationssschicht---> application(Applikationsschicht)
-        end
-
-        subgraph "Datenorientierter Ansatz: Code to Data"
-            direction TB
-            application2(Applikationsschicht) --Intensive Berechnungen in der Datenbankschicht---> database2[(Datenbankschicht)]
-        end
-
-    end
+```mermaid
+flowchart RL
+    application2(Applikationsschicht) --Code-to-Data---> database2[(Datenbankschicht)]
 ```
 
 Die Core Data Services sind eine Sammlung domänenspezifischer Sprachen und Services für die Definition und Nutzung semantisch reicher Datenmodelle:

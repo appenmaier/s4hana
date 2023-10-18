@@ -47,6 +47,12 @@ flowchart RL
         sapfioriui(SAP Fiori UI)
         webapi(Web API)
     end
+
+    style Datenbankschicht fill:#9abcf2
+    style Applikationsschicht fill:#9abcf2
+    style Präsentationsschicht fill:#9abcf2
+    style Geschäftslogik fill:#fd9c9f
+    style Laufzeitumgebung fill:#fd9c9f
 ```
 
 ## Evolution des ABAP Programmiermodells

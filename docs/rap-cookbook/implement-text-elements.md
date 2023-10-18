@@ -32,7 +32,7 @@ as select from /dmo/customer
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
-  as select from zatravel
+  as select from z_travel_a
   composition [0..*] of ZR_Booking      as _Bookings
 //highlight-start
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId

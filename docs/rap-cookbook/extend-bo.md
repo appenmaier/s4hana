@@ -6,7 +6,7 @@ sidebar_position: 40
 
 Um das RAP BO um Buchungen zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungen erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Restricted Interface View inklusive einer Assoziation zu den Reisen erstellt. Zuletzt wird die Restricted Interface View für Reisen um eine Assoziation zu den Buchungen erweitert.
 
-## Datenbanktabelle ZABOOKING
+## Datenbanktabelle Z_BOOKING_A
 
 ```sql
 //highlight-start
@@ -15,7 +15,7 @@ Um das RAP BO um Buchungen zu erweitern, muss zunächst eine entsprechende Daten
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zabooking {
+define table z_booking_a {
   key client       : abap.clnt not null;
   key booking_uuid : sysuuid_x16 not null;
   travel_uuid      : sysuuid_x16 not null;
@@ -24,7 +24,7 @@ define table zabooking {
   carrier_id       : /dmo/carrier_id;
   connection_id    : /dmo/connection_id;
   flight_date      : /dmo/flight_date;
-  @Semantics.amount.currencyCode : 'zabooking.currency_code'
+  @Semantics.amount.currencyCode : 'z_booking_a.currency_code'
   flight_price     : /dmo/flight_price;
   currency_code    : /dmo/currency_code;
 //highlight-end
@@ -38,7 +38,7 @@ define table zabooking {
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
 define view entity ZR_Booking
-  as select from zabooking
+  as select from z_booking_a
   association to parent ZR_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid  as BookingUuid,
@@ -64,7 +64,7 @@ define view entity ZR_Booking
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
-  as select from zatravel
+  as select from z_travel_a
 //highlight-start
   composition [0..*] of ZR_Booking as _Bookings
 //highlight-end

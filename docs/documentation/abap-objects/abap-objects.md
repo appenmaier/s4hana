@@ -47,15 +47,24 @@ flowchart LR
     getter1 -.-> read[Lesender Zugriff]
     getter2 -.-> read
     subgraph Klasse
-        subgraph privater Bereich
+        subgraph privater&#160Bereich
             attribut1((Attribut 1))
             attribut2((Attribut 2))
         end
-        setter1(Setter für Attribut 1) -.-> attribut1
-        attribut1 -.-> getter1(Getter für Attribut 1)
-        setter2(Setter für Attribut 2) -.-> attribut2
-        attribut2 -.-> getter2(Getter für Attribut 2)
+        subgraph öffentlicher&#160Bereich
+            setter1(Setter für Attribut 1) -.-> attribut1
+            attribut1 -.-> getter1(Getter für Attribut 1)
+        end
+        subgraph öffentlicher&#160Bereich&#160
+            setter2(Setter für Attribut 2) -.-> attribut2
+            attribut2 -.-> getter2(Getter für Attribut 2)
+        end
     end
+
+    style Klasse fill:#9abcf2
+    style privater&#160Bereich fill:#fd9c9f
+    style öffentlicher&#160Bereich fill:#80d280
+    style öffentlicher&#160Bereich&#160 fill:#80d280
 ```
 
 Um die Sichtbarkeit von Attributen und Methoden zu definieren, existieren unterschiedliche Zugriffsrechte. Die Sichtbarkeit bestimmt, von welchem Ort aus Attribute und Methoden verwendet bzw. aufgerufen werden dürfen.

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des RAP BOs darstellt.
 
-## Datenbanktabelle ZATRAVEL
+## Datenbanktabelle Z_TRAVEL_A
 
 ```sql
 //highlight-start
@@ -15,7 +15,7 @@ Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erst
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zatravel {
+define table z_travel_a {
   key client      : abap.clnt not null;
   key travel_uuid : sysuuid_x16 not null;
   travel_id       : /dmo/travel_id;
@@ -23,9 +23,9 @@ define table zatravel {
   customer_id     : /dmo/customer_id;
   begin_date      : /dmo/begin_date;
   end_date        : /dmo/end_date;
-  @Semantics.amount.currencyCode : 'zatravel.currency_code'
+  @Semantics.amount.currencyCode : 'z_travel_a.currency_code'
   booking_fee     : /dmo/booking_fee;
-  @Semantics.amount.currencyCode : 'zatravel.currency_code'
+  @Semantics.amount.currencyCode : 'z_travel_a.currency_code'
   total_price     : /dmo/total_price;
   currency_code   : /dmo/currency_code;
   description     : /dmo/description;
@@ -45,7 +45,7 @@ define table zatravel {
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
-  as select from zatravel
+  as select from z_travel_a
 {
   key travel_uuid     as TravelUuid,
       travel_id       as TravelId,

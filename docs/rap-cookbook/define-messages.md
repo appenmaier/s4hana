@@ -7,7 +7,7 @@ sidebar_position: 120
 :::danger TODO
 :::
 
-## Message Class ZTRAVEL
+## Message Class Z_TRAVEL
 
 | Nachrichtennummer | Nachricht                            |
 | ----------------- | ------------------------------------ |
@@ -32,7 +32,7 @@ CLASS zcm_travel DEFINITION PUBLIC
     "Message Constants
     CONSTANTS:
       BEGIN OF test_message,
-        msgid TYPE symsgid VALUE 'ZTRAVEL',
+        msgid TYPE symsgid VALUE 'Z_TRAVEL',
         msgno TYPE symsgno VALUE '000',
         attr1 TYPE scx_attrname VALUE 'USER_NAME',
         attr2 TYPE scx_attrname VALUE '',
@@ -42,7 +42,7 @@ CLASS zcm_travel DEFINITION PUBLIC
 
     CONSTANTS:
       BEGIN OF travel_already_cancelled,
-        msgid TYPE symsgid VALUE 'ZTRAVEL',
+        msgid TYPE symsgid VALUE 'Z_TRAVEL',
         msgno TYPE symsgno VALUE '001',
         attr1 TYPE scx_attrname VALUE 'TRAVEL',
         attr2 TYPE scx_attrname VALUE '',
@@ -52,7 +52,7 @@ CLASS zcm_travel DEFINITION PUBLIC
 
     CONSTANTS:
       BEGIN OF travel_cancelled_successfully,
-        msgid TYPE symsgid VALUE 'ZTRAVEL',
+        msgid TYPE symsgid VALUE 'Z_TRAVEL',
         msgno TYPE symsgno VALUE '002',
         attr1 TYPE scx_attrname VALUE 'TRAVEL',
         attr2 TYPE scx_attrname VALUE '',
