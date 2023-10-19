@@ -4,7 +4,7 @@ description: ""
 ---
 
 1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_BOOKINGS`
-2. Erweitere die Klasse `ZCL_???_HELPER` umd die Klassenmethode `Z???_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)`, welche zu einer eingehenden Kundennummer alle Buchungen liest und zurückgibt. Verwende zum Lesen der Buchungen die Klassenmethode `ZABAP_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)` der Klasse `ZCL_ABAP_HELPER`
+2. Erweitere die Klasse `ZCL_???_HELPER` und die Klassenmethode `Z???_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)`, welche zu einer eingehenden Kundennummer alle Buchungen liest und zurückgibt. Verwende zum Lesen der Buchungen die Klassenmethode `ZABAP_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)` der Klasse `ZCL_ABAP_HELPER`
 3. Erstelle das ABAP-Programm `Z???_ABAP_08`, welches zu einer eingegebenen Kundennummer alle Buchungen liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Buchungen die Klassenmethode aus Aufgabenteil 2
 
 ## Informationen zum Tabellentyp `Z???_BOOKINGS`
