@@ -13,7 +13,7 @@ classDiagram
       -name string
       -plane_type string
       +set_name(name string) void
-      +set_name(plane_type string) void
+      +set_plane_type(plane_type string) void
       +to_string() string
     }
 ```
