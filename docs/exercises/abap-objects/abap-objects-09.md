@@ -28,30 +28,30 @@ classDiagram
 
     class cl_airplane {
       <<abstract>>
-      -name string
-      -plane_type string
-      -number_of_airplanes i$
-      +constructor(name string, plane_type string)
+      +name: string &#123read-only&#125
+      +plane_type: string &#123read-only&#125
+      +number_of_airplanes: i &#123read-only, static&#125
+      +constructor(name: string, plane_type: string)
       +to_string()* string
     }
 
     class cl_passenger_plane {
-      -number_of_seats i
-      +constructor(name string, plane_type string, number_of_seats i)
+      +number_of_seats: i &#123read-only&#125
+      +constructor(name: string, plane_type: string, number_of_seats: i)
       +to_string() string
     }
 
     class cl_cargo_plane {
-      -cargo_in_tons i
-      +constructor(name string, plane_type string, cargo_in_tons i)
+      +cargo_in_tons: i &#123read-only&#125
+      +constructor(name: string, plane_type: string, cargo_in_tons: i)
       +to_string() string
     }
 
     class cl_carrier {
-      -name string
-      -airplanes cl_airplane[*]
-      +constructor(name string)
-      +add_airplane(airplane cl_airplane) void
+      +name: string &#123read-only&#125
+      +airplanes: cl_airplane[*] &#123read-only&#125
+      +constructor(name: string)
+      +add_airplane(airplane: cl_airplane) void
       +get_biggest_cargo_plane() cl_cargo_plane
       +to_string() string
     }
@@ -62,10 +62,10 @@ classDiagram
     }
 
     class cl_travel_agency {
-      -name string
-      -partners if_partner[*]
-      +constructor(name string)
-      +add_partner(partner if_partner) void
+      -name: string &#123read-only&#125
+      -partners: if_partner[*] &#123read-only&#125
+      +constructor(name: string)
+      +add_partner(partner: if_partner) void
       +to_string() string
     }
 ```
@@ -73,4 +73,4 @@ classDiagram
 ## Hinweise zum Klasse `ZCL_???_TRAVEL_AGENCY`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `VOID TO_STRING()` soll alle Instanzattribute zu einer Zeichenkette zusammenfassen und diese zurückgeben
+- Die Methode `STRING TO_STRING()` soll alle Instanzattribute zu einer Zeichenkette zusammenfassen und diese zurückgeben

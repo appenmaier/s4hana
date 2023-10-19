@@ -43,3 +43,16 @@ tags: []
   - Software Component: `HOME`
   - Transport Layer: `ZS4D`
 - Drucktaste `Finish` betätigen
+
+## [OPTIONAL] Cloud Connector einrichten
+
+- So noch nicht geschehen, einen Trial Account für die SAP BTP erstellen (_S4DEV - Col21 - Participant Handbook - Exercise 8_)
+- So noch nicht geschehen, einen Dev Space für das Business Application Studio anlegen (_S4DEV - Col21 - Participant Handbook - Exercise 9_)
+- Das Business Application Studio mit dem S4D verbinden (_S4DEV - Col21 - Participant Handbook - Exercise 10_)
+
+:::danger Hinweis
+
+Bei der Anmeldung am Cloud Connector muss darauf geachtet werden, dass sich nur eine begrenzte Anzahl an Teilnehmern gleichzeitig anmelden können. Nach der
+Einrichtung des Cloud Connectors also bitte wieder abmelden.
+
+:::

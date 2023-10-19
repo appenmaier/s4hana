@@ -4,17 +4,17 @@ description: ""
 ---
 
 1. Passe die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms an
-2. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass vor und nach den Objekterzeugungen die statische Methode `I GET_NUMBER_OF_PLANES()` aufgerufen wird
+2. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass vor und nach den Objekterzeugungen das Klassenattribut `NUMBER_OF_AIRPLANES` ausgegeben wird
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
     class cl_airplane {
-      -name string
-      -plane_type string
-      -number_of_airplanes i$
-      +constructor(name string, plane_type string)
+      +name: string &#123read-only&#125
+      +plane_type: string &#123read-only&#125
+      +number_of_airplanes: i &#123read-only, static&#125
+      +constructor(name: string, plane_type: string)
       +to_string() string
     }
 ```

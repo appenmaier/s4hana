@@ -11,9 +11,9 @@ description: ""
 ```mermaid
 classDiagram
     class cl_airplane {
-      -name string
-      -plane_type string
-      +constructor(name string, plane_type string)
+      +name: string &#123read-only&#125
+      +plane_type: string &#123read-only&#125
+      +constructor(name: string, plane_type: string)
       +to_string() string
     }
 ```
