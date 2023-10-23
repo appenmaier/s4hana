@@ -52,6 +52,7 @@ erDiagram
         curr(16-2) TotalPrice
         cuky(5) CurrencyCode
         string(1024) Description
+        char(1) Status
     }
 
     DMOTRAVEL {

@@ -37,6 +37,8 @@ erDiagram
         curr(16-2) TotalPrice "Converted into Euros"
         cuky(5) CurrencyCode "EUR"
         string(1024) Description
+        char(1) Status
+        char(60) StatusText "Status Text"
         numc(6) CustomerId
         char(92) CustomerName "Title FirstName LastName"
         char(60) Street

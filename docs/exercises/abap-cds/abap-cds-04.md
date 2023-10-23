@@ -25,6 +25,8 @@ erDiagram
         curr(16-2) TotalPrice "Converted into Euros"
         cuky(5) CurrencyCode "EUR"
         string(1024) Description
+        char(1) Status
+        char(60) StatusText "Status Text"
         numc(6) CustomerId
         char(92) CustomerName "Title FirstName LastName"
         char(60) Street
@@ -36,6 +38,7 @@ erDiagram
 ## Hinweise
 
 - Das Feld `Duration` soll die Reisedauer ausgeben
-- Das Feld `CustomerName` soll, falls eine Anrede vorhanden ist, die verketteten Felder `Titel`, `Erster Name` und `Letzter Name` ausgeben, ansonsten nur die verketteten Felder `Erster Name` und `Letzter Name`
+- Das Feld `CustomerName` soll, falls eine Anrede vorhanden ist, die verketteten Felder `Title`, `FirstName` und `LastName` ausgeben, ansonsten nur die verketteten Felder `FirstName` und `LastName`
 - Die Felder `BookingFee` und `TotalPrice` sollen die Beträge in Euro ausgeben (Stichtag: Beginn der Reise)
 - Das Feld `CurrencyCode` soll den Wert `EUR` ausgeben
+- Das Feld `StatusText` soll den Text des Domänenfestwerts des Feldes `Status` ausgeben

@@ -6,7 +6,7 @@ sidebar_position: 10
 tags: []
 ---
 
-Diese Webseite sowie die dazugehörigen Schulungen bzw. die dazugehörige Vorlesung sollen eine systematische Einführung in die Anwendungsewntwicklung in SAP S/4HANA ermöglichen. Hierzu werden wichtige, praxisrelevante Konzepte und Methoden der Anwendungsentwicklung vorgestellt, wobei der Fokus auf der Entwicklung transaktionaler SAP Fiori elements Apps liegt.
+Diese Webseite sowie die dazugehörigen Schulungen bzw. die dazugehörige Vorlesung sollen eine systematische Einführung in die Anwendungsentwicklung in SAP S/4HANA ermöglichen. Hierzu werden wichtige, praxisrelevante Konzepte und Methoden der Anwendungsentwicklung vorgestellt, wobei der Fokus auf der Entwicklung transaktionaler SAP Fiori elements Apps liegt.
 
 ## Architektur von SAP S/4HANA
 
