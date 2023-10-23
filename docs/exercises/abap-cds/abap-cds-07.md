@@ -4,7 +4,7 @@ description: ""
 ---
 
 1. Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZI_???_CustomerWithTravels`
-2. Erstelle das ABAP-Programm `Z???_ABAP_CDS_07`, welches alle Kunden liest und anzeigt. Verwende zum Lesen der Kunden die ABAP CDS View aus Aufgabenteil 1
+2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_CDS_07`, welche alle Kunden liest und anzeigt. Verwende zum Lesen der Kunden die ABAP CDS View aus Aufgabenteil 1
 
 ## ER-Modell
 

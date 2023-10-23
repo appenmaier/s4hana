@@ -67,7 +67,7 @@ const config = {
           type: "doc",
           docId: "rap-cookbook/introduction",
           position: "left",
-          label: "RAP Kochbuch",
+          label: "RAP Cookbook",
         },
         {
           type: "doc",
