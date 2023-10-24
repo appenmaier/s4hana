@@ -1,7 +1,7 @@
 ---
 title: Fallunterscheidungen
 description: ""
-sidebar_position: 30
+sidebar_position: 20
 tags: []
 ---
 
@@ -17,8 +17,8 @@ define view entity I_Flight
   key carrier_id    as CarrierId,
   key connection_id as ConnectionId,
   key flight_date   as FlightDate,
-      price         as Price
-      currency_code as CurrencyCode
+      price         as Price,
+      currency_code as CurrencyCode,
       case currency_code
         when 'EUR' then 'Euro'
         when 'USD' then 'US Dollar'
@@ -27,6 +27,6 @@ define view entity I_Flight
       case when currency_code = 'EUR' and price < 500 then 'Low'
            when currency_code = 'EUR' and price >= 500 then 'High'
            else ''
-      end          as PriceCategory
+      end           as PriceCategory
 }
 ```

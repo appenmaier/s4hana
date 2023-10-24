@@ -16,9 +16,9 @@ Nach der Definition einer Assoziation wird diese durch Angabe in der Feldliste e
 @EndUserText.label: 'Connection'
 define view entity I_Connection
   as select from /dmo/connection as Connection
-  association [0..*] to /dmo/flight as _Flights on  $projection.carrier_id = _Flights.carrier_id
-                                                and $projectionn.connection_id = _Flights.connection_id
-  association [1..1] to /dmo/carrier as _Carrier on $projection.carrier_id = _Carrier.carrier_id
+  association [0..*] to /dmo/flight  as _Flights on  $projection.carrier_id    = _Flights.carrier_id
+                                                 and $projection.connection_id = _Flights.connection_id
+  association [1..1] to /dmo/carrier as _Carrier on  $projection.carrier_id = _Carrier.carrier_id
 {
   key Connection.carrier_id    as CarrierId,
   key Connection.connection_id as ConnectionId,
@@ -45,7 +45,7 @@ Zur besseren Unterscheidung von Feldern und Assoziationen sollten letztgenannte 
 
 :::note Hinweis
 
-In der Join-Bedingung kann über `$projection` auf Elemente der Feldliste zugegriffen werden.
+In der Join-Bedingung kann über die Anweisung `$projection` auf Elemente der Feldliste zugegriffen werden.
 
 :::
 
@@ -69,6 +69,8 @@ define view entity I_ConnectionWithCarrier
       _Flights
 }
 ```
+
+In Open SQL werden Pfadausdrücke durch `\` eingeleitet.
 
 ```abap shwoLineNumbers
 SELECT FROM I_Connection

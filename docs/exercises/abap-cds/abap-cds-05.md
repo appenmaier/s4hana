@@ -34,8 +34,8 @@ erDiagram
         dats(8) BeginDate
         dats(8) EndDate
         int4(10) Duration "Days between Begin Date and End Date"
-        curr(16-2) BookingFee "Converted into Euros"
-        curr(16-2) TotalPrice "Converted into Euros"
+        curr(16-2) BookingFee "Converted into Euro"
+        curr(16-2) TotalPrice "Converted into Euro"
         cuky(5) CurrencyCode "EUR"
         string(1024) Description
         char(1) Status

@@ -56,6 +56,12 @@ Mit dem optionalen Zusatz `ORDER BY` können die gelesenen Datensätze sortiert 
 
 :::
 
+:::note Hinweis
+
+Mit dem optionalen Zusatz `UP TO...ROWS` kann die Anzahl der gelesenen Datensätze begrenzt werden.
+
+:::
+
 ## Definition der Zielvariablen
 
 Bei Selektion von bestimmten Feldern muss in der INTO-Klausel eine Variable gewählt werden, die den gleichen Aufbau wie die Feldliste besitzt. Der Zusatz `CORRESPONDING FIELDS OF` der INTO-Klausel bewirkt, dass nur gleichnamige Felder der Zielvariable befüllt

@@ -1,7 +1,7 @@
 ---
 title: ABAP CDS Views
 description: ""
-sidebar_position: 20
+sidebar_position: 10
 tags: []
 ---
 
@@ -14,7 +14,7 @@ Die Grundlegende Syntax einer ABAP CDS Views umfasst die Angabe der Datenquelle(
 @EndUserText.label: 'Flight with Connection'
 define view entity I_FlightWithConnection
   as select from /dmo/flight     as Flight
-    inner join   /dmo/connection as Connection on  Connection.carrier_id = Flight.carrier_id
+    inner join   /dmo/connection as Connection on  Connection.carrier_id    = Flight.carrier_id
                                                and Connection.connection_id = Flight.connection_id
 {
   key Flight.carrier_id          as CarrierID,
