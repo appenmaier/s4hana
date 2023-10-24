@@ -12,7 +12,7 @@ Die Grundlegende Syntax einer ABAP CDS Views umfasst die Angabe der Datenquelle(
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Flight with Connection'
-define view entity FlightWithConnection
+define view entity I_FlightWithConnection
   as select from /dmo/flight     as Flight
     inner join   /dmo/connection as Connection on  Connection.carrier_id = Flight.carrier_id
                                                and Connection.connection_id = Flight.connection_id
@@ -28,9 +28,13 @@ where
 ```
 
 :::note Hinweis
+
 Die ABAP CDS unterstützen sowohl Inner Joins als auch Left Outer Joins und Right Outer Joins; Full Outer Joins nur indirekt durch die Anweisung `union`.
+
 :::
 
 :::note Hinweis
+
 Der Name der ABAP CDS View kann maximal 30 Zeichen umfassen.
+
 :::

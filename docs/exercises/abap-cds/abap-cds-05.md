@@ -14,7 +14,7 @@ erDiagram
     I_Travel ||--|| DMOTRAVEL : ""
     I_TravelWithCustomer }o--|| I_Customer : "Only Customers from Germany"
     I_TravelWithCustomer ||--|| I_Travel : ""
-    I_CustomerKPIs ||--o{ I_TravelWithCustomer : "Only Customers with Total Revenue >= 5.000 Euros"
+    I_CustomerKPIs ||--o{ I_TravelWithCustomer : "Only Customers with Total Revenue >= 5.000 Euro"
 
     I_CustomerKPIs {
         numc(6) CustomerId PK
@@ -23,6 +23,7 @@ erDiagram
         char(10) PostalCode
         char(40) City
         curr(17-2) TotalRevenue "Sum of all Total Prices and Total Booking Fees"
+        cuky(5) CurrencyCode
         dec(16) AverageDuration "Average of Travel Duration"
         int4(10) NumberOfDifferentAgencys "Number of different Agencys"
     }

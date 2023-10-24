@@ -10,7 +10,7 @@ Für arithmetische Ausdrücke können in den ABAP CDS die Operatoren `+`, `-`, `
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Flight'
-define view entity Flight
+define view entity I_Flight
   as select from /dmo/flight
 {
   key carrier_id                                                                 as CarrierId,
@@ -27,5 +27,7 @@ define view entity Flight
 ```
 
 :::danger Hinweis
+
 Da der Divisionsoperator `/` nur Gleitkommazahlen unterstützt, muss gegebenenfalls eine Typumwandlung mit Hilfe der cast-Operation erfolgen.
+
 :::

@@ -21,8 +21,8 @@ erDiagram
         dats(8) BeginDate
         dats(8) EndDate
         int4(10) Duration "Days between Begin Date and End Date"
-        curr(16-2) BookingFee "Converted into Euros"
-        curr(16-2) TotalPrice "Converted into Euros"
+        curr(16-2) BookingFee "Converted into Euro"
+        curr(16-2) TotalPrice "Converted into Euro"
         cuky(5) CurrencyCode "EUR"
         string(1024) Description
         char(1) Status
@@ -39,6 +39,6 @@ erDiagram
 
 - Das Feld `Duration` soll die Reisedauer ausgeben
 - Das Feld `CustomerName` soll, falls eine Anrede vorhanden ist, die verketteten Felder `Title`, `FirstName` und `LastName` ausgeben, ansonsten nur die verketteten Felder `FirstName` und `LastName`
-- Die Felder `BookingFee` und `TotalPrice` sollen die Beträge in Euro ausgeben (Stichtag: Beginn der Reise)
+- Die Felder `BookingFee` und `TotalPrice` sollen die Beträge in Euro ausgeben (Stichtag: `BeginDate`)
 - Das Feld `CurrencyCode` soll den Wert `EUR` ausgeben
-- Das Feld `StatusText` soll den Text des Domänenfestwerts des Feldes `Status` ausgeben
+- Das Feld `StatusText` soll den Text des Domänenfestwerts des Feldes `Status` in der Anmeldesprache ausgeben

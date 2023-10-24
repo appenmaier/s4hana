@@ -11,7 +11,7 @@ Fallunterscheidungen mit `case when...then...end` (vergleichbar mit dem ABAP-Kon
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Flight'
-define view entity Flight
+define view entity I_Flight
   as select from /dmo/flight
 {
   key carrier_id    as CarrierId,

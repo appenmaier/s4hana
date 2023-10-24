@@ -10,7 +10,7 @@ Die ABAP CDS unterstützen die klassischen Aggregatfunktionen `count`, `sum`, `a
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Connection KPIs'
-define view entity ConnectionKPIs
+define view entity I_ConnectionKPIs
   as select from /dmo/flight
 {
   key carrier_id                                                  as CarrierId,
@@ -35,9 +35,13 @@ having
 ```
 
 :::note Hinweis
+
 Alle nichtaggregierten Felder der Feldliste müssen nach dem Schlüsselwort `group by` aufgeführt werden.
+
 :::
 
 :::note Hinweis
+
 Die aggregierten Daten können mit Hilfe von `having` gefiltert werden.
+
 :::

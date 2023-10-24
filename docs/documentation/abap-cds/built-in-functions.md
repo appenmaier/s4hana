@@ -10,7 +10,7 @@ Die ABAP CDS stellen verschiedene numerische Funktionen, Zeichenkettenfunktionen
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Connection'
-define view entity Connection
+define view entity I_Connection
   as select from /dmo/connection
 {
   key carrier_id                                               as CarrierId,
