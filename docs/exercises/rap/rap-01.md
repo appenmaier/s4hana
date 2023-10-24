@@ -19,12 +19,12 @@ erDiagram
         char(50) title
         char(10) genre
         numc(4) publishing_year
-        sstr(255) image_url
         int1(3) runtime_in_min
-        char(12) created_at
-        dec(21-7) created_by
-        char(12) last_changed_by
+        sstr(255) image_url        
+        dec(21-7) created_at
+        char(12) created_by
         dec(21-7) last_changed_at
+        char(12) last_changed_by        
     }
 ```
 

@@ -9,7 +9,7 @@ Um bestehende ABAP CDS Views zu erweitern, können View-Erweiterungen definiert 
 
 ```sql showLineNumbers
 @EndUserText.label: 'Carrier Extension'
-extend view I_Carrier with E_Carrier
+extend view entity I_Carrier with
   association [0..*] to /dmo/connection as _Connections on $projection.carrier_id = _Connections.carrier_id
 {
   currency_code as CurrencyCode,
