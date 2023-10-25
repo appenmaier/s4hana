@@ -47,8 +47,7 @@ Die Projection View soll alle Felder der Restricted Interface View ausgeben.
 
 ### Hinweise zur ObjectPage
 
-- Als Überschrift soll der Wert `Movie` angezeigt werden
-- Als Kopfzeilen-ID soll der Wert des Feldes `Title` angezeigt werden
+- Als Kopfzeilen-Titel soll der Wert des Feldes `Title` angezeigt werden
 - Als Kopfzeilen-Beschreibung soll der Wert des Feldes `PublishingYear` angezeigt werden
 - Als Kopfzeilen-Abbildung soll das verlinkte Bild des Feldes `ImageURL` angezeigt werden
 - Die Felder `Title`, `Genre`, `PublishingYear`, `RuntimeInMin` und `ImageURL` sollen in der Feldgruppe `Movie Details` angezeigt werden

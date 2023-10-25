@@ -46,25 +46,20 @@ annotate view ZC_Booking with
 
   @UI.lineItem: [{ position: 30 }]
   @UI.fieldGroup: [{ position: 30, qualifier: 'BookingDetails' }]
-  CustomerId;
+  CarrierId;
 
   @UI.lineItem: [{ position: 40 }]
   @UI.fieldGroup: [{ position: 40, qualifier: 'BookingDetails' }]
-  CarrierId;
+  ConnectionId;
 
   @UI.lineItem: [{ position: 50 }]
   @UI.fieldGroup: [{ position: 50, qualifier: 'BookingDetails' }]
-  ConnectionId;
+  FlightDate;
 
   @UI.lineItem: [{ position: 60 }]
   @UI.fieldGroup: [{ position: 60, qualifier: 'BookingDetails' }]
-  FlightDate;
-
-  @UI.lineItem: [{ position: 70 }]
-  @UI.fieldGroup: [{ position: 70, qualifier: 'BookingDetails' }]
   FlightPrice;
 
-//  @UI.hidden: true
 //  CurrencyCode;
 
 }
@@ -157,7 +152,6 @@ annotate view ZC_Travel with
   @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
   TotalPrice;
 
-  //  @UI.hidden: true
   //  CurrencyCode;
 
   @UI.lineItem: [{ position: 70 }]

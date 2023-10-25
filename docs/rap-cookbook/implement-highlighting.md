@@ -163,7 +163,6 @@ annotate view ZC_Travel with
   @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
   TotalPrice;
 
-  //  @UI.hidden: true
   //  CurrencyCode;
 
 //highlight-start

@@ -68,7 +68,6 @@ annotate view ZC_Travel with
   @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
   TotalPrice;
 
-  //  @UI.hidden: true
   //  CurrencyCode;
 
   @UI.lineItem: [{ position: 70, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
