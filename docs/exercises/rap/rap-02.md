@@ -44,8 +44,7 @@ erDiagram
 
 ### Hinweise zur ObjectPage
 
-- Als Überschrift soll der Wert `Rating` angezeigt werden
-- Als Kopfzeilen-ID soll der Wert des Feldes `Rating` angezeigt werden
+- Als Kopfzeilen-Titel soll der Wert des Feldes `Rating` angezeigt werden
 - Als Kopfzeilen-Beschreibung soll der Wert des Feldes `UserName` angezeigt werden
 - Die Felder `UserName` und `Rating` sollen in der Feldgruppe `Rating Details` angezeigt werden
 - Die Felder `RatingUUID`, `MovieUUID` und `RatingDate` sollen in der Feldgruppe `Administrative Data` angezeigt werden
