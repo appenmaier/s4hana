@@ -8,7 +8,7 @@ Für den Business Service muss zunächst eine Projection View auf Grundlage des 
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -38,7 +38,7 @@ define root view entity ZC_Travel
 
 ## Service Definition ZUI_TRAVEL_V2
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL_V2 {

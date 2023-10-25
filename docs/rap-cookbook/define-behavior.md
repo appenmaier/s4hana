@@ -8,7 +8,7 @@ Um das (transaktionale) Verhalten des RAP BOs festzulegen, wird einen Behavior D
 
 ## Behavior Definition ZR_TRAVEL
 
-```sql
+```sql showLineNumbers
 //highlight-start
 managed implementation in class zbp_travel unique;
 strict ( 2 );
@@ -77,7 +77,7 @@ authorization dependent by _Travel
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
@@ -115,7 +115,7 @@ define root view entity ZC_Travel
 
 ## Behavior Projection ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 //highlight-start
 projection;
 strict ( 2 );

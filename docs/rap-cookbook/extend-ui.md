@@ -9,7 +9,7 @@ Um die Oberfläche für Buchungsdaten festzulegen, muss zunächst eine Metadata 
 
 ## Metadata Extension ZC_BOOKING
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -73,7 +73,7 @@ annotate view ZC_Booking with
 
 ## Projection View ZC_Booking
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 //highlight-start
@@ -99,7 +99,7 @@ define view entity ZC_Booking
 
 ## Metadata Extension ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
 {

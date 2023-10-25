@@ -8,7 +8,7 @@ Um den Business Service um Buchungen zu erweitern, muss zunächst eine Projectio
 
 ## Projection View ZC_Booking
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -34,7 +34,7 @@ define view entity ZC_Booking
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
@@ -71,7 +71,7 @@ define root view entity ZC_Travel
 
 ## Service Definition ZUI_TRAVEL_V2
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL_V2 {
   expose ZC_Travel as Travel;

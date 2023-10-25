@@ -9,7 +9,7 @@ sidebar_position: 100
 
 ## Restricted Interface View ZR_Travel
 
-```sql
+```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
@@ -60,7 +60,7 @@ define root view entity ZR_Travel
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
@@ -107,7 +107,7 @@ define root view entity ZC_Travel
 
 ## Metadata Extension ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
 {

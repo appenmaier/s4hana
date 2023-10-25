@@ -8,7 +8,7 @@ Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erst
 
 ## Datenbanktabelle Z_TRAVEL_A
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @EndUserText.label : 'Travel'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
@@ -40,7 +40,7 @@ define table z_travel_a {
 
 ## Generator-Klasse ZCL_TRAVEL_GENERATOR
 
-```abap title="ZCL_TRAVEL_GENERATOR" showLineNumbers
+```abap title="ZCL_TRAVEL_GENERATOR.abap" showLineNumbers
 //highlight-start
 CLASS zcl_travel_generator DEFINITION PUBLIC FINAL CREATE PUBLIC.
   PUBLIC SECTION.
@@ -132,7 +132,7 @@ ENDCLASS.
 
 ## Restricted Interface View ZR_Travel
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'

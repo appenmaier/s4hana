@@ -8,7 +8,7 @@ Um das RAP BO um Buchungen zu erweitern, muss zunächst eine entsprechende Daten
 
 ## Datenbanktabelle Z_BOOKING_A
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @EndUserText.label : 'Booking'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
@@ -33,7 +33,7 @@ define table z_booking_a {
 
 ## Restricted Interface View ZR_Booking
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
@@ -60,7 +60,7 @@ define view entity ZR_Booking
 
 ## Restricted Interface View ZR_Travel
 
-```sql
+```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel

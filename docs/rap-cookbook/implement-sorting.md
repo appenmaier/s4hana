@@ -9,7 +9,7 @@ sidebar_position: 110
 
 ## Metadata Extension ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
 {

@@ -9,7 +9,8 @@ sidebar_position: 90
 
 ## Interface View ZI_CustomerText
 
-```sql
+```sql showLineNumbers
+//highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Customer Text'
 define view entity ZI_CustomerText
@@ -19,16 +20,16 @@ as select from /dmo/customer
       first_name                                  as FirstName,
       last_name                                   as LastName,
 
-//highlight-start
       /* Transient Data */
       concat_with_space(first_name, last_name, 1) as Name
-//highlight-end
+
 }
+//highlight-end
 ```
 
 ## Restricted Interface View ZR_Travel
 
-```sql
+```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define root view entity ZR_Travel
@@ -73,7 +74,7 @@ define root view entity ZR_Travel
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true

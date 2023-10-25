@@ -9,7 +9,7 @@ sidebar_position: 130
 
 ## Behavior Definition ZR_TRAVEL
 
-```sql
+```sql showLineNumbers
 managed implementation in class zbp_travel unique;
 strict ( 2 );
 
@@ -82,7 +82,7 @@ authorization dependent by _Travel
 
 ## Behavior Projection ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 projection;
 strict ( 2 );
 
@@ -112,7 +112,7 @@ define behavior for ZC_Booking alias Booking
 
 ## Metadata Extension ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
 {

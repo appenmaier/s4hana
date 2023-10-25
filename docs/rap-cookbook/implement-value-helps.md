@@ -8,7 +8,7 @@ Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt
 
 ## Interface View ZI_CustomerVH
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Customer Value Help'
@@ -29,7 +29,7 @@ define view entity ZI_CustomerVH
 
 ## Interface View ZI_StatusVH
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Status Value Help'
@@ -52,7 +52,7 @@ define view entity ZI_StatusVH
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
@@ -100,7 +100,7 @@ define root view entity ZC_Travel
 
 ## Projection View ZC_Booking
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true

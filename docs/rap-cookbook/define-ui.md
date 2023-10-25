@@ -9,7 +9,7 @@ Um die Oberfläche für Reisen festzulegen, wird zunächst eine Metadata Extensi
 
 ## Metadata Extension ZC_TRAVEL
 
-```sql
+```sql showLineNumbers
 //highlight-start
 @Metadata.layer: #CUSTOMER
 @UI.headerInfo:
@@ -95,7 +95,7 @@ annotate view ZC_Travel with
 
 ## Projection View ZC_Travel
 
-```sql
+```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 //highlight-start

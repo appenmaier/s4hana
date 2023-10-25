@@ -17,7 +17,7 @@ sidebar_position: 120
 
 ## ABAP Class ZCM_TRAVEL
 
-```abap title="ZCM_TRAVEL" showLineNumbers
+```abap title="ZCM_TRAVEL.abap" showLineNumbers
 //highlight-start
 CLASS zcm_travel DEFINITION PUBLIC
   INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
