@@ -12,7 +12,7 @@ umfasst ausschließlich die Implementierungen der Methoden. Der Definitionsberei
 
 "Normale" Attribute werden, wie Variablen, mit dem Schlüsselwort `DATA` deklariert, Klassenattribute mit dem Schlüsselwort `CLASS-DATA`. Zur Typisierung können ABAP-Standardtypen sowie lokale und globale Datentypen verwendet werden.
 
-```abap title="CL_VEHICLE" showLineNumbers
+```abap title="CL_VEHICLE.abap" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
 
   PUBLIC SECTION.
@@ -23,6 +23,10 @@ CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
+
+ENDCLASS.
+
+CLASS cl_vehicle IMPLEMENTATION.
 
 ENDCLASS.
 ```
@@ -39,7 +43,7 @@ Mit dem Zusatz `READ-ONLY` können öffentliche Attribute so eingeschränkt werd
 besitzt in ABAP den reservierten Namen `CONSTRUCTOR`, der Klassenkonstruktor, der automatisch beim ersten Zugriff auf die Klasse aufgerufen wird, das Schlüsselwort `CLASS_CONSTRUCTOR`. Der Konstruktor kann nur IMPORTING-Parameter und Ausnahmen beinhalten,
 der Klassenkonstruktor weder das eine noch das andere.
 
-```abap title="CL_VEHICLE" showLineNumbers
+```abap title="CL_VEHICLE.abap" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
 
   PUBLIC SECTION.
@@ -60,6 +64,10 @@ CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
   PRIVATE SECTION.
 
 ENDCLASS.
+
+CLASS cl_vehicle IMPLEMENTATION.
+
+ENDCLASS.
 ```
 
 :::note Hinweis
@@ -72,7 +80,28 @@ ABAP kennt keine überladene Methoden, stattdessen können mit dem Zusatz `OPTIO
 
 Die Implementierung von Methoden erfolgt im Implementierungsbereich der Klasse.
 
-```abap title="CL_VEHICLE" showLineNumbers
+```abap title="CL_VEHICLE.abap" showLineNumbers
+CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    DATA make  TYPE string READ-ONLY.
+    DATA model TYPE string READ-ONLY.
+    CLASS-DATA number_of_vehicles TYPE i READ-ONLY.
+
+    METHODS constructor
+      IMPORTING
+        make  TYPE string
+        model TYPE string.
+
+    METHODS to_string
+      RETURNING VALUE(string) TYPE string.
+
+  PROTECTED SECTION.
+
+  PRIVATE SECTION.
+
+ENDCLASS.
+
 CLASS cl_vehicle IMPLEMENTATION.
 
   METHOD constructor.

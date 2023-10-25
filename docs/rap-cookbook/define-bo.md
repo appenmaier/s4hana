@@ -42,6 +42,13 @@ define table z_travel_a {
 
 ```abap title="ZCL_TRAVEL_GENERATOR" showLineNumbers
 //highlight-start
+CLASS zcl_travel_generator DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
 CLASS zcl_travel_generator IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     DATA travel  TYPE zda2310_travel_a.

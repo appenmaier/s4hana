@@ -15,7 +15,14 @@ flowchart LR
     truck(Bezeichner: truck\nDatentyp: cl_truck\nWert: 3) --> o3[id: 3\nmake = MAN\nmodel = TGX\ncargo_in_tons = 40]
 ```
 
-```abap title="CL_MAIN" showLineNumbers
+```abap title="CL_MAIN.abap" showLineNumbers
+CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
@@ -30,7 +37,14 @@ ENDCLASS.
 
 Mit dem Operator `NEW` können Objekte erzeugt werden.
 
-```abap title="CL_MAIN" showLineNumbers
+```abap title="CL_MAIN.abap" showLineNumbers
+CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
@@ -62,7 +76,14 @@ Der Initialwert einer Referenzvariablen ist die leere Referenz.
 
 Der Zugriff auf "normale" Attribute und Methoden erfolgt über die Angabe der Referenzvariablen sowie den Objekt-Komponentenselektor `->`, der Zugriff auf Klassenelemente über die Angabe der Klasse sowie den Klassen-Komponentenselektor `=>`.
 
-```abap title="CL_MAIN" showLineNumbers
+```abap title="CL_MAIN.abap" showLineNumbers
+CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
 CLASS cl_main IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
