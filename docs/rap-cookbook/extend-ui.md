@@ -17,7 +17,7 @@ Um die Oberfläche für Buchungsdaten festzulegen, muss zunächst eine Metadata 
   typeName: 'Booking',
   typeNamePlural: 'Bookings',
   title.value: 'BookingId',
-  description.value: 'Status'
+  description.value: 'BookingDate'
 }
 annotate view ZC_Booking with
 {
@@ -75,7 +75,7 @@ annotate view ZC_Booking with
 @Metadata.allowExtensions: true
 //highlight-end
 define view entity ZC_Booking
-  as projection on ZI_Booking
+  as projection on ZR_Booking
 {
   key BookingUuid,
       TravelUuid,

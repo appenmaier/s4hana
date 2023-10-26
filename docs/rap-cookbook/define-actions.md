@@ -7,6 +7,17 @@ sidebar_position: 130
 :::danger TODO
 :::
 
+## Abstract View ZA_BookingFee
+
+```sql showLineNumbers
+@EndUserText.label: 'BookingFee'
+define abstract entity ZA_BookingFee
+{
+  BookingFee   : /dmo/booking_fee;
+  CurrencyCode : /dmo/currency_code;
+}
+```
+
 ## Behavior Definition ZR_TRAVEL
 
 ```sql showLineNumbers
@@ -27,7 +38,7 @@ authorization master ( instance )
 //highlight-start
   static action show_test_message;
   action cancel_travel;
-  action maintain_booking_fees parameter ZA_BookingFees;
+  action maintain_booking_fee parameter ZA_BookingFee;
 //highlight-end
 
   field ( readonly, numbering : managed ) TravelUuid;
@@ -97,7 +108,7 @@ define behavior for ZC_Travel alias Travel
 //highlight-start
   use action show_test_message;
   use action cancel_travel;
-  use action maintain_booking_fees;
+  use action maintain_booking_fee;
 //highlight-end
 }
 
@@ -142,7 +153,7 @@ annotate view ZC_Travel with
   ]
   @UI.identification:
   [
-    { position: 10, dataAction: 'MAINTAIN_BOOKING_FEES', label: 'Maintain Booking Fees', type: #FOR_ACTION }
+    { position: 10, dataAction: 'MAINTAIN_BOOKING_FEE', label: 'Maintain Booking Fee', type: #FOR_ACTION }
   ]
 //highlight-end
 

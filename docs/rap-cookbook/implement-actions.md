@@ -69,7 +69,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD maintain_booking_fees.
+  METHOD maintain_booking_fee.
     "Reisedaten lesen
     READ ENTITY IN LOCAL MODE ZR_Travel
       FIELDS ( TravelUuid )

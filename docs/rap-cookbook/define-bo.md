@@ -6,7 +6,7 @@ sidebar_position: 10
 
 Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt und mit Hilfe einer Generator-Klasse befüllt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des RAP BOs darstellt.
 
-## Datenbanktabelle Z_TRAVEL_A
+## Database Table Z_TRAVEL_A
 
 ```sql showLineNumbers
 //highlight-start
@@ -38,7 +38,7 @@ define table z_travel_a {
 //highlight-end
 ```
 
-## Generator-Klasse ZCL_TRAVEL_GENERATOR
+## ABAP Class ZCL_TRAVEL_GENERATOR
 
 ```abap title="ZCL_TRAVEL_GENERATOR.abap" showLineNumbers
 //highlight-start

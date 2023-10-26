@@ -6,7 +6,7 @@ sidebar_position: 40
 
 Um das RAP BO um Buchungen zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungen erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Restricted Interface View inklusive einer Assoziation zu den Reisen erstellt. Zuletzt wird die Restricted Interface View für Reisen um eine Assoziation zu den Buchungen erweitert.
 
-## Datenbanktabelle Z_BOOKING_A
+## Database Table Z_BOOKING_A
 
 ```sql showLineNumbers
 //highlight-start
