@@ -3,20 +3,21 @@ title: RAP-03
 description: ""
 ---
 
-- Erstelle die Interface View `ZI_???_GenreText` und erweitere die Projection View `ZC_???_Rating` um das Textelement `GenreText`
-- Erstelle die Interface View `ZI_???_RuntimeText` und erweitere die Projection View `ZC_???_Rating` um das Textelement `RuntimeText`
-- Erweitere die Projection View `ZC_???_Movie` um das transiente Feld `AverageRating` und implementiere für diese eine Hervorhebung
-- Erweitere die Metadata Extension `ZC_???_MOVIE` so, dass Filme absteigend sortiert nach dem Feld `AverageRating` ausgegeben werden
+- Erstelle für die Restricted Interface View `ZR_???_Movie` die Behavior Definition `ZR_???_MOVIE`
+- Erstelle für die Projection View `ZC_???_Movie` die Behavior Projection `ZC_???_MOVIE`
 
-## Hinweis zur Interface View `ZI_???_GenreText`
+## Hinweise zur Behavior Definition `ZR_???_MOVIE`
 
-Die Interface View `ZI_???_GenreText` soll alle Texte zu den Domänenfestwerten des Feldes `Genre` ausgeben.
+- Mit Hilfe des Services sollen Filme erstellt werden können
+- Mit Hilfe des Services sollen Filme geändert werden können
+- Mit Hilfe des Services sollen Filme gelöscht werden können
+- Mit Hilfe des Services sollen Bewertungen erstellt werden können
+- Mit Hilfe des Services sollen Bewertungen geändert werden können
+- Mit Hilfe des Services sollen Bewertungen gelöscht werden können
 
-## Hinweis zur Interface View `ZI_???_RuntimeText`
+## Hinweise zur Behavior Projection `ZC_???_MOVIE`
 
-Die Interface View `ZI_???_RuntimeText` soll für Filme mit einer Laufzeit von mehr als 150 Minuten den Wert `Überlänge` und für Filme mit einer Laufzeit von weniger als 30 Minuten den Wert `Kurzfilm` ausgeben.
-
-## Hinweise zum transienten Feld `AverageRating`
-
-- Das Feld `AverageRating` soll die durchschnittliche Bewertung eines Filmes ausgeben
-- Die Hervorhebung soll so implementiert werden, dass Filme mit einer Durchschnittsbewertung größer 6,7 grün, Filme mit einer Durchschnittsbewertung zwischen 3,4 und 6,7 gelb und Filme mit einer Durchschnittsbewertung kleiner 3,4 rot dargestellt werden
+- Mit Hilfe des Services sollen Filme erstellt werden können
+- Mit Hilfe des Services sollen Filme geändert werden können
+- Mit Hilfe des Services sollen Filme gelöscht werden können
+- Mit Hilfe des Services sollen Bewertungen gelöscht werden können
