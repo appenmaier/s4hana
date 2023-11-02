@@ -1,27 +1,72 @@
 ---
-title: 13. Aktionen festlegen
+title: 12. Statische Aktionen implementieren
 description: ""
-sidebar_position: 130
+sidebar_position: 120
 ---
 
-- Abstract View für Buchungsgebühren erstellen
-- Behavior Definition für Reisen um Aktionen erweitern
-- Die Verhaltensimplementierung für Reisen um Behandlermethoden erweitern
-- Behavior Projection für Reisen um Aktionen erweitern
-- Metadata Extension für Reisen um Annotationen für Aktionen erweitern
+- Message Class für Reisen erstellen
+- Nachrichtenklasse für Reisen erstellen
+- Behavior Definition für Reisen um eine Aktion zum Anzeigen einer Nachricht erweitern
+- Die Verhaltensimplementierung für Reisen um eine Behandlermethode zum Anzeigen einer Nachricht erweitern
+- Behavior Projection für Reisen um eine Aktion zum Anzeigen einer Nachricht erweitern
+- Metadata Extension für Reisen um Annotationen für eine Aktion zum Anzeigen einer Nachricht erweitern
 
-## Abstract View ZA_BookingFee
+## Message Class Z_TRAVEL
 
-```sql showLineNumbers
+| Nachrichtennummer | Nachricht                      |
+| ----------------- | ------------------------------ |
+| 001               | This is a Test Message from &1 |
+
+## Nachrichtenklasse ZCM_TRAVEL
+
+```abap title="ZCM_TRAVEL.abap" showLineNumbers
 //highlight-start
-@EndUserText.label: 'Booking Fee'
-define abstract entity ZA_BookingFee
-{
-  @Semantics.amount.currencyCode: 'CurrencyCode'
-  BookingFee   : /dmo/booking_fee;
-  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
-  CurrencyCode : /dmo/currency_code;
-}
+CLASS zcm_travel DEFINITION PUBLIC
+  INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    " Interfaces
+    INTERFACES if_abap_behv_message.
+    INTERFACES if_t100_message.
+    INTERFACES if_t100_dyn_msg.
+
+    " Message Constants
+    CONSTANTS:
+      BEGIN OF test_message,
+        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
+        msgno TYPE symsgno      VALUE '001',
+        attr1 TYPE scx_attrname VALUE 'USER_NAME',
+        attr2 TYPE scx_attrname VALUE '',
+        attr3 TYPE scx_attrname VALUE '',
+        attr4 TYPE scx_attrname VALUE '',
+      END OF test_message.
+
+    " Attributs
+    DATA user_name TYPE syuname.
+
+    " Constructor
+    METHODS constructor
+      IMPORTING
+        severity  TYPE if_abap_behv_message=>t_severity DEFAULT if_abap_behv_message=>severity-error
+        textid    LIKE if_t100_message=>t100key         DEFAULT if_t100_message=>default_textid
+        !previous LIKE previous                         OPTIONAL
+        user_name TYPE syuname                          OPTIONAL.
+
+  PROTECTED SECTION.
+
+  PRIVATE SECTION.
+
+ENDCLASS.
+
+CLASS zcm_travel IMPLEMENTATION.
+  METHOD constructor ##ADT_SUPPRESS_GENERATION.
+    super->constructor( previous = previous ).
+
+    if_t100_message~t100key = textid.
+    if_abap_behv_message~m_severity = severity.
+    me->user_name = user_name.
+  ENDMETHOD.
+ENDCLASS.
 //highlight-end
 ```
 
@@ -44,8 +89,6 @@ authorization master ( instance )
 
 //highlight-start
   static action show_test_message;
-  action cancel_travel result [1] $self;
-  action maintain_booking_fee parameter ZA_BookingFee result [1] $self;
 //highlight-end
 
   field ( readonly, numbering : managed ) TravelUuid;
@@ -105,10 +148,11 @@ authorization dependent by _Travel
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
 CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
   PROTECTED SECTION.
+
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zbp__travel IMPLEMENTATION.
+CLASS zbp_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
@@ -119,32 +163,28 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
+
 //highlight-start
     METHODS show_test_message FOR MODIFY
       IMPORTING keys FOR ACTION travel~show_message.
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
-    METHODS maintain_booking_fee FOR MODIFY
-      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
 //highlight-end
 ENDCLASS.
 
 CLASS lhc_travel IMPLEMENTATION.
-
   METHOD get_instance_authorizations.
   ENDMETHOD.
 
 //highlight-start
   METHOD show_test_message.
-  ENDMETHOD.
+    DATA message TYPE REF TO zcm_travel.
 
-  METHOD cancel_travel.
-  ENDMETHOD.
+    message = NEW zcm_travel( severity  = if_abap_behv_message=>severity-success
+                              textid    = zcm_travel=>test_message
+                              user_name = sy-uname ).
 
-  METHOD maintain_booking_fee.
+    APPEND message TO reported-%other.
   ENDMETHOD.
 //highlight-end
-
 ENDCLASS.
 ```
 
@@ -164,8 +204,6 @@ define behavior for ZC_Travel alias Travel
 
 //highlight-start
   use action show_test_message as ShowTestMessage;
-  use action cancel_travel as CancelTravel;
-  use action maintain_booking_fee as MaintainBookingFee;
 //highlight-end
 }
 
@@ -203,15 +241,7 @@ annotate view ZC_Travel with
 
 //highlight-start
   /* Actions */
-  @UI.lineItem:
-  [
-    { position: 10, dataAction: 'ShowTestMessage', label: 'Show Test Message', type: #FOR_ACTION },
-    { position: 20, dataAction: 'CancelTravel', label: 'Cancel Travel', type: #FOR_ACTION }
-  ]
-  @UI.identification:
-  [
-    { position: 10, dataAction: 'MaintainBookingFee', label: 'Maintain Booking Fee', type: #FOR_ACTION }
-  ]
+  @UI.lineItem: [{ position: 10, dataAction: 'ShowTestMessage', label: 'Show Test Message', type: #FOR_ACTION }]
 //highlight-end
 
   /* Fields */

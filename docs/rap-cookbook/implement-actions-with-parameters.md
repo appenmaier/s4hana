@@ -1,144 +1,28 @@
 ---
-title: 15. Aktionen implementieren
+title: 16. Aktionen mit Parametern implementieren
 description: ""
-sidebar_position: 150
+sidebar_position: 160
 ---
 
-- Message Class für Reisen um Nachrichten zum Stornieren einer Reise erweitern
-- Nachrichtenklasse für Reisen um Nachrichten zum Stornieren einer Reise erweitern
-- Behavior Definition für Reisen um eine Aktion zum Stornieren einer Reise erweitern
-- Die Verhaltensimplementierung für Reisen um eine Behandlermethode zum Stornieren einer Reise erweitern
-- Behavior Projection für Reisen um eine Aktion zum Stornieren einer Reise erweitern
-- Metadata Extension für Reisen um Annotationen für eine Aktion zum Stornieren einer Reise erweitern
+- Abstract View für Buchungsgebühren erstellen
+- Behavior Definition für Reisen um eine Aktion zur Pflege der Buchungsgebühren erweitern
+- Die Verhaltensimplementierung für Reisen um eine Behandlermethode zur Pflege der Buchungsgebühren erweitern
+- Behavior Projection für Reisen um eine Aktion zur Pflege der Buchungsgebühren erweitern
+- Metadata Extension für Reisen um Annotationen für eine Aktion zur Pflege der Buchungsgebühren erweitern
 
-## Message Class Z_TRAVEL
+## Abstract View ZA_BookingFee
 
-| Nachrichtennummer | Nachricht                            |
-| ----------------- | ------------------------------------ |
-| 001               | This is a Test Message from &1       |
-| 002               | No Agency found for Agency ID &1     |
-| 003               | No Customer found for Customer ID &1 |
-| 004               | Begin Date must be before End Date   |
-| 005               | Travel &1 is already cancelled       |
-| 006               | Travel &1 was successfully cancelled |
-
-## Nachrichtenklasse ZCM_TRAVEL
-
-```abap title="ZCM_TRAVEL.abap" showLineNumbers
+```sql showLineNumbers
 //highlight-start
-CLASS zcm_travel DEFINITION PUBLIC
-  INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
-
-  PUBLIC SECTION.
-    " Interfaces
-    INTERFACES if_abap_behv_message.
-    INTERFACES if_t100_message.
-    INTERFACES if_t100_dyn_msg.
-
-    " Message Constants
-    CONSTANTS:
-      BEGIN OF test_message,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '001',
-        attr1 TYPE scx_attrname VALUE 'USER_NAME',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF test_message.
-
-    CONSTANTS:
-      BEGIN OF no_agency_found,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '002',
-        attr1 TYPE scx_attrname VALUE 'AGENCY_ID',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF no_agency_found.
-
-    CONSTANTS:
-      BEGIN OF no_customer_found,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '003',
-        attr1 TYPE scx_attrname VALUE 'CUSTOMER_ID',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF no_customer_found.
-
-    CONSTANTS:
-      BEGIN OF invalid_dates,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '004',
-        attr1 TYPE scx_attrname VALUE '',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF invalid_dates.
-
-//highlight-start
-    CONSTANTS:
-      BEGIN OF travel_already_cancelled,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '005',
-        attr1 TYPE scx_attrname VALUE 'DESCRIPTION',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF travel_already_cancelled.
-
-    CONSTANTS:
-      BEGIN OF travel_cancelled_successfully,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '006',
-        attr1 TYPE scx_attrname VALUE 'DESCRIPTION',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF travel_cancelled_successfully.
+@EndUserText.label: 'Booking Fee'
+define abstract entity ZA_BookingFee
+{
+  @Semantics.amount.currencyCode: 'CurrencyCode'
+  BookingFee   : /dmo/booking_fee;
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
+  CurrencyCode : /dmo/currency_code;
+}
 //highlight-end
-
-    " Attributs
-    DATA user_name   TYPE syuname.
-    DATA agency_id   TYPE /dmo/agency_id.
-    DATA customer_id TYPE /dmo/customer_id.
-//highlight-start
-    DATA description TYPE /dmo/description.
-//highlight-end
-
-    " Constructor
-    METHODS constructor
-      IMPORTING
-        severity     TYPE if_abap_behv_message=>t_severity DEFAULT if_abap_behv_message=>severity-error
-        textid       LIKE if_t100_message=>t100key         DEFAULT if_t100_message=>default_textid
-        !previous    LIKE previous                         OPTIONAL
-        user_name    TYPE syuname                          OPTIONAL
-        agency_id    TYPE /dmo/agency_id                   OPTIONAL
-        customer_id  TYPE /dmo/customer_id                 OPTIONAL
-//highlight-start
-        !description TYPE /dmo/description                 OPTIONAL.
-//highlight-end
-
-  PROTECTED SECTION.
-
-  PRIVATE SECTION.
-
-ENDCLASS.
-
-CLASS zcm_travel IMPLEMENTATION.
-  METHOD constructor ##ADT_SUPPRESS_GENERATION.
-    super->constructor( previous = previous ).
-
-    if_t100_message~t100key = textid.
-    if_abap_behv_message~m_severity = severity.
-    me->user_name   = user_name.
-    me->agency_id   = agency_id.
-    me->customer_id = customer_id.
-//highlight-start
-    me->description = description.
-//highlight-end
-  ENDMETHOD.
-ENDCLASS.
 ```
 
 ## Behavior Definition ZR_TRAVEL
@@ -159,8 +43,9 @@ authorization master ( instance )
   association _Bookings { create; }
 
   static action show_test_message;
-//highlight-start
   action cancel_travel result [1] $self;
+//highlight-start
+  action maintain_booking_fee parameter ZA_BookingFee result [1] $self;
 //highlight-end
 
   validation validate_dates on save { create; }
@@ -270,9 +155,12 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS determine_travel_id FOR DETERMINE ON MODIFY
       IMPORTING keys FOR travel~determine_travel_id.
 
-//highlight-start
     METHODS cancel_travel FOR MODIFY
       IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+
+//highlight-start
+    METHODS maintain_booking_fee FOR MODIFY
+      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
 //highlight-end
 ENDCLASS.
 
@@ -412,7 +300,6 @@ CLASS lhc_travel IMPLEMENTATION.
                            TravelId = travel->TravelId ) ).
   ENDMETHOD.
 
-//highlight-start
   METHOD cancel_travel.
     DATA message TYPE REF TO zcm_travel.
 
@@ -457,6 +344,36 @@ CLASS lhc_travel IMPLEMENTATION.
                       ( %tky   = t-%tky
                         %param = t ) ).
   ENDMETHOD.
+
+//highlight-start
+  METHOD maintain_booking_fee.
+    " Read Travels
+    READ ENTITY IN LOCAL MODE ZR_Travel
+         ALL FIELDS
+         WITH CORRESPONDING #( keys )
+         RESULT DATA(travels).
+
+    " Process Travels
+    LOOP AT travels REFERENCE INTO DATA(travel).
+
+      " Set Booking Fee
+      travel->BookingFee   = keys[ sy-tabix ]-%param-BookingFee.
+      travel->CurrencyCode = keys[ sy-tabix ]-%param-CurrencyCode.
+
+    ENDLOOP.
+
+    " Modify Travels
+    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+           UPDATE FIELDS ( BookingFee CurrencyCode )
+           WITH VALUE #( FOR t IN travels
+                         ( %tky         = travel->%tky
+                           BookingFee   = travel->BookingFee
+                           CurrencyCode = travel->CurrencyCode ) ).
+
+    " Set Result
+    result = VALUE #( FOR t IN travels
+                      ( %tky = t-%tky %param = t ) ).
+  ENDMETHOD.
 //highlight-end
 ENDCLASS.
 ```
@@ -476,8 +393,9 @@ define behavior for ZC_Travel alias Travel
   use association _Bookings { create; }
 
   use action show_test_message as ShowTestMessage;
-//highlight-start
   use action cancel_travel as CancelTravel;
+//highlight-start
+  use action maintain_booking_fee as MaintainBookingFee;
 //highlight-end
 }
 
@@ -517,11 +435,11 @@ annotate view ZC_Travel with
   @UI.lineItem:
   [
     { position: 10, dataAction: 'ShowTestMessage', label: 'Show Test Message', type: #FOR_ACTION },
-//highlight-start
     { position: 20, dataAction: 'CancelTravel', label: 'Cancel Travel', type: #FOR_ACTION }
-//highlight-end
   ]
-
+//highlight-start
+  @UI.identification: [{ position: 10, dataAction: 'MaintainBookingFee', label: 'Maintain Booking Fee', type: #FOR_ACTION }]
+//highlight-end
 
   /* Fields */
   @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]

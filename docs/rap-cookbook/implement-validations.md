@@ -1,15 +1,13 @@
 ---
-title: 15. Aktionen implementieren
+title: 13. Validierungen implementieren
 description: ""
-sidebar_position: 150
+sidebar_position: 130
 ---
 
-- Message Class für Reisen um Nachrichten zum Stornieren einer Reise erweitern
-- Nachrichtenklasse für Reisen um Nachrichten zum Stornieren einer Reise erweitern
-- Behavior Definition für Reisen um eine Aktion zum Stornieren einer Reise erweitern
-- Die Verhaltensimplementierung für Reisen um eine Behandlermethode zum Stornieren einer Reise erweitern
-- Behavior Projection für Reisen um eine Aktion zum Stornieren einer Reise erweitern
-- Metadata Extension für Reisen um Annotationen für eine Aktion zum Stornieren einer Reise erweitern
+- Message Class für Reisen um Nachrichten zur Validierung erweitern
+- Nachrichtenklasse für Reisen um Nachrichten zur Validierung erweitern
+- Behavior Definition für Reisen um statische Feldkontrollen und Validierungen erweitern
+- Die Verhaltensimplementierung für Reisen um Behandlermethoden zur Validierung erweitern
 
 ## Message Class Z_TRAVEL
 
@@ -19,13 +17,10 @@ sidebar_position: 150
 | 002               | No Agency found for Agency ID &1     |
 | 003               | No Customer found for Customer ID &1 |
 | 004               | Begin Date must be before End Date   |
-| 005               | Travel &1 is already cancelled       |
-| 006               | Travel &1 was successfully cancelled |
 
 ## Nachrichtenklasse ZCM_TRAVEL
 
 ```abap title="ZCM_TRAVEL.abap" showLineNumbers
-//highlight-start
 CLASS zcm_travel DEFINITION PUBLIC
   INHERITING FROM cx_static_check FINAL CREATE PUBLIC.
 
@@ -46,6 +41,7 @@ CLASS zcm_travel DEFINITION PUBLIC
         attr4 TYPE scx_attrname VALUE '',
       END OF test_message.
 
+//highlight-start
     CONSTANTS:
       BEGIN OF no_agency_found,
         msgid TYPE symsgid      VALUE 'Z_TRAVEL',
@@ -75,35 +71,13 @@ CLASS zcm_travel DEFINITION PUBLIC
         attr3 TYPE scx_attrname VALUE '',
         attr4 TYPE scx_attrname VALUE '',
       END OF invalid_dates.
-
-//highlight-start
-    CONSTANTS:
-      BEGIN OF travel_already_cancelled,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '005',
-        attr1 TYPE scx_attrname VALUE 'DESCRIPTION',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF travel_already_cancelled.
-
-    CONSTANTS:
-      BEGIN OF travel_cancelled_successfully,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
-        msgno TYPE symsgno      VALUE '006',
-        attr1 TYPE scx_attrname VALUE 'DESCRIPTION',
-        attr2 TYPE scx_attrname VALUE '',
-        attr3 TYPE scx_attrname VALUE '',
-        attr4 TYPE scx_attrname VALUE '',
-      END OF travel_cancelled_successfully.
 //highlight-end
 
     " Attributs
     DATA user_name   TYPE syuname.
+//highlight-start
     DATA agency_id   TYPE /dmo/agency_id.
     DATA customer_id TYPE /dmo/customer_id.
-//highlight-start
-    DATA description TYPE /dmo/description.
 //highlight-end
 
     " Constructor
@@ -113,10 +87,9 @@ CLASS zcm_travel DEFINITION PUBLIC
         textid       LIKE if_t100_message=>t100key         DEFAULT if_t100_message=>default_textid
         !previous    LIKE previous                         OPTIONAL
         user_name    TYPE syuname                          OPTIONAL
-        agency_id    TYPE /dmo/agency_id                   OPTIONAL
-        customer_id  TYPE /dmo/customer_id                 OPTIONAL
 //highlight-start
-        !description TYPE /dmo/description                 OPTIONAL.
+        agency_id    TYPE /dmo/agency_id                   OPTIONAL
+        customer_id  TYPE /dmo/customer_id                 OPTIONAL.
 //highlight-end
 
   PROTECTED SECTION.
@@ -132,10 +105,9 @@ CLASS zcm_travel IMPLEMENTATION.
     if_t100_message~t100key = textid.
     if_abap_behv_message~m_severity = severity.
     me->user_name   = user_name.
+//highlight-start
     me->agency_id   = agency_id.
     me->customer_id = customer_id.
-//highlight-start
-    me->description = description.
 //highlight-end
   ENDMETHOD.
 ENDCLASS.
@@ -159,21 +131,18 @@ authorization master ( instance )
   association _Bookings { create; }
 
   static action show_test_message;
-//highlight-start
-  action cancel_travel result [1] $self;
-//highlight-end
 
+//highlight-start
   validation validate_dates on save { create; }
   validation validate_customer on save { create; }
   validation validate_agency on save { create; }
-
-  determination determine_status on modify { create; }
-  determination determine_travel_id on modify { create; }
+//highlight-end
 
   field ( readonly, numbering : managed ) TravelUuid;
+//highlight-start
   field ( mandatory : create ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
-  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Status, TravelId;
+//highlight-end
 
   mapping for z_travel_a corresponding
   {
@@ -246,33 +215,22 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
 
-    METHODS show_message FOR MODIFY
+    METHODS show_test_message FOR MODIFY
       IMPORTING keys FOR ACTION travel~show_message.
 
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
-
-    METHODS maintain_booking_fee FOR MODIFY
-      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
-
+//highlight-start
     METHODS validate_agency FOR VALIDATE ON SAVE
       IMPORTING keys FOR travel~validate_agency.
-
-    METHODS validate_customer FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_customer.
-
-    METHODS validate_dates FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_dates.
-
-    METHODS determine_status FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR travel~determine_status.
-
-    METHODS determine_travel_id FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR travel~determine_travel_id.
+//highlight-end
 
 //highlight-start
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+    METHODS validate_customer FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validate_customer.
+//highlight-end
+
+//highlight-start
+    METHODS validate_dates FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validate_dates.
 //highlight-end
 ENDCLASS.
 
@@ -290,6 +248,7 @@ CLASS lhc_travel IMPLEMENTATION.
     APPEND message TO reported-%other.
   ENDMETHOD.
 
+//highlight-start
   METHOD validate_agency.
     DATA message TYPE REF TO zcm_travel.
 
@@ -315,7 +274,9 @@ CLASS lhc_travel IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+//highlight-end
 
+//highlight-start
   METHOD validate_customer.
     DATA message TYPE REF TO zcm_travel.
 
@@ -341,7 +302,9 @@ CLASS lhc_travel IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
+//highlight-end
 
+//highlight-start
   METHOD validate_dates.
     DATA message TYPE REF TO zcm_travel.
 
@@ -364,223 +327,6 @@ CLASS lhc_travel IMPLEMENTATION.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
-
-  METHOD determine_status.
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         FIELDS ( Status )
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
-
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-
-      " Set Status
-      travel->Status = 'N'.
-
-    ENDLOOP.
-
-    " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
-           UPDATE FIELDS ( Status )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky   = travel->%tky
-                           Status = travel->Status ) ).
-  ENDMETHOD.
-
-  METHOD determine_travel_id.
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         FIELDS ( TravelId )
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
-
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-
-      " Set Travel ID
-      SELECT FROM /dmo/travel FIELDS MAX(  travel_id ) INTO @DATA(max_travel_id).
-      travel->TravelId = max_travel_id + 1.
-
-    ENDLOOP.
-
-    " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
-           UPDATE FIELDS ( TravelId )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky     = travel->%tky
-                           TravelId = travel->TravelId ) ).
-  ENDMETHOD.
-
-//highlight-start
-  METHOD cancel_travel.
-    DATA message TYPE REF TO zcm_travel.
-
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         ALL FIELDS
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
-
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-
-      " Validate Status and Create Error Message
-      IF travel->Status = 'X'.
-        message = NEW zcm_travel( textid = zcm_travel=>travel_already_cancelled
-                                  travel = travel->Description ).
-        APPEND VALUE #( %tky     = travel->%tky
-                        %element = VALUE #( Status = if_abap_behv=>mk-on )
-                        %msg     = message ) TO reported-travel.
-        APPEND VALUE #( %tky = travel->%tky ) TO failed-travel.
-        CONTINUE.
-      ENDIF.
-
-      " Set Status to Cancelled and Create Success Message
-      travel->Status = 'X'.
-      message = NEW zcm_travel( severity = if_abap_behv_message=>severity-success
-                                textid   = zcm_travel=>travel_cancelled_successfully
-                                travel   = travel->Description ).
-      APPEND VALUE #( %tky     = travel->%tky
-                      %element = VALUE #( Status = if_abap_behv=>mk-on )
-                      %msg     = message ) TO reported-travel.
-    ENDLOOP.
-
-    " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
-           UPDATE FIELDS ( Status )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky = t-%tky Status = t-Status ) ).
-
-    " Set Result
-    result = VALUE #( FOR t IN travels
-                      ( %tky   = t-%tky
-                        %param = t ) ).
-  ENDMETHOD.
 //highlight-end
 ENDCLASS.
-```
-
-## Behavior Projection ZC_TRAVEL
-
-```sql showLineNumbers
-projection;
-strict ( 2 );
-
-define behavior for ZC_Travel alias Travel
-{
-  use create;
-  use update;
-  use delete;
-
-  use association _Bookings { create; }
-
-  use action show_test_message as ShowTestMessage;
-//highlight-start
-  use action cancel_travel as CancelTravel;
-//highlight-end
-}
-
-define behavior for ZC_Booking alias Booking
-{
-  use update;
-  use delete;
-
-  use association _Travel;
-}
-```
-
-## Metadata Extension ZC_TRAVEL
-
-```sql showLineNumbers
-@Metadata.layer: #CUSTOMER
-@UI.headerInfo:
-{
-  typeNamePlural: 'Travels',
-  typeName: 'Travel',
-  title.value: 'TravelId',
-  description.value: 'Description'
-}
-@UI.presentationVariant: [{sortOrder: [{ by: 'BeginDate', direction: #DESC }]}]
-annotate view ZC_Travel with
-{
-
-  /* Facets */
-  @UI.facet:
-  [
-    { position: 10, targetQualifier: 'TravelDetails', label: 'Travel Details', type: #FIELDGROUP_REFERENCE },
-    { position: 20, targetQualifier: 'AdminData', label: 'Administrative Data', type: #FIELDGROUP_REFERENCE },
-    { position: 30, targetElement: '_Bookings', label: 'Bookings', type: #LINEITEM_REFERENCE }
-  ]
-
-  /* Actions */
-  @UI.lineItem:
-  [
-    { position: 10, dataAction: 'ShowTestMessage', label: 'Show Test Message', type: #FOR_ACTION },
-//highlight-start
-    { position: 20, dataAction: 'CancelTravel', label: 'Cancel Travel', type: #FOR_ACTION }
-//highlight-end
-  ]
-
-
-  /* Fields */
-  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
-  TravelUuid;
-
-  @UI.lineItem: [{ position: 10 }]
-  @UI.fieldGroup: [{ position: 10, qualifier: 'TravelDetails' }]
-  TravelId;
-
-  @UI.lineItem: [{ position: 20 }]
-  @UI.selectionField: [{ position: 10 }]
-  @UI.fieldGroup: [{ position: 20, qualifier: 'TravelDetails' }]
-  AgencyId;
-
-  @UI.lineItem: [{ position: 30 }]
-  @UI.selectionField: [{ position: 20 }]
-  @UI.fieldGroup: [{ position: 30, qualifier: 'TravelDetails' }]
-  CustomerId;
-
-  @UI.lineItem: [{ position: 40 }]
-  @UI.selectionField: [{ position: 30 }]
-  @UI.fieldGroup: [{ position: 40, qualifier: 'TravelDetails' }]
-  BeginDate;
-
-  @UI.lineItem: [{ position: 50 }]
-  @UI.selectionField: [{ position: 40 }]
-  @UI.fieldGroup: [{ position: 50, qualifier: 'TravelDetails' }]
-  EndDate;
-
-  @UI.fieldGroup: [{ position: 60, qualifier: 'TravelDetails' }]
-  BookingFee;
-
-  @UI.lineItem: [{ position: 60 }]
-  @UI.selectionField: [{ position: 50 }]
-  @UI.fieldGroup: [{ position: 70, qualifier: 'TravelDetails' }]
-  TotalPrice;
-
-  //  CurrencyCode;
-
-  @UI.lineItem: [{ position: 70, criticality: 'BeginDateCriticality', criticalityRepresentation: #WITHOUT_ICON }]
-  @UI.fieldGroup: [{ position: 80, qualifier: 'TravelDetails' }]
-  Description;
-
-  @UI.lineItem: [{ position: 80, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
-  @UI.selectionField: [{ position: 60 }]
-  @UI.fieldGroup: [{ position: 90, qualifier: 'TravelDetails', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
-  Status;
-
-  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
-  Createdby;
-
-  @UI.fieldGroup: [{ position: 30, qualifier: 'AdminData' }]
-  Createdat;
-
-  @UI.fieldGroup: [{ position: 40, qualifier: 'AdminData' }]
-  Lastchangedby;
-
-  @UI.fieldGroup: [{ position: 50, qualifier: 'AdminData' }]
-  Lastchangedat;
-
-}
 ```

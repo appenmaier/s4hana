@@ -1,0 +1,345 @@
+---
+title: 14. Ermittlungen implementieren
+description: ""
+sidebar_position: 140
+---
+
+- BO Base View für Reisen um Annotationen zur Ermittlung administrativer Daten erweitern
+- Behavior Definition für Reisen um statische Feldkontrollen und Ermittlungen erweitern
+- Die Verhaltensimplementierung für Reisen um Behandlermethoden zu Ermittlungen erweitern
+
+## BO Base View ZR_Travel
+
+```sql showLineNumbers
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Travel'
+define root view entity ZR_Travel
+  as select from z_travel_a
+  composition [0..*] of ZR_Booking      as _Bookings
+  association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
+{
+  key travel_uuid        as TravelUuid,
+      travel_id          as TravelId,
+      agency_id          as AgencyId,
+      @ObjectModel.text.element: ['CustomerName']
+      customer_id        as CustomerId,
+      begin_date         as BeginDate,
+      end_date           as EndDate,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      booking_fee        as BookingFee,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      total_price        as TotalPrice,
+      currency_code      as CurrencyCode,
+      description        as Description,
+      status             as Status,
+
+      /* Administrative Data */
+//highlight-start
+      @Semantics.user.createdBy: true
+//highlight-end
+      created_by         as CreatedBy,
+//highlight-start
+      @Semantics.systemDateTime.createdAt: true
+//highlight-end
+      created_at         as CreatedAt,
+//highlight-start
+      @Semantics.user.lastChangedBy: true
+//highlight-end
+      last_changed_by    as LastChangedBy,
+//highlight-start
+      @Semantics.systemDateTime.lastChangedAt: true
+//highlight-end
+      last_changed_at    as LastChangedAt,
+
+      /* Transient Data */
+      _CustomerText.Name as CustomerName,
+      case when dats_days_between($session.user_date, begin_date) >= 14 then 3
+           when dats_days_between($session.user_date, begin_date) >= 7 then 2
+           when dats_days_between($session.user_date, begin_date) >= 0 then 1
+           else 0
+      end                as BeginDateCriticality,
+      case status when 'B' then 3
+                  when 'N' then 0
+                  when 'X' then 1
+                  else 0
+      end                as StatusCriticality,
+
+      /* Associations */
+      _Bookings
+}
+```
+
+## Behavior Definition ZR_TRAVEL
+
+```sql showLineNumbers
+managed implementation in class zbp_travel unique;
+strict ( 2 );
+
+define behavior for ZR_Travel alias Travel
+persistent table z_travel_a
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _Bookings { create; }
+
+  static action show_test_message;
+
+  validation validate_dates on save { create; }
+  validation validate_customer on save { create; }
+  validation validate_agency on save { create; }
+
+//highlight-start
+  determination determine_status on modify { create; }
+  determination determine_travel_id on modify { create; }
+//highlight-end
+
+  field ( readonly, numbering : managed ) TravelUuid;
+  field ( mandatory : create ) AgencyId, BeginDate, CustomerId, Description, EndDate;
+  field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
+//highlight-start
+  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Status, TravelId;
+//highlight-end
+
+  mapping for z_travel_a corresponding
+  {
+    AgencyId = agency_id;
+    BeginDate = begin_date;
+    BookingFee = booking_fee;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    CurrencyCode = currency_code;
+    CustomerId = customer_id;
+    Description = description;
+    EndDate = end_date;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    Status = status;
+    TotalPrice = total_price;
+    TravelId = travel_id;
+    TravelUuid = travel_uuid;
+  }
+}
+
+define behavior for ZR_Booking alias Booking
+persistent table z_booking_a
+lock dependent by _Travel
+authorization dependent by _Travel
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) TravelUuid;
+  association _Travel;
+
+  field ( readonly, numbering : managed ) BookingUuid;
+
+  mapping for z_booking_a corresponding
+  {
+    BookingDate = booking_Date;
+    BookingId = booking_id;
+    BookingUuid = booking_uuid;
+    CarrierId = carrier_id;
+    ConnectionId = connection_id;
+    CurrencyCode = currency_code;
+    FlightDate = flight_date;
+    FlightPrice = flight_price;
+    TravelUuid = Travel_uuid;
+  }
+}
+```
+
+## Verhaltensimplementierung ZBP_TRAVEL
+
+### Global Class ZBP_TRAVEL
+
+```abap title="ZBP_TRAVEL.abap" showLineNumbers
+CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
+  PROTECTED SECTION.
+
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zbp_travel IMPLEMENTATION.
+ENDCLASS.
+```
+
+### Local Type LHC_TRAVEL
+
+```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+      IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
+
+    METHODS show_message FOR MODIFY
+      IMPORTING keys FOR ACTION travel~show_message.
+
+    METHODS cancel_travel FOR MODIFY
+      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+
+    METHODS maintain_booking_fee FOR MODIFY
+      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
+
+    METHODS validate_agency FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validate_agency.
+
+    METHODS validate_customer FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validate_customer.
+
+    METHODS validate_dates FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validate_dates.
+
+//highlight-start
+    METHODS determine_status FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR travel~determine_status.
+
+    METHODS determine_travel_id FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR travel~determine_travel_id.
+//highlight-end
+ENDCLASS.
+
+CLASS lhc_travel IMPLEMENTATION.
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
+
+  METHOD show_test_message.
+    DATA message TYPE REF TO zcm_travel.
+
+    message = NEW zcm_travel( severity  = if_abap_behv_message=>severity-success
+                              textid    = zcm_travel=>test_message
+                              user_name = sy-uname ).
+
+    APPEND message TO reported-%other.
+  ENDMETHOD.
+
+  METHOD validate_agency.
+    DATA message TYPE REF TO zcm_travel.
+
+    " Read Travels
+    READ ENTITY IN LOCAL MODE ZR_Travel
+         FIELDS ( AgencyId )
+         WITH CORRESPONDING #( keys )
+         RESULT DATA(travels).
+
+    " Process Travels
+    LOOP AT travels INTO DATA(travel).
+
+      " Validate Agency and Create Error Message
+      SELECT SINGLE FROM /dmo/agency FIELDS @abap_true WHERE agency_id = @travel-AgencyId INTO @DATA(exists).
+      IF exists = abap_false.
+        message = NEW zcm_travel( textid    = zcm_travel=>no_agency_found
+                                  agency_id = travel-AgencyId ).
+        APPEND VALUE #( %tky     = travel-%tky
+                        %element = VALUE #( AgencyId = if_abap_behv=>mk-on )
+                        %msg     = message ) TO reported-travel.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+        CONTINUE.
+      ENDIF.
+    ENDLOOP.
+  ENDMETHOD.
+
+  METHOD validate_customer.
+    DATA message TYPE REF TO zcm_travel.
+
+    " Read Travels
+    READ ENTITY IN LOCAL MODE ZR_Travel
+         FIELDS ( CustomerId )
+         WITH CORRESPONDING #( keys )
+         RESULT DATA(travels).
+
+    " Process Travels
+    LOOP AT travels INTO DATA(travel).
+
+      " Validate Agency and Create Error Message
+      SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
+      IF exists = abap_false.
+        message = NEW zcm_travel( textid      = zcm_travel=>no_customer_found
+                                  customer_id = travel-CustomerId ).
+        APPEND VALUE #( %tky     = travel-%tky
+                        %element = VALUE #( CustomerId = if_abap_behv=>mk-on )
+                        %msg     = message ) TO reported-travel.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+        CONTINUE.
+      ENDIF.
+    ENDLOOP.
+  ENDMETHOD.
+
+  METHOD validate_dates.
+    DATA message TYPE REF TO zcm_travel.
+
+    " Read Travels
+    READ ENTITY IN LOCAL MODE ZR_Travel
+         FIELDS ( BeginDate EndDate )
+         WITH CORRESPONDING #( keys )
+         RESULT DATA(travels).
+
+    " Process Travels
+    LOOP AT travels INTO DATA(travel).
+
+      " Validate Dates and Create Error Message
+      IF travel-EndDate < travel-BeginDate.
+        message = NEW zcm_travel( textid = zcm_travel=>invalid_dates ).
+        APPEND VALUE #( %tky = travel-%tky
+                        %msg = message ) TO reported-travel.
+        APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
+        CONTINUE.
+      ENDIF.
+    ENDLOOP.
+  ENDMETHOD.
+
+//highlight-start
+  METHOD determine_status.
+    " Read Travels
+    READ ENTITY IN LOCAL MODE ZR_Travel
+         FIELDS ( Status )
+         WITH CORRESPONDING #( keys )
+         RESULT DATA(travels).
+
+    " Process Travels
+    LOOP AT travels REFERENCE INTO DATA(travel).
+
+      " Set Status
+      travel->Status = 'N'.
+
+    ENDLOOP.
+
+    " Modify Travels
+    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+           UPDATE FIELDS ( Status )
+           WITH VALUE #( FOR t IN travels
+                         ( %tky   = travel->%tky
+                           Status = travel->Status ) ).
+  ENDMETHOD.
+//highlight-end
+
+//highlight-start
+  METHOD determine_travel_id.
+    " Read Travels
+    READ ENTITY IN LOCAL MODE ZR_Travel
+         FIELDS ( TravelId )
+         WITH CORRESPONDING #( keys )
+         RESULT DATA(travels).
+
+    " Process Travels
+    LOOP AT travels REFERENCE INTO DATA(travel).
+
+      " Set Travel ID
+      SELECT FROM /dmo/travel FIELDS MAX(  travel_id ) INTO @DATA(max_travel_id).
+      travel->TravelId = max_travel_id + 1.
+
+    ENDLOOP.
+
+    " Modify Travels
+    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+           UPDATE FIELDS ( TravelId )
+           WITH VALUE #( FOR t IN travels
+                         ( %tky     = travel->%tky
+                           TravelId = travel->TravelId ) ).
+  ENDMETHOD.
+//highlight-end
+ENDCLASS.
+```

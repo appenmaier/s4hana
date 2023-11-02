@@ -86,10 +86,11 @@ authorization dependent by _Travel
 //highlight-start
 CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
   PROTECTED SECTION.
+
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zbp__travel IMPLEMENTATION.
+CLASS zbp_travel IMPLEMENTATION.
 ENDCLASS.
 //highlight-end
 ```
@@ -105,10 +106,8 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
 ENDCLASS.
 
 CLASS lhc_travel IMPLEMENTATION.
-
   METHOD get_instance_authorizations.
   ENDMETHOD.
-
 ENDCLASS.
 //highlight-end
 ```

@@ -67,7 +67,7 @@ define root view entity ZC_Travel
   key TravelUuid,
       TravelId,
 //highlight-start
-      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Agency_StdVH', element: 'AgencyId' } }]
+      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Agency_StdVH', element: 'AgencyID' } }]
 //highlight-end
       AgencyId,
 //highlight-start

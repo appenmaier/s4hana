@@ -47,8 +47,6 @@ define table z_travel_a {
 CLASS zcl_travel_generator DEFINITION PUBLIC FINAL CREATE PUBLIC.
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
-  PROTECTED SECTION.
-  PRIVATE SECTION.
 ENDCLASS.
 
 CLASS zcl_travel_generator IMPLEMENTATION.
@@ -127,7 +125,6 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     INSERT zda2310_travel_a FROM TABLE @travels.
     out->write( |Inserted Travels: { sy-dbcnt }| ).
   ENDMETHOD.
-
 ENDCLASS.
 //highlight-end
 ```
