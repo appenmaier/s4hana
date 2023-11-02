@@ -4,7 +4,10 @@ description: ""
 sidebar_position: 80
 ---
 
-Um eine Wertehilfe zu implementieren muss zunächst eine Interface View erstellt werden. Diese wird anschließend dem entsprechenden Feld der Projection View zugewiesen.
+- Interface View für Kunden erstellen
+- Interface View für Status erstellen
+- BO Projection View für Reisen um Annotationen für Wertehilfen erweitern
+- BO Projection View für Buchungen um Annotationen für Wertehilfen erweitern
 
 ## Interface View ZI_CustomerVH
 
@@ -50,7 +53,7 @@ define view entity ZI_StatusVH
 //highlight-end
 ```
 
-## Projection View ZC_Travel
+## BO Projection View ZC_Travel
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -98,7 +101,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## Projection View ZC_Booking
+## BO Projection View ZC_Booking
 
 ```sql showLineNumbers
 @EndUserText.label: 'Booking'

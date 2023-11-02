@@ -4,8 +4,8 @@ description: ""
 sidebar_position: 120
 ---
 
-:::danger TODO
-:::
+- Message Class für Reisen erstellen
+- Nachrichtenklasse für Reisen erstellen
 
 ## Message Class Z_TRAVEL
 
@@ -15,7 +15,7 @@ sidebar_position: 120
 | 001               | Travel &1 is already cancelled       |
 | 002               | Travel &1 was successfully cancelled |
 
-## ABAP Class ZCM_TRAVEL
+## Nachrichtenklasse ZCM_TRAVEL
 
 ```abap title="ZCM_TRAVEL.abap" showLineNumbers
 //highlight-start

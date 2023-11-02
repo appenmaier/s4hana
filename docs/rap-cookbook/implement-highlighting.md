@@ -4,10 +4,11 @@ description: ""
 sidebar_position: 100
 ---
 
-:::danger TODO
-:::
+- BO Base View für Reisen um transiente Felder zur Darstellung der Wichtigkeit erweitern
+- BO Projection View für Reisen um transiente Felder zur Darstellung der Wichtigkeit erweitern
+- Metadata Extension für Reisen um Eigenschaften zur Darstellung der Wichtigkeit erweitern
 
-## Restricted Interface View ZR_Travel
+## BO Base View ZR_Travel
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -58,7 +59,7 @@ define root view entity ZR_Travel
 }
 ```
 
-## Projection View ZC_Travel
+## BO Projection View ZC_Travel
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'

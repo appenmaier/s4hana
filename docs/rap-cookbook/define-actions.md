@@ -4,18 +4,25 @@ description: ""
 sidebar_position: 130
 ---
 
-:::danger TODO
-:::
+- Abstract View für Buchungsgebühren erstellen
+- Behavior Definition für Reisen um Aktionen erweitern
+- Die Verhaltensimplementierung für Reisen um Behandlermethoden erweitern
+- Behavior Projection für Reisen um Aktionen erweitern
+- Metadata Extension für Reisen um Annotationen für Aktionen erweitern
 
 ## Abstract View ZA_BookingFee
 
 ```sql showLineNumbers
-@EndUserText.label: 'BookingFee'
+//highlight-start
+@EndUserText.label: 'Booking Fee'
 define abstract entity ZA_BookingFee
 {
+  @Semantics.amount.currencyCode: 'CurrencyCode'
   BookingFee   : /dmo/booking_fee;
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH', element: 'Currency' } }]
   CurrencyCode : /dmo/currency_code;
 }
+//highlight-end
 ```
 
 ## Behavior Definition ZR_TRAVEL
@@ -37,8 +44,8 @@ authorization master ( instance )
 
 //highlight-start
   static action show_test_message;
-  action cancel_travel;
-  action maintain_booking_fee parameter ZA_BookingFee;
+  action cancel_travel result [1] $self;
+  action maintain_booking_fee parameter ZA_BookingFee result [1] $self;
 //highlight-end
 
   field ( readonly, numbering : managed ) TravelUuid;
@@ -91,6 +98,56 @@ authorization dependent by _Travel
 }
 ```
 
+## Verhaltensimplementierung ZBP_TRAVEL
+
+### Global Class ZBP_TRAVEL
+
+```abap title="ZBP_TRAVEL.abap" showLineNumbers
+CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zbp__travel IMPLEMENTATION.
+ENDCLASS.
+```
+
+### Local Type LHC_TRAVEL
+
+```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+      IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
+//highlight-start
+    METHODS show_test_message FOR MODIFY
+      IMPORTING keys FOR ACTION travel~show_message.
+    METHODS cancel_travel FOR MODIFY
+      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+    METHODS maintain_booking_fee FOR MODIFY
+      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
+//highlight-end
+ENDCLASS.
+
+CLASS lhc_travel IMPLEMENTATION.
+
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
+
+//highlight-start
+  METHOD show_test_message.
+  ENDMETHOD.
+
+  METHOD cancel_travel.
+  ENDMETHOD.
+
+  METHOD maintain_booking_fee.
+  ENDMETHOD.
+//highlight-end
+
+ENDCLASS.
+```
+
 ## Behavior Projection ZC_TRAVEL
 
 ```sql showLineNumbers
@@ -106,9 +163,9 @@ define behavior for ZC_Travel alias Travel
   use association _Bookings { create; }
 
 //highlight-start
-  use action show_test_message;
-  use action cancel_travel;
-  use action maintain_booking_fee;
+  use action show_test_message as ShowTestMessage;
+  use action cancel_travel as CancelTravel;
+  use action maintain_booking_fee as MaintainBookingFee;
 //highlight-end
 }
 
@@ -148,12 +205,12 @@ annotate view ZC_Travel with
   /* Actions */
   @UI.lineItem:
   [
-    { position: 10, dataAction: 'SHOW_TEST_MESSAGE', label: 'Show Test Message', type: #FOR_ACTION },
-    { position: 20, dataAction: 'CANCEL_TRAVEL', label: 'Cancel Travel', type: #FOR_ACTION }
+    { position: 10, dataAction: 'ShowTestMessage', label: 'Show Test Message', type: #FOR_ACTION },
+    { position: 20, dataAction: 'CancelTravel', label: 'Cancel Travel', type: #FOR_ACTION }
   ]
   @UI.identification:
   [
-    { position: 10, dataAction: 'MAINTAIN_BOOKING_FEE', label: 'Maintain Booking Fee', type: #FOR_ACTION }
+    { position: 10, dataAction: 'MaintainBookingFee', label: 'Maintain Booking Fee', type: #FOR_ACTION }
   ]
 //highlight-end
 

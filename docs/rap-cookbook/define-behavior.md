@@ -4,7 +4,10 @@ description: ""
 sidebar_position: 70
 ---
 
-Um das (transaktionale) Verhalten des RAP BOs festzulegen, wird einen Behavior Definition für die Restricted Interface View der Reisedaten erstellt. In dieser wird festgelegt, welche CUD-Methoden unterstützt werden sollen. Anschließend wird darauf aufbauend eine Behavior Projection für die Projection View der Reisen erstellt. In dieser wird festgelegt, welches Verhalten der Business Service bereitstellen soll.
+- Behavior Definition für die Base BO View für Reisen erstellen
+- Eine Verhaltensimplementierung für Reisen generieren lassen
+- BO Projection View für Reisen um Angaben zum Provider Contract erweitern
+- Behavior Projection für die BO Projection View für Reisen erstellen
 
 ## Behavior Definition ZR_TRAVEL
 
@@ -75,7 +78,42 @@ authorization dependent by _Travel
 //highlight-end
 ```
 
-## Projection View ZC_Travel
+## Verhaltensimplementierung ZBP_TRAVEL
+
+### Global Class ZBP_TRAVEL
+
+```abap title="ZBP_TRAVEL.abap" showLineNumbers
+//highlight-start
+CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zbp__travel IMPLEMENTATION.
+ENDCLASS.
+//highlight-end
+```
+
+### Local Type LHC_TRAVEL
+
+```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+//highlight-start
+CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+      IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
+ENDCLASS.
+
+CLASS lhc_travel IMPLEMENTATION.
+
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
+
+ENDCLASS.
+//highlight-end
+```
+
+## BO Projection View ZC_Travel
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'

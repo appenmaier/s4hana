@@ -5,7 +5,44 @@ sidebar_position: 30
 tags: []
 ---
 
-Um die Oberfläche für Reisen festzulegen, wird zunächst eine Metadata Extension erstellt, die sämtliche UI-Annotationen beinhaltet. Anschließend wird die Projection View für Reisen um Such-Annotationen erweitert.
+- BO Projection View um Annotationen für Suchen und Metadata Extensions erweitern
+- Metadata Extension für die BO Projection View für Reisen erstellen
+
+## BO Projection View ZC_Travel
+
+```sql showLineNumbers
+@EndUserText.label: 'Travel'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+//highlight-start
+@Search.searchable: true
+@Metadata.allowExtensions: true
+//highlight-end
+define root view entity ZC_Travel
+  as projection on ZR_Travel
+{
+  key TravelUuid,
+      TravelId,
+      AgencyId,
+      CustomerId,
+      BeginDate,
+      EndDate,
+      BookingFee,
+      TotalPrice,
+      CurrencyCode,
+//highlight-start
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
+//highlight-end
+      Description,
+      Status,
+
+      /* Administrative Data */
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt
+}
+```
 
 ## Metadata Extension ZC_TRAVEL
 
@@ -90,40 +127,4 @@ annotate view ZC_Travel with
 
 }
 //highlight-end
-```
-
-## Projection View ZC_Travel
-
-```sql showLineNumbers
-@EndUserText.label: 'Travel'
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-//highlight-start
-@Search.searchable: true
-@Metadata.allowExtensions: true
-//highlight-end
-define root view entity ZC_Travel
-  as projection on ZR_Travel
-{
-  key TravelUuid,
-      TravelId,
-      AgencyId,
-      CustomerId,
-      BeginDate,
-      EndDate,
-      BookingFee,
-      TotalPrice,
-      CurrencyCode,
-//highlight-start
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.7
-//highlight-end
-      Description,
-      Status,
-
-      /* Administrative Data */
-      CreatedBy,
-      CreatedAt,
-      LastChangedBy,
-      LastChangedAt
-}
 ```

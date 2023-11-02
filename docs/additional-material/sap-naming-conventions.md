@@ -17,7 +17,7 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 | Typ                       | Bezeichner                                      | Beispiel                |
 | ------------------------- | ----------------------------------------------- | ----------------------- |
-| Klasse                    | <Namensraum\>CL\_<Komponente\>\_<Beschreibung\> | `ZCL_ABAP_FLIGHT`       |
+| ABAP-Klasse               | <Namensraum\>CL\_<Komponente\>\_<Beschreibung\> | `ZCL_ABAP_FLIGHT`       |
 | Ausnahmenklasse           | <Namensraum\>CX\_<Komponente\>\_<Beschreibung\> | `ZCX_ABAP_INVALID_TYPE` |
 | Nachrichtenklasse         | <Namensraum\>CM\_<Komponente\>\_<Beschreibung\> | `ZCM_ABAP_FLIGHT`       |
 | Verhaltensimplementierung | <Namensraum\>BP\_<Komponente\>\_<Beschreibung\> | `ZBP_ABAP_FLIGHT`       |
@@ -26,20 +26,20 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 ### Core Data Services
 
-| Typ                       | Bezeichner                                       | Beispiel                       |
-| ------------------------- | ------------------------------------------------ | ------------------------------ |
-| Basic Interface View      | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
-| Restricted Interface View | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>   | `ZR_ABAP_Flight`               |
-| Composite Interface View  | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_FlightWithConnection` |
-| Consumption View          | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
-| Projection View           | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
-| Wertehilfe                | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>VH | `ZC_ABAP_AirportVH`            |
-| Abstract View             | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>   | `ZA_ABAP_Flight`               |
-| Extension View            | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>   | `ZE_ABAP_Flight`               |
-| Access Control            | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
-| Metadata Extension        | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
-| Behavior Definition       | <Name der CDS-View\>                             | `ZR_ABAP_FLIGHT`               |
-| Behavior Projection       | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
+| Typ                      | Bezeichner                                       | Beispiel                       |
+| ------------------------ | ------------------------------------------------ | ------------------------------ |
+| Basic Interface View     | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
+| BO Base View             | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>   | `ZR_ABAP_Flight`               |
+| Composite Interface View | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_FlightWithConnection` |
+| Consumption View         | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
+| BO Projection View       | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
+| Wertehilfe               | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>VH | `ZC_ABAP_AirportVH`            |
+| Abstract View            | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>   | `ZA_ABAP_Flight`               |
+| Extension View           | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>   | `ZE_ABAP_Flight`               |
+| Access Control           | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
+| Metadata Extension       | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
+| BO Behavior Definition   | <Name der CDS-View\>                             | `ZR_ABAP_FLIGHT`               |
+| BO Behavior Projection   | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
 
 ### Dictionary
 
@@ -58,8 +58,8 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | ------------------ | --------------------------------------------------------------- | -------------------- |
 | Paket              | <Namensraum\><Beschreibung\>                                    | `ZABAP`              |
 | Message Class      | <Namensraum\><Komponente\>\_<Beschreibung\>                     | `ZABAP_FLIGHT`       |
-| Service Definition | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>\_<Version\> | `ZUI_ABAP_FLIGHT_V4` |
-| Service Binding    | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>\_<Version\> | `ZUI_ABAP_FLIGHT_V4` |
+| Service Definition | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>             | `ZUI_ABAP_FLIGHT`    |
+| Service Binding    | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>\_<Version\> | `ZUI_ABAP_FLIGHT_04` |
 
 ## Namensräume
 

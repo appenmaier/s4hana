@@ -5,7 +5,35 @@ sidebar_position: 60
 tags: []
 ---
 
-Um die Oberfläche für Buchungsdaten festzulegen, muss zunächst eine Metadata Extension für die Buchungsdaten erstellt werden. Anschließend wird die Metadata Extension für Reisen um eine weitere Facet erweitert.
+- BO Projection View für Buchungen um Metadata-Annotation erweitern
+- Metadata Extension für die BO Projection View für Buchungen erstellen
+- Metadata Extension für die BO Projection View für Reisen um Annotationen zur Darstellung von Buchungen erweitern
+
+## BO Projection View ZC_Booking
+
+```sql showLineNumbers
+@EndUserText.label: 'Booking'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+//highlight-start
+@Metadata.allowExtensions: true
+//highlight-end
+define view entity ZC_Booking
+  as projection on ZR_Booking
+{
+  key BookingUuid,
+      TravelUuid,
+      BookingId,
+      BookingDate,
+      CarrierId,
+      ConnectionId,
+      FlightDate,
+      FlightPrice,
+      CurrencyCode,
+
+      /* Associations */
+      _Travel : redirected to parent ZC_Travel
+}
+```
 
 ## Metadata Extension ZC_BOOKING
 
@@ -64,32 +92,6 @@ annotate view ZC_Booking with
 
 }
 //highlight-end
-```
-
-## Projection View ZC_Booking
-
-```sql showLineNumbers
-@EndUserText.label: 'Booking'
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-//highlight-start
-@Metadata.allowExtensions: true
-//highlight-end
-define view entity ZC_Booking
-  as projection on ZR_Booking
-{
-  key BookingUuid,
-      TravelUuid,
-      BookingId,
-      BookingDate,
-      CarrierId,
-      ConnectionId,
-      FlightDate,
-      FlightPrice,
-      CurrencyCode,
-
-      /* Associations */
-      _Travel : redirected to parent ZC_Travel
-}
 ```
 
 ## Metadata Extension ZC_TRAVEL

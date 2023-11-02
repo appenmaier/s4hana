@@ -4,8 +4,7 @@ description: ""
 sidebar_position: 110
 ---
 
-:::danger TODO
-:::
+Metadata Extension für Reisen um Annotationen zur Sortierung von Reisen erweitern.
 
 ## Metadata Extension ZC_TRAVEL
 

@@ -4,8 +4,9 @@ description: ""
 sidebar_position: 90
 ---
 
-:::danger TODO
-:::
+- Interface View für Kundentexte erstellen
+- BO Base View für Reisen um transientes Feld für Kundentexte und ObjectModel-Annotation erweitern
+- BO Projection View für Reisen um transientes Feld für Kundentexte erweitern
 
 ## Interface View ZI_CustomerText
 
@@ -27,7 +28,7 @@ as select from /dmo/customer
 //highlight-end
 ```
 
-## Restricted Interface View ZR_Travel
+## BO Base View ZR_Travel
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -72,7 +73,7 @@ define root view entity ZR_Travel
 }
 ```
 
-## Projection View ZC_Travel
+## BO Projection View ZC_Travel
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'

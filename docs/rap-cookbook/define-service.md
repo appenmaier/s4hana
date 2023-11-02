@@ -4,9 +4,11 @@ description: ""
 sidebar_position: 20
 ---
 
-Für den Business Service muss zunächst eine Projection View auf Grundlage des RAP BOs erstellt werden. Anschließend wird darauf aufbauend eine Service Definition erstellt, die den Umfang des Business Services festlegt. Zuletzt wird mit Hilfe dieser Service Definition ein Service Binding erstellt, die das Kommunikationsprotokoll (OData v2) sowie die Art des Services (UI) festlegt.
+- BO Projection View für die Base BO View für Reisen erstellen
+- Service Definition für BO Projection View für Reisen erstellen
+- Service Binding für die Service Definition erstellen
 
-## Projection View ZC_Travel
+## BO Projection View ZC_Travel
 
 ```sql showLineNumbers
 //highlight-start
@@ -36,17 +38,18 @@ define root view entity ZC_Travel
 //highlight-end
 ```
 
-## Service Definition ZUI_TRAVEL_V2
+## Service Definition ZUI_TRAVEL
 
 ```sql showLineNumbers
 //highlight-start
 @EndUserText.label: 'Travel'
-define service ZUI_TRAVEL_V2 {
+define service ZUI_TRAVEL {
   expose ZC_Travel as Travel;
 }
 //highlight-end
 ```
 
-## Service Binding ZUI_TRAVEL_V2
+## Service Binding ZUI_TRAVEL_02
 
-Binding Type: OData V2 - UI
+- Service Definition: ZUI_TRAVEL
+- Binding Type: OData V2 - UI

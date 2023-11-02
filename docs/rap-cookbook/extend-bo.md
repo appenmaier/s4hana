@@ -1,12 +1,14 @@
 ---
-title: 4. RAP BO erweitern
+title: 4. BO erweitern
 description: ""
 sidebar_position: 40
 ---
 
-Um das RAP BO um Buchungen zu erweitern, muss zunächst eine entsprechende Datenbanktabelle für Buchungen erstellt werden. Anschließend wird darauf aufbauend eine dazugehörige Restricted Interface View inklusive einer Assoziation zu den Reisen erstellt. Zuletzt wird die Restricted Interface View für Reisen um eine Assoziation zu den Buchungen erweitert.
+- Datenbanktabelle für Buchungen erstellen
+- BO Base View für Buchungen inklusive einer Assoziation zur Base BO View für Reisen erstellen
+- BO Base View für Reisen um eine Assoziation zur Base BO View für Buchungen erweitern
 
-## Database Table Z_BOOKING_A
+## Datenbanktabelle Z_BOOKING_A
 
 ```sql showLineNumbers
 //highlight-start
@@ -31,7 +33,7 @@ define table z_booking_a {
 }
 ```
 
-## Restricted Interface View ZR_Booking
+## BO Base View ZR_Booking
 
 ```sql showLineNumbers
 //highlight-start
@@ -58,7 +60,7 @@ define view entity ZR_Booking
 //highlight-end
 ```
 
-## Restricted Interface View ZR_Travel
+## BO Base View ZR_Travel
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED

@@ -20,4 +20,5 @@ description: ""
 - Mit Hilfe des Services sollen Filme erstellt werden können
 - Mit Hilfe des Services sollen Filme geändert werden können
 - Mit Hilfe des Services sollen Filme gelöscht werden können
+- Mit Hilfe des Services sollen Bewertungen erstellt werden können
 - Mit Hilfe des Services sollen Bewertungen gelöscht werden können

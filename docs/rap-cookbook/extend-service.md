@@ -4,9 +4,11 @@ description: ""
 sidebar_position: 50
 ---
 
-Um den Business Service um Buchungen zu erweitern, muss zunächst eine Projection View für Buchungen erstellt werden. Anschließend muss die Projection View für Reisen um einen Assoziation zu den Buchungen erweitert werden. Zuletzt muss die Service Definition um die Projection View für Buchungen erweitert werden.
+- BO Projection View für Buchungen inklusive einer Assoziation zur BO Projection View für Reisen erstellen
+- BO Projection View für Reisen um eine Assoziation zur BO Projection View für Buchungen erweitern
+- Service Definition um die BO Projection View für Buchungen erweitern
 
-## Projection View ZC_Booking
+## BO Projection View ZC_Booking
 
 ```sql showLineNumbers
 //highlight-start
@@ -32,7 +34,7 @@ define view entity ZC_Booking
 //highlight-end
 ```
 
-## Projection View ZC_Travel
+## BO Projection View ZC_Travel
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -69,11 +71,11 @@ define root view entity ZC_Travel
 }
 ```
 
-## Service Definition ZUI_TRAVEL_V2
+## Service Definition ZUI_TRAVEL
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
-define service ZUI_TRAVEL_V2 {
+define service ZUI_TRAVEL {
   expose ZC_Travel as Travel;
 //highlight-start
   expose ZC_Booking as Booking;

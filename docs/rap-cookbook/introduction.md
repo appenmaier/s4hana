@@ -27,8 +27,8 @@ flowchart
     zcmtravel -.-> ztravel
 
     subgraph Dictionary
-        ztravela[(Z_TRAVEL_A)]
-        zbookinga[(Z_BOOKING_A)]
+        ztravela[(Datenbanktabelle\nZ_TRAVEL_A)]
+        zbookinga[(Datenbanktabelle\nZ_BOOKING_A)]
     end
 
     subgraph Messages
@@ -36,11 +36,11 @@ flowchart
     end
 
     subgraph Core&#160Data&#160Services
-        zrtravel(Restricted Interface View\nZR_Travel)
-        zrbooking(Restricted Interface View\nZR_Booking)
+        zrtravel(BO Base View\nZR_Travel)
+        zrbooking(BO Base View\nZR_Booking)
 
-        zctravel(Projection View\nZC_Travel)
-        zcbooking(Projection View\nZC_Booking)
+        zctravel(BO Projection View\nZC_Travel)
+        zcbooking(BO Projection View\nZC_Booking)
 
         zrtravelBD(Behavior Definition\nZR_TRAVEL)
         zctravelBP(Behavior Projection\nZC_TRAVEL)
@@ -53,13 +53,13 @@ flowchart
     end
 
     subgraph Business&#160Services
-        zuitravel(Service Definition\nZUI_TRAVEL_V2)
-        zuitravelv2(Service Binding\nZUI_TRAVEL_V2)
+        zuitravel(Service Definition\nZUI_TRAVEL)
+        zuitravelv2(Service Binding\nZUI_TRAVEL_02)
     end
 
     subgraph Source&#160Code&#160Library
-        zbptravel(Behavior Implementation Class\nZBP_TRAVEL)
-        zcmtravel(ABAP Class\nZCM_TRAVEL)
+        zbptravel(Verhaltensimplementierung\nZBP_TRAVEL)
+        zcmtravel(Nachrichtenklasse\nZCM_TRAVEL)
     end
 
     style Business&#160Services fill:#9abcf2

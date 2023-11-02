@@ -1,12 +1,14 @@
 ---
-title: 1. RAP BO festlegen
+title: 1. BO festlegen
 description: ""
 sidebar_position: 10
 ---
 
-Zum Speichern der Reisen muss zunächst eine entsprechende Datenbanktabelle erstellt und mit Hilfe einer Generator-Klasse befüllt werden. Anschließend wird darauf aufbauend eine Restricted Interface View erstellt, die den Wurzelknoten des RAP BOs darstellt.
+- Datenbanktabelle für Reisen erstellen
+- ABAP-Klasse zum Befüllen der Datenbanktabelle erstellen
+- BO Base View für Reisen erstellen
 
-## Database Table Z_TRAVEL_A
+## Datenbanktabelle Z_TRAVEL_A
 
 ```sql showLineNumbers
 //highlight-start
@@ -38,7 +40,7 @@ define table z_travel_a {
 //highlight-end
 ```
 
-## ABAP Class ZCL_TRAVEL_GENERATOR
+## ABAP-Klasse ZCL_TRAVEL_GENERATOR
 
 ```abap title="ZCL_TRAVEL_GENERATOR.abap" showLineNumbers
 //highlight-start
@@ -130,7 +132,7 @@ ENDCLASS.
 //highlight-end
 ```
 
-## Restricted Interface View ZR_Travel
+## BO Base View ZR_Travel
 
 ```sql showLineNumbers
 //highlight-start
