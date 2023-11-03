@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 100
 ---
 
-- BO Base View für Reisen um transiente Felder zur Darstellung der Wichtigkeit erweitern
-- BO Projection View für Reisen um transiente Felder zur Darstellung der Wichtigkeit erweitern
-- Metadata Extension für Reisen um Eigenschaften zur Darstellung der Wichtigkeit erweitern
+- Die BO Base View `ZR_Travel` um transiente Felder zur Darstellung der Wichtigkeit erweitern
+- Die BO Projection View `ZC_Travel` um transiente Felder zur Darstellung der Wichtigkeit erweitern
+- Die Metadata Extension `ZC_TRAVEL` um Eigenschaften zur Darstellung der Wichtigkeit erweitern
 
-## BO Base View ZR_Travel
+## BO Base View `ZR_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -59,7 +59,7 @@ define root view entity ZR_Travel
 }
 ```
 
-## BO Projection View ZC_Travel
+## BO Projection View `ZC_Travel`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -106,7 +106,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## Metadata Extension ZC_TRAVEL
+## Metadata Extension `ZC_TRAVEL`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER

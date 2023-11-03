@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 20
 ---
 
-- BO Projection View für die Base BO View für Reisen erstellen
-- Service Definition für BO Projection View für Reisen erstellen
-- Service Binding für die Service Definition erstellen
+- Die BO Projection View `ZC_Travel` erstellen
+- Die Service Definition `ZUI_TRAVEL` erstellen
+- Das Service Binding `ZUI_TRAVEL_02` erstellen
 
-## BO Projection View ZC_Travel
+## BO Projection View `ZC_Travel`
 
 ```sql showLineNumbers
 //highlight-start
@@ -38,7 +38,7 @@ define root view entity ZC_Travel
 //highlight-end
 ```
 
-## Service Definition ZUI_TRAVEL
+## Service Definition `ZUI_TRAVEL`
 
 ```sql showLineNumbers
 //highlight-start
@@ -49,7 +49,7 @@ define service ZUI_TRAVEL {
 //highlight-end
 ```
 
-## Service Binding ZUI_TRAVEL_02
+## Service Binding `ZUI_TRAVEL_02`
 
 - Service Definition: ZUI_TRAVEL
 - Binding Type: OData V2 - UI

@@ -8,17 +8,16 @@ Diese Kochbuch stellt eine Schritt-für-Schritt-Anleitung zur Entwicklung einer 
 
 ```mermaid
 flowchart
-    zuitravelv2 -.-> zuitravel
-    zuitravel -.-> zctravel
-    zctravel <-.-> zcbooking
-    zctravel -.-> zrtravel
-    zcbooking -.-> zrbooking
-    zrtravel <-.-> zrbooking
-    zrtravel -.-> ztravela
-    zrbooking -.-> zbookinga
+    zuitravelv2 --> zuitravel
+    zuitravel --> zctravel
+    zctravel --- zcbooking
+    zctravel --> zrtravel
+    zcbooking --> zrbooking
+    zrtravel --- zrbooking
+    zrtravel --> ztravela
+    zrbooking --> zbookinga
     zrtravelBD -.-> zrtravel
     zctravelBP -.-> zctravel
-    zrtravelAC -.-> zrtravel
     zctravelAC -.-> zctravel
     zctravelME -.-> zctravel
     zcbookingME -.-> zcbooking
@@ -45,7 +44,6 @@ flowchart
         zrtravelBD(Behavior Definition\nZR_TRAVEL)
         zctravelBP(Behavior Projection\nZC_TRAVEL)
 
-        zrtravelAC(Access Control\nZR_TRAVEL)
         zctravelAC(Access Control\nZC_TRAVEL)
 
         zctravelME(Metadata Extension\nZC_TRAVEL)

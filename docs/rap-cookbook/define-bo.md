@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 10
 ---
 
-- Datenbanktabelle für Reisen erstellen
-- ABAP-Klasse zum Befüllen der Datenbanktabelle erstellen
-- BO Base View für Reisen erstellen
+- Die Datenbanktabelle `Z_TRAVEL_A` erstellen
+- Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` erstellen
+- Die BO Base View `ZR_Travel` erstellen
 
-## Datenbanktabelle Z_TRAVEL_A
+## Datenbanktabelle `Z_TRAVEL_A`
 
 ```sql showLineNumbers
 //highlight-start
@@ -40,7 +40,7 @@ define table z_travel_a {
 //highlight-end
 ```
 
-## ABAP-Klasse ZCL_TRAVEL_GENERATOR
+## ABAP-Klasse `ZCL_TRAVEL_GENERATOR`
 
 ```abap title="ZCL_TRAVEL_GENERATOR.abap" showLineNumbers
 //highlight-start
@@ -129,7 +129,7 @@ ENDCLASS.
 //highlight-end
 ```
 
-## BO Base View ZR_Travel
+## BO Base View `ZR_Travel`
 
 ```sql showLineNumbers
 //highlight-start

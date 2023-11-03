@@ -4,12 +4,12 @@ description: ""
 sidebar_position: 80
 ---
 
-- Interface View für Kunden erstellen
-- Interface View für Status erstellen
-- BO Projection View für Reisen um Annotationen für Wertehilfen erweitern
-- BO Projection View für Buchungen um Annotationen für Wertehilfen erweitern
+- Die Interface View `ZI_CustomerVH` erstellen
+- Die Interface View `ZI_StatusVH` erstellen
+- Die BO Projection View `ZC_Travel` um Annotationen für Wertehilfen erweitern
+- Die BO Projection View `ZC_Booking` um Annotationen für Wertehilfen erweitern
 
-## Interface View ZI_CustomerVH
+## Interface View `ZI_CustomerVH`
 
 ```sql showLineNumbers
 //highlight-start
@@ -30,7 +30,7 @@ define view entity ZI_CustomerVH
 //highlight-end
 ```
 
-## Interface View ZI_StatusVH
+## Interface View `ZI_StatusVH`
 
 ```sql showLineNumbers
 //highlight-start
@@ -53,7 +53,7 @@ define view entity ZI_StatusVH
 //highlight-end
 ```
 
-## BO Projection View ZC_Travel
+## BO Projection View `ZC_Travel`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -101,7 +101,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## BO Projection View ZC_Booking
+## BO Projection View `ZC_Booking`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Booking'

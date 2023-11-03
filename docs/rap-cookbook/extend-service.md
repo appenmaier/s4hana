@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 50
 ---
 
-- BO Projection View für Buchungen inklusive einer Assoziation zur BO Projection View für Reisen erstellen
-- BO Projection View für Reisen um eine Assoziation zur BO Projection View für Buchungen erweitern
-- Service Definition um die BO Projection View für Buchungen erweitern
+- Die BO Projection View `ZC_Booking` inklusive einer Assoziation zur BO Projection View `ZC_Travel` erstellen
+- Die BO Projection View `ZC_Travel` um eine Assoziation zur BO Projection View `ZC_Booking` erweitern
+- Die Service Definition `ZUI_TRAVEL` um die BO Projection View `ZC_Booking` erweitern
 
-## BO Projection View ZC_Booking
+## BO Projection View `ZC_Booking`
 
 ```sql showLineNumbers
 //highlight-start
@@ -34,7 +34,7 @@ define view entity ZC_Booking
 //highlight-end
 ```
 
-## BO Projection View ZC_Travel
+## BO Projection View `ZC_Travel`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -71,7 +71,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## Service Definition ZUI_TRAVEL
+## Service Definition `ZUI_TRAVEL`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'

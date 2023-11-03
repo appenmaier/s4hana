@@ -4,14 +4,14 @@ description: ""
 sidebar_position: 150
 ---
 
-- Message Class für Reisen um Nachrichten zum Stornieren einer Reise erweitern
-- Nachrichtenklasse für Reisen um Nachrichten zum Stornieren einer Reise erweitern
-- Behavior Definition für Reisen um eine Aktion zum Stornieren einer Reise erweitern
-- Die Verhaltensimplementierung für Reisen um eine Behandlermethode zum Stornieren einer Reise erweitern
-- Behavior Projection für Reisen um eine Aktion zum Stornieren einer Reise erweitern
-- Metadata Extension für Reisen um Annotationen für eine Aktion zum Stornieren einer Reise erweitern
+- Die Message Class `Z_TRAVEL` um Nachrichten zum Stornieren einer Reise erweitern
+- Die Nachrichtenklasse `ZCM_TRAVEL` um Nachrichten zum Stornieren einer Reise erweitern
+- Die Behavior Definition `ZR_TRAVEL` um eine Aktion zum Stornieren einer Reise erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zum Stornieren einer Reise erweitern
+- Die Behavior Projection `ZC_TRAVEL` um eine Aktion zum Stornieren einer Reise erweitern
+- Die Metadata Extension `ZC_TRAVEL` um Annotationen für eine Aktion zum Stornieren einer Reise erweitern
 
-## Message Class Z_TRAVEL
+## Message Class `Z_TRAVEL`
 
 | Nachrichtennummer | Nachricht                            |
 | ----------------- | ------------------------------------ |
@@ -22,7 +22,7 @@ sidebar_position: 150
 | 005               | Travel &1 is already cancelled       |
 | 006               | Travel &1 was successfully cancelled |
 
-## Nachrichtenklasse ZCM_TRAVEL
+## Nachrichtenklasse `ZCM_TRAVEL`
 
 ```abap title="ZCM_TRAVEL.abap" showLineNumbers
 //highlight-start
@@ -141,7 +141,7 @@ CLASS zcm_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Behavior Definition ZR_TRAVEL
+## Behavior Definition `ZR_TRAVEL`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
@@ -223,9 +223,9 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung ZBP_TRAVEL
+## Verhaltensimplementierung `ZBP_TRAVEL`
 
-### Global Class ZBP_TRAVEL
+### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
 CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
@@ -238,7 +238,7 @@ CLASS zbp_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-### Local Type LHC_TRAVEL
+### Local Type `LHC_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
@@ -461,7 +461,7 @@ CLASS lhc_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Behavior Projection ZC_TRAVEL
+## Behavior Projection `ZC_TRAVEL`
 
 ```sql showLineNumbers
 projection;
@@ -490,7 +490,7 @@ define behavior for ZC_Booking alias Booking
 }
 ```
 
-## Metadata Extension ZC_TRAVEL
+## Metadata Extension `ZC_TRAVEL`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER

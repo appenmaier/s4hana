@@ -4,9 +4,9 @@ description: ""
 sidebar_position: 110
 ---
 
-Metadata Extension für Reisen um Annotationen zur Sortierung von Reisen erweitern.
+Die Metadata Extension `ZC_TRAVEL` um Annotationen zur Sortierung von Reisen erweitern.
 
-## Metadata Extension ZC_TRAVEL
+## Metadata Extension `ZC_TRAVEL`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER

@@ -5,11 +5,11 @@ sidebar_position: 60
 tags: []
 ---
 
-- BO Projection View für Buchungen um Metadata-Annotation erweitern
-- Metadata Extension für die BO Projection View für Buchungen erstellen
-- Metadata Extension für die BO Projection View für Reisen um Annotationen zur Darstellung von Buchungen erweitern
+- Die BO Projection View `ZC_Booking` um eine Annotation zur Metadatenerweiterung erweitern
+- Die Metadata Extension `ZC_BOOKING` erstellen
+- Die Metadata Extension `ZC_TRAVEL` um Annotationen zur Darstellung von Buchungen erweitern
 
-## BO Projection View ZC_Booking
+## BO Projection View `ZC_Booking`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Booking'
@@ -35,7 +35,7 @@ define view entity ZC_Booking
 }
 ```
 
-## Metadata Extension ZC_BOOKING
+## Metadata Extension `ZC_BOOKING`
 
 ```sql showLineNumbers
 //highlight-start
@@ -94,7 +94,7 @@ annotate view ZC_Booking with
 //highlight-end
 ```
 
-## Metadata Extension ZC_TRAVEL
+## Metadata Extension `ZC_TRAVEL`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER

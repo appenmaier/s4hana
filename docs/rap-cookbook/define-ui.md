@@ -5,10 +5,10 @@ sidebar_position: 30
 tags: []
 ---
 
-- BO Projection View um Annotationen für Suchen und Metadata Extensions erweitern
-- Metadata Extension für die BO Projection View für Reisen erstellen
+- Die BO Projection View `ZC_Travel` um Annotationen für Suchen und Metadatenerweiterungen erweitern
+- Die Metadata Extension `ZC_TRAVEL` erstellen
 
-## BO Projection View ZC_Travel
+## BO Projection View `ZC_Travel`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -44,7 +44,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## Metadata Extension ZC_TRAVEL
+## Metadata Extension `ZC_TRAVEL`
 
 ```sql showLineNumbers
 //highlight-start

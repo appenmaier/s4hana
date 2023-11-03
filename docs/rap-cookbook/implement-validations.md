@@ -4,12 +4,12 @@ description: ""
 sidebar_position: 130
 ---
 
-- Message Class für Reisen um Nachrichten zur Validierung erweitern
-- Nachrichtenklasse für Reisen um Nachrichten zur Validierung erweitern
-- Behavior Definition für Reisen um statische Feldkontrollen und Validierungen erweitern
-- Die Verhaltensimplementierung für Reisen um Behandlermethoden zur Validierung erweitern
+- Die Message Class `Z_TRAVEL` um Nachrichten zur Validierung erweitern
+- Die Nachrichtenklasse `ZCM_TRAVEL` um Nachrichten zur Validierung erweitern
+- Die Behavior Definition `ZR_TRAVEL` um statische Feldkontrollen und Validierungen erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVEL` um Behandlermethoden zur Validierung erweitern
 
-## Message Class Z_TRAVEL
+## Message Class `Z_TRAVEL`
 
 | Nachrichtennummer | Nachricht                            |
 | ----------------- | ------------------------------------ |
@@ -18,7 +18,7 @@ sidebar_position: 130
 | 003               | No Customer found for Customer ID &1 |
 | 004               | Begin Date must be before End Date   |
 
-## Nachrichtenklasse ZCM_TRAVEL
+## Nachrichtenklasse `ZCM_TRAVEL`
 
 ```abap title="ZCM_TRAVEL.abap" showLineNumbers
 CLASS zcm_travel DEFINITION PUBLIC
@@ -113,7 +113,7 @@ CLASS zcm_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Behavior Definition ZR_TRAVEL
+## Behavior Definition `ZR_TRAVEL`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
@@ -192,9 +192,9 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung ZBP_TRAVEL
+## Verhaltensimplementierung `ZBP_TRAVEL`
 
-### Global Class ZBP_TRAVEL
+### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
 CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
@@ -207,7 +207,7 @@ CLASS zbp_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-### Local Type LHC_TRAVEL
+### Local Type `LHC_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.

@@ -4,12 +4,12 @@ description: ""
 sidebar_position: 70
 ---
 
-- Behavior Definition für die Base BO View für Reisen erstellen
-- Eine Verhaltensimplementierung für Reisen generieren lassen
-- BO Projection View für Reisen um Angaben zum Provider Contract erweitern
-- Behavior Projection für die BO Projection View für Reisen erstellen
+- Die Behavior Definition `ZR_TRAVEL` erstellen
+- Eine Verhaltensimplementierung für die Behavior Definition `ZR_TRAVEL` generieren lassen
+- Die BO Projection View `ZC_Travel` um Angaben zum Provider Contract erweitern
+- Die Behavior Projection `ZC_TRAVEL` erstellen
 
-## Behavior Definition ZR_TRAVEL
+## Behavior Definition `ZR_TRAVEL`
 
 ```sql showLineNumbers
 //highlight-start
@@ -78,9 +78,9 @@ authorization dependent by _Travel
 //highlight-end
 ```
 
-## Verhaltensimplementierung ZBP_TRAVEL
+## Verhaltensimplementierung `ZBP_TRAVEL`
 
-### Global Class ZBP_TRAVEL
+### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
 //highlight-start
@@ -95,7 +95,7 @@ ENDCLASS.
 //highlight-end
 ```
 
-### Local Type LHC_TRAVEL
+### Local Type `LHC_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
 //highlight-start
@@ -112,7 +112,7 @@ ENDCLASS.
 //highlight-end
 ```
 
-## BO Projection View ZC_Travel
+## BO Projection View `ZC_Travel`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -150,7 +150,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## Behavior Projection ZC_TRAVEL
+## Behavior Projection `ZC_TRAVEL`
 
 ```sql showLineNumbers
 //highlight-start

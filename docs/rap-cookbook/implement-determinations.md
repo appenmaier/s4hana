@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 140
 ---
 
-- BO Base View für Reisen um Annotationen zur Ermittlung administrativer Daten erweitern
-- Behavior Definition für Reisen um statische Feldkontrollen und Ermittlungen erweitern
-- Die Verhaltensimplementierung für Reisen um Behandlermethoden zu Ermittlungen erweitern
+- Die BO Base View `ZR_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
+- Die Behavior Definition `ZR_TRAVEL` um statische Feldkontrollen und Ermittlungen erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVEL` um Behandlermethoden zu Ermittlungen erweitern
 
-## BO Base View ZR_Travel
+## BO Base View `ZR_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -69,7 +69,7 @@ define root view entity ZR_Travel
 }
 ```
 
-## Behavior Definition ZR_TRAVEL
+## Behavior Definition `ZR_TRAVEL`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
@@ -152,9 +152,9 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung ZBP_TRAVEL
+## Verhaltensimplementierung `ZBP_TRAVEL`
 
-### Global Class ZBP_TRAVEL
+### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
 CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
@@ -167,7 +167,7 @@ CLASS zbp_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-### Local Type LHC_TRAVEL
+### Local Type `LHC_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.

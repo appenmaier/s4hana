@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 40
 ---
 
-- Datenbanktabelle für Buchungen erstellen
-- BO Base View für Buchungen inklusive einer Assoziation zur Base BO View für Reisen erstellen
-- BO Base View für Reisen um eine Assoziation zur Base BO View für Buchungen erweitern
+- Die Datenbanktabelle `Z_BOOKING_A` erstellen
+- Die BO Base View `ZR_Booking` inklusive einer Assoziation zur BO Base View `ZR_Travel` erstellen
+- Die BO Base View `ZR_Travel` um eine Assoziation zur BO Base View `ZR_Booking` erweitern
 
-## Datenbanktabelle Z_BOOKING_A
+## Datenbanktabelle `Z_BOOKING_A`
 
 ```sql showLineNumbers
 //highlight-start
@@ -33,7 +33,7 @@ define table z_booking_a {
 }
 ```
 
-## BO Base View ZR_Booking
+## BO Base View `ZR_Booking`
 
 ```sql showLineNumbers
 //highlight-start
@@ -60,7 +60,7 @@ define view entity ZR_Booking
 //highlight-end
 ```
 
-## BO Base View ZR_Travel
+## BO Base View `ZR_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
