@@ -3,8 +3,8 @@ title: RAP-03
 description: ""
 ---
 
-- Erstelle für die Restricted Interface View `ZR_???_Movie` die Behavior Definition `ZR_???_MOVIE`
-- Erstelle für die Projection View `ZC_???_Movie` die Behavior Projection `ZC_???_MOVIE`
+- Erstelle für die BO Base View für Filme die Behavior Definition `ZR_???_MOVIE`
+- Erstelle für die BO Projection View für Filme die Behavior Projection `ZC_???_MOVIE`
 
 ## Hinweise zur Behavior Definition `ZR_???_MOVIE`
 

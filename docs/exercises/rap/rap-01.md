@@ -3,17 +3,19 @@ title: RAP-01
 description: ""
 ---
 
-- Erstelle für die abgebildete Datenbanktabelle `ZABAP_MOVIE_A` die Restricted Interface View `ZR_???_Movie`
-- Erstelle für die erstellte Restricted Interface View die Projection View `ZC_???_Movie`
-- Erstelle für die erstellte Projection View die Service Definition `ZUI_???_MOVIE_V2`
-- Erstelle für die erstellte Service Definition das Service Binding `ZUI_???_MOVIE_V2`
-- Erstelle für die erstellte Projection View die Metadata Extension `ZC_???_MOVIE`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Base View `ZR_???_Movie` sowie die BO Projection View `ZC_???_Movie`
+- Erstelle für die BO Projection View für Filme die Service Definition `ZUI_???_MOVIE`
+- Erstelle für die Service Definition für Filme das Service Binding `ZUI_???_MOVIE_02`
+- Erstelle für die BO Projection View für Filme die Metadata Extension `ZC_???_MOVIE`
 
-## Datenbanktabelle `ZABAP_MOVIE_A`
+## ER-Modell
 
 ```mermaid
 erDiagram
-    movie_a {
+    R_Movie ||--|| ZABAP_MOVIE_A  : ""
+    C_Movie ||--|| R_Movie  : ""
+
+    ZABAP_MOVIE_A {
         clnt(3) client PK
         raw(16) movie_uuid PK
         char(50) title
@@ -26,15 +28,33 @@ erDiagram
         dec(21-7) last_changed_at
         char(12) last_changed_by
     }
+
+    R_Movie {
+        raw(16) MovieUUID PK
+        char(50) Title
+        char(10) Genre
+        numc(4) PublishingYear
+        int1(3) RuntimeInMin
+        sstr(255) ImageURL
+        dec(21-7) CreatedAt
+        char(12) CreatedBy
+        dec(21-7) LastChangedAt
+        char(12) LastChangedBy
+    }
+
+    C_Movie {
+        raw(16) MovieUUID PK
+        char(50) Title
+        char(10) Genre
+        numc(4) PublishingYear
+        int1(3) RuntimeInMin
+        sstr(255) ImageURL
+        dec(21-7) CreatedAt
+        char(12) CreatedBy
+        dec(21-7) LastChangedAt
+        char(12) LastChangedBy
+    }
 ```
-
-## Hinweis zur Restricted Interface View `ZR_???_Movie`
-
-Die Restricted Interface View soll alle Felder der Datenbanktabelle ausgeben.
-
-## Hinweis zur Projection View `ZC_???_Movie`
-
-Die Projection View soll alle Felder der Restricted Interface View ausgeben.
 
 ## Hinweise zur Metadata Extension `ZC_???_MOVIE`
 
