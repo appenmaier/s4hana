@@ -15,11 +15,13 @@ tags: []
 ## abapGit installieren
 
 - [Quellcode](https://raw.githubusercontent.com/abapGit/build/main/zabapgit_standalone.prog.abap) herunterladen
+- [ABAP Development Tools](../adt.md) starten
 - ABAP-Programm `ZABAPGIT_STANDALONE` erstellen
 - Quellcode einfügen und ABAP-Programm aktivieren
 
 ## Remote-Repository und lokales Repository verbinden
 
+- [ABAP Development Tools](../adt.md) starten
 - ABAP-Programm `ZABAPGIT_STANDALONE` ausführen
 - Drucktaste `New Online` betätigen
 - Folgende Informationen eingeben und Drucktaste `Create Online Repo` betätigen
@@ -29,6 +31,7 @@ tags: []
 
 ## Änderungen vom lokalen Repository hochladen
 
+- [ABAP Development Tools](../adt.md) starten
 - ABAP-Programm `ZABAPGIT_STANDALONE` ausführen
 - Drucktaste `Stage` betätigen
 - Drucktaste `Add All and Commit` betätigen
@@ -39,6 +42,16 @@ tags: []
 
 ## Änderungen vom Remote-Repository herunterladen
 
+- [ABAP Development Tools](../adt.md) starten
 - ABAP-Programm `ZABAPGIT_STANDALONE` ausführen
 - Repository auswählen
 - Drucktaste `Pull` betätigen
+- Folgende Informationen eingeben und Drucktaste `OK` betätigen
+  - Username: `Dein GitHub User` (z.B. appenmaier)
+  - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
+
+:::danger Hinweis
+
+abapGit untersützt aktuell nur den Token (Classic).
+
+:::

@@ -12,8 +12,18 @@ tags: []
 - Folgende Informationen eingeben, Option `Add a README file` auswählen und Drucktaste `Create repository` betätigen
   - Repository Name: `Der Repository-Name` (z.B. abap)
 
+## abapGit installieren
+
+- [ABAP Development Tools](../adt.md) starten
+- Option `Help - Install new Software...` auswählen
+- Folgende Informationen eingeben und Taste `ENTER` betätigen
+  - Work with: `https://eclipse.abapgit.org/updatesite/`
+- Option `abapGit for ABAP Development Tools (ADT)` auswählen und Drucktaste `Next >` betätigen
+- Drucktaste `Finish` betätigen
+
 ## Remote-Repository und lokales Repository verbinden
 
+- [ABAP Development Tools](../adt.md) starten
 - View `Window - Show View - Other... - ABAP - abapGit Repositories` öffnen
 - Drucktaste `Link New abapGit Repository...` betätigen
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
@@ -25,6 +35,7 @@ tags: []
 
 ## Änderungen vom lokalen Repository hochladen
 
+- [ABAP Development Tools](../adt.md) starten
 - View `Window - Show View - Other... - ABAP - abapGit Repositories` öffnen
 - Drucktaste `My Repositories` betätigen
 - Rechtsklick auf das Repository und Option `Stage and Push` auswählen
@@ -36,9 +47,19 @@ tags: []
 
 ## Änderungen vom Remote-Repository herunterladen
 
+- [ABAP Development Tools](../adt.md) starten
 - View `Window - Show View - Other... - ABAP - abapGit Repositories` öffnen
 - Drucktaste `My Repositories` betätigen
 - Rechtsklick auf das Repository und Option `Pull...` auswählen
 - Drucktaste `Next >` betätigen
 - Objekte markieren und Drucktaste `Next >` betätigen
 - Drucktaste `Finish` betätigen
+- Folgende Informationen eingeben und Drucktaste `OK` betätigen
+  - Username: `Dein GitHub User` (z.B. appenmaier)
+  - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
+
+:::danger Hinweis
+
+abapGit untersützt aktuell nur Token (Classic).
+
+:::
