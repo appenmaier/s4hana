@@ -50,6 +50,8 @@ define view entity ZI_StatusVH
       @EndUserText: { label: 'Status Text', quickInfo: 'Status Text' }
       text      as StatusText
 }
+where
+  language = $session.system_language
 //highlight-end
 ```
 

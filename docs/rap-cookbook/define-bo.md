@@ -51,78 +51,91 @@ ENDCLASS.
 
 CLASS zcl_travel_generator IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
-    DATA travel  TYPE zda2310_travel_a.
-    DATA travels TYPE TABLE OF zda2310_travel_a.
+    DATA travel  TYPE z_travel_a.
+    DATA travels TYPE TABLE OF z_travel_a.
 
     " Delete Travels
-    DELETE FROM zda2310_travel_a.
+    DELETE FROM z_travel_a.
     out->write( |Deleted Travels: { sy-dbcnt }| ).
 
-    " Admin Data
+    " Create Travel
+    travel-agency_id       = '000001'.
+    travel-begin_date      = '20231027'.
+    travel-booking_fee     = '40.95'.
     travel-client          = sy-mandt.
     travel-created_by      = 'GENERATOR'.
+    travel-currency_code   = 'EUR'.
+    travel-customer_id     = '000004'.
+    travel-description     = 'Kurztrip nach Hamburg'.
+    travel-end_date        = '20231030'.
     travel-last_changed_by = 'GENERATOR'.
+    travel-status          = 'B'.
+    travel-total_price     = '650.50'.
+    travel-travel_id       = '00000001'.
+    travel-travel_uuid     = cl_system_uuid=>create_uuid_x16_static( ).
     GET TIME STAMP FIELD travel-created_at.
     GET TIME STAMP FIELD travel-last_changed_at.
-
-    " Create Travel
-    travel-agency_id     = '000001'.
-    travel-begin_date    = '20231027'.
-    travel-booking_fee   = '40.95'.
-    travel-currency_code = 'EUR'.
-    travel-customer_id   = '000004'.
-    travel-description   = 'Kurztrip nach Hamburg'.
-    travel-end_date      = '20231030'.
-    travel-status        = 'B'.
-    travel-total_price   = '650.50'.
-    travel-travel_id     = '00000001'.
-    travel-travel_uuid   = cl_system_uuid=>create_uuid_x16_static( ).
     APPEND travel TO travels.
 
     " Create Travel
-    travel-agency_id     = '000023'.
-    travel-begin_date    = '20240707'.
-    travel-booking_fee   = '150.00'.
-    travel-currency_code = 'EUR'.
-    travel-customer_id   = '000066'.
-    travel-description   = 'Italienurlaub 2024'.
-    travel-end_date      = '20240723'.
-    travel-status        = 'P'.
-    travel-total_price   = '2188.00'.
-    travel-travel_id     = '00000002'.
-    travel-travel_uuid   = cl_system_uuid=>create_uuid_x16_static( ).
+    travel-agency_id       = '000023'.
+    travel-begin_date      = '20240707'.
+    travel-booking_fee     = '150.00'.
+    travel-client          = sy-mandt.
+    travel-created_by      = 'GENERATOR'.
+    travel-currency_code   = 'EUR'.
+    travel-customer_id     = '000066'.
+    travel-description     = 'Italienurlaub 2024'.
+    travel-end_date        = '20240723'.
+    travel-last_changed_by = 'GENERATOR'.
+    travel-status          = 'P'.
+    travel-total_price     = '2188.00'.
+    travel-travel_id       = '00000002'.
+    travel-travel_uuid     = cl_system_uuid=>create_uuid_x16_static( ).
+    GET TIME STAMP FIELD travel-created_at.
+    GET TIME STAMP FIELD travel-last_changed_at.
     APPEND travel TO travels.
 
     " Create Travel
-    travel-agency_id     = '000045'.
-    travel-begin_date    = '20221231'.
-    travel-booking_fee   = '77.99'.
-    travel-currency_code = 'USD'.
-    travel-customer_id   = '000026'.
-    travel-description   = 'Silvester New York'.
-    travel-end_date      = '20230104'.
-    travel-status        = 'B'.
-    travel-total_price   = '389.00'.
-    travel-travel_id     = '00000003'.
-    travel-travel_uuid   = cl_system_uuid=>create_uuid_x16_static( ).
+    travel-agency_id       = '000045'.
+    travel-begin_date      = '20221231'.
+    travel-booking_fee     = '77.99'.
+    travel-client          = sy-mandt.
+    travel-created_by      = 'GENERATOR'.
+    travel-currency_code   = 'USD'.
+    travel-customer_id     = '000026'.
+    travel-description     = 'Silvester New York'.
+    travel-end_date        = '20230104'.
+    travel-last_changed_by = 'GENERATOR'.
+    travel-status          = 'B'.
+    travel-total_price     = '389.00'.
+    travel-travel_id       = '00000003'.
+    travel-travel_uuid     = cl_system_uuid=>create_uuid_x16_static( ).
+    GET TIME STAMP FIELD travel-created_at.
+    GET TIME STAMP FIELD travel-last_changed_at.
     APPEND travel TO travels.
 
     " Create Travel
-    travel-agency_id     = '000045'.
-    travel-begin_date    = '20231101'.
-    travel-booking_fee   = '0.00'.
-    travel-currency_code = 'SGD'.
-    travel-customer_id   = '000003'.
-    travel-description   = 'Businesstrip to Singapur'.
-    travel-end_date      = '20231108'.
-    travel-status        = 'N'.
-    travel-total_price   = '1290.00'.
-    travel-travel_id     = '00000004'.
-    travel-travel_uuid   = cl_system_uuid=>create_uuid_x16_static( ).
+    travel-agency_id       = '000045'.
+    travel-begin_date      = '20231101'.
+    travel-booking_fee     = '0.00'.
+    travel-client          = sy-mandt.
+    travel-created_by      = 'GENERATOR'.
+    travel-currency_code   = 'SGD'.
+    travel-customer_id     = '000003'.
+    travel-description     = 'Businesstrip to Singapur'.
+    travel-end_date        = '20231108'.
+    travel-last_changed_by = 'GENERATOR'.
+    travel-status          = 'N'.
+    travel-total_price     = '1290.00'.
+    travel-travel_id       = '00000004'.
+    travel-travel_uuid     = cl_system_uuid=>create_uuid_x16_static( ).
+    GET TIME STAMP FIELD travel-created_at.
+    GET TIME STAMP FIELD travel-last_changed_at.
     APPEND travel TO travels.
 
     " Insert Travels
-    INSERT zda2310_travel_a FROM TABLE @travels.
+    INSERT z_travel_a FROM TABLE @travels.
     out->write( |Inserted Travels: { sy-dbcnt }| ).
   ENDMETHOD.
 ENDCLASS.

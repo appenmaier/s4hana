@@ -128,14 +128,15 @@ authorization master ( instance )
   create;
   update;
   delete;
+
   association _Bookings { create; }
 
-  static action show_test_message;
+  static action ShowTestMessage;
 
 //highlight-start
-  validation validate_dates on save { create; }
-  validation validate_customer on save { create; }
-  validation validate_agency on save { create; }
+  validation ValidateDates on save { create; }
+  validation ValidateCustomer on save { create; }
+  validation ValidateAgency on save { create; }
 //highlight-end
 
   field ( readonly, numbering : managed ) TravelUuid;
@@ -172,10 +173,11 @@ authorization dependent by _Travel
 {
   update;
   delete;
-  field ( readonly ) TravelUuid;
+
   association _Travel;
 
   field ( readonly, numbering : managed ) BookingUuid;
+  field ( readonly ) TravelUuid;
 
   mapping for z_booking_a corresponding
   {
@@ -215,22 +217,22 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
 
-    METHODS show_test_message FOR MODIFY
-      IMPORTING keys FOR ACTION travel~show_message.
+    METHODS showtestmessage FOR MODIFY
+      IMPORTING keys FOR ACTION travel~showtestmessage.
 
 //highlight-start
-    METHODS validate_agency FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_agency.
+    METHODS validateagency FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validateagency.
 //highlight-end
 
 //highlight-start
-    METHODS validate_customer FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_customer.
+    METHODS validatecustomer FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validatecustomer.
 //highlight-end
 
 //highlight-start
-    METHODS validate_dates FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_dates.
+    METHODS validatedates FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validatedates.
 //highlight-end
 ENDCLASS.
 
@@ -238,7 +240,7 @@ CLASS lhc_travel IMPLEMENTATION.
   METHOD get_instance_authorizations.
   ENDMETHOD.
 
-  METHOD show_test_message.
+  METHOD showtestmessage.
     DATA message TYPE REF TO zcm_travel.
 
     message = NEW zcm_travel( severity  = if_abap_behv_message=>severity-success
@@ -249,7 +251,7 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
 //highlight-start
-  METHOD validate_agency.
+  METHOD validateagency.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -277,7 +279,7 @@ CLASS lhc_travel IMPLEMENTATION.
 //highlight-end
 
 //highlight-start
-  METHOD validate_customer.
+  METHOD validatecustomer.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -305,7 +307,7 @@ CLASS lhc_travel IMPLEMENTATION.
 //highlight-end
 
 //highlight-start
-  METHOD validate_dates.
+  METHOD validatedates.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels

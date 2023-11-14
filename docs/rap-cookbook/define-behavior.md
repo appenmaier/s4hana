@@ -25,6 +25,7 @@ authorization master ( instance )
   create;
   update;
   delete;
+
   association _Bookings { create; }
 
   field ( readonly, numbering : managed ) TravelUuid;
@@ -57,10 +58,11 @@ authorization dependent by _Travel
 {
   update;
   delete;
-  field ( readonly ) TravelUuid;
+
   association _Travel;
 
   field ( readonly, numbering : managed ) BookingUuid;
+  field ( readonly ) TravelUuid;
 
   mapping for z_booking_a corresponding
   {

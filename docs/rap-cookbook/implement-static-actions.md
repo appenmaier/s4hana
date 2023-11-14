@@ -85,10 +85,11 @@ authorization master ( instance )
   create;
   update;
   delete;
+
   association _Bookings { create; }
 
 //highlight-start
-  static action show_test_message;
+  static action ShowTestMessage;
 //highlight-end
 
   field ( readonly, numbering : managed ) TravelUuid;
@@ -121,10 +122,11 @@ authorization dependent by _Travel
 {
   update;
   delete;
-  field ( readonly ) TravelUuid;
+
   association _Travel;
 
   field ( readonly, numbering : managed ) BookingUuid;
+  field ( readonly ) TravelUuid;
 
   mapping for z_booking_a corresponding
   {
@@ -165,8 +167,8 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
       IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
 
 //highlight-start
-    METHODS show_test_message FOR MODIFY
-      IMPORTING keys FOR ACTION travel~show_message.
+    METHODS showtestmessage FOR MODIFY
+      IMPORTING keys FOR ACTION travel~showtestmessage.
 //highlight-end
 ENDCLASS.
 
@@ -175,7 +177,7 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
 //highlight-start
-  METHOD show_test_message.
+  METHOD showtestmessage.
     DATA message TYPE REF TO zcm_travel.
 
     message = NEW zcm_travel( severity  = if_abap_behv_message=>severity-success
@@ -203,7 +205,7 @@ define behavior for ZC_Travel alias Travel
   use association _Bookings { create; }
 
 //highlight-start
-  use action show_test_message as ShowTestMessage;
+  use action ShowTestMessage;
 //highlight-end
 }
 

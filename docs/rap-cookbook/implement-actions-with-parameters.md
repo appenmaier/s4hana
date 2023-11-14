@@ -40,20 +40,21 @@ authorization master ( instance )
   create;
   update;
   delete;
+
   association _Bookings { create; }
 
-  static action show_test_message;
-  action cancel_travel result [1] $self;
+  static action ShowTestMessage;
+  action CancelTravel result [1] $self;
 //highlight-start
-  action maintain_booking_fee parameter ZA_BookingFee result [1] $self;
+  action MaintainBookingFee parameter ZA_BookingFee result [1] $self;
 //highlight-end
 
-  validation validate_dates on save { create; }
-  validation validate_customer on save { create; }
-  validation validate_agency on save { create; }
+  validation ValidateDates on save { create; }
+  validation ValidateCustomer on save { create; }
+  validation ValidateAgency on save { create; }
 
-  determination determine_status on modify { create; }
-  determination determine_travel_id on modify { create; }
+  determination DetermineStatus on modify { create; }
+  determination DetermineTravelId on modify { create; }
 
   field ( readonly, numbering : managed ) TravelUuid;
   field ( mandatory : create ) AgencyId, BeginDate, CustomerId, Description, EndDate;
@@ -88,10 +89,11 @@ authorization dependent by _Travel
 {
   update;
   delete;
-  field ( readonly ) TravelUuid;
+
   association _Travel;
 
   field ( readonly, numbering : managed ) BookingUuid;
+  field ( readonly ) TravelUuid;
 
   mapping for z_booking_a corresponding
   {
@@ -131,36 +133,30 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
 
-    METHODS show_message FOR MODIFY
-      IMPORTING keys FOR ACTION travel~show_message.
+    METHODS showtestmessage FOR MODIFY
+      IMPORTING keys FOR ACTION travel~showtestmessage.
 
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+    METHODS validateagency FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validateagency.
 
-    METHODS maintain_booking_fee FOR MODIFY
-      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
+    METHODS validatecustomer FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validatecustomer.
 
-    METHODS validate_agency FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_agency.
+    METHODS validatedates FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validatedates.
 
-    METHODS validate_customer FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_customer.
+    METHODS determinestatus FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR travel~determinestatus.
 
-    METHODS validate_dates FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_dates.
+    METHODS determinetravelid FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR travel~determinetravelid.
 
-    METHODS determine_status FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR travel~determine_status.
-
-    METHODS determine_travel_id FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR travel~determine_travel_id.
-
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+    METHODS canceltravel FOR MODIFY
+      IMPORTING keys FOR ACTION travel~canceltravel RESULT result.
 
 //highlight-start
-    METHODS maintain_booking_fee FOR MODIFY
-      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
+    METHODS maintainbookingfee FOR MODIFY
+      IMPORTING keys FOR ACTION travel~maintainbookingfee RESULT result.
 //highlight-end
 ENDCLASS.
 
@@ -168,7 +164,7 @@ CLASS lhc_travel IMPLEMENTATION.
   METHOD get_instance_authorizations.
   ENDMETHOD.
 
-  METHOD show_test_message.
+  METHOD showtestmessage.
     DATA message TYPE REF TO zcm_travel.
 
     message = NEW zcm_travel( severity  = if_abap_behv_message=>severity-success
@@ -178,7 +174,7 @@ CLASS lhc_travel IMPLEMENTATION.
     APPEND message TO reported-%other.
   ENDMETHOD.
 
-  METHOD validate_agency.
+  METHOD validateagency.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -204,7 +200,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD validate_customer.
+  METHOD validatecustomer.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -230,7 +226,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD validate_dates.
+  METHOD validatedates.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -253,7 +249,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD determine_status.
+  METHOD determinestatus.
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          FIELDS ( Status )
@@ -276,7 +272,7 @@ CLASS lhc_travel IMPLEMENTATION.
                            Status = travel->Status ) ).
   ENDMETHOD.
 
-  METHOD determine_travel_id.
+  METHOD determinetravelid.
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          FIELDS ( TravelId )
@@ -300,7 +296,7 @@ CLASS lhc_travel IMPLEMENTATION.
                            TravelId = travel->TravelId ) ).
   ENDMETHOD.
 
-  METHOD cancel_travel.
+  METHOD canceltravel.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -346,7 +342,7 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
 //highlight-start
-  METHOD maintain_booking_fee.
+  METHOD maintainbookingfee.
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          ALL FIELDS
@@ -392,10 +388,10 @@ define behavior for ZC_Travel alias Travel
 
   use association _Bookings { create; }
 
-  use action show_test_message as ShowTestMessage;
-  use action cancel_travel as CancelTravel;
+  use action ShowTestMessage;
+  use action CancelTravel;
 //highlight-start
-  use action maintain_booking_fee as MaintainBookingFee;
+  use action MaintainBookingFee;
 //highlight-end
 }
 

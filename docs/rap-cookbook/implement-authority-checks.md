@@ -42,35 +42,29 @@ CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
       IMPORTING keys REQUEST requested_authorizations FOR Travel RESULT result.
 
-    METHODS show_message FOR MODIFY
-      IMPORTING keys FOR ACTION travel~show_message.
+    METHODS showtestmessage FOR MODIFY
+      IMPORTING keys FOR ACTION travel~showtestmessage.
 
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
+    METHODS validateagency FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validateagency.
 
-    METHODS maintain_booking_fee FOR MODIFY
-      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
+    METHODS validatecustomer FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validatecustomer.
 
-    METHODS validate_agency FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_agency.
+    METHODS validatedates FOR VALIDATE ON SAVE
+      IMPORTING keys FOR travel~validatedates.
 
-    METHODS validate_customer FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_customer.
+    METHODS determinestatus FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR travel~determinestatus.
 
-    METHODS validate_dates FOR VALIDATE ON SAVE
-      IMPORTING keys FOR travel~validate_dates.
+    METHODS determinetravelid FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR travel~determinetravelid.
 
-    METHODS determine_status FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR travel~determine_status.
+    METHODS canceltravel FOR MODIFY
+      IMPORTING keys FOR ACTION travel~canceltravel RESULT result.
 
-    METHODS determine_travel_id FOR DETERMINE ON MODIFY
-      IMPORTING keys FOR travel~determine_travel_id.
-
-    METHODS cancel_travel FOR MODIFY
-      IMPORTING keys FOR ACTION travel~cancel_travel RESULT result.
-
-    METHODS maintain_booking_fee FOR MODIFY
-      IMPORTING keys FOR ACTION travel~maintain_booking_fee RESULT result.
+    METHODS maintainbookingfee FOR MODIFY
+      IMPORTING keys FOR ACTION travel~maintainbookingfee RESULT result.
 ENDCLASS.
 
 CLASS lhc_travel IMPLEMENTATION.
@@ -80,7 +74,7 @@ TODO
 //highlight-end
   ENDMETHOD.
 
-  METHOD show_test_message.
+  METHOD showtestmessage.
     DATA message TYPE REF TO zcm_travel.
 
     message = NEW zcm_travel( severity  = if_abap_behv_message=>severity-success
@@ -90,7 +84,7 @@ TODO
     APPEND message TO reported-%other.
   ENDMETHOD.
 
-  METHOD validate_agency.
+  METHOD validateagency.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -116,7 +110,7 @@ TODO
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD validate_customer.
+  METHOD validatecustomer.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -142,7 +136,7 @@ TODO
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD validate_dates.
+  METHOD validatedates.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -165,7 +159,7 @@ TODO
     ENDLOOP.
   ENDMETHOD.
 
-  METHOD determine_status.
+  METHOD determinestatus.
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          FIELDS ( Status )
@@ -188,7 +182,7 @@ TODO
                            Status = travel->Status ) ).
   ENDMETHOD.
 
-  METHOD determine_travel_id.
+  METHOD determinetravelid.
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          FIELDS ( TravelId )
@@ -212,7 +206,7 @@ TODO
                            TravelId = travel->TravelId ) ).
   ENDMETHOD.
 
-  METHOD cancel_travel.
+  METHOD canceltravel.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
@@ -257,7 +251,7 @@ TODO
                         %param = t ) ).
   ENDMETHOD.
 
-  METHOD maintain_booking_fee.
+  METHOD maintainbookingfee.
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          ALL FIELDS
