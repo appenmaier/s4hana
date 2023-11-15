@@ -4,12 +4,12 @@ description: ""
 sidebar_position: 40
 ---
 
-- Die Datenbanktabelle `Z_BOOKING_A` erstellen
+- Die Anwendungstabelle `Z_BOOKING_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` um Buchungen erweitern
 - Die BO Base View `ZR_Booking` inklusive einer Assoziation zur BO Base View `ZR_Travel` erstellen
 - Die BO Base View `ZR_Travel` um eine Assoziation zur BO Base View `ZR_Booking` erweitern
 
-## Datenbanktabelle `Z_BOOKING_A`
+## Anwendungstabelle `Z_BOOKING_A`
 
 ```sql showLineNumbers
 //highlight-start

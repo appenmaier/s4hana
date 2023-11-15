@@ -1,14 +1,15 @@
 ---
-title: X. Entwurfs-Funktionen implementieren
+title: 17. Entwurfs-Funktionen implementieren
 description: ""
-sidebar_position: 200
+sidebar_position: 170
 ---
 
 - Die Behavior Definition `ZR_TRAVEL` um Entwurfs-Funktionen erweitern
-- Eine Entwurfstabelle für die Datenbanktabelle `Z_TRAVEL_A` generieren lassen
-- Eine Entwurfstabelle für die Datenbanktabelle `Z_BOOKING_A` generieren lassen
+- Eine Entwurfstabelle für die Anwendungstabelle `Z_TRAVEL_A` generieren lassen
+- Eine Entwurfstabelle für die Anwendungstabelle `Z_BOOKING_A` generieren lassen
 - Die Behavior Projection `ZC_TRAVEL` um Entwurfs-Funktionen erweitern
 - Das Service Binding `ZUI_TRAVEL_04` erstellen
+- Das Service Binding `ZUI_TRAVEL_02` löschen
 
 ## Behavior Definition `ZR_TRAVEL`
 

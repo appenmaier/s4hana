@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 10
 ---
 
-- Die Datenbanktabelle `Z_TRAVEL_A` erstellen
+- Die Anwendungstabelle `Z_TRAVEL_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` erstellen
 - Die BO Base View `ZR_Travel` erstellen
 
-## Datenbanktabelle `Z_TRAVEL_A`
+## Anwendungstabelle `Z_TRAVEL_A`
 
 ```sql showLineNumbers
 //highlight-start

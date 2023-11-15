@@ -13,12 +13,12 @@ Die Architektur einer RAP-Anwendung umfasst die nachfolgenden Bereiche:
 
 **Datenmodellierung und Verhalten**
 
-- _RAP Business Objects_ (RAP BOs) legen das Datenmodell für transaktionale Anwendungen fest und beinhalten neben den Daten auch die datenbezogene Logik, also das Verhalten
+- _Business Objects_ (BOs) legen das Datenmodell für transaktionale Anwendungen fest und beinhalten neben den Daten auch die datenbezogene Logik, also das Verhalten
 - _CDS Entities_ ermöglichen die Definition von nicht-transaktionalen Datenmodellen, die für Abfragen verwendet werden können
 
 **Service-Bereitstellung**
 
-- _RAP BO Projections_ und _Interfaces_ ermöglichen die Definition spezifischer Geschäftsservices
+- _BO Projections_ und _Interfaces_ ermöglichen die Definition spezifischer Geschäftsservices
 - _Service Definitions_ legen den Umfang eines Geschäftsservices fest
 - _Service Bindings_ legen das Kommunikationsprotokoll (OData v2 oder OData v4) sowie die Art des Geschäftsservices (UI, Web API oder Event) fest
 
@@ -49,12 +49,12 @@ flowchart LR
     subgraph Service-Bereitstellung
         binding(Service Binding)
         definition(Service Defintion)
-        projection(RAP BO Projection)
+        projection(BO Projection)
         interface(Interface)
     end
 
     subgraph Datenmodellierung&#160und&#160Verhalten
-        bo(RAP Business Object)
+        bo(Business Object)
         entity(CDS Entity)
     end
 
@@ -67,48 +67,49 @@ flowchart LR
 
 Für die Entwicklung von SAP Fiori Apps nach RAP kommen nachfolgende Laufzeitartefakte zum Einsatz:
 
-- _Restricted Interface Views_ und _Projection Views_ legen das Datenmodell des RAP BOs fest
+- _BO Base Views_ legen das Datenmodell des BOs fest
+- _Behavior Definitions_ legen das transaktionale Verhalten des BOs fest
 - _Metadata Extensions_ legen die Oberfläche fest
 - _Access Controls_ steuern die Lesezugriffe
-- _Behavior Definitions_ und _Behavior Projections_ legen das transaktionale Verhalten des RAP BOs fest
-- _Behavior Implementation Classes_ beinhalten die Verhaltensimplementierungen
+- _Verhaltensimplementierungen_ beinhalten die Implementierungen des transaktionalen Verhaltens
+- _BO Projection Views_ und _Behavior Projections_ legen den Business Service fest
 - _Service Definitions_ legen den Umfang des Business Services fest
 - _Service Bindings_ legen das Kommunikationsprotokoll sowie die Art des Business Services fest
 
 ```mermaid
 flowchart
-    serviceBinding -.- serviceDefinition
-    serviceDefinition -.- projectionView
-    projectionView -.- restrictedInterfaceView
-    restrictedInterfaceView -.- databaseTable
-    accessControl2 -.- projectionView
-    accessControl1 -.- restrictedInterfaceView
-    behaviorProjection -.- projectionView
-    behaviorDefinition -.- restrictedInterfaceView
-    behaviorDefinition -.- behaviorImplementationClass
-    metadataExtension -.- projectionView
+    servicebinding -.- servicedefinition
+    servicedefinition -.- boprojectionview
+    boprojectionview -.- bobaseview
+    bobaseview -.- databasetable
+    accesscontrol2 -.- boprojectionview
+    accesscontrol1 -.- bobaseview
+    behaviorprojection -.- boprojectionview
+    behaviordefinition -.- bobaseview
+    behaviordefinition -.- behaviorimplementation
+    metadataextension -.- boprojectionview
 
     subgraph Business&#160Services
-        serviceBinding(Service Binding)
-        serviceDefinition(Service Definition)
+        servicebinding(Service Binding)
+        servicedefinition(Service Definition)
     end
 
     subgraph Source&#160Code&#160Library
-        behaviorImplementationClass(Behavior Implementation Class)
+        behaviorimplementation(Verhaltensimplementierung)
     end
 
     subgraph Core&#160Data&#160Services
-        behaviorDefinition(Behavior Definition)
-        behaviorProjection(Behavior Projection)
-        accessControl1(Access Control)
-        accessControl2(Access Control)
-        metadataExtension(Metadata Extension)
-        projectionView(Projection View)
-        restrictedInterfaceView(Restricted Interface View)
+        behaviordefinition(Behavior Definition)
+        behaviorprojection(Behavior Projection)
+        accesscontrol1(Access Control)
+        accesscontrol2(Access Control)
+        metadataextension(Metadata Extension)
+        boprojectionview(BO Projection View)
+        bobaseview(BO Base View)
     end
 
     subgraph Dictionary
-        databaseTable[(Database Table)]
+        databasetable(Database Table)
     end
 
     style Business&#160Services fill:#9abcf2
