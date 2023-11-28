@@ -228,7 +228,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Check Authorizations
     LOOP AT travels INTO DATA(travel).
-
       " Update Operation
       IF update_requested = abap_true.
         " Productive Implementation
@@ -288,7 +287,6 @@ CLASS lhc_travel IMPLEMENTATION.
                           %delete = if_abap_behv=>auth-allowed ) TO result.
         ENDIF.
       ENDIF.
-
     ENDLOOP.
 //highlight-end
   ENDMETHOD.
@@ -314,7 +312,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Agency and Create Error Message
       SELECT SINGLE FROM /dmo/agency FIELDS @abap_true WHERE agency_id = @travel-AgencyId INTO @DATA(exists).
       IF exists = abap_false.
@@ -324,7 +321,6 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( AgencyId = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -340,7 +336,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Agency and Create Error Message
       SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
       IF exists = abap_false.
@@ -350,7 +345,6 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( CustomerId = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -366,14 +360,12 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Dates and Create Error Message
       IF travel-EndDate < travel-BeginDate.
         message = NEW zcm_travel( textid = zcm_travel=>invalid_dates ).
         APPEND VALUE #( %tky = travel-%tky
                         %msg = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -385,20 +377,12 @@ CLASS lhc_travel IMPLEMENTATION.
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
 
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-
-      " Set Status
-      travel->Status = 'N'.
-
-    ENDLOOP.
-
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR t IN travels
-                         ( %tky   = travel->%tky
-                           Status = travel->Status ) ).
+                         ( %tky   = t->%tky
+                           Status = 'N' ) ).
   ENDMETHOD.
 
   METHOD determinetravelid.
@@ -410,19 +394,19 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels REFERENCE INTO DATA(travel).
+      " Get Max Travel ID
+      SELECT FROM /dmo/travel FIELDS MAX(  travel_id ) INTO @DATA(max_travel_id).
 
       " Set Travel ID
-      SELECT FROM /dmo/travel FIELDS MAX(  travel_id ) INTO @DATA(max_travel_id).
       travel->TravelId = max_travel_id + 1.
-
     ENDLOOP.
 
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR t IN travels
-                         ( %tky     = travel->%tky
-                           TravelId = travel->TravelId ) ).
+                         ( %tky     = t->%tky
+                           TravelId = t->TravelId ) ).
   ENDMETHOD.
 
   METHOD canceltravel.
@@ -436,7 +420,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels REFERENCE INTO DATA(travel).
-
       " Validate Status and Create Error Message
       IF travel->Status = 'X'.
         message = NEW zcm_travel( textid = zcm_travel=>travel_already_cancelled
@@ -445,6 +428,7 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( Status = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel->%tky ) TO failed-travel.
+        DELETE travels INDEX sy-tabix.
         CONTINUE.
       ENDIF.
 
@@ -479,20 +463,18 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels REFERENCE INTO DATA(travel).
-
       " Set Booking Fee
       travel->BookingFee   = keys[ sy-tabix ]-%param-BookingFee.
       travel->CurrencyCode = keys[ sy-tabix ]-%param-CurrencyCode.
-
     ENDLOOP.
 
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( BookingFee CurrencyCode )
            WITH VALUE #( FOR t IN travels
-                         ( %tky         = travel->%tky
-                           BookingFee   = travel->BookingFee
-                           CurrencyCode = travel->CurrencyCode ) ).
+                         ( %tky         = t->%tky
+                           BookingFee   = t->BookingFee
+                           CurrencyCode = t->CurrencyCode ) ).
 
     " Set Result
     result = VALUE #( FOR t IN travels

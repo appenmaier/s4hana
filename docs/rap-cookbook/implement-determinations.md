@@ -223,7 +223,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Agency and Create Error Message
       SELECT SINGLE FROM /dmo/agency FIELDS @abap_true WHERE agency_id = @travel-AgencyId INTO @DATA(exists).
       IF exists = abap_false.
@@ -233,7 +232,6 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( AgencyId = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -249,7 +247,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Agency and Create Error Message
       SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
       IF exists = abap_false.
@@ -259,7 +256,6 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( CustomerId = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -275,14 +271,12 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Dates and Create Error Message
       IF travel-EndDate < travel-BeginDate.
         message = NEW zcm_travel( textid = zcm_travel=>invalid_dates ).
         APPEND VALUE #( %tky = travel-%tky
                         %msg = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -295,20 +289,12 @@ CLASS lhc_travel IMPLEMENTATION.
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
 
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-
-      " Set Status
-      travel->Status = 'N'.
-
-    ENDLOOP.
-
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR t IN travels
-                         ( %tky   = travel->%tky
-                           Status = travel->Status ) ).
+                         ( %tky   = t->%tky
+                           Status = 'N' ) ).
   ENDMETHOD.
 //highlight-end
 
@@ -322,19 +308,19 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels REFERENCE INTO DATA(travel).
+      " Get Max Travel ID
+      SELECT FROM /dmo/travel FIELDS MAX( travel_id ) INTO @DATA(max_travel_id).
 
       " Set Travel ID
-      SELECT FROM /dmo/travel FIELDS MAX(  travel_id ) INTO @DATA(max_travel_id).
       travel->TravelId = max_travel_id + 1.
-
     ENDLOOP.
 
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR t IN travels
-                         ( %tky     = travel->%tky
-                           TravelId = travel->TravelId ) ).
+                         ( %tky     = t->%tky
+                           TravelId = t->TravelId ) ).
   ENDMETHOD.
 //highlight-end
 ENDCLASS.

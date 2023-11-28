@@ -262,7 +262,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Agency and Create Error Message
       SELECT SINGLE FROM /dmo/agency FIELDS @abap_true WHERE agency_id = @travel-AgencyId INTO @DATA(exists).
       IF exists = abap_false.
@@ -272,7 +271,6 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( AgencyId = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -290,7 +288,6 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Agency and Create Error Message
       SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
       IF exists = abap_false.
@@ -300,7 +297,6 @@ CLASS lhc_travel IMPLEMENTATION.
                         %element = VALUE #( CustomerId = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
@@ -318,14 +314,12 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-
       " Validate Dates and Create Error Message
       IF travel-EndDate < travel-BeginDate.
         message = NEW zcm_travel( textid = zcm_travel=>invalid_dates ).
         APPEND VALUE #( %tky = travel-%tky
                         %msg = message ) TO reported-travel.
         APPEND VALUE #( %tky = travel-%tky ) TO failed-travel.
-        CONTINUE.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
