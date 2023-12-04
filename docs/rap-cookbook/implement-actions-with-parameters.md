@@ -254,7 +254,7 @@ CLASS lhc_travel IMPLEMENTATION.
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR t IN travels
-                         ( %tky   = t->%tky
+                         ( %tky   = t-%tky
                            Status = 'N' ) ).
   ENDMETHOD.
 
@@ -278,8 +278,8 @@ CLASS lhc_travel IMPLEMENTATION.
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR t IN travels
-                         ( %tky     = t->%tky
-                           TravelId = t->TravelId ) ).
+                         ( %tky     = t-%tky
+                           TravelId = t-TravelId ) ).
   ENDMETHOD.
 
   METHOD canceltravel.
@@ -346,9 +346,9 @@ CLASS lhc_travel IMPLEMENTATION.
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( BookingFee CurrencyCode )
            WITH VALUE #( FOR t IN travels
-                         ( %tky         = t->%tky
-                           BookingFee   = t->BookingFee
-                           CurrencyCode = t->CurrencyCode ) ).
+                         ( %tky         = t-%tky
+                           BookingFee   = t-BookingFee
+                           CurrencyCode = t-CurrencyCode ) ).
 
     " Set Result
     result = VALUE #( FOR t IN travels
