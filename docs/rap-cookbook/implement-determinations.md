@@ -102,7 +102,7 @@ authorization master ( instance )
   field ( mandatory : create ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
 //highlight-start
-  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Status, TravelId;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 //highlight-end
 
   mapping for z_travel_a corresponding

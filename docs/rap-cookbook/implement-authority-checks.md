@@ -79,7 +79,7 @@ authorization master ( global, instance )
   action CancelTravel result [1] $self;
   action MaintainBookingFee parameter ZA_BookingFee result [1] $self;
 
-  draft action Activate;
+  draft action Activate optimized;
   draft action Discard;
   draft action Edit;
   draft determine action Prepare
@@ -100,7 +100,7 @@ authorization master ( global, instance )
   field ( readonly, numbering : managed ) TravelUuid;
   field ( mandatory : create ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
-  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Status, TravelId;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 
   mapping for z_travel_a corresponding
   {

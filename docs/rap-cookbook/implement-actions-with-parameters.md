@@ -59,7 +59,7 @@ authorization master ( instance )
   field ( readonly, numbering : managed ) TravelUuid;
   field ( mandatory : create ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
-  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Status, TravelId;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 
   mapping for z_travel_a corresponding
   {
