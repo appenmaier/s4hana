@@ -283,44 +283,28 @@ CLASS lhc_travel IMPLEMENTATION.
 
 //highlight-start
   METHOD determinestatus.
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         FIELDS ( Status )
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
-
-    " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( Status )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky   = t-%tky
+           WITH VALUE #( FOR key IN keys
+                         ( %tky   = key-%tky
                            Status = 'N' ) ).
   ENDMETHOD.
 //highlight-end
 
 //highlight-start
   METHOD determinetravelid.
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         FIELDS ( TravelId )
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
+    DATA travel_id TYPE /dmo/travel_id.
 
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-      " Get Max Travel ID
-      SELECT FROM /dmo/travel FIELDS MAX( travel_id ) INTO @DATA(max_travel_id).
-
-      " Set Travel ID
-      travel->TravelId = max_travel_id + 1.
-    ENDLOOP.
+    " Get Travel ID
+    SELECT FROM /dmo/travel FIELDS MAX( travel_id ) INTO @DATA(max_travel_id).
+    travel_id = max_travel_id + 1.
 
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( TravelId )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky     = t-%tky
-                           TravelId = t-TravelId ) ).
+           WITH VALUE #( FOR key IN keys
+                         ( %tky     = key-%tky
+                           TravelId = travel_id ) ).
   ENDMETHOD.
 //highlight-end
 ENDCLASS.

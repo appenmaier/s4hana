@@ -244,42 +244,26 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD determinestatus.
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         FIELDS ( Status )
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
-
-    " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( Status )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky   = t-%tky
+           WITH VALUE #( FOR key IN keys
+                         ( %tky   = key-%tky
                            Status = 'N' ) ).
   ENDMETHOD.
 
   METHOD determinetravelid.
-    " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
-         FIELDS ( TravelId )
-         WITH CORRESPONDING #( keys )
-         RESULT DATA(travels).
+    DATA travel_id TYPE /dmo/travel_id.
 
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-      "Get Max Travel ID
-      SELECT FROM /dmo/travel FIELDS MAX(  travel_id ) INTO @DATA(max_travel_id).
-
-      " Set Travel ID
-      travel->TravelId = max_travel_id + 1.
-    ENDLOOP.
+    " Get Travel ID
+    SELECT FROM /dmo/travel FIELDS MAX( travel_id ) INTO @DATA(max_travel_id).
+    travel_id = max_travel_id + 1.
 
     " Modify Travels
     MODIFY ENTITY IN LOCAL MODE ZR_Travel
            UPDATE FIELDS ( TravelId )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky     = t-%tky
-                           TravelId = t-TravelId ) ).
+           WITH VALUE #( FOR key IN keys
+                         ( %tky     = key-%tky
+                           TravelId = travel_id ) ).
   ENDMETHOD.
 
   METHOD canceltravel.
@@ -329,26 +313,19 @@ CLASS lhc_travel IMPLEMENTATION.
 
 //highlight-start
   METHOD maintainbookingfee.
+    " Modify Travels
+    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+           UPDATE FIELDS ( BookingFee CurrencyCode )
+           WITH VALUE #( FOR key IN keys
+                         ( %tky         = key-%tky
+                           BookingFee   = key-%param-BookingFee
+                           CurrencyCode = key-%param-CurrencyCode ) ).
+
     " Read Travels
     READ ENTITY IN LOCAL MODE ZR_Travel
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
-
-    " Process Travels
-    LOOP AT travels REFERENCE INTO DATA(travel).
-      " Set Booking Fee
-      travel->BookingFee   = keys[ sy-tabix ]-%param-BookingFee.
-      travel->CurrencyCode = keys[ sy-tabix ]-%param-CurrencyCode.
-    ENDLOOP.
-
-    " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
-           UPDATE FIELDS ( BookingFee CurrencyCode )
-           WITH VALUE #( FOR t IN travels
-                         ( %tky         = t-%tky
-                           BookingFee   = t-BookingFee
-                           CurrencyCode = t-CurrencyCode ) ).
 
     " Set Result
     result = VALUE #( FOR t IN travels
