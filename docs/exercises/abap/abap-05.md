@@ -3,6 +3,24 @@ title: ABAP-05
 description: ""
 ---
 
-1. Erstelle die Klasse `ZCL_???_CALCULATOR`
-2. Erstelle die Klassenmethode `ZABAP_DECIMAL CALCULATE_PERCENTAGE(PERCENTAGE: ZABAP_DECIMAL, BASE_VALUE: ZABAP_DECIMAL)` so, dass diese aufgrund eines eingehenden Prozentsatzes sowie einer eingehenden Basiszahl den entsprechenden Prozentwert berechnet und zurückgibt
-3. Erweitere das ABAP-Programm aus Übungsaufgabe [ABAP-04](abap-04.md) so, dass auch Prozent- und Potenzberechnungen durchgeführt werden können. Verwende für die Potenzberechnung die Klassenmethode `ZABAP_DECIMAL CALCULATE_POWER(BASE: ZABAP_DECIMAL, EXPONENT: ZABAP_DECIMAL)` der Klasse `ZCL_ABAP_CALCULATOR` und für die Prozentberechnung die erstellte Klassenmethode aus Aufgabenteil 2
+1. Erstelle mit Hilfe der abgebildeten Komponentenübersicht den Strukturtypen `Z???_CUSTOMER`
+2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05`, welche Kundeninformationen (Vorname, Nachname, Stadt, Land) zu einer eingegebenen Kundennummer liest und diese auf dem Bildschirm ausgibt. Verwende zum Lesen der Kundeninformationen die Klassenmethode `ZABAP_CUSTOMER GET_CUSTOMER(CUSTOMER_ID: /DMO/CUSTOMER_ID)` der Klasse `ZCL_ABAP_HELPER`.
+
+## Komponentenübersicht des Strukturtyps `Z???_CUSTOMER`
+
+| Komponente  | Komponententyp   | Bezeichnung  |
+| ----------- | ---------------- | ------------ |
+| CUSTOMER_ID | /DMO/CUSTOMER_ID | Kundennummer |
+| FIRST_NAME  | /DMO/FIRST_NAME  | Vorname      |
+| LAST_NAME   | /DMO/LAST_NAME   | Nachname     |
+| CITY        | /DMO/CITY        | Stadt        |
+| COUNTRY     | LAND1            | Land         |
+
+## Ausgabe
+
+```
+Customer ID: 19286
+Name:        Bruce Wayne
+City:        Gotham City
+Country:     US
+```

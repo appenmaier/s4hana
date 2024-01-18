@@ -3,18 +3,10 @@ title: ABAP-01
 description: ""
 ---
 
-Erstelle das ABAP-Programm `Z???_ABAP_01`, welches einen eingegebenen Namen samt einer kurzen Begrüßungsformel auf dem Bildschirm ausgibt.
-
-## Eingabe
-
-```
-Ausführen (F8)
-
-Name: Bruce Wayne
-```
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`, welche einen Vornamen und einen Nachnamen in entsprechenden Datenobjekten speichert und anschließend den vollständigen Namen samt einer kurzen Begrüßungsformel auf dem Bildschirm ausgibt.
 
 ## Ausgabe
 
 ```
-Hallo Bruce Wayne, wie geht es Dir?
+Hello Bruce Wayne, how are you?
 ```

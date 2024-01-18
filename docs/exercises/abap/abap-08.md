@@ -3,31 +3,12 @@ title: ABAP-08
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_BOOKINGS`
-2. Erweitere die Klasse `ZCL_???_HELPER` und die Klassenmethode `Z???_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)`, welche zu einer eingehenden Kundennummer alle Buchungen liest und zurückgibt. Verwende zum Lesen der Buchungen die Klassenmethode `ZABAP_BOOKINGS GET_BOOKINGS(CUSTOMER_ID: S_CUSTOMER)` der Klasse `ZCL_ABAP_HELPER`
-3. Erstelle das ABAP-Programm `Z???_ABAP_08`, welches zu einer eingegebenen Kundennummer alle Buchungen liest und auf dem Bildschirm ausgibt. Verwende zum Lesen der Buchungen die Klassenmethode aus Aufgabenteil 2
-
-## Informationen zum Tabellentyp `Z???_BOOKINGS`
-
-- Zeilentyp: `ZABAP_BOOKING`
-- Tabellenart: Standardtabelle
-- Primärschlüssel: Standardschlüssel
-
-## Eingabe
-
-```
-Ausführen (F8)
-
-Kundenummer: 67
-```
+Passe die ausführbare Klasse aus Übungsaufgabe [ABAP-07](abap-07.md) wie folgt an: Lösche vor der Ausgabe alle Reisen, bei denen das Startdatum in der Vergangenheit liegt, erhöhe bei allen übrigen Buchungen die Buchungsgebühren um 10% und sortiere die Reisen absteigend nach der Beschreibung.
 
 ## Ausgabe
 
 ```
-Buchungsummer, Fluggesellschaft, Verbindungsnummer, Flugdatum, Buchungspreis
-988, LH, 0400, 21.08.2024, 745 EUR
-987, UA, 3517, 30.06.2024, 623 EUR
-743, AZ, 0789, 03.10.2023, 893 EUR
-558, LH, 0401, 04.01.2022, 1.294 EUR
-219, DL, 1699, 23.08.2020, 398 EUR
+Travel ID, Start, End, Description, Booking Fee in Euro
+91823, 20.12.2023, 31.12.2023, Vacation in New York, 110
+82751, 30.06.2021, 14.07.2021, Vacation in Italia, 77
 ```

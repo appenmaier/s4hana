@@ -3,21 +3,5 @@ title: ABAP-09
 description: ""
 ---
 
-Passe das ABAP-Programm `Z???_ABAP_09` aus Übungsaufgabe [ABAP-08](abap-08.md) wie folgt an: Lösche vor der Ausgabe alle Buchungen, bei denen das Flugdatum in der Vergangenheit liegt, erhöhe bei allen übrigen Buchungen den Buchungspreis um 10% und sortiere die Buchungen absteigend nach dem Buchungspreis.
-
-## Eingabe
-
-```
-Ausführen (F8)
-
-Kundenummer: 67
-```
-
-## Ausgabe
-
-```
-Buchungsummer, Fluggesellschaft, Verbindungsnummer, Flugdatum, Buchungspreis
-743, AZ, 0789, 03.10.2023, 902 EUR
-988, LH, 0400, 21.08.2024, 752 EUR
-987, UA, 3517, 30.06.2024, 629 EUR
-```
+1. Passe die Klassenmethode `ZABAP_TRAVEL_WITH_CUSTOMER GET_TRAVEL_WITH_CUSTOMER(TRAVEL_ID: /DMO/TRAVEL_ID)` der Klasse `ZCL_???_HELPER` so an, dass zum Lesen der Reiseinformationen und Kundeninformationen eine entsprechende SQL-Anweisung verwendet wird
+2. Passe die Klassenmethode `Z???_TRAVELS GET_TRAVELS(CUSTOMER_ID: /DMO/CUSTOMER_ID)` der Klasse `ZCL_???_HELPER` so an, dass zum Lesen der Reisen eine entsprechende SQL-Anweisung verwendet wird
