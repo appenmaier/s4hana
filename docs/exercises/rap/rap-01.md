@@ -5,7 +5,7 @@ description: ""
 
 - Erstelle mit Hilfe des abgebildeten ER-Modells die BO Base View `ZR_???_Movie` sowie die BO Projection View `ZC_???_Movie`
 - Erstelle für die BO Projection View für Filme die Service Definition `ZUI_???_MOVIE`
-- Erstelle für die Service Definition für Filme das Service Binding `ZUI_???_MOVIE_02`
+- Erstelle für die Service Definition für Filme das Service Binding `ZUI_???_MOVIE_O2`
 - Erstelle für die BO Projection View für Filme die Metadata Extension `ZC_???_MOVIE`
 
 ## ER-Modell

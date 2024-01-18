@@ -14,7 +14,7 @@ Die Interface View `ZI_???_GenreText` soll alle Texte zu den Domänenfestwerten 
 
 ## Hinweis zur Interface View `ZI_???_RuntimeText`
 
-Die Interface View `ZI_???_RuntimeText` soll für Filme mit einer Laufzeit von mehr als 150 Minuten den Wert `Überlänge` und für Filme mit einer Laufzeit von weniger als 30 Minuten den Wert `Kurzfilm` ausgeben.
+Die Interface View `ZI_???_RuntimeText` soll für Filme mit einer Laufzeit von mehr als 150 Minuten den Wert `Hinweis: Überlänge` und für Filme mit einer Laufzeit von weniger als 30 Minuten den Wert `Hinweis: Kurzfilm` ausgeben.
 
 ## Hinweise zum transienten Feld `AverageRating`
 

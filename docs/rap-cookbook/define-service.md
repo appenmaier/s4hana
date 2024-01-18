@@ -6,7 +6,7 @@ sidebar_position: 20
 
 - Die BO Projection View `ZC_Travel` erstellen
 - Die Service Definition `ZUI_TRAVEL` erstellen
-- Das Service Binding `ZUI_TRAVEL_02` erstellen
+- Das Service Binding `ZUI_TRAVEL_O2` erstellen
 
 ## BO Projection View `ZC_Travel`
 
@@ -49,7 +49,7 @@ define service ZUI_TRAVEL {
 //highlight-end
 ```
 
-## Service Binding `ZUI_TRAVEL_02`
+## Service Binding `ZUI_TRAVEL_O2`
 
 - Service Definition: ZUI_TRAVEL
 - Binding Type: OData V2 - UI

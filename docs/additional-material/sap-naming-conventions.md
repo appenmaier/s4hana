@@ -54,12 +54,12 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 ### Sonstiges
 
-| Typ                | Bezeichner                                                      | Beispiel             |
-| ------------------ | --------------------------------------------------------------- | -------------------- |
-| Paket              | <Namensraum\><Beschreibung\>                                    | `ZABAP`              |
-| Message Class      | <Namensraum\><Komponente\>\_<Beschreibung\>                     | `ZABAP_FLIGHT`       |
-| Service Definition | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>             | `ZUI_ABAP_FLIGHT`    |
-| Service Binding    | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>\_<Version\> | `ZUI_ABAP_FLIGHT_04` |
+| Typ                | Bezeichner                                                       | Beispiel             |
+| ------------------ | ---------------------------------------------------------------- | -------------------- |
+| Paket              | <Namensraum\><Beschreibung\>                                     | `ZABAP`              |
+| Message Class      | <Namensraum\><Komponente\>\_<Beschreibung\>                      | `ZABAP_FLIGHT`       |
+| Service Definition | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>              | `ZUI_ABAP_FLIGHT`    |
+| Service Binding    | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>\_O<Version\> | `ZUI_ABAP_FLIGHT_O4` |
 
 ## Namensräume
 
