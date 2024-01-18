@@ -71,17 +71,17 @@ CLASS cl_main IMPLEMENTATION.
 
     car = NEW cl_car( make = 'Porsche' model = '911' seats = 2 ).
 
-    "Upcast
+    " Upcast
     vehicle = car.
 
-    "Downcast ohne Typprüfung
+    " Downcast without type check
     TRY.
       car = CAST #( vehicle ).
     CATCH cx_sy_move_cast_error INTO DATA(e).
       out->write( e->get_text( ) ).
     ENDTRY.
 
-    "Downcast mit Typprüfung
+    " Downcast with type check
     IF vehicle IS INSTANCE OF cl_car.
       car = CAST #( vehicle ) .
     ENDIF.

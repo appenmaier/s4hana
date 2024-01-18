@@ -16,15 +16,15 @@ define view entity I_Connection
   key carrier_id                                               as CarrierId,
   key connection_id                                            as ConnectionId,
 
-      /* Numerische Funktionen */
+      /* Numerical Functions */
       div(5, 3)                                                as Div1,
       mod(5, 3)                                                as Mod1,
       division(5, 3, 2)                                        as Division1,
 
-      /* Zeichenkettenfunktionen */
+      /* String Functions */
       concat_with_space('Hello', 'World', 1)                   as ConcatWithSpace1,
 
-      /* Währungs- und Einheitenumrechnung */
+      /* Conversion Functions */
       distance                                                 as OldDistance,
       distance_unit                                            as OldDistanceUnit,
       @Semantics.quantity.unitOfMeasure: 'ConvertedDistanceUnit'
@@ -34,7 +34,7 @@ define view entity I_Connection
         target_unit => cast('KM' as abap.unit) )               as ConvertedDistance,
       cast('KM' as abap.unit)                                  as ConvertedDistanceUnit,
 
-      /* Datums- und Zeitfunktionen */
+      /* Date and Time Functions */
       dats_add_days(cast('20230101' as abap.dats), 14, 'FAIL') as DatsAddDays1
 }
 ```
