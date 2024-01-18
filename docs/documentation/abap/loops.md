@@ -8,20 +8,20 @@ tags: []
 Schleifen können in ABAP entweder mit dem Schlüsselwort `WHILE` oder dem Schlüsselwort `DO` umgesetzt werden.
 
 ```abap showLineNumbers
-"Kopfgesteuerte Schleife
+" Head-controlled loop
 WHILE sy-index <= 10.
-  WRITE: / sy-index.
+  out->write( sy-index ).
 ENDWHILE.
 
-"Zählschleife
+" Index loop
 DO 10 TIMES.
-  WRITE: / sy-index.
+  out->write( sy-index ).
 ENDDO.
 
-"Endlosschleife
+" Infinite loop
 DO.
-  WRITE: / sy-index.
-  IF sy-index <= 10.
+  out->write( sy-index ).
+  IF sy-index = 10.
     EXIT.
   ENDIF.
 ENDDO.

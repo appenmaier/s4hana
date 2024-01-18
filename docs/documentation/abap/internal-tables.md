@@ -17,7 +17,7 @@ Die Deklaration einer internen Tabellen kann entweder direkt im Programm erfolge
 
 ```abap showLineNumbers
 DATA flights TYPE TABLE OF /dmo/flight.
-DATA flights2 TYPE /dmo/flights.
+DATA flights2 TYPE /dmo/t_flight.
 ```
 
 ## Einfügen von Datensätzen
@@ -26,14 +26,14 @@ Der Operator `VALUE` ermöglicht das Einfügen von Datensätzen in interne Tabel
 
 ```abap showLineNumbers
 DATA flight TYPE /dmo/flight.
-DATA flights TYPE /dmo/flights.
+DATA flights TYPE /dmo/t_flight.
 
-"Einfügen von Datensätzen
+" Insert data
 flights = VALUE #(
   ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
   ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
-"Erweitern interner Tabellen
+" Append data
 flight-carrier_id = 'LH'.
 flight-connection_id = '0402'.
 flight-flight_date = '20230607'.
@@ -54,13 +54,20 @@ Der Operator `BASE` ermöglicht das Erweitern einer internen Tabelle.
 Tabellenausdrücke ermöglichen das Lesen eines Einzelsatzes per Index bzw. per Schlüssel, die LOOP-Schleife ermöglicht das zeilenweise Auslesen von internen Tabellen.
 
 ```abap showLineNumbers
-"Lesen eines Einzelsatzes
-flight = flights[ 1 ].
-flight = flights[ carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' ].
+DATA flight TYPE /dmo/flight.
+DATA flights TYPE /dmo/t_flight.
 
-"Lesen mehrerer Datensätze
+flights = VALUE #(
+  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+
+" Read single entry
+flight = flights[ 1 ].
+flight = flights[ carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ].
+
+" Read multiple entries
 LOOP AT flights INTO flight WHERE flight_date >= '20230101'.
-  WRITE / flight-carrier_id.
+  out->write( flight-carrier_id ).
 ENDLOOP.
 ```
 
@@ -82,7 +89,7 @@ Die Fehlerbehandlung bei Tabellenausdrücken kann mit Hilfe der eingebauten Prä
 
 ```abap showLineNumbers
 DATA flight TYPE /dmo/flight.
-DATA flights TYPE /dmo/flights.
+DATA flights TYPE /dmo/t_flight.
 
 IF line_exists( flights[ 1 ] ).
   flight = flights[ 1 ].
@@ -94,17 +101,26 @@ ENDIF.
 Tabellenausdrücke ermöglichen das Ändern eines Einzelsatzes per Index bzw. per Schlüssel und über Datenreferenzen können mehrere Datensätze sequentiell geändert werden.
 
 ```abap showLineNumbers
-DATA flight TYPE /dmo/flight.
-DATA flight2 TYPE REF TO /dmo/flight.
-DATA flights TYPE /dmo/flights.
+DATA flight TYPE REF TO /dmo/flight.
+DATA flights TYPE /dmo/t_flight.
+FIELD-SYMBOL <flight> TYPE /dmo/flight.
 
-"Ändern eines Einzelsatzes
+flights = VALUE #(
+  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+
+" Change single entry
 flights[ 1 ]-price = 1000.
 flights[ carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' ]-price = 1000.
 
-"Ändern mehrerer Datensätze
-LOOP AT flights REFERENCE INTO flight2.
-  flight2->price = 1000.
+" Change multiple entries with data references
+LOOP AT flights REFERENCE INTO flight.
+  flight->price = 1000.
+ENDLOOP.
+
+" Change multiple entries with field symboles
+LOOP AT flights ASSIGNING <flight>.
+  <flight>-price = 500.
 ENDLOOP.
 ```
 
@@ -114,13 +130,17 @@ Die Anweisung `DELETE` ermöglicht das Löschen eines oder mehrerer Datensätze
 
 ```abap showLineNumbers
 DATA flight TYPE /dmo/flight.
-DATA flights TYPE /dmo/flights.
+DATA flights TYPE /dmo/t_flight.
 
-"Löschen eines Einzelsatzes
+flights = VALUE #(
+  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+
+" Delete single entry
 DELETE flights INDEX 1.
 
-"Löschen mehrerer Datensätze
-DELETE flights WHERE flight_date < '20230101'.
+" Delete multiple entries
+DELETE flights WHERE flight_date < '20240101'.
 ```
 
 ## Sortieren interner Tabellen
@@ -128,7 +148,11 @@ DELETE flights WHERE flight_date < '20230101'.
 Die Anweisung `SORT` ermöglicht das Sortieren von internen Tabellen.
 
 ```abap showLineNumbers
-DATA flights TYPE /dmo/flights.
+DATA flights TYPE /dmo/t_flight.
+
+flights = VALUE #(
+  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 SORT flights BY carrier_id ASCENDING connection_id DESCENDING flight_date ASCENDING.
 ```

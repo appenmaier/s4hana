@@ -13,17 +13,17 @@ DATA text TYPE string VALUE 'Winter'.
 DATA text2 TYPE string VALUE 'is'.
 DATA text3 TYPE string.
 
-"Verknüpfung mehrerer Zeichenketten
+" Concatenation of strings
 text3 = text && | | && text2.
 text3 &&= | Coming|.
 
-"Verwenden eines Zeichenketten-Templates
+" Usage of string templates
 text3 = |{ text } { text2 } Coming|.
 ```
 
 :::danger Hinweis
 
-Schließende Leerzeichen werden von Anweisungen zur Zeichenkettenverarbeitung in der Regel abgeschnitten.
+Schließende Leerzeichen werden von Anweisungen zur Zeichenkettenverarbeitung abgeschnitten.
 
 :::
 

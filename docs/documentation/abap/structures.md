@@ -14,7 +14,7 @@ Globale Strukturtypen werden mit Hilfe der Data Definition Language (DDL) der AB
 ```sql showLineNumbers
 @EndUserText.label : 'Connection'
 @AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
-define structure connection {
+define structure zconnection {
   carrier_id      : /dmo/carrier_id;
   connection_id   : /dmo/connection_id;
   airport_from_id : /dmo/airport_from_id;
@@ -27,7 +27,7 @@ define structure connection {
 Strukturen werden, wie elementare Datenobjekte, mit der DATA-Anweisung deklariert.
 
 ```abap showLineNumbers
-DATA connection TYPE connection.
+DATA connection TYPE zconnection.
 ```
 
 ## Zugriff auf Strukturkomponenten
@@ -35,12 +35,12 @@ DATA connection TYPE connection.
 Mit dem Komponentenselektor `-` kann auf die einzelnen Komponenten einer Struktur zugegriffen werden (lesend als auch schreibend).
 
 ```abap showLineNumbers
-DATA connection TYPE connection.
+DATA connection TYPE zconnection.
 
 connection-carrier_id = 'LH'.
 connection-connection_id = '0400'.
 
-WRITE: connection-carrier_id, connection-connection_id.
+out->write( connection-carrier_id, connection-connection_id ).
 ```
 
 ## Kopieren von Strukturen
@@ -48,17 +48,15 @@ WRITE: connection-carrier_id, connection-connection_id.
 Strukturen mit dem gleichen Strukturtypen können über den Zuweisungsoperator `=` kopiert werden. Der Operator `CORRESPONDING` ermöglicht das komponentenweise Kopieren von Inhalten einer Quellstruktur in eine Zielstruktur.
 
 ```abap showLineNumbers
-DATA flight TYPE flight.
-DATA connection TYPE connection.
-DATA connection2 TYPE connection.
-DATA flight_extended TYPE flight_extended.
+DATA flight TYPE zflight.
+DATA connection TYPE zconnection.
+DATA copy_of_connection TYPE zconnection.
+DATA flight_with_connection TYPE zflight_extended.
 
-"Kopieren typgleicher Strukturen
-connection2 = connection.
+copy_of_connection = connection.
 
-"Kopieren namensgleicher Komponenten
-flight_extended = CORRESPONDING #( flight ).
-flight_extended = CORRESPONDING #( BASE ( flight_extended ) connection ).
+flight_with_connection = CORRESPONDING #( flight ).
+flight_with_connection = CORRESPONDING #( BASE ( flight_with_connection ) connection ).
 ```
 
 :::danger Hinweis

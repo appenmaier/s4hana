@@ -25,14 +25,14 @@ Das Schlüsselwort `PARAMETERS` legt ein Datenobjekt an und erzeugt implizit ein
 Auswahlschaltern.
 
 ```abap showLineNumbers
-"Defintion von Eingabefeldern
-PARAMETERS p_carrid TYPE /dmo/carrier_id DEFAULT 'LH'.
-PARAMETERS p_connid TYPE /dmo/connection_id DEFAULT '0400'.
+" Defintion of input fields
+PARAMETERS p_carrid TYPE s_carr_id DEFAULT 'LH'.
+PARAMETERS p_connid TYPE s_conn_id DEFAULT '0400'.
 
-"Definition von Kontrollkästchen
+" Definition of checkboxes
 PARAMETERS p_chckbx TYPE c AS CHECKBOX.
 
-"Definition von Auswahlschaltern (mit Auswahlschaltergruppe)
+" Definition of radio buttons
 PARAMETERS p_rdbtn1 TYPE c RADIOBUTTON GROUP grp.
 PARAMETERS p_rdbtn2 TYPE c RADIOBUTTON GROUP grp.
 
@@ -52,8 +52,8 @@ Eine Wertvorbelegung wird bei Eingabeparametern nicht über den Zusatz `VALUE`, 
 Das Schlüsselwort `WRITE` bereitet den Inhalt des Datenobjektes auf und gibt diesen auf der aktuellen ABAP-Liste aus.
 
 ```abap showLineNumbers
-PARAMETERS p_carrid TYPE /dmo/carrier_id.
-PARAMETERS p_connid TYPE /dmo/connection_id.
+PARAMETERS p_carrid TYPE s_carr_id.
+PARAMETERS p_connid TYPE s_conn_id.
 
 WRITE 'Flight Connection'.
 ULINE.
@@ -74,7 +74,7 @@ Mit der Anweisung `MESSAGE` können Dialognachrichten an den Benutzer geschickt 
 Nachricht können durch den Zusatz `WITH` versorgt werden.
 
 ```abap showLineNumbers
-PARAMETERS p_carrid TYPE /dmo/carrier_id.
+PARAMETERS p_carrid TYPE s_carr_id.
 
 IF p_carrid IS INITIAL.
   MESSAGE e000(flight) WITH p_carrid.
@@ -89,10 +89,10 @@ ABAP kennt verschiedene Arten von Textelementen:
 - Selektionstexte dienen als Beschriftungen für Eingabeparameter
 
 ```abap showLineNumbers
-"Textliteral (nicht übersetzbar)
+" Text literal
 WRITE 'Hello World'.
 
-"Textsymbol (übersetzbar)
+" Text symbol
 WRITE: / 'Hello World'(000).
 WRITE: / TEXT-000.
 ```
@@ -112,25 +112,25 @@ Beim Starten eines ABAP Programms werden nacheinander verschiedene Ereignisse au
 - Die Hauptverarbeitung findet im Ereignis `START-OF-SELECTION` statt
 
 ```abap showLineNumbers
-"Definitionen und Deklarationen
-PARAMETERS p_from TYPE /dmo/airport_from_id.
-PARAMETERS p_to TYPE /dmo/airport_to_id.
-PARAMETERS p_date TYPE /dmo/flight_date.
+" Definitions and Declarations
+PARAMETERS p_from TYPE s_airp_from.
+PARAMETERS p_to TYPE s_airp_to.
+PARAMETERS p_date TYPE s_date.
 
-"Dynamische Wertevorbelegungen
+" Dynamic Assignments
 INITIALIZATION.
   IF sy-langu = 'D'.
     p_from = 'FRA'.
     p_to = 'JFK'.
   ENDIF.
 
-"Eingabeprüfungen
+" Input checks
 AT SELECTION-SCREEN ON p_date.
   IF p_date = sy-datlo .
     MESSAGE e001(flight) WITH p_date.
   ENDIF.
 
-"Hauptverarbeitung
+" Data Processing
 START-OF-SELECTION.
   WRITE: p_from, p_to, p_date.
 ```

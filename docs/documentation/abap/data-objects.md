@@ -27,9 +27,7 @@ Mit dem Zuweisungsoperator `=` wird dem Operanden der linken Seite der Wert des 
 ```abap showLineNumbers
 DATA carrier_id TYPE /dmo/carrier_id.
 carrier_id = 'LH'.
-
 DATA(connection_id) = '0400'.
-
 DATA flight_date TYPE /dmo/flight_date VALUE '20230101'.
 ```
 
@@ -44,8 +42,7 @@ Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts schon bei de
 Mit der Anweisung `CLEAR` kann der Inhalt eines Datenobjekts auf den Initialwert zurückgesetzt werden.
 
 ```abap showLineNumbers
-DATA carrier_id TYPE /dmo/carrier_id.
-carrier_id = 'LH'.
+DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
 CLEAR carrier_id.
 ```
 

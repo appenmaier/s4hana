@@ -31,23 +31,31 @@ DATA connection_id TYPE /dmo/connection_id VALUE '0400'.
 DATA connection TYPE /dmo/connection.
 DATA connections TYPE TABLE OF /dmo/connection.
 
-"Lesen eines Einzelsatzes
+" Read single entry
 SELECT SINGLE FROM /dmo/connection
   FIELDS *
   WHERE carrier_id = @carrier_id AND connection_id = @connection_id
   INTO @connection.
 IF sy-subrc <> 0.
-  WRITE 'no connection found'.
+  out->write( 'no connection found' ).
 ENDIF.
 
-"Lesen mehrerer Datensätze
+" Read multiple entries with array fetch
 SELECT FROM /dmo/connection
   FIELDS *
   WHERE carrier_id = @carrier_id
   INTO TABLE @connections.
 IF sy-subrc <> 0.
-  WRITE 'no flights found'.
+  out->write( 'no flights found' ).
 ENDIF.
+
+" Read multiple entries with SELECT loop
+SELECT FROM /dmo/connection
+  FIELDS *
+  WHERE carrier_id = @carrier_id
+  INTO @connection.
+  APPEND connection TO connections.
+ENDSELECT.
 ```
 
 :::note Hinweis
@@ -70,28 +78,25 @@ werden.
 ```abap showLineNumbers
 DATA connection TYPE /dmo/connection.
 
-"Angabe passender Felder
 SELECT SINGLE FROM /dmo/connection
   FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
   INTO @connection.
 IF sy-subrc <> 0.
-  WRITE 'no connection found'.
+  out->write( 'no connection found' ).
 ENDIF.
 
-"Kopieren namensgleicher Felder
 SELECT SINGLE FROM /dmo/connection
   FIELDS *
   INTO CORRESPONDING FIELDS OF @connection.
 IF sy-subrc <> 0.
-  WRITE 'no connection found'.
+  out->write( 'no connection found' ).
 ENDIF.
 
-"Inlinedeklaration
 SELECT SINGLE FROM /dmo/connection
   FIELDS *
   INTO @DATA(connection2).
 IF sy-subrc <> 0.
-  WRITE 'no connection found'.
+  out->write( 'no connection found' ).
 ENDIF.
 ```
 
@@ -114,21 +119,21 @@ connection-connection_id = '0400'.
 connection-airport_from_id = 'FRA'.
 connection-airport_to_id = 'JFK'.
 
-"Hinzufügen eines Datensatzes
+" Insert entries
 INSERT /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  WRITE 'duplicate key error'.
+  out->write( 'duplicate key error' ).
 ENDIF.
 
-"Ändern eines Datensatzes
+" Change entries
 UPDATE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  WRITE 'no entry found'.
+  out->write( 'no entry found' ).
 ENDIF.
 
-"Lösches eines Datensatzes
+" Delete entries
 DELETE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  WRITE 'no entry found'.
+  out->write( 'no entry found' ).
 ENDIF.
 ```

@@ -27,7 +27,7 @@ In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschied
 | -------- | ----------------------------- |
 | `C`      | Zeichenkette fester Länge     |
 | `N`      | Numerische Folge fester Länge |
-| `P`      | Gepackte Zahl                 |
+| `P`      | Festpunktzahl                 |
 
 ## Lokale und globale Datentypen
 
