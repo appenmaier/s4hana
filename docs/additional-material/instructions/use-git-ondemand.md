@@ -60,6 +60,6 @@ tags: []
 
 :::danger Hinweis
 
-abapGit untersützt aktuell nur Token (Classic).
+abapGit unterstützt aktuell nur Token (Classic).
 
 :::
