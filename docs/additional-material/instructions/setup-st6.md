@@ -1,5 +1,5 @@
 ---
-title: System ST6 einrichten
+title: ST6 einrichten (SAP)
 description: ""
 sidebar_position: 30
 tags: []
@@ -34,7 +34,7 @@ tags: []
   - Password: `Dein ST6 Passwort`
   - Language: `EN`
 
-:::danger Hinweis
+:::tip Hinweis
 
 Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN erreichbar.
 
@@ -104,7 +104,7 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN erreichbar.
 
 ![image](https://user-images.githubusercontent.com/47243617/195268820-b5bf1984-0f3d-4c38-bac0-16d2541c10b4.png)
 
-:::note Hinweis
+:::tip Hinweis
 
 Weitere Informationen zur Installation und Konfiguration des SAP Cloud Connectors können [hier](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) gefunden werden.
 

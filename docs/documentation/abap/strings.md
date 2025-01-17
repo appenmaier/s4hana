@@ -21,7 +21,7 @@ text3 &&= | Coming|.
 text3 = |{ text } { text2 } Coming|.
 ```
 
-:::danger Hinweis
+:::tip Hinweis
 
 Schließende Leerzeichen werden von Anweisungen zur Zeichenkettenverarbeitung abgeschnitten.
 

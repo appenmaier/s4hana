@@ -15,7 +15,7 @@ define role I_CUSTOMER {
 }
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Bei Schreibzugriffen müssen klassische ABAP-Berechtigungsprüfungen durchgeführt werden.
 

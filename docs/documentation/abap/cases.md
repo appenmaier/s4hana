@@ -22,7 +22,7 @@ out->write( COND #( WHEN flight_date BETWEEN '20230101' AND '20231231' THEN 'con
                     ELSE 'condition not fulfilled' ) ).
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Der ELSE-Zweig ist optional.
 

@@ -50,7 +50,7 @@ tags: []
   - Username: `Dein GitHub User` (z.B. appenmaier)
   - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
 
-:::danger Hinweis
+:::tip Hinweis
 
 abapGit untersützt aktuell nur den Token (Classic).
 

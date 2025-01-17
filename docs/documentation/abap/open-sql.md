@@ -7,7 +7,7 @@ tags: []
 
 Die Structured Query Language (SQL) stellt die erste Wahl dar, wenn es um den Zugriff auf Datenbanken-Verwaltungssysteme (DBMS) geht. SQL umfasst die 3 Untersprachen DDL (Data Definition Language), DML (Data Manipulation Language) und DCL (Data Control Language). DDL wird zum Erzeugen und Verwalten von Datenbanktabellen und Views, DML zum Lesen und Ändern von Datenbanktabellen-Inhalten und DCL zum Festlegen von Zugriffsberechtigungen verwendet. Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt mit datenbankspezifischen Eigenheiten. ABAP verwendet das datenbankunabhängige Open SQL, welches vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
 
-:::note Hinweis
+:::tip Hinweis
 
 Open SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 
@@ -58,13 +58,13 @@ SELECT FROM /dmo/connection
 ENDSELECT.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Mit dem optionalen Zusatz `ORDER BY` können die gelesenen Datensätze sortiert werden.
 
 :::
 
-:::note Hinweis
+:::tip Hinweis
 
 Mit dem optionalen Zusatz `UP TO...ROWS` kann die Anzahl der gelesenen Datensätze begrenzt werden.
 
@@ -100,7 +100,7 @@ IF sy-subrc <> 0.
 ENDIF.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Bei nicht übereinstimmenden Feldtypen wird eine (aufwändige) Typkonvertierung durchgeführt.
 

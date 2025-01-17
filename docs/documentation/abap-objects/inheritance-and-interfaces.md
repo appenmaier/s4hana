@@ -91,7 +91,7 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Zur Typprüfung beim Downcast kann der Ausdruck `IS INSTANCE OF` verwendet werden.
 

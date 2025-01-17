@@ -59,7 +59,7 @@ flight_with_connection = CORRESPONDING #( flight ).
 flight_with_connection = CORRESPONDING #( BASE ( flight_with_connection ) connection ).
 ```
 
-:::danger Hinweis
+:::tip Hinweis
 
 Beim Kopieren mit `CORRESPONDING` werden nur gleichnamige Komponenten berücksichtigt. Gegebenenfalls findet eine Typkonvertierung statt.
 

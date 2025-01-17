@@ -26,7 +26,7 @@ define view entity I_Flight
 }
 ```
 
-:::danger Hinweis
+:::tip Hinweis
 
 Da der Divisionsoperator `/` nur Gleitkommazahlen unterstützt, muss gegebenenfalls eine Typumwandlung mit Hilfe der cast-Operation erfolgen.
 

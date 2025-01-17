@@ -31,7 +31,7 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Mit dem Zusatz `READ-ONLY` können öffentliche Attribute so eingeschränkt werden, dass diese zwar nach außen sichtbar, aber nicht änderbar sind.
 
@@ -70,7 +70,7 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 ABAP kennt keine überladene Methoden, stattdessen können mit dem Zusatz `OPTIONAL` Import-Parameter definiert werden, die beim Aufruf der Methode nicht angegeben werden müssen. Zudem können mit dem Zusatz `DEFAULT` Import-Parameter mit Werten vorbelegt werden.
 
@@ -118,7 +118,7 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Das Schlüsselwort `ME` ermöglicht den Zugriff auf die Attribute und Methoden der Klasse.
 

@@ -37,14 +37,15 @@ In ABAP können Datentypen lokal und global definiert werden: Lokale Datentypen 
 flowchart
 
     subgraph Globaler&#160Datentyp
-        subgraph Technische&#160Informationen
-            type(Datentyp)
-            length(Länge)
-        end
         subgraph Semantische&#160Informationen
             valueHelp(Wertehilfe)
             label(Bezeichner)
         end
+        subgraph Technische&#160Informationen
+            type(Datentyp)
+            length(Länge)
+        end
+
     end
 
     subgraph Lokaler&#160Datentyp
@@ -53,15 +54,9 @@ flowchart
             length2(Länge)
         end
     end
-
-    style Globaler&#160Datentyp fill:#9abcf2
-    style Lokaler&#160Datentyp fill:#9abcf2
-    style Semantische&#160Informationen fill:#fd9c9f
-    style Technische&#160Informationen fill:#fd9c9f
-    style Technische&#160Informationen&#160 fill:#fd9c9f
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Globale Datentypen besitzen neben technischen auch semantische Informationen (z.B. Wertehilfen und Bezeichner).
 

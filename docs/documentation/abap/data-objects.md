@@ -14,7 +14,7 @@ DATA carrier_id TYPE c LENGTH 3.
 DATA connection_id TYPE /dmo/connection_id.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Mit dem Zusatz `LENGTH` kann bei unvollständigen Datentypen die Länge des Datentyps in Byte angegeben werden und beim Datentyp `P` kann zusätzlich mit dem Zusatz `DECIMALS` die Anzahl der Nachkommastellen angegeben werden.
 
@@ -31,7 +31,7 @@ DATA(connection_id) = '0400'.
 DATA flight_date TYPE /dmo/flight_date VALUE '20230101'.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts schon bei der Deklaration vorbelegt werden.
 

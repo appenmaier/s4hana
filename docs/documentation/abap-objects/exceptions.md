@@ -55,7 +55,7 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Mit dem Zusatz `EXPORTING` können dem Ausnahmenobjekt Zusatzinformationen mitgegeben werden.
 

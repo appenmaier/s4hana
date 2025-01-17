@@ -27,13 +27,13 @@ where
   Flight.plane_type_id = '747-400'
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Die ABAP CDS unterstützen sowohl Inner Joins als auch Left Outer Joins und Right Outer Joins; Full Outer Joins nur indirekt durch die Anweisung `union`.
 
 :::
 
-:::note Hinweis
+:::tip Hinweis
 
 Der Name der ABAP CDS View kann maximal 30 Zeichen umfassen.
 

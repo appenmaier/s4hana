@@ -43,7 +43,7 @@ flight-flight_date = '20231231'.
 APPEND flight TO flights.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Der Operator `BASE` ermöglicht das Erweitern einer internen Tabelle.
 
@@ -71,7 +71,7 @@ LOOP AT flights INTO flight WHERE flight_date >= '20230101'.
 ENDLOOP.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Durch den Zusatz `WHERE` können bei einer LOOP-Schleife die auszulesenden Zeilen eingeschränkt werden.
 
@@ -157,7 +157,7 @@ flights = VALUE #(
 SORT flights BY carrier_id ASCENDING connection_id DESCENDING flight_date ASCENDING.
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Die Zusätze `ASCENDING` und `DESCENDING` legen die Sortierreihenfolge fest.
 

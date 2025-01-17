@@ -31,19 +31,19 @@ define view entity I_Connection
 }
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 Die Kardinalität wird in der Form _[Untere Grenze..Obere Grenze]_ angegeben.
 
 :::
 
-:::note Hinweis
+:::tip Hinweis
 
 Zur besseren Unterscheidung von Feldern und Assoziationen sollten letztgenannte immer mit einem Unterstrich beginnen.
 
 :::
 
-:::note Hinweis
+:::tip Hinweis
 
 In der Join-Bedingung kann über die Anweisung `$projection` auf Elemente der Feldliste zugegriffen werden.
 

@@ -15,7 +15,7 @@ text = 'Ein Ring sie zu knechten'. " Assignment
 out->write( text ). " Output
 ```
 
-:::note Hinweis
+:::tip Hinweis
 
 ABAP unterscheidet nicht zwischen Groß- und Kleinschreibung.
 

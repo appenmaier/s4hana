@@ -1,5 +1,5 @@
 ---
-title: ABAP Environment einrichten
+title: SAP BTP ABAP Environment einrichten (DHBW und SAP)
 description: ""
 sidebar_position: 10
 tags: []
