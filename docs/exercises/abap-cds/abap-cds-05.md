@@ -10,8 +10,8 @@ Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZI_???_Custome
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| DMOCUSTOMER : ""
-    I_Travel ||--|| DMOTRAVEL : ""
+    I_Customer ||--|| "/DMO/CUSTOMER" : ""
+    I_Travel ||--|| "/DMO/TRAVEL" : ""
     I_TravelWithCustomer }o--|| I_Customer : "Only Customers from Germany"
     I_TravelWithCustomer ||--|| I_Travel : ""
     I_CustomerKPIs ||--o{ I_TravelWithCustomer : "Only Customers with Total Revenue >= 5.000 Euro"

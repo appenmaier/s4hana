@@ -10,8 +10,8 @@ Passe mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZI_???_TravelWith
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| DMOCUSTOMER : ""
-    I_Travel ||--|| DMOTRAVEL : ""
+    I_Customer ||--|| "/DMO/CUSTOMER" : ""
+    I_Travel ||--|| "/DMO/TRAVEL" : ""
     I_TravelWithCustomer }o--|| I_Customer : "Only Customers from Germany"
     I_TravelWithCustomer ||--|| I_Travel : ""
 

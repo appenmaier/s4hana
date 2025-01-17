@@ -11,8 +11,8 @@ description: ""
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| DMOCUSTOMER : ""
-    I_Travel ||--|| DMOTRAVEL : ""
+    I_Customer ||--|| "/DMO/CUSTOMER" : ""
+    I_Travel ||--|| "/DMO/TRAVEL" : ""
     I_CustomerWithTravels ||--|| I_Customer : "Only Customers from Germany"
     I_CustomerWithTravels ||--o{ I_Travel : ""
 

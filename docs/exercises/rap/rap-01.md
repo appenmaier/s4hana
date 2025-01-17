@@ -64,6 +64,7 @@ erDiagram
 - Filme sollen nach ihrem Titel mit einem Unschärfwert von 0,7 durchsucht werden können
 - Als Tabellenüberschrift soll der Wert `Movies` angezeigt werden
 - Standardmäßig sollen die Spalten `Title`, `Genre`, `PublishingYear` und `RuntimeInMin` angezeigt werden
+- Als zusätzliche Spalte soll das verlinkte Bild des Feldes `ImageURL` angezeigt werden
 
 ### Hinweise zur ObjectPage
 

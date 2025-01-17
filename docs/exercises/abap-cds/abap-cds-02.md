@@ -10,8 +10,8 @@ Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS Views `ZI_???_Travel
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| DMOCUSTOMER : ""
-    I_Travel ||--|| DMOTRAVEL : ""
+    I_Customer ||--|| "/DMO/CUSTOMER" : ""
+    I_Travel ||--|| "/DMO/TRAVEL" : ""
 
     I_Customer {
         numc(6) CustomerId PK
@@ -24,7 +24,7 @@ erDiagram
         char(3) CountryCode
     }
 
-    DMOCUSTOMER {
+    "/DMO/CUSTOMER" {
         clnt(3) client PK
         numc(6) customer_id PK
         char(40) first_name
@@ -55,7 +55,7 @@ erDiagram
         char(1) Status
     }
 
-    DMOTRAVEL {
+    "/DMO/TRAVEL" {
         clnt(3) client PK
         numc(8) travel_id PK
         numc(6) agency_id
