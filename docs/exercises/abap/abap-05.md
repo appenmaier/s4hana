@@ -8,13 +8,13 @@ description: ""
 
 ## Komponentenübersicht des Strukturtyps `Z???_CUSTOMER`
 
-| Komponente  | Komponententyp   | Bezeichnung  |
-| ----------- | ---------------- | ------------ |
-| CUSTOMER_ID | /DMO/CUSTOMER_ID | Kundennummer |
-| FIRST_NAME  | /DMO/FIRST_NAME  | Vorname      |
-| LAST_NAME   | /DMO/LAST_NAME   | Nachname     |
-| CITY        | /DMO/CITY        | Stadt        |
-| COUNTRY     | LAND1            | Land         |
+| Komponente   | Komponententyp   | Bezeichnung  |
+| ------------ | ---------------- | ------------ |
+| CUSTOMER_ID  | /DMO/CUSTOMER_ID | Kundennummer |
+| FIRST_NAME   | /DMO/FIRST_NAME  | Vorname      |
+| LAST_NAME    | /DMO/LAST_NAME   | Nachname     |
+| CITY         | /DMO/CITY        | Stadt        |
+| COUNTRY_CODE | LAND1            | Land         |
 
 ## Ausgabe
 
