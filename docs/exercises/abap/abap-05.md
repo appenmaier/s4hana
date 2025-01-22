@@ -16,7 +16,7 @@ description: ""
 | CITY         | /DMO/CITY        | Stadt        |
 | COUNTRY_CODE | LAND1            | Land         |
 
-## Ausgabe
+## Beispielhafte Konsolenausgabe
 
 ```
 Customer ID: 19286
