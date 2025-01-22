@@ -12,7 +12,7 @@ classDiagram
     class cl_airplane {
       +name: string &#123read-only&#125
       +plane_type: string &#123read-only&#125
-      +set_name:(name: string) void
+      +set_name(name: string) void
       +set_plane_type(plane_type: string) void
       +to_string() string
     }
