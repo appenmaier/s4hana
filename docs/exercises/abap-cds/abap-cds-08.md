@@ -15,6 +15,6 @@ erDiagram
     E_Customer ||--o{ "/DMO/BOOKING" : ""
 
     E_Customer {
-        association _Bookings
+        association _ZZBookings
     }
 ```
