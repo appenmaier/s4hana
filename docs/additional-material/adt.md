@@ -19,6 +19,7 @@ Die _ABAP Development Tools_ (ADT) ist eine auf Eclipse basierende Entwicklungsu
 - _Ctrl+Space_: Content Assist
 - _F1_: Show ABAP Language Help
 - _F2_: Show Element Info
+- _F3_: Navigate To
 - _F8_: Run As ABAP Application
 - _Shift+F1_: Format
 
