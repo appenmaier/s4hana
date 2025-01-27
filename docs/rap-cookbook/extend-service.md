@@ -14,7 +14,6 @@ sidebar_position: 50
 //highlight-start
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@Metadata.allowExtensions: true
 define view entity ZC_Booking
   as projection on ZR_Booking
 {
