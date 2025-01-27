@@ -13,7 +13,7 @@ sidebar_position: 90
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Customer Text'
+@EndUserText.label: 'Textelement for Customer'
 define view entity ZI_CustomerText
 as select from /dmo/customer
 {
