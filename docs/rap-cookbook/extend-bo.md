@@ -88,7 +88,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     booking-carrier_id    = 'LH'.
     booking-client        = sy-mandt.
     booking-connection_id = '0300'.
-    booking-currency_code = 'EUR'
+    booking-currency_code = 'EUR'.
     booking-flight_date   = travel-begin_date.
     booking-flight_price  = '304.00'.
     booking-travel_uuid   = travel-travel_uuid.
@@ -101,7 +101,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     booking-carrier_id    = 'LH'.
     booking-client        = sy-mandt.
     booking-connection_id = '0350'.
-    booking-currency_code = 'EUR'
+    booking-currency_code = 'EUR'.
     booking-flight_date   = travel-end_date.
     booking-flight_price  = '305.55'.
     booking-travel_uuid   = travel-travel_uuid.
@@ -154,7 +154,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     booking-carrier_id    = 'LH'.
     booking-client        = sy-mandt.
     booking-connection_id = '0400'.
-    booking-currency_code = 'USD'
+    booking-currency_code = 'USD'.
     booking-flight_date   = travel-begin_date.
     booking-flight_price  = '150.46'.
     booking-travel_uuid   = travel-travel_uuid.
@@ -167,7 +167,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     booking-carrier_id    = 'LH'.
     booking-client        = sy-mandt.
     booking-connection_id = '0401'.
-    booking-currency_code = 'USD'
+    booking-currency_code = 'USD'.
     booking-flight_date   = travel-end_date.
     booking-flight_price  = '160.55'.
     booking-travel_uuid   = travel-travel_uuid.
