@@ -14,7 +14,7 @@ sidebar_position: 80
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Customer Value Help'
+@EndUserText.label: 'Value Help for Customer'
 define view entity ZI_CustomerVH
   as select from /dmo/customer
 {
@@ -35,7 +35,7 @@ define view entity ZI_CustomerVH
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Status Value Help'
+@EndUserText.label: 'Value Help for Status'
 define view entity ZI_StatusVH
   as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: '/DMO/STATUS' )
 {
