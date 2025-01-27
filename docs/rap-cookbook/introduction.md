@@ -30,7 +30,7 @@ Diese Kochbuch stellt eine Schritt-für-Schritt-Anleitung zur Entwicklung einer 
 | Dictionary          | Database Tables       | Z_BOOKING_A          | Anwendungstabelle Buchung         |
 | Dictionary          | Database Tables       | Z_TRAVEL_A           | Anwendungstabelle Reise           |
 | Dictionary          | Database Tables       | Z_BOOKING_D          | Entwurfstabelle Buchung           |
-| Dictionary          | Database Tables       | Z_TRAVEL_C           | Entwurfstabelle Reise             |
+| Dictionary          | Database Tables       | Z_TRAVEL_D           | Entwurfstabelle Reise             |
 | Source Code Library | Classes               | ZCL_TRAVEL_GENERATOR | ABAP-Klasse Reise-Generator       |
 | Source Code Library | Classes               | ZCM_TRAVEL           | Nachrichtenklasse Reise           |
 | Source Code Library | Classes               | ZBP_TRAVEL           | Verhaltensimplementierung Reise   |
