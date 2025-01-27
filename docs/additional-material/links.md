@@ -8,7 +8,7 @@ tags: []
 ## Musterlösungen (GitHub Repositories)
 
 - [Übungsaufgaben](https://github.com/appenmaier/abap_exercises)
-- [Movie App](https://github.com/appenmaier/abap_movie)
+- [Filmbewertungs-App](https://github.com/appenmaier/abap_movie)
 
 ## Dokumentationen (Webseiten)
 
