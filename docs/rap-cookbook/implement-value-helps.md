@@ -117,7 +117,7 @@ define view entity ZC_Booking
       BookingId,
       BookingDate,
 //highlight-start
-      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Carrier_StdVH', element: 'AirlineId' } }]
+      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Carrier_StdVH', element: 'AirlineID' } }]
 //highlight-end
       CarrierId,
       ConnectionId,
