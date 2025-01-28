@@ -5,11 +5,11 @@ sidebar_position: 170
 ---
 
 - Die Behavior Definition `ZR_TRAVEL` um Entwurfs-Funktionen erweitern
-- Eine Entwurfstabelle für die Anwendungstabelle `Z_TRAVEL_A` generieren lassen
-- Eine Entwurfstabelle für die Anwendungstabelle `Z_BOOKING_A` generieren lassen
+- Eine Entwurfstabelle `Z_TRAVEL_D` generieren lassen
+- Eine Entwurfstabelle `Z_BOOKING_D` generieren lassen
 - Die Behavior Projection `ZC_TRAVEL` um Entwurfs-Funktionen erweitern
-- Das Service Binding `ZUI_TRAVEL_04` erstellen
-- Das Service Binding `ZUI_TRAVEL_02` löschen
+- Das Service Binding `ZUI_TRAVEL_V4` erstellen
+- Das Service Binding `ZUI_TRAVEL_V2` löschen
 
 ## Behavior Definition `ZR_TRAVEL`
 
@@ -166,7 +166,7 @@ define behavior for ZC_Booking alias Booking
 }
 ```
 
-## Service Binding `ZUI_TRAVEL_04`
+## Service Binding `ZUI_TRAVEL_V4`
 
 - Service Definition: ZUI_TRAVEL
 - Binding Type: OData V4 - UI
