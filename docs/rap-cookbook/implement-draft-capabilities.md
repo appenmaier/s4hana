@@ -129,7 +129,7 @@ authorization dependent by _Travel
 projection;
 strict ( 2 );
 //highlight-start
-use draft
+use draft;
 //highlight-end
 
 define behavior for ZC_Travel alias Travel
