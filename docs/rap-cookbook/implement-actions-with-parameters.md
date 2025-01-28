@@ -279,8 +279,8 @@ CLASS lhc_travel IMPLEMENTATION.
     LOOP AT travels REFERENCE INTO DATA(travel).
       " Validate Status and Create Error Message
       IF travel->Status = 'X'.
-        message = NEW zcm_travel( textid = zcm_travel=>travel_already_cancelled
-                                  travel = travel->Description ).
+        message = NEW zcm_travel( textid      = zcm_travel=>travel_already_cancelled
+                                  description = travel->Description ).
         APPEND VALUE #( %tky     = travel->%tky
                         %element = VALUE #( Status = if_abap_behv=>mk-on )
                         %msg     = message ) TO reported-travel.
@@ -291,9 +291,9 @@ CLASS lhc_travel IMPLEMENTATION.
 
       " Set Status to Cancelled and Create Success Message
       travel->Status = 'X'.
-      message = NEW zcm_travel( severity = if_abap_behv_message=>severity-success
-                                textid   = zcm_travel=>travel_cancelled_successfully
-                                travel   = travel->Description ).
+      message = NEW zcm_travel( severity    = if_abap_behv_message=>severity-success
+                                textid      = zcm_travel=>travel_cancelled_successfully
+                                description = travel->Description ).
       APPEND VALUE #( %tky     = travel->%tky
                       %element = VALUE #( Status = if_abap_behv=>mk-on )
                       %msg     = message ) TO reported-travel.
