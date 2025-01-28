@@ -10,8 +10,8 @@ Diese Kochbuch stellt eine Schritt-für-Schritt-Anleitung zur Entwicklung einer 
 | ------------------- | --------------------- | -------------------- | --------------------------------- |
 | Authorizations      | Authorization Fields  | ZAGENCY_ID           | Berechtigungsfeld Reisebüronummer |
 | Authorizations      | Authorization Objects | ZAGENCY              | Berechtigungsobjekt Reisebüro     |
-| Business Services   | Service Bindings      | ZUI_TRAVEL_O2        | Service Binding Reise             |
-| Business Services   | Service Bindings      | ZUI_TRAVEL_O4        | Service Binding Reise             |
+| Business Services   | Service Bindings      | ZUI_TRAVEL_V2        | Service Binding Reise             |
+| Business Services   | Service Bindings      | ZUI_TRAVEL_V4        | Service Binding Reise             |
 | Business Services   | Service Definitions   | ZUI_TRAVEL           | Service Definition Reise          |
 | Core Data Services  | Access Controls       | ZC_TRAVEL            | Zugriffskontrolle Reise           |
 | Core Data Services  | Access Controls       | ZR_TRAVEL            | Zugriffskontrolle Reise           |
