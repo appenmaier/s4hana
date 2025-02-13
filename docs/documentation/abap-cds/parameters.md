@@ -61,7 +61,7 @@ define view entity I_UpcomingFlight
 }
 ```
 
-In Open SQL erfolgt die Angabe der Parameter analog zu den ABAP CDS Views.
+In ABAP SQL erfolgt die Angabe der Parameter analog zu den ABAP CDS Views.
 
 ```abap showLineNumbers
 SELECT FROM I_Flight( p_carrierid = 'LH', p_connectionid = '0400' )

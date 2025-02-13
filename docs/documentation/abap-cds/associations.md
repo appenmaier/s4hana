@@ -70,7 +70,7 @@ define view entity I_ConnectionWithCarrier
 }
 ```
 
-In Open SQL werden Pfadausdrücke durch `\` eingeleitet.
+In ABAP SQL werden Pfadausdrücke durch `\` eingeleitet.
 
 ```abap shwoLineNumbers
 SELECT FROM I_Connection
