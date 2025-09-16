@@ -9,7 +9,7 @@ tags: []
 
 - [Übungsaufgaben](https://github.com/appenmaier/abap_exercises)
 - [Filmbewertungs-App](https://github.com/appenmaier/abap_movie)
-- [Reise-App](https://github.com/appenmaier/abap_travel)
+- [Reise-App (_WIP_)](https://github.com/appenmaier/abap_travel)
 
 ## Dokumentationen (Webseiten)
 
@@ -24,6 +24,9 @@ tags: []
 
 - [Acquire Core ABAP Skills (_SAP Learning Journey_)](https://learning.sap.com/learning-journey/acquire-core-abap-skills)
 - [ABAP Development RAP Workshops (_Workshop_)](https://github.com/SAP-samples/abap-platform-rap-workshops)
-- [SAP Fiori Elements 4 RAP (_Workshop_)](https://github.wdf.sap.corp/D052858/fiori-elements-v4-rap-basic)
-- [S4D437 - Transactional Apps with the ABAP RESTful Application Programming Model (_Standardschulung_)](https://training.sap.com/course/s4d437-transactional-apps-with-the-abap-restful-application-programming-model-classroom-022-g-en/?)
+- [SAP Fiori Elements 4 RAP (_Workshop, nur SAP intern_)](https://github.wdf.sap.corp/D052858/fiori-elements-v4-rap-basic)
+- [S4D400 - Basic ABAP Programming (_SAP Standardschulung_)](https://training.sap.com)
+- [S4D401 - Intermediate ABAP Progamming (_SAP Standardschulung_)](https://training.sap.com)
+- [S4D430 - Data Modelling in ABAP Dictionary and ABAP Core Data Services (_SAP Standardschulung_)](https://training.sap.com)
+- [S4D437 - Building Transactional Apps with the ABAP RESTful Application Programming Model (_SAP Standardschulung_)](https://training.sap.com)
 - [ABAP RESTful Programming Model – ABAP Development for SAP S/4HANA (_Rheinwerk-Buch_)](https://www.rheinwerk-verlag.de/abap-restful-application-programming-model-das-umfassende-handbuch/)
