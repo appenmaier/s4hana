@@ -12,3 +12,9 @@ description: ""
 - Zeilentyp: `/DMO/TRAVEL`
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
+
+:::tip Hinweis
+
+Entsprechende Kunden können der Datenbanktabelle /DMO/CUSTOMER entnommen werden.
+
+:::
