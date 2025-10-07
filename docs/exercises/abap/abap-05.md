@@ -27,6 +27,6 @@ Country:     US
 
 :::tip Hinweis
 
-Vorhandene Kunden der Datenbanktabelle /DMO/CUSTOMER entnommen werden.
+Entsprechende Kunden können der Datenbanktabelle /DMO/CUSTOMER entnommen werden.
 
 :::
