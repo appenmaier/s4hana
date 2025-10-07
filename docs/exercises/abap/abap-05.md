@@ -24,3 +24,9 @@ Name:        Bruce Wayne
 City:        Gotham City
 Country:     US
 ```
+
+:::tip Hinweis
+
+Vorhandene Kunden der Datenbanktabelle /DMO/CUSTOMER entnommen werden.
+
+:::
