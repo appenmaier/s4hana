@@ -12,10 +12,10 @@ description: ""
 
 ## Schnittstelleninformation zur Klassenmethode _GET_TRAVEL_WITH_CUSTOMER_
 
-| Art                 | Name                 | Datentyp                   |
-| ------------------- | -------------------- | -------------------------- |
-| Import-Parameter    | TRAVEL_ID            | /DMO/TRAVEL_ID             |
-| Rückgabewert        | TRAVEL_WITH_CUSTOMER | ZABAP_TRAVEL_WITH_CUSTOMER |
+| Art              | Name                 | Datentyp                   |
+| ---------------- | -------------------- | -------------------------- |
+| Import-Parameter | TRAVEL_ID            | /DMO/TRAVEL_ID             |
+| Rückgabewert     | TRAVEL_WITH_CUSTOMER | ZABAP_TRAVEL_WITH_CUSTOMER |
 
 ## Beispielhafte Konsolenausgabe
 
