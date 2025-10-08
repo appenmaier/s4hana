@@ -10,7 +10,7 @@ description: ""
 
 ## Informationen zum globalen Tabellentyp `Z???_AIRPLANES`
 
-- Referenztyp: `ZCL_???_AIRPLANE`
+- Zeilentyp: `ZCL_???_AIRPLANE` (Reference to Class/Interface)
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
 

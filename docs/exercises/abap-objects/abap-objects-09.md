@@ -12,7 +12,7 @@ description: ""
 
 ## Informationen zum globalen Tabellentyp `Z???_PARTNERS`
 
-- Referenztyp: `ZIF_???_PARTNER`
+- Zeilentyp: `ZIF_???_PARTNER` (Reference to Class/Interface)
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
 
