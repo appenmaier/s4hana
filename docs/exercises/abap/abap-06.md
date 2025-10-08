@@ -10,7 +10,7 @@ description: ""
     - Führe die Informationen der Reise sowie der Informationen zum Kunden zusammen und gib diese zurück
 4. Erstelle die ausführbare Klasse `ZCL_???_ABAP_06`, welche Reiseinformationen sowie die dazugehörigen Kundeninformationen zu einer eingegebenen Reisenummer liest und diese auf dem Bildschirm ausgibt. Verwende zum Lesen der Informationen die Klassenmethode aus Aufgabenteil 2
 
-## Schnittstelleninformation zur Klassenmethode _GET_TRAVEL_WITH_CUSTOMER_
+## Schnittstelleninformation zur Klassenmethode `GET_TRAVEL_WITH_CUSTOMER`
 
 | Art              | Name                 | Datentyp                   |
 | ---------------- | -------------------- | -------------------------- |
