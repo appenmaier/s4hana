@@ -16,7 +16,7 @@ description: ""
 
 ## Informationen zum Tabellentyp `Z???_TRAVELS`
 
-- Zeilentyp: `/DMO/TRAVEL`
+- Zeilentyp: `/DMO/TRAVEL` (Dictionary Type)
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
 
