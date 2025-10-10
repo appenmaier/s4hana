@@ -9,13 +9,15 @@ Erstelle die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms.
 
 ```mermaid
 classDiagram
-    class cl_airplane {
-      +name: string &#123read-only&#125
-      +plane_type: string &#123read-only&#125
-      +set_name(name: string) void
-      +set_plane_type(plane_type: string) void
+   class cl_airplane {
+      -name: string
+      -plane_type: string
+      +set_name(name: string)
+      +get_name() string
+      +set_plane_type(plane_type: string)
+      +get_plane_type() string
       +to_string() string
-    }
+   }
 ```
 
 ## Hinweise zur Klasse `ZCL_???_AIRPLANE`
