@@ -20,57 +20,56 @@ description: ""
 
 ```mermaid
 classDiagram
-    cl_carrier o-- cl_airplane
-    cl_airplane <|-- cl_passenger_plane
-    cl_airplane <|-- cl_cargo_plane
-    if_partner <|.. cl_carrier
-    cl_travel_agency o-- if_partner
+   cl_carrier o-- cl_airplane
+   cl_airplane <|-- cl_passenger_plane
+   cl_airplane <|-- cl_cargo_plane
+   if_partner <|.. cl_carrier
+   cl_travel_agency o-- if_partner
 
-    class cl_airplane {
+   class cl_airplane {
       <<abstract>>
-      +name: string &#123read-only&#125
+      +id: string &#123read-only&#125
       +plane_type: string &#123read-only&#125
+      +empty_weight_in_tons: i &#123read-only&#125
       +number_of_airplanes: i &#123read-only, static&#125
-      +constructor(name: string, plane_type: string)
-      +to_string()* string
-    }
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: i)
+      +get_total_weight_in_tons() i &#123abstract&#125
+   }
 
-    class cl_passenger_plane {
+   class cl_passenger_plane {
       +number_of_seats: i &#123read-only&#125
-      +constructor(name: string, plane_type: string, number_of_seats: i)
-      +to_string() string
-    }
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: i, number_of_seats: i)
+      +get_total_weight_in_tons() i
+   }
 
-    class cl_cargo_plane {
+   class cl_cargo_plane {
       +cargo_in_tons: i &#123read-only&#125
-      +constructor(name: string, plane_type: string, cargo_in_tons: i)
-      +to_string() string
-    }
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: i, cargo_in_tons: i)
+      +get_total_weight_in_tons() i
+   }
 
-    class cl_carrier {
+   class cl_carrier {
       +name: string &#123read-only&#125
-      +airplanes: cl_airplane[*] &#123read-only&#125
+      +airplanes: cl_airplane[] &#123read-only&#125
       +constructor(name: string)
       +add_airplane(airplane: cl_airplane) void
       +get_biggest_cargo_plane() cl_cargo_plane
-      +to_string() string
-    }
+      +if_partner~to_string() string
+   }
 
-    class if_partner {
+   class if_partner {
       <<interface>>
       +to_string() string
-    }
+   }
 
-    class cl_travel_agency {
+   class cl_travel_agency {
       -name: string &#123read-only&#125
-      -partners: if_partner[*] &#123read-only&#125
+      -partners: if_partner[] &#123read-only&#125
       +constructor(name: string)
       +add_partner(partner: if_partner) void
-      +to_string() string
-    }
+   }
 ```
 
-## Hinweise zum Klasse `ZCL_???_TRAVEL_AGENCY`
+## Hinweis zum Klasse `ZCL_???_TRAVEL_AGENCY`
 
-- Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `STRING TO_STRING()` soll alle Instanzattribute zu einer Zeichenkette zusammenfassen und diese zurückgeben
+Der Konstruktor soll alle Attribute initialisieren.
