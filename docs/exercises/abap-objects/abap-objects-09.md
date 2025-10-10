@@ -72,4 +72,5 @@ classDiagram
 
 ## Hinweis zum Klasse `ZCL_???_TRAVEL_AGENCY`
 
-Der Konstruktor soll alle Attribute initialisieren.
+- Der Konstruktor soll alle Attribute initialisieren
+- Die Methode `ADD_PARTNER` soll der Partnerliste den eingehenden Partner hinzufügen
