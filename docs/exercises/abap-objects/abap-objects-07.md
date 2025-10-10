@@ -55,4 +55,5 @@ classDiagram
 ## Hinweise zur Klasse `ZCL_???_CARRIER`
 
 - Der Konstruktor soll alle Attribute initialisieren
+- Die Methode `ADD_AIRPLANE` soll der Flugzeugliste das eingehende Flugzeug hinzufügen
 - Die Methode `GET_BIGGEST_CARGO_PLANE` soll das Frachtflugzeug mit dem höchsten Gesamtgewicht zurückgeben
