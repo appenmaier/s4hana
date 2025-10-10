@@ -3,4 +3,4 @@ title: ABAP-Objects-02
 description: ""
 ---
 
-Erstelle das ABAP-Programm `Z???_MAIN_AIRPLANES`, welches mehrere Flugzeuge erzeugt, in einer internen Tabelle speichert und anschließend per LOOP-Schleife auf dem Bildschirm ausgibt.
+Erstelle die ausführbare Klasse `ZCL_???_MAIN_AIRPLANES`, welche mehrere Flugzeuge erzeugt, diese in einer internen Tabelle speichert und anschließend auf dem Bildschirm ausgibt.
