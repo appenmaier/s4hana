@@ -15,7 +15,7 @@ classDiagram
       +plane_type: string &#123read-only&#125
       +empty_weight_in_tons: i &#123read-only&#125
       +number_of_airplanes: i &#123read-only, static&#125
-      +constructor(name: string, plane_type: string, empty_weight_in_tons: i)
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: i)
    }
 ```
 
