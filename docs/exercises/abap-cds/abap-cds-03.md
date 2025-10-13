@@ -10,10 +10,10 @@ Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `Z???_I_TravelW
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| "/DMO/CUSTOMER" : ""
-    I_Travel ||--|| "/DMO/TRAVEL" : ""
-    I_TravelWithCustomer }o--|| I_Customer : "Only Customers from Germany"
-    I_TravelWithCustomer ||--|| I_Travel : ""
+    R_Customer ||--|| "/DMO/CUSTOMER" : ""
+    R_Travel ||--|| "/DMO/TRAVEL" : ""
+    I_TravelWithCustomer }o--|| R_Customer : "Only Customers from Germany"
+    I_TravelWithCustomer ||--|| R_Travel : ""
 
     I_TravelWithCustomer {
         numc(8) TravelId PK
@@ -34,7 +34,7 @@ erDiagram
         char(40) City
     }
 
-    I_Customer {
+    R_Customer {
         numc(6) CustomerId PK
         char(40) FirstName
         char(40) LastName
@@ -45,7 +45,7 @@ erDiagram
         char(3) CountryCode
     }
 
-    I_Travel {
+    R_Travel {
         numc(8) TravelId PK
         numc(6) AgencyId
         numc(6) CustomerId
@@ -61,4 +61,4 @@ erDiagram
 
 ## Hinweis
 
-Die Verknüpfung der beiden Datenquellen `ZI_???_Travel` und `ZI_???_Customer` soll in Form eines Inner Joins erfolgen.
+Die Verknüpfung der beiden Datenquellen `ZR_???_Travel` und `ZR_???_Customer` soll in Form eines Inner Joins erfolgen.
