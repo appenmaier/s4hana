@@ -11,10 +11,10 @@ description: ""
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| "/DMO/CUSTOMER" : ""
-    I_Travel ||--|| "/DMO/TRAVEL" : ""
-    I_CustomerWithTravels ||--|| I_Customer : "Only Customers from Germany"
-    I_CustomerWithTravels ||--o{ I_Travel : ""
+    R_Customer ||--|| "/DMO/CUSTOMER" : ""
+    R_Travel ||--|| "/DMO/TRAVEL" : ""
+    I_CustomerWithTravels ||--|| R_Customer : "Only Customers from Germany"
+    I_CustomerWithTravels ||--o{ R_Travel : ""
 
     I_CustomerWithTravels {
         numc(6) CustomerId PK
@@ -27,7 +27,7 @@ erDiagram
         association _Travels
     }
 
-    I_Customer {
+    R_Customer {
         numc(6) CustomerId PK
         char(40) FirstName
         char(40) LastName

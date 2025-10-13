@@ -3,17 +3,17 @@ title: ABAP-CDS-02
 description: ""
 ---
 
-Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS Views `ZI_???_Travel` und `ZI_???_Customer`.
+Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS Views `ZR_???_Travel` und `ZR_???_Customer`.
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| "/DMO/CUSTOMER" : ""
-    I_Travel ||--|| "/DMO/TRAVEL" : ""
+    R_Customer ||--|| "/DMO/CUSTOMER" : ""
+    R_Travel ||--|| "/DMO/TRAVEL" : ""
 
-    I_Customer {
+    R_Customer {
         numc(6) CustomerId PK
         char(40) FirstName
         char(40) LastName
@@ -42,7 +42,7 @@ erDiagram
         dec(21-7) lastchangedat
     }
 
-    I_Travel {
+    R_Travel {
         numc(8) TravelId PK
         numc(6) AgencyId
         numc(6) CustomerId
