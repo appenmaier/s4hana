@@ -10,8 +10,8 @@ Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZE_???_Custome
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| "/DMO/CUSTOMER" : ""
-    E_Customer ||--|| I_Customer  : ""
+    R_Customer ||--|| "/DMO/CUSTOMER" : ""
+    E_Customer ||--|| R_Customer  : ""
     E_Customer ||--o{ "/DMO/BOOKING" : ""
 
     E_Customer {
