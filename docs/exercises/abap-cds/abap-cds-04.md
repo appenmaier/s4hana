@@ -10,10 +10,10 @@ Passe mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZI_???_TravelWith
 ```mermaid
 erDiagram
 
-    I_Customer ||--|| "/DMO/CUSTOMER" : ""
-    I_Travel ||--|| "/DMO/TRAVEL" : ""
-    I_TravelWithCustomer }o--|| I_Customer : "Only Customers from Germany"
-    I_TravelWithCustomer ||--|| I_Travel : ""
+    R_Customer ||--|| "/DMO/CUSTOMER" : ""
+    R_Travel ||--|| "/DMO/TRAVEL" : ""
+    I_TravelWithCustomer }o--|| R_Customer : "Only Customers from Germany"
+    I_TravelWithCustomer ||--|| R_Travel : ""
 
     I_TravelWithCustomer {
         numc(8) TravelId PK
