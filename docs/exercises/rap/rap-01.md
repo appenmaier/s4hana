@@ -3,17 +3,18 @@ title: RAP-01
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Base View `ZR_???_Movie` sowie die BO Projection View `ZC_???_Movie`
-- Erstelle für die BO Projection View für Filme die Service Definition `ZUI_???_MOVIE`
-- Erstelle für die Service Definition für Filme das Service Binding `ZUI_???_MOVIE_O2`
-- Erstelle für die BO Projection View für Filme die Metadata Extension `ZC_???_MOVIE`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Movie`, die BO Base View `ZI_???_Movie` sowie die BO Projection View `ZC_???_Movie`
+- Erstelle für die BO Projection View `ZC_???_Movie` die Service Definition `ZUI_???_MOVIE`
+- Erstelle für die Service Definition `ZUI_???_MOVIE` das Service Binding `ZUI_???_MOVIE_O2`
+- Erstelle für die BO Projection View `ZC_???_Movie` die Metadata Extension `ZC_???_MOVIE`
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
     R_Movie ||--|| ZABAP_MOVIE_A  : ""
-    C_Movie ||--|| R_Movie  : ""
+    I_Movie ||--|| R_Movie  : ""
+    C_Movie ||--|| I_Movie  : ""
 
     ZABAP_MOVIE_A {
         clnt(3) client PK
@@ -30,6 +31,19 @@ erDiagram
     }
 
     R_Movie {
+        raw(16) MovieUUID PK
+        char(50) Title
+        char(10) Genre
+        numc(4) PublishingYear
+        int1(3) RuntimeInMin
+        sstr(255) ImageURL
+        dec(21-7) CreatedAt
+        char(12) CreatedBy
+        dec(21-7) LastChangedAt
+        char(12) LastChangedBy
+    }
+
+    I_Movie {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre

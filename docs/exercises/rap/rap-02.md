@@ -3,23 +3,25 @@ title: RAP-02
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Base View `ZR_???_Rating`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View für Filme
-- Erstelle mit Hilfe des abgebildeten ER-Modells für die BO Base View für Bewertungen die BO Projection View `ZC_???_Rating`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View für Filme
-- Erweitere die Service Definition für Filme um Bewertungen
-- Erstelle für die BO Projection View für Bewertungen die Metadata Extension `ZC_???_RATING`
-- Erweitere die Metadata Extension für Filme um Bewertungen
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Rating` sowie die BO Base View `ZI_???_Rating`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZI_???_Movie`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_Rating`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_Movie`
+- Erweitere die Service Definition `ZUI_???_MOVIE` um die BO Projection View `ZC_???_Rating`
+- Erstelle für die BO Projection View `ZC_???_Rating` die Metadata Extension `ZC_???_RATING`
+- Erweitere die Metadata Extension `ZC_???_MOVIE` um Bewertungen
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
     R_Movie ||--|| ZABAP_MOVIE_A  : ""
-    C_Movie ||--|| R_Movie  : ""
+    I_Movie ||--|| R_Movie  : ""
+    C_Movie ||--|| I_Movie  : ""
     R_Rating ||--|| ZABAP_RATING_A : ""
-    C_Rating ||--|| R_Rating : ""
-    R_Movie ||--o{ R_Rating : ""
+    I_Rating ||--|| R_Rating : ""
+    C_Rating ||--|| I_Rating : ""
+    I_Movie ||--o{ I_Rating : ""
     C_Movie ||--o{ C_Rating : ""
 
     ZABAP_RATING_A {
@@ -37,6 +39,14 @@ erDiagram
         char(50) UserName
         int1(3) Rating
         dats(8) RatingDate
+    }
+
+    I_Rating {
+        raw(16) RatingUUID PK
+        raw(16) MovieUUID FK
+        char(50) UserName
+        int1(3) Rating
+        dats(8) RatingDate
         association _Movie
     }
 
@@ -49,21 +59,7 @@ erDiagram
         association _Movie
     }
 
-    ZABAP_MOVIE_A {
-        clnt(3) client PK
-        raw(16) movie_uuid PK
-        char(50) title
-        char(10) genre
-        numc(4) publishing_year
-        int1(3) runtime_in_min
-        sstr(255) image_url
-        dec(21-7) created_at
-        char(12) created_by
-        dec(21-7) last_changed_at
-        char(12) last_changed_by
-    }
-
-    R_Movie {
+    I_Movie {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre
