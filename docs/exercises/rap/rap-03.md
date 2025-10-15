@@ -3,10 +3,10 @@ title: RAP-03
 description: ""
 ---
 
-- Erweitere die BO Projection View für Filme um das transiente Feld `AverageRating` und implementiere für diese eine Hervorhebung
-- Erweitere die Metadata Extension für Filme so, dass Filme absteigend sortiert nach dem Feld `AverageRating` ausgegeben werden
-- Erstelle die Interface View `ZI_???_GenreText` und erweitere die BO Projection View für Bewertungen um das Textelement `GenreText`
-- Erstelle die Interface View `ZI_???_RuntimeText` und erweitere die BO Projection View für Bewertungen um das Textelement `RuntimeText`
+- Erweitere die BO Projection View `ZC_???_Movie` um das transiente Feld `AverageRating` und implementiere für diese eine Hervorhebung
+- Erweitere die Metadata Extension `ZC_???_MOVIE` so, dass Filme absteigend sortiert nach dem Feld `AverageRating` ausgegeben werden
+- Erstelle die Interface View `ZI_???_GenreText` und erweitere die BO Projection View `ZC_???_Rating` um das Textelement `GenreText`
+- Erstelle die Interface View `ZI_???_RuntimeText` und erweitere die BO Projection View `ZC_???_Rating` um das Textelement `RuntimeText`
 
 ## Hinweise zum transienten Feld `AverageRating`
 
