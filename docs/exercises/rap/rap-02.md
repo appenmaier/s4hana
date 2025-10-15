@@ -3,13 +3,13 @@ title: RAP-02
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die Referenced View `ZR_???_Rating` sowie die BO Base View `ZI_???_Rating`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View für Filme
-- Erstelle mit Hilfe des abgebildeten ER-Modells für die BO Base View für Bewertungen die BO Projection View `ZC_???_Rating`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View für Filme
-- Erweitere die Service Definition für Filme um Bewertungen
-- Erstelle für die BO Projection View für Bewertungen die Metadata Extension `ZC_???_RATING`
-- Erweitere die Metadata Extension für Filme um Bewertungen
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Rating` sowie die BO Base View `ZI_???_Rating`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZI_???_Movie`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_Rating`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_Movie`
+- Erweitere die Service Definition `ZUI_???_MOVIE` um die BO Projection View `ZC_???_Rating`
+- Erstelle für die BO Projection View `ZC_???_Rating` die Metadata Extension `ZC_???_RATING`
+- Erweitere die Metadata Extension `ZC_???_MOVIE` um Bewertungen
 
 ## ER-Modell
 
