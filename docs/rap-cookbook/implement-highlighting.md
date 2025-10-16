@@ -4,47 +4,45 @@ description: ""
 sidebar_position: 100
 ---
 
-- Die BO Base View `ZR_Travel` um transiente Felder zur Darstellung der Wichtigkeit erweitern
+- Die BO Base View `ZI_Travel` um transiente Felder zur Darstellung der Wichtigkeit erweitern
 - Die BO Projection View `ZC_Travel` um transiente Felder zur Darstellung der Wichtigkeit erweitern
 - Die Metadata Extension `ZC_TRAVEL` um Eigenschaften zur Darstellung der Wichtigkeit erweitern
 
-## BO Base View `ZR_Travel`
+## BO Base View `ZI_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZR_Travel
-  as select from z_travel_a
+define root view entity ZI_Travel
+  as select from ZR_Travel
   composition [0..*] of ZR_Booking      as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
-  key travel_uuid        as TravelUuid,
-      travel_id          as TravelId,
-      agency_id          as AgencyId,
+  key TravelUuid,
+      TravelId,
+      AgencyId,
       @ObjectModel.text.element: ['CustomerName']
-      customer_id        as CustomerId,
-      begin_date         as BeginDate,
-      end_date           as EndDate,
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      booking_fee        as BookingFee,
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      total_price        as TotalPrice,
-      currency_code      as CurrencyCode,
-      description        as Description,
-      status             as Status,
+      CustomerId,
+      BeginDate,
+      EndDate,
+      BookingFee,
+      TotalPrice,
+      CurrencyCode,
+      Description,
+      Status,
 
       /* Administrative Data */
-      created_by         as CreatedBy,
-      created_at         as CreatedAt,
-      last_changed_by    as LastChangedBy,
-      last_changed_at    as LastChangedAt,
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt,
 
       /* Transient Data */
       _CustomerText.Name as CustomerName,
 //highlight-start
-      case when dats_days_between($session.user_date, begin_date) >= 14 then 3
-           when dats_days_between($session.user_date, begin_date) >= 7 then 2
-           when dats_days_between($session.user_date, begin_date) >= 0 then 1
+      case when dats_days_between($session.user_date, BeginDate) >= 14 then 3
+           when dats_days_between($session.user_date, BeginDate) >= 7 then 2
+           when dats_days_between($session.user_date, BeginDate) >= 0 then 1
            else 0
       end                as BeginDateCriticality,
       case status when 'B' then 3
@@ -68,7 +66,7 @@ define root view entity ZR_Travel
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
   provider contract transactional_query
-  as projection on ZR_Travel
+  as projection on ZI_Travel
 {
   key TravelUuid,
       TravelId,
