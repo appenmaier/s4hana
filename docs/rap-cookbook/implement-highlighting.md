@@ -15,7 +15,7 @@ sidebar_position: 100
 @EndUserText.label: 'Travel'
 define root view entity ZI_Travel
   as select from ZR_Travel
-  composition [0..*] of ZR_Booking      as _Bookings
+  composition [0..*] of ZI_Booking      as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
   key TravelUuid,
