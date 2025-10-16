@@ -64,7 +64,7 @@ where
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
   provider contract transactional_query
-  as projection on ZR_Travel
+  as projection on ZI_Travel
 {
   key TravelUuid,
       TravelId,
@@ -110,7 +110,7 @@ define root view entity ZC_Travel
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_Booking
-  as projection on ZR_Booking
+  as projection on ZI_Booking
 {
   key BookingUuid,
       TravelUuid,
