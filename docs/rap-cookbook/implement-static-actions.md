@@ -6,7 +6,7 @@ sidebar_position: 120
 
 - Die Message Class `Z_TRAVEL` erstellen
 - Die Nachrichtenklasse `ZCM_TRAVEL` erstellen
-- Die Behavior Definition `ZR_TRAVEL` um eine Aktion zum Anzeigen einer Nachricht erweitern
+- Die Behavior Definition `ZI_Travel` um eine Aktion zum Anzeigen einer Nachricht erweitern
 - Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zum Anzeigen einer Nachricht erweitern
 - Die Behavior Projection `ZC_TRAVEL` um eine Aktion zum Anzeigen einer Nachricht erweitern
 - Die Metadata Extension `ZC_TRAVEL` um Annotationen für eine Aktion zum Anzeigen einer Nachricht erweitern
@@ -70,13 +70,13 @@ ENDCLASS.
 //highlight-end
 ```
 
-## Behavior Definition `ZR_TRAVEL`
+## Behavior Definition `ZI_TRAVEL`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
 strict ( 2 );
 
-define behavior for ZR_Travel alias Travel
+define behavior for ZI_Travel alias Travel
 persistent table z_travel_a
 lock master
 authorization master ( instance )
@@ -114,7 +114,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZR_Booking alias Booking
+define behavior for ZI_Booking alias Booking
 persistent table z_booking_a
 lock dependent by _Travel
 authorization dependent by _Travel
@@ -148,7 +148,7 @@ authorization dependent by _Travel
 ### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
+CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
   PROTECTED SECTION.
 
   PRIVATE SECTION.

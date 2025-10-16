@@ -5,7 +5,7 @@ sidebar_position: 160
 ---
 
 - Die Abstract View `ZA_BookingFee` erstellen
-- Die Behavior Definition `ZR_TRAVEL` um eine Aktion zur Pflege der Buchungsgebühren erweitern
+- Die Behavior Definition `ZI_TRAVEL` um eine Aktion zur Pflege der Buchungsgebühren erweitern
 - Die Verhaltensimplementierung `ZCM_TRAVEL` um eine Behandlermethode zur Pflege der Buchungsgebühren erweitern
 - Die Behavior Projection `ZC_TRAVEL` um eine Aktion zur Pflege der Buchungsgebühren erweitern
 - Die Metadata Extension `ZC_TRAVEL` um Annotationen für eine Aktion zur Pflege der Buchungsgebühren erweitern
@@ -25,13 +25,13 @@ define abstract entity ZA_BookingFee
 //highlight-end
 ```
 
-## Behavior Definition `ZR_TRAVEL`
+## Behavior Definition `ZI_TRAVEL`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
 strict ( 2 );
 
-define behavior for ZR_Travel alias Travel
+define behavior for ZI_Travel alias Travel
 persistent table z_travel_a
 lock master
 authorization master ( instance )
@@ -81,7 +81,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZR_Booking alias Booking
+define behavior for ZI_Booking alias Booking
 persistent table z_booking_a
 lock dependent by _Travel
 authorization dependent by _Travel
@@ -115,7 +115,7 @@ authorization dependent by _Travel
 ### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
+CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -178,7 +178,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -202,7 +202,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          FIELDS ( CustomerId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -226,7 +226,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          FIELDS ( BeginDate EndDate )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -244,7 +244,7 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD determinestatus.
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_Travel
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR key IN keys
                          ( %tky   = key-%tky
@@ -259,7 +259,7 @@ CLASS lhc_travel IMPLEMENTATION.
     travel_id = max_travel_id + 1.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_Travel
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR key IN keys
                          ( %tky     = key-%tky
@@ -270,7 +270,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -300,7 +300,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_Travel
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR t IN travels
                          ( %tky = t-%tky Status = t-Status ) ).
@@ -314,7 +314,7 @@ CLASS lhc_travel IMPLEMENTATION.
 //highlight-start
   METHOD maintainbookingfee.
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_Travel
            UPDATE FIELDS ( BookingFee CurrencyCode )
            WITH VALUE #( FOR key IN keys
                          ( %tky         = key-%tky
@@ -322,7 +322,7 @@ CLASS lhc_travel IMPLEMENTATION.
                            CurrencyCode = key-%param-CurrencyCode ) ).
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).

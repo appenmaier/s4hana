@@ -5,7 +5,7 @@ sidebar_position: 90
 ---
 
 - Die Interface View `ZI_CustomerText` erstellen
-- Die BO Base View `ZR_Travel` um ein transientes Feld für Kundentexte und eine Annotation für Textelemente erweitern
+- Die BO Base View `ZI_Travel` um ein transientes Feld für Kundentexte und eine Annotation für Textelemente erweitern
 - Die BO Projection View `ZC_Travel` um ein transientes Feld für Kundentexte erweitern
 
 ## Interface View `ZI_CustomerText`
@@ -28,40 +28,38 @@ as select from /dmo/customer
 //highlight-end
 ```
 
-## BO Base View `ZR_Travel`
+## BO Base View `ZI_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZR_Travel
-  as select from z_travel_a
-  composition [0..*] of ZR_Booking      as _Bookings
+define root view entity ZI_Travel
+  as select from ZR_Travel
+  composition [0..*] of ZI_Booking      as _Bookings
 //highlight-start
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 //highlight-end
 {
-  key travel_uuid        as TravelUuid,
-      travel_id          as TravelId,
-      agency_id          as AgencyId,
+  key TravelUuid,
+      TravelId,
+      AgencyId,
 //highlight-start
       @ObjectModel.text.element: ['CustomerName']
 //highlight-end
-      customer_id        as CustomerId,
-      begin_date         as BeginDate,
-      end_date           as EndDate,
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      booking_fee        as BookingFee,
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      total_price        as TotalPrice,
-      currency_code      as CurrencyCode,
-      description        as Description,
-      status             as Status,
+      CustomerId,
+      BeginDate,
+      EndDate,
+      BookingFee,
+      TotalPrice,
+      CurrencyCode,
+      Description,
+      Status,
 
       /* Administrative Data */
-      created_by         as CreatedBy,
-      created_at         as CreatedAt,
-      last_changed_by    as LastChangedBy,
-      last_changed_at    as LastChangedAt
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt
 
 //highlight-start
       /* Transient Data */
@@ -82,7 +80,7 @@ define root view entity ZR_Travel
 @Metadata.allowExtensions: true
 define root view entity ZC_Travel
   provider contract transactional_query
-  as projection on ZR_Travel
+  as projection on ZI_Travel
 {
   key TravelUuid,
       TravelId,

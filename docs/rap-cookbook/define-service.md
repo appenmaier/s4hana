@@ -15,7 +15,7 @@ sidebar_position: 20
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZC_Travel
-  as projection on ZR_Travel
+  as projection on ZI_Travel
 {
   key TravelUuid,
       TravelId,
