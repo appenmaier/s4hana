@@ -6,8 +6,9 @@ sidebar_position: 40
 
 - Die Anwendungstabelle `Z_BOOKING_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` um Buchungen erweitern
-- Die BO Base View `ZR_Booking` inklusive einer Assoziation zur BO Base View `ZR_Travel` erstellen
-- Die BO Base View `ZR_Travel` um eine Assoziation zur BO Base View `ZR_Booking` erweitern
+- Die Restricted View `ZR_Booking` erstellen
+- Die BO Base View `ZI_Booking` inklusive einer Assoziation zur BO Base View `ZI_Travel` erstellen
+- Die BO Base View `ZI_Travel` um eine Assoziation zur BO Base View `ZI_Booking` erweitern
 
 ## Anwendungstabelle `Z_BOOKING_A`
 
@@ -206,7 +207,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## BO Base View `ZR_Booking`
+## Restricted View `ZR_Booking`
 
 ```sql showLineNumbers
 //highlight-start
@@ -214,7 +215,6 @@ ENDCLASS.
 @EndUserText.label: 'Booking'
 define view entity ZR_Booking
   as select from z_booking_a
-  association to parent ZR_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid  as BookingUuid,
       travel_uuid   as TravelUuid,
@@ -225,7 +225,30 @@ define view entity ZR_Booking
       flight_date   as FlightDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       flight_price  as FlightPrice,
-      currency_code as CurrencyCode,
+      currency_code as CurrencyCode
+}
+//highlight-end
+```
+
+## BO Base View `ZI_Booking`
+
+```sql showLineNumbers
+//highlight-start
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Booking'
+define view entity ZI_Booking
+  as select from ZR_Booking
+  association to parent ZI_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
+{
+  key BookingUuid,
+      TravelUuid,
+      BookingId,
+      BookingDate,
+      CarrierId,
+      ConnectionId,
+      FlightDate,
+      FlightPrice,
+      CurrencyCode,
 
       /* Associations */
       _Travel
@@ -233,36 +256,34 @@ define view entity ZR_Booking
 //highlight-end
 ```
 
-## BO Base View `ZR_Travel`
+## BO Base View `ZI_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZR_Travel
-  as select from z_travel_a
+define root view entity ZI_Travel
+  as select from ZR_Travel
 //highlight-start
-  composition [0..*] of ZR_Booking as _Bookings
+  composition [0..*] of ZI_Booking as _Bookings
 //highlight-end
 {
-  key travel_uuid     as TravelUuid,
-      travel_id       as TravelId,
-      agency_id       as AgencyId,
-      customer_id     as CustomerId,
-      begin_date      as BeginDate,
-      end_date        as EndDate,
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      booking_fee     as BookingFee,
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      total_price     as TotalPrice,
-      currency_code   as CurrencyCode,
-      description     as Description,
-      status          as Status,
+  key TravelUuid,
+      TravelId,
+      AgencyId,
+      CustomerId,
+      BeginDate,
+      EndDate,
+      BookingFee,
+      TotalPrice,
+      CurrencyCode,
+      Description,
+      Status,
 
       /* Administrative Data */
-      created_by      as CreatedBy,
-      created_at      as CreatedAt,
-      last_changed_by as LastChangedBy,
-      last_changed_at as LastChangedAt,
+      CreatedBy,
+      CreatedAt,
+      LastChangedBy,
+      LastChangedAt,
 
 //highlight-start
       /* Associations */
