@@ -6,7 +6,6 @@ description: ""
 - Erweitere die BO Projection View `ZC_???_Movie` um das transiente Feld `AverageRating` und implementiere für diese eine Hervorhebung
 - Erweitere die Metadata Extension `ZC_???_MOVIE` so, dass Filme absteigend sortiert nach dem Feld `AverageRating` ausgegeben werden
 - Erstelle die Interface View `ZI_???_GenreText` und erweitere die BO Projection View `ZC_???_Movie` um das Textelement `GenreText`
-- Erstelle die Interface View `ZI_???_RuntimeText` und erweitere die BO Projection View `ZC_???_Movie` um das Textelement `RuntimeText`
 
 ## Hinweise zum transienten Feld `AverageRating`
 
@@ -16,7 +15,3 @@ description: ""
 ## Hinweis zur Interface View `ZI_???_GenreText`
 
 Die Interface View `ZI_???_GenreText` soll alle Texte zu den Domänenfestwerten des Feldes `Genre` ausgeben.
-
-## Hinweis zur Interface View `ZI_???_RuntimeText`
-
-Die Interface View `ZI_???_RuntimeText` soll für Filme mit einer Laufzeit von mehr als 150 Minuten den Wert `Hinweis: Überlänge` und für Filme mit einer Laufzeit von weniger als 30 Minuten den Wert `Hinweis: Kurzfilm` ausgeben.
