@@ -4,24 +4,21 @@ description: ""
 sidebar_position: 140
 ---
 
-- Die BO Base View `ZR_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
-- Die Behavior Definition `ZR_TRAVEL` um statische Feldkontrollen und Ermittlungen erweitern
+- Die Restricted View `ZR_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
+- Die Behavior Definition `ZI_TRAVEL` um statische Feldkontrollen und Ermittlungen erweitern
 - Die Verhaltensimplementierung `ZBP_TRAVEL` um Behandlermethoden zu Ermittlungen erweitern
 
-## BO Base View `ZR_Travel`
+## Restricted View `ZR_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZR_Travel
+define view entity ZR_Travel
   as select from z_travel_a
-  composition [0..*] of ZR_Booking      as _Bookings
-  association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
   key travel_uuid        as TravelUuid,
       travel_id          as TravelId,
       agency_id          as AgencyId,
-      @ObjectModel.text.element: ['CustomerName']
       customer_id        as CustomerId,
       begin_date         as BeginDate,
       end_date           as EndDate,
@@ -49,33 +46,17 @@ define root view entity ZR_Travel
 //highlight-start
       @Semantics.systemDateTime.lastChangedAt: true
 //highlight-end
-      last_changed_at    as LastChangedAt,
-
-      /* Transient Data */
-      _CustomerText.Name as CustomerName,
-      case when dats_days_between($session.user_date, begin_date) >= 14 then 3
-           when dats_days_between($session.user_date, begin_date) >= 7 then 2
-           when dats_days_between($session.user_date, begin_date) >= 0 then 1
-           else 0
-      end                as BeginDateCriticality,
-      case status when 'B' then 3
-                  when 'N' then 0
-                  when 'X' then 1
-                  else 0
-      end                as StatusCriticality,
-
-      /* Associations */
-      _Bookings
+      last_changed_at    as LastChangedAt
 }
 ```
 
-## Behavior Definition `ZR_TRAVEL`
+## Behavior Definition `ZI_TRAVEL`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
 strict ( 2 );
 
-define behavior for ZR_Travel alias Travel
+define behavior for ZI_Travel alias Travel
 persistent table z_travel_a
 lock master
 authorization master ( instance )
@@ -125,7 +106,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZR_Booking alias Booking
+define behavior for ZI_Booking alias Booking
 persistent table z_booking_a
 lock dependent by _Travel
 authorization dependent by _Travel
@@ -159,7 +140,7 @@ authorization dependent by _Travel
 ### Global Class `ZBP_TRAVEL`
 
 ```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_travel.
+CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -216,7 +197,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -240,7 +221,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          FIELDS ( CustomerId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -264,7 +245,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZR_Travel
+    READ ENTITY IN LOCAL MODE ZI_Travel
          FIELDS ( BeginDate EndDate )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -283,7 +264,7 @@ CLASS lhc_travel IMPLEMENTATION.
 
 //highlight-start
   METHOD determinestatus.
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_Travel
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR key IN keys
                          ( %tky   = key-%tky
@@ -300,7 +281,7 @@ CLASS lhc_travel IMPLEMENTATION.
     travel_id = max_travel_id + 1.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZR_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_Travel
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR key IN keys
                          ( %tky     = key-%tky
