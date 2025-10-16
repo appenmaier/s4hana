@@ -4,14 +4,14 @@ description: ""
 sidebar_position: 170
 ---
 
-- Die Behavior Definition `ZR_TRAVEL` um Entwurfs-Funktionen erweitern
+- Die Behavior Definition `ZI_Travel` um Entwurfs-Funktionen erweitern
 - Eine Entwurfstabelle `Z_TRAVEL_D` generieren lassen
 - Eine Entwurfstabelle `Z_BOOKING_D` generieren lassen
 - Die Behavior Projection `ZC_TRAVEL` um Entwurfs-Funktionen erweitern
 - Das Service Binding `ZUI_TRAVEL_V4` erstellen
 - Das Service Binding `ZUI_TRAVEL_V2` löschen
 
-## Behavior Definition `ZR_TRAVEL`
+## Behavior Definition `ZI_Travel`
 
 ```sql showLineNumbers
 managed implementation in class zbp_travel unique;
@@ -20,7 +20,7 @@ strict ( 2 );
 with draft;
 //highlight-end
 
-define behavior for ZR_Travel alias Travel
+define behavior for ZI_Travel alias Travel
 persistent table z_travel_a
 //highlight-start
 draft table z_travel_d
