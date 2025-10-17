@@ -21,4 +21,4 @@ Die Abstract View `ZA_???_Rating` soll einen Parameter für die Bewertung eines 
 
 - Die Validierung für das Feld `Genre` soll prüfen, ob das Genre einen gültigen Domänenfestwert beinhaltet
 - Die Validierung für das Feld `PublishingYear` soll prüfen, ob das Jahr höchstens in der Gegenwart liegt
-- Die Validierung für das Feld `Rating` soll prüfen, ob die Bewertung zwischen 1 und 5 liegt
+- Die Validierung für das Feld `Rating` soll prüfen, ob die Bewertung zwischen 1 und 10 liegt
