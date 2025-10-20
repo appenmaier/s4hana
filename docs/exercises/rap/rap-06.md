@@ -15,6 +15,6 @@ description: ""
 
 :::tip Hinweis
 
-Entsprechende Fehlermeldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
+Entsprechende Meldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
 
 :::
