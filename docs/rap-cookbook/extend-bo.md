@@ -4,13 +4,13 @@ description: ""
 sidebar_position: 40
 ---
 
-- Die Anwendungstabelle `Z_BOOKING_A` erstellen
+- Die Anwendungstabelle `ZBOOKING_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` um Buchungen erweitern
 - Die Restricted View `ZR_Booking` erstellen
-- Die BO Base View `ZI_Booking` inklusive einer Assoziation zur BO Base View `ZI_Travel` erstellen
-- Die BO Base View `ZI_Travel` um eine Assoziation zur BO Base View `ZI_Booking` erweitern
+- Die BO Base View `ZI_BookingTP` inklusive einer Assoziation zur BO Base View `ZI_TravelTP` erstellen
+- Die BO Base View `ZI_TravelTP` um eine Assoziation zur BO Base View `ZI_BookingTP` erweitern
 
-## Anwendungstabelle `Z_BOOKING_A`
+## Anwendungstabelle `ZBOOKING_A`
 
 ```sql showLineNumbers
 //highlight-start
@@ -19,7 +19,7 @@ sidebar_position: 40
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table z_booking_a {
+define table zbooking_a {
   key client       : abap.clnt not null;
   key booking_uuid : sysuuid_x16 not null;
   travel_uuid      : sysuuid_x16 not null;
@@ -28,7 +28,7 @@ define table z_booking_a {
   carrier_id       : /dmo/carrier_id;
   connection_id    : /dmo/connection_id;
   flight_date      : /dmo/flight_date;
-  @Semantics.amount.currencyCode : 'z_booking_a.currency_code'
+  @Semantics.amount.currencyCode : 'zbooking_a.currency_code'
   flight_price     : /dmo/flight_price;
   currency_code    : /dmo/currency_code;
 //highlight-end
@@ -45,20 +45,20 @@ ENDCLASS.
 
 CLASS zcl_travel_generator IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
-    DATA travel   TYPE z_travel_a.
-    DATA travels  TYPE TABLE OF z_travel_a.
+    DATA travel   TYPE ztravel_a.
+    DATA travels  TYPE TABLE OF ztravel_a.
 //highlight-start
-    DATA booking  TYPE z_booking_a.
-    DATA bookings TYPE TABLE OF z_booking_a.
+    DATA booking  TYPE zbooking_a.
+    DATA bookings TYPE TABLE OF zbooking_a.
 //highlight-end
 
     " Delete Travels
-    DELETE FROM z_travel_a.
+    DELETE FROM ztravel_a.
     out->write( |Deleted Travels: { sy-dbcnt }| ).
 
 //highlight-start
     " Delete Bookings
-    DELETE FROM z_booking_a.
+    DELETE FROM zbooking_a.
     out->write( |Deleted Bookings: { sy-dbcnt }| ).
 //highlight-end
 
@@ -195,12 +195,12 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     APPEND travel TO travels.
 
     " Insert Travels
-    INSERT z_travel_a FROM TABLE @travels.
+    INSERT ztravel_a FROM TABLE @travels.
     out->write( |Inserted Travels: { sy-dbcnt }| ).
 
 //highlight-start
     " Insert Bookings
-    INSERT z_booking_a FROM TABLE @bookings.
+    INSERT zbooking_a FROM TABLE @bookings.
     out->write( |Inserted Bookings: { sy-dbcnt }| ).
 //highlight-end
   ENDMETHOD.
@@ -214,7 +214,7 @@ ENDCLASS.
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
 define view entity ZR_Booking
-  as select from z_booking_a
+  as select from zbooking_a
 {
   key booking_uuid  as BookingUuid,
       travel_uuid   as TravelUuid,
@@ -230,15 +230,15 @@ define view entity ZR_Booking
 //highlight-end
 ```
 
-## BO Base View `ZI_Booking`
+## BO Base View `ZI_BookingTP`
 
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
-define view entity ZI_Booking
+define view entity ZI_BookingTP
   as select from ZR_Booking
-  association to parent ZI_Travel as _Travel on $projection.TravelUuid = _Travel.TravelUuid
+  association to parent ZI_TravelTP as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key BookingUuid,
       TravelUuid,
@@ -256,15 +256,15 @@ define view entity ZI_Booking
 //highlight-end
 ```
 
-## BO Base View `ZI_Travel`
+## BO Base View `ZI_TravelTP`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_Travel
+define root view entity ZI_TravelTP
   as select from ZR_Travel
 //highlight-start
-  composition [0..*] of ZI_Booking as _Bookings
+  composition [0..*] of ZI_BookingTP as _Bookings
 //highlight-end
 {
   key TravelUuid,
