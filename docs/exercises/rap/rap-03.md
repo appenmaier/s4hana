@@ -3,14 +3,19 @@ title: RAP-03
 description: ""
 ---
 
-- Erweitere die BO Projection View `ZC_???_Movie` um das transiente Feld `AverageRating` und implementiere für diese eine Hervorhebung
-- Erweitere die Metadata Extension `ZC_???_MOVIE` so, dass Filme absteigend sortiert nach dem Feld `AverageRating` ausgegeben werden
-- Erstelle die Interface View `ZI_???_GenreText` und erweitere die BO Projection View `ZC_???_Movie` um das Textelement `GenreText`
+- Erstelle die Interface View `ZI_???_AverageRating` und erweitere die BO Projection View `ZC_???_MovieTP` um das transiente Feld `AverageRating`
+- Implementiere für das Feld `AverageRating` der BO Projection View `ZC_???_MovieTP` eine Hervorhebung
+- Erweitere die Metadata Extension `ZC_???_MOVIETP` so, dass Filme absteigend sortiert nach dem Feld `AverageRating` ausgegeben werden
+- Erweitere die Metadata Extension `ZC_???_RATINGTP` so, dass Bewertungen absteigend sortiert nach dem Feld `RatingDate` und - bei gleichem Bewertungsdatum - aufsteigend sortiert nach dem Feld `UserName` ausgegeben werden
+- Erstelle die Interface View `ZI_???_GenreText` und erweitere die BO Projection View `ZC_???_MovieTP` um das Textelement `GenreText`
 
-## Hinweise zum transienten Feld `AverageRating`
+## Hinweis zur Interface View `ZI_???_AverageRating`
 
-- Das Feld `AverageRating` soll die durchschnittliche Bewertung eines Filmes ausgeben
-- Die Hervorhebung soll so implementiert werden, dass Filme mit einer Durchschnittsbewertung größer 6,7 grün, Filme mit einer Durchschnittsbewertung zwischen 3,4 und 6,7 gelb und Filme mit einer Durchschnittsbewertung kleiner 3,4 rot dargestellt werden
+Die Interface View `ZI_???_AverageRating` soll die durchschnittliche Bewertung je Film ausgeben.
+
+## Hinweis zum transienten Feld `AverageRating`
+
+Die Hervorhebung soll so implementiert werden, dass Filme mit einer Durchschnittsbewertung größer 6,7 grün, Filme mit einer Durchschnittsbewertung zwischen 3,4 und 6,7 gelb und Filme mit einer Durchschnittsbewertung kleiner 3,4 rot dargestellt werden.
 
 ## Hinweis zur Interface View `ZI_???_GenreText`
 

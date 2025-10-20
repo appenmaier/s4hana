@@ -3,26 +3,26 @@ title: RAP-02
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Rating` sowie die BO Base View `ZI_???_Rating`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZI_???_Movie`
-- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_Rating`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_Movie`
-- Erweitere die Service Definition `ZUI_???_MOVIE` um die BO Projection View `ZC_???_Rating`
-- Erstelle für die BO Projection View `ZC_???_Rating` die Metadata Extension `ZC_???_RATING`
-- Erweitere die Metadata Extension `ZC_???_MOVIE` um Bewertungen
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Rating` sowie die BO Base View `ZI_???_RatingTP`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZI_???_MovieTP`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_RatingTP`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_MovieTP`
+- Erweitere die Service Definition `ZUI_???_MOVIE` um die BO Projection View `ZC_???_RatingTP`
+- Erstelle für die BO Projection View `ZC_???_RatingTP` die Metadata Extension `ZC_???_RATINGTP`
+- Erweitere die Metadata Extension `ZC_???_MOVIETP` um die Anzeige von Bewertungen
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
-    R_Movie ||--|| ZABAP_MOVIE_A  : ""
-    I_Movie ||--|| R_Movie  : ""
-    C_Movie ||--|| I_Movie  : ""
-    R_Rating ||--|| ZABAP_RATING_A : ""
-    I_Rating ||--|| R_Rating : ""
-    C_Rating ||--|| I_Rating : ""
-    I_Movie ||--o{ I_Rating : ""
-    C_Movie ||--o{ C_Rating : ""
+    "ZR_???_Movie" ||--|| ZABAP_MOVIE_A  : ""
+    "ZI_???_MovieTP" ||--|| "ZR_???_Movie"  : ""
+    "ZC_???_MovieTP" ||--|| "ZI_???_MovieTP"  : ""
+    "ZR_???_Rating" ||--|| ZABAP_RATING_A : ""
+    "ZI_???_RatingTP" ||--|| "ZR_???_Rating" : ""
+    "ZC_???_RatingTP" ||--|| "ZI_???_RatingTP" : ""
+    "ZI_???_MovieTP" ||--o{ "ZI_???_RatingTP" : ""
+    "ZC_???_MovieTP" ||--o{ "ZC_???_RatingTP" : ""
 
     ZABAP_RATING_A {
         clnt(3) client PK
@@ -33,7 +33,7 @@ erDiagram
         dats(8) rating_date
     }
 
-    R_Rating {
+    "ZR_???_Rating" {
         raw(16) RatingUUID PK
         raw(16) MovieUUID FK
         char(50) UserName
@@ -41,16 +41,7 @@ erDiagram
         dats(8) RatingDate
     }
 
-    I_Rating {
-        raw(16) RatingUUID PK
-        raw(16) MovieUUID FK
-        char(50) UserName
-        int1(3) Rating
-        dats(8) RatingDate
-        association _Movie
-    }
-
-    C_Rating {
+    "ZI_???_RatingTP" {
         raw(16) RatingUUID PK
         raw(16) MovieUUID FK
         char(50) UserName
@@ -59,7 +50,16 @@ erDiagram
         association _Movie
     }
 
-    I_Movie {
+    "ZC_???_RatingTP" {
+        raw(16) RatingUUID PK
+        raw(16) MovieUUID FK
+        char(50) UserName
+        int1(3) Rating
+        dats(8) RatingDate
+        association _Movie
+    }
+
+    "ZI_???_MovieTP" {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre
@@ -73,7 +73,7 @@ erDiagram
         association _Ratings
     }
 
-    C_Movie {
+    "ZC_???_MovieTP" {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre
@@ -88,7 +88,7 @@ erDiagram
     }
 ```
 
-## Hinweise zur Metadata Extension `ZC_???_RATING`
+## Hinweise zur Metadata Extension `ZC_???_RATINGTP`
 
 ### Hinweise zum ListReport
 

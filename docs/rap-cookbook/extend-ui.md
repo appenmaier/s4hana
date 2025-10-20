@@ -5,9 +5,9 @@ sidebar_position: 60
 tags: []
 ---
 
-- Die BO Projection View `ZC_Booking` um eine Annotation zur Metadatenerweiterung erweitern
-- Die Metadata Extension `ZC_BOOKING` erstellen
-- Die Metadata Extension `ZC_TRAVEL` um Annotationen zur Darstellung von Buchungen erweitern
+- Die BO Projection View `ZC_BookingTP` um eine Annotation zur Metadatenerweiterung erweitern
+- Die Metadata Extension `ZC_BOOKINGTP` erstellen
+- Die Metadata Extension `ZC_TRAVELTP` um Annotationen zur Darstellung von Buchungen erweitern
 
 ## BO Projection View `ZC_Booking`
 
@@ -17,8 +17,8 @@ tags: []
 //highlight-start
 @Metadata.allowExtensions: true
 //highlight-end
-define view entity ZC_Booking
-  as projection on ZI_Booking
+define view entity ZC_BookingTP
+  as projection on ZI_BookingTP
 {
   key BookingUuid,
       TravelUuid,
@@ -31,11 +31,11 @@ define view entity ZC_Booking
       CurrencyCode,
 
       /* Associations */
-      _Travel : redirected to parent ZC_Travel
+      _Travel : redirected to parent ZC_TravelTP
 }
 ```
 
-## Metadata Extension `ZC_BOOKING`
+## Metadata Extension `ZC_BOOKINGTP`
 
 ```sql showLineNumbers
 //highlight-start
@@ -47,7 +47,7 @@ define view entity ZC_Booking
   title.value: 'BookingId',
   description.value: 'BookingDate'
 }
-annotate view ZC_Booking with
+annotate view ZC_BookingTP with
 {
 
   /* Facets */
@@ -94,7 +94,7 @@ annotate view ZC_Booking with
 //highlight-end
 ```
 
-## Metadata Extension `ZC_TRAVEL`
+## Metadata Extension `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
@@ -105,7 +105,7 @@ annotate view ZC_Booking with
   title.value: 'TravelId',
   description.value: 'Description'
 }
-annotate view ZC_Travel with
+annotate view ZC_TravelTP with
 {
 
   /* Facets */

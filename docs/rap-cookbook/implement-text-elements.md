@@ -5,8 +5,8 @@ sidebar_position: 90
 ---
 
 - Die Interface View `ZI_CustomerText` erstellen
-- Die BO Base View `ZI_Travel` um ein transientes Feld für Kundentexte und eine Annotation für Textelemente erweitern
-- Die BO Projection View `ZC_Travel` um ein transientes Feld für Kundentexte erweitern
+- Die BO Base View `ZI_TravelTP` um eine Assoziation zu Kundentexten erweitern
+- Die BO Projection View `ZC_TravelTP` um ein transientes Feld für Kundentexte und eine Annotation für Textelemente erweitern
 
 ## Interface View `ZI_CustomerText`
 
@@ -28,14 +28,14 @@ as select from /dmo/customer
 //highlight-end
 ```
 
-## BO Base View `ZI_Travel`
+## BO Base View `ZI_TravelTP`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_Travel
+define root view entity ZI_TravelTP
   as select from ZR_Travel
-  composition [0..*] of ZI_Booking      as _Bookings
+  composition [0..*] of ZI_BookingTP    as _Bookings
 //highlight-start
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 //highlight-end
@@ -43,9 +43,6 @@ define root view entity ZI_Travel
   key TravelUuid,
       TravelId,
       AgencyId,
-//highlight-start
-      @ObjectModel.text.element: ['CustomerName']
-//highlight-end
       CustomerId,
       BeginDate,
       EndDate,
@@ -61,32 +58,33 @@ define root view entity ZI_Travel
       LastChangedBy,
       LastChangedAt
 
-//highlight-start
-      /* Transient Data */
-      _CustomerText.Name as CustomerName,
-//highlight-end
-
       /* Associations */
-      _Bookings
+      _Bookings,
+//highlight-start
+      _CustomerText
+//highlight-end
 }
 ```
 
-## BO Projection View `ZC_Travel`
+## BO Projection View `ZC_TravelTP`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
-define root view entity ZC_Travel
+define root view entity ZC_TravelTP
   provider contract transactional_query
-  as projection on ZI_Travel
+  as projection on ZI_TravelTP
 {
   key TravelUuid,
       TravelId,
       @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Agency_StdVH', element: 'AgencyID' } }]
       AgencyId,
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CustomerVH', element: 'CustomerId' } }]
+//highlight-start
+      @ObjectModel.text.element: ['CustomerName']
+//highlight-end
       CustomerId,
       BeginDate,
       EndDate,
@@ -108,10 +106,10 @@ define root view entity ZC_Travel
 
 //highlight-start
       /* Transient Data */
-      CustomerName,
+      _CustomerText.Name as CustomerName,
 //highlight-end
 
       /* Associations */
-      _Bookings : redirected to composition child ZC_Booking
+      _Bookings : redirected to composition child ZC_BookingTP
 }
 ```

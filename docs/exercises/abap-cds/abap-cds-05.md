@@ -3,20 +3,20 @@ title: ABAP-CDS-05
 description: ""
 ---
 
-Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZI_???_CustomerKPIs`.
+Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `Z???_CustomerKPIs`.
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
 
-    R_Customer ||--|| "/DMO/CUSTOMER" : ""
-    R_Travel ||--|| "/DMO/TRAVEL" : ""
-    I_TravelWithCustomer }o--|| R_Customer : "Only Customers from Germany"
-    I_TravelWithCustomer ||--|| R_Travel : ""
-    I_CustomerKPIs ||--o{ I_TravelWithCustomer : "Only Customers with Total Revenue >= 5.000 Euro"
+    "Z???_Customer" ||--|| "/DMO/CUSTOMER" : ""
+    "Z???_Travel" ||--|| "/DMO/TRAVEL" : ""
+    "Z???_TravelWithCustomer" }o--|| "Z???_Customer" : "Only Customers from Germany"
+    "Z???_TravelWithCustomer" ||--|| "Z???_Travel" : ""
+    "Z???_CustomerKPIs" ||--o{ "Z???_TravelWithCustomer" : "Only Customers with Total Revenue >= 5.000 Euro"
 
-    I_CustomerKPIs {
+    "Z???_CustomerKPIs" {
         numc(6) CustomerId PK
         char(92) CustomerName
         char(60) Street
@@ -28,7 +28,7 @@ erDiagram
         int4(10) NumberOfDifferentAgencys "Number of different Agencys"
     }
 
-    I_TravelWithCustomer {
+    "Z???_TravelWithCustomer" {
         numc(8) TravelId PK
         numc(6) AgencyId
         dats(8) BeginDate

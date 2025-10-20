@@ -5,10 +5,10 @@ sidebar_position: 160
 ---
 
 - Die Abstract View `ZA_BookingFee` erstellen
-- Die Behavior Definition `ZI_TRAVEL` um eine Aktion zur Pflege der Buchungsgebühren erweitern
-- Die Verhaltensimplementierung `ZCM_TRAVEL` um eine Behandlermethode zur Pflege der Buchungsgebühren erweitern
-- Die Behavior Projection `ZC_TRAVEL` um eine Aktion zur Pflege der Buchungsgebühren erweitern
-- Die Metadata Extension `ZC_TRAVEL` um Annotationen für eine Aktion zur Pflege der Buchungsgebühren erweitern
+- Die Behavior Definition `ZI_TRAVELTP` um eine Aktion zur Pflege der Buchungsgebühren erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVELTP` um eine Behandlermethode zur Pflege der Buchungsgebühren erweitern
+- Die Behavior Projection `ZC_TRAVELTP` um eine Aktion zur Pflege der Buchungsgebühren erweitern
+- Die Metadata Extension `ZC_TRAVELTP` um Annotationen für eine Aktion zur Pflege der Buchungsgebühren erweitern
 
 ## Abstract View `ZA_BookingFee`
 
@@ -25,14 +25,14 @@ define abstract entity ZA_BookingFee
 //highlight-end
 ```
 
-## Behavior Definition `ZI_TRAVEL`
+## Behavior Definition `ZI_TRAVELTP`
 
 ```sql showLineNumbers
-managed implementation in class zbp_travel unique;
+managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 
-define behavior for ZI_Travel alias Travel
-persistent table z_travel_a
+define behavior for ZI_TravelTP alias Travel
+persistent table ztravel_a
 lock master
 authorization master ( instance )
 //etag master <field_name>
@@ -61,7 +61,7 @@ authorization master ( instance )
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 
-  mapping for z_travel_a corresponding
+  mapping for ztravel_a corresponding
   {
     AgencyId = agency_id;
     BeginDate = begin_date;
@@ -81,8 +81,8 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_Booking alias Booking
-persistent table z_booking_a
+define behavior for ZI_BookingTP alias Booking
+persistent table zbooking_a
 lock dependent by _Travel
 authorization dependent by _Travel
 //etag master <field_name>
@@ -95,7 +95,7 @@ authorization dependent by _Travel
   field ( readonly, numbering : managed ) BookingUuid;
   field ( readonly ) TravelUuid;
 
-  mapping for z_booking_a corresponding
+  mapping for zbooking_a corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;
@@ -110,24 +110,24 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung `ZBP_TRAVEL`
+## Verhaltensimplementierung `ZBP_TRAVELTP`
 
-### Global Class `ZBP_TRAVEL`
+### Global Class `ZBP_TRAVELTP`
 
-```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
+```abap title="ZBP_TRAVELTP.abap" showLineNumbers
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zbp_travel IMPLEMENTATION.
+CLASS zbp_traveltp IMPLEMENTATION.
 ENDCLASS.
 ```
 
 ### Local Type `LHC_TRAVEL`
 
-```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+```abap title="ZBP_TRAVELTP.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
@@ -178,7 +178,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -202,14 +202,14 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( CustomerId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-      " Validate Agency and Create Error Message
+      " Validate Customer and Create Error Message
       SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
       IF exists = abap_false.
         message = NEW zcm_travel( textid      = zcm_travel=>no_customer_found
@@ -226,7 +226,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( BeginDate EndDate )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -244,7 +244,7 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD determinestatus.
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR key IN keys
                          ( %tky   = key-%tky
@@ -259,7 +259,7 @@ CLASS lhc_travel IMPLEMENTATION.
     travel_id = max_travel_id + 1.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR key IN keys
                          ( %tky     = key-%tky
@@ -270,7 +270,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -300,7 +300,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR t IN travels
                          ( %tky = t-%tky Status = t-Status ) ).
@@ -314,7 +314,7 @@ CLASS lhc_travel IMPLEMENTATION.
 //highlight-start
   METHOD maintainbookingfee.
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( BookingFee CurrencyCode )
            WITH VALUE #( FOR key IN keys
                          ( %tky         = key-%tky
@@ -322,7 +322,7 @@ CLASS lhc_travel IMPLEMENTATION.
                            CurrencyCode = key-%param-CurrencyCode ) ).
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -335,13 +335,13 @@ CLASS lhc_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Behavior Projection `ZC_TRAVEL`
+## Behavior Projection `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 projection;
 strict ( 2 );
 
-define behavior for ZC_Travel alias Travel
+define behavior for ZC_TravelTP alias Travel
 {
   use create;
   use update;
@@ -356,7 +356,7 @@ define behavior for ZC_Travel alias Travel
 //highlight-end
 }
 
-define behavior for ZC_Booking alias Booking
+define behavior for ZC_BookingTP alias Booking
 {
   use update;
   use delete;
@@ -365,7 +365,7 @@ define behavior for ZC_Booking alias Booking
 }
 ```
 
-## Metadata Extension `ZC_TRAVEL`
+## Metadata Extension `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
@@ -377,7 +377,7 @@ define behavior for ZC_Booking alias Booking
   description.value: 'Description'
 }
 @UI.presentationVariant: [{sortOrder: [{ by: 'BeginDate', direction: #DESC }]}]
-annotate view ZC_Travel with
+annotate view ZC_TravelTP with
 {
 
   /* Facets */

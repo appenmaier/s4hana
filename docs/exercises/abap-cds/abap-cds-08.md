@@ -3,18 +3,18 @@ title: ABAP-CDS-08
 description: ""
 ---
 
-Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZE_???_Customer`.
+Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `Z???_CustomerExtension"`.
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
 
-    R_Customer ||--|| "/DMO/CUSTOMER" : ""
-    E_Customer ||--|| R_Customer  : ""
-    E_Customer ||--o{ "/DMO/BOOKING" : ""
+    "Z???_Customer" ||--|| "/DMO/CUSTOMER" : ""
+    "Z???_CustomerExtension" ||--|| "Z???_Customer"  : ""
+    "Z???_CustomerExtension" ||--o{ "/DMO/BOOKING" : ""
 
-    E_Customer {
+    "Z???_CustomerExtension" {
         association _ZZBookings
     }
 ```

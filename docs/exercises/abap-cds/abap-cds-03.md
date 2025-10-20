@@ -3,19 +3,19 @@ title: ABAP-CDS-03
 description: ""
 ---
 
-Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `Z???_I_TravelWithCustomer`.
+Erstelle mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `Z???_TravelWithCustomer`.
 
 ## ER-Modell
 
 ```mermaid
 erDiagram
 
-    R_Customer ||--|| "/DMO/CUSTOMER" : ""
-    R_Travel ||--|| "/DMO/TRAVEL" : ""
-    I_TravelWithCustomer }o--|| R_Customer : "Only Customers from Germany"
-    I_TravelWithCustomer ||--|| R_Travel : ""
+    "Z???_Customer" ||--|| "/DMO/CUSTOMER" : ""
+    "Z???_Travel" ||--|| "/DMO/TRAVEL" : ""
+    "Z???_TravelWithCustomer" }o--|| "Z???_Customer" : "Only Customers from Germany"
+    "Z???_TravelWithCustomer" ||--|| "Z???_Travel" : ""
 
-    I_TravelWithCustomer {
+    "Z???_TravelWithCustomer" {
         numc(8) TravelId PK
         numc(6) AgencyId
         dats(8) BeginDate
@@ -34,7 +34,7 @@ erDiagram
         char(40) City
     }
 
-    R_Customer {
+    "Z???_Customer" {
         numc(6) CustomerId PK
         char(40) FirstName
         char(40) LastName
@@ -45,7 +45,7 @@ erDiagram
         char(3) CountryCode
     }
 
-    R_Travel {
+    "Z???_Travel" {
         numc(8) TravelId PK
         numc(6) AgencyId
         numc(6) CustomerId
@@ -61,4 +61,4 @@ erDiagram
 
 ## Hinweis
 
-Die Verknüpfung der beiden Datenquellen `ZR_???_Travel` und `ZR_???_Customer` soll in Form eines Inner Joins erfolgen.
+Die Verknüpfung der beiden Datenquellen `"Z???__Travel` und `"Z???__Customer` soll in Form eines Inner Joins erfolgen.

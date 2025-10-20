@@ -5,7 +5,7 @@ sidebar_position: 30
 tags: []
 ---
 
-Bei der Entwicklung im SAP-Umfeld gilt es, bestimmte Qualitätsstandards einzuhalten. Darunter zählen unter anderem auch die Namensrichtlinien für Entwicklungsobjekte und Datenobjekte.
+Bei der Entwicklung im SAP-Umfeld gilt es, bestimmte Qualitätsstandards einzuhalten. Darunter zählen unter anderem auch die Namensrichtlinien für Entwicklungsobjekte.
 
 :::tip Hinweis
 Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm?file=abennaming_gdl.htm) entnommen werden.
@@ -29,17 +29,19 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | Typ                      | Bezeichner                                       | Beispiel                       |
 | ------------------------ | ------------------------------------------------ | ------------------------------ |
 | Basic Interface View     | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
-| BO Base View             | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>   | `ZR_ABAP_Flight`               |
+| Restricted View          | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>   | `ZR_ABAP_Flight`               |
+| Interface View           | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
+| BO Base View             | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>TP | `ZI_ABAP_FlightTP`             |
 | Composite Interface View | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_FlightWithConnection` |
 | Consumption View         | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
-| BO Projection View       | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
+| BO Projection View       | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>TP | `ZC_ABAP_FlightTP`             |
 | Wertehilfe               | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>VH | `ZC_ABAP_AirportVH`            |
 | Abstract View            | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>   | `ZA_ABAP_Flight`               |
 | Extension View           | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>   | `ZE_ABAP_Flight`               |
 | Access Control           | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
-| Metadata Extension       | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
-| BO Behavior Definition   | <Name der CDS-View\>                             | `ZR_ABAP_FLIGHT`               |
-| BO Behavior Projection   | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
+| Metadata Extension       | <Name der Consumption View\>                     | `ZC_ABAP_FLIGHT`               |
+| Behavior Definition      | <Name der BO Base View\>                         | `ZI_ABAP_FLIGHTTP`             |
+| Behavior Projection      | <Name der BO Projection View\>                   | `ZC_ABAP_FLIGHTTP`             |
 
 ### Dictionary
 
@@ -68,13 +70,3 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | Prefix-Namensraum | /DMO/       |
 | Kunden-Namensraum | Z           |
 | SAP-Namensraum    | FLIGHTMODEL |
-
-## Namensrichtlinien für Datenobjekte
-
-| Prefix                  | Beispiel               |
-| ----------------------- | ---------------------- |
-| G: globale Datenobjekte | `g_number_of_vehicles` |
-| I: Import-Parameter     | `i_carrier_id`         |
-| E: Export-Parameter     | `e_carrier`            |
-| C: Changing-Parameter   | `c_carrier`            |
-| R: Rückgabewert         | `r_carrier`            |

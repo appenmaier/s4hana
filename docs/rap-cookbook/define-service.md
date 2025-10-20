@@ -4,18 +4,18 @@ description: ""
 sidebar_position: 20
 ---
 
-- Die BO Projection View `ZC_Travel` erstellen
+- Die BO Projection View `ZC_TravelTP` erstellen
 - Die Service Definition `ZUI_TRAVEL` erstellen
-- Das Service Binding `ZUI_TRAVEL_V2` erstellen
+- Das Service Binding `ZUI_TRAVEL_O2` erstellen
 
-## BO Projection View `ZC_Travel`
+## BO Projection View `ZC_TravelTP`
 
 ```sql showLineNumbers
 //highlight-start
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-define root view entity ZC_Travel
-  as projection on ZI_Travel
+define root view entity ZC_TravelTP
+  as projection on ZI_TravelTP
 {
   key TravelUuid,
       TravelId,
@@ -44,12 +44,12 @@ define root view entity ZC_Travel
 //highlight-start
 @EndUserText.label: 'Travel'
 define service ZUI_TRAVEL {
-  expose ZC_Travel as Travel;
+  expose ZC_TravelTP as Travel;
 }
 //highlight-end
 ```
 
-## Service Binding `ZUI_TRAVEL_V2`
+## Service Binding `ZUI_TRAVEL_O2`
 
 - Service Definition: ZUI_TRAVEL
 - Binding Type: OData V2 - UI

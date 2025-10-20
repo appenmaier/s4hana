@@ -4,26 +4,26 @@ description: ""
 sidebar_position: 170
 ---
 
-- Die Behavior Definition `ZI_Travel` um Entwurfs-Funktionen erweitern
-- Eine Entwurfstabelle `Z_TRAVEL_D` generieren lassen
-- Eine Entwurfstabelle `Z_BOOKING_D` generieren lassen
-- Die Behavior Projection `ZC_TRAVEL` um Entwurfs-Funktionen erweitern
-- Das Service Binding `ZUI_TRAVEL_V4` erstellen
-- Das Service Binding `ZUI_TRAVEL_V2` löschen
+- Die Behavior Definition `ZI_TRAVELTP` um Entwurfs-Funktionen erweitern
+- Eine Entwurfstabelle `ZTRAVEL_D` generieren lassen
+- Eine Entwurfstabelle `ZBOOKING_D` generieren lassen
+- Die Behavior Projection `ZC_TRAVELTP` um Entwurfs-Funktionen erweitern
+- Das Service Binding `ZUI_TRAVEL_O4` erstellen
+- Das Service Binding `ZUI_TRAVEL_O2` löschen
 
-## Behavior Definition `ZI_Travel`
+## Behavior Definition `ZI_TRAVELTP`
 
 ```sql showLineNumbers
-managed implementation in class zbp_travel unique;
+managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 //highlight-start
 with draft;
 //highlight-end
 
-define behavior for ZI_Travel alias Travel
-persistent table z_travel_a
+define behavior for ZI_TravelTP alias Travel
+persistent table ztravel_a
 //highlight-start
-draft table z_travel_d
+draft table ztravel_d
 //highlight-end
 lock master
 //highlight-start
@@ -69,7 +69,7 @@ authorization master ( instance )
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 
-  mapping for z_travel_a corresponding
+  mapping for ztravel_a corresponding
   {
     AgencyId = agency_id;
     BeginDate = begin_date;
@@ -89,11 +89,11 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZR_Booking alias Booking
-persistent table z_booking_a
+define behavior for ZI_BookingTP alias Booking
+persistent table zbooking_a
 lock dependent by _Travel
 //highlight-start
-draft table z_booking_d
+draft table zbooking_d
 //highlight-end
 authorization dependent by _Travel
 //etag master <field_name>
@@ -108,7 +108,7 @@ authorization dependent by _Travel
   field ( readonly, numbering : managed ) BookingUuid;
   field ( readonly ) TravelUuid;
 
-  mapping for z_booking_a corresponding
+  mapping for zbooking_a corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;
@@ -123,7 +123,7 @@ authorization dependent by _Travel
 }
 ```
 
-## Behavior Projection `ZC_TRAVEL`
+## Behavior Projection `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 projection;
@@ -132,7 +132,7 @@ strict ( 2 );
 use draft;
 //highlight-end
 
-define behavior for ZC_Travel alias Travel
+define behavior for ZC_TravelTP alias Travel
 {
   use create;
   use update;
@@ -155,7 +155,7 @@ define behavior for ZC_Travel alias Travel
 //highlight-end
 }
 
-define behavior for ZC_Booking alias Booking
+define behavior for ZC_BookingTP alias Booking
 {
   use update;
   use delete;
@@ -166,7 +166,7 @@ define behavior for ZC_Booking alias Booking
 }
 ```
 
-## Service Binding `ZUI_TRAVEL_V4`
+## Service Binding `ZUI_TRAVEL_O4`
 
 - Service Definition: ZUI_TRAVEL
 - Binding Type: OData V4 - UI

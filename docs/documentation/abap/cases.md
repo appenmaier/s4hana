@@ -1,13 +1,13 @@
 ---
-title: Verzweigungen
+title: Verzweigungen und Fallunterscheidungen
 description: ""
 sidebar_position: 60
 tags: []
 ---
 
-## Einfachverzweigungen
+## Verzweigungen
 
-Einfachverzweigungen können in ABAP entweder mit `IF...ELSE...ENDIF` oder dem Konstruktor-Operator `COND` realisiert werden. Dabei können als Prüfbedingung beliebig komplexe logische Ausdrücke angegeben werden.
+Verzweigungen können in ABAP entweder mit `IF...ELSE...ENDIF` oder dem Konstruktor-Operator `COND` realisiert werden. Dabei können als Prüfbedingung beliebig komplexe logische Ausdrücke angegeben werden.
 
 ```abap showLineNumbers
 DATA flight_date TYPE /dmo/flight_date VALUE '20230104'.
@@ -35,9 +35,9 @@ In ABAP sind beliebig tief geschachtelte Ausdrücke möglich. Die Verarbeitungsr
 Die logische Und-Verknüpfung wird in ABAP durch den Operator `AND`, die logische Oder-Verknüpfung durch den Operator `OR` und die logische Verneinung durch den Operator `NOT` realisiert. Als Vergleichsoperatoren stehen `=`, `<>`, `<`, `<=`, `>`, `>=` und `BETWEEN` zur
 Verfügung. Zusätzlich können die Abfragen `IS INITIAL` und `IS NOT INITAL` sowie die Abfrage `BETWEEN...AND` verwendet werden.
 
-## Mehrfachverzweigungen
+## Fallunterscheidungen
 
-Mehrfachverzweigungen (auch Fallunterscheidungen genanntn) können entweder mit verschachtelten Einfachverzweiungen, mit `CASE...WHEN...ENDCASE` oder mit dem Konstruktor-Operator `SWITCH` realisiert werden.
+Fallunterscheidungen können entweder mit verschachtelten Verzweiungen, mit `CASE...WHEN...ENDCASE` oder mit dem Konstruktor-Operator `SWITCH` realisiert werden.
 
 ```abap showLineNumbers
 DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
