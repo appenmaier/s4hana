@@ -13,8 +13,3 @@ Die Abstract View `ZA_???_Rating` soll einen Parameter für die Bewertung eines 
 
 Die Aktion zum Bewerten eines Films soll dem Film die eingehende Bewertung der Abstract View `ZA_???_Rating` als Bewertung hinzufügen.
 
-:::tip Hinweis
-
-Entsprechende Meldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
-
-:::
