@@ -13,9 +13,9 @@ description: ""
 
 Die Interface View `ZI_???_AverageRating` soll die durchschnittliche Bewertung je Film ausgeben.
 
-## Hinweis zum transienten Feld `AverageRating`
+## Hinweis zur BO Projection View `ZC_???_MovieTP`
 
-Die Hervorhebung soll so implementiert werden, dass Filme mit einer Durchschnittsbewertung größer 6,7 grün, Filme mit einer Durchschnittsbewertung zwischen 3,4 und 6,7 gelb und Filme mit einer Durchschnittsbewertung kleiner 3,4 rot dargestellt werden.
+Die Hervorhebung für das Feld `AverageRating` soll so implementiert werden, dass Filme mit einer Durchschnittsbewertung größer 6,7 grün, Filme mit einer Durchschnittsbewertung zwischen 3,4 und 6,7 gelb und Filme mit einer Durchschnittsbewertung kleiner 3,4 rot dargestellt werden. Filme ohne Bewertung sollen schwarz dargestellt werden.
 
 ## Hinweis zur Interface View `ZI_???_GenreText`
 
