@@ -119,7 +119,7 @@ ENDCLASS.
 managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 
-define behavior for ZI_TRAVELTP alias Travel
+define behavior for ZI_TravelTP alias Travel
 persistent table ztravel_a
 lock master
 authorization master ( instance )
