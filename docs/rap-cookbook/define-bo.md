@@ -4,12 +4,12 @@ description: ""
 sidebar_position: 10
 ---
 
-- Die Anwendungstabelle `Z_TRAVEL_A` erstellen
+- Die Anwendungstabelle `ZTRAVEL_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` erstellen
 - Die Restricted View `ZR_Travel` erstellen
-- Die BO Base View `ZI_Travel` erstellen
+- Die BO Base View `ZI_TravelTP` erstellen
 
-## Anwendungstabelle `Z_TRAVEL_A`
+## Anwendungstabelle `ZTRAVEL_A`
 
 ```sql showLineNumbers
 //highlight-start
@@ -18,7 +18,7 @@ sidebar_position: 10
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table z_travel_a {
+define table ztravel_a {
   key client      : abap.clnt not null;
   key travel_uuid : sysuuid_x16 not null;
   travel_id       : /dmo/travel_id;
@@ -26,9 +26,9 @@ define table z_travel_a {
   customer_id     : /dmo/customer_id;
   begin_date      : /dmo/begin_date;
   end_date        : /dmo/end_date;
-  @Semantics.amount.currencyCode : 'z_travel_a.currency_code'
+  @Semantics.amount.currencyCode : 'ztravel_a.currency_code'
   booking_fee     : /dmo/booking_fee;
-  @Semantics.amount.currencyCode : 'z_travel_a.currency_code'
+  @Semantics.amount.currencyCode : 'ztravel_a.currency_code'
   total_price     : /dmo/total_price;
   currency_code   : /dmo/currency_code;
   description     : /dmo/description;
@@ -52,11 +52,11 @@ ENDCLASS.
 
 CLASS zcl_travel_generator IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
-    DATA travel  TYPE z_travel_a.
-    DATA travels TYPE TABLE OF z_travel_a.
+    DATA travel  TYPE ztravel_a.
+    DATA travels TYPE TABLE OF ztravel_a.
 
     " Delete Travels
-    DELETE FROM z_travel_a.
+    DELETE FROM ztravel_a.
     out->write( |Deleted Travels: { sy-dbcnt }| ).
 
     " Create Travel
@@ -136,7 +136,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     APPEND travel TO travels.
 
     " Insert Travels
-    INSERT z_travel_a FROM TABLE @travels.
+    INSERT ztravel_a FROM TABLE @travels.
     out->write( |Inserted Travels: { sy-dbcnt }| ).
   ENDMETHOD.
 ENDCLASS.
@@ -150,7 +150,7 @@ ENDCLASS.
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define view entity ZR_Travel
-  as select from z_travel_a
+  as select from ztravel_a
 {
   key travel_uuid     as TravelUuid,
       travel_id       as TravelId,
@@ -175,13 +175,13 @@ define view entity ZR_Travel
 //highlight-end
 ```
 
-## BO Base View `ZI_Travel`
+## BO Base View `ZI_TravelTP`
 
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_Travel
+define root view entity ZI_TravelTP
   as select from ZR_Travel
 {
   key TravelUuid,
