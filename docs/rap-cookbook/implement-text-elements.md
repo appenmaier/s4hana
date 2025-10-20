@@ -59,7 +59,10 @@ define root view entity ZI_TravelTP
       LastChangedAt
 
       /* Associations */
-      _Bookings
+      _Bookings,
+//highlight-start
+      _CustomerText
+//highlight-end
 }
 ```
 
