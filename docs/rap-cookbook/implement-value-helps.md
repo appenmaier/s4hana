@@ -6,8 +6,8 @@ sidebar_position: 80
 
 - Die Interface View `ZI_CustomerVH` erstellen
 - Die Interface View `ZI_StatusVH` erstellen
-- Die BO Projection View `ZC_Travel` um Annotationen für Wertehilfen erweitern
-- Die BO Projection View `ZC_Booking` um Annotationen für Wertehilfen erweitern
+- Die BO Projection View `ZC_TravelTP` um Annotationen für Wertehilfen erweitern
+- Die BO Projection View `ZC_BookingTP` um Annotationen für Wertehilfen erweitern
 
 ## Interface View `ZI_CustomerVH`
 
@@ -55,16 +55,16 @@ where
 //highlight-end
 ```
 
-## BO Projection View `ZC_Travel`
+## BO Projection View `ZC_TravelTP`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
-define root view entity ZC_Travel
+define root view entity ZC_TravelTP
   provider contract transactional_query
-  as projection on ZI_Travel
+  as projection on ZI_TravelTP
 {
   key TravelUuid,
       TravelId,
@@ -99,18 +99,18 @@ define root view entity ZC_Travel
       LastChangedAt
 
       /* Associations */
-      _Bookings : redirected to composition child ZC_Booking
+      _Bookings : redirected to composition child ZC_BookingTP
 }
 ```
 
-## BO Projection View `ZC_Booking`
+## BO Projection View `ZC_BookingTP`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
-define view entity ZC_Booking
-  as projection on ZI_Booking
+define view entity ZC_BookingTP
+  as projection on ZI_BookingTP
 {
   key BookingUuid,
       TravelUuid,
@@ -129,6 +129,6 @@ define view entity ZC_Booking
       CurrencyCode,
 
       /* Associations */
-      _Travel : redirected to parent ZC_Travel
+      _Travel : redirected to parent ZC_TravelTP
 }
 ```
