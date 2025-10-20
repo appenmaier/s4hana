@@ -221,7 +221,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDIF.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -305,7 +305,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -329,7 +329,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( CustomerId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -353,7 +353,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          FIELDS ( BeginDate EndDate )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -371,7 +371,7 @@ CLASS lhc_travel IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD determinestatus.
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR key IN keys
                          ( %tky   = key-%tky
@@ -386,7 +386,7 @@ CLASS lhc_travel IMPLEMENTATION.
     travel_id = max_travel_id + 1.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR key IN keys
                          ( %tky     = key-%tky
@@ -397,7 +397,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -427,7 +427,7 @@ CLASS lhc_travel IMPLEMENTATION.
     ENDLOOP.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR t IN travels
                          ( %tky = t-%tky Status = t-Status ) ).
@@ -440,7 +440,7 @@ CLASS lhc_travel IMPLEMENTATION.
 
   METHOD maintainbookingfee.
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_Travel
+    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
            UPDATE FIELDS ( BookingFee CurrencyCode )
            WITH VALUE #( FOR key IN keys
                          ( %tky         = key-%tky
@@ -448,7 +448,7 @@ CLASS lhc_travel IMPLEMENTATION.
                            CurrencyCode = key-%param-CurrencyCode ) ).
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_Travel
+    READ ENTITY IN LOCAL MODE ZI_TravelTP
          ALL FIELDS
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
