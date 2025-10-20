@@ -10,8 +10,8 @@ description: ""
 
 ## Hinweise zu den Validierungen
 
-- Die Validierung für das Feld `Genre` soll prüfen, ob das Genre einen gültigen Domänenfestwert beinhaltet
-- Die Validierung für das Feld `Rating` soll prüfen, ob die Bewertung zwischen 1 und 10 liegt
+- Die Validierung für das Feld `Genre` soll beim Erstellen eines Films prüfen, ob das Genre einen gültigen Domänenfestwert beinhaltet
+- Die Validierung für das Feld `Rating` soll beim Erstellen einer Bewertung prüfen, ob die Bewertung zwischen 1 und 10 liegt
 
 :::tip Hinweis
 
