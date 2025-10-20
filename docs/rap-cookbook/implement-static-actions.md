@@ -4,14 +4,14 @@ description: ""
 sidebar_position: 120
 ---
 
-- Die Message Class `Z_TRAVEL` erstellen
+- Die Message Class `ZTRAVEL` erstellen
 - Die Nachrichtenklasse `ZCM_TRAVEL` erstellen
-- Die Behavior Definition `ZI_Travel` um eine Aktion zum Anzeigen einer Nachricht erweitern
-- Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zum Anzeigen einer Nachricht erweitern
-- Die Behavior Projection `ZC_TRAVEL` um eine Aktion zum Anzeigen einer Nachricht erweitern
-- Die Metadata Extension `ZC_TRAVEL` um Annotationen für eine Aktion zum Anzeigen einer Nachricht erweitern
+- Die Behavior Definition `ZI_TRAVELTP` um eine Aktion zum Anzeigen einer Nachricht erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVELTP` um eine Behandlermethode zum Anzeigen einer Nachricht erweitern
+- Die Behavior Projection `ZC_TRAVELTP` um eine Aktion zum Anzeigen einer Nachricht erweitern
+- Die Metadata Extension `ZC_TRAVELTP` um Annotationen für eine Aktion zum Anzeigen einer Nachricht erweitern
 
-## Message Class `Z_TRAVEL`
+## Message Class `ZTRAVEL`
 
 | Nachrichtennummer | Nachricht                      |
 | ----------------- | ------------------------------ |
@@ -33,7 +33,7 @@ CLASS zcm_travel DEFINITION PUBLIC
     " Message Constants
     CONSTANTS:
       BEGIN OF test_message,
-        msgid TYPE symsgid      VALUE 'Z_TRAVEL',
+        msgid TYPE symsgid      VALUE 'ZTRAVEL',
         msgno TYPE symsgno      VALUE '001',
         attr1 TYPE scx_attrname VALUE 'USER_NAME',
         attr2 TYPE scx_attrname VALUE '',
@@ -70,14 +70,14 @@ ENDCLASS.
 //highlight-end
 ```
 
-## Behavior Definition `ZI_TRAVEL`
+## Behavior Definition `ZI_TRAVELTP`
 
 ```sql showLineNumbers
-managed implementation in class zbp_travel unique;
+managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 
-define behavior for ZI_Travel alias Travel
-persistent table z_travel_a
+define behavior for ZI_TravelTP alias Travel
+persistent table ztravel_a
 lock master
 authorization master ( instance )
 //etag master <field_name>
@@ -94,7 +94,7 @@ authorization master ( instance )
 
   field ( readonly, numbering : managed ) TravelUuid;
 
-  mapping for z_travel_a corresponding
+  mapping for ztravel_a corresponding
   {
     AgencyId = agency_id;
     BeginDate = begin_date;
@@ -114,8 +114,8 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_Booking alias Booking
-persistent table z_booking_a
+define behavior for ZI_BookingTP alias Booking
+persistent table zbooking_a
 lock dependent by _Travel
 authorization dependent by _Travel
 //etag master <field_name>
@@ -128,7 +128,7 @@ authorization dependent by _Travel
   field ( readonly, numbering : managed ) BookingUuid;
   field ( readonly ) TravelUuid;
 
-  mapping for z_booking_a corresponding
+  mapping for zbooking_a corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;
@@ -143,24 +143,24 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung `ZBP_TRAVEL`
+## Verhaltensimplementierung `ZBP_TRAVELTP`
 
-### Global Class `ZBP_TRAVEL`
+### Global Class `ZBP_TRAVELTP`
 
-```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
+```abap title="ZBP_TRAVELTP.abap" showLineNumbers
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zbp_travel IMPLEMENTATION.
+CLASS zbp_traveltp IMPLEMENTATION.
 ENDCLASS.
 ```
 
 ### Local Type `LHC_TRAVEL`
 
-```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+```abap title="ZBP_TRAVELTP.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
@@ -190,13 +190,13 @@ CLASS lhc_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Behavior Projection `ZC_TRAVEL`
+## Behavior Projection `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 projection;
 strict ( 2 );
 
-define behavior for ZC_Travel alias Travel
+define behavior for ZC_TravelTP alias Travel
 {
   use create;
   use update;
@@ -209,7 +209,7 @@ define behavior for ZC_Travel alias Travel
 //highlight-end
 }
 
-define behavior for ZC_Booking alias Booking
+define behavior for ZC_BookingTP alias Booking
 {
   use update;
   use delete;
@@ -218,7 +218,7 @@ define behavior for ZC_Booking alias Booking
 }
 ```
 
-## Metadata Extension `ZC_TRAVEL`
+## Metadata Extension `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
@@ -230,7 +230,7 @@ define behavior for ZC_Booking alias Booking
   description.value: 'Description'
 }
 @UI.presentationVariant: [{sortOrder: [{ by: 'BeginDate', direction: #DESC }]}]
-annotate view ZC_Travel with
+annotate view ZC_TravelTP with
 {
 
   /* Facets */
