@@ -4,9 +4,9 @@ description: ""
 sidebar_position: 110
 ---
 
-Die Metadata Extension `ZC_TRAVEL` um Annotationen zur Sortierung von Reisen erweitern.
+Die Metadata Extension `ZC_TRAVELTP` um Annotationen zur Sortierung von Reisen erweitern.
 
-## Metadata Extension `ZC_TRAVEL`
+## Metadata Extension `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 @Metadata.layer: #CUSTOMER
@@ -20,7 +20,7 @@ Die Metadata Extension `ZC_TRAVEL` um Annotationen zur Sortierung von Reisen erw
 //highlight-start
 @UI.presentationVariant: [{sortOrder: [{ by: 'BeginDate', direction: #DESC }]}]
 //highlight-end
-annotate view ZC_Travel with
+annotate view ZC_TravelTP with
 {
 
   /* Facets */
