@@ -6,10 +6,10 @@ sidebar_position: 180
 
 - Das Berechtigungsfeld `ZAGENCY_ID` erstellen
 - Das Berechtigungsobjekt `ZAGENCY` erstellen
-- Die Access Control `ZC_TRAVEL` erstellen
-- Die Behavior Definition `ZI_TRAVEL` um eine globale Berechtigungsprüfung erweitern
-- Die Verhaltensimplementierung `ZCM_TRAVEL` um eine Behandlermethode zur globalen Berechtigungsprüfung erweitern
-- Die Behandlermethode zur instanzbasierten Berechtigungsprüfung in der Verhaltensimplementierung `ZCM_TRAVEL` implementieren
+- Die Access Control `ZC_TRAVELTP` erstellen
+- Die Behavior Definition `ZI_TRAVELTP` um eine globale Berechtigungsprüfung erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zur globalen Berechtigungsprüfung erweitern
+- Die Behandlermethode zur instanzbasierten Berechtigungsprüfung in der Verhaltensimplementierung `ZBP_TRAVEL` implementieren
 
 :::tip Hinweis
 
@@ -34,34 +34,34 @@ Data Element: /DMO/AGENCY_ID
 | ACTVT               | X              |
 | ZAGENCY_ID          |                |
 
-## Zugriffskontrolle `ZC_TRAVEL`
+## Zugriffskontrolle `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 //highlight-start
-@EndUserText.label: 'Role for ZC_Travel'
+@EndUserText.label: 'Role for ZC_TravelTP'
 @MappingRole: true
-define role ZC_TRAVEL {
+define role ZC_TRAVELTP {
 // Productive Implementation
-//  grant select on ZC_Travel
+//  grant select on ZC_TravelTP
 //    where (AgencyId) = aspect pfcg_auth(ZAGENCY, ZAGENCY_ID, ACTVT = '03');
 
 // Test Implementation
-  grant select on ZC_Travel
+  grant select on ZC_TravelTP
     where AgencyId > '070000' and AgencyId <= '070040';
 }
 //highlight-end
 ```
 
-## Behavior Definition `ZI_Travel`
+## Behavior Definition `ZI_TRAVELTP`
 
 ```sql showLineNumbers
-managed implementation in class zbp_travel unique;
+managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 with draft;
 
-define behavior for ZI_Travel alias Travel
-persistent table z_travel_a
-draft table z_travel_d
+define behavior for ZI_TravelTP alias Travel
+persistent table ztravel_a
+draft table ztravel_d
 lock master
 total etag LastChangedAt
 //highlight-start
@@ -102,7 +102,7 @@ authorization master ( global, instance )
   field ( readonly : update ) AgencyId, BeginDate, CustomerId, Description, EndDate;
   field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 
-  mapping for z_travel_a corresponding
+  mapping for ztravel_a corresponding
   {
     AgencyId = agency_id;
     BeginDate = begin_date;
@@ -122,9 +122,9 @@ authorization master ( global, instance )
   }
 }
 
-define behavior for ZI_Booking alias Booking
-persistent table z_booking_a
-draft table z_booking_d
+define behavior for ZI_BookingTP alias Booking
+persistent table zbooking_a
+draft table zbooking_d
 lock dependent by _Travel
 authorization dependent by _Travel
 //etag master <field_name>
@@ -137,7 +137,7 @@ authorization dependent by _Travel
   field ( readonly, numbering : managed ) BookingUuid;
   field ( readonly ) TravelUuid;
 
-  mapping for z_booking_a corresponding
+  mapping for zbooking_a corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;
@@ -152,24 +152,24 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung `ZBP_TRAVEL`
+## Verhaltensimplementierung `ZBP_TRAVELTP`
 
-### Global Class `ZBP_TRAVEL`
+### Global Class `ZBP_TRAVELTP`
 
-```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
+```abap title="ZBP_TRAVELTP.abap" showLineNumbers
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zbp_travel IMPLEMENTATION.
+CLASS zbp_traveltp IMPLEMENTATION.
 ENDCLASS.
 ```
 
 ### Local Type `LHC_TRAVEL`
 
-```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+```abap title="ZBP_TRAVELTP.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
@@ -336,7 +336,7 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-      " Validate Agency and Create Error Message
+      " Validate Customer and Create Error Message
       SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
       IF exists = abap_false.
         message = NEW zcm_travel( textid      = zcm_travel=>no_customer_found
