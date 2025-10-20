@@ -11,7 +11,7 @@ Die Abstract View `ZA_???_Rating` soll einen Parameter für die Bewertung eines 
 
 ## Hinweis zur Aktion
 
-Die Aktion zum Bewerten eines Films soll dem Film die eingehende Bewertung als Bewertung hinzufügen.
+Die Aktion zum Bewerten eines Films soll dem Film die eingehende Bewertung der Abstract View `ZA_???_Rating` als Bewertung hinzufügen.
 
 :::tip Hinweis
 
