@@ -5,8 +5,8 @@ sidebar_position: 140
 ---
 
 - Die Restricted View `ZR_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
-- Die Behavior Definition `ZI_TRAVEL` um statische Feldkontrollen und Ermittlungen erweitern
-- Die Verhaltensimplementierung `ZBP_TRAVEL` um Behandlermethoden zu Ermittlungen erweitern
+- Die Behavior Definition `ZI_TRAVELTP` um statische Feldkontrollen und Ermittlungen erweitern
+- Die Verhaltensimplementierung `ZBP_TRAVELTP` um Behandlermethoden zu Ermittlungen erweitern
 
 ## Restricted View `ZR_Travel`
 
@@ -14,7 +14,7 @@ sidebar_position: 140
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
 define view entity ZR_Travel
-  as select from z_travel_a
+  as select from ztravel_a
 {
   key travel_uuid        as TravelUuid,
       travel_id          as TravelId,
@@ -50,14 +50,14 @@ define view entity ZR_Travel
 }
 ```
 
-## Behavior Definition `ZI_TRAVEL`
+## Behavior Definition `ZI_TRAVELTP`
 
 ```sql showLineNumbers
-managed implementation in class zbp_travel unique;
+managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 
-define behavior for ZI_Travel alias Travel
-persistent table z_travel_a
+define behavior for ZI_TravelTP alias Travel
+persistent table ztravel_a
 lock master
 authorization master ( instance )
 //etag master <field_name>
@@ -86,7 +86,7 @@ authorization master ( instance )
   field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, TravelId;
 //highlight-end
 
-  mapping for z_travel_a corresponding
+  mapping for ztravel_a corresponding
   {
     AgencyId = agency_id;
     BeginDate = begin_date;
@@ -106,8 +106,8 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_Booking alias Booking
-persistent table z_booking_a
+define behavior for ZI_BookingTP alias Booking
+persistent table zbooking_a
 lock dependent by _Travel
 authorization dependent by _Travel
 //etag master <field_name>
@@ -120,7 +120,7 @@ authorization dependent by _Travel
   field ( readonly, numbering : managed ) BookingUuid;
   field ( readonly ) TravelUuid;
 
-  mapping for z_booking_a corresponding
+  mapping for zbooking_a corresponding
   {
     BookingDate = booking_Date;
     BookingId = booking_id;
@@ -135,24 +135,24 @@ authorization dependent by _Travel
 }
 ```
 
-## Verhaltensimplementierung `ZBP_TRAVEL`
+## Verhaltensimplementierung `ZBP_TRAVELTP`
 
-### Global Class `ZBP_TRAVEL`
+### Global Class `ZBP_TRAVELTP`
 
-```abap title="ZBP_TRAVEL.abap" showLineNumbers
-CLASS zbp_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_travel.
+```abap title="ZBP_TRAVELTP.abap" showLineNumbers
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zbp_travel IMPLEMENTATION.
+CLASS zbp_traveltp IMPLEMENTATION.
 ENDCLASS.
 ```
 
 ### Local Type `LHC_TRAVEL`
 
-```abap title="ZBP_TRAVEL.abap" shwoLineNumbers
+```abap title="ZBP_TRAVELTP.abap" shwoLineNumbers
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
     METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
@@ -228,7 +228,7 @@ CLASS lhc_travel IMPLEMENTATION.
 
     " Process Travels
     LOOP AT travels INTO DATA(travel).
-      " Validate Agency and Create Error Message
+      " Validate Customer and Create Error Message
       SELECT SINGLE FROM /dmo/customer FIELDS @abap_true WHERE customer_id = @travel-CustomerId INTO @DATA(exists).
       IF exists = abap_false.
         message = NEW zcm_travel( textid      = zcm_travel=>no_customer_found
