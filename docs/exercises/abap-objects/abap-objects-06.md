@@ -38,14 +38,14 @@ classDiagram
 ## Hinweise zur Klasse `ZCL_???_AIRPLANE`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _Leergewicht * 1,1_ zurückgeben
+- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] * 1,1_ zurückgeben
 
 ## Hinweise zur Klasse `ZCL_???_PASSENGER_PLANE`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _Leergewicht * 1,1 + Sitzplätze * 0,08_ zurückgeben
+- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] \* 1,1 + [Sitzplätze] \* 0,08_ zurückgeben
 
 ## Hinweise zur Klasse `ZCL_???_CARGO_PLANE`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _Leergewicht * 1,1 + Frachtkapazität_ zurückgeben
+- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] * 1,1 + [Frachtkapazität]_ zurückgeben
