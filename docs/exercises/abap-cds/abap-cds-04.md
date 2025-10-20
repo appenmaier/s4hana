@@ -3,19 +3,19 @@ title: ABAP-CDS-04
 description: ""
 ---
 
-Passe mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `ZI_???_TravelWithCustomer` an.
+Passe mit Hilfe des abgebildeten ER-Modells die ABAP CDS View `Z???_TravelWithCustomer` an.
 
 ## Grafische Ansicht
 
 ```mermaid
 erDiagram
 
-    R_Customer ||--|| "/DMO/CUSTOMER" : ""
-    R_Travel ||--|| "/DMO/TRAVEL" : ""
-    I_TravelWithCustomer }o--|| R_Customer : "Only Customers from Germany"
-    I_TravelWithCustomer ||--|| R_Travel : ""
+    "Z???_Customer" ||--|| "/DMO/CUSTOMER" : ""
+    "Z???_Travel" ||--|| "/DMO/TRAVEL" : ""
+    "Z???_TravelWithCustomer" }o--|| "Z???_Customer" : "Only Customers from Germany"
+    "Z???_TravelWithCustomer" ||--|| "Z???_Travel" : ""
 
-    I_TravelWithCustomer {
+    "Z???_TravelWithCustomer" {
         numc(8) TravelId PK
         numc(6) AgencyId
         dats(8) BeginDate
