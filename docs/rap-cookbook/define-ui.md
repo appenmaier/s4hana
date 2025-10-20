@@ -5,10 +5,10 @@ sidebar_position: 30
 tags: []
 ---
 
-- Die BO Projection View `ZC_Travel` um Annotationen für Suchen und Metadatenerweiterungen erweitern
-- Die Metadata Extension `ZC_TRAVEL` erstellen
+- Die BO Projection View `ZC_TravelTP` um Annotationen für Suchen und Metadatenerweiterungen erweitern
+- Die Metadata Extension `ZC_TRAVELTP` erstellen
 
-## BO Projection View `ZC_Travel`
+## BO Projection View `ZC_TravelTP`
 
 ```sql showLineNumbers
 @EndUserText.label: 'Travel'
@@ -17,8 +17,8 @@ tags: []
 @Search.searchable: true
 @Metadata.allowExtensions: true
 //highlight-end
-define root view entity ZC_Travel
-  as projection on ZI_Travel
+define root view entity ZC_TravelTP
+  as projection on ZI_TravelTP
 {
   key TravelUuid,
       TravelId,
@@ -44,7 +44,7 @@ define root view entity ZC_Travel
 }
 ```
 
-## Metadata Extension `ZC_TRAVEL`
+## Metadata Extension `ZC_TRAVELTP`
 
 ```sql showLineNumbers
 //highlight-start
@@ -56,7 +56,7 @@ define root view entity ZC_Travel
   title.value: 'TravelId',
   description.value: 'Description'
 }
-annotate view ZC_Travel with
+annotate view ZC_TravelTP with
 {
 
   /* Facets */
