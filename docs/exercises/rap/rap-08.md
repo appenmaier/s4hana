@@ -12,7 +12,7 @@ Die Abstract View `ZA_???_Rating` soll einen Parameter für die Bewertung eines 
 
 ## Hinweis zur Aktion
 
-Die Aktion zum Bewerten eines Films soll zunächst prüfen, ob die eingehende Bewertung der Abstract View `ZA_???_Rating` zwischen 1 und 10 liegt. Im Erfolgsfall soll die eingehende Bewertung dem Film hinzugefügt wund eine Erfolgsmeldung ausgegeben werden, im Fehlerfall soll eine Fehlermeldung ausgegeben werden.
+Die Aktion zum Bewerten eines Films soll zunächst prüfen, ob die eingehende Bewertung der Abstract View `ZA_???_Rating` zwischen 1 und 10 liegt. Im Erfolgsfall soll die eingehende Bewertung dem Film hinzugefügt und eine Erfolgsmeldung ausgegeben werden, im Fehlerfall soll eine Fehlermeldung ausgegeben werden.
 
 :::tip Hinweis
 
