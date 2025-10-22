@@ -15,7 +15,7 @@ sidebar_position: 50
 @EndUserText.label: 'Booking'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define view entity ZC_BookingTP
-  as projection on ZI_BookingTP
+  as projection on ZR_BookingTP
 {
   key BookingUuid,
       TravelUuid,
@@ -41,7 +41,7 @@ define view entity ZC_BookingTP
 @Search.searchable: true
 @Metadata.allowExtensions: true
 define root view entity ZC_TravelTP
-  as projection on ZI_TravelTP
+  as projection on ZR_TravelTP
 {
   key TravelUuid,
       TravelId,
