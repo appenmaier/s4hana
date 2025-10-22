@@ -61,4 +61,4 @@ erDiagram
 
 ## Hinweis
 
-Die Verknüpfung der beiden Datenquellen `"Z???__Travel` und `"Z???__Customer` soll in Form eines Inner Joins erfolgen.
+Die Verknüpfung der beiden Datenquellen `"Z???_Travel` und `"Z???_Customer` soll in Form eines Inner Joins erfolgen.
