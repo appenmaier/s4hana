@@ -5,7 +5,7 @@ sidebar_position: 90
 ---
 
 - Die Interface View `ZI_CustomerText` erstellen
-- Die BO Base View `ZI_TravelTP` um eine Assoziation zu Kundentexten erweitern
+- Die BO Base View `ZR_TravelTP` um eine Assoziation zu Kundentexten erweitern
 - Die BO Projection View `ZC_TravelTP` um ein transientes Feld für Kundentexte und eine Annotation für Textelemente erweitern
 
 ## Interface View `ZI_CustomerText`
@@ -28,14 +28,14 @@ as select from /dmo/customer
 //highlight-end
 ```
 
-## BO Base View `ZI_TravelTP`
+## BO Base View `ZR_TravelTP`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_TravelTP
-  as select from ZR_Travel
-  composition [0..*] of ZI_BookingTP    as _Bookings
+define root view entity ZR_TravelTP
+  as select from ZI_Travel
+  composition [0..*] of ZR_BookingTP    as _Bookings
 //highlight-start
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 //highlight-end
@@ -75,7 +75,7 @@ define root view entity ZI_TravelTP
 @Metadata.allowExtensions: true
 define root view entity ZC_TravelTP
   provider contract transactional_query
-  as projection on ZI_TravelTP
+  as projection on ZR_TravelTP
 {
   key TravelUuid,
       TravelId,
