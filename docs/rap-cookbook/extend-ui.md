@@ -18,7 +18,7 @@ tags: []
 @Metadata.allowExtensions: true
 //highlight-end
 define view entity ZC_BookingTP
-  as projection on ZI_BookingTP
+  as projection on ZR_BookingTP
 {
   key BookingUuid,
       TravelUuid,
