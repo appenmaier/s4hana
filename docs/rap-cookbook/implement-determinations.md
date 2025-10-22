@@ -4,16 +4,16 @@ description: ""
 sidebar_position: 140
 ---
 
-- Die Restricted View `ZR_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
-- Die Behavior Definition `ZI_TRAVELTP` um statische Feldkontrollen und Ermittlungen erweitern
+- Die Base View `ZI_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
+- Die Behavior Definition `ZR_TRAVELTP` um statische Feldkontrollen und Ermittlungen erweitern
 - Die Verhaltensimplementierung `ZBP_TRAVELTP` um Behandlermethoden zu Ermittlungen erweitern
 
-## Restricted View `ZR_Travel`
+## Base View `ZI_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define view entity ZR_Travel
+define view entity ZI_Travel
   as select from ztravel_a
 {
   key travel_uuid        as TravelUuid,
@@ -50,13 +50,13 @@ define view entity ZR_Travel
 }
 ```
 
-## Behavior Definition `ZI_TRAVELTP`
+## Behavior Definition `ZR_TRAVELTP`
 
 ```sql showLineNumbers
 managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 
-define behavior for ZI_TravelTP alias Travel
+define behavior for ZR_TravelTP alias Travel
 persistent table ztravel_a
 lock master
 authorization master ( instance )
@@ -106,7 +106,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_BookingTP alias Booking
+define behavior for ZR_BookingTP alias Booking
 persistent table zbooking_a
 lock dependent by _Travel
 authorization dependent by _Travel
@@ -140,7 +140,7 @@ authorization dependent by _Travel
 ### Global Class `ZBP_TRAVELTP`
 
 ```abap title="ZBP_TRAVELTP.abap" showLineNumbers
-CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -197,7 +197,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_TravelTP
+    READ ENTITY IN LOCAL MODE ZR_TravelTP
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -221,7 +221,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_TravelTP
+    READ ENTITY IN LOCAL MODE ZR_TravelTP
          FIELDS ( CustomerId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -245,7 +245,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_TravelTP
+    READ ENTITY IN LOCAL MODE ZR_TravelTP
          FIELDS ( BeginDate EndDate )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -264,7 +264,7 @@ CLASS lhc_travel IMPLEMENTATION.
 
 //highlight-start
   METHOD determinestatus.
-    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
+    MODIFY ENTITY IN LOCAL MODE ZR_TravelTP
            UPDATE FIELDS ( Status )
            WITH VALUE #( FOR key IN keys
                          ( %tky   = key-%tky
@@ -281,7 +281,7 @@ CLASS lhc_travel IMPLEMENTATION.
     travel_id = max_travel_id + 1.
 
     " Modify Travels
-    MODIFY ENTITY IN LOCAL MODE ZI_TravelTP
+    MODIFY ENTITY IN LOCAL MODE ZR_TravelTP
            UPDATE FIELDS ( TravelId )
            WITH VALUE #( FOR key IN keys
                          ( %tky     = key-%tky
