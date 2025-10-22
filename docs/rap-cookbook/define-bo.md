@@ -6,8 +6,8 @@ sidebar_position: 10
 
 - Die Anwendungstabelle `ZTRAVEL_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` erstellen
-- Die Restricted View `ZR_Travel` erstellen
-- Die BO Base View `ZI_TravelTP` erstellen
+- Die Base View `ZI_Travel` erstellen
+- Die BO Base View `ZR_TravelTP` erstellen
 
 ## Anwendungstabelle `ZTRAVEL_A`
 
@@ -143,13 +143,13 @@ ENDCLASS.
 //highlight-end
 ```
 
-## Restricted View `ZR_Travel`
+## Restricted View `ZI_Travel`
 
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define view entity ZR_Travel
+define view entity ZI_Travel
   as select from ztravel_a
 {
   key travel_uuid     as TravelUuid,
@@ -175,14 +175,14 @@ define view entity ZR_Travel
 //highlight-end
 ```
 
-## BO Base View `ZI_TravelTP`
+## BO Base View `ZR_TravelTP`
 
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_TravelTP
-  as select from ZR_Travel
+define root view entity ZR_TravelTP
+  as select from ZI_Travel
 {
   key TravelUuid,
       TravelId,
