@@ -22,6 +22,6 @@ description: ""
 
 :::tip Hinweis
 
-Entsprechende Kunden können der Datenbanktabelle /DMO/CUSTOMER entnommen werden.
+Entsprechende Kunden können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
 
 :::
