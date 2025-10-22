@@ -24,17 +24,17 @@ erDiagram
 | Business Services   | Service Definitions   | ZUI_TRAVEL           | Service Definition Reise          |
 | Core Data Services  | Access Controls       | ZC_TRAVELTP          | Zugriffskontrolle Reise           |
 | Core Data Services  | Behavior Definitions  | ZC_TRAVELTP          | Behavior Projection Reise         |
-| Core Data Services  | Behavior Definitions  | ZI_TRAVELTP          | Behavior Definition Reise         |
+| Core Data Services  | Behavior Definitions  | ZR_TRAVELTP          | Behavior Definition Reise         |
 | Core Data Services  | Data Definitions      | ZA_BookingFee        | Abstract View Buchungsgebühr      |
 | Core Data Services  | Data Definitions      | ZC_BookingTP         | BP Projection View Buchung        |
 | Core Data Services  | Data Definitions      | ZC_TravelTP          | BO Projection View Reise          |
 | Core Data Services  | Data Definitions      | ZI_CustomerText      | Interface View Kundenname         |
 | Core Data Services  | Data Definitions      | ZI_CustomerVH        | Interface View Kunde              |
 | Core Data Services  | Data Definitions      | ZI_StatusVH          | Interface View Status             |
-| Core Data Services  | Data Definitions      | ZI_BookingTP         | BO Base View Buchung              |
-| Core Data Services  | Data Definitions      | ZI_TravelTP          | BO Base View Reise                |
-| Core Data Services  | Data Definitions      | ZR_Booking           | Restricted View Buchung           |
-| Core Data Services  | Data Definitions      | ZR_Travel            | Restricted View Reise             |
+| Core Data Services  | Data Definitions      | ZR_BookingTP         | BO Base View Buchung              |
+| Core Data Services  | Data Definitions      | ZR_TravelTP          | BO Base View Reise                |
+| Core Data Services  | Data Definitions      | ZI_Booking           | Base View Buchung                 |
+| Core Data Services  | Data Definitions      | ZI_Travel            | Base View Reise                   |
 | Core Data Services  | Metadata Extensions   | ZC_BOOKING           | Metadata Extension Buchung        |
 | Core Data Services  | Metadata Extensions   | ZC_TRAVEL            | Metadata Extension Reise          |
 | Dictionary          | Database Tables       | ZBOOKING_A           | Anwendungstabelle Buchung         |

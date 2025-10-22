@@ -4,14 +4,14 @@ description: ""
 sidebar_position: 170
 ---
 
-- Die Behavior Definition `ZI_TRAVELTP` um Entwurfs-Funktionen erweitern
+- Die Behavior Definition `ZR_TRAVELTP` um Entwurfs-Funktionen erweitern
 - Eine Entwurfstabelle `ZTRAVEL_D` generieren lassen
 - Eine Entwurfstabelle `ZBOOKING_D` generieren lassen
 - Die Behavior Projection `ZC_TRAVELTP` um Entwurfs-Funktionen erweitern
 - Das Service Binding `ZUI_TRAVEL_O4` erstellen
 - Das Service Binding `ZUI_TRAVEL_O2` löschen
 
-## Behavior Definition `ZI_TRAVELTP`
+## Behavior Definition `ZR_TRAVELTP`
 
 ```sql showLineNumbers
 managed implementation in class zbp_traveltp unique;
@@ -20,7 +20,7 @@ strict ( 2 );
 with draft;
 //highlight-end
 
-define behavior for ZI_TravelTP alias Travel
+define behavior for ZR_TravelTP alias Travel
 persistent table ztravel_a
 //highlight-start
 draft table ztravel_d
@@ -89,7 +89,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_BookingTP alias Booking
+define behavior for ZR_BookingTP alias Booking
 persistent table zbooking_a
 lock dependent by _Travel
 //highlight-start

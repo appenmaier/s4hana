@@ -3,7 +3,7 @@ title: RAP-01
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Movie`, die BO Base View `ZI_???_MovieTP` sowie die BO Projection View `ZC_???_MovieTP`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Base View `ZI_???_Movie`, die BO Base View `ZR_???_MovieTP` sowie die BO Projection View `ZC_???_MovieTP`
 - Erstelle für die BO Projection View `ZC_???_MovieTP` die Service Definition `ZUI_???_MOVIE`
 - Erstelle für die Service Definition `ZUI_???_MOVIE` das Service Binding `ZUI_???_MOVIE_O2`
 - Erstelle für die BO Projection View `ZC_???_MovieTP` die Metadata Extension `ZC_???_MOVIETP`
@@ -12,9 +12,9 @@ description: ""
 
 ```mermaid
 erDiagram
-    "ZR_???_Movie" ||--|| ZABAP_MOVIE_A  : ""
-    "ZI_???_MovieTP" ||--|| "ZR_???_Movie"  : ""
-    "ZC_???_MovieTP" ||--|| "ZI_???_MovieTP"  : ""
+    "ZI_???_Movie" ||--|| ZABAP_MOVIE_A  : ""
+    "ZR_???_MovieTP" ||--|| "ZI_???_Movie"  : ""
+    "ZC_???_MovieTP" ||--|| "ZR_???_MovieTP"  : ""
 
     ZABAP_MOVIE_A {
         clnt(3) client PK
@@ -30,7 +30,7 @@ erDiagram
         char(12) last_changed_by
     }
 
-    "ZR_???_Movie" {
+    "ZI_???_Movie" {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre
@@ -43,7 +43,7 @@ erDiagram
         char(12) LastChangedBy
     }
 
-    "ZI_???_MovieTP" {
+    "ZR_???_MovieTP" {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre

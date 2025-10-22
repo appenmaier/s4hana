@@ -26,22 +26,21 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 ### Core Data Services
 
-| Typ                      | Bezeichner                                       | Beispiel                       |
-| ------------------------ | ------------------------------------------------ | ------------------------------ |
-| Basic Interface View     | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
-| Restricted View          | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>   | `ZR_ABAP_Flight`               |
-| Interface View           | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_Flight`               |
-| BO Base View             | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>TP | `ZI_ABAP_FlightTP`             |
-| Composite Interface View | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>   | `ZI_ABAP_FlightWithConnection` |
-| Consumption View         | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>   | `ZC_ABAP_Flight`               |
-| BO Projection View       | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>TP | `ZC_ABAP_FlightTP`             |
-| Wertehilfe               | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>VH | `ZC_ABAP_AirportVH`            |
-| Abstract View            | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>   | `ZA_ABAP_Flight`               |
-| Extension View           | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>   | `ZE_ABAP_Flight`               |
-| Access Control           | <Name der CDS-View\>                             | `ZC_ABAP_FLIGHT`               |
-| Metadata Extension       | <Name der Consumption View\>                     | `ZC_ABAP_FLIGHT`               |
-| Behavior Definition      | <Name der BO Base View\>                         | `ZI_ABAP_FLIGHTTP`             |
-| Behavior Projection      | <Name der BO Projection View\>                   | `ZC_ABAP_FLIGHTTP`             |
+| Typ                      | Bezeichner                                         | Beispiel                       |
+| ------------------------ | -------------------------------------------------- | ------------------------------ |
+| Basic Interface View     | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>     | `ZI_ABAP_Flight`               |
+| BO Base View             | <Namensraum\>R\_<Komponente\>\_<Beschreibung\>TP   | `ZI_ABAP_FlightTP`             |
+| Composite Interface View | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>     | `ZI_ABAP_FlightWithConnection` |
+| Consumption View         | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>     | `ZC_ABAP_Flight`               |
+| BO Projection View       | <Namensraum\>C\_<Komponente\>\_<Beschreibung\>TP   | `ZC_ABAP_FlightTP`             |
+| Wertehilfe               | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>VH   | `ZI_ABAP_AirportVH`            |
+| Textelementview          | <Namensraum\>I\_<Komponente\>\_<Beschreibung\>Text | `ZI_ABAP_AirportText`          |
+| Abstract View            | <Namensraum\>A\_<Komponente\>\_<Beschreibung\>     | `ZA_ABAP_Flight`               |
+| Extension View           | <Namensraum\>E\_<Komponente\>\_<Beschreibung\>     | `ZE_ABAP_Flight`               |
+| Access Control           | <Name der CDS-View\>                               | `ZC_ABAP_FLIGHT`               |
+| Metadata Extension       | <Name der Consumption View\>                       | `ZC_ABAP_FLIGHT`               |
+| Behavior Definition      | <Name der BO Base View\>                           | `ZI_ABAP_FLIGHTTP`             |
+| Behavior Projection      | <Name der BO Projection View\>                     | `ZC_ABAP_FLIGHTTP`             |
 
 ### Dictionary
 

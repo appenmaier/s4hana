@@ -3,7 +3,7 @@ title: RAP-09
 description: ""
 ---
 
-Passe die Behavior Definition `ZI_???_MOVIETP` so an, dass die Action zum Bewerten eines Films über eine Dynamic Instance Feature Control verfügt.
+Passe die Behavior Definition `ZR_???_MOVIETP` so an, dass die Action zum Bewerten eines Films über eine Dynamic Instance Feature Control verfügt.
 
 ## Hinweis zur Dynamic Instance Feature Control
 

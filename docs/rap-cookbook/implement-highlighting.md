@@ -4,17 +4,17 @@ description: ""
 sidebar_position: 100
 ---
 
-- Die BO Base View `ZI_TravelTP` um transiente Felder zur Darstellung der Wichtigkeit erweitern
+- Die BO Base View `ZR_TravelTP` um transiente Felder zur Darstellung der Wichtigkeit erweitern
 - Die BO Projection View `ZC_TravelTP` um transiente Felder zur Darstellung der Wichtigkeit erweitern
 - Die Metadata Extension `ZC_TRAVELTP` um Eigenschaften zur Darstellung der Wichtigkeit erweitern
 
-## BO Base View `ZI_TravelTP`
+## BO Base View `ZR_TravelTP`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_TravelTP
-  as select from ZR_Travel
+define root view entity ZR_TravelTP
+  as select from ZI_Travel
   composition [0..*] of ZI_BookingTP    as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
@@ -65,7 +65,7 @@ define root view entity ZI_TravelTP
 @Metadata.allowExtensions: true
 define root view entity ZC_TravelTP
   provider contract transactional_query
-  as projection on ZI_TravelTP
+  as projection on ZR_TravelTP
 {
   key TravelUuid,
       TravelId,

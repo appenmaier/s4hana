@@ -4,12 +4,12 @@ description: ""
 sidebar_position: 70
 ---
 
-- Die Behavior Definition `ZI_TRAVELTP` erstellen
+- Die Behavior Definition `ZR_TRAVELTP` erstellen
 - Die Verhaltensimplementierung `ZBP_TRAVELTP` generieren lassen
 - Die BO Projection View `ZC_TravelTP` um Angaben zum Provider Contract erweitern
 - Die Behavior Projection `ZC_TRAVELTP` erstellen
 
-## Behavior Definition `ZI_TRAVELTP`
+## Behavior Definition `ZR_TRAVELTP`
 
 ```sql showLineNumbers
 //highlight-start
@@ -86,7 +86,7 @@ authorization dependent by _Travel
 
 ```abap title="ZBP_TRAVELTP.abap" showLineNumbers
 //highlight-start
-CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.

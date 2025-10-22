@@ -6,9 +6,9 @@ sidebar_position: 40
 
 - Die Anwendungstabelle `ZBOOKING_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` um Buchungen erweitern
-- Die Restricted View `ZR_Booking` erstellen
-- Die BO Base View `ZI_BookingTP` inklusive einer Assoziation zur BO Base View `ZI_TravelTP` erstellen
-- Die BO Base View `ZI_TravelTP` um eine Assoziation zur BO Base View `ZI_BookingTP` erweitern
+- Die Base View `ZI_Booking` erstellen
+- Die BO Base View `ZR_BookingTP` inklusive einer Assoziation zur BO Base View `ZR_TravelTP` erstellen
+- Die BO Base View `ZR_TravelTP` um eine Assoziation zur BO Base View `ZR_BookingTP` erweitern
 
 ## Anwendungstabelle `ZBOOKING_A`
 
@@ -207,13 +207,13 @@ CLASS zcl_travel_generator IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Restricted View `ZR_Booking`
+## Base View `ZI_Booking`
 
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
-define view entity ZR_Booking
+define view entity ZI_Booking
   as select from zbooking_a
 {
   key booking_uuid  as BookingUuid,
@@ -230,15 +230,15 @@ define view entity ZR_Booking
 //highlight-end
 ```
 
-## BO Base View `ZI_BookingTP`
+## BO Base View `ZR_BookingTP`
 
 ```sql showLineNumbers
 //highlight-start
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking'
-define view entity ZI_BookingTP
-  as select from ZR_Booking
-  association to parent ZI_TravelTP as _Travel on $projection.TravelUuid = _Travel.TravelUuid
+define view entity ZR_BookingTP
+  as select from ZI_Booking
+  association to parent ZR_TravelTP as _Travel on $projection.TravelUuid = _Travel.TravelUuid
 {
   key BookingUuid,
       TravelUuid,
@@ -256,15 +256,15 @@ define view entity ZI_BookingTP
 //highlight-end
 ```
 
-## BO Base View `ZI_TravelTP`
+## BO Base View `ZR_TravelTP`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Travel'
-define root view entity ZI_TravelTP
-  as select from ZR_Travel
+define root view entity ZR_TravelTP
+  as select from ZI_Travel
 //highlight-start
-  composition [0..*] of ZI_BookingTP as _Bookings
+  composition [0..*] of ZR_BookingTP as _Bookings
 //highlight-end
 {
   key TravelUuid,
