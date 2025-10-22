@@ -6,7 +6,7 @@ sidebar_position: 130
 
 - Die Message Class `ZTRAVEL` um Nachrichten zur Validierung erweitern
 - Die Nachrichtenklasse `ZCM_TRAVEL` um Nachrichten zur Validierung erweitern
-- Die Behavior Definition `ZI_TRAVELTP` um statische Feldkontrollen und Validierungen erweitern
+- Die Behavior Definition `ZR_TRAVELTP` um statische Feldkontrollen und Validierungen erweitern
 - Die Verhaltensimplementierung `ZBP_TRAVELTP` um Behandlermethoden zur Validierung erweitern
 
 ## Message Class `ZTRAVEL`
@@ -113,13 +113,13 @@ CLASS zcm_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Behavior Definition `ZI_TRAVELTP`
+## Behavior Definition `ZR_TRAVELTP`
 
 ```sql showLineNumbers
 managed implementation in class zbp_traveltp unique;
 strict ( 2 );
 
-define behavior for ZI_TravelTP alias Travel
+define behavior for ZR_TravelTP alias Travel
 persistent table ztravel_a
 lock master
 authorization master ( instance )
@@ -165,7 +165,7 @@ authorization master ( instance )
   }
 }
 
-define behavior for ZI_BookingTP alias Booking
+define behavior for ZR_BookingTP alias Booking
 persistent table zbooking_a
 lock dependent by _Travel
 authorization dependent by _Travel
@@ -199,7 +199,7 @@ authorization dependent by _Travel
 ### Global Class `ZBP_TRAVELTP`
 
 ```abap title="ZBP_TRAVELTP.abap" showLineNumbers
-CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_traveltp.
+CLASS zbp_traveltp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_traveltp.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -255,7 +255,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_TravelTP
+    READ ENTITY IN LOCAL MODE ZR_TravelTP
          FIELDS ( AgencyId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -281,7 +281,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_TravelTP
+    READ ENTITY IN LOCAL MODE ZR_TravelTP
          FIELDS ( CustomerId )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
@@ -307,7 +307,7 @@ CLASS lhc_travel IMPLEMENTATION.
     DATA message TYPE REF TO zcm_travel.
 
     " Read Travels
-    READ ENTITY IN LOCAL MODE ZI_TravelTP
+    READ ENTITY IN LOCAL MODE ZR_TravelTP
          FIELDS ( BeginDate EndDate )
          WITH CORRESPONDING #( keys )
          RESULT DATA(travels).
