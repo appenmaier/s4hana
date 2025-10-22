@@ -143,7 +143,7 @@ ENDCLASS.
 //highlight-end
 ```
 
-## Restricted View `ZI_Travel`
+## Base View `ZI_Travel`
 
 ```sql showLineNumbers
 //highlight-start
