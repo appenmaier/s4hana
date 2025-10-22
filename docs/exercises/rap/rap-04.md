@@ -3,7 +3,7 @@ title: RAP-04
 description: ""
 ---
 
-- Erstelle für die BO Base View `ZI_???_MovieTP` die Behavior Definition `ZI_???_MOVIETP`
+- Erstelle für die BO Base View `ZR_???_MovieTP` die Behavior Definition `ZR_???_MOVIETP`
 - Erstelle für die BO Projection View `ZC_???_MovieTP` die Behavior Projection `ZC_???_MOVIETP`
 
 ## Hinweise zur Behavior Definition `ZI_???_MOVIETP`
