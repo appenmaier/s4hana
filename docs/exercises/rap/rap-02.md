@@ -3,8 +3,8 @@ title: RAP-02
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die Restricted View `ZR_???_Rating` sowie die BO Base View `ZI_???_RatingTP`
-- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZI_???_MovieTP`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Base View `ZI_???_Rating` sowie die BO Base View `ZR_???_RatingTP`
+- Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZR_???_MovieTP`
 - Erstelle mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_RatingTP`
 - Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_MovieTP`
 - Erweitere die Service Definition `ZUI_???_MOVIE` um die BO Projection View `ZC_???_RatingTP`
@@ -15,13 +15,13 @@ description: ""
 
 ```mermaid
 erDiagram
-    "ZR_???_Movie" ||--|| ZABAP_MOVIE_A  : ""
-    "ZI_???_MovieTP" ||--|| "ZR_???_Movie"  : ""
-    "ZC_???_MovieTP" ||--|| "ZI_???_MovieTP"  : ""
-    "ZR_???_Rating" ||--|| ZABAP_RATING_A : ""
-    "ZI_???_RatingTP" ||--|| "ZR_???_Rating" : ""
-    "ZC_???_RatingTP" ||--|| "ZI_???_RatingTP" : ""
-    "ZI_???_MovieTP" ||--o{ "ZI_???_RatingTP" : ""
+    "ZI_???_Movie" ||--|| ZABAP_MOVIE_A  : ""
+    "ZR_???_MovieTP" ||--|| "ZI_???_Movie"  : ""
+    "ZC_???_MovieTP" ||--|| "ZR_???_MovieTP"  : ""
+    "ZI_???_Rating" ||--|| ZABAP_RATING_A : ""
+    "ZR_???_RatingTP" ||--|| "ZI_???_Rating" : ""
+    "ZC_???_RatingTP" ||--|| "ZR_???_RatingTP" : ""
+    "ZR_???_MovieTP" ||--o{ "ZR_???_RatingTP" : ""
     "ZC_???_MovieTP" ||--o{ "ZC_???_RatingTP" : ""
 
     ZABAP_RATING_A {
@@ -33,7 +33,7 @@ erDiagram
         dats(8) rating_date
     }
 
-    "ZR_???_Rating" {
+    "ZI_???_Rating" {
         raw(16) RatingUUID PK
         raw(16) MovieUUID FK
         char(50) UserName
@@ -41,7 +41,7 @@ erDiagram
         dats(8) RatingDate
     }
 
-    "ZI_???_RatingTP" {
+    "ZR_???_RatingTP" {
         raw(16) RatingUUID PK
         raw(16) MovieUUID FK
         char(50) UserName
@@ -59,7 +59,7 @@ erDiagram
         association _Movie
     }
 
-    "ZI_???_MovieTP" {
+    "ZR_???_MovieTP" {
         raw(16) MovieUUID PK
         char(50) Title
         char(10) Genre
