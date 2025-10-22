@@ -3,10 +3,10 @@ title: ABAP-05
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Komponentenübersicht den Strukturtypen `Z???_CUSTOMER`
+1. Erstelle mit Hilfe der abgebildeten Komponentenübersicht den Strukturtypen `Z???_CUSTOMER_INFO`
 2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05`, welche Kundeninformationen (Vorname, Nachname, Stadt, Land) zu einer eingegebenen Kundennummer liest und diese auf dem Bildschirm ausgibt. Verwende zum Lesen der Kundeninformationen die Klassenmethode `GET_CUSTOMER` der Klasse `ZCL_ABAP_HELPER`.
 
-## Komponentenübersicht des Strukturtyps `Z???_CUSTOMER`
+## Komponentenübersicht des Strukturtyps `Z???_CUSTOMER_INFO`
 
 | Komponente   | Komponententyp   | Bezeichnung  |
 | ------------ | ---------------- | ------------ |
@@ -27,6 +27,6 @@ Country:     US
 
 :::tip Hinweis
 
-Entsprechende Kunden können der Datenbanktabelle /DMO/CUSTOMER entnommen werden.
+Entsprechende Kunden können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
 
 :::
