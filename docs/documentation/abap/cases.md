@@ -12,13 +12,16 @@ Verzweigungen können in ABAP entweder mit `IF...ELSE...ENDIF` oder dem Konstruk
 ```abap showLineNumbers
 DATA flight_date TYPE /dmo/flight_date VALUE '20230104'.
 
+" IF...ELSE...ENDIF statement
 IF flight_date BETWEEN '20230101' AND '20231231'.
   out->write( 'condition fulfilled' ).
 ELSE.
   out->write( 'condition not fulfilled' ).
 ENDIF.
 
-out->write( COND #( WHEN flight_date BETWEEN '20230101' AND '20231231' THEN 'condition fulfilled'
+" COND operator
+out->write( COND #( WHEN flight_date BETWEEN '20230101' AND '20231231'
+                    THEN 'condition fulfilled'
                     ELSE 'condition not fulfilled' ) ).
 ```
 
@@ -42,6 +45,7 @@ Fallunterscheidungen können entweder mit verschachtelten Verzweiungen, mit `CAS
 ```abap showLineNumbers
 DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
 
+" IF...ELSE....ENDIF statement
 IF carrier_id = 'LH' OR carrier_id = 'lh' OR carrier_id = 'Lh' OR carrier_id = 'lH'.
   out->write( 'Lufthansa' ).
 ELSEIF carrier_id = 'AA' OR carrier_id = 'aa' OR carrier_id = 'Aa' OR carrier_id = 'aA'.
@@ -50,6 +54,7 @@ ELSE.
   out->write( carrier_id ).
 ENDIF.
 
+" CASE...WHEN...ENDCASE statement
 CASE carrier_id.
   WHEN 'LH' OR 'lh' OR 'Lh' OR 'lH'.
     out->write( 'Lufthansa' ).
@@ -59,7 +64,9 @@ CASE carrier_id.
     out->write( carrier_id ).
 ENDCASE.
 
-out->write( SWITCH #( carrier_id WHEN 'LH' OR 'lh' OR 'Lh' OR 'lH' THEN 'Lufthansa'
-                                 WHEN 'AA' OR 'aa' OR 'Aa' OR 'aA' THEN 'American Airlines'
-                                 ELSE carrier_id ) ).
+" SWITCH operator
+out->write( SWITCH #( carrier_id
+                      WHEN 'LH' OR 'lh' OR 'Lh' OR 'lH' THEN 'Lufthansa'
+                      WHEN 'AA' OR 'aa' OR 'Aa' OR 'aA' THEN 'American Airlines'
+                      ELSE                                   carrier_id ) ).
 ```

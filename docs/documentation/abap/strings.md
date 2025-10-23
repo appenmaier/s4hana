@@ -9,7 +9,7 @@ Zeichenketten werden in ABAP durch den ABAP-Standardtyp `STRING` sowie den einfa
 Sowohl Zeichenketten als auch Zeichenketten-Templates können mit dem Verkettungsoperator `&&` oder dem Zuweisungsoperator `&&=` verknüpft werden.
 
 ```abap showLineNumbers
-DATA text TYPE string VALUE 'Winter'.
+DATA text  TYPE string VALUE 'Winter'.
 DATA text2 TYPE string VALUE 'is'.
 DATA text3 TYPE string.
 
@@ -38,10 +38,10 @@ Die Anweisung `SPLIT` ermöglicht das Aufteilen einer Zeichenkette. Für weitere
 - Groß- und Kleinschreibungsfunktionen
 
 ```abap showLineNumbers
-DATA text TYPE string VALUE 'Schnupper Gas Bösewicht'.
+DATA text   TYPE string VALUE 'Winter is Coming'.
 DATA result TYPE i.
 
-result = strlen( text ). "Zeichenkettenlänge
-result = find( val = text sub = 'a' ). "Suchen
-text = to_upper( text ). "Umsetzen
+result = strlen( text ).
+result = find( val = text sub = 'i' ).
+text   = to_upper( text ).
 ```

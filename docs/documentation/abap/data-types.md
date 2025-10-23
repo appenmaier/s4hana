@@ -61,3 +61,13 @@ flowchart
 Globale Datentypen besitzen neben technischen auch semantische Informationen (z.B. Wertehilfen und Bezeichner).
 
 :::
+
+## Definition lokaler Datentypen
+
+Mit Hilfe des Schlüsselworts `TYPES` können lokale Datentypen definiert werden.
+
+```abap showLineNumbers
+TYPES t_c_40         TYPE c LENGTH 40.
+TYPES t_n_7          TYPE n LENGTH 7.
+TYPES t_decimal_16_2 TYPE p LENGTH 16 DECIMALS 2.
+```

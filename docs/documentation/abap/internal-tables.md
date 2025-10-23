@@ -9,35 +9,51 @@ Eine interne Tabelle ist ein Datenobjekt, welches zur Laufzeit mehrere gleich st
 
 ## Deklaration interner Tabellen
 
-Die Deklaration einer internen Tabellen kann entweder direkt im Programm erfolgen (selbstständige Definition) oder durch Angabe eines globalen Tabellentyps. Hierfür müssen folgende Angaben gemacht werden:
+Die Deklaration einer internen Tabellen kann entweder direkt im Programm erfolgen (selbstständige Definition) oder durch Angabe eines lokalen bzw. globalen Tabellentyps. Hierfür müssen folgende Angaben gemacht werden:
 
 - Der Zeilentyp beschreibt den Aufbau der internen Tabelle
 - Die Tabellenart definiert die Zugriffsart (per Schlüssel oder per Index)
 - Der Primärschlüssel definiert die Schlüsselfelder inklusive ihrer Reihenfolge
 
 ```abap showLineNumbers
-DATA flights TYPE TABLE OF /dmo/flight.
-DATA flights2 TYPE /dmo/t_flight.
+TYPES t_flights  TYPE STANDARD TABLE OF /dmo/flight
+                 WITH NON-UNIQUE KEY carrier_id
+                                     connection_id
+                                     flight_date
+                                     currency_code
+                                     plane_type_id.  " Long Form
+TYPES t_flights2 TYPE TABLE OF          /dmo/flight. " Short Form
+
+
+DATA flights  TYPE TABLE OF /dmo/flight. " Direct Declaration (Short Form)
+DATA flights2 TYPE t_flights.            " Local Table Type
+DATA flights3 TYPE /dmo/t_flight.        " Global Table Type
 ```
+
+:::tip Hinweis
+
+Werden bei der selbstständigen Deklaration oder der Definition eines lokalen Tabellentypen die Angaben zur Tabellenart und/oder dem Primärschlüssel weggelassen, wird als Standarwert eine Standardtabelle bzw. ein Standard-Primärschlüssel verwendet. Beim Standard-Primärschlüssel sind alle zeichenartigen Felder Teil des (nicht eindeutigen) Primär-Schlüssels.
+
+:::
 
 ## Einfügen von Datensätzen
 
 Der Operator `VALUE` ermöglicht das Einfügen von Datensätzen in interne Tabellen.
 
 ```abap showLineNumbers
-DATA flight TYPE /dmo/flight.
+DATA flight  TYPE /dmo/flight.
 DATA flights TYPE /dmo/t_flight.
 
 " Insert data
-flights = VALUE #(
-  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
-  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+flights = VALUE #( ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+                   ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 " Append data
-flight-carrier_id = 'LH'.
+flight-carrier_id    = 'LH'.
 flight-connection_id = '0402'.
-flight-flight_date = '20230607'.
-flights = VALUE #( BASE flights ( flight ) ).
+flight-flight_date   = '20230607'.
+flights              = VALUE #( BASE flights
+                                ( flight ) ).
 
 flight-flight_date = '20231231'.
 APPEND flight TO flights.
@@ -54,12 +70,11 @@ Der Operator `BASE` ermöglicht das Erweitern einer internen Tabelle.
 Tabellenausdrücke ermöglichen das Lesen eines Einzelsatzes per Index bzw. per Schlüssel, die LOOP-Schleife ermöglicht das zeilenweise Auslesen von internen Tabellen.
 
 ```abap showLineNumbers
-DATA flight TYPE /dmo/flight.
+DATA flight  TYPE /dmo/flight.
 DATA flights TYPE /dmo/t_flight.
 
-flights = VALUE #(
-  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
-  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+flights = VALUE #( ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+                   ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 " Read single entry
 flight = flights[ 1 ].
@@ -88,7 +103,7 @@ DATA(number_of_flights) = lines( flights ).
 Die Fehlerbehandlung bei Tabellenausdrücken kann mit Hilfe der eingebauten Prädikatsfunktion `LINE_EXISTS` erfolgen.
 
 ```abap showLineNumbers
-DATA flight TYPE /dmo/flight.
+DATA flight  TYPE /dmo/flight.
 DATA flights TYPE /dmo/t_flight.
 
 IF line_exists( flights[ 1 ] ).
@@ -101,16 +116,15 @@ ENDIF.
 Tabellenausdrücke ermöglichen das Ändern eines Einzelsatzes per Index bzw. per Schlüssel und über Datenreferenzen können mehrere Datensätze sequentiell geändert werden.
 
 ```abap showLineNumbers
-DATA flight TYPE REF TO /dmo/flight.
-DATA flights TYPE /dmo/t_flight.
+DATA flight           TYPE REF TO /dmo/flight.
+DATA flights          TYPE /dmo/t_flight.
 FIELD-SYMBOL <flight> TYPE /dmo/flight.
 
-flights = VALUE #(
-  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
-  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+flights = VALUE #( ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+                   ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 " Change single entry
-flights[ 1 ]-price = 1000.
+flights[ 1 ]-price  = 1000.
 flights[ carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' ]-price = 1000.
 
 " Change multiple entries with data references
@@ -129,12 +143,11 @@ ENDLOOP.
 Die Anweisung `DELETE` ermöglicht das Löschen eines oder mehrerer Datensätze
 
 ```abap showLineNumbers
-DATA flight TYPE /dmo/flight.
+DATA flight  TYPE /dmo/flight.
 DATA flights TYPE /dmo/t_flight.
 
-flights = VALUE #(
-  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
-  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+flights = VALUE #( ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+                   ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 " Delete single entry
 DELETE flights INDEX 1.
@@ -150,9 +163,8 @@ Die Anweisung `SORT` ermöglicht das Sortieren von internen Tabellen.
 ```abap showLineNumbers
 DATA flights TYPE /dmo/t_flight.
 
-flights = VALUE #(
-  ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
-  ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
+flights = VALUE #( ( carrier_id = 'LH' connection_id = '0400' flight_date = '20231013' )
+                   ( carrier_id = 'LH' connection_id = '0401' flight_date = '20230928' ) ).
 
 SORT flights BY carrier_id ASCENDING connection_id DESCENDING flight_date ASCENDING.
 ```
@@ -170,7 +182,7 @@ Zugriff auf die Spalte.
 
 ```abap
 DATA carrier_ids TYPE TABLE OF /dmo/carrier_id.
-DATA carrier_id TYPE /dmo/carrier_id.
+DATA carrier_id  TYPE /dmo/carrier_id.
 
 carrier_ids = VALUE #( ( 'BA' ) ( 'LH') ( 'UA' ) ).
 carrier_id = carrier_ids[ table_line = 'LH' ].

@@ -26,34 +26,34 @@ Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem 
 zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
 
 ```abap showLineNumbers
-DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH' .
+DATA carrier_id    TYPE /dmo/carrier_id VALUE 'LH' .
 DATA connection_id TYPE /dmo/connection_id VALUE '0400'.
-DATA connection TYPE /dmo/connection.
-DATA connections TYPE TABLE OF /dmo/connection.
+DATA connection    TYPE /dmo/connection.
+DATA connections   TYPE TABLE OF /dmo/connection.
 
 " Read single entry
 SELECT SINGLE FROM /dmo/connection
-  FIELDS *
-  WHERE carrier_id = @carrier_id AND connection_id = @connection_id
-  INTO @connection.
+       FIELDS *
+       WHERE carrier_id = @carrier_id AND connection_id = @connection_id
+       INTO @connection.
 IF sy-subrc <> 0.
   out->write( 'no connection found' ).
 ENDIF.
 
 " Read multiple entries with array fetch
 SELECT FROM /dmo/connection
-  FIELDS *
-  WHERE carrier_id = @carrier_id
-  INTO TABLE @connections.
+       FIELDS *
+       WHERE carrier_id = @carrier_id
+       INTO TABLE @connections.
 IF sy-subrc <> 0.
   out->write( 'no flights found' ).
 ENDIF.
 
 " Read multiple entries with SELECT loop
 SELECT FROM /dmo/connection
-  FIELDS *
-  WHERE carrier_id = @carrier_id
-  INTO @connection.
+       FIELDS *
+       WHERE carrier_id = @carrier_id
+       INTO @connection.
   APPEND connection TO connections.
 ENDSELECT.
 ```
@@ -79,22 +79,22 @@ werden.
 DATA connection TYPE /dmo/connection.
 
 SELECT SINGLE FROM /dmo/connection
-  FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
-  INTO @connection.
+       FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
+       INTO @connection.
 IF sy-subrc <> 0.
   out->write( 'no connection found' ).
 ENDIF.
 
 SELECT SINGLE FROM /dmo/connection
-  FIELDS *
-  INTO CORRESPONDING FIELDS OF @connection.
+       FIELDS *
+       INTO CORRESPONDING FIELDS OF @connection.
 IF sy-subrc <> 0.
   out->write( 'no connection found' ).
 ENDIF.
 
 SELECT SINGLE FROM /dmo/connection
-  FIELDS *
-  INTO @DATA(connection2).
+       FIELDS *
+       INTO @DATA(connection2).
 IF sy-subrc <> 0.
   out->write( 'no connection found' ).
 ENDIF.
@@ -113,11 +113,11 @@ Für schreibende Datenbankzugriffe stellt ABAP die Anweisungen `INSERT` (Hinzuf�
 ```abap showLineNumbers
 DATA connection TYPE /dmo/connection.
 
-connection-client = sy-mandt.
-connection-carrier_id = 'LH'.
-connection-connection_id = '0400'.
+connection-client          = sy-mandt.
+connection-carrier_id      = 'LH'.
+connection-connection_id   = '0400'.
 connection-airport_from_id = 'FRA'.
-connection-airport_to_id = 'JFK'.
+connection-airport_to_id   = 'JFK'.
 
 " Insert entries
 INSERT /dmo/connection FROM @connection.

@@ -7,7 +7,20 @@ tags: []
 
 Strukturen fassen logisch zusammenhängende Werte in einem Datenobjekt zusammen.
 
-## Definition von globalen Strukturtypen
+## Definition lokaler Strukturtypen
+
+Lokale Strukturtypen werden, wie alle anderen lokalen Datentypen, mit Hilfe des Schlüsselworts `TYPES` sowie dem Zusatz `BEGIN OF...END OF` definiert..
+
+```abap showLineNumbers
+TYPES: BEGIN OF t_connection,
+         carrier_id      TYPE /dmo/carrier_id,
+         connection_id   TYPE /dmo/connection_id,
+         airport_from_id TYPE /dmo/airport_from_id,
+         airport_to_id   TYPE /dmo/airport_to_id,
+       END OF t_connection.
+```
+
+## Definition globaler Strukturtypen
 
 Globale Strukturtypen werden mit Hilfe der Data Definition Language (DDL) der ABAP Core Data Services (ABAP CDS) definiert.
 
@@ -27,7 +40,15 @@ define structure zconnection {
 Strukturen werden, wie elementare Datenobjekte, mit der DATA-Anweisung deklariert.
 
 ```abap showLineNumbers
-DATA connection TYPE zconnection.
+TYPES: BEGIN OF t_connection,
+         carrier_id      TYPE /dmo/carrier_id,
+         connection_id   TYPE /dmo/connection_id,
+         airport_from_id TYPE /dmo/airport_from_id,
+         airport_to_id   TYPE /dmo/airport_to_id,
+       END OF t_connection.
+
+DATA connection  TYPE t_connection. " Local Structure Type
+DATA connection2 TYPE zconnection.  " Global Structure Type
 ```
 
 ## Zugriff auf Strukturkomponenten
@@ -37,7 +58,7 @@ Mit dem Komponentenselektor `-` kann auf die einzelnen Komponenten einer Struktu
 ```abap showLineNumbers
 DATA connection TYPE zconnection.
 
-connection-carrier_id = 'LH'.
+connection-carrier_id    = 'LH'.
 connection-connection_id = '0400'.
 
 out->write( connection-carrier_id, connection-connection_id ).
@@ -48,9 +69,9 @@ out->write( connection-carrier_id, connection-connection_id ).
 Strukturen mit dem gleichen Strukturtypen können über den Zuweisungsoperator `=` kopiert werden. Der Operator `CORRESPONDING` ermöglicht das komponentenweise Kopieren von Inhalten einer Quellstruktur in eine Zielstruktur.
 
 ```abap showLineNumbers
-DATA flight TYPE zflight.
-DATA connection TYPE zconnection.
-DATA copy_of_connection TYPE zconnection.
+DATA flight                 TYPE zflight.
+DATA connection             TYPE zconnection.
+DATA copy_of_connection     TYPE zconnection.
 DATA flight_with_connection TYPE zflight_extended.
 
 copy_of_connection = connection.

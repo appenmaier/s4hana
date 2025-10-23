@@ -5,13 +5,16 @@ sidebar_position: 30
 tags: []
 ---
 
-## Deklaration von variablen Datenobjekten
+## Deklaration variabler Datenobjekten
 
 Bei der Deklaration eines Datenobjekts werden der Laufzeitumgebung Bezeichner und Datentyp des Datenobjekts bekanntgegeben. Die Deklaration erfolgt über das Schlüsselwort `DATA`.
 
 ```abap showLineNumbers
-DATA carrier_id TYPE c LENGTH 3.
-DATA connection_id TYPE /dmo/connection_id.
+TYPES t_decimal_16_2 TYPE p LENGTH 16 DECIMALS 2.
+
+DATA carrier_id    TYPE c LENGTH 3.         " Using ABAP Default Type
+DATA flight_price  TYPE t_decimal_16_2.     " Using Local Datatype
+DATA connection_id TYPE /dmo/connection_id. " Using Data Element
 ```
 
 :::tip Hinweis
@@ -25,10 +28,15 @@ Mit dem Zusatz `LENGTH` kann bei unvollständigen Datentypen die Länge des Date
 Mit dem Zuweisungsoperator `=` wird dem Operanden der linken Seite der Wert des Ausdrucks der rechten Seite zugewiesen. Bei unterschiedlichen Typen wird automatisch eine Typkonvertierung durchgeführt, falls eine entsprechende Konvertierungsregel existiert.
 
 ```abap showLineNumbers
+" Assignment Operator
 DATA carrier_id TYPE /dmo/carrier_id.
 carrier_id = 'LH'.
-DATA(connection_id) = '0400'.
+
+" Static Default Value
 DATA flight_date TYPE /dmo/flight_date VALUE '20230101'.
+
+" Inline Declaration
+DATA(connection_id) = '0400'.
 ```
 
 :::tip Hinweis

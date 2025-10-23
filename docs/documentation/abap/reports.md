@@ -114,7 +114,7 @@ Beim Starten eines ABAP Programms werden nacheinander verschiedene Ereignisse au
 ```abap showLineNumbers
 " Definitions and Declarations
 PARAMETERS p_from TYPE s_airp_from.
-PARAMETERS p_to TYPE s_airp_to.
+PARAMETERS p_to   TYPE s_airp_to.
 PARAMETERS p_date TYPE s_date.
 
 " Dynamic Assignments

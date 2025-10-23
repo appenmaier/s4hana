@@ -10,9 +10,9 @@ ABAP-Quellcode besteht aus einzelnen Anweisungen. Diese dürfen beliebig einger�
 Zeilen, die mit einem Stern beginnen, werden von Laufzeitsystem als Kommentarzeile erkannt und ignoriert. Doppelte Anführungszeichen kennzeichnen den Rest einer Zeile als Kommentar.
 
 ```abap showLineNumbers
-DATA text TYPE c LENGTH 25. " Declaration
-text = 'Ein Ring sie zu knechten'. " Assignment
-out->write( text ). " Output
+DATA text TYPE c LENGTH 25.        " Declaration
+text = 'Ein Ring sie zu knechten'. " Value Assignment
+out->write( text ).                " Output
 ```
 
 :::tip Hinweis
