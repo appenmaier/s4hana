@@ -12,7 +12,7 @@ description: ""
 | Art              | Name        | Datentyp         |
 | ---------------- | ----------- | ---------------- |
 | Import-Parameter | CUSTOMER_ID | /DMO/CUSTOMER_ID |
-| Rückgabewert     | TRAVELS     | Z???_TRAVELS     |
+| Rückgabewert     | TRAVELS     | Z???\_TRAVELS    |
 
 ## Informationen zum Tabellentyp `Z???_TRAVELS`
 

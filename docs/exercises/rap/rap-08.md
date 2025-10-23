@@ -19,4 +19,3 @@ Die Aktion zum Bewerten eines Films soll zunächst prüfen, ob die eingehende Be
 Entsprechende Meldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
 
 :::
-

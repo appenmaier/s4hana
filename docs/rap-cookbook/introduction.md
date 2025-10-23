@@ -45,5 +45,3 @@ erDiagram
 | Source Code Library | Classes               | ZCM_TRAVEL           | Nachrichtenklasse Reise           |
 | Source Code Library | Classes               | ZBP_TRAVEL           | Verhaltensimplementierung Reise   |
 | Texts               | Message Classes       | ZTRAVEL              | Message Class Reise               |
-
-
