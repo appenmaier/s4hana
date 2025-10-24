@@ -1,5 +1,5 @@
 ---
-title: 4. BO erweitern
+title: 4. RAP BO erweitern
 description: ""
 sidebar_position: 40
 ---

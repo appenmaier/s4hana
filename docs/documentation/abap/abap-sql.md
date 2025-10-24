@@ -37,7 +37,7 @@ SELECT SINGLE FROM /dmo/connection
        WHERE carrier_id = @carrier_id AND connection_id = @connection_id
        INTO @connection.
 IF sy-subrc <> 0.
-  out->write( 'no connection found' ).
+  " Error Handling
 ENDIF.
 
 " Read multiple entries with array fetch
@@ -46,7 +46,7 @@ SELECT FROM /dmo/connection
        WHERE carrier_id = @carrier_id
        INTO TABLE @connections.
 IF sy-subrc <> 0.
-  out->write( 'no flights found' ).
+  " Error Handling
 ENDIF.
 
 " Read multiple entries with SELECT loop
@@ -82,21 +82,21 @@ SELECT SINGLE FROM /dmo/connection
        FIELDS client, carrier_id, connection_id, airport_from_id, airport_to_id
        INTO @connection.
 IF sy-subrc <> 0.
-  out->write( 'no connection found' ).
+  " Error Handling
 ENDIF.
 
 SELECT SINGLE FROM /dmo/connection
        FIELDS *
        INTO CORRESPONDING FIELDS OF @connection.
 IF sy-subrc <> 0.
-  out->write( 'no connection found' ).
+  " Error Handling
 ENDIF.
 
 SELECT SINGLE FROM /dmo/connection
        FIELDS *
        INTO @DATA(connection2).
 IF sy-subrc <> 0.
-  out->write( 'no connection found' ).
+  " Error Handling
 ENDIF.
 ```
 
@@ -119,21 +119,21 @@ connection-connection_id   = '0400'.
 connection-airport_from_id = 'FRA'.
 connection-airport_to_id   = 'JFK'.
 
-" Insert entries
+" Insert operation
 INSERT /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  out->write( 'duplicate key error' ).
+  " Error Handling
 ENDIF.
 
-" Change entries
+" Update operation
 UPDATE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  out->write( 'no entry found' ).
+  " Error Handling
 ENDIF.
 
-" Delete entries
+" Delete operation
 DELETE /dmo/connection FROM @connection.
 IF sy-subrc <> 0.
-  out->write( 'no entry found' ).
+  " Error Handling
 ENDIF.
 ```

@@ -1,5 +1,5 @@
 ---
-title: 1. BO festlegen
+title: 1. RAP BO festlegen
 description: ""
 sidebar_position: 10
 ---

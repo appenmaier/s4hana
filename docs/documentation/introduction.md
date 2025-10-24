@@ -6,7 +6,7 @@ sidebar_position: 10
 tags: []
 ---
 
-Diese Webseite sowie die dazugehörigen Schulungen bzw. die dazugehörige Vorlesung sollen eine systematische Einführung in die Anwendungsentwicklung in SAP S/4HANA ermöglichen. Hierzu werden wichtige, praxisrelevante Konzepte und Methoden der Anwendungsentwicklung vorgestellt, wobei der Fokus auf der Entwicklung transaktionaler SAP Fiori elements Apps liegt.
+Diese Webseite sowie die dazugehörigen Schulungen bzw. die dazugehörige Vorlesung sollen eine systematische Einführung in die Anwendungsentwicklung in SAP S/4HANA ermöglichen. Hierzu werden wichtige, praxisrelevante Konzepte und Methoden der Anwendungsentwicklung vorgestellt, wobei der Fokus auf der Entwicklung transaktionaler SAP Fiori Elements Apps liegt.
 
 ## Architektur von SAP S/4HANA
 
@@ -59,70 +59,3 @@ Das mittlerweile als _klassische ABAP Programmiermodell_ bekannte ABAP Programmi
 | Service-Definition      | SEGW                 | SEGW, @OData                         | Business Service                                 |
 | Service-Implementierung | Classic ABAP, BOPF   | ABAP, ABAP CDS, BOPF                 | ABAP, ABAP CDS, RAP BO                           |
 | Oberflächen             | Report, (Web-)Dynpro | SAPUI5                               | SAPUI5                                           |
-
-## Architektur einer RAP-Anwendung
-
-Die Architektur einer RAP-Anwendung umfasst die nachfolgenden Bereiche:
-
-**Datenmodellierung und Verhalten**
-
-- _Business Objects_ (BOs) legen das Datenmodell für transaktionale Anwendungen fest und beinhalten neben den Daten auch die datenbezogene Logik, also das Verhalten
-- _CDS Entities_ ermöglichen die Definition von nicht-transaktionalen Datenmodellen, die für Abfragen verwendet werden können
-
-**Service-Bereitstellung**
-
-- _BO Projections_ und _Interfaces_ ermöglichen die Definition spezifischer Geschäftsservices
-- _Service Definitions_ legen den Umfang eines Geschäftsservices fest
-- _Service Bindings_ legen das Kommunikationsprotokoll (OData v2 oder OData v4) sowie die Art des Geschäftsservices (UI, Web API oder Event) fest
-
-**Service-Verwendung**
-
-- _SAP Fiori UIs_ stellen Oberflächen für häufig verwendete Anwendungsmuster bereit
-- _Web APIs_ bieten eine öffentliche Schnittstelle für den Zugriff auf die Geschäftsservices
-- _Events_ ermöglichen das asynchrone Konsumieren von RAP BOs
-
-```mermaid
-flowchart LR
-   binding ---> api
-   binding ---> ui
-   binding ---> event
-   definition ---> binding
-   projection ---> definition
-   interface ---> definition
-   bo ---> projection
-   bo ---> interface
-   entity --> definition
-   subgraph Service-Verwendung
-      ui(SAP Fiori UI)
-      api(Web API)
-      event(Event)
-   end
-   subgraph Service-Bereitstellung
-      binding(Service Binding)
-      definition(Service Defintion)
-      projection(BO Projection)
-      interface(Interface)
-   end
-   subgraph Datenmodellierung&#160und&#160Verhalten
-      bo(Business Object)
-      entity(CDS Entity)
-   end
-```
-
-## Laufzeitartefakte einer RAP-Anwendung
-
-Für die Entwicklung von SAP Fiori Apps nach RAP kommen nachfolgende Laufzeitartefakte zum Einsatz:
-
-- Kategorie _Dictionary_
-  - _Transparenete Tabellen_ legen den Aufbau der Datenbanktabellen fest
-- Kategorie _Core Data Services_
-  - _BO Base Views_ legen das Datenmodell des BOs fest
-  - _BO Projection Views_ und _Behavior Projections_ legen den Business Service fest
-  - _Metadata Extensions_ legen die Oberfläche fest
-  - _Access Controls_ steuern die Lesezugriffe
-  - _Behavior Definitions_ und _Behavior Projections_ legen das transaktionale Verhalten des BOs fest
-- Kategorie _Business Ervices_
-  - _Service Definitions_ legen den Umfang des Business Services fest
-  - _Service Bindings_ legen das Kommunikationsprotokoll sowie die Art des Business Services fest
-- Kategorie _Source Code Library_
-  - _Verhaltensimplementierungen_ beinhalten die Implementierungen des transaktionalen Verhaltens
