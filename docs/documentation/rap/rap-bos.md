@@ -17,7 +17,7 @@ flowchart LR
 ```
 
 Der Zugriff auf RAP BOs kann entweder über einen Geschäftsservice oder über ABAP mit Hilfe der _Entity Manpipulation Lanaguage_ (EML) erfolgen. Der Zugriff sollte dabei nicht direkt auf das BO, sondern über
-BO Projections (bei Geschäftsservices) bzw. BO Interfaces (bei EML) erfolgen. Der so erfolte Zugriff auf das RAP BO ermöglicht das Lesen, Erzeugen, Ändern und Löschen von Daten auf Datenbankebene.
+BO Projections (bei Geschäftsservices) bzw. BO Interfaces (bei EML) erfolgen. Der so erfolgte Zugriff auf das RAP BO ermöglicht das Lesen, Erzeugen, Ändern und Löschen von Daten auf Datenbankebene.
 
 ```mermaid
 flowchart
@@ -31,4 +31,23 @@ flowchart
   eml --> interface
   projection --> definition
   interface --> definition
+```
+
+## Aufbau eines RAP BOs
+
+Ein RAP BO besteht aus aus einer Wurzelentität und beliebig vielen Unter-Entitäten. Die Beziehung zwischen einer Kindentität und der Elternentität entspricht grundsätzlich einer Komposition, die Beziehung selbst wird in Form spezieller Assoziationen abgebildet, wobei die entsprechende Join-Bedinung nur in der Kind-Entität angegeben werden muss.
+
+### Data Definitions
+
+```sql showLineNumbers
+define root view entity ZR_ConnectionTP
+  as select from ZI_Connection
+  composition [0..*] of ZR_FlightTP as _Flights
+{
+  key CarrierId,
+  key ConnectionId,
+      AirportFromId,
+      AirportToId,
+      _Flights
+}
 ```
