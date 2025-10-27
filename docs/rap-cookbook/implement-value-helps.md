@@ -61,7 +61,7 @@ where Text.language = $session.system_language
 @Metadata.allowExtensions: true
 define root view entity ZC_TravelTP
   provider contract transactional_query
-  as projection on ZI_TravelTP
+  as projection on ZR_TravelTP
 {
   key TravelUuid,
       TravelId,
@@ -93,7 +93,7 @@ define root view entity ZC_TravelTP
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt
+      LastChangedAt,
 
       /* Associations */
       _Bookings : redirected to composition child ZC_BookingTP
@@ -107,7 +107,7 @@ define root view entity ZC_TravelTP
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_BookingTP
-  as projection on ZI_BookingTP
+  as projection on ZR_BookingTP
 {
   key BookingUuid,
       TravelUuid,
