@@ -33,8 +33,8 @@ erDiagram
 | Core Data Services  | Data Definitions      | ZI_StatusVH          | Interface View Status             |
 | Core Data Services  | Data Definitions      | ZR_BookingTP         | BO Base View Buchung              |
 | Core Data Services  | Data Definitions      | ZR_TravelTP          | BO Base View Reise                |
-| Core Data Services  | Data Definitions      | ZI_Booking           | Base View Buchung                 |
-| Core Data Services  | Data Definitions      | ZI_Travel            | Base View Reise                   |
+| Core Data Services  | Data Definitions      | ZI_Booking           | Basic Interface View Buchung      |
+| Core Data Services  | Data Definitions      | ZI_Travel            | Basic Interface View Reise        |
 | Core Data Services  | Metadata Extensions   | ZC_BOOKING           | Metadata Extension Buchung        |
 | Core Data Services  | Metadata Extensions   | ZC_TRAVEL            | Metadata Extension Reise          |
 | Dictionary          | Database Tables       | ZBOOKING_A           | Anwendungstabelle Buchung         |

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 - Die Anwendungstabelle `ZTRAVEL_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` erstellen
-- Die Base View `ZI_Travel` erstellen
+- Die Basic Interface View `ZI_Travel` erstellen
 - Die BO Base View `ZR_TravelTP` erstellen
 
 ## Anwendungstabelle `ZTRAVEL_A`
@@ -143,7 +143,7 @@ ENDCLASS.
 //highlight-end
 ```
 
-## Base View `ZI_Travel`
+## Basic Interface View `ZI_Travel`
 
 ```sql showLineNumbers
 //highlight-start

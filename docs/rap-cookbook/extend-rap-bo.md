@@ -6,7 +6,7 @@ sidebar_position: 40
 
 - Die Anwendungstabelle `ZBOOKING_A` erstellen
 - Die ABAP-Klasse `ZCL_TRAVEL_GENERATOR` um Buchungen erweitern
-- Die Base View `ZI_Booking` erstellen
+- Die Basic Interface View `ZI_Booking` erstellen
 - Die BO Base View `ZR_BookingTP` inklusive einer Assoziation zur BO Base View `ZR_TravelTP` erstellen
 - Die BO Base View `ZR_TravelTP` um eine Assoziation zur BO Base View `ZR_BookingTP` erweitern
 
@@ -207,7 +207,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
 ENDCLASS.
 ```
 
-## Base View `ZI_Booking`
+## Basic Interface View `ZI_Booking`
 
 ```sql showLineNumbers
 //highlight-start

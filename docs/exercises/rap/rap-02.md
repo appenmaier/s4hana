@@ -3,7 +3,7 @@ title: RAP-02
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die Base View `ZI_???_Rating` sowie die BO Base View `ZR_???_RatingTP`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Basic Interface View `ZI_???_Rating` sowie die BO Base View `ZR_???_RatingTP`
 - Erweitere mit Hilfe des abgebildeten ER-Modells die BO Base View `ZR_???_MovieTP`
 - Erstelle mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_RatingTP`
 - Erweitere mit Hilfe des abgebildeten ER-Modells die BO Projection View `ZC_???_MovieTP`

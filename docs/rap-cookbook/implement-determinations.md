@@ -4,11 +4,11 @@ description: ""
 sidebar_position: 140
 ---
 
-- Die Base View `ZI_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
+- Die Basic Interface View `ZI_Travel` um Annotationen zur Ermittlung administrativer Daten erweitern
 - Die Behavior Definition `ZR_TRAVELTP` um statische Feldkontrollen und Ermittlungen erweitern
 - Die Verhaltensimplementierung `ZBP_TRAVELTP` um Behandlermethoden zu Ermittlungen erweitern
 
-## Base View `ZI_Travel`
+## Basic Interface View `ZI_Travel`
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #NOT_REQUIRED

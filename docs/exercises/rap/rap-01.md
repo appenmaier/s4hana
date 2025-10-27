@@ -3,7 +3,7 @@ title: RAP-01
 description: ""
 ---
 
-- Erstelle mit Hilfe des abgebildeten ER-Modells die Base View `ZI_???_Movie`, die BO Base View `ZR_???_MovieTP` sowie die BO Projection View `ZC_???_MovieTP`
+- Erstelle mit Hilfe des abgebildeten ER-Modells die Basic Interface View `ZI_???_Movie`, die BO Base View `ZR_???_MovieTP` sowie die BO Projection View `ZC_???_MovieTP`
 - Erstelle für die BO Projection View `ZC_???_MovieTP` die Service Definition `ZUI_???_MOVIE`
 - Erstelle für die Service Definition `ZUI_???_MOVIE` das Service Binding `ZUI_???_MOVIE_O2`
 - Erstelle für die BO Projection View `ZC_???_MovieTP` die Metadata Extension `ZC_???_MOVIETP`
