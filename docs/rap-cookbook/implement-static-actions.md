@@ -46,11 +46,10 @@ CLASS zcm_travel DEFINITION PUBLIC
 
     " Constructor
     METHODS constructor
-      IMPORTING
-        severity  TYPE if_abap_behv_message=>t_severity DEFAULT if_abap_behv_message=>severity-error
-        textid    LIKE if_t100_message=>t100key         DEFAULT if_t100_message=>default_textid
-        !previous LIKE previous                         OPTIONAL
-        user_name TYPE syuname                          OPTIONAL.
+      IMPORTING severity  TYPE if_abap_behv_message=>t_severity DEFAULT if_abap_behv_message=>severity-error
+                textid    LIKE if_t100_message=>t100key         DEFAULT if_t100_message=>default_textid
+                !previous LIKE previous                         OPTIONAL
+                user_name TYPE syuname                          OPTIONAL.
 
   PROTECTED SECTION.
 
