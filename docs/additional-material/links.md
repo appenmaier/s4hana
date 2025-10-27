@@ -9,7 +9,7 @@ tags: []
 
 - [Übungsaufgaben](https://github.com/appenmaier/abap_exercises)
 - [Filmbewertungs-App](https://github.com/appenmaier/abap_movie)
-- [Reise-App (_WIP_)](https://github.com/appenmaier/abap_travel)
+- [Reise-App](https://github.com/appenmaier/abap_travel)
 
 ## Dokumentationen (Webseiten)
 
