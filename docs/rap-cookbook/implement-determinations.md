@@ -87,23 +87,23 @@ authorization master ( instance )
 //highlight-end
 
   mapping for ztravel_a corresponding
-  {
-    AgencyId = agency_id;
-    BeginDate = begin_date;
-    BookingFee = booking_fee;
-    CreatedAt = created_at;
-    CreatedBy = created_by;
-    CurrencyCode = currency_code;
-    CustomerId = customer_id;
-    Description = description;
-    EndDate = end_date;
-    LastChangedAt = last_changed_at;
-    LastChangedBy = last_changed_by;
-    Status = status;
-    TotalPrice = total_price;
-    TravelId = travel_id;
-    TravelUuid = travel_uuid;
-  }
+    {
+      AgencyId = agency_id;
+      BeginDate = begin_date;
+      BookingFee = booking_fee;
+      CreatedAt = created_at;
+      CreatedBy = created_by;
+      CurrencyCode = currency_code;
+      CustomerId = customer_id;
+      Description = description;
+      EndDate = end_date;
+      LastChangedAt = last_changed_at;
+      LastChangedBy = last_changed_by;
+      Status = status;
+      TotalPrice = total_price;
+      TravelId = travel_id;
+      TravelUuid = travel_uuid;
+    }
 }
 
 define behavior for ZR_BookingTP alias Booking
@@ -121,17 +121,17 @@ authorization dependent by _Travel
   field ( readonly ) TravelUuid;
 
   mapping for zbooking_a corresponding
-  {
-    BookingDate = booking_Date;
-    BookingId = booking_id;
-    BookingUuid = booking_uuid;
-    CarrierId = carrier_id;
-    ConnectionId = connection_id;
-    CurrencyCode = currency_code;
-    FlightDate = flight_date;
-    FlightPrice = flight_price;
-    TravelUuid = Travel_uuid;
-  }
+    {
+      BookingDate = booking_Date;
+      BookingId = booking_id;
+      BookingUuid = booking_uuid;
+      CarrierId = carrier_id;
+      ConnectionId = connection_id;
+      CurrencyCode = currency_code;
+      FlightDate = flight_date;
+      FlightPrice = flight_price;
+      TravelUuid = Travel_uuid;
+    }
 }
 ```
 

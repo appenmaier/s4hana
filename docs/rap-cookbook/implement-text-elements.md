@@ -23,7 +23,6 @@ as select from /dmo/customer
 
       /* Transient Data */
       concat_with_space(first_name, last_name, 1) as Name
-
 }
 //highlight-end
 ```
@@ -56,7 +55,7 @@ define root view entity ZR_TravelTP
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt
+      LastChangedAt,
 
       /* Associations */
       _Bookings,
@@ -102,7 +101,7 @@ define root view entity ZC_TravelTP
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt
+      LastChangedAt,
 
 //highlight-start
       /* Transient Data */

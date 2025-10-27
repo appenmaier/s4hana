@@ -15,7 +15,7 @@ sidebar_position: 100
 @EndUserText.label: 'Travel'
 define root view entity ZR_TravelTP
   as select from ZI_Travel
-  composition [0..*] of ZI_BookingTP    as _Bookings
+  composition [0..*] of ZR_BookingTP    as _Bookings
   association [1..1] to ZI_CustomerText as _CustomerText on $projection.CustomerId = _CustomerText.CustomerId
 {
   key TravelUuid,
@@ -42,12 +42,12 @@ define root view entity ZR_TravelTP
            when dats_days_between($session.user_date, BeginDate) >= 7 then 2
            when dats_days_between($session.user_date, BeginDate) >= 0 then 1
            else 0
-      end                as BeginDateCriticality,
+      end            as BeginDateCriticality,
       case status when 'B' then 3
                   when 'N' then 0
                   when 'X' then 1
                   else 0
-      end                as StatusCriticality,
+      end            as StatusCriticality,
 //highlight-end
 
       /* Associations */
@@ -69,7 +69,7 @@ define root view entity ZC_TravelTP
 {
   key TravelUuid,
       TravelId,
-      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_AgencyStdVH', element: 'AgencyID' }]
+      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Agency_StdVH', element: 'AgencyID' } }]
       AgencyId,
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CustomerVH', element: 'CustomerId' } }]
       @ObjectModel.text.element: ['CustomerName']
@@ -93,7 +93,7 @@ define root view entity ZC_TravelTP
       LastChangedAt,
 
       /* Transient Data */
-      _CustomerText.Name as CustomerName,
+      _CustomerText.Name    as CustomerName,
 //highlight-start
       BeginDateCriticality,
       StatusCriticality,
