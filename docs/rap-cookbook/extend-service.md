@@ -61,7 +61,7 @@ define root view entity ZC_TravelTP
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt
+      LastChangedAt,
 
 //highlight-start
       /* Associations */
