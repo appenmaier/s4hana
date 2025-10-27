@@ -145,7 +145,7 @@ define root view entity ZC_TravelTP
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt
+      LastChangedAt,
 
       /* Associations */
       _Bookings : redirected to composition child ZC_BookingTP
