@@ -22,6 +22,7 @@ erDiagram
 | Business Services   | Service Bindings      | ZUI_TRAVEL_O2        | Service Binding Reise             |
 | Business Services   | Service Bindings      | ZUI_TRAVEL_O4        | Service Binding Reise             |
 | Business Services   | Service Definitions   | ZUI_TRAVEL           | Service Definition Reise          |
+| Core Data Services  | Access Controls       | ZR_TRAVELTP          | Zugriffskontrolle Reise           |
 | Core Data Services  | Access Controls       | ZC_TRAVELTP          | Zugriffskontrolle Reise           |
 | Core Data Services  | Behavior Definitions  | ZC_TRAVELTP          | Behavior Projection Reise         |
 | Core Data Services  | Behavior Definitions  | ZR_TRAVELTP          | Behavior Definition Reise         |

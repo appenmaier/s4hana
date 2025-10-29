@@ -6,7 +6,7 @@ sidebar_position: 180
 
 - Das Berechtigungsfeld `ZAGENCY_ID` erstellen
 - Das Berechtigungsobjekt `ZAGENCY` erstellen
-- Die Access Control `ZC_TRAVELTP` erstellen
+- Die Zugriffskontrollen `ZR_TRAVELTP` und `ZC_TRAVELTP` erstellen
 - Die Behavior Definition `ZR_TRAVELTP` um eine globale Berechtigungsprüfung erweitern
 - Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zur globalen Berechtigungsprüfung erweitern
 - Die Behandlermethode zur instanzbasierten Berechtigungsprüfung in der Verhaltensimplementierung `ZBP_TRAVEL` implementieren
@@ -34,6 +34,24 @@ Data Element: /DMO/AGENCY_ID
 | ACTVT               | X              |
 | ZAGENCY_ID          |                |
 
+## Zugriffskontrolle `ZR_TRAVELTP`
+
+```sql showLineNumbers
+//highlight-start
+@EndUserText.label: 'Role for ZR_TravelTP'
+@MappingRole: true
+define role ZR_TRAVELTP {
+// Productive Implementation
+//  grant select on ZR_TravelTP
+//    where (AgencyId) = aspect pfcg_auth(ZAGENCY, ZAGENCY_ID, ACTVT = '03');
+
+// Test Implementation
+  grant select on ZR_TravelTP
+    where AgencyId > '070000' and AgencyId <= '070040';
+}
+//highlight-end
+```
+
 ## Zugriffskontrolle `ZC_TRAVELTP`
 
 ```sql showLineNumbers
@@ -41,13 +59,8 @@ Data Element: /DMO/AGENCY_ID
 @EndUserText.label: 'Role for ZC_TravelTP'
 @MappingRole: true
 define role ZC_TRAVELTP {
-// Productive Implementation
-//  grant select on ZC_TravelTP
-//    where (AgencyId) = aspect pfcg_auth(ZAGENCY, ZAGENCY_ID, ACTVT = '03');
-
-// Test Implementation
   grant select on ZC_TravelTP
-    where AgencyId > '070000' and AgencyId <= '070040';
+   where inheriting conditions from entity ZR_TravelTP;
 }
 //highlight-end
 ```
@@ -209,7 +222,7 @@ CLASS lhc_travel IMPLEMENTATION.
   METHOD get_instance_authorizations.
 //highlight-start
     " Determine Request-Operation
-    DATA(update_requested) = COND #( WHEN requested_authorizations-%update = if_abap_behv=>mk-on
+    DATA(update_requested) = COND #( WHEN requested_authorizations-%update                    = if_abap_behv=>mk-on
                                        OR requested_authorizations-%action-Edit               = if_abap_behv=>mk-on
                                        OR requested_authorizations-%action-CancelTravel       = if_abap_behv=>mk-on
                                        OR requested_authorizations-%action-MaintainBookingFee = if_abap_behv=>mk-on

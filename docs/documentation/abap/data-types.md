@@ -14,20 +14,20 @@ In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschied
 
 ### Vollständige Datentypen
 
-| Datentyp | Beschreibung                   |
-| -------- | ------------------------------ |
-| `D`      | Datum (Format:_YYYYMMDD_)      |
-| `T`      | Zeit (Format: _HHMMSS_)        |
-| `I`      | Ganze Zahl                     |
-| `STRING` | Zeichenkette dynamischer Länge |
+| Datentyp | Beschreibung                   | Dictionary Typ |
+| -------- | ------------------------------ | -------------- |
+| `D`      | Datum (Format:_YYYYMMDD_)      | `DATS`         |
+| `T`      | Zeit (Format: _HHMMSS_)        | `TIMS`         |
+| `I`      | Ganze Zahl                     | `INT4`         |
+| `STRING` | Zeichenkette dynamischer Länge | `SSTRING`      |
 
 ### Unvollständige Datentypen
 
-| Datentyp | Beschreibung                  |
-| -------- | ----------------------------- |
-| `C`      | Zeichenkette fester Länge     |
-| `N`      | Numerische Folge fester Länge |
-| `P`      | Festpunktzahl                 |
+| Datentyp | Beschreibung                  | Dictionary Typ | Zusatzwörter         |
+| -------- | ----------------------------- | -------------- | -------------------- |
+| `C`      | Zeichenkette fester Länge     | `CHAR`         | `LENGTH`             |
+| `N`      | Numerische Folge fester Länge | `NUMC`         | `LENGTH`             |
+| `P`      | Festpunktzahl                 | `DEC`          | `LENGTH`, `DECIMALS` |
 
 ## Lokale und globale Datentypen
 

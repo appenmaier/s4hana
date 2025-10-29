@@ -63,7 +63,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
 //highlight-end
 
     " Create Travel
-    travel-agency_id       = '000001'.
+    travel-agency_id       = '070001'.
     travel-begin_date      = '20231027'.
     travel-booking_fee     = '40.95'.
     travel-client          = sy-mandt.
@@ -110,7 +110,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
 //highlight-end
 
     " Create Travel
-    travel-agency_id       = '000023'.
+    travel-agency_id       = '070023'.
     travel-begin_date      = '20240707'.
     travel-booking_fee     = '150.00'.
     travel-client          = sy-mandt.
@@ -129,7 +129,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
     APPEND travel TO travels.
 
     " Create Travel
-    travel-agency_id       = '000045'.
+    travel-agency_id       = '070045'.
     travel-begin_date      = '20221231'.
     travel-booking_fee     = '77.99'.
     travel-client          = sy-mandt.
@@ -176,7 +176,7 @@ CLASS zcl_travel_generator IMPLEMENTATION.
 //highlight-end
 
     " Create Travel
-    travel-agency_id       = '000045'.
+    travel-agency_id       = '070045'.
     travel-begin_date      = '20231101'.
     travel-booking_fee     = '0.00'.
     travel-client          = sy-mandt.
