@@ -25,7 +25,7 @@ City:        Gotham City
 Country:     US
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Entsprechende Kunden können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
 

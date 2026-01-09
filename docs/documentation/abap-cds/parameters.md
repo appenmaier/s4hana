@@ -34,7 +34,7 @@ where
   and flight_date   <= $parameters.P_Deadline
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Mit Hilfe der Annotation `@Environment.systemField` kann einem Parameter ein Systemfeld als Standardwert zugewiesen werden. Der Parameter wird dadurch optional.
 

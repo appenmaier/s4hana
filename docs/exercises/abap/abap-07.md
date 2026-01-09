@@ -20,7 +20,7 @@ description: ""
 - Tabellenart: Standardtabelle
 - Primärschlüssel: Standardschlüssel
 
-:::tip Hinweis
+:::info Hinweis
 
 Entsprechende Kunden können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
 

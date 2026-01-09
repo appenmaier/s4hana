@@ -41,7 +41,7 @@ IF p_chckbx = 'X'.
 ENDIF.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Eine Wertvorbelegung wird bei Eingabeparametern nicht über den Zusatz `VALUE`, sondern über den Zusatz `DEFAULT` realisiert.
 
@@ -62,7 +62,7 @@ WRITE: / p_carrid UNDER 'Carrier ID',
          p_connid UNDER 'Connection ID'.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Weitere Schlüsselwörter zur Definition der Ausgabe sind z.B. `NEW-LINE`, `SKIP` und `ULINE`.
 
@@ -97,7 +97,7 @@ WRITE: / 'Hello World'(000).
 WRITE: / TEXT-000.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Ist ein Eingabeparameter mit einem Datenelement typisiert, kann der Feldbezeichner des Datenelements als Selektionstext übernommen werden.
 
@@ -135,7 +135,7 @@ START-OF-SELECTION.
   WRITE: p_from, p_to, p_date.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Die Hauptverarbeitung wird erst bei fehlerfreier Abarbeitung aller Eingabeprüfungen durchlaufen.
 

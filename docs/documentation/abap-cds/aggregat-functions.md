@@ -34,13 +34,13 @@ having
   sum( price ) > 100000
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Alle nichtaggregierten Felder der Feldliste müssen nach dem Schlüsselwort `group by` aufgeführt werden.
 
 :::
 
-:::tip Hinweis
+:::info Hinweis
 
 Die aggregierten Daten können mit Hilfe von `having` gefiltert werden.
 

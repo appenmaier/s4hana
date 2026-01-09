@@ -11,7 +11,7 @@ In offiziellen SAP-Schulungen und ABAP-Büchern wird häufig ein Demo-Datenmodel
 
 Das _[klassische SAP Flugdatenmodell](https://help.sap.com/doc/saphelp_ewm900/9.0/de-DE/cf/21f304446011d189700000e8322d00/content.htm?no_cache=true)_ wird standardmäßig mit jedem SAP ERP-System ausgeliefert. Zum Flugdatenmodell gehört das ABAP Programm `SAPBC_DATA_GENERATOR`, mit welchem die Datenbanktabellen des Flugdatenmodells befüllt werden können.
 
-:::tip Hinweis
+:::info Hinweis
 
 Alle Datenbanktabellen und Datentypen des Flugdatenmodells liegen im Paket `SAPBC_DATAMODEL`.
 

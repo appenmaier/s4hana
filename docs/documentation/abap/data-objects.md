@@ -17,7 +17,7 @@ DATA flight_price  TYPE t_decimal_16_2.     " Using Local Datatype
 DATA connection_id TYPE /dmo/connection_id. " Using Data Element
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Mit dem Zusatz `LENGTH` kann bei unvollständigen Datentypen die Länge des Datentyps in Byte angegeben werden und beim Datentyp `P` kann zusätzlich mit dem Zusatz `DECIMALS` die Anzahl der Nachkommastellen angegeben werden.
 
@@ -39,7 +39,7 @@ DATA flight_date TYPE /dmo/flight_date VALUE '20230101'.
 DATA(connection_id) = '0400'.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts schon bei der Deklaration vorbelegt werden.
 

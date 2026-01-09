@@ -56,7 +56,7 @@ flowchart
     end
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Globale Datentypen besitzen neben technischen auch semantische Informationen (z.B. Wertehilfen und Bezeichner).
 

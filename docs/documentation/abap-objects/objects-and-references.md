@@ -66,7 +66,7 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Der Initialwert einer Referenzvariablen ist die leere Referenz.
 
@@ -100,7 +100,7 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 ABAP arbeitet mit Schlüsselwortparametern, d.h. die Zuweisung eines Wertes erfolgt über die Angabe des Formalparameters. Besitzt eine Methode genau einen Import-Parameter, kann beim Aufruf der Methode der Formalparameter weggelassen werden.
 

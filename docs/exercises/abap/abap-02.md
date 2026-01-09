@@ -11,7 +11,7 @@ Erstelle die ausführbare Klasse `ZCL_???_ABAP_02`, welche passend typisierte In
 19286, Bruce Wayne, Gotham City (US)
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Passende Datenelemente können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
 

@@ -1,11 +1,11 @@
 ---
-title: SAP BTP ABAP Environment einrichten (DHBW und SAP)
+title: Einrichten des SAP-BTP-Systems
 description: ""
 sidebar_position: 10
 tags: []
 ---
 
-## ABAP Cloud Project erstellen
+## ABAP-Cloud-Projekt anlegen
 
 - [SAP BTP Trial Account anlegen](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 - [SAP BTP ABAP Environment Trial User erstellen](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)

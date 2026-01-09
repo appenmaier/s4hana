@@ -11,7 +11,7 @@ sidebar_position: 180
 - Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zur globalen Berechtigungsprüfung erweitern
 - Die Behandlermethode zur instanzbasierten Berechtigungsprüfung in der Verhaltensimplementierung `ZBP_TRAVEL` implementieren
 
-:::tip Hinweis
+:::info Hinweis
 
 Da im SAP BTP Trial Account die Pflege der benutzerspezifischen Berechtigungen nicht möglich ist, wird neben der produktiven Implementierung auch eine Testimplementierung mit nachfolgenden Berechtigungen erstellt:
 

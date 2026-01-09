@@ -10,7 +10,7 @@ description: ""
 
 Die Validierung für das Feld `Genre` soll beim Erstellen eines Films prüfen, ob das Genre einen gültigen Domänenfestwert beinhaltet
 
-:::tip Hinweis
+:::info Hinweis
 
 Entsprechende Meldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
 

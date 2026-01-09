@@ -30,7 +30,7 @@ DATA flights2 TYPE t_flights.            " Local Table Type
 DATA flights3 TYPE /dmo/t_flight.        " Global Table Type
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Werden bei der selbstständigen Deklaration oder der Definition eines lokalen Tabellentypen die Angaben zur Tabellenart und/oder dem Primärschlüssel weggelassen, wird als Standarwert eine Standardtabelle bzw. ein Standard-Primärschlüssel verwendet. Beim Standard-Primärschlüssel sind alle zeichenartigen Felder Teil des (nicht eindeutigen) Primär-Schlüssels.
 
@@ -59,7 +59,7 @@ flight-flight_date = '20231231'.
 APPEND flight TO flights.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Der Operator `BASE` ermöglicht das Erweitern einer internen Tabelle.
 
@@ -86,7 +86,7 @@ LOOP AT flights INTO flight WHERE flight_date >= '20230101'.
 ENDLOOP.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Durch den Zusatz `WHERE` können bei einer LOOP-Schleife die auszulesenden Zeilen eingeschränkt werden.
 
@@ -169,7 +169,7 @@ flights = VALUE #( ( carrier_id = 'LH' connection_id = '0400' flight_date = '202
 SORT flights BY carrier_id ASCENDING connection_id DESCENDING flight_date ASCENDING.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Die Zusätze `ASCENDING` und `DESCENDING` legen die Sortierreihenfolge fest.
 

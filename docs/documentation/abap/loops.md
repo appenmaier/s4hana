@@ -27,7 +27,7 @@ DO.
 ENDDO.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Das Systemfeld `SY-INDEX` beinhaltet den aktuellen Schleifendurchgang.
 

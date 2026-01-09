@@ -1,11 +1,11 @@
 ---
-title: abapGit auf dem SAP NetWeaver verwenden
+title: Arbeiten mit abapGit (On Premise)
 description: ""
 sidebar_position: 50
 tags: []
 ---
 
-## GitHub-Repository erstellen
+## Remote-Repository erstellen
 
 - Bei [GitHub](https://github.com/) anmelden
 - Option `Repositories - New` auswählen
@@ -50,8 +50,8 @@ tags: []
   - Username: `Dein GitHub User` (z.B. appenmaier)
   - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
 
-:::tip Hinweis
+:::info Hinweis
 
-abapGit untersützt aktuell nur den Token (Classic).
+abapGit untersützt aktuell nur _Token (Classic)_.
 
 :::

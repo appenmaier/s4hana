@@ -31,7 +31,7 @@ IF failed IS NOT INITIAL.
 ENDIF.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Der Zusatz `FIELDS` legt fest, welche Felder gelesen werden sollen. Schlüsselfelder müssen hierbei nicht explizit angegeben werden und der Zusatz `ALL FIELDS` ermöglicht das Lesen aller Felder.
 
@@ -128,7 +128,7 @@ IF failed IS NOT INITIAL.
 ENDIF.
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Der Zusatz `AUTO FILL CID` sorgt dafür, dass die CID automatisch befüllt wird.
 

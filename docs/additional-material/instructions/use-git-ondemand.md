@@ -1,5 +1,5 @@
 ---
-title: abapGit auf der ABAP Environment verwenden
+title: Arbeiten mit abapGit (On Demand)
 description: ""
 sidebar_position: 60
 tags: []
@@ -58,8 +58,8 @@ tags: []
   - Username: `Dein GitHub User` (z.B. appenmaier)
   - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
 
-:::tip Hinweis
+:::info Hinweis
 
-abapGit unterstützt aktuell nur Token (Classic).
+abapGit unterstützt aktuell nur _Token (Classic)_.
 
 :::

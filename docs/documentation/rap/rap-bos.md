@@ -57,7 +57,7 @@ define root view entity ZR_ConnectionTP
 }
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Die Wurzelentität wird mit dem Schlüsselwort `root` kenntlich gemacht.
 

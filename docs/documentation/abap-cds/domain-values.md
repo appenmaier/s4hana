@@ -22,7 +22,7 @@ define view entity I_Travel
 }
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Die Sitzungsvariable `$session.system_language` enthält die Anmeldesprache und entspricht damit dem ABAP Systemfeld `SY-LANGU`.
 

@@ -8,7 +8,7 @@ tags: []
 ABAP Objects stellt die objektorientierte Erweiterung von ABAP dar. Es enthält nur objektorientierte Konzepte, die sich in anderen objektorientierten Programmiersprachen bewährt haben und die in einem betriebswirtschaftlichen Umfeld sinnvoll sind.
 gilt, dass ABAP-Objects-Anweisungen in prozeduralen ABAP-Programmen verwendet werden können.
 
-:::tip Hinweis
+:::info Hinweis
 
 Im objektorientierten Kontext gelten strengere Typprüfungen als in prozeduralen und obsolete Anweisungen werden als Syntaxfehler betrachtet.
 
@@ -29,7 +29,7 @@ flowchart LR
     truck(Bezeichner: truck\nDatentyp: cl_truck\nWert: 3) --> o3[id: 3\nmake = MAN\nmodel = TGX\ncargo_in_tons = 40]
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Jedes Objekt ist eindeutig identifizierbar.
 

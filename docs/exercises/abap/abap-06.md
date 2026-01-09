@@ -30,7 +30,7 @@ City:        Gotham City
 Country:     US
 ```
 
-:::tip Hinweis
+:::info Hinweis
 
 Entsprechende Reisen können der Datenbanktabelle `/DMO/TRAVEL`, entsprechende Kunden der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
 
