@@ -13,6 +13,7 @@ description: ""
 | ---------------- | ----------- | ---------------- |
 | Import-Parameter | CUSTOMER_ID | /DMO/CUSTOMER_ID |
 | Rückgabewert     | TRAVELS     | Z???\_TRAVELS    |
+| Ausnahme         | -           | ZCX_ABAP_NO_DATA |
 
 ## Informationen zum Tabellentyp `Z???_TRAVELS`
 
