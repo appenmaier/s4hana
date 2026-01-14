@@ -16,6 +16,7 @@ description: ""
 | ---------------- | -------------------- | -------------------------- |
 | Import-Parameter | TRAVEL_ID            | /DMO/TRAVEL_ID             |
 | Rückgabewert     | TRAVEL_WITH_CUSTOMER | ZABAP_TRAVEL_WITH_CUSTOMER |
+| Ausnahme         | -                    | ZCX_ABAP_NO_DATA           |
 
 ## Beispielhafte Konsolenausgabe
 
