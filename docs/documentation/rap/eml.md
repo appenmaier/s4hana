@@ -5,7 +5,7 @@ sidebar_position: 40
 tags: []
 ---
 
-Die _Entity Manpipulation Language_ (EML) ermgöglicht den lesenden und schreibenden Zugriff auf RAP BOs. Für den lesenden Zugriff stellt EML die Anweisung `READ ENTITIES`, für den schreibenden Zurgiff die Anweisung `MODIFY ENTITITES` mit den Zusatzwörtern `CREATE`, `CREATE_BY`, `UPDATE`, `DELETE` und `EXECUTE` zur Verfügung.
+Die _Entity Manpipulation Language_ (EML) ermöglicht den lesenden und schreibenden Zugriff auf RAP BOs. Für den lesenden Zugriff stellt EML die Anweisung `READ ENTITIES`, für den schreibenden Zurgiff die Anweisung `MODIFY ENTITITES` mit den Zusatzwörtern `CREATE`, `CREATE_BY`, `UPDATE`, `DELETE` und `EXECUTE` zur Verfügung.
 
 ## Lesende Zugriffe
 
