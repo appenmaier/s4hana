@@ -35,7 +35,7 @@ erDiagram
 
     "ZI_???_Rating" {
         raw(16) RatingUUID PK
-        raw(16) MovieUUID FK
+        raw(16) MovieUUID
         char(50) UserName
         int1(3) Rating
         dats(8) RatingDate
@@ -43,7 +43,7 @@ erDiagram
 
     "ZR_???_RatingTP" {
         raw(16) RatingUUID PK
-        raw(16) MovieUUID FK
+        raw(16) MovieUUID
         char(50) UserName
         int1(3) Rating
         dats(8) RatingDate
@@ -52,7 +52,7 @@ erDiagram
 
     "ZC_???_RatingTP" {
         raw(16) RatingUUID PK
-        raw(16) MovieUUID FK
+        raw(16) MovieUUID
         char(50) UserName
         int1(3) Rating
         dats(8) RatingDate
