@@ -13,6 +13,6 @@ Erstelle die ausführbare Klasse `ZCL_???_ABAP_02`, welche passend typisierte In
 
 :::info Hinweis
 
-Passende Datenelemente können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
+Passende Datenelemente findest du in der Datenbanktabelle `/DMO/CUSTOMER`.
 
 :::

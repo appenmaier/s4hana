@@ -27,6 +27,6 @@ Country:     US
 
 :::info Hinweis
 
-Entsprechende Kunden können der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
+Passende Kundendaten findest du in der Datenbanktabelle `/DMO/CUSTOMER`.
 
 :::

@@ -5,7 +5,7 @@ sidebar_position: 30
 tags: []
 ---
 
-Für die Entwicklung von SAP Fiori Apps nach RAP kommen nachfolgende Laufzeitartefakte zum Einsatz:
+Für die Entwicklung von SAP Fiori Apps nach RAP kommen folgende Laufzeitartefakte zum Einsatz:
 
 - _Datenbanktabellen_ und _Basic Interface Views_ legen das Datenmodell fest
 - _BO Base Views_ und _BO Projection Views_ legen das Datenmodell des RAP BOs fest
@@ -13,8 +13,8 @@ Für die Entwicklung von SAP Fiori Apps nach RAP kommen nachfolgende Laufzeitart
 - _Metadata Extensions_ legen die Oberfläche fest
 - _Access Controls_ steuern die Lesezugriffe
 - _Service Definitions_ legen den Umfang des Geschäftsservices fest
-- _Service Bindings_ legen das Kommunikationsprotokoll sowie die Art des Geschäftsservices fest
-- _Verhaltensimplementierungen_ beinhalten die Implementierungen des transaktionalen Verhaltens
+- _Service Bindings_ legen das Kommunikationsprotokoll und die Art des Geschäftsservices fest
+- _Verhaltensimplementierungen_ enthalten die Implementierungen des transaktionalen Verhaltens
 
 ```mermaid
 flowchart

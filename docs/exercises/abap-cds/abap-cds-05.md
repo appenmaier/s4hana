@@ -50,6 +50,6 @@ erDiagram
 
 ## Hinweise
 
-- Das Feld `TotalRevenue` soll den gesamten Umsatz aller Reisen eines Kunden ausgeben
-- Das Feld `AverageDuration` soll die durchschnittliche Reisedauer ausgeben
-- Das Feld `NumberOfDifferentAgencys` soll die Anzahl unterschiedlicher Reisebüros eines Kunden ausgeben
+- Das Feld `TotalRevenue` gibt den gesamten Umsatz aller Reisen eines Kunden aus
+- Das Feld `AverageDuration` gibt die durchschnittliche Reisedauer aus
+- Das Feld `NumberOfDifferentAgencys` gibt die Anzahl unterschiedlicher Reisebüros eines Kunden aus

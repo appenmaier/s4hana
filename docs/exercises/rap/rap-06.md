@@ -8,10 +8,10 @@ description: ""
 
 ## Hinweis zur Validierung
 
-Die Validierung für das Feld `Genre` soll beim Erstellen eines Films prüfen, ob das Genre einen gültigen Domänenfestwert beinhaltet
+Die Validierung für das Feld `Genre` prüft beim Erstellen eines Films, ob das Genre einen gültigen Domänenfestwert enthält.
 
 :::info Hinweis
 
-Entsprechende Meldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
+Meldungen erzeugst du mit der Klasse `ZCM_ABAP_MOVIE`.
 
 :::

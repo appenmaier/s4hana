@@ -5,9 +5,11 @@ sidebar_position: 60
 tags: []
 ---
 
+Zur Steuerung des Programmablaufs stellt ABAP Verzweigungen und Fallunterscheidungen bereit. Als Prüfbedingung sind beliebig komplexe logische Ausdrücke möglich.
+
 ## Verzweigungen
 
-Verzweigungen können in ABAP entweder mit `IF...ELSE...ENDIF` oder dem Konstruktor-Operator `COND` realisiert werden. Dabei können als Prüfbedingung beliebig komplexe logische Ausdrücke angegeben werden.
+Verzweigungen lassen sich in ABAP entweder mit `IF...ELSE...ENDIF` oder dem Konstruktor-Operator `COND` realisieren.
 
 ```abap showLineNumbers
 DATA flight_date TYPE /dmo/flight_date VALUE '20230104'.
@@ -25,7 +27,7 @@ out->write( COND #( WHEN flight_date BETWEEN '20230101' AND '20231231'
                     ELSE 'condition not fulfilled' ) ).
 ```
 
-:::info Hinweis
+:::note
 
 Der ELSE-Zweig ist optional.
 
@@ -33,14 +35,13 @@ Der ELSE-Zweig ist optional.
 
 ## Logische Operatoren und Vergleichsoperatoren
 
-In ABAP sind beliebig tief geschachtelte Ausdrücke möglich. Die Verarbeitungsreihenfolge folgt dabei den herkömmlichen algebraischen und aussagenlogischen Regeln.
+In ABAP sind beliebig tief geschachtelte Ausdrücke möglich. Die Verarbeitungsreihenfolge folgt dabei den üblichen algebraischen und aussagenlogischen Regeln.
 
-Die logische Und-Verknüpfung wird in ABAP durch den Operator `AND`, die logische Oder-Verknüpfung durch den Operator `OR` und die logische Verneinung durch den Operator `NOT` realisiert. Als Vergleichsoperatoren stehen `=`, `<>`, `<`, `<=`, `>`, `>=` und `BETWEEN` zur
-Verfügung. Zusätzlich können die Abfragen `IS INITIAL` und `IS NOT INITAL` sowie die Abfrage `BETWEEN...AND` verwendet werden.
+Die logische Und-Verknüpfung wird mit `AND` realisiert, die Oder-Verknüpfung mit `OR` und die Verneinung mit `NOT`. Als Vergleichsoperatoren stehen `=`, `<>`, `<`, `<=`, `>`, `>=` und `BETWEEN` zur Verfügung. Zusätzlich können `IS INITIAL`, `IS NOT INITIAL` sowie `BETWEEN...AND` verwendet werden.
 
 ## Fallunterscheidungen
 
-Fallunterscheidungen können entweder mit verschachtelten Verzweiungen, mit `CASE...WHEN...ENDCASE` oder mit dem Konstruktor-Operator `SWITCH` realisiert werden.
+Fallunterscheidungen lassen sich entweder mit verschachtelten Verzweigungen, mit `CASE...WHEN...ENDCASE` oder mit dem Konstruktor-Operator `SWITCH` realisieren.
 
 ```abap showLineNumbers
 DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.

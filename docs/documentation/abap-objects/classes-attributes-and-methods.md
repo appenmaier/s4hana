@@ -5,12 +5,11 @@ sidebar_position: 20
 tags: []
 ---
 
-Klassen in ABAP werden in einen Definitionsbereich sowie einen Implementierungsbereich aufgeteilt: Der Definitionsbereich beinhaltet die Definition aller Klassenkomponenten (Attribute, Methoden, Konstanten, Typen, Interfaces), der Implementierungsbereich
-umfasst ausschließlich die Implementierungen der Methoden. Der Definitionsbereich ist zudem unterteilt in einen öffentlichen, einen geschützten sowie einen privaten Bereich.
+Klassen in ABAP sind in einen Definitionsbereich und einen Implementierungsbereich aufgeteilt: Der Definitionsbereich enthält alle Klassenkomponenten (Attribute, Methoden, Konstanten, Typen, Interfaces), der Implementierungsbereich ausschließlich die Methodenimplementierungen. Der Definitionsbereich ist zudem in einen öffentlichen, einen geschützten und einen privaten Bereich unterteilt.
 
 ## Definition von Attributen
 
-"Normale" Attribute werden, wie Variablen, mit dem Schlüsselwort `DATA` deklariert, Klassenattribute mit dem Schlüsselwort `CLASS-DATA`. Zur Typisierung können ABAP-Standardtypen sowie lokale und globale Datentypen verwendet werden.
+Normale Attribute werden mit dem Schlüsselwort `DATA` deklariert, Klassenattribute mit `CLASS-DATA`. Zur Typisierung stehen ABAP-Standardtypen sowie lokale und globale Datentypen zur Verfügung.
 
 ```abap title="CL_VEHICLE.abap" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
@@ -31,17 +30,15 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::note
 
-Mit dem Zusatz `READ-ONLY` können öffentliche Attribute so eingeschränkt werden, dass diese zwar nach außen sichtbar, aber nicht änderbar sind.
+Mit dem Zusatz `READ-ONLY` werden öffentliche Attribute so eingeschränkt, dass sie nach außen sichtbar, aber nicht änderbar sind.
 
 :::
 
 ## Definition von Methoden und Konstruktoren
 
-"Normale" Methoden werden mit dem Schlüsselwort `METHODS` definiert, Klassenmethoden mit dem Schlüsselwort `CLASS-METHODS`. Die Signatur einer Methode kann Import-, Changing- und Rückgabe-Parameter sowie Ausnahmen umfassen. Der Konstruktor
-besitzt in ABAP den reservierten Namen `CONSTRUCTOR`, der Klassenkonstruktor, der automatisch beim ersten Zugriff auf die Klasse aufgerufen wird, das Schlüsselwort `CLASS_CONSTRUCTOR`. Der Konstruktor kann nur IMPORTING-Parameter und Ausnahmen beinhalten,
-der Klassenkonstruktor weder das eine noch das andere.
+Normale Methoden werden mit `METHODS` definiert, Klassenmethoden mit `CLASS-METHODS`. Die Signatur einer Methode kann Import-, Changing- und Rückgabe-Parameter sowie Ausnahmen enthalten. Der Konstruktor trägt in ABAP den reservierten Namen `CONSTRUCTOR`, der Klassenkonstruktor das Schlüsselwort `CLASS_CONSTRUCTOR`. Der Klassenkonstruktor wird automatisch beim ersten Zugriff auf die Klasse aufgerufen. Der Konstruktor kann nur `IMPORTING`-Parameter und Ausnahmen enthalten, der Klassenkonstruktor weder noch.
 
 ```abap title="CL_VEHICLE.abap" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
@@ -70,9 +67,9 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::note
 
-ABAP kennt keine überladene Methoden, stattdessen können mit dem Zusatz `OPTIONAL` Import-Parameter definiert werden, die beim Aufruf der Methode nicht angegeben werden müssen. Zudem können mit dem Zusatz `DEFAULT` Import-Parameter mit Werten vorbelegt werden.
+ABAP kennt keine überladenen Methoden. Stattdessen können mit dem Zusatz `OPTIONAL` Import-Parameter definiert werden, die beim Methodenaufruf weggelassen werden dürfen. Mit `DEFAULT` lassen sich Import-Parameter mit Werten vorbelegen.
 
 :::
 
@@ -118,8 +115,8 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::note
 
-Das Schlüsselwort `ME` ermöglicht den Zugriff auf die Attribute und Methoden der Klasse.
+Mit dem Schlüsselwort `ME` wird auf die Attribute und Methoden der eigenen Klasse zugegriffen.
 
 :::

@@ -5,9 +5,9 @@ sidebar_position: 120
 tags: []
 ---
 
-Die Structured Query Language (SQL) stellt die erste Wahl dar, wenn es um den Zugriff auf Datenbanken-Verwaltungssysteme (DBMS) geht. SQL umfasst die 3 Untersprachen DDL (Data Definition Language), DML (Data Manipulation Language) und DCL (Data Control Language). DDL wird zum Erzeugen und Verwalten von Datenbanktabellen und Views, DML zum Lesen und Ändern von Datenbanktabellen-Inhalten und DCL zum Festlegen von Zugriffsberechtigungen verwendet. Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt mit datenbankspezifischen Eigenheiten. ABAP verwendet das datenbankunabhängige ABAP SQL, welches vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
+Die Structured Query Language (SQL) ist die Standardsprache für den Zugriff auf Datenbankverwaltungssysteme (DBMS). SQL umfasst drei Untersprachen: DDL (Data Definition Language) zum Erzeugen und Verwalten von Datenbanktabellen und Views, DML (Data Manipulation Language) zum Lesen und Ändern von Tabelleninhalten sowie DCL (Data Control Language) zum Festlegen von Zugriffsberechtigungen. Obwohl SQL größtenteils standardisiert ist, besitzt jede Datenbank einen eigenen SQL-Dialekt. ABAP verwendet das datenbankunabhängige ABAP SQL, das vom Datenbankverwaltungssystem dynamisch in natives SQL umgesetzt wird.
 
-:::info Hinweis
+:::note
 
 ABAP SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 
@@ -15,15 +15,14 @@ ABAP SQL umfasst lediglich Sprachelemente aus dem Bereich DML.
 
 ## Lesende Datenbankzugriffe
 
-Lesende Datenbankzugriffe werden mit Hilfe der Anweisung `SELECT` umgesetzt:
+Lesende Datenbankzugriffe werden mit der Anweisung `SELECT` umgesetzt:
 
-- Die FROM-Klausel benennt die Datenquelle (Datenbanktabelle oder View)
-- Die FIELDS-Klausel beschreibt, welche Felder gelesen werden sollen
-- Die WHERE-Klausel legt die zu selektierenden Zeilen fest
-- Die INTO-Klausel definiert, wohin die selektierten Daten geschrieben werden sollen
+- Die `FROM`-Klausel benennt die Datenquelle (Datenbanktabelle oder View)
+- Die `FIELDS`-Klausel beschreibt, welche Felder gelesen werden sollen
+- Die `WHERE`-Klausel legt die zu selektierenden Zeilen fest
+- Die `INTO`-Klausel definiert, wohin die selektierten Daten geschrieben werden
 
-Mit der Anweisung `SELECT SINGLE` wird ein einzelner Datensatz gelesen, mit dem Zusatz `INTO TABLE` können mehrere Zeilen einer Datenbanktabelle oder einer View direkt als Block in eine interne Tabelle kopiert werden (Array Fetch). Um einen eindeutigen Zugriff
-zu gewährleisten, müssen dabei alle Schlüsselfelder in der WHERE-Klausel angegeben werden (Ausnahme: Mandant).
+Mit `SELECT SINGLE` wird ein einzelner Datensatz gelesen; mit dem Zusatz `INTO TABLE` werden mehrere Zeilen direkt als Block in eine interne Tabelle kopiert (Array Fetch). Um einen eindeutigen Zugriff zu gewährleisten, müssen alle Schlüsselfelder in der `WHERE`-Klausel angegeben sein (Ausnahme: Mandant).
 
 ```abap showLineNumbers
 DATA carrier_id    TYPE /dmo/carrier_id VALUE 'LH' .
@@ -58,22 +57,15 @@ SELECT FROM /dmo/connection
 ENDSELECT.
 ```
 
-:::info Hinweis
+:::note
 
-Mit dem optionalen Zusatz `ORDER BY` können die gelesenen Datensätze sortiert werden.
-
-:::
-
-:::info Hinweis
-
-Mit dem optionalen Zusatz `UP TO...ROWS` kann die Anzahl der gelesenen Datensätze begrenzt werden.
+Mit dem optionalen Zusatz `ORDER BY` werden die gelesenen Datensätze sortiert. Mit `UP TO n ROWS` wird die Anzahl der gelesenen Datensätze begrenzt.
 
 :::
 
 ## Definition der Zielvariablen
 
-Bei Selektion von bestimmten Feldern muss in der INTO-Klausel eine Variable gewählt werden, die den gleichen Aufbau wie die Feldliste besitzt. Der Zusatz `CORRESPONDING FIELDS OF` der INTO-Klausel bewirkt, dass nur gleichnamige Felder der Zielvariable befüllt
-werden.
+Werden bestimmte Felder selektiert, muss die Variable in der `INTO`-Klausel denselben Aufbau wie die Feldliste haben. Mit dem Zusatz `CORRESPONDING FIELDS OF` werden nur gleichnamige Felder der Zielvariablen befüllt.
 
 ```abap showLineNumbers
 DATA connection TYPE /dmo/connection.
@@ -100,15 +92,15 @@ IF sy-subrc <> 0.
 ENDIF.
 ```
 
-:::info Hinweis
+:::note
 
-Bei nicht übereinstimmenden Feldtypen wird eine (aufwändige) Typkonvertierung durchgeführt.
+Bei nicht übereinstimmenden Feldtypen führt ABAP eine (aufwändige) Typkonvertierung durch.
 
 :::
 
 ## Schreibende Datenbankzugriffe
 
-Für schreibende Datenbankzugriffe stellt ABAP die Anweisungen `INSERT` (Hinzufügen), `UPDATE` (Ändern) sowie `DELETE` (Löschen) zur Verfügung.
+Für schreibende Datenbankzugriffe stellt ABAP die Anweisungen `INSERT` (Hinzufügen), `UPDATE` (Ändern) und `DELETE` (Löschen) bereit.
 
 ```abap showLineNumbers
 DATA connection TYPE /dmo/connection.

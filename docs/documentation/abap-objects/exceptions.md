@@ -5,7 +5,7 @@ sidebar_position: 40
 tags: []
 ---
 
-Im klassenbasierten Ausnahmenkonzept werden Ausnahmen als Ausnahmeobjekte repräsentiert und mit der Anweisung `RAISE EXCEPTION TYPE` ausgelöst, das Propagieren einer Ausnahme erfolgt über den Zusatz `RAISING`.
+Im klassenbasierten Ausnahmenkonzept werden Ausnahmen als Ausnahmeobjekte repräsentiert und mit `RAISE EXCEPTION TYPE` ausgelöst. Das Propagieren einer Ausnahme wird mit dem Zusatz `RAISING` deklariert.
 
 ```abap title="CL_VEHICLE.abap" showLineNumbers
 CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
@@ -30,7 +30,7 @@ CLASS cl_vehicle DEFINITION PUBLIC CREATE PUBLIC.
   PRIVATE SECTION.
 
 ENDCLASS.
- 
+
 CLASS cl_vehicle IMPLEMENTATION.
 
   METHOD constructor.
@@ -55,13 +55,13 @@ CLASS cl_vehicle IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::note
 
-Mit dem Zusatz `EXPORTING` können dem Ausnahmenobjekt Zusatzinformationen mitgegeben werden.
+Mit dem Zusatz `EXPORTING` werden dem Ausnahmeobjekt Zusatzinformationen übergeben.
 
 :::
 
-Mit der Anweisung `TRY...CATCH...ENDTRY` können klassenbasierte Ausnahmen abgefangen und behandelt werden.
+Mit `TRY...CATCH...ENDTRY` werden klassenbasierte Ausnahmen abgefangen und behandelt.
 
 ```abap title="CL_MAIN.abap" showLineNumbers
 CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -72,12 +72,12 @@ CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
 ENDCLASS.
 
 CLASS cl_main IMPLEMENTATION.
- 
+
   METHOD if_oo_adt_classrun~main.
 
     DATA vehicle TYPE REF TO cl_vehicle.
     DATA vehicles TYPE TABLE OF REF TO cl_vehicle.
- 
+
     TRY.
         vehicle = NEW cl_vehicle( make = 'Porsche' model = '911' ).
         vehicles = VALUE #( BASE vehicles ( vehicle ) ).
@@ -86,6 +86,6 @@ CLASS cl_main IMPLEMENTATION.
     ENDTRY.
 
   ENDMETHOD.
- 
+
 ENDCLASS.
 ```

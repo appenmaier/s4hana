@@ -20,7 +20,7 @@ tags: []
   - SAProuter String: `/H/141.44.38.2/S/3299`
 - Folgende Informationen eingeben und Drucktaste `Finish` betätigen
   - Client: `233`
-  - User: `DEVTG-` + `Deine Benutzernummer`
+  - User: `DEVTG-` + `Benutzernummer`
   - Password: `tlestart`
   - Language: `EN`
 
@@ -29,10 +29,10 @@ tags: []
 - Rechtsklick auf das erstellte ABAP-Projekt
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
-  - Name: `ZTG` + `Deine Benutzernummer`
-  - Description: `Dein Name`
+  - Name: `ZTG` + `Benutzernummer`
+  - Description: `Name`
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
   - Software Component: `HOME`
   - Transport Layer: `ZR36`
 - Folgende Informationen eingeben und Drucktaste `Finish` betätigen
-  - Request Description: `Dein Name`
+  - Request Description: `Name`

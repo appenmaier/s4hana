@@ -5,7 +5,7 @@ sidebar_position: 100
 tags: []
 ---
 
-Zugriffskontrollen ermöglichen die Vergabe von Lesezugriffen für Datenbankviews. Die Berechtigungsprüfung erfolgt dabei in der Regel anhand der im System festgelegeten PFCG-Rollen.
+Zugriffskontrollen steuern Lesezugriffe auf Datenbankviews. Die Berechtigungsprüfung erfolgt dabei in der Regel anhand der im System hinterlegten PFCG-Rollen.
 
 ```sql showLineNumbers
 @EndUserText.label: 'Role for I_Customer'
@@ -15,7 +15,7 @@ define role I_CUSTOMER {
 }
 ```
 
-:::info Hinweis
+:::warning
 
 Bei Schreibzugriffen müssen klassische ABAP-Berechtigungsprüfungen durchgeführt werden.
 

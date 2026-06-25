@@ -5,7 +5,7 @@ sidebar_position: 90
 tags: []
 ---
 
-Um bestehende ABAP CDS Views zu erweitern, können View-Erweiterungen definiert werden. ABAP CDS Views können dabei sowohl um zusätzliche Felder als auch um zusätzliche Assoziationen erweitert werden.
+Um bestehende ABAP CDS Views zu erweitern, werden View-Erweiterungen definiert. Eine ABAP CDS View lässt sich sowohl um zusätzliche Felder als auch um zusätzliche Assoziationen erweitern.
 
 ```sql showLineNumbers
 @EndUserText.label: 'Carrier Extension'

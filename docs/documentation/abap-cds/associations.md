@@ -5,11 +5,11 @@ sidebar_position: 80
 tags: []
 ---
 
-Mit Hilfe von Assoziationen können Beziehungen zwischen zwei Entitäten festgelegt werden. Technisch gesehen handelt es sich bei Assoziationen dabei um Left Outer Joins, die allerdings nur bei Bedarf umgesetzt werden (_Join On-Demand_).
+Mit Assoziationen werden Beziehungen zwischen zwei Entitäten festgelegt. Technisch handelt es sich dabei um Left Outer Joins, die jedoch nur bei Bedarf ausgeführt werden (_Join On-Demand_).
 
 ## Definition von Assoziationen
 
-Nach der Definition einer Assoziation wird diese durch Angabe in der Feldliste exponiert, also zur Verfügung gestellt.
+Nach der Definition einer Assoziation wird sie durch Aufnahme in die Feldliste zur Verfügung gestellt (Exposition).
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -31,27 +31,27 @@ define view entity I_Connection
 }
 ```
 
-:::info Hinweis
+:::note
 
 Die Kardinalität wird in der Form _[Untere Grenze..Obere Grenze]_ angegeben.
 
 :::
 
-:::info Hinweis
+:::tip
 
-Zur besseren Unterscheidung von Feldern und Assoziationen sollten letztgenannte immer mit einem Unterstrich beginnen.
+Zur besseren Unterscheidung von Feldern und Assoziationen sollten Assoziationen immer mit einem Unterstrich beginnen.
 
 :::
 
-:::info Hinweis
+:::note
 
-In der Join-Bedingung kann über die Anweisung `$projection` auf Elemente der Feldliste zugegriffen werden.
+In der Join-Bedingung wird über `$projection` auf Elemente der Feldliste zugegriffen.
 
 :::
 
 ## Verwendung von Assoziationen
 
-Über sogenannte Pfadausdrücke kann auf exponierte Assoziationen zugegriffen werden. Pfadausrücke setzen sich aus dem Namen der Assoziation sowie dem entsprechenden Feld zusammen.
+Über sogenannte Pfadausdrücke wird auf exponierte Assoziationen zugegriffen. Pfadausdrücke setzen sich aus dem Namen der Assoziation und dem entsprechenden Feld zusammen.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -70,9 +70,9 @@ define view entity I_ConnectionWithCarrier
 }
 ```
 
-In ABAP SQL werden Pfadausdrücke durch `\` eingeleitet.
+In ABAP SQL werden Pfadausdrücke mit `\` eingeleitet.
 
-```abap shwoLineNumbers
+```abap showLineNumbers
 SELECT FROM I_Connection
   FIELDS CarrierId, ConnectionId, AirportFromId, AirportToId, \_Carrier-carrier_name AS CarrierName
   INTO TABLE @DATA(connections_with_carrier).

@@ -5,11 +5,11 @@ sidebar_position: 70
 tags: []
 ---
 
-ABAP CDS Views können um Parameter erweitert werden. Der Verwender einer ABAP CDS View muss diese beim Aufruf mit Werten versorgen.
+ABAP CDS Views können um Parameter erweitert werden, die beim Aufruf mit Werten versorgt werden müssen.
 
 ## Definition von Views mit Parametern
 
-Views mit Paramatern werden über den Zusatz `with parameters` definiert. Innerhalb der ABAP CDS View kann über die Anweisung `$parameters` auf die Parameter zugegriffen werden.
+Views mit Parametern werden über den Zusatz `with parameters` definiert. Innerhalb der ABAP CDS View wird über `$parameters` auf die Parameter zugegriffen.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -34,15 +34,15 @@ where
   and flight_date   <= $parameters.P_Deadline
 ```
 
-:::info Hinweis
+:::note
 
-Mit Hilfe der Annotation `@Environment.systemField` kann einem Parameter ein Systemfeld als Standardwert zugewiesen werden. Der Parameter wird dadurch optional.
+Mit der Annotation `@Environment.systemField` wird einem Parameter ein Systemfeld als Standardwert zugewiesen. Der Parameter wird dadurch optional.
 
 :::
 
 ## Verwenden von Views mit Parametern
 
-Beim Aufruf einer ABAP CDS View mit Parametern müsse diese mit Werten versorgt werden.
+Beim Aufruf einer ABAP CDS View mit Parametern müssen alle nicht-optionalen Parameter mit Werten versorgt werden.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -61,7 +61,7 @@ define view entity I_UpcomingFlight
 }
 ```
 
-In ABAP SQL erfolgt die Angabe der Parameter analog zu den ABAP CDS Views.
+In ABAP SQL werden die Parameter analog zu ABAP CDS Views angegeben.
 
 ```abap showLineNumbers
 SELECT FROM I_Flight( p_carrierid = 'LH', p_connectionid = '0400' )

@@ -7,7 +7,7 @@ description: ""
 2. Passe die Klasse `ZCL_???_CARRIER` anhand des abgebildeten Klassendiagramms an
 3. Lege den globalen Tabellentypen `Z???_PARTNERS` anhand der abgebildeten Informationen an
 4. Erstelle die Klasse `ZCL_???_TRAVEL_AGENCY` anhand des abgebildeten Klassendiagramms
-5. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass neben den Flugzeugen und der Fluggesellschaft auch ein Reisebüro erzeugt wird. Die Fluggesellschaft soll dem Reisebüro zugewiesen und alle Informationen des Reisebüros auf dem Bildschirm ausgegeben werden
+5. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass neben den Flugzeugen und der Fluggesellschaft auch ein Reisebüro erzeugt wird. Weise die Fluggesellschaft dem Reisebüro zu und gib alle Informationen des Reisebüros auf dem Bildschirm aus.
 
 ## Informationen zum globalen Tabellentyp `Z???_PARTNERS`
 
@@ -67,7 +67,7 @@ classDiagram
    }
 ```
 
-## Hinweis zum Klasse `ZCL_???_TRAVEL_AGENCY`
+## Hinweis zur Klasse `ZCL_???_TRAVEL_AGENCY`
 
-- Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `ADD_PARTNER` soll der Partnerliste den eingehenden Partner hinzufügen
+- Der Konstruktor initialisiert alle Attribute
+- Die Methode `ADD_PARTNER` fügt der Partnerliste den eingehenden Partner hinzu

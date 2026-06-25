@@ -5,13 +5,11 @@ sidebar_position: 50
 tags: []
 ---
 
-Bei der Modellierung von Klassen stellt man häufig fest, dass sich einige Klassen der Struktur und dem Verhalten nach anderen Klassen ähneln. In solchen Fällen hat man die Möglichkeit, die gemeinsamen Strukturen und Verhaltensweisen zu extrahieren und in einer
-allgemeineren Klasse unterzubringen. Dies führt zu Spezialisierungs- bzw. Generalisierungshierarchien. Die Beziheung zwischen den speziellen Klassen (den sogenannte Unterklassen) sowie der allgemeineren Klasse (der sogenannten Oberklasse) wird als Vererbung
-bezeichnet.
+Bei der Modellierung von Klassen stellt man häufig fest, dass sich einige Klassen in Struktur und Verhalten ähneln. In solchen Fällen lassen sich gemeinsame Strukturen und Verhaltensweisen extrahieren und in einer allgemeineren Klasse zusammenfassen – das führt zu Spezialisierungs- bzw. Generalisierungshierarchien. Die Beziehung zwischen den spezialisierten Klassen (Unterklassen) und der allgemeineren Klasse (Oberklasse) bezeichnet man als Vererbung.
 
 ## Implementieren von Vererbung
 
-Vererbungen werden über den Zusatz `INHERITING FROM` realisiert. Das Überschreiben von Methoden erfolgt mit dem Zusatz `REDEFINITION`, der Zugriff auf Elemente der Oberklasse erfolgt über den reservierten Namen `SUPER`.
+Vererbung wird mit dem Zusatz `INHERITING FROM` realisiert. Methoden werden mit `REDEFINITION` überschrieben, auf Elemente der Oberklasse wird über den reservierten Namen `SUPER` zugegriffen.
 
 ```abap title="CL_CAR.abap" showLineNumbers
 CLASS cl_car DEFINITION PUBLIC CREATE PUBLIC INHERITING FROM cl_vehicle.
@@ -50,9 +48,7 @@ ENDCLASS.
 
 ## Polymorphie
 
-Unter Polymorphie (griechisch für Vielgestaltigkeit) versteht man in der Programmierung die Tatsache, dass eine Referenzvariable zur Laufzeit durch Typumwandlung auf Objekte unterschiedlicher Klassen zeigen kann und dass dadurch ein Methodenaufruf
-unterschiedliche Ergebnisse erzielen kann. Man spricht in diesem Zusammenhang auch vom statischen Datentyp einer Variablen (der zur Designzeit festgelegt wird) und vom dynamischen Datentyp (der zur Laufzeit zugewiesen wird). Die Typumwandlung von der
-abgeleiteten Unterklasse zur Oberklasse bezeichnet man als _Upcast_, die Rückumwandlung als _Downcast_. Der Downcast erfolgt dabei über den Operator `CAST`.
+Polymorphie (griechisch: Vielgestaltigkeit) beschreibt in der Programmierung, dass eine Referenzvariable zur Laufzeit durch Typumwandlung auf Objekte unterschiedlicher Klassen zeigen kann und ein Methodenaufruf dadurch unterschiedliche Ergebnisse liefern kann. Man unterscheidet den _statischen Datentyp_ (zur Designzeit festgelegt) und den _dynamischen Datentyp_ (zur Laufzeit zugewiesen). Die Typumwandlung von der Unterklasse zur Oberklasse heißt _Upcast_, die Rückumwandlung _Downcast_. Der Downcast wird mit dem Operator `CAST` durchgeführt.
 
 ```abap title="CL_MAIN.abap" showLineNumbers
 CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -91,7 +87,7 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::tip
 
 Zur Typprüfung beim Downcast kann der Ausdruck `IS INSTANCE OF` verwendet werden.
 
@@ -99,17 +95,16 @@ Zur Typprüfung beim Downcast kann der Ausdruck `IS INSTANCE OF` verwendet werde
 
 ## Abstrakte und finale Klassen und Methoden
 
-Das Schlüsselwort `ABSTRACT` ermöglicht die Definition von abstrakten Klassen und Methoden, das Schlüsselwort `FINAL` die Definition von finalen Klassen und Methoden:
+Mit `ABSTRACT` werden abstrakte Klassen und Methoden definiert, mit `FINAL` finale Klassen und Methoden:
 
-- abstrakte Klassen können nicht instanziiert werden
-- abstrakte Methoden besitzen keine Implementierung und müssen von den abgeleiteten Klassen implementiert werden.
-- finale Klassen können nicht abgeleitet werden
-- finale Methode können nicht überschrieben werden
+- Abstrakte Klassen lassen sich nicht instanziieren
+- Abstrakte Methoden haben keine Implementierung und müssen von abgeleiteten Klassen implementiert werden
+- Finale Klassen können nicht abgeleitet werden
+- Finale Methoden können nicht überschrieben werden
 
 ## Schnittstellen
 
-Schnittstellen (Interfaces) sind im Prinzip abstrakte Klassen, die ausschließlich abstrakte Methoden besitzen. Durch Schnittstellen wird sichergestellt, dass Klassen bestimmte Methoden bereitstellen und dass verschiedene Klassen miteinander kommunizieren können.
-Sie werden mit dem Schlüsselwort `INTERFACE` definiert, in der implementierenden Klasse mit dem Schlüsselwort `INTERFACES` bekanntgegeben und können analog zu Klassen abgeleitet werden.
+Schnittstellen (Interfaces) sind im Prinzip abstrakte Klassen, die ausschließlich abstrakte Methoden enthalten. Sie stellen sicher, dass Klassen bestimmte Methoden bereitstellen und miteinander kommunizieren können. Schnittstellen werden mit `INTERFACE` definiert, in der implementierenden Klasse mit `INTERFACES` bekanntgegeben und können wie Klassen abgeleitet werden.
 
 ```abap title="IF_PARTNER.abap" showLineNumbers
 INTERFACE if_partner.
@@ -139,7 +134,7 @@ ENDCLASS.
 
 CLASS cl_rental IMPLEMENTATION.
 
-  METHOD add_partner.
+  METHOD add_vehicle.
     APPEND vehicle TO vehicles.
   ENDMETHOD.
 

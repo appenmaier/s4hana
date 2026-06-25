@@ -7,4 +7,4 @@ Erstelle die Interface View `ZI_???_GenreVH` und erweitere die BO Projection Vie
 
 ## Hinweis zur Interface View `ZI_???_GenreVH`
 
-Die Interface View `ZI_???_GenreVH` soll die Domänenfestwerte des Feldes `Genre` samt Beschreibung ausgeben.
+Die Interface View `ZI_???_GenreVH` gibt die Domänenfestwerte des Feldes `Genre` samt Beschreibung aus.

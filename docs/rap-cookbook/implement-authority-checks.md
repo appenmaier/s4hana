@@ -11,7 +11,7 @@ sidebar_position: 180
 - Die Verhaltensimplementierung `ZBP_TRAVEL` um eine Behandlermethode zur globalen Berechtigungsprüfung erweitern
 - Die Behandlermethode zur instanzbasierten Berechtigungsprüfung in der Verhaltensimplementierung `ZBP_TRAVEL` implementieren
 
-:::info Hinweis
+:::note
 
 Da im SAP BTP Trial Account die Pflege der benutzerspezifischen Berechtigungen nicht möglich ist, wird neben der produktiven Implementierung auch eine Testimplementierung mit nachfolgenden Berechtigungen erstellt:
 
@@ -25,9 +25,13 @@ Da im SAP BTP Trial Account die Pflege der benutzerspezifischen Berechtigungen n
 
 ## Berechtigungsfeld `ZAGENCY_ID`
 
+Das Berechtigungsfeld `ZAGENCY_ID` wird auf Basis des Datenelements `/DMO/AGENCY_ID` erstellt.
+
 Data Element: /DMO/AGENCY_ID
 
 ## Berechtigungsobjekt `ZAGENCY`
+
+Das Berechtigungsobjekt `ZAGENCY` enthält die folgenden Berechtigungsfelder:
 
 | Authorization Field | Activity Field |
 | ------------------- | -------------- |

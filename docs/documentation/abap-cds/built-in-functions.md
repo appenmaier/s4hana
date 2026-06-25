@@ -5,7 +5,7 @@ sidebar_position: 40
 tags: []
 ---
 
-Die ABAP CDS stellen verschiedene numerische Funktionen, Zeichenkettenfunktionen, Funktionen zur Währungs- und Einheitenumrechnung sowie Datums- und Zeitfunktionen zur Verfügung.
+ABAP CDS stellen numerische Funktionen, Zeichenkettenfunktionen, Funktionen zur Währungs- und Einheitenumrechnung sowie Datums- und Zeitfunktionen bereit.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK

@@ -9,7 +9,7 @@ Strukturen fassen logisch zusammenhängende Werte in einem Datenobjekt zusammen.
 
 ## Definition lokaler Strukturtypen
 
-Lokale Strukturtypen werden, wie alle anderen lokalen Datentypen, mit Hilfe des Schlüsselworts `TYPES` sowie dem Zusatz `BEGIN OF...END OF` definiert..
+Lokale Strukturtypen werden, wie alle anderen lokalen Datentypen, mit dem Schlüsselwort `TYPES` und dem Zusatz `BEGIN OF...END OF` definiert.
 
 ```abap showLineNumbers
 TYPES: BEGIN OF t_connection,
@@ -22,7 +22,7 @@ TYPES: BEGIN OF t_connection,
 
 ## Definition globaler Strukturtypen
 
-Globale Strukturtypen werden mit Hilfe der Data Definition Language (DDL) der ABAP Core Data Services (ABAP CDS) definiert.
+Globale Strukturtypen werden mit der Data Definition Language (DDL) der ABAP Core Data Services (ABAP CDS) definiert.
 
 ```sql showLineNumbers
 @EndUserText.label : 'Connection'
@@ -37,7 +37,7 @@ define structure zconnection {
 
 ## Deklaration von Strukturen
 
-Strukturen werden, wie elementare Datenobjekte, mit der DATA-Anweisung deklariert.
+Strukturen werden, wie elementare Datenobjekte, mit der `DATA`-Anweisung deklariert.
 
 ```abap showLineNumbers
 TYPES: BEGIN OF t_connection,
@@ -53,7 +53,7 @@ DATA connection2 TYPE zconnection.  " Global Structure Type
 
 ## Zugriff auf Strukturkomponenten
 
-Mit dem Komponentenselektor `-` kann auf die einzelnen Komponenten einer Struktur zugegriffen werden (lesend als auch schreibend).
+Mit dem Komponentenselektor `-` wird lesend und schreibend auf die einzelnen Komponenten einer Struktur zugegriffen.
 
 ```abap showLineNumbers
 DATA connection TYPE zconnection.
@@ -66,7 +66,7 @@ out->write( connection-carrier_id, connection-connection_id ).
 
 ## Kopieren von Strukturen
 
-Strukturen mit dem gleichen Strukturtypen können über den Zuweisungsoperator `=` kopiert werden. Der Operator `CORRESPONDING` ermöglicht das komponentenweise Kopieren von Inhalten einer Quellstruktur in eine Zielstruktur.
+Strukturen gleichen Typs werden über den Zuweisungsoperator `=` kopiert. Der Operator `CORRESPONDING` ermöglicht das komponentenweise Kopieren aus einer Quellstruktur in eine Zielstruktur.
 
 ```abap showLineNumbers
 DATA flight                 TYPE zflight.
@@ -80,7 +80,7 @@ flight_with_connection = CORRESPONDING #( flight ).
 flight_with_connection = CORRESPONDING #( BASE ( flight_with_connection ) connection ).
 ```
 
-:::info Hinweis
+:::note
 
 Beim Kopieren mit `CORRESPONDING` werden nur gleichnamige Komponenten berücksichtigt. Gegebenenfalls findet eine Typkonvertierung statt.
 

@@ -37,8 +37,8 @@ tags: []
 - Drucktaste `Add All and Commit` betätigen
 - Folgende Informationen eingeben und Drucktaste `Commit` betätigen
   - Comment: `Ein beliebiger Kommentar` (z.B. update demos)
-  - Committer Name: `Dein Name` (z.B. Daniel Appenmaier)
-  - Committer Email: `Deine Email-Adresse` (z.B. daniel.appenmaier@gmail.com)
+  - Committer Name: `Name` (z.B. Daniel Appenmaier)
+  - Committer Email: `E-Mail-Adresse` (z.B. daniel.appenmaier@gmail.com)
 
 ## Änderungen vom Remote-Repository herunterladen
 
@@ -47,10 +47,10 @@ tags: []
 - Repository auswählen
 - Drucktaste `Pull` betätigen
 - Folgende Informationen eingeben und Drucktaste `OK` betätigen
-  - Username: `Dein GitHub User` (z.B. appenmaier)
-  - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
+  - Username: `GitHub-Benutzername` (z.B. appenmaier)
+  - Password/Token: `Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
 
-:::info Hinweis
+:::note
 
 abapGit untersützt aktuell nur _Token (Classic)_.
 

@@ -15,8 +15,8 @@ tags: []
 - Rechtsklick auf das erstellte ABAP-Cloud-Projekt
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben, Option `Add to favorite packages` auswählen und Drucktaste `Next >` betätigen
-  - Name: `Z` + `Deine Kennung` (z.B. Matrikelnummer)
-  - Description: `Eine beliebige Beschreibung` (z.B. Dein Name)
+  - Name: `Z` + `Kennung` (z.B. Matrikelnummer)
+  - Description: `Eine beliebige Beschreibung` (z.B. Name)
   - Superpackage: `ZLOCAL`
 - Option `Create a new request` auswählen, folgende Informationen eingeben und Drucktaste `Finish` betätigen
-  - Request Description: `Eine beliebige Beschreibung` (z.B. Dein Name)
+  - Request Description: `Eine beliebige Beschreibung` (z.B. Name)

@@ -5,14 +5,15 @@ sidebar_position: 20
 tags: []
 ---
 
-Datentypen legen fest, welche Art von Information ein Datenobjekt speichern kann. Die Verwendungsmöglichkeiten in ABAP umfassen die Deklaration von Datenobjekten, die Deklaration von Parametern bei Funktionsbausteinen und Methoden sowie die Deklaration von
-Ein- und Ausgabefeldern bei Dynpros.
+Datentypen legen fest, welche Art von Information ein Datenobjekt speichern kann. In ABAP werden sie zur Deklaration von Datenobjekten, zur Typisierung von Parametern in Funktionsbausteinen und Methoden sowie zur Deklaration von Ein- und Ausgabefeldern bei Dynpros verwendet.
 
 ## Wichtige ABAP-Standardtypen
 
-In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschieden: Vollständige Datentypen besitzen eine vordefinierte Länge, unvollständige Datentypen benötigen bei der Deklaration eine Längenangabe.
+In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschieden: Vollständige Datentypen haben eine vordefinierte Länge, unvollständige Datentypen erfordern bei der Deklaration eine Längenangabe.
 
 ### Vollständige Datentypen
+
+Die folgenden vollständigen Datentypen stehen in ABAP standardmäßig zur Verfügung:
 
 | Datentyp | Beschreibung                   | Dictionary Typ |
 | -------- | ------------------------------ | -------------- |
@@ -23,6 +24,8 @@ In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschied
 
 ### Unvollständige Datentypen
 
+Die folgenden unvollständigen Datentypen erfordern bei der Deklaration eine Längenangabe:
+
 | Datentyp | Beschreibung                  | Dictionary Typ | Zusatzwörter         |
 | -------- | ----------------------------- | -------------- | -------------------- |
 | `C`      | Zeichenkette fester Länge     | `CHAR`         | `LENGTH`             |
@@ -31,7 +34,7 @@ In ABAP wird zwischen vollständigen und unvollständigen Datentypen unterschied
 
 ## Lokale und globale Datentypen
 
-In ABAP können Datentypen lokal und global definiert werden: Lokale Datentypen existieren nur im betreffenden Programm und können auch nur dort verwendet werden, globale Datentypen werden im Dictionary definiert und können systemweit verwendet werden.
+In ABAP können Datentypen lokal oder global definiert werden: Lokale Datentypen existieren nur im jeweiligen Programm, globale Datentypen werden im Dictionary definiert und stehen systemweit zur Verfügung.
 
 ```mermaid
 flowchart
@@ -56,15 +59,15 @@ flowchart
     end
 ```
 
-:::info Hinweis
+:::info
 
-Globale Datentypen besitzen neben technischen auch semantische Informationen (z.B. Wertehilfen und Bezeichner).
+Globale Datentypen enthalten neben technischen auch semantische Informationen (z.B. Wertehilfen und Bezeichner).
 
 :::
 
 ## Definition lokaler Datentypen
 
-Mit Hilfe des Schlüsselworts `TYPES` können lokale Datentypen definiert werden.
+Lokale Datentypen werden mit dem Schlüsselwort `TYPES` definiert.
 
 ```abap showLineNumbers
 TYPES t_c_40         TYPE c LENGTH 40.

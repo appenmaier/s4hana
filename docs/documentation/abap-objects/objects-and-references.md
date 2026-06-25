@@ -5,8 +5,7 @@ sidebar_position: 30
 tags: []
 ---
 
-Variablen, die mit einer Klasse typisiert werden, bezeichnet man als Referenzvariablen. Im Gegensatz zu "normalen" Variablen werden bei Referenzvariablen keine elementaren Werte in den Variablen gespeichert, sondern die Speicheradressen der erzeugten Objekte,
-also die Referenzen auf die erzeugten Objekte. Referenzvariablen werden mit dem Schlüsselwort `DATA` und dem Zusatz `TYPE REF TO` definiert.
+Variablen, die mit einer Klasse typisiert sind, nennt man Referenzvariablen. Im Gegensatz zu normalen Variablen speichern Referenzvariablen keine elementaren Werte, sondern die Speicheradressen der erzeugten Objekte – also Referenzen auf die Objekte. Referenzvariablen werden mit dem Schlüsselwort `DATA` und dem Zusatz `TYPE REF TO` deklariert.
 
 ```mermaid
 flowchart LR
@@ -35,7 +34,7 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-Mit dem Operator `NEW` können Objekte erzeugt werden.
+Mit dem Operator `NEW` werden Objekte erzeugt.
 
 ```abap title="CL_MAIN.abap" showLineNumbers
 CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -66,7 +65,7 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::note
 
 Der Initialwert einer Referenzvariablen ist die leere Referenz.
 
@@ -74,7 +73,7 @@ Der Initialwert einer Referenzvariablen ist die leere Referenz.
 
 ## Zugriff auf Attribute und Methoden
 
-Der Zugriff auf "normale" Attribute und Methoden erfolgt über die Angabe der Referenzvariablen sowie den Objekt-Komponentenselektor `->`, der Zugriff auf Klassenelemente über die Angabe der Klasse sowie den Klassen-Komponentenselektor `=>`.
+Auf normale Attribute und Methoden wird über die Referenzvariable und den Objekt-Komponentenselektor `->` zugegriffen. Auf Klassenelemente wird über den Klassennamen und den Klassen-Komponentenselektor `=>` zugegriffen.
 
 ```abap title="CL_MAIN.abap" showLineNumbers
 CLASS cl_main DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -100,8 +99,8 @@ CLASS cl_main IMPLEMENTATION.
 ENDCLASS.
 ```
 
-:::info Hinweis
+:::note
 
-ABAP arbeitet mit Schlüsselwortparametern, d.h. die Zuweisung eines Wertes erfolgt über die Angabe des Formalparameters. Besitzt eine Methode genau einen Import-Parameter, kann beim Aufruf der Methode der Formalparameter weggelassen werden.
+ABAP verwendet Schlüsselwortparameter: Die Wertzuweisung erfolgt über den Namen des Formalparameters. Hat eine Methode genau einen Import-Parameter, kann der Formalparameter beim Aufruf weggelassen werden.
 
 :::

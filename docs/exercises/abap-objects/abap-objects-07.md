@@ -5,8 +5,7 @@ description: ""
 
 1. Lege den globalen Tabellentypen `Z???_AIRPLANES` anhand der abgebildeten Informationen an
 2. Erstelle die Klasse `ZCL_???_CARRIER` anhand des abgebildeten Klassendiagramms
-3. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass neben den Flugzeugen auch eine Fluggesellschaft erzeugt wird. Die Flugzeuge sollen der Fluggesellschaft zugewiesen und alle Informationen der Fluggesellschaft auf dem Bildschirm ausgegeben
-   werden
+3. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass neben den Flugzeugen auch eine Fluggesellschaft erzeugt wird. Weise die Flugzeuge der Fluggesellschaft zu und gib alle Informationen der Fluggesellschaft auf dem Bildschirm aus.
 
 ## Informationen zum globalen Tabellentyp `Z???_AIRPLANES`
 
@@ -54,6 +53,6 @@ classDiagram
 
 ## Hinweise zur Klasse `ZCL_???_CARRIER`
 
-- Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `ADD_AIRPLANE` soll der Flugzeugliste das eingehende Flugzeug hinzufügen
-- Die Methode `GET_BIGGEST_CARGO_PLANE` soll das Frachtflugzeug mit dem höchsten Gesamtgewicht zurückgeben
+- Der Konstruktor initialisiert alle Attribute
+- Die Methode `ADD_AIRPLANE` fügt der Flugzeugliste das eingehende Flugzeug hinzu
+- Die Methode `GET_BIGGEST_CARGO_PLANE` gibt das Frachtflugzeug mit dem höchsten Gesamtgewicht zurück

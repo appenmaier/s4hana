@@ -5,7 +5,7 @@ sidebar_position: 60
 tags: []
 ---
 
-Die ABAP CDS unterstützen die klassischen Aggregatfunktionen `count`, `sum`, `avg`, `min` und `max`.
+ABAP CDS unterstützen die klassischen Aggregatfunktionen `count`, `sum`, `avg`, `min` und `max`.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -34,14 +34,14 @@ having
   sum( price ) > 100000
 ```
 
-:::info Hinweis
+:::note
 
-Alle nichtaggregierten Felder der Feldliste müssen nach dem Schlüsselwort `group by` aufgeführt werden.
+Alle nicht aggregierten Felder der Feldliste müssen nach `group by` aufgeführt werden.
 
 :::
 
-:::info Hinweis
+:::note
 
-Die aggregierten Daten können mit Hilfe von `having` gefiltert werden.
+Mit `having` werden die aggregierten Daten gefiltert.
 
 :::

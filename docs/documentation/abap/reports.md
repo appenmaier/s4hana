@@ -5,7 +5,7 @@ sidebar_position: 80
 tags: []
 ---
 
-Klassische ABAP-Programme sind in ABAP geschriebene, ausführbare Entwicklungsobjekte. In klassischen ABAP-Programmen können Komponenten wie Selektionsbilder zur Eingabe von Daten sowie ABAP-Listen zur Ausgabe von Daten definiert werden. Klassische ABAP-Programme können als Hintergrundjobs eingerichtet werden, um z.B. Routineaufgaben zu automatisieren oder um den Einsatz der Rechenressourcen zu optimieren.
+Klassische ABAP-Programme sind in ABAP geschriebene, ausführbare Entwicklungsobjekte. Sie können Komponenten wie Selektionsbilder zur Dateneingabe und ABAP-Listen zur Datenausgabe enthalten. Als Hintergrundjobs lassen sie sich zur Automatisierung von Routineaufgaben oder zur besseren Nutzung von Rechenressourcen einrichten.
 
 ```mermaid
 flowchart
@@ -21,8 +21,7 @@ flowchart
 
 ## Eingabe
 
-Das Schlüsselwort `PARAMETERS` legt ein Datenobjekt an und erzeugt implizit ein Selektionsbild mit einem entsprechenden Eingabefeld. Der Zusatz `AS CHECKBOX` ermöglicht das Erzeugen von Kontrollkästchen, der Zusatz `RADIOBUTTON GROUP` das Erzeugen von
-Auswahlschaltern.
+Mit dem Schlüsselwort `PARAMETERS` wird ein Datenobjekt angelegt und implizit ein Selektionsbild mit einem Eingabefeld erzeugt. Der Zusatz `AS CHECKBOX` erzeugt Kontrollkästchen, `RADIOBUTTON GROUP` erzeugt Auswahlschalter.
 
 ```abap showLineNumbers
 " Defintion of input fields
@@ -41,15 +40,15 @@ IF p_chckbx = 'X'.
 ENDIF.
 ```
 
-:::info Hinweis
+:::note
 
-Eine Wertvorbelegung wird bei Eingabeparametern nicht über den Zusatz `VALUE`, sondern über den Zusatz `DEFAULT` realisiert.
+Eine Wertvorbelegung bei Eingabeparametern erfolgt nicht über `VALUE`, sondern über `DEFAULT`.
 
 :::
 
 ## Ausgabe
 
-Das Schlüsselwort `WRITE` bereitet den Inhalt des Datenobjektes auf und gibt diesen auf der aktuellen ABAP-Liste aus.
+Mit dem Schlüsselwort `WRITE` wird der Inhalt eines Datenobjekts auf der aktuellen ABAP-Liste ausgegeben.
 
 ```abap showLineNumbers
 PARAMETERS p_carrid TYPE s_carr_id.
@@ -62,7 +61,7 @@ WRITE: / p_carrid UNDER 'Carrier ID',
          p_connid UNDER 'Connection ID'.
 ```
 
-:::info Hinweis
+:::note
 
 Weitere Schlüsselwörter zur Definition der Ausgabe sind z.B. `NEW-LINE`, `SKIP` und `ULINE`.
 
@@ -70,8 +69,7 @@ Weitere Schlüsselwörter zur Definition der Ausgabe sind z.B. `NEW-LINE`, `SKIP
 
 ## Dialognachrichten
 
-Mit der Anweisung `MESSAGE` können Dialognachrichten an den Benutzer geschickt werden. ABAP kennt die Nachrichtentypen _Information_ (I), _Setznachricht_ (S), _Warnung_ (W), _Fehler_ (E), _Abbruch_ (A) sowie _Kurzdump_ (X). Platzhalter in der angegebenen
-Nachricht können durch den Zusatz `WITH` versorgt werden.
+Mit der Anweisung `MESSAGE` werden Dialognachrichten an den Anwender gesendet. ABAP kennt die Nachrichtentypen _Information_ (I), _Setznachricht_ (S), _Warnung_ (W), _Fehler_ (E), _Abbruch_ (A) und _Kurzdump_ (X). Platzhalter in der Nachricht werden mit dem Zusatz `WITH` versorgt.
 
 ```abap showLineNumbers
 PARAMETERS p_carrid TYPE s_carr_id.
@@ -85,8 +83,8 @@ ENDIF.
 
 ABAP kennt verschiedene Arten von Textelementen:
 
-- Textsymbole ermöglichen die Übersetzung von statischen Texten
-- Selektionstexte dienen als Beschriftungen für Eingabeparameter
+- _Textsymbole_ ermöglichen die Übersetzung statischer Texte
+- _Selektionstexte_ dienen als Beschriftungen für Eingabeparameter
 
 ```abap showLineNumbers
 " Text literal
@@ -97,7 +95,7 @@ WRITE: / 'Hello World'(000).
 WRITE: / TEXT-000.
 ```
 
-:::info Hinweis
+:::note
 
 Ist ein Eingabeparameter mit einem Datenelement typisiert, kann der Feldbezeichner des Datenelements als Selektionstext übernommen werden.
 
@@ -105,10 +103,10 @@ Ist ein Eingabeparameter mit einem Datenelement typisiert, kann der Feldbezeichn
 
 ## ABAP-Ereignisse
 
-Beim Starten eines ABAP Programms werden nacheinander verschiedene Ereignisse ausgelöst. Existiert zu einem Ereignis ein Verarbeitungsblock, wird dieser sequenziell ausgeführt:
+Beim Starten eines ABAP-Programms werden nacheinander verschiedene Ereignisse ausgelöst. Existiert zu einem Ereignis ein Verarbeitungsblock, wird dieser sequenziell ausgeführt:
 
-- Das Ereignis `INIZIALIZATION` kann für dynamische Wertevorbelegungen genutzt werden
-- Das Ereignis `AT SELECTION-SCREEN` kann für Eingabeprüfungen verwendet werden
+- `INITIALIZATION` eignet sich für dynamische Wertevorbelegungen
+- `AT SELECTION-SCREEN` eignet sich für Eingabeprüfungen
 - Die Hauptverarbeitung findet im Ereignis `START-OF-SELECTION` statt
 
 ```abap showLineNumbers
@@ -135,7 +133,7 @@ START-OF-SELECTION.
   WRITE: p_from, p_to, p_date.
 ```
 
-:::info Hinweis
+:::note
 
 Die Hauptverarbeitung wird erst bei fehlerfreier Abarbeitung aller Eingabeprüfungen durchlaufen.
 

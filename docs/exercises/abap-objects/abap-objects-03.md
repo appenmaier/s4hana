@@ -20,4 +20,4 @@ classDiagram
 
 ## Hinweise zur Klasse `ZCL_???_AIRPLANE`
 
-Der Konstruktor soll alle Attribute initialisieren
+Der Konstruktor initialisiert alle Attribute.

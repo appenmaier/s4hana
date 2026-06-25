@@ -15,12 +15,12 @@ description: ""
 
 ### Hinweise zum ListReport
 
-- Als Tabellenüberschrift soll der Wert `Ratings` angezeigt werden
-- Standardmäßig sollen die Spalten `UserName`, `Rating` und `RatingDate` angezeigt werden
+- Als Tabellenüberschrift wird der Wert `Ratings` angezeigt
+- Standardmäßig werden die Spalten `UserName`, `Rating` und `RatingDate` angezeigt
 
 ### Hinweise zur ObjectPage
 
-- Als Kopfzeilen-Titel soll der Wert des Feldes `Rating` angezeigt werden
-- Als Kopfzeilen-Beschreibung soll der Wert des Feldes `UserName` angezeigt werden
-- Die Felder `UserName` und `Rating` sollen in der Feldgruppe `Rating Details` angezeigt werden
-- Die Felder `RatingUUID`, `MovieUUID` und `RatingDate` sollen in der Feldgruppe `Administrative Data` angezeigt werden
+- Als Kopfzeilen-Titel wird der Wert des Feldes `Rating` angezeigt
+- Als Kopfzeilen-Beschreibung wird der Wert des Feldes `UserName` angezeigt
+- Die Felder `UserName` und `Rating` werden in der Feldgruppe `Rating Details` angezeigt
+- Die Felder `RatingUUID`, `MovieUUID` und `RatingDate` werden in der Feldgruppe `Administrative Data` angezeigt

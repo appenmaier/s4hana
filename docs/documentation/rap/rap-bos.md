@@ -5,8 +5,8 @@ sidebar_position: 20
 tags: []
 ---
 
-Ein RAP Business Object (RAP BO) bildet eine konrekte Entität ab und stellt die transaktionale Logik dieser Entität für Fiori Elements Apps und Web APIs zur Verfügung.
-Ein RAP BO besteht dabei aus einer _Data Definition_, welche die Struktur des RAP BOs festlegt sowie einer _Behavior Definition_, welche das transaktionale Verhalten festlegt.
+Ein RAP Business Object (RAP BO) bildet eine konkrete Entität ab und stellt deren transaktionale Logik für Fiori Elements Apps und Web APIs bereit.
+Ein RAP BO besteht aus einer _Data Definition_, die die Struktur festlegt, und einer _Behavior Definition_, die das transaktionale Verhalten definiert.
 
 ```mermaid
 flowchart LR
@@ -18,9 +18,9 @@ flowchart LR
 
 ## Struktur eines RAP BOs
 
-Ein RAP BO besteht immer aus einer Wurzelentität und beliebig vielen Unterentitäten. Die Beziehung zwischen einer Kindentität und der jeweiligen Elternentität entspricht einer Komposition; die Beziehung selbst wird in Form spezieller Assoziationen abgebildet, wobei die entsprechende Join-Bedinung nur in der Kindentität angegeben werden muss.
+Ein RAP BO besteht immer aus einer Wurzelentität und beliebig vielen Unterentitäten. Die Beziehung zwischen einer Kindentität und der jeweiligen Elternentität ist eine Komposition; sie wird über spezielle Assoziationen abgebildet, wobei die Join-Bedingung nur in der Kindentität angegeben werden muss.
 
-Im Beispiel stellt eine Flugverbindung die Wurzelentität und ein Flug die Unterentität dar. Die Beziehung zwischen der Flugverbindung und dem Flug entspricht dabei einer 1-n-Beziehung.
+Im folgenden Beispiel ist die Flugverbindung die Wurzelentität und der Flug die Unterentität. Sie stehen in einer 1-n-Beziehung zueinander. Zunächst wird die Unterentität `ZR_FlightTP` mit der Assoziation zur Elternentität definiert:
 
 ```sql showLineNumbers
 define view entity ZR_FlightTP
@@ -41,6 +41,8 @@ define view entity ZR_FlightTP
 }
 ```
 
+Anschließend wird die Wurzelentität `ZR_ConnectionTP` mit der Komposition zur Unterentität definiert:
+
 ```sql showLineNumbers
 define root view entity ZR_ConnectionTP
   as select from ZI_Connection
@@ -57,7 +59,7 @@ define root view entity ZR_ConnectionTP
 }
 ```
 
-:::info Hinweis
+:::note
 
 Die Wurzelentität wird mit dem Schlüsselwort `root` kenntlich gemacht.
 
@@ -65,7 +67,7 @@ Die Wurzelentität wird mit dem Schlüsselwort `root` kenntlich gemacht.
 
 ## Verhalten eines RAP BOs
 
-Eine _Behavior Definition_ besitzt für jede Entität des RAP BOs einen entsprechenden Abschnitt, in welchem das transaktionale Verhalten festgelegt werden kann:
+Eine _Behavior Definition_ enthält für jede Entität des RAP BOs einen eigenen Abschnitt, in dem das transaktionale Verhalten festgelegt werden kann:
 
 - Standard-Datenoperationen (Create, Update, Delete, Create By)
 - Spezielle Operationen (Actions)
@@ -93,7 +95,7 @@ authorization master ( instance )
   validation ValidateCarrierId on save { create; }
   validation ValidateAirportIds on save { create; }
 
-  action AddFlight parameter ZA_Flight result [1] entity ZR_FLightTP;
+  action AddFlight parameter ZA_Flight result [1] entity ZR_FlightTP;
 
   field ( readonly ) CarrierId, ConnectionId;
   field ( mandatory : create ) AirportFromId, AirportToId;
@@ -108,7 +110,7 @@ authorization master ( instance )
     }
 }
 
-define behavior for ZR_FLightTP alias Flight
+define behavior for ZR_FlightTP alias Flight
 persistent table /dmo/flight
 lock dependent by _Connection
 authorization dependent by _Connection
@@ -134,10 +136,16 @@ authorization dependent by _Connection
 }
 ```
 
-## Verwenden von RAP BOs
+## Implementierungsarten
 
-Der Zugriff auf RAP BOs kann entweder über einen Geschäftsservice oder über ABAP mit Hilfe der _Entity Manpipulation Lanaguage_ (EML) realisiert werden. Der Zugriff sollte dabei nicht direkt auf das BO, sondern über
-BO Projections (bei Geschäftsservices) bzw. BO Interfaces (bei EML) erfolgen. Der so erfolgte Zugriff auf das RAP BO ermöglicht das Lesen, Erzeugen, Ändern und Löschen von Daten auf Datenbankebene.
+RAP unterscheidet zwei Implementierungsarten, die zu Beginn der Behavior Definition festgelegt werden:
+
+- Bei **managed** übernimmt das RAP-Framework die Standard-Datenbankoperationen (Create, Update, Delete) automatisch. Lediglich die Sonderfälle wie Validierungen, Determinierungen und Actions müssen implementiert werden. Das ist der Standardfall für neue Anwendungen.
+- Bei **unmanaged** werden alle Datenbankoperationen selbst implementiert. Diese Variante ist vor allem dann sinnvoll, wenn eine bestehende Geschäftslogik in RAP integriert werden soll und nicht auf das Framework-Standardverhalten zurückgegriffen werden kann.
+
+## Zugriff auf RAP BOs
+
+Auf RAP BOs kann entweder über einen Geschäftsservice oder mit ABAP und der _Entity Manipulation Language_ (EML) zugegriffen werden. Der Zugriff sollte dabei nicht direkt auf das BO erfolgen, sondern über BO Projections (bei Geschäftsservices) bzw. BO Interfaces (bei EML). Damit wird eine saubere Trennung zwischen Konsumenten und der internen BO-Struktur gewährleistet — Änderungen am BO wirken sich nicht direkt auf die Konsumenten aus.
 
 ```mermaid
 flowchart

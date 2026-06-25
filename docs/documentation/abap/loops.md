@@ -5,7 +5,7 @@ sidebar_position: 70
 tags: []
 ---
 
-Schleifen können in ABAP entweder mit dem Schlüsselwort `WHILE` oder dem Schlüsselwort `DO` umgesetzt werden.
+Schleifen lassen sich in ABAP entweder mit `WHILE` (kopfgesteuert) oder mit `DO` (index- oder endlosgesteuert) umsetzen.
 
 ```abap showLineNumbers
 " Head-controlled loop
@@ -27,7 +27,7 @@ DO.
 ENDDO.
 ```
 
-:::info Hinweis
+:::note
 
 Das Systemfeld `SY-INDEX` beinhaltet den aktuellen Schleifendurchgang.
 

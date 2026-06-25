@@ -8,12 +8,16 @@ Diese Kochbuch stellt eine Schritt-für-Schritt-Anleitung zur Entwicklung einer 
 
 ## ER-Modell
 
+Das folgende Entity-Relationship-Modell zeigt die Datenstruktur der Anwendung mit den beteiligten Entitäten und ihrer Beziehung zueinander.
+
 ```mermaid
 erDiagram
    Travel ||--o{ Booking : ""
 ```
 
 ## Entwicklungsobjekte
+
+Die folgende Tabelle listet alle Entwicklungsobjekte auf, die im Rahmen dieses Kochbuchs erstellt werden.
 
 | Kategorie           | Unterkategorie        | Entwicklungsobjekt   | Anmerkungen                       |
 | ------------------- | --------------------- | -------------------- | --------------------------------- |

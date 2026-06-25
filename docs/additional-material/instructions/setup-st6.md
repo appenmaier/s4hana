@@ -30,11 +30,11 @@ tags: []
   - Message Server Port: `61888`
 - Folgende Informationen eingeben und Drucktaste `Finish` betätigen
   - Client: `001`
-  - User: `Dein ST6 Benutzername`
-  - Password: `Dein ST6 Passwort`
+  - User: `ST6-Benutzername`
+  - Password: `ST6-Passwort`
   - Language: `EN`
 
-:::info Hinweis
+:::note
 
 Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN erreichbar.
 
@@ -45,8 +45,8 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN erreichbar.
 - Rechtsklick auf das erstellte ABAP-Projekt
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
-  - Name: `TEST_` + `Dein I-User`
-  - Description: `Dein Name`
+  - Name: `TEST_` + `I-User`
+  - Description: `Name`
 - Folgende Informationen eingeben und Drucktaste `Next >` betätigen
   - Software Component: `LOCAL`
 - Drucktaste `Finish` betätigen
@@ -65,9 +65,9 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN erreichbar.
 - Folgende Informationen eingeben und Drucktaste `Save` betätigen
   - Region: `SAP BTP Trial Account - Subaccount - Region`
   - Subaccount: `SAP BTP Trial Account - Subaccount - Subaccount ID`
-  - Display Name: `Dein Name`
-  - Subaccount User: `Deine SAP BTP E-Mail-Adresse`
-  - Password: `Dein SAP BTP Passwort`
+  - Display Name: `Name`
+  - Subaccount User: `SAP-BTP-E-Mail-Adresse`
+  - Password: `SAP-BTP-Passwort`
 - Option `Cloud To On Premise` auswählen und Drucktaste `Add (Mapping Virtual To Internal System` betätigen
 - Option `ABAP-System` auswählen und Drucktaste `Next` betätigen
 - Option `HTTPS` auswählen und Drucktaste `Next` betätigen
@@ -104,7 +104,7 @@ Das ST6 ist von außerhalb des SAP Netzwerks nur über VPN erreichbar.
 
 ![image](https://user-images.githubusercontent.com/47243617/195268820-b5bf1984-0f3d-4c38-bac0-16d2541c10b4.png)
 
-:::info Hinweis
+:::note
 
 Weitere Informationen zur Installation und Konfiguration des SAP Cloud Connectors können [hier](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) gefunden werden.
 

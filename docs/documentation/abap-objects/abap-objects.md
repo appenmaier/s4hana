@@ -5,10 +5,9 @@ sidebar_position: 30
 tags: []
 ---
 
-ABAP Objects stellt die objektorientierte Erweiterung von ABAP dar. Es enthält nur objektorientierte Konzepte, die sich in anderen objektorientierten Programmiersprachen bewährt haben und die in einem betriebswirtschaftlichen Umfeld sinnvoll sind.
-gilt, dass ABAP-Objects-Anweisungen in prozeduralen ABAP-Programmen verwendet werden können.
+ABAP Objects ist die objektorientierte Erweiterung von ABAP. Es enthält ausschließlich objektorientierte Konzepte, die sich in anderen Sprachen bewährt haben und im betriebswirtschaftlichen Umfeld sinnvoll sind. Da ABAP Objects auf dem bestehenden ABAP-Stack aufbaut, können ABAP-Objects-Anweisungen auch in prozeduralen ABAP-Programmen verwendet werden – umgekehrt gilt das nicht für alle prozeduralen Konstrukte.
 
-:::info Hinweis
+:::warning
 
 Im objektorientierten Kontext gelten strengere Typprüfungen als in prozeduralen und obsolete Anweisungen werden als Syntaxfehler betrachtet.
 
@@ -16,11 +15,11 @@ Im objektorientierten Kontext gelten strengere Typprüfungen als in prozeduralen
 
 ## Die Grundidee der Objektorientierung
 
-In der objektorientierten Programmierung werden Beobachtungen aus der realen Welt zum Konzept der Objektorientierung zusammengefasst
+In der objektorientierten Programmierung werden Beobachtungen aus der realen Welt abstrahiert:
 
-- Eine Kategorie von ähnlichen Objekten bezeichnet man als _Klasse_
-- Konkrete Ausprägungen bzw. Instanzen einer Klasse werden wiederum als _Objekte_ bezeichnet
-- Die Eigenschaften von Objekten werden als _Attribute_, das Verhalten als _Methoden_ bezeichnet
+- Eine Kategorie ähnlicher Objekte bezeichnet man als _Klasse_
+- Konkrete Ausprägungen (Instanzen) einer Klasse nennt man _Objekte_
+- Die Eigenschaften von Objekten heißen _Attribute_, ihr Verhalten _Methoden_
 
 ```mermaid
 flowchart LR
@@ -29,7 +28,7 @@ flowchart LR
     truck(Bezeichner: truck\nDatentyp: cl_truck\nWert: 3) --> o3[id: 3\nmake = MAN\nmodel = TGX\ncargo_in_tons = 40]
 ```
 
-:::info Hinweis
+:::note
 
 Jedes Objekt ist eindeutig identifizierbar.
 
@@ -37,8 +36,7 @@ Jedes Objekt ist eindeutig identifizierbar.
 
 ## Datenkapselung
 
-Ein wesentlicher Grundsatz der Objektorientierung ist, dass Attribute durch Methoden gekapselt werden. Datenkapselung bedeutet, dass Attribute nicht direkt geändert werden können, sondern nur durch den indirekten Zugriff über Methoden. Typische Methoden zum
-Lesen und Schreiben von Attributen sind die sogenannten Getter- bzw. Setter-Methoden.
+Ein wesentlicher Grundsatz der Objektorientierung ist, dass Attribute durch Methoden gekapselt werden. Das bedeutet: Attribute lassen sich nicht direkt ändern, sondern nur über Methoden. Typische Methoden zum Lesen und Schreiben von Attributen sind Getter- bzw. Setter-Methoden.
 
 ```mermaid
 flowchart LR
@@ -57,7 +55,7 @@ flowchart LR
    end
 ```
 
-Um die Sichtbarkeit von Attributen und Methoden zu definieren, existieren unterschiedliche Zugriffsrechte. Die Sichtbarkeit bestimmt, von welchem Ort aus Attribute und Methoden verwendet bzw. aufgerufen werden dürfen.
+Um die Sichtbarkeit von Attributen und Methoden zu steuern, gibt es verschiedene Zugriffsrechte. Sie legen fest, von welchem Ort aus Attribute und Methoden genutzt bzw. aufgerufen werden dürfen.
 
 | Zugriffsrecht | Zugriff aus gleicher Klasse | Zugriff von einer Unterklasse | Zugriff von einer beliebigen Klasse |
 | ------------- | --------------------------- | ----------------------------- | ----------------------------------- |

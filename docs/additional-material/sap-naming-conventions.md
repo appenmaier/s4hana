@@ -7,13 +7,15 @@ tags: []
 
 Bei der Entwicklung im SAP-Umfeld gilt es, bestimmte Qualitätsstandards einzuhalten. Darunter zählen unter anderem auch die Namensrichtlinien für Entwicklungsobjekte.
 
-:::info Hinweis
+:::tip
 Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm?file=abennaming_gdl.htm) entnommen werden.
 :::
 
 ## Namensrichtlinien für Entwicklungsobjekte
 
 ### Source Code Library
+
+Die folgende Tabelle zeigt die Namensrichtlinien für Objekte der Source Code Library.
 
 | Typ                       | Bezeichner                                      | Beispiel                |
 | ------------------------- | ----------------------------------------------- | ----------------------- |
@@ -25,6 +27,8 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | ABAP-Programm             | <Namensraum\><Komponente\>\_<Beschreibung\>     | `ZABAP_DEMO`            |
 
 ### Core Data Services
+
+Die folgende Tabelle zeigt die Namensrichtlinien für Core Data Services Objekte.
 
 | Typ                      | Bezeichner                                         | Beispiel                       |
 | ------------------------ | -------------------------------------------------- | ------------------------------ |
@@ -45,6 +49,8 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 ### Dictionary
 
+Die folgende Tabelle zeigt die Namensrichtlinien für Dictionary-Objekte.
+
 | Typ               | Bezeichner                                     | Beispiel           |
 | ----------------- | ---------------------------------------------- | ------------------ |
 | Domäne            | <Namensraum\><Komponente\>\_<Beschreibung\>    | `ZABAP_CHAR3`      |
@@ -56,6 +62,8 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 
 ### Sonstiges
 
+Die folgende Tabelle zeigt die Namensrichtlinien für weitere Entwicklungsobjekte.
+
 | Typ                | Bezeichner                                                       | Beispiel             |
 | ------------------ | ---------------------------------------------------------------- | -------------------- |
 | Paket              | <Namensraum\><Beschreibung\>                                     | `ZABAP`              |
@@ -64,6 +72,8 @@ Weitere Programmierrichtlinien können der [ABAP Dokumentation](https://help.sap
 | Service Binding    | <Namensraum\><Art\>\_<Komponente\>\_<Beschreibung\>\_O<Version\> | `ZUI_ABAP_FLIGHT_O4` |
 
 ## Namensräume
+
+Die folgende Tabelle gibt einen Überblick über die gängigen Namensräume im SAP-Umfeld.
 
 | Namensraum        | Beispiel    |
 | ----------------- | ----------- |

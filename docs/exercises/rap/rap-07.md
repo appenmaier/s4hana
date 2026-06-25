@@ -10,5 +10,5 @@ description: ""
 
 ## Hinweise zu den Ermittlungen
 
-- Die Ermittlung für das Feld `UserName` soll dem Feld beim Erstellen einer Bewertung den aktuellen Beuntzernamen zuweisen
-- Die Ermittlung für das Feld `RatingDate` soll dem Feld beim Erstellen einer Bewertung das aktuelle Systemdatum zuweisen
+- Die Ermittlung für das Feld `UserName` weist dem Feld beim Erstellen einer Bewertung den aktuellen Benutzernamen zu
+- Die Ermittlung für das Feld `RatingDate` weist dem Feld beim Erstellen einer Bewertung das aktuelle Systemdatum zu

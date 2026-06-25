@@ -5,9 +5,11 @@ sidebar_position: 30
 tags: []
 ---
 
-## Deklaration variabler Datenobjekten
+Datenobjekte sind benannte Speicherbereiche, die zur Laufzeit Werte aufnehmen. In ABAP wird zwischen variablen Datenobjekten (veränderbar) und fixen Datenobjekten (unveränderbar) unterschieden.
 
-Bei der Deklaration eines Datenobjekts werden der Laufzeitumgebung Bezeichner und Datentyp des Datenobjekts bekanntgegeben. Die Deklaration erfolgt über das Schlüsselwort `DATA`.
+## Deklaration variabler Datenobjekte
+
+Bei der Deklaration eines Datenobjekts werden der Laufzeitumgebung Bezeichner und Datentyp mitgeteilt. Die Deklaration erfolgt über das Schlüsselwort `DATA`.
 
 ```abap showLineNumbers
 TYPES t_decimal_16_2 TYPE p LENGTH 16 DECIMALS 2.
@@ -17,15 +19,15 @@ DATA flight_price  TYPE t_decimal_16_2.     " Using Local Datatype
 DATA connection_id TYPE /dmo/connection_id. " Using Data Element
 ```
 
-:::info Hinweis
+:::note
 
-Mit dem Zusatz `LENGTH` kann bei unvollständigen Datentypen die Länge des Datentyps in Byte angegeben werden und beim Datentyp `P` kann zusätzlich mit dem Zusatz `DECIMALS` die Anzahl der Nachkommastellen angegeben werden.
+Mit dem Zusatz `LENGTH` wird bei unvollständigen Datentypen die Länge in Byte angegeben. Beim Datentyp `P` kann zusätzlich mit `DECIMALS` die Anzahl der Nachkommastellen festgelegt werden.
 
 :::
 
 ## Wertzuweisung
 
-Mit dem Zuweisungsoperator `=` wird dem Operanden der linken Seite der Wert des Ausdrucks der rechten Seite zugewiesen. Bei unterschiedlichen Typen wird automatisch eine Typkonvertierung durchgeführt, falls eine entsprechende Konvertierungsregel existiert.
+Mit dem Zuweisungsoperator `=` wird dem Operanden auf der linken Seite der Wert des Ausdrucks auf der rechten Seite zugewiesen. Bei unterschiedlichen Typen führt ABAP automatisch eine Typkonvertierung durch, sofern eine entsprechende Konvertierungsregel existiert.
 
 ```abap showLineNumbers
 " Assignment Operator
@@ -39,15 +41,15 @@ DATA flight_date TYPE /dmo/flight_date VALUE '20230101'.
 DATA(connection_id) = '0400'.
 ```
 
-:::info Hinweis
+:::note
 
-Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts schon bei der Deklaration vorbelegt werden.
+Mit dem Zusatz `VALUE` kann der Wert eines elementaren Datenobjekts bereits bei der Deklaration vorbelegt werden.
 
 :::
 
 ## Initialisierung
 
-Mit der Anweisung `CLEAR` kann der Inhalt eines Datenobjekts auf den Initialwert zurückgesetzt werden.
+Mit der Anweisung `CLEAR` wird der Inhalt eines Datenobjekts auf den Initialwert zurückgesetzt.
 
 ```abap showLineNumbers
 DATA carrier_id TYPE /dmo/carrier_id VALUE 'LH'.
@@ -56,8 +58,7 @@ CLEAR carrier_id.
 
 ## Deklaration fixer Datenobjekte
 
-Datenwerte von fixen Datenobjekten können zur Laufzeit nicht mehr verändert werden. Man unterscheidet dabei zwischen Literalen (fixe Datenobjekten ohne Bezeichner) und Konstanten (fixe Datenobjekte mit Bezeichner). Konstanten werden mit dem Schlüsselwort
-`CONSTANTS` definiert.
+Fixe Datenobjekte haben Datenwerte, die sich zur Laufzeit nicht mehr ändern lassen. Man unterscheidet Literale (fixe Datenobjekte ohne Bezeichner) und Konstanten (fixe Datenobjekte mit Bezeichner). Konstanten werden mit dem Schlüsselwort `CONSTANTS` definiert.
 
 ```abap showLineNumbers
 CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
@@ -65,7 +66,7 @@ CONSTANTS co_pi TYPE p LENGTH 2 DECIMALS 2 VALUE '3.14'.
 
 ## Systemfelder
 
-Systemfelder sind eingebaute Datenobjekte, die von der Laufzeitumgebung geändert werden.
+Systemfelder sind eingebaute Datenobjekte, die das Laufzeitsystem selbst befüllt. Die folgende Tabelle zeigt die wichtigsten Systemfelder:
 
 | Systemfeld | Inhalt                          |
 | ---------- | ------------------------------- |

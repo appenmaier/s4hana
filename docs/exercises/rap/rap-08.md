@@ -8,14 +8,14 @@ description: ""
 
 ## Hinweis zur Abstract View `ZA_???_Rating`
 
-Die Abstract View `ZA_???_Rating` soll einen Parameter für die Bewertung eines Filmes definieren.
+Die Abstract View `ZA_???_Rating` definiert einen Parameter für die Bewertung eines Films.
 
 ## Hinweis zur Aktion
 
-Die Aktion zum Bewerten eines Films soll zunächst prüfen, ob die eingehende Bewertung der Abstract View `ZA_???_Rating` zwischen 1 und 10 liegt. Im Erfolgsfall soll die eingehende Bewertung dem Film hinzugefügt und eine Erfolgsmeldung ausgegeben werden, im Fehlerfall soll eine Fehlermeldung ausgegeben werden.
+Die Aktion zum Bewerten eines Films prüft zunächst, ob die eingehende Bewertung zwischen 1 und 10 liegt. Im Erfolgsfall wird die Bewertung dem Film hinzugefügt und eine Erfolgsmeldung ausgegeben, im Fehlerfall eine Fehlermeldung.
 
 :::info Hinweis
 
-Entsprechende Meldungen können mit Hilfe der Klasse `ZCM_ABAP_MOVIE` erzeugt werden.
+Meldungen erzeugst du mit der Klasse `ZCM_ABAP_MOVIE`.
 
 :::

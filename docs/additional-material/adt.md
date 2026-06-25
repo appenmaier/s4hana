@@ -9,6 +9,8 @@ Die _ABAP Development Tools_ (ADT) ist eine auf Eclipse basierende Entwicklungsu
 
 ## Hilfreiche Tastenkürzel
 
+Die folgende Übersicht zeigt die wichtigsten Tastenkürzel für die tägliche Arbeit mit den ADT.
+
 - _Ctrl+1_: Quick Fix
 - _Ctrl+4_: Clean Up With Automated ABAP Cleaner
 - _Ctrl+7_: Toggle Comment
@@ -25,10 +27,12 @@ Die _ABAP Development Tools_ (ADT) ist eine auf Eclipse basierende Entwicklungsu
 
 ## Hilfreiche PlugIns
 
+Die folgenden PlugIns erweitern die ADT um nützliche Funktionen.
+
 - abapGit (https://eclipse.abapgit.org/updatesite/)
 - ABAP Cleaner (https://sap.github.io/abap-cleaner/updatesite/)
 
-:::info Hinweis
+:::note
 
 Die Installation der PlugIns erfolgt über die Funktion `Help - Install new Software...`.
 
@@ -36,17 +40,21 @@ Die Installation der PlugIns erfolgt über die Funktion `Help - Install new Soft
 
 ## Hilfreiche Einstellungen
 
+Die folgenden Einstellungen verbessern den Komfort bei der Arbeit mit den ADT.
+
 - General - Editors - Text Editors - Spelling - Enable spell checking
 - General - Keys - Show key binding when command is invoked - Through keyboard
 - General - Keys - Show key binding when command is invoked - Through mouse click
 
-:::info Hinweis
+:::note
 
 Das Ändern der Einstellungen erfolgt über die Funktion `Window - Preferences`.
 
 :::
 
 ## Hilfreiche Views
+
+Die folgenden Views unterstützen bei der Entwicklung und Fehlersuche.
 
 - ABAP - ABAP Element Info
 - ABAP - abapGit Repositories
@@ -56,7 +64,7 @@ Das Ändern der Einstellungen erfolgt über die Funktion `Window - Preferences`.
 - General - Properties
 - General - Outline
 
-:::info Hinweis
+:::note
 
 Das Hinzufügen einer View erfolgt über die Funktion `Window - Show View - Other...`.
 

@@ -7,7 +7,7 @@ Passe die Behavior Definition `ZR_???_MOVIETP` so an, dass die Action zum Bewert
 
 ## Hinweis zur Dynamic Instance Feature Control
 
-Die Dynamic Instance Feature Control soll verhindern, dass Filme in der Zukunft bewertet werden können.
+Die Dynamic Instance Feature Control verhindert, dass Filme in der Zukunft bewertet werden können.
 
 :::info Hinweis
 

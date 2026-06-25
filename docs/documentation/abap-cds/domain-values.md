@@ -5,7 +5,7 @@ sidebar_position: 50
 tags: []
 ---
 
-Der Zugriff auf Domänenfestwerte über die ABAP CDS View `DDCDS_CUSTOMER_DOMAIN_VALUE`, der Zugriff auf die Texte zu den Domänenfestwerten über die ABAP CDS View `DDCDS_CUSTOMER_DOMAIN_VALUE_T`.
+Auf Domänenfestwerte wird über die ABAP CDS View `DDCDS_CUSTOMER_DOMAIN_VALUE` zugegriffen, auf die zugehörigen Texte über `DDCDS_CUSTOMER_DOMAIN_VALUE_T`.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -22,8 +22,8 @@ define view entity I_Travel
 }
 ```
 
-:::info Hinweis
+:::note
 
-Die Sitzungsvariable `$session.system_language` enthält die Anmeldesprache und entspricht damit dem ABAP Systemfeld `SY-LANGU`.
+Die Sitzungsvariable `$session.system_language` enthält die Anmeldesprache und entspricht damit dem ABAP-Systemfeld `SY-LANGU`.
 
 :::

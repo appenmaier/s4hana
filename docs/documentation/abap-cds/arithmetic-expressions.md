@@ -5,7 +5,7 @@ sidebar_position: 30
 tags: []
 ---
 
-Für arithmetische Ausdrücke können in den ABAP CDS die Operatoren `+`, `-`, `*` und `/` verwendet werden.
+In ABAP CDS stehen für arithmetische Ausdrücke die Operatoren `+`, `-`, `*` und `/` zur Verfügung.
 
 ```sql showLineNumbers
 @AccessControl.authorizationCheck: #CHECK
@@ -26,8 +26,8 @@ define view entity I_Flight
 }
 ```
 
-:::info Hinweis
+:::warning
 
-Da der Divisionsoperator `/` nur Gleitkommazahlen unterstützt, muss gegebenenfalls eine Typumwandlung mit Hilfe der cast-Operation erfolgen.
+Da der Divisionsoperator `/` nur Gleitkommazahlen unterstützt, muss gegebenenfalls eine Typumwandlung mit der `cast`-Operation vorgenommen werden.
 
 :::

@@ -42,8 +42,8 @@ tags: []
 - Objekte markieren und Drucktaste `Stage selected Objects` betätigen
 - Folgende Informationen eingeben und Drucktaste `Commit and Push...` betätigen
   - Commit Message: `Ein beliebiger Kommentar` (z.B. update demos)
-  - Author: `Dein Name` (z.B. Daniel Appenmaier)
-  - Committer: `Deine Email-Adresse` (z.B. daniel.appenmaier@gmail.com)
+  - Author: `Name` (z.B. Daniel Appenmaier)
+  - Committer: `E-Mail-Adresse` (z.B. daniel.appenmaier@gmail.com)
 
 ## Änderungen vom Remote-Repository herunterladen
 
@@ -55,10 +55,10 @@ tags: []
 - Objekte markieren und Drucktaste `Next >` betätigen
 - Drucktaste `Finish` betätigen
 - Folgende Informationen eingeben und Drucktaste `OK` betätigen
-  - Username: `Dein GitHub User` (z.B. appenmaier)
-  - Password/Token: `Dein Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
+  - Username: `GitHub-Benutzername` (z.B. appenmaier)
+  - Password/Token: `Token (Classic)` (z.B. ghp_5OEkQAXGp9xXPkqLbYvRbq19mYsfyi1yHbnT)
 
-:::info Hinweis
+:::note
 
 abapGit unterstützt aktuell nur _Token (Classic)_.
 

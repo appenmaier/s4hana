@@ -33,6 +33,6 @@ Country:     US
 
 :::info Hinweis
 
-Entsprechende Reisen können der Datenbanktabelle `/DMO/TRAVEL`, entsprechende Kunden der Datenbanktabelle `/DMO/CUSTOMER` entnommen werden.
+Passende Reisen findest du in der Datenbanktabelle `/DMO/TRAVEL`, passende Kunden in `/DMO/CUSTOMER`.
 
 :::
