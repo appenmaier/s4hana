@@ -24,7 +24,7 @@ tags: []
 - Rechtsklick auf das erstellte ABAP-Cloud-Projekt
 - Option `New - ABAP Package` auswählen
 - Folgende Informationen eingeben, Option `Add to favorite packages` auswählen und Drucktaste `Next >` betätigen
-  - Name: _Kennung (siehe Mail)_
+  - Name: _Kennung_
   - Description: _Name_
   - Superpackage: `ZLOCAL`
 - Drucktaste `Next >` betätigen
