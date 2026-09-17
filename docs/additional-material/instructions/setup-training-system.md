@@ -10,11 +10,11 @@ tags: []
 - [ABAP Development Tools](../adt.md) starten
 - Funktion `File - ABAP Cloud Project` ausführen
 - Nachfolgende Informationen eingeben und Drucktaste `Next >` betätigen
-  - ABAP Service Instance URL: _ABAP-Instanz (siehe Mail)_
+  - ABAP Service Instance URL: _ABAP-Instanz_
 - Drucktaste `Copy Logon URL to Clipboard` betätigen
 - URL in einem Browser-Tab öffnen
 - Im Browser-Tab nachfolgende Informationen eingeben und Drucktaste `Weiter` betätigen
-  - E-Mail oder Benutzername: _Benutzername (siehe Mail)_
+  - E-Mail oder Benutzername: _Benutzername_
   - Kennwort: `Welcome1`
 - Browser-Tab schließen
 - Drucktaste `Finish` betätigen
