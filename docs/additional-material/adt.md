@@ -45,6 +45,8 @@ Die folgenden Einstellungen verbessern den Komfort bei der Arbeit mit den ADT.
 - General - Editors - Text Editors - Spelling - Enable spell checking
 - General - Keys - Show key binding when command is invoked - Through keyboard
 - General - Keys - Show key binding when command is invoked - Through mouse click
+- Help - Content - Include remote help and give it priority
+- ABAP Development - Configure the console for ABAP Development - Clear the console when running ABAP applications
 
 :::note
 
