@@ -13,13 +13,13 @@ classDiagram
    class airplane {
       -id: string
       -plane_type: string
-      -empty_weight_in_tons: i
-      -number_of_airplanes: i$
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: i)
+      -empty_weight_in_tons: integer
+      -number_of_airplanes: integer$
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: integer)
       +get_id() string
       +get_plane_type() string
-      +get_empty_weight_in_tons() i
-      +get_number_of_airplanes() i$
+      +get_empty_weight_in_tons() integer
+      +get_number_of_airplanes() integer$
    }
 ```
 
