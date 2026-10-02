@@ -17,42 +17,49 @@ description: ""
 
 ```mermaid
 classDiagram
-   cl_carrier o-- cl_airplane
-   cl_airplane <|-- cl_passenger_plane
-   cl_airplane <|-- cl_cargo_plane
+   carrier o-- airplane
+   airplane <|-- passenger_plane
+   airplane <|-- cargo_plane
 
-   class cl_airplane {
-      +id: string &#123read-only&#125
-      +plane_type: string &#123read-only&#125
-      +empty_weight_in_tons: i &#123read-only&#125
-      +number_of_airplanes: i &#123read-only, static&#125
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: i)
-      +get_total_weight_in_tons() i
+   class airplane {
+      -id: string
+      -plane_type: string
+      -empty_weight_in_tons: integer
+      -number_of_airplanes: integer$
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: integer)
+      +get_total_weight_in_tons() integer
+      +get_id() string
+      +get_plane_type() string
+      +get_empty_weight_in_tons() integer
+      +get_number_of_airplanes() integer$
    }
 
-   class cl_passenger_plane {
-      +number_of_seats: i &#123read-only&#125
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: i, number_of_seats: i)
-      +get_total_weight_in_tons() i
+   class passenger_plane {
+      -seats: integer
+      +constructor(id: string, plane_type: string, ewit: integer, seats: integer)
+      +get_seats() integer
+      +eject_seats(seats: integer)
+      +get_total_weight_in_tons() integer
    }
 
-   class cl_cargo_plane {
-      +cargo_in_tons: i &#123read-only&#125
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: i, cargo_in_tons: i)
-      +get_total_weight_in_tons() i
+   class cargo_plane {
+      -cargo_in_tons: integer
+      +constructor(id: string, plane_type: string, ewit: integer, cargo_in_tons: integer)
+      +get_cargo_in_tons() integer
+      +get_total_weight_in_tons() integer
    }
 
-   class cl_carrier {
-      +name: string &#123read-only&#125
-      +airplanes: cl_airplane[] &#123read-only&#125
+   class carrier {
+      -name: string
+      -airplanes: airplane[]
       +constructor(name: string)
-      +add_airplane(airplane: cl_airplane) void
-      +get_biggest_cargo_plane() cl_cargo_plane
+      +add_airplane(airplane: airplane) void
+      +get_biggest_cargo_plane() cargo_plane
    }
 ```
 
 ## Hinweise zur Klasse `ZCL_???_CARRIER`
 
-- Der Konstruktor initialisiert alle Attribute
-- Die Methode `ADD_AIRPLANE` fügt der Flugzeugliste das eingehende Flugzeug hinzu
-- Die Methode `GET_BIGGEST_CARGO_PLANE` gibt das Frachtflugzeug mit dem höchsten Gesamtgewicht zurück
+- Der Konstruktor soll alle Attribute initialisieren
+- Die Methode `ADD_AIRPLANE` soll der Flugzeugliste das eingehende Flugzeug hinzufügen
+- Die Methode `GET_BIGGEST_CARGO_PLANE` soll das Frachtflugzeug mit dem höchsten Gesamtgewicht zurückgeben
