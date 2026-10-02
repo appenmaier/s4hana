@@ -10,14 +10,17 @@ description: ""
 
 ```mermaid
 classDiagram
-   class cl_airplane {
-      +id: string &#123read-only&#125
-      +plane_type: string &#123read-only&#125
-      +empty_weight_in_tons: i &#123read-only&#125
+   class airplane {
+      -id: string
+      -plane_type: string
+      -empty_weight_in_tons: i
       +constructor(name: string, plane_type: string, empty_weight_in_tons: i)
+      +get_id() string
+      +get_plane_type() string
+      +get_empty_weight_in_tons() i
    }
 ```
 
 ## Hinweise zur Klasse `ZCL_???_AIRPLANE`
 
-Der Konstruktor initialisiert alle Attribute.
+Der Konstruktor soll alle Attribute initialisieren.
