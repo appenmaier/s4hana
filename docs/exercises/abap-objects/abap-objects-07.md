@@ -53,7 +53,7 @@ classDiagram
       -name: string
       -airplanes: airplane[]
       +constructor(name: string)
-      +add_airplane(airplane: airplane) void
+      +add_airplane(airplane: airplane)
       +get_biggest_cargo_plane() cargo_plane
    }
 ```
