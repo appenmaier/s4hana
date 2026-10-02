@@ -50,9 +50,9 @@ classDiagram
 
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `EJECT_SEATS` soll die eingehende Anzahl an Sitzen aus dem Flugzeug schleudern
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` gibt das Gesamtgewicht nach der Formel _[Leergewicht] \* 1,1 + [Sitzplätze] \* 0,08_ zurück
+- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] \* 1,1 + [Sitzplätze] \* 0,08_ zurückgeben
 
 ## Hinweise zur Klasse `ZCL_???_CARGO_PLANE`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` gibt das Gesamtgewicht nach der Formel _[Leergewicht] \* 1,1 + [Frachtkapazität]_ zurück
+- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] \* 1,1 + [Frachtkapazität]_ zurückgeben
