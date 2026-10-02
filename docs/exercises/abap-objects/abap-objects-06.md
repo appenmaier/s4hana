@@ -10,10 +10,10 @@ description: ""
 
 ```mermaid
 classDiagram
-   cl_airplane <|-- cl_passenger_plane
-   cl_airplane <|-- cl_cargo_plane
+   airplane <|-- passenger_plane
+   airplane <|-- cargo_plane
 
-   class cl_airplane {
+   class airplane {
       -id: string
       -plane_type: string
       -empty_weight_in_tons: integer
@@ -26,7 +26,7 @@ classDiagram
       +get_number_of_airplanes() integer$
    }
 
-   class cl_passenger_plane {
+   class passenger_plane {
       -seats: integer
       +constructor(id: string, plane_type: string, ewit: integer, seats: integer)
       +get_seats() integer
@@ -34,7 +34,7 @@ classDiagram
       +get_total_weight_in_tons() integer
    }
 
-   class cl_cargo_plane {
+   class cargo_plane {
       -cargo_in_tons: integer
       +constructor(id: string, plane_type: string, ewit: integer, cargo_in_tons: integer)
       +get_cargo_in_tons() integer
