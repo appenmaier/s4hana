@@ -10,12 +10,16 @@ description: ""
 
 ```mermaid
 classDiagram
-   class cl_airplane {
-      +id: string &#123read-only&#125
-      +plane_type: string &#123read-only&#125
-      +empty_weight_in_tons: i &#123read-only&#125
-      +number_of_airplanes: i &#123read-only, static&#125
+   class airplane {
+      -id: string
+      -plane_type: string
+      -empty_weight_in_tons: i
+      -number_of_airplanes: i$
       +constructor(id: string, plane_type: string, empty_weight_in_tons: i)
+      +get_id() string
+      +get_plane_type() string
+      +get_empty_weight_in_tons() i
+      +get_number_of_airplanes() i$
    }
 ```
 
