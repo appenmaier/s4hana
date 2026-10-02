@@ -9,7 +9,7 @@ Erstelle die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms.
 
 ```mermaid
 classDiagram
-   class cl_airplane {
+   class airplane {
       -id: string
       -plane_type: string
       -empty_weight_in_tons: i
