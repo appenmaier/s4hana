@@ -8,7 +8,7 @@ Erstelle die ausführbare Klasse `ZCL_???_MAIN_AIRPLANES`, welche mehrere Flugze
 ## Beispielhafte Konsolenausgabe
 
 ```
-D-ABUK, Airbus A380-800, 277t
-D-AIND, Airbus A320-200, 42t
-D-AJKF, Boeing 747-400F, 166t
+D-AIMA, Airbus A380-800, 277t
+HH 03-4051, Lockheed Martin F-22 Raptor, 20t
+D-ABVM, Boeing 747-400F, 187t
 ```
