@@ -19,7 +19,7 @@ description: ""
 classDiagram
    carrier o-- airplane
    airplane <|-- passenger_plane
-   airplane <|-- cargo_plane
+   airplane <|-- fighter_jet
 
    class airplane {
       -id: string
@@ -36,16 +36,16 @@ classDiagram
 
    class passenger_plane {
       -seats: integer
-      +constructor(id: string, plane_type: string, ewit: integer, seats: integer)
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: integer, seats: integer)
       +get_seats() integer
       +eject_seats(seats: integer)
       +get_total_weight_in_tons() integer
    }
 
-   class cargo_plane {
-      -cargo_in_tons: integer
-      +constructor(id: string, plane_type: string, ewit: integer, cargo_in_tons: integer)
-      +get_cargo_in_tons() integer
+   class fighter_jet {
+      -vomit_factor: decimal
+      +constructor(id: string, plane_type: string, empty_weight_in_tons: integer)
+      +do_a_barrel_roll()
       +get_total_weight_in_tons() integer
    }
 
@@ -54,7 +54,7 @@ classDiagram
       -airplanes: airplane[]
       +constructor(name: string)
       +add_airplane(airplane: airplane)
-      +get_biggest_cargo_plane() cargo_plane
+      +get_biggest_passenger_plane() passenger_plane
    }
 ```
 
@@ -62,4 +62,4 @@ classDiagram
 
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `ADD_AIRPLANE` soll der Flugzeugliste das eingehende Flugzeug hinzufügen
-- Die Methode `GET_BIGGEST_CARGO_PLANE` soll das Frachtflugzeug mit dem höchsten Gesamtgewicht zurückgeben
+- Die Methode `GET_BIGGEST_PASSENGER_PLANE` soll das Frachtflugzeug mit dem höchsten Gesamtgewicht zurückgeben
