@@ -62,4 +62,4 @@ classDiagram
 
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `ADD_AIRPLANE` soll der Flugzeugliste das eingehende Flugzeug hinzufügen
-- Die Methode `GET_BIGGEST_PASSENGER_PLANE` soll das Frachtflugzeug mit dem höchsten Gesamtgewicht zurückgeben
+- Die Methode `GET_BIGGEST_PASSENGER_PLANE` soll das Passagierflugzeug mit dem höchsten Gesamtgewicht zurückgeben
