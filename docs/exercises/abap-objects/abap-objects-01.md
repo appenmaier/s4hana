@@ -12,12 +12,12 @@ classDiagram
    class airplane {
       -id: string
       -plane_type: string
-      -empty_weight_in_tons: integer
+      -empty_weight_in_tons: decimal
       +set_id(id: string)
       +get_id() string
       +set_plane_type(plane_type: string)
       +get_plane_type() string
-      +set_empty_weight_in_tons(empty_weight_in_tons: integer)
-      +get_empty_weight_in_tons() integer
+      +set_empty_weight_in_tons(empty_weight_in_tons: decimal)
+      +get_empty_weight_in_tons() decimal
    }
 ```
