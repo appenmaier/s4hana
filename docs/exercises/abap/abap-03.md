@@ -12,7 +12,7 @@ Die Klasse soll zur Durchschnittsbewertung einen passenden Text ausgeben.
 | ----------- | -------- |
 | rating_text | string   |
 
-## Bewertungsschema
+## Informationen zu den Bewertungstexten
 
 | Durchschnittsbewertung | Bewertungstext |
 | ---------------------- | -------------- |
