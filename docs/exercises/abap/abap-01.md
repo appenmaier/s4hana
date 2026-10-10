@@ -8,12 +8,12 @@ Die Klasse soll Filminformationen in entsprechend typisierten Datenobjekten spei
 
 ## Informationen zu den Datenobjekten
 
-| Datenobjekt     | Datentyp     |
-| --------------- | ------------ |
-| title           | c (Länge 50) |
-| genre           | c (Länge 10) |
-| publishing_year | n (Länge 4)  |
-| runtime_in_min  | i            |
+| Datenobjekt     | Datentyp      |
+| --------------- | ------------- |
+| title           | c (Länge: 50) |
+| genre           | c (Länge: 10) |
+| publishing_year | n (Länge: 4)  |
+| runtime_in_min  | i             |
 
 ## Beispielhafte Konsolenausgabe
 
