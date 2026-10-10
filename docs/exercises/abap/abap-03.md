@@ -16,7 +16,7 @@ Die Klasse soll zur Durchschnittsbewertung einen passenden Text ausgeben.
 
 | Durchschnittsbewertung | Bewertungstext |
 | ---------------------- | -------------- |
-| 1,00 bis 1,99          | Sehr schlecht  |
+| 0,00 bis 1,99          | Sehr schlecht  |
 | 2,00 bis 3,99          | Schlecht       |
 | 4,00 bis 5,99          | Ok             |
 | 6,00 bis 7,99          | Gut            |
