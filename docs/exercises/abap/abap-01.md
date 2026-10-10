@@ -12,7 +12,7 @@ Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`, welche Filminformationen in 
 | Titel                 | Zeichenketten der Länge 50   |
 | Genre                 | Zeichenketten der Länge 10   |
 | Erscheinungsjahr      | Numerische Folge der Länge 4 |
-| Laufzeit (in Minuten) | Integer                      |
+| Laufzeit (in Minuten) | Ganze Zahl                   |
 
 ## Beispielhafte Konsolenausgabe
 
