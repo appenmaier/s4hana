@@ -12,5 +12,5 @@ Erstelle die ausführbare Klasse `ZCL_???_MAIN_MEDIA` wie folgt:
 ```
 Fight Club, Thriller, 1999, 67
 Metroid Dread, Science-Fiction, 2021, 88
-Der Pate 2, Drama, 1974, 90
+The Godfather: Part II, Drama, 1974, 90
 ```
