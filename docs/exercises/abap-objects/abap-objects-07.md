@@ -5,7 +5,9 @@ description: ""
 
 1. Erstelle die Klasse `ZCL_???_MEDIA_COLLECTION` anhand des abgebildeten Klassendiagramms
 2. Passe die ausführbare Klasse `Z???_MAIN_MEDIA` wie folgt an:
-  - so an, dass neben den Flugzeugen auch eine Fluggesellschaft erzeugt wird. Weise die Flugzeuge der Fluggesellschaft zu und gib alle Informationen der Fluggesellschaft auf dem Bildschirm aus.
+    - Erstelle neben den Medien auch eine Mediensammlung
+    - Füge die Medien der Mediensammlung hinzu
+    - Gib alle Informationen der Mediensammlung auf dem Bildschirm aus
 
 ## Klassendiagramm
 
@@ -59,3 +61,16 @@ classDiagram
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `ADD_MEDIUM` soll der Medienliste das eingehende Medium hinzufügen
 - Die Methode `GET_BEST_RATED_MOVIE` soll den bestbewerteten Film zurückgeben
+
+## Beispielhafte Konsolenausgabe
+
+```
+Media Collection: My Movie and Videogame Collection
+
+Media:
+Fight Club, Thriller, 1999, 67
+Metroid Dread, Science-Fiction, 2021, 88
+Der Pate 2, Drama, 1974, 90
+
+Best Rated Movie: Der Pate 2
+```
