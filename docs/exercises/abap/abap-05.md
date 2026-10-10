@@ -3,30 +3,43 @@ title: ABAP-05
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Komponentenübersicht den Strukturtypen `Z???_CUSTOMER_INFO`
-2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05`, welche Kundeninformationen (Vorname, Nachname, Stadt, Land) zu einer eingegebenen Kundennummer liest und diese auf dem Bildschirm ausgibt. Verwende zum Lesen der Kundeninformationen die Klassenmethode `GET_CUSTOMER` der Klasse `ZCL_ABAP_HELPER` und zur Deklaration der Zielvariablen die erstellte Struktur aus Aufgabenteil 1.
+1. Erstelle mit Hilfe der abgebildeten Informationen die Domäne `Z???_GENRE`
+2. Erstelle mit Hilfe der abgebildeten Informationen die Datenelemente `Z???_TITLE`, `Z???_GENRE`, `Z???_PUBLISHING_YEAR` und `Z???_RUNTIME_IN_MIN`
+3. Erstelle mit Hilfe der abgebildeten Informationen den Strukturtypen `Z???_MOVIE`
+2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05` als eine Kopie der Klasse `ZCL_???_ABAP_04`. Ersetze dort die bisherigen Datenobjekte für die Filminformationen durch eine entsprechende Struktur.
 
-## Komponentenübersicht des Strukturtyps `Z???_CUSTOMER_INFO`
+## Informationen zur Domäne `Z???_GENRE`
 
-| Komponente   | Komponententyp   | Bezeichnung  |
-| ------------ | ---------------- | ------------ |
-| CUSTOMER_ID  | /DMO/CUSTOMER_ID | Kundennummer |
-| FIRST_NAME   | /DMO/FIRST_NAME  | Vorname      |
-| LAST_NAME    | /DMO/LAST_NAME   | Nachname     |
-| CITY         | /DMO/CITY        | Stadt        |
-| COUNTRY_CODE | LAND1            | Land         |
+- Bezeichner: Z???_GENRE
+- Datentyp: CHAR
+- Länge: 10
+- Domänenfestwerte: THRILLER, ACTION, DRAMA
+
+## Informationen zu den Datenelementen
+
+| Bezeichner           | Datentyp            | Feldbezeichner     |
+| -------------------- | ------------------- | ------------------ |
+| Z???_TITLE           | c (Länge: 50)       | Title              |
+| Z???_GENRE           | Domäne `Z???_GENRE` | Genre              |
+| Z???_PUBLISHING_YEAR | n (Länge: 4)        | Publishing Year    |
+| Z???_RUNTIME_IN_MIN  | i                   | Runtime in Minutes |
+
+## Informationen zum Strukturtyp `Z???_MOVIE`
+
+| Komponente      | Komponententyp       |
+| --------------- | -------------------- |
+| title           | Z???_TITLE           |
+| genre           | Z???_GENRE           |
+| publishing_year | Z???_PUBLISHING_YEAR |
+| runtime_in_min  | Z???_RUNTIME_IN_MIN  |
 
 ## Beispielhafte Konsolenausgabe
 
 ```
-Customer ID: 19286
-Name:        Bruce Wayne
-City:        Gotham City
-Country:     US
+Title: Fight Club
+Genre: Thriller
+Publishing Year: 1999
+Runtime in Minutes: 139
+
+Average Rating: 9,70 (Very Good)
 ```
-
-:::info Hinweis
-
-Passende Kundendaten findest du in der Datenbanktabelle `/DMO/CUSTOMER`.
-
-:::
