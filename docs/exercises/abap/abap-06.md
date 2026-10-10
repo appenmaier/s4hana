@@ -3,36 +3,29 @@ title: ABAP-06
 description: ""
 ---
 
-1. Erstelle die Klasse `ZCL_???_HELPER`
-2. Erstelle die Klassenmethode `GET_TRAVEL_WITH_CUSTOMER` anhand der abgebildeten Schnittstelleninformation wie folgt:
-   - Lies mit Hilfe der Klassenmethode `GET_TRAVEL` der Klasse `ZCL_ABAP_HELPER` sowie der eingehenden Reisenummer die Informationen zur Reise
-   - Lies mit Hilfe der Klassenmethode `GET_CUSTOMER` der Klasse `ZCL_ABAP_HELPER` sowie der eingelesenen Kundennummer die Informationen zum Kunden
-   - Führe die Informationen der Reise sowie der Informationen zum Kunden zusammen und gib diese zurück
-3. Erstelle die ausführbare Klasse `ZCL_???_ABAP_06`, welche Reiseinformationen sowie die dazugehörigen Kundeninformationen zu einer eingegebenen Reisenummer liest und diese auf dem Bildschirm ausgibt. Verwende zum Lesen der Informationen die Klassenmethode aus Aufgabenteil 2
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_06` als eine Kopie der Klasse `ZCL_???_ABAP_05`. Passe die Klasse wie folgt an:
+- Speichere die Bewertungen in einer internen Tabelle
+- Gib die Bewertungen absteigend sortiert auf dem Bildschirm aus
 
-## Schnittstelleninformation zur Klassenmethode `GET_TRAVEL_WITH_CUSTOMER`
+## Informationen zu den Datenobjekten
 
-| Art              | Name                 | Datentyp                   |
-| ---------------- | -------------------- | -------------------------- |
-| Import-Parameter | TRAVEL_ID            | /DMO/TRAVEL_ID             |
-| Rückgabewert     | TRAVEL_WITH_CUSTOMER | ZABAP_TRAVEL_WITH_CUSTOMER |
-| Ausnahme         | -                    | ZCX_ABAP_NO_DATA           |
+| Datenobjekt | Datentyp                      |
+| ----------- | ----------------------------- |
+| ratings     | Standardtabelle (Datentyp: i) |
 
 ## Beispielhafte Konsolenausgabe
 
 ```
-Travel ID:   1827162
-Start:       02.03.2023
-End:         07.03.2023
-Description: Business Trip to Metropolis
-Customer ID: 19286
-Name:        Bruce Wayne
-City:        Gotham City
-Country:     US
+Title: Fight Club
+Genre: Thriller
+Publishing Year: 1999
+Runtime in Minutes: 139
+
+Rating 1: 10
+Rating 2: 10
+...
+Rating 100: 8
+
+Average Rating: 9,28 (Very Good)
 ```
 
-:::info Hinweis
-
-Passende Reisen findest du in der Datenbanktabelle `/DMO/TRAVEL`, passende Kunden in `/DMO/CUSTOMER`.
-
-:::

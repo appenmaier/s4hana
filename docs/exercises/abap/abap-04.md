@@ -3,23 +3,27 @@ title: ABAP-04
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen das Datenelement `Z???_DECIMAL`
-2. Erstelle die Klasse `ZCL_???_CALCULATOR`
-3. Erstelle die Klassenmethode `CALCULATE_PERCENTAGE` anhand der abgebildeten Schnittstelleninformation so, dass diese aufgrund eines eingehenden Prozentsatzes sowie einer eingehenden Basiszahl den entsprechenden Prozentwert berechnet und zurückgibt
-4. Erweitere die ausführbare Klasse aus Übungsaufgabe [ABAP-03](abap-03.md) so, dass auch Prozent- und Potenzberechnungen durchgeführt werden können. Verwende für die Potenzberechnung die Klassenmethode `CALCULATE_POWER` der Klasse `ZCL_ABAP_HELPER`, für die Prozentberechnung die erstellte Klassenmethode aus Aufgabenteil 3 und zur Deklaration der Zielvariablen das erstellte Datenelement aus Aufgabenteil 1.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_04` als eine Kopie der Klasse `ZCL_???_ABAP_03`. Passe die Klasse wie folgt an:
+- Erstelle einen Zufallszahlengenerator für Bewertungen
+- Ersetze die statischen Bewertungen durch 100 zufällige Bewertungen
+- Entferne die Ausgabe der Bewertungen
 
-## Schnittstelleninformation zur Klassenmethode `CALCULATE_PERCENTAGE`
+## Informationen zu den Datenobjekten
 
-| Art              | Name             | Datentyp      |
-| ---------------- | ---------------- | ------------- |
-| Import-Parameter | PERCENTAGE       | Z???\_DECIMAL |
-| Import-Parameter | BASE             | Z???\_DECIMAL |
-| Rückgabewert     | PERCENTAGE_VALUE | Z???\_DECIMAL |
+| Datenobjekt      | Datentyp           |
+| ---------------- | ------------------ |
+| rating_generator | cl_abap_random_int |
+| rating           | i                  |
+| total_rating     | i                  |
+| co_ratings       | i (Wert: 100)      |
 
-## Informationen zum Datenelement `Z???_DECIMAL`
+## Beispielhafte Konsolenausgabe
 
-- Category: Predefined Type
-- Data Type: DEC
-- Length: 15
-- Decimals: 2
-- Field Labels: Decimal Number
+```
+Title: Fight Club
+Genre: Thriller
+Publishing Year: 1999
+Runtime in Minutes: 139
+
+Average Rating: 9,53 (Very Good)
+```

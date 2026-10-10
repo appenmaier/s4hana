@@ -3,16 +3,31 @@ title: ABAP-02
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_02`, welche passend typisierte Informationen zu einem Kunden (Kundenummer, Vorname, Nachname, Stadt, Land) in entsprechenden Datenobjekten speichert und diese anschließend auf dem Bildschirm ausgibt.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_02` als eine Kopie der Klasse `ZCL_???_ABAP_01`. Erweitere die Klasse mit Hilfe der abgebildeten Informationen wie folgt:
+- Erstelle mehrere Bewertungen zum Film
+- Berechne die Durchschnittsbewertung
+- Gib die Bewertungen sowie die Durchschnittsbewertung auf dem Bildschirm aus
+
+## Informationen zu den Datenobjekten
+
+| Datenobjekt    | Datentyp                          |
+| -------------- | --------------------------------- |
+| rating         | i                                 |
+| average_rating | p (Länge: 3, Nachkommastellen: 2) |
 
 ## Beispielhafte Konsolenausgabe
 
 ```
-19286, Bruce Wayne, Gotham City (US)
+Title: Fight Club
+Genre: Thriller
+Publishing Year: 1999
+Runtime in Minutes: 139
+
+Rating 1: 10
+Rating 2: 9
+Rating 3: 10
+Rating 4: 10
+Rating 5: 9
+
+Average Rating: 9,60
 ```
-
-:::info Hinweis
-
-Passende Datenelemente findest du in der Datenbanktabelle `/DMO/CUSTOMER`.
-
-:::
