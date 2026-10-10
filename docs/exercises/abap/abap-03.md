@@ -6,11 +6,11 @@ description: ""
 Erstelle die ausführbare Klasse `ZCL_???_ABAP_03` als eine Kopie der Klasse `ZCL_???_ABAP_02`.
 Die Klasse soll zur Durchschnittsbewertung einen passenden Text ausgeben.
 
-## Informationen zu den Datentypen
+## Informationen zu den Datenobjekten
 
-| Information    | Datentyp |
-| -------------- | -------- |
-| Bewertungstext | String   |
+| Datenobjekt | Datentyp |
+| ----------- | -------- |
+| rating_text | string   |
 
 ## Bewertungsschema
 
