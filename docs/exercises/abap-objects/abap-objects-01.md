@@ -19,5 +19,10 @@ classDiagram
       +get_genre() string
       +set_publishing_year(publishing_year: ty_year)
       +get_publishing_year() ty_year
+      +to_string() string
    }
 ```
+
+## Hinweis zur Klasse `ZCL_???_MEDIUM`
+
+Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Title] ([Erscheinungsjahr]) Genre: [Genre]_ zurückgeben.
