@@ -8,10 +8,10 @@ Die Klasse soll mehrere Bewertungen zum Film in entsprechend typisierten Datenob
 
 ## Informationen zu den Datenobjekten
 
-| Datenobjekt    | Datentyp                        |
-| -------------- | ------------------------------- |
-| rating         | i                               |
-| average_rating | p (Länge 3, Nachkommastellen 2) |
+| Datenobjekt    | Datentyp                          |
+| -------------- | --------------------------------- |
+| rating         | i                                 |
+| average_rating | p (Länge: 3, Nachkommastellen: 2) |
 
 ## Beispielhafte Konsolenausgabe
 
