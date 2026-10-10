@@ -3,26 +3,21 @@ title: ABAP-Objects-04
 description: ""
 ---
 
-1. Passe die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms an
-2. Passe die ausführbare Klasse `ZCL_???_MAIN_AIRPLANES` so an, dass vor und nach den Objekterzeugungen das Klassenattribut `NUMBER_OF_AIRPLANES` ausgegeben wird
+1. Erstelle die Klasse `ZCL_???_MEDIUM_HELPER` anhand des abgebildeten Klassendiagramms
+2. Passe die ausführbare Klasse `ZCL_???_MAIN_MEDIA` so an, dass mit Hilfe der Klassenmethode `CHECK_GENRE` der Klasse `ZCL_???_MEDIUM_HELPER` überprüft wird, ob die verwendeten Genres gültig sind
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
-   class airplane {
-      -id: string
-      -plane_type: string
-      -empty_weight_in_tons: decimal
-      -number_of_airplanes: integer$
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: decimal)
-      +get_id() string
-      +get_plane_type() string
-      +get_empty_weight_in_tons() decimal
-      +get_number_of_airplanes() integer$
+   class zcl_medium_helper {
+      -genres: string[]$
+      +class_constructor()$
+      +check_genre(genre: string) abap_bool$
    }
 ```
 
-## Hinweise zur Klasse `ZCL_???_AIRPLANE`
+## Hinweise zur Klasse `ZCL_???_MEDIUM_HELPER`
 
-Passe den Konstruktor so an, dass beim Erzeugen eines Flugzeugs die Anzahl der Flugzeuge um Eins erhöht wird
+- Der Klassenkonstruktor soll der Genreliste mehrere Genres zuweisen
+- Die Methode `CHECK_GENRE` soll zurückgeben, ob das eingehende Genre in der Genreliste enthalten ist
