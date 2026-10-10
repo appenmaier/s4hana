@@ -3,7 +3,7 @@ title: ABAP-06
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_06` als eine Kopie der Klasse `ZCL_???_ABAP_05`. Die Klasse soll die Bewertungen in einem entsprechend typisierten Datenobjekt speichern und anschließend auf dem Bildschirm ausgeben.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_06` als eine Kopie der Klasse `ZCL_???_ABAP_05`. Die Klasse soll die Bewertungen in einem entsprechend typisierten Datenobjekt speichern und anschließend absteigend sortiert auf dem Bildschirm ausgeben.
 
 ## Informationen zu den Datenobjekten
 
