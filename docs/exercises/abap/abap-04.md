@@ -3,8 +3,9 @@ title: ABAP-04
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_04` als eine Kopie der Klasse `ZCL_???_ABAP_03`.
-Die Klasse soll die Durchschnittsbewertung aus 100 zufälligen Werten berechnen.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_04` als eine Kopie der Klasse `ZCL_???_ABAP_03`. Passe die Klasse wie folgt an:
+- Erstelle einen Zufallszahlengenerator für Bewertungen
+- Ersetze die statischen Bewertungen durch 100 zufällige Bewertungen
 
 ## Informationen zu den Datenobjekten
 
