@@ -3,6 +3,12 @@ title: ABAP-Objects-05
 description: ""
 ---
 
-1. Erstelle die Ausnahme `ZCX_???_INITIAL_PARAMETER`
-1. Passe den Konstruktor der Klasse `ZCL_???_AIRPLANE` so an, dass die Ausnahme `ZCX_???_INITIAL_PARAMETER` ausgelöst wird, wenn mindestens einer der eingehenden Parameter initial ist
-2. Passe das ABAP-Programm `ZCL_???_MAIN_AIRPLANES` so an, dass auch bei fehlerhaften Objekterzeugungen kein Laufzeitfehler auftritt
+1. Erstelle die Nachrichtenklasse `Z???_MEDIUM` sowie die Ausnahme `ZCX_???_INITIAL_PARAMETER` anhand der abgebildeten Informationen
+2. Passe den Konstruktor der Klasse `ZCL_???_MEDIUM` so an, dass die Ausnahme `ZCX_???_INITIAL_PARAMETER` ausgelöst wird, wenn mindestens einer der eingehenden Parameter initial ist
+3. Passe die ausführbare Klasse `ZCL_???_MAIN_MEDIA` so an, dass auch bei fehlerhaften Objekterzeugungen kein Laufzeitfehler auftritt
+
+## Informationen zur Nachrichtenklasse `Z???_MEDIUM`
+
+| Nachrichtennummer | Nachricht                               |
+| ----------------- | --------------------------------------- |
+| 001               | Please provide a value for paramater &1 |
