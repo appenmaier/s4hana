@@ -6,12 +6,12 @@ description: ""
 Erstelle die ausführbare Klasse `ZCL_???_ABAP_02` als eine Kopie der Klasse `ZCL_???_ABAP_01`.
 Die Klasse soll mehrere Bewertungen zum Film in entsprechend typisierten Datenobjekten speichern und diese sowie die Durchschnittsbewertung anschließend auf dem Bildschirm ausgeben.
 
-## Informationen zu den Datentypen
+## Informationen zu den Datenobjekten
 
-| Information            | Datentyp                           |
-| ---------------------- | ---------------------------------- |
-| Bewertung              | Ganze Zahl                         |
-| Durchschnittsbewertung | Dezimalzahl mit 2 Nachkommastellen |
+| Datenobjekt    | Datentyp                        |
+| -------------- | ------------------------------- |
+| rating         | i                               |
+| average_rating | p (Länge 3, Nachkommastellen 2) |
 
 ## Beispielhafte Konsolenausgabe
 
