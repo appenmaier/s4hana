@@ -3,8 +3,9 @@ title: ABAP-03
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_03` als eine Kopie der Klasse `ZCL_???_ABAP_02`.
-Die Klasse soll zur Durchschnittsbewertung einen passenden Text ausgeben.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_03` als eine Kopie der Klasse `ZCL_???_ABAP_02`. Erweitere die Klasse wie folgt:
+- Ermittle zur Durchschnittsbewertung den passenden Bewertungstext
+- Gib den Bewertungstext auf dem Bildschirm aus
 
 ## Informationen zu den Datenobjekten
 
