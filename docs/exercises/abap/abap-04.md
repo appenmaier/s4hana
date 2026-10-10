@@ -6,6 +6,7 @@ description: ""
 Erstelle die ausführbare Klasse `ZCL_???_ABAP_04` als eine Kopie der Klasse `ZCL_???_ABAP_03`. Passe die Klasse wie folgt an:
 - Erstelle einen Zufallszahlengenerator für Bewertungen
 - Ersetze die statischen Bewertungen durch 100 zufällige Bewertungen
+- Entferne die Ausgabe der Bewertungen
 
 ## Informationen zu den Datenobjekten
 
