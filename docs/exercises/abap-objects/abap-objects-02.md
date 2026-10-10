@@ -10,7 +10,7 @@ Erstelle die ausführbare Klasse `ZCL_???_MAIN_MEDIA` wie folgt:
 ## Beispielhafte Konsolenausgabe
 
 ```
-Fight Club (1999), Thriller
-Metroid Dread (2021), Science-Fiction
-A Game of Thrones (1996), Fantasy
+Fight Club, Thriller, 1999, 67
+Metroid Dread, Science-Fiction, 2021, 88
+Der Pate 2, Drama, 1974, 90
 ```
