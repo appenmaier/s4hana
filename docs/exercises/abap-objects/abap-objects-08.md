@@ -63,6 +63,7 @@ classDiagram
    class zif_stream {
       <<interface>>
       get_runtime_in_min() i
+      to_string() string
    }
 
    class zcl_streaming_platform {
