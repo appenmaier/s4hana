@@ -41,5 +41,5 @@ Genre: Thriller
 Publishing Year: 1999
 Runtime in Minutes: 139
 
-Average Rating: 9,70 (Very Good)
+Average Rating: 8,97 (Very Good)
 ```
