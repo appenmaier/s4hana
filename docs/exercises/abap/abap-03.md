@@ -16,11 +16,11 @@ Die Klasse soll zur Durchschnittsbewertung einen passenden Text ausgeben.
 
 | Durchschnittsbewertung | Bewertungstext |
 | ---------------------- | -------------- |
-| 0,00 bis 1,99          | Sehr schlecht  |
-| 2,00 bis 3,99          | Schlecht       |
+| 0,00 bis 1,99          | Very Bad       |
+| 2,00 bis 3,99          | Bad            |
 | 4,00 bis 5,99          | Ok             |
-| 6,00 bis 7,99          | Gut            |
-| 8,00 bis 10,00         | Sehr gut       |
+| 6,00 bis 7,99          | Good           |
+| 8,00 bis 10,00         | Very Good      |
 
 ## Beispielhafte Konsolenausgabe
 
