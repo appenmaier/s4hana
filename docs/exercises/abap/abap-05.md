@@ -17,12 +17,12 @@ description: ""
 
 ## Informationen zu den Datenelementen
 
-| Bezeichner           | Datentyp            | Feldbezeichner     |
-| -------------------- | ------------------- | ------------------ |
-| Z???_TITLE           | c (Länge: 50)       | Title              |
-| Z???_GENRE           | Domäne `Z???_GENRE` | Genre              |
-| Z???_PUBLISHING_YEAR | n (Länge: 4)        | Publishing Year    |
-| Z???_RUNTIME_IN_MIN  | i                   | Runtime in Minutes |
+| Bezeichner           | Datentyp                     | Feldbezeichner     |
+| -------------------- | ---------------------------- | ------------------ |
+| Z???_TITLE           | Standardtyp CHAR (Länge: 50) | Title              |
+| Z???_GENRE           | Domäne Z???_GENRE            | Genre              |
+| Z???_PUBLISHING_YEAR | Standardtyp NUMC (Länge: 4)  | Publishing Year    |
+| Z???_RUNTIME_IN_MIN  | Standardtyp INT4             | Runtime in Minutes |
 
 ## Informationen zum Strukturtyp `Z???_MOVIE`
 
