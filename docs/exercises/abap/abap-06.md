@@ -20,9 +20,9 @@ Publishing Year: 1999
 Runtime in Minutes: 139
 
 Rating 1: 10
-Rating 2: 8
+Rating 2: 10
 ...
-Rating 100: 9
+Rating 100: 8
 
 Average Rating: 9,28 (Very Good)
 ```
