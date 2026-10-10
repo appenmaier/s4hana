@@ -3,56 +3,51 @@ title: ABAP-Objects-06
 description: ""
 ---
 
-1. Erstelle die Klassen `ZCL_???_PASSENGER_PLANE` und `ZCL_???_FIGHTER_JET` anhand des abgebildeten Klassendiagramms
-2. Passe die ausführbare Klasse `ZCL_???_MAIN_AIRPLANES` so an, dass statt gewöhnlichen Flugzeugen Passagier- und Kampfflugzeuge erzeugt werden
+1. Erstelle die Klassen `ZCL_???_MOVIE` und `ZCL_???_VIDEO_GAME` anhand des abgebildeten Klassendiagramms
+2. Passe die ausführbare Klasse `ZCL_???_MAIN_MEDIA` so an, dass statt unspezifischen Medien Filme und Videospiele erzeugt werden
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
-   airplane <|-- passenger_plane
-   airplane <|-- fighter_jet
+   zcl_medium <|-- zcl_movie
+   zcl_medium <|-- zcl_video_game
 
-   class airplane {
-      -id: string
-      -plane_type: string
-      -empty_weight_in_tons: decimal
-      -number_of_airplanes: integer$
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: decimal)
-      +get_id() string
-      +get_plane_type() string
-      +get_empty_weight_in_tons() decimal
-     +get_total_weight_in_tons() decimal
-      +get_number_of_airplanes() integer$
+   class zcl_medium {
+      -title: string
+      -genre: string
+      -publishing_year: numc4
+      -rating: i
+      +constructor(title: string, genre: string, publishing_year: numc4)
+      +get_title() string      
+      +get_genre() string      
+      +get_publishing_year() numc4
+      +set_rating(rating: i)
+      +get_rating() i
+      +to_string() string
    }
 
-   class passenger_plane {
-      -seats: integer
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: decimal, seats: integer)
-      +get_seats() integer
-      +eject_seats(seats: integer)
-      +get_total_weight_in_tons() decimal
+   class zcl_movie {
+      -runtime_in_min: i
+      +constructor(title: string, genre: string, publishing_year: numc4, runtime_in_min: i)
+      +get_runtime_in_min() i
+      +to_string() string
    }
 
-   class fighter_jet {
-      -vomit_factor: decimal
-      +do_a_barrel_roll()
-      +get_total_weight_in_tons() decimal
+   class zcl_video_game {
+      -system: string
+      +constructor(title: string, genre: string, publishing_year: numc4, system: string)
+      +get_system() string
+      +to_string() string
    }
 ```
 
-## Hinweise zur Klasse `ZCL_???_AIRPLANE`
+## Hinweise zur Klasse `ZCL_???_MOVIE`
 
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll als Gesamtgewicht das Leergewicht zurückgeben
+- Der Konstruktor soll alle Attribute initialisieren. Für den Fall, dass die eingehende Laufzeit in Minuten initial ist, soll die Ausnahme `ZCX_???_INITIAL_PARAMETER` ausgelöst werden
+- Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel] ([Erscheinungsjahr]): [Genre], [Bewertung]%, [Laufzeit in Minuten]min_ zurückgeben.
 
-## Hinweise zur Klasse `ZCL_???_PASSENGER_PLANE`
+## Hinweise zur Klasse `ZCL_???_VIDEO_GAME`
 
-- Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `EJECT_SEATS` soll die eingehende Anzahl an Sitzen aus dem Flugzeug schleudern
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] + [Sitzplätze] \* 0,07_ zurückgeben
-
-## Hinweise zur Klasse `ZCL_???_FIGHTER_JET`
-
-- Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `DO_A_BARREL_ROLL` soll den Kotzfaktor um 0.25 erhöhen. Für den Fall, dass der Kotzfaktor den Wert 1 übersteigt, soll die Ausnahme `ZCX_ABAP_VOMIT` ausgelöst werden. Nach dem Kotzen soll der Kotzfaktor wieder auf den Wert 0 gesetzt werden
-- Die Methode `GET_TOTAL_WEIGHT_IN_TONS` soll das Gesamtgewicht nach der Formel _[Leergewicht] + 0,07_ zurückgeben
+- Der Konstruktor soll alle Attribute initialisieren. Für den Fall, dass das eingehende System initial ist, soll die Ausnahme `ZCX_???_INITIAL_PARAMETER` ausgelöst werden
+- Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel] ([System]): [Genre], [Erscheinungsjahr], [Bewertung]%_ zurückgeben.

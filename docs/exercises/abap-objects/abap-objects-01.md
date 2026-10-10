@@ -3,21 +3,29 @@ title: ABAP-Objects-01
 description: ""
 ---
 
-Erstelle die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms.
+Erstelle die Klasse `ZCL_???_MEDIUM` anhand des abgebildeten Klassendiagramms.
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
-   class airplane {
-      -id: string
-      -plane_type: string
-      -empty_weight_in_tons: decimal
-      +set_id(id: string)
-      +get_id() string
-      +set_plane_type(plane_type: string)
-      +get_plane_type() string
-      +set_empty_weight_in_tons(empty_weight_in_tons: decimal)
-      +get_empty_weight_in_tons() decimal
+   class zcl_medium {
+      -title: string
+      -genre: string
+      -publishing_year: numc4
+      -rating: i 
+      +set_title(title: string)
+      +get_title() string
+      +set_genre(genre: string)
+      +get_genre() string
+      +set_publishing_year(publishing_year: numc4)
+      +get_publishing_year() numc4
+      +set_rating(rating: i)
+      +get_rating() i
+      +to_string() string
    }
 ```
+
+## Hinweis zur Klasse `ZCL_???_MEDIUM`
+
+Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel], [Genre], [Erscheinungsjahr], [Bewertung]%_ zurückgeben.

@@ -3,63 +3,74 @@ title: ABAP-Objects-07
 description: ""
 ---
 
-1. Lege den globalen Tabellentypen `Z???_AIRPLANES` anhand der abgebildeten Informationen an
-2. Erstelle die Klasse `ZCL_???_CARRIER` anhand des abgebildeten Klassendiagramms
-3. Passe das ABAP-Programm `Z???_MAIN_AIRPLANES` so an, dass neben den Flugzeugen auch eine Fluggesellschaft erzeugt wird. Weise die Flugzeuge der Fluggesellschaft zu und gib alle Informationen der Fluggesellschaft auf dem Bildschirm aus.
-
-## Informationen zum globalen Tabellentyp `Z???_AIRPLANES`
-
-- Zeilentyp: `ZCL_???_AIRPLANE` (Reference to Class/Interface)
-- Tabellenart: Standardtabelle
-- Primärschlüssel: Standardschlüssel
+1. Erstelle die Klasse `ZCL_???_MEDIA_COLLECTION` anhand des abgebildeten Klassendiagramms
+2. Passe die ausführbare Klasse `Z???_MAIN_MEDIA` wie folgt an:
+    - Erstelle neben den Medien auch eine Mediensammlung
+    - Füge die Medien der Mediensammlung hinzu
+    - Gib alle Informationen der Mediensammlung auf dem Bildschirm aus
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
-   carrier o-- airplane
-   airplane <|-- passenger_plane
-   airplane <|-- fighter_jet
+   zcl_media_collection o-- zcl_medium
+   zcl_medium <|-- zcl_movie
+   zcl_medium <|-- zcl_video_game
 
-   class airplane {
-      -id: string
-      -plane_type: string
-      -empty_weight_in_tons: decimal
-      -number_of_airplanes: integer$
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: decimal)      
-      +get_id() string
-      +get_plane_type() string
-      +get_empty_weight_in_tons() decimal
-      +get_total_weight_in_tons() decimal
-      +get_number_of_airplanes() integer$
+   class zcl_medium {
+      -title: string
+      -genre: string
+      -publishing_year: numc4
+      -rating: i
+      +constructor(title: string, genre: string, publishing_year: numc4)
+      +get_title() string      
+      +get_genre() string      
+      +get_publishing_year() numc4
+      +set_rating(rating: i)
+      +get_rating() i
+      +to_string() string
    }
 
-   class passenger_plane {
-      -seats: integer
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: decimal, seats: integer)
-      +get_seats() integer
-      +eject_seats(seats: integer)
-      +get_total_weight_in_tons() decimal
+   class zcl_movie {
+      -runtime_in_min: i
+      +constructor(title: string, genre: string, publishing_year: numc4, runtime_in_min: i)
+      +get_runtime_in_min() i
+      +to_string() string
    }
 
-   class fighter_jet {
-      -vomit_factor: decimal
-      +constructor(id: string, plane_type: string, empty_weight_in_tons: decimal)
-      +do_a_barrel_roll()
-      +get_total_weight_in_tons() decimal
+   class zcl_video_game {
+      -system: string
+      +constructor(title: string, genre: string, publishing_year: numc4, system: string)
+      +get_system() string
+      +to_string() string
    }
 
-   class carrier {
+   class zcl_media_collection {
       -name: string
-      -airplanes: airplane[]
+      -media: zcl_medium[]
       +constructor(name: string)
-      +add_airplane(airplane: airplane)
-      +get_biggest_passenger_plane() passenger_plane
+      +get_name() string
+      +get_media() zcl_medium[]
+      +add_medium(medium: zcl_medium)
+      +get_best_rated_movie() zcl_movie
    }
 ```
 
-## Hinweise zur Klasse `ZCL_???_CARRIER`
+## Hinweise zur Klasse `ZCL_???_MEDIA_COLLECTION`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `ADD_AIRPLANE` soll der Flugzeugliste das eingehende Flugzeug hinzufügen
-- Die Methode `GET_BIGGEST_PASSENGER_PLANE` soll das Passagierflugzeug mit dem höchsten Gesamtgewicht zurückgeben
+- Die Methode `ADD_MEDIUM` soll der Medienliste das eingehende Medium hinzufügen
+- Die Methode `GET_BEST_RATED_MOVIE` soll den bestbewerteten Film zurückgeben
+
+## Beispielhafte Konsolenausgabe
+
+```
+Media Collection: My Movie and Videogame Collection
+
+Media:
+Fight Club (1999): Thriller, 67%, 139min
+Metroid Dread (NSW): Science-Fiction, 2021, 88%
+The Godfather: Part II (1974): Drama, 90%, 302min
+
+Best Rated Movie: The Godfather: Part II (1974): Drama, 90%, 302min
+```
