@@ -11,4 +11,4 @@ description: ""
 
 | Nachrichtennummer | Nachricht                               |
 | ----------------- | --------------------------------------- |
-| 001               | Please provide a value for paramater &1 |
+| 001               | Please provide a value for parameter &1 |
