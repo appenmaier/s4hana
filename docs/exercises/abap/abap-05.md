@@ -3,10 +3,8 @@ title: ABAP-05
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen die Domäne `Z???_GENRE`
-2. Erstelle mit Hilfe der abgebildeten Informationen die Datenelemente `Z???_TITLE`, `Z???_GENRE`, `Z???_PUBLISHING_YEAR` und `Z???_RUNTIME_IN_MIN`
-3. Erstelle mit Hilfe der abgebildeten Informationen den Strukturtypen `Z???_MOVIE`
-4. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05` als eine Kopie der Klasse `ZCL_???_ABAP_04`. Ersetze dort die bisherigen Datenobjekte für die Filminformationen durch eine entsprechende Struktur.
+1. Erstelle die Domäne `Z???_GENRE`, die Datenelemente `Z???_TITLE`, `Z???_GENRE`, `Z???_PUBLISHING_YEAR` und `Z???_RUNTIME_IN_MIN` sowie den Strukturtypen `Z???_MOVIE` mit Hilfe der abgebildeten Informationen
+2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05` als eine Kopie der Klasse `ZCL_???_ABAP_04`. Passe die Klasse wie folgt an: Ersetze die Datenobjekte für die Informationen zum Film durch eine entsprechende Struktur
 
 ## Informationen zur Domäne `Z???_GENRE`
 
