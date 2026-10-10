@@ -25,4 +25,4 @@ classDiagram
 
 ## Hinweis zur Klasse `ZCL_???_MEDIUM`
 
-Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Title] ([Erscheinungsjahr]) Genre: [Genre]_ zurückgeben.
+Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Title] ([Erscheinungsjahr]), [Genre]_ zurückgeben.
