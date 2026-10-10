@@ -44,10 +44,10 @@ classDiagram
 
 ## Hinweise zur Klasse `ZCL_???_MOVIE`
 
-- Der Konstruktor soll alle Attribute initialisieren
+- Der Konstruktor soll alle Attribute initialisieren. Für den Fall, dass die eingehende Laufzeit in Minuten initial ist, soll die Ausnahme `ZCX_???_INITIAL_PARAMETER` ausgelöst werden
 - Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel] ([Erscheinungsjahr]): [Genre], [Bewertung]%, [Laufzeit in Minuten]min_ zurückgeben.
 
 ## Hinweise zur Klasse `ZCL_???_VIDEO_GAME`
 
-- Der Konstruktor soll alle Attribute initialisieren
+- Der Konstruktor soll alle Attribute initialisieren. Für den Fall, dass das eingehende System initial ist, soll die Ausnahme `ZCX_???_INITIAL_PARAMETER` ausgelöst werden
 - Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel] ([System]): [Genre], [Erscheinungsjahr], [Bewertung]%_ zurückgeben.
