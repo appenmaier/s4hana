@@ -6,7 +6,7 @@ description: ""
 1. Erstelle mit Hilfe der abgebildeten Informationen die Domäne `Z???_GENRE`
 2. Erstelle mit Hilfe der abgebildeten Informationen die Datenelemente `Z???_TITLE`, `Z???_GENRE`, `Z???_PUBLISHING_YEAR` und `Z???_RUNTIME_IN_MIN`
 3. Erstelle mit Hilfe der abgebildeten Informationen den Strukturtypen `Z???_MOVIE`
-2. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05` als eine Kopie der Klasse `ZCL_???_ABAP_04`. Ersetze dort die bisherigen Datenobjekte für die Filminformationen durch eine entsprechende Struktur.
+4. Erstelle die ausführbare Klasse `ZCL_???_ABAP_05` als eine Kopie der Klasse `ZCL_???_ABAP_04`. Ersetze dort die bisherigen Datenobjekte für die Filminformationen durch eine entsprechende Struktur.
 
 ## Informationen zur Domäne `Z???_GENRE`
 
