@@ -70,7 +70,7 @@ Media Collection: My Movie and Videogame Collection
 Media:
 Fight Club (1999): Thriller, 67%, 139min
 Metroid Dread (NSW): Science-Fiction, 2021, 88%
-Der Pate 2 (1974): Drama, 90%, 302min
+The Godfather: Part II (1974): Drama, 90%, 302min
 
-Best Rated Movie: Der Pate 2
+Best Rated Movie: The Godfather: Part II (1974): Drama, 90%, 302min
 ```
