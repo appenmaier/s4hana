@@ -6,14 +6,14 @@ description: ""
 Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`.
 Die Klasse soll Filminformationen in entsprechend typisierten Datenobjekten speichern und anschließend auf dem Bildschirm ausgeben.
 
-## Informationen zu den Datentypen
+## Informationen zu den Datenobjekten
 
-| Information           | Datentyp                     |
-| --------------------- | ---------------------------- |
-| Titel                 | Zeichenketten der Länge 50   |
-| Genre                 | Zeichenketten der Länge 10   |
-| Erscheinungsjahr      | Numerische Folge der Länge 4 |
-| Laufzeit (in Minuten) | Ganze Zahl                   |
+| Datenobjekt     | Datentyp     |
+| --------------- | ------------ |
+| title           | c (Länge 50) |
+| genre           | c (Länge 10) |
+| publishing_year | n (Länge 4)  |
+| runtime_in_min  | i            |
 
 ## Beispielhafte Konsolenausgabe
 
