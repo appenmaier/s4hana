@@ -13,7 +13,7 @@ Die Klasse soll die Durchschnittsbewertung aus 100 zufälligen Werten berechnen.
 | rating_generator | cl_abap_random_int |
 | rating           | i                  |
 | total_rating     | i                  |
-| co_ratings       | i (Wert 100)       |
+| co_ratings       | i (Wert: 100)      |
 
 ## Beispielhafte Konsolenausgabe
 
