@@ -3,7 +3,7 @@ title: ABAP-07
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_07` als eine Kopie der Klasse `ZCL_???_ABAP_06`. Passe die Klasse wie folgt an: Die Informationen zum Film sollen von der Datenbanktabelle `ZABAP_MOVIE` gelesen werden.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_07` als eine Kopie der Klasse `ZCL_???_ABAP_06`. Passe die Klasse wie folgt an: Die Informationen zum Film sollen von der Datenbanktabelle `ZABAP_MOVIE_A` gelesen werden.
 
 ## Beispielhafte Konsolenausgabe
 
