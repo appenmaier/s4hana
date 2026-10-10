@@ -3,8 +3,10 @@ title: ABAP-02
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_02` als eine Kopie der Klasse `ZCL_???_ABAP_01`.
-Die Klasse soll mehrere Bewertungen zum Film in entsprechend typisierten Datenobjekten speichern und diese sowie die Durchschnittsbewertung anschließend auf dem Bildschirm ausgeben.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_02` als eine Kopie der Klasse `ZCL_???_ABAP_01`. Erweitere die Klasse mit Hilfe der abgebildeten Informationen wie folgt:
+- Erstelle mehrere Bewertungen zum Film
+- Berechne die Durchschnittsbewertung
+- Gib die Bewertungen sowie die Durchschnittsbewertung auf dem Bildschirm aus
 
 ## Informationen zu den Datenobjekten
 
