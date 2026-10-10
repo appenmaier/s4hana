@@ -3,7 +3,7 @@ title: ABAP-01
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`, welche Filminformationen in entsprechend typisierten Datenobjekten speichert und anschließend auf dem Bildschirm ausgibt. Erstelle bei Bedarf lokale Datentypen.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`, welche Filminformationen in entsprechend typisierten Datenobjekten speichert und anschließend auf dem Bildschirm ausgibt.
 
 ## Informationen zu den Datentypen
 
