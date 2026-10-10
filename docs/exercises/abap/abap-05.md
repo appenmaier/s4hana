@@ -11,7 +11,7 @@ description: ""
 - Bezeichner: Z???_GENRE
 - Datentyp: CHAR
 - Länge: 10
-- Domänenfestwerte: THRILLER, ACTION, DRAMA
+- Domänenfestwerte: THRILLER, ACTION, DRAMA, COMEDY,...
 
 ## Informationen zu den Datenelementen
 
