@@ -3,26 +3,20 @@ title: ABAP-07
 description: ""
 ---
 
-1. Erstelle mit Hilfe der abgebildeten Informationen den Tabellentypen `Z???_TRAVELS`
-2. Erweitere die Klasse `ZCL_???_HELPER` um die Klassenmethode `GET_TRAVELS`, welche zu einer eingehenden Kundennummer alle Reisen liest und zurückgibt. Verwende zum Lesen der Reisen die Klassenmethode `GET_TRAVELS` der Klasse `ZCL_ABAP_HELPER`
-3. Erstelle die ausführbare Klasse `ZCL_???_ABAP_07`, welche zu einer eingegebenen Kundennummer alle Reisen liest und diese auf dem Bildschirm ausgibt. Verwende zum Lesen der Reisen die Klassenmethode aus Aufgabenteil 2 und zur Deklaration der Zielvariablen den erstellten Tabellentypen aus Aufgabenteil 1.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_07` als eine Kopie der Klasse `ZCL_???_ABAP_06`. Passe die Klasse wie folgt an: Die Informationen zum Film sollen von der Datenbanktabelle `ZABAP_MOVIE` gelesen werden.
 
-## Schnittstelleninformation zur Klassenmethode `GET_TRAVELS`
+## Beispielhafte Konsolenausgabe
 
-| Art              | Name        | Datentyp         |
-| ---------------- | ----------- | ---------------- |
-| Import-Parameter | CUSTOMER_ID | /DMO/CUSTOMER_ID |
-| Rückgabewert     | TRAVELS     | Z???\_TRAVELS    |
-| Ausnahme         | -           | ZCX_ABAP_NO_DATA |
+```
+Title: Fight Club
+Genre: Thriller
+Publishing Year: 1999
+Runtime in Minutes: 139
 
-## Informationen zum Tabellentyp `Z???_TRAVELS`
+Rating 1: 10
+Rating 2: 10
+...
+Rating 100: 8
 
-- Zeilentyp: `/DMO/TRAVEL` (Dictionary Type)
-- Tabellenart: Standardtabelle
-- Primärschlüssel: Standardschlüssel
-
-:::info Hinweis
-
-Passende Kundendaten findest du in der Datenbanktabelle `/DMO/CUSTOMER`.
-
-:::
+Average Rating: 9,28 (Very Good)
+```
