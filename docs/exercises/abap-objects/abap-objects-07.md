@@ -68,9 +68,9 @@ classDiagram
 Media Collection: My Movie and Videogame Collection
 
 Media:
-Fight Club, Thriller, 1999, 67
-Metroid Dread, Science-Fiction, 2021, 88
-Der Pate 2, Drama, 1974, 90
+Fight Club (1999): Thriller, 67%, 139min
+Metroid Dread (NSW): Science-Fiction, 2021, 88%
+Der Pate 2 (1974): Drama, 90%, 302min
 
 Best Rated Movie: Der Pate 2
 ```
