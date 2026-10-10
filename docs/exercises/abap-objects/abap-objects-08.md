@@ -96,9 +96,5 @@ Best Rated Movie: Der Pate 2
 ------------------------------------------------------------
 Streaming Platform: Netflix
 
-Streams:
-Fight Club
-Der Pate 2
-
 Longest Stream: Der Pate 2
 ```
