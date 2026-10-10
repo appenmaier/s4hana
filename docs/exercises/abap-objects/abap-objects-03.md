@@ -3,24 +3,25 @@ title: ABAP-Objects-03
 description: ""
 ---
 
-1. Passe die Klasse `ZCL_???_AIRPLANE` anhand des abgebildeten Klassendiagramms an
-2. Passe die ausführbare Klasse `ZCL_???_MAIN_AIRPLANES` so an, dass sie keine Syntaxfehler mehr enthält
+1. Passe die Klasse `ZCL_???_MEDIUM` anhand des abgebildeten Klassendiagramms an
+2. Passe die ausführbare Klasse `ZCL_???_MAIN_MEDIA` so an, dass sie keine Syntaxfehler mehr enthält
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
-   class airplane {
-      -id: string
-      -plane_type: string
-      -empty_weight_in_tons: decimal
-      +constructor(name: string, plane_type: string, empty_weight_in_tons: decimal)
-      +get_id() string
-      +get_plane_type() string
-      +get_empty_weight_in_tons() decimal
+   class zcl_medium {
+      -title: string
+      -genre: string
+      -publishing_year: ty_year
+      +constructor(title: string, genre: string, publishing_year: ty_year)
+      +get_title() string      
+      +get_genre() string      
+      +get_publishing_year() ty_year
+      +to_string() string
    }
 ```
 
-## Hinweise zur Klasse `ZCL_???_AIRPLANE`
+## Hinweise zur Klasse `ZCL_???_MEDIUM`
 
 Der Konstruktor soll alle Attribute initialisieren.
