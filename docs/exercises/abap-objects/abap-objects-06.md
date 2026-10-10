@@ -45,9 +45,9 @@ classDiagram
 ## Hinweise zur Klasse `ZCL_???_MOVIE`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Title] ([Erscheinungsjahr]): [Genre], [Bewertung]%, [Laufzeit in Minuten]min_ zurückgeben.
+- Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel] ([Erscheinungsjahr]): [Genre], [Bewertung]%, [Laufzeit in Minuten]min_ zurückgeben.
 
 ## Hinweise zur Klasse `ZCL_???_VIDEO_GAME`
 
 - Der Konstruktor soll alle Attribute initialisieren
-- Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Title] ([System]): [Genre], [Erscheinungsjahr], [Bewertung]%_ zurückgeben.
+- Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel] ([System]): [Genre], [Erscheinungsjahr], [Bewertung]%_ zurückgeben.
