@@ -13,6 +13,7 @@ classDiagram
       -title: string
       -genre: string
       -publishing_year: ty_year
+      -metacritic_rating: ty_rating 
       +set_title(title: string)
       +get_title() string
       +set_genre(genre: string)
@@ -25,4 +26,4 @@ classDiagram
 
 ## Hinweis zur Klasse `ZCL_???_MEDIUM`
 
-Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel], [Erscheinungsjahr], [Genre]_ zurückgeben.
+Die Methode `TO_STRING` soll alle Attribute als Zeichenkette in der Form _[Titel], [Genre], [Erscheinungsjahr], [Bewertung]_ zurückgeben.
