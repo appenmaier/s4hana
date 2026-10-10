@@ -13,11 +13,14 @@ classDiagram
    class zcl_medium {
       -title: string
       -genre: string
-      -publishing_year: ty_year
-      +constructor(title: string, genre: string, publishing_year: ty_year)
+      -publishing_year: numc4
+      -rating: i
+      +constructor(title: string, genre: string, publishing_year: numc4)
       +get_title() string      
       +get_genre() string      
-      +get_publishing_year() ty_year
+      +get_publishing_year() numc4
+      +set_rating(rating: i)
+      +get_rating() i
       +to_string() string
    }
 ```
