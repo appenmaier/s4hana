@@ -3,10 +3,22 @@ title: ABAP-01
 description: ""
 ---
 
-Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`, welche einen Vornamen und einen Nachnamen in entsprechenden Datenobjekten speichert und anschließend den vollständigen Namen samt einer kurzen Begrüßungsformel auf dem Bildschirm ausgibt.
+Erstelle die ausführbare Klasse `ZCL_???_ABAP_01`, welche Filminformationen in entsprechend typisierten Datenobjekten speichert und anschließend auf dem Bildschirm ausgibt. Erstelle bei Bedarf lokale Datentypen.
+
+## Informationen zu den Datentypen
+
+| Information           | Datentyp                     |
+| --------------------- | ---------------------------- |
+| Titel                 | Zeichenketten der Länge 50   |
+| Genre                 | Zeichenketten der Länge 10   |
+| Erscheinungsjahr      | Numerische Folge der Länge 4 |
+| Laufzeit (in Minuten) | Integer                      |
 
 ## Beispielhafte Konsolenausgabe
 
 ```
-Hello Bruce Wayne, how are you?
+Title: Fight Club
+Genre: Thriller
+Publishing Year: 1999
+Runtime in Minutes: 139
 ```
