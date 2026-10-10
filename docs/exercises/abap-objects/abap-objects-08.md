@@ -97,8 +97,8 @@ Best Rated Movie: Der Pate 2
 Streaming Platform: Netflix
 
 Streams:
-Fight Club (1999): Thriller, 67%, 139min
-Der Pate 2 (1974): Drama, 90%, 302min
+Fight Club
+Der Pate 2
 
 Longest Stream: Der Pate 2
 ```
