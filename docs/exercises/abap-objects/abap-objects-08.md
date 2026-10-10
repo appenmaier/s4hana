@@ -7,14 +7,16 @@ description: ""
 2. Passe die Klassen `ZCL_???_MOVIE` und `ZCL_???_MEDIUM` anhand des abgebildeten Klassendiagramms an
 3. Erstelle die Klasse `ZCL_???_STREAMING_PLATTFORM` anhand des abgebildeten Klassendiagramms
 4. Passe die ausführbare Klasse `Z???_MAIN_MEDIA` wie folgt an:
-    - so an, dass neben den Flugzeugen und der Fluggesellschaft auch ein Reisebüro erzeugt wird. Weise die Fluggesellschaft dem Reisebüro zu und gib alle Informationen des Reisebüros auf dem Bildschirm aus.
+    - Erstelle neben den Medien und der Mediensammlung auch einen Streaming-Plattform
+    - Füge die Filme der Streaming-Plattform hinzu
+    - Gib alle Informationen der Streaming-Plattform auf dem Bildschirm aus
 
 ## Klassendiagramm
 
 ```mermaid
 classDiagram
    zif_stream <|.. zcl_movie
-   zcl_streaming_plattform o-- zif_stream
+   zcl_streaming_platform o-- zif_stream
    zcl_media_collection o-- zcl_medium
    zcl_medium <|-- zcl_movie
    zcl_medium <|-- zcl_video_game
@@ -63,9 +65,9 @@ classDiagram
       get_runtime_in_min() i
    }
 
-   class zcl_streaming_plattform {
+   class zcl_streaming_platform {
       -name: string
-      -streams: zif_streamable[]
+      -streams: zif_stream[]
       +constructor(name: string)
       +get_name() string
       +get_streams() zcl_stream[]
@@ -74,8 +76,29 @@ classDiagram
    }
 ```
 
-## Hinweis zur Klasse `ZCL_???_STREAMING_PLATTFORM`
+## Hinweis zur Klasse `ZCL_???_STREAMING_PLATFORM`
 
 - Der Konstruktor soll alle Attribute initialisieren
 - Die Methode `ADD_STREAM` soll der Streamliste den eingehenden Stream hinzufügen
 - Die Methode `GET_LONGEST_STREAM` soll den längsten Stream zurückgeben
+
+## Beispielhafte Konsolenausgabe
+
+```
+Media Collection: My Movie and Videogame Collection
+
+Media:
+Fight Club (1999): Thriller, 67%, 139min
+Metroid Dread (NSW): Science-Fiction, 2021, 88%
+Der Pate 2 (1974): Drama, 90%, 302min
+
+Best Rated Movie: Der Pate 2
+------------------------------------------------------------
+Streaming Platform: Netflix
+
+Streams:
+Fight Club (1999): Thriller, 67%, 139min
+Der Pate 2 (1974): Drama, 90%, 302min
+
+Longest Stream: Der Pate 2
+```
