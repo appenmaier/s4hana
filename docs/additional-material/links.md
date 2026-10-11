@@ -22,7 +22,7 @@ tags: []
 
 ## E-Learnings, Workshops, Bücher
 
-- [Acquiring Core ABAP Skills (_SAP Learning Journey_)]([https://learning.sap.com/learning-journey/acquire-core-abap-skills](https://learning.sap.com/learning-journeys/acquiring-core-abap-skills?searchId=4555d533-15f4-4888-95ce-258a6e9ec005&listPosition=4))
+- [Acquiring Core ABAP Skills (_SAP Learning Journey_)](https://learning.sap.com/learning-journeys/acquiring-core-abap-skills?searchId=4555d533-15f4-4888-95ce-258a6e9ec005&listPosition=4)
 - [ABAP Development RAP Workshops (_Workshop_)](https://github.com/SAP-samples/abap-platform-rap-workshops)
 - [SAP Fiori Elements 4 RAP (_Workshop, nur SAP intern_)](https://github.wdf.sap.corp/D052858/fiori-elements-v4-rap-basic)
 - [ABAP RESTful Programming Model – ABAP Development for SAP S/4HANA (_Rheinwerk-Buch_)](https://www.rheinwerk-verlag.de/abap-restful-application-programming-model-das-umfassende-handbuch/)
